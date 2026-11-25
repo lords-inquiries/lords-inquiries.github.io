@@ -121,8 +121,10 @@ $('#meta').textContent='Updated '+fmtT(SNAPSHOT)+' · '+D.length+' current inqui
 const open=D.filter(isOpen).sort((a,b)=>(a.d==='none')-(b.d==='none')||new Date(a.d)-new Date(b.d));
 function left(x){
   if(x.d==='none')return '<div class="days">Open<small>no closing date listed</small></div>';
-  const ms=new Date(x.d)-now,h=ms/36e5,d=Math.ceil(ms/864e5);
-  const big=h<24?Math.max(1,Math.round(h))+'<small>hours left</small>':d+'<small>'+(d===1?'day':'days')+' left</small>';
+  // Count whole UK calendar days, not hours, so the figure stays true all day.
+  const ukDay=t=>Date.parse(new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/London'}).format(t)+'T00:00:00Z');
+  const d=Math.round((ukDay(new Date(x.d))-ukDay(new Date(now)))/864e5);
+  const big=d<=0?'Today<small>last day to submit</small>':d===1?'Tomorrow<small>last day to submit</small>':d+'<small>days left</small>';
   return '<div class="days">'+big+'</div>';
 }
 $('#notices').innerHTML=open.length?open.map(x=>`<article class="notice${x.d==='none'?' nodl':''}">${left(x)}<h3>${esc(x.t)}${kind(x)}</h3><div class="com">${esc(cname(x))}</div>${x.d!=='none'?`<div class="dl">Closes ${esc(fmtT(x.d))}</div>`:'<div class="dl">Check the inquiry page before submitting</div>'}<a class="go" href="${url(x.i)}">Read the call for evidence</a></article>`).join(''):'<div class="empty">No calls for evidence are open in this snapshot.</div>';
