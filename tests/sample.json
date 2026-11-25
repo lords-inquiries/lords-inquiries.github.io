@@ -1,0 +1,1544 @@
+{
+ "committees": {
+  "Lords": [
+   {
+    "id": 170,
+    "name": "Communications and Digital Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 172,
+    "name": "Constitution Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 175,
+    "name": "Economic Affairs Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 187,
+    "name": "Liaison Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 193,
+    "name": "Science and Technology Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 230,
+    "name": "Finance Bill Sub-Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 360,
+    "name": "International Relations and Defence Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 430,
+    "name": "Public Services Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 448,
+    "name": "International Agreements Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 515,
+    "name": "Environment and Climate Change Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 516,
+    "name": "European Affairs Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 517,
+    "name": "Industry and Regulators Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 518,
+    "name": "Built Environment Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 519,
+    "name": "Justice and Home Affairs Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 697,
+    "name": "Financial Services Regulation Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 769,
+    "name": "Northern Ireland Scrutiny Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 830,
+    "name": "Childhood Vaccinations Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 831,
+    "name": "Domestic Abuse Act 2021 Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 832,
+    "name": "National Resilience Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 833,
+    "name": "Numeracy for Life Committee",
+    "house": "Lords",
+    "endDate": null
+   },
+   {
+    "id": 999,
+    "name": "Old Dissolved Committee",
+    "house": "Lords",
+    "endDate": "2020-01-01T00:00:00"
+   },
+   {
+    "id": 197,
+    "name": "Committee of Selection (Lords)",
+    "house": "Lords",
+    "endDate": null
+   }
+  ],
+  "Joint": [
+   {
+    "id": 93,
+    "name": "Joint Committee on Human Rights",
+    "house": "Joint",
+    "endDate": null
+   },
+   {
+    "id": 111,
+    "name": "Joint Committee on the National Security Strategy",
+    "house": "Joint",
+    "endDate": null
+   },
+   {
+    "id": 851,
+    "name": "Joint Committee on the Draft Conversion Practices Bill",
+    "house": "Joint",
+    "endDate": null
+   }
+  ]
+ },
+ "business": {
+  "193": [
+   {
+    "id": 10109,
+    "title": "Future of UK compute in the age of AI",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-11-11T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [
+     {
+      "id": 1,
+      "startDate": "2026-11-11T09:00:00",
+      "endDate": "2027-01-15T23:59:00",
+      "submissionType": "WrittenEvidence",
+      "statusMessage": "x",
+      "allowSubmissionsPastEndDate": false
+     }
+    ],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9014,
+    "title": "Financing and Scaling UK Science and Technology: Innovation, Investment, Industry",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-03-20T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Bleeding to death: the science and technology growth emergency",
+     "publicationStartDate": "2025-11-05T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2025-03-20T09:00:00",
+      "endDate": "2025-05-09T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9659,
+    "title": "Innovation in the NHS: personalised medicine and AI",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-03-03T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-03-03T09:00:00",
+      "endDate": "2026-04-20T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9322,
+    "title": "President of the Royal Society",
+    "type": {
+     "name": "Non-inquiry session",
+     "isInquiry": false
+    },
+    "openDate": "2025-08-29T00:00:00",
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": []
+   }
+  ],
+  "516": [
+   {
+    "id": 10068,
+    "title": "UK touring artists in the EU",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-10-26T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [
+     {
+      "id": 1,
+      "startDate": "2026-10-26T09:00:00",
+      "endDate": "2026-11-30T18:00:00",
+      "submissionType": "WrittenEvidence",
+      "statusMessage": "x",
+      "allowSubmissionsPastEndDate": false
+     }
+    ],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9684,
+    "title": "Dynamic alignment",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-03-13T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Dynamic alignment: a fundamental change",
+     "publicationStartDate": "2026-11-13T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-03-13T09:00:00",
+      "endDate": "2026-04-20T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "360": [
+   {
+    "id": 9772,
+    "title": "Multilateralism",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-05-14T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [
+     {
+      "id": 1,
+      "startDate": "2026-05-14T09:00:00",
+      "endDate": "2026-11-26T17:00:00",
+      "submissionType": "WrittenEvidence",
+      "statusMessage": "x",
+      "allowSubmissionsPastEndDate": false
+     }
+    ],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 8614,
+    "title": "The UK's future relationship with the US",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-01-24T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Adjusting to new realities: rebalancing the UK-US partnership",
+     "publicationStartDate": "2026-04-22T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9771,
+    "title": "SDR implementation",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-05-14T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "515": [
+   {
+    "id": 9312,
+    "title": "Waste crime",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-07-29T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [
+     {
+      "id": 1,
+      "startDate": "2025-07-29T09:00:00",
+      "endDate": null,
+      "submissionType": "WrittenEvidence",
+      "statusMessage": "x",
+      "allowSubmissionsPastEndDate": false
+     }
+    ],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9767,
+    "title": "Pet parasite medication",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-04-24T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Paws for concern: pets, parasites and pollution",
+     "publicationStartDate": "2026-08-05T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9956,
+    "title": "Dunkelflaute and the risks of electricity intermittency",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-07-23T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-07-23T09:00:00",
+      "endDate": "2026-10-12T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "448": [
+   {
+    "id": 8516,
+    "title": "Amendment to UK-US Mutual Defence Agreement",
+    "type": {
+     "name": "Legislative scrutiny",
+     "isInquiry": false
+    },
+    "openDate": "2024-09-30T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Amendment to the UK-US Agreement on Atomic Energy for Mutual Defence",
+     "publicationStartDate": "2024-10-17T00:00:00"
+    },
+    "openSubmissionPeriods": [
+     {
+      "id": 1,
+      "startDate": "2024-09-30T09:00:00",
+      "endDate": null,
+      "submissionType": "WrittenEvidence",
+      "statusMessage": "x",
+      "allowSubmissionsPastEndDate": false
+     }
+    ],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9231,
+    "title": "General Terms for the UK-US Economic Prosperity Deal",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-07-01T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2025-07-01T09:00:00",
+      "endDate": "2025-07-16T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9341,
+    "title": "UK-India Free Trade Agreement",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-09-09T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Scrutiny of international agreements: UK-India Comprehensive Economic and Trade Agreement",
+     "publicationStartDate": "2026-02-03T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2025-09-09T09:00:00",
+      "endDate": "2025-11-04T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9706,
+    "title": "Trade in a turbulent world: how should the UK deploy its trade instruments?",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-03-19T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-03-19T09:00:00",
+      "endDate": "2026-05-22T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "518": [
+   {
+    "id": 8503,
+    "title": "The Grey Belt",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2024-09-05T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9410,
+    "title": "New Towns: Creating Communities",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-10-27T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - New Towns: Creating Communities",
+     "publicationStartDate": "2026-03-26T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9730,
+    "title": "Young People and the Built Environment",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-03-26T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9845,
+    "title": "New Towns: Bricks and Mortar",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-06-15T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - New Towns: Commit and Build",
+     "publicationStartDate": "2026-10-15T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 10051,
+    "title": "Maintenance and enforcement in public spaces",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-10-20T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-10-20T09:00:00",
+      "endDate": "2026-11-13T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 7777,
+    "title": "Stale open period test",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-10-01T00:00:00",
+    "openSubmissionPeriods": [
+     {
+      "endDate": "2026-11-13T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "closedSubmissionPeriods": []
+   }
+  ],
+  "830": [
+   {
+    "id": 9583,
+    "title": "Childhood Vaccinations",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-01-27T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - No time to lose: reversing the decline in childhood vaccination rates",
+     "publicationStartDate": "2026-11-18T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "170": [
+   {
+    "id": 9394,
+    "title": "AI and copyright",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-11-03T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - AI, copyright and the creative industries",
+     "publicationStartDate": "2026-03-06T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9955,
+    "title": "The Online Safety Act: implementation and impact",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-07-27T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "172": [
+   {
+    "id": 9468,
+    "title": "Review of the UK\u2013Overseas Territories Joint Declaration",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-11-26T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2025-11-26T09:00:00",
+      "endDate": "2025-12-09T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9861,
+    "title": "The UK's constitutional safeguards",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-06-19T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-06-19T09:00:00",
+      "endDate": "2026-09-28T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 8160,
+    "title": "Victims and Prisoners Bill",
+    "type": {
+     "name": "Legislative scrutiny",
+     "isInquiry": false
+    },
+    "openDate": "2024-01-16T00:00:00",
+    "openSubmissionPeriods": [],
+    "latestReport": {
+     "description": "1st Report - Victims and Prisoners Bill",
+     "publicationStartDate": "2024-01-18T00:00:00"
+    }
+   }
+  ],
+  "831": [
+   {
+    "id": 9584,
+    "title": "Domestic Abuse Act 2021",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-01-27T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-01-27T09:00:00",
+      "endDate": "2026-04-20T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "175": [
+   {
+    "id": 9761,
+    "title": "Fiscal devolution in England",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-04-24T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-04-24T09:00:00",
+      "endDate": "2026-06-05T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "230": [
+   {
+    "id": 9350,
+    "title": "Draft Finance Bill 2025\u201326",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-09-17T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Inheritance tax measures: unused pension funds and agricultural and business property reliefs",
+     "publicationStartDate": "2026-01-28T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 10007,
+    "title": "Draft Finance Bill 2026\u201327",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-09-17T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "697": [
+   {
+    "id": 8454,
+    "title": "FCA enforcement guidance consultation",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2024-05-08T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Naming and shaming: how not to regulate",
+     "publicationStartDate": "2025-02-06T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9235,
+    "title": "Growth of private markets in the UK following post-2008 reforms",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-07-01T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Private markets: Unknown unknowns",
+     "publicationStartDate": "2026-01-09T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9590,
+    "title": "Growth and proposed regulation of stablecoins in the UK",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-01-28T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Stablecoins: waiting for regulation",
+     "publicationStartDate": "2026-06-03T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9804,
+    "title": "Regulation of the consumer insurance market",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-05-21T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Home and travel insurance regulation: more for the FCA to do",
+     "publicationStartDate": "2026-10-23T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 10006,
+    "title": "Regulatory sandboxes in financial services",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-09-17T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "517": [
+   {
+    "id": 9823,
+    "title": "The relationship between the Government and the defence industry",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-06-02T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Ready for action in 1,000 days? Forging a new partnership between Government and the defence industry",
+     "publicationStartDate": "2026-11-11T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-06-02T09:00:00",
+      "endDate": "2026-07-21T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "519": [
+   {
+    "id": 8463,
+    "title": "Tackling shop theft",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2024-05-13T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 8565,
+    "title": "Prison culture: governance, leadership and staffing",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2024-10-30T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Better prisons: less crime",
+     "publicationStartDate": "2025-07-16T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9178,
+    "title": "Investigation into electronic monitoring",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-06-06T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9453,
+    "title": "Settlement, Citizenship and Integration",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-11-18T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Settlement, Citizenship and Integration",
+     "publicationStartDate": "2026-06-23T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9769,
+    "title": "Fire safety in prisons",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-05-21T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Fire Safety in Prisons",
+     "publicationStartDate": "2026-11-05T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9957,
+    "title": "Support for jurors",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-07-24T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "187": [
+   {
+    "id": 9839,
+    "title": "Social and economic impact of the gambling industry \u2013 follow-up",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-06-09T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Gambling Harm\u2014Time for Action: Follow-up report",
+     "publicationStartDate": "2026-09-17T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "832": [
+   {
+    "id": 9585,
+    "title": "National Resilience",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-01-27T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "769": [
+   {
+    "id": 9636,
+    "title": "Follow-up: strengthening Northern Ireland's voice in the context of the Windsor Framework",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-02-23T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9589,
+    "title": "Article 2 of the Protocol/Windsor Framework",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-06-02T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-06-02T09:00:00",
+      "endDate": "2026-07-09T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "833": [
+   {
+    "id": 9582,
+    "title": "Numeracy for Life",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-01-27T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Making it Count: Numeracy for Life",
+     "publicationStartDate": "2026-11-03T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "430": [
+   {
+    "id": 9310,
+    "title": "Police transcription",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-07-29T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9311,
+    "title": "Medicines security",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-08-05T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Medicines security\u2014a national priority",
+     "publicationStartDate": "2026-02-04T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9715,
+    "title": "The role of ambulance services in supporting A&E departments' capacity",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-03-24T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9788,
+    "title": "Falling primary school rolls",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-05-14T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 10001,
+    "title": "Children's social care",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-09-16T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "93": [
+   {
+    "id": 8812,
+    "title": "Forced labour in UK supply chains",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-01-16T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Forced Labour in UK Supply Chains",
+     "publicationStartDate": "2025-07-24T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 8867,
+    "title": "Transnational repression in the UK",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-01-24T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Transnational repression in the UK",
+     "publicationStartDate": "2025-07-30T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9255,
+    "title": "Human rights of children in the social care system in England",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-07-15T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Human Rights of Children in the Social Care System in England",
+     "publicationStartDate": "2026-08-27T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9220,
+    "title": "Human rights and the regulation of AI",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-07-25T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Human Rights and the Regulation of AI",
+     "publicationStartDate": "2026-09-14T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9412,
+    "title": "Legislative scrutiny: Northern Ireland Troubles Bill",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-10-30T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Legislative Scrutiny: Northern Ireland Troubles Bill",
+     "publicationStartDate": "2026-09-07T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9683,
+    "title": "Security, safety and protest: the role of human rights",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-03-11T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9927,
+    "title": "Legislative scrutiny: Immigration and Asylum Bill",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-07-09T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 10049,
+    "title": "Draft Conversion Practices Bill",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-10-20T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-10-20T09:00:00",
+      "endDate": "2026-11-16T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "111": [
+   {
+    "id": 8879,
+    "title": "Undersea cables",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-01-23T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Subsea telecommunications cables: resilience and crisis preparedness",
+     "publicationStartDate": "2025-09-19T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 8950,
+    "title": "Defending democracy",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-02-24T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Political finance and foreign influence",
+     "publicationStartDate": "2026-03-18T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9201,
+    "title": "The National Security Strategy",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-06-17T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - The National Security Strategy",
+     "publicationStartDate": "2026-03-27T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9387,
+    "title": "Espionage cases and the Official Secrets Acts",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2025-10-16T00:00:00",
+    "closeDate": null,
+    "latestReport": {
+     "id": 5,
+     "description": "3rd Report - Espionage cases and the Official Secrets Acts",
+     "publicationStartDate": "2025-12-03T00:00:00"
+    },
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9741,
+    "title": "Societal resilience: a national conversation",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-04-13T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9791,
+    "title": "Deterrence in an age of Russian aggression",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-06-02T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   },
+   {
+    "id": 9937,
+    "title": "Space resilience",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-07-15T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "851": [
+   {
+    "id": 10049,
+    "title": "Draft Conversion Practices Bill",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2026-10-20T00:00:00",
+    "closeDate": null,
+    "latestReport": null,
+    "openSubmissionPeriods": [],
+    "closedSubmissionPeriods": [
+     {
+      "id": 2,
+      "startDate": "2026-10-20T09:00:00",
+      "endDate": "2026-11-16T23:59:00",
+      "submissionType": "WrittenEvidence"
+     }
+    ],
+    "nextOralEvidenceSession": null,
+    "contact": null
+   }
+  ],
+  "999": [
+   {
+    "id": 1,
+    "title": "Should never appear",
+    "type": {
+     "name": "Inquiry",
+     "isInquiry": true
+    },
+    "openDate": "2019-01-01T00:00:00"
+   }
+  ]
+ }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Lords inquiries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: a clerk's noticeboard: calm, exact, useful at a glance.
+IDEA: the order paper / committee noticeboard pinned up in the Lords corridor.
+PICTURE: the working tool itself: "closing soon" calls as large notices, then the full register.
+COLOUR and TYPE: white ground, ink, Lords red #a3172b dominant band, gold #c9a227 hairline accent; Source Serif 4 titles, Libre Franklin text.
+LAYOUT: red band header, notices row, filter bar, register table that stacks on phones.
+*/
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#141113);--ink:light-dark(#1b1517,#f1ecee);--mute:light-dark(#5e5458,#b3a8ac);--line:light-dark(#e6dfe1,#3a3034);--red:light-dark(#a3172b,#d4485b);--band:#8e1325;--gold:#c9a227;--card:light-dark(#fbf7f8,#1d181a);--chip:light-dark(#f3e6e8,#3a2228)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Libre Franklin",system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(24px,4vw,56px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+header{background:var(--band);color:#fff;border-bottom:3px solid var(--gold)}
+h1{font:600 clamp(32px,5vw,50px)/1.05 "Source Serif 4",Georgia,serif;margin:0 0 10px;text-wrap:balance}
+header p{margin:0;max-width:66ch;color:#f6dfe3}
+.meta{margin-top:14px;font-size:14px;color:#f0c9d0}
+h2{font:600 26px/1.15 "Source Serif 4",Georgia,serif;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 18px;font-size:15px}
+.notices{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px}
+.notice{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:6px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.notice .days{font:600 40px/1 "Source Serif 4",Georgia,serif;color:var(--red)}
+.notice .days small{font:500 15px "Libre Franklin",sans-serif;color:var(--mute);margin-left:6px}
+.notice h3{font-size:18px;line-height:1.3;margin:0}
+.notice .com{color:var(--mute);font-size:14px}
+.notice .dl{font-size:14px;white-space:nowrap}
+.notice a.go{margin-top:auto;align-self:flex-start;color:#fff;background:var(--red);text-decoration:none;font-weight:600;font-size:15px;padding:10px 14px;border-radius:4px;min-height:44px;display:inline-flex;align-items:center}
+.notice.nodl{border-top-color:var(--gold)}
+.notice.nodl .days{font-size:22px;color:var(--ink)}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:0 0 16px}
+.toolbar label{display:flex;flex-direction:column;font-size:13px;color:var(--mute);gap:4px;flex:1 1 180px}
+.toolbar label.q{flex:2 1 260px}
+input,select,button{font:16px "Libre Franklin",sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;min-height:44px;padding:8px 10px}
+button{cursor:pointer;font-weight:600;background:var(--chip);border-color:transparent;flex:0 0 auto}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.count{font-size:14px;color:var(--mute);margin:0 0 8px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:13px;font-weight:600;color:var(--mute);border-bottom:2px solid var(--ink);padding:8px 10px}
+td{border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top}
+td a{color:var(--ink);font-weight:600;text-decoration-color:var(--red);text-underline-offset:3px}
+td.date{white-space:nowrap;color:var(--mute)}
+.c2{color:var(--mute);font-size:14px}
+.chip{display:inline-block;font-size:13px;font-weight:600;padding:3px 8px;border-radius:99px;background:var(--chip);white-space:nowrap}
+.chip.open{background:var(--red);color:#fff}
+.chip.rep{background:light-dark(#efe7cf,#3a321a)}
+.joint{font-size:12px;font-weight:600;color:var(--red);margin-left:4px}
+.empty{padding:28px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:6px}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer p{max-width:80ch;margin:0 0 8px}footer a{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:4px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){.toast{transition:none}}
+pre,.scroll{overflow-x:auto}code{overflow-wrap:anywhere}
+@media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:6.5em;margin-inline-start:-7em;white-space:normal;color:var(--mute)}.stack td:empty{display:none}}
+</style><script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script></head>
+<body>
+<header class="band"><div class="wrap">
+<h1>Open House of Lords inquiries and calls for evidence</h1>
+<p>Every current inquiry run by a Lords select committee, plus joint committees with Lords members, on one page. Open calls for evidence are at the top, with the time left to submit.</p>
+<p class="meta" id="meta"></p>
+</div></header>
+
+<section class="band"><div class="wrap">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:end;margin-bottom:16px">
+<div><h2>Accepting written evidence now</h2><p class="sub" style="margin:0">Deadlines are UK time. Calls drop off this list automatically once they close.</p></div>
+<button id="copy" type="button">Copy list to send</button>
+</div>
+<div class="notices" id="notices"></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+<h2>All current inquiries</h2>
+<p class="sub">Inquiries that committees list as current. Some older ones stay open after their report while the committee follows up.</p>
+<div class="toolbar">
+<label class="q">Search<input id="q" type="search" placeholder="e.g. AI, prisons, trade" autocomplete="off"></label>
+<label>Committee<select id="com"><option value="">All committees</option></select></label>
+<label>Stage<select id="stage"><option value="">Any stage</option><option value="open">Accepting evidence</option><option value="way">Under way, evidence closed</option><option value="rep">Report published</option></select></label>
+<label>Sort<select id="sort"><option value="new">Newest first</option><option value="com">By committee</option><option value="az">Title A–Z</option></select></label>
+</div>
+<p class="count" id="count" aria-live="polite"></p>
+<div id="list"></div>
+</div></section>
+
+<footer class="band"><div class="wrap">
+<p>Source: UK Parliament Committees API (committees-api.parliament.uk), using each committee's "open" committee business. One-off evidence sessions, regular sessions and individual bill scrutiny are left out. Private bill petitions are not included.</p>
+<p>An unofficial tool, refreshed every morning. Always check the committee's own page before submitting. Links go to each inquiry's page on committees.parliament.uk.</p>
+<p><a href="data.json">Download the data (JSON)</a> · <a href="feed.xml">RSS feed of open calls</a> · <a href="__REPO__">Source code</a></p>
+</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+const DATA=/*__DATA__*/null;
+const SNAPSHOT=DATA.generated;
+const COM=DATA.committees;
+const D=DATA.items;
+const COMKEYS=Object.keys(COM);
+const $=s=>document.querySelector(s);
+const esc=v=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const url=i=>'https://committees.parliament.uk/work/'+i+'/';
+const fmt=s=>new Date(s.length>10?s:s+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'Europe/London'});
+const fmtT=s=>{const p=new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'Europe/London'}).formatToParts(new Date(s));const g=t=>(p.find(x=>x.type===t)||{}).value||'';const m=g('minute');return g('weekday')+' '+g('day')+' '+g('month')+', '+g('hour')+(m==='00'?'':':'+m)+g('dayPeriod').toLowerCase().replace(/[\s.]/g,'')};
+const now=Date.now();
+const isOpen=x=>x.d==='none'||(x.d&&new Date(x.d).getTime()>now);
+const stage=x=>isOpen(x)?'open':x.r?'rep':'way';
+const cids=x=>[x.c,...(x.a||[])];
+const cname=x=>cids(x).map(id=>COM[id][0]).join(' / ');
+const kind=x=>x.k?' <span class="c2">('+esc(x.k.toLowerCase())+')</span>':'';
+
+$('#meta').textContent='Updated '+fmtT(SNAPSHOT)+' · '+D.length+' current inquiries across '+new Set(D.flatMap(x=>[x.c,...(x.a||[])])).size+' committees';
+
+const open=D.filter(isOpen).sort((a,b)=>(a.d==='none')-(b.d==='none')||new Date(a.d)-new Date(b.d));
+function left(x){
+  if(x.d==='none')return '<div class="days">Open<small>no closing date listed</small></div>';
+  const ms=new Date(x.d)-now,h=ms/36e5,d=Math.ceil(ms/864e5);
+  const big=h<24?Math.max(1,Math.round(h))+'<small>hours left</small>':d+'<small>'+(d===1?'day':'days')+' left</small>';
+  return '<div class="days">'+big+'</div>';
+}
+$('#notices').innerHTML=open.length?open.map(x=>`<article class="notice${x.d==='none'?' nodl':''}">${left(x)}<h3>${esc(x.t)}${kind(x)}</h3><div class="com">${esc(cname(x))}</div>${x.d!=='none'?`<div class="dl">Closes ${esc(fmtT(x.d))}</div>`:'<div class="dl">Check the inquiry page before submitting</div>'}<a class="go" href="${url(x.i)}">Read the call for evidence</a></article>`).join(''):'<div class="empty">No calls for evidence are open in this snapshot.</div>';
+
+const sel=$('#com');
+Object.entries(COM).sort((a,b)=>a[1][0].localeCompare(b[1][0])).forEach(([id,v])=>{const o=document.createElement('option');o.value=id;o.textContent=v[0];sel.appendChild(o)});
+
+function chip(x){const s=stage(x);
+  if(s==='open')return '<span class="chip open">Accepting evidence</span>';
+  if(s==='rep')return '<span class="chip rep">Report '+esc(fmt(x.rd))+'</span>';
+  return '<span class="chip">'+(x.x?'Evidence closed '+esc(fmt(x.x)):'Under way')+'</span>';
+}
+function render(){
+  const q=$('#q').value.trim().toLowerCase(),c=sel.value,st=$('#stage').value,so=$('#sort').value;
+  let rows=D.filter(x=>(!c||cids(x).map(String).includes(c))&&(!st||stage(x)===st)&&(!q||(x.t+' '+cname(x)+' '+(x.r||'')).toLowerCase().includes(q)));
+  rows.sort(so==='az'?(a,b)=>a.t.localeCompare(b.t):so==='com'?(a,b)=>cname(a).localeCompare(cname(b))||b.o.localeCompare(a.o):(a,b)=>b.o.localeCompare(a.o));
+  $('#count').textContent=rows.length+' of '+D.length+' inquiries';
+  $('#list').innerHTML=rows.length?`<table class="stack"><thead><tr><th>Inquiry</th><th>Committee</th><th>Opened</th><th>Stage</th></tr></thead><tbody>${rows.map(x=>`<tr><td><a href="${url(x.i)}">${esc(x.t)}</a>${kind(x)}${x.r?`<div class="c2">Latest report: ${esc(x.r)}</div>`:''}</td><td>${esc(cname(x))}${cids(x).some(id=>COM[id][1])?'<span class="joint">Joint</span>':''}</td><td class="date">${esc(fmt(x.o))}</td><td>${chip(x)}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">No inquiries match. Try clearing the search or picking “All committees”.</div>';
+}
+['#q','#com','#stage','#sort'].forEach(s=>$(s).addEventListener('input',render));
+render();
+
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)};
+$('#copy').addEventListener('click',async()=>{
+  const txt='House of Lords calls for evidence open as of '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+':\n\n'+open.map(x=>'• '+x.t+' ('+cname(x)+')\n  '+(x.d==='none'?'No closing date listed':'Closes '+fmtT(x.d))+'\n  '+url(x.i)).join('\n\n');
+  try{await navigator.clipboard.writeText(txt);toast('Copied, ready to paste into an email')}catch(e){toast('Copy was blocked by the browser')}
+});
+}
+</script>
+</body>
+</html>

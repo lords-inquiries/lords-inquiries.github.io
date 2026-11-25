@@ -1,0 +1,60 @@
+name: Update site
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # every morning, about 5:17am GMT / 6:17am BST
+  workflow_dispatch:        # "Run workflow" button for a manual refresh
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url || steps.retry.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Offline test (sample data)
+        run: python build.py --sample tests/sample.json --now 2026-11-25T23:30:00Z --out /tmp/test-site
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Fetch live data from the Committees API and build
+        env:
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/
+        run: python build.py --out site
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      # GitHub's artifact service is occasionally slow to register a fresh upload,
+      # so wait and try once more before giving up.
+      - id: deploy
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait before retrying the deploy
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 60
+
+      - id: retry
+        if: steps.deploy.outcome == 'failure'
+        uses: actions/deploy-pages@v5
