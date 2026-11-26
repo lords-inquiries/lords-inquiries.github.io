@@ -70,3 +70,15 @@ jobs:
       - id: retry
         if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v5
+
+      # Confirm the live site is serving what this run just built.
+      - name: Check the live site updated
+        run: |
+          built=$(python -c "import json;print(json.load(open('site/data.json'))['generated'])")
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            live=$(curl -s "https://lords-inquiries.github.io/data.json?nocache=$RANDOM$i" | python -c "import sys,json;print(json.load(sys.stdin)['generated'])" || true)
+            echo "built=$built live=$live"
+            [ "$live" = "$built" ] && exit 0
+            sleep 30
+          done
+          echo "::warning::Live site still shows $live, expected $built"
