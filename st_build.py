@@ -246,9 +246,14 @@ def build(src, now):
     # Lords debates on committee reports
     debates = []
     try:
-        for r in src.hansard_debates("Science and Technology Committee Report", SINCE):
+        raw = []
+        for term in ("Science and Technology Committee Report", "Science and Technology Committee"):
+            raw += src.hansard_debates(term, SINCE)
+        for r in raw:
             title = pick(r, "title", default="")
-            if "science and technology committee report" not in title.lower():
+            if DEBUG:
+                log(f"  hansard: {day(pick(r, 'sittingDate'))} | {pick(r, 'debateSection')} | {title}")
+            if "science and technology committee" not in title.lower():
                 continue
             link = hansard_link(r)
             if link:
@@ -327,8 +332,6 @@ def build(src, now):
             best["deb"] = {"d": d["date"], "url": d["url"], "t": d["title"]}
 
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
-    if DEBUG:
-        check_links(reports)
     return {"generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "committee": COMMITTEE_NAME, "committeeId": COMMITTEE_ID, "reports": reports}
 
 
