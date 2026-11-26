@@ -265,8 +265,8 @@ footer p{max-width:86ch;margin:0 0 10px}
 <div class="controls" id="controls"><div class="wrap">
 <div class="crow first">
 <span class="ctl-label" id="arrlab">Arrange by</span>
-<div class="seg" role="group" aria-labelledby="arrlab"><button type="button" data-by="ch" aria-pressed="true">Chapter</button><button type="button" data-by="pri" aria-pressed="false">The committee’s six priorities</button></div>
-<label class="search"><span class="ctl-label">Highlight</span><input id="q" type="search" placeholder="Search the 75 paragraphs" autocomplete="off"></label>
+<div class="seg" role="group" aria-labelledby="arrlab"><button type="button" data-by="ch" aria-pressed="true">Chapter</button><button type="button" data-by="pri" aria-pressed="false" id="prilab">Priorities</button></div>
+<label class="search"><span class="ctl-label">Highlight</span><input id="q" type="search" placeholder="Search the paragraphs" autocomplete="off"></label>
 <button type="button" class="clear" id="clear" hidden>Clear highlight</button>
 </div>
 <div class="crow"><span class="ctl-label">Who must act</span><div class="chips" id="actorchips"></div></div>
@@ -361,7 +361,8 @@ $('#title').textContent=D.title;
 $('#lede').textContent='“'+D.finding.charAt(0).toUpperCase()+D.finding.slice(1)+'”';
 $('#pdflink').href=D.pdf;
 const daysTo=Math.round((Date.parse(D.gr_due+'T12:00:00Z')-Date.now())/864e5);
-$('#facts').innerHTML=`That is the central finding of the ${esc(D.committee)}. Its report makes <b>${N} numbered points</b>: ${N-nRec} conclusions about what it found and ${nRec} recommendations asking someone to act. ${esc(D.number)}, ${esc(D.paper)}, published ${fmt(D.published)}. `+(daysTo>0?`The Government is expected to reply by ${fmt(D.gr_due)}.`:`The Government was expected to reply by ${fmt(D.gr_due)}.`);
+$('#prilab').textContent=D.priorities_label||'Priorities';$('#q').placeholder=`Search the ${N} paragraphs`;
+$('#facts').innerHTML=`${D.finding_note?esc(D.finding_note):`That is the central finding of the ${esc(D.committee)}.`} Its report makes <b>${N} numbered points</b>: ${N-nRec} conclusions about what it found and ${nRec} recommendations asking someone to act. ${esc(D.number)}, ${esc(D.paper)}, published ${fmt(D.published)}. `+(D.gr?`The Government responded ${esc(D.gr.label)}${D.gr.url?` (<a href="${esc(D.gr.url)}">read the response</a>)`:''}.`:daysTo>0?`The Government is expected to reply by ${fmt(D.gr_due)}.`:`The Government was expected to reply by ${fmt(D.gr_due)}.`);
 document.title=D.title+': the conclusions and recommendations';
 
 /* ---------- controls ---------- */
@@ -406,7 +407,7 @@ function status(L){
   }else if(h.type==='topic'){
     const t=TOP[h.v];el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> mention ${esc(/^[A-Z]{2,}$/.test(t.name)?t.name:t.name.toLowerCase())} <span style="color:var(--muted)">(matching ${esc(t.words)})</span>.`;
   }else if(h.type==='pri'){
-    el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> sit under “${esc(PRI[h.v].title)}”${h.v==='other'?'':', one of the committee’s six priorities'}.`;
+    el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> sit under “${esc(PRI[h.v].title)}”${h.v==='other'?'':', '+esc(D.priority_phrase||'one of the committee’s priorities')}.`;
   }else{
     el.innerHTML=n?`<span class="dot"></span>“${esc(h.v)}” appears in <b>${n} of the ${N} paragraphs</b>.`:`No paragraph mentions “${esc(h.v)}”. Try a shorter word, or pick a topic.`;
   }
@@ -462,7 +463,7 @@ function layout(animate){
     b.style.transform=`translate(${g.x}px,${g.y}px)`;b.style.width=g.w+'px';b.style.height=g.h+'px';
     b.classList.toggle('l',g.first);b.classList.toggle('r',g.last);});
   if(!animate)requestAnimationFrame(()=>map.classList.remove('instant'));
-  $('#mapnote').textContent=st.by==='pri'?'The committee’s summary sets out six headline priorities (report pages 5 to 6). They cut across chapters. Which paragraph sits under which priority is our reading; five paragraphs fit none of them.':'';
+  $('#mapnote').textContent=st.by==='pri'?(D.priorities_note||''):'';
 }
 function paintMap(L){
   bands.forEach((b,i)=>{const n=i+1;b.classList.toggle('lit',!!L&&L.has(n));b.classList.toggle('dim',!!L&&!L.has(n))});
@@ -669,7 +670,7 @@ function readHash(){
 
 /* ---------- footer ---------- */
 $('#foot').innerHTML=`<p>Source: ${esc(D.committee)}, <a href="${esc(D.pdf)}"><cite>${esc(D.title)}</cite></a> (${esc(D.number)}, ${esc(D.paper)}), summary of conclusions and recommendations, checked against the paragraphs in the body of the report. Conclusions and recommendations are told apart as the report prints them: bold for conclusions, bold italic for recommendations. <a href="${esc(D.work)}">Inquiry page and evidence</a>.</p>
-<p>Who is asked to act, the topics and the grouping under the six priorities are our reading of the report’s wording. An unofficial tool, not a Parliament service. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+<p>Who is asked to act, the topics and the grouping under ${esc(D.priorities_short||'the priorities')} are our reading of the report’s wording. An unofficial tool, not a Parliament service. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
 <p><a href="../">The report in brief</a>. <a href="../data.json">Download the data (JSON)</a>. <a href="__ROOT__">Open House of Lords inquiries</a>.</p>`;
 
 /* ---------- start ---------- */

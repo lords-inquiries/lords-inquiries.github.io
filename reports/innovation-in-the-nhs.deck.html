@@ -782,7 +782,7 @@ hooks.medicine=(()=>{
   $('#pm-btns').innerHTML=M.map(m=>`<button type="button" data-id="${m.id}" aria-pressed="false">${esc(m.l)}</button>`).join('');
   const sel=id=>{const m=M.find(x=>x.id===id);svg.querySelectorAll('.mk').forEach(g=>g.classList.toggle('on',g.dataset.id===id));
     $$('#pm-btns button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));
-    cap.innerHTML=esc(m.t)+` (<a href="${D.pdf}#page=${D.para_pages[m.p[0]]}">paragraphs ${m.p[0]}</a> and <a href="${D.pdf}#page=${D.para_pages[m.p[1]]}">${m.p[1]}</a>).`};
+    cap.innerHTML=esc(m.t.replace(/\.$/,''))+` (<a href="${D.pdf}#page=${D.para_pages[m.p[0]]}">paragraphs ${m.p[0]}</a> and <a href="${D.pdf}#page=${D.para_pages[m.p[1]]}">${m.p[1]}</a>).`};
   svg.addEventListener('click',e=>{const g=e.target.closest('.mk');if(g)sel(g.dataset.id)});
   $('#pm-btns').addEventListener('click',e=>{const b=e.target.closest('button');if(b)sel(b.dataset.id)});
   sel('pgx');
@@ -846,7 +846,7 @@ hooks.ai=(()=>{
   let cur=0,timer=0,touched=false;
   const sel=id=>{const s=S.find(x=>x.id===id);cur=S.indexOf(s);svg.querySelectorAll('[data-id]').forEach(g=>g.classList.toggle('on',g.dataset.id===id));
     $$('#ai-btns button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));
-    cap.innerHTML=esc(s.t)+' ('+s.p.map((n,i)=>`<a href="${D.pdf}#page=${D.para_pages[n]}">${i?'':'paragraph'+(s.p.length>1?'s ':' ')}${n}</a>`).join(' and ')+').'};
+    cap.innerHTML=esc(s.t.replace(/\.$/,''))+' ('+s.p.map((n,i)=>`<a href="${D.pdf}#page=${D.para_pages[n]}">${i?'':'paragraph'+(s.p.length>1?'s ':' ')}${n}</a>`).join(' and ')+').'};
   const pick=id=>{touched=true;clearInterval(timer);sel(id)};
   svg.addEventListener('click',e=>{const g=e.target.closest('[data-id]');if(g)pick(g.dataset.id)});
   $('#ai-btns').addEventListener('click',e=>{const b=e.target.closest('button');if(b)pick(b.dataset.id)});

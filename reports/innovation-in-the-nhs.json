@@ -10,6 +10,10 @@
  "page_offset": 2,
  "work": "https://committees.parliament.uk/work/9659/innovation-in-the-nhs-personalised-medicine-and-ai/",
  "finding": "the NHS does not have an innovation problem, but it struggles to adopt proven innovations effectively.",
+ "priorities_label": "The committee’s six priorities",
+ "priorities_short": "the six priorities",
+ "priority_phrase": "one of the committee’s six priorities",
+ "priorities_note": "The committee’s summary sets out six headline priorities (report pages 5 to 6). They cut across chapters. Which paragraph sits under which priority is our reading; five paragraphs fit none of them.",
  "chapters": [
   {
    "n": 2,

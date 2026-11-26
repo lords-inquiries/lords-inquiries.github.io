@@ -1,0 +1,1362 @@
+{
+ "title": "Rebuilding forensic science for criminal justice: an urgent need",
+ "committee": "House of Lords Science and Technology Committee",
+ "number": "3rd Report of Session 2024–26",
+ "paper": "HL Paper 256",
+ "session": "2024-26",
+ "published": "2026-02-17",
+ "gr_due": "2026-04-17",
+ "gr": {
+  "label": "in April 2026",
+  "url": "https://committees.parliament.uk/publications/52720/documents/293826/default/"
+ },
+ "pdf": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/256/256.pdf",
+ "page_offset": 2,
+ "work": "https://committees.parliament.uk/work/9424/forensic-science-followup/",
+ "finding": "forensic science is not working for anyone.",
+ "finding_note": "The committee’s report opens with these words from the forensic scientist Professor Angela Gallop, and says its inquiry “found little to contradict it”.",
+ "priorities_label": "Six themes",
+ "priorities_short": "the six themes",
+ "priority_phrase": "one of six themes",
+ "priorities_note": "Five themes follow the headline recommendations in the committee’s summary (report page 6); the sixth, digital forensics and AI, is a chapter of the report. Which paragraph sits under which theme is our reading; three paragraphs on responsibility for the system fit none of them.",
+ "chapters": [
+  {
+   "n": 2,
+   "title": "Responsibility for the forensic science system"
+  },
+  {
+   "n": 3,
+   "title": "Provision of forensic science services"
+  },
+  {
+   "n": 4,
+   "title": "Forensic science fit for the future"
+  },
+  {
+   "n": 5,
+   "title": "Oversight, responsibility and structural issues"
+  }
+ ],
+ "sections": [
+  {
+   "id": 1,
+   "ch": 2,
+   "h1": "Responsibility for the forensic science system",
+   "h2": ""
+  },
+  {
+   "id": 2,
+   "ch": 3,
+   "h1": "Forensic science market",
+   "h2": ""
+  },
+  {
+   "id": 3,
+   "ch": 3,
+   "h1": "In-house provision of forensic science",
+   "h2": ""
+  },
+  {
+   "id": 4,
+   "ch": 3,
+   "h1": "Equality of arms and forensic science in the courtroom",
+   "h2": ""
+  },
+  {
+   "id": 5,
+   "ch": 3,
+   "h1": "Equality of arms and forensic science in the courtroom",
+   "h2": "Streamlined forensic reporting"
+  },
+  {
+   "id": 6,
+   "ch": 3,
+   "h1": "Risks to ‘non-commercial’ specialisms",
+   "h2": ""
+  },
+  {
+   "id": 7,
+   "ch": 3,
+   "h1": "Evidence storage and handling",
+   "h2": ""
+  },
+  {
+   "id": 8,
+   "ch": 4,
+   "h1": "Research and development in forensic science",
+   "h2": ""
+  },
+  {
+   "id": 9,
+   "ch": 4,
+   "h1": "Digital forensics and AI",
+   "h2": ""
+  },
+  {
+   "id": 10,
+   "ch": 4,
+   "h1": "Training and retention of forensic scientists",
+   "h2": ""
+  },
+  {
+   "id": 11,
+   "ch": 5,
+   "h1": "Forensic science regulation and accreditation",
+   "h2": "The evolving role of the Forensic Science Regulator"
+  },
+  {
+   "id": 12,
+   "ch": 5,
+   "h1": "Forensic science regulation and accreditation",
+   "h2": "Accreditation costs"
+  },
+  {
+   "id": 13,
+   "ch": 5,
+   "h1": "A National Institute for Forensic Science",
+   "h2": ""
+  }
+ ],
+ "priorities": [
+  {
+   "id": "service",
+   "title": "An independent national forensic service",
+   "summary": "Keep the planned national forensic service independent of the police and set it up as a priority; meanwhile, open police in-house forensics to proper scrutiny."
+  },
+  {
+   "id": "access",
+   "title": "Equality of arms, and saving at-risk specialisms",
+   "summary": "Fair pay and a register of experts for the defence, better streamlined reports, and a real plan to keep specialisms such as fibres and footprints alive."
+  },
+  {
+   "id": "market",
+   "title": "A stable, competitive market",
+   "summary": "A plan to stabilise a near-monopoly market, contracts that pay a fair price and bring in smaller firms, and a review of accreditation costs."
+  },
+  {
+   "id": "archive",
+   "title": "A national archive for evidence",
+   "summary": "Take long-term evidence storage away from 43 police forces and reopen the Forensic Archive for new cases, without waiting for police reform."
+  },
+  {
+   "id": "institute",
+   "title": "A National Institute for Forensic Science",
+   "summary": "Set one up now to coordinate research, training and expert advice, keep rare expertise alive and assess national capacity."
+  },
+  {
+   "id": "digital",
+   "title": "Digital forensics and AI",
+   "summary": "A Government-funded research programme for digital evidence, approved tools for AI that courts can trust, and help with deepfakes."
+  },
+  {
+   "id": "other",
+   "title": "Responsibility for the system",
+   "summary": "Paragraphs on who is responsible for forensic science, which the summary’s headline list does not cover."
+  }
+ ],
+ "actors": [
+  {
+   "id": "gov",
+   "name": "The Government",
+   "full": "The Government"
+  },
+  {
+   "id": "homeoffice",
+   "name": "Home Office",
+   "full": "Home Office"
+  },
+  {
+   "id": "moj",
+   "name": "Ministry of Justice",
+   "full": "Ministry of Justice"
+  },
+  {
+   "id": "police",
+   "name": "Police forces",
+   "full": "Police forces"
+  },
+  {
+   "id": "nps",
+   "name": "National Police Service",
+   "full": "National Police Service (planned)"
+  },
+  {
+   "id": "nfs",
+   "name": "National forensic service",
+   "full": "National forensic service (planned)"
+  },
+  {
+   "id": "nifs",
+   "name": "National Institute",
+   "full": "National Institute for Forensic Science (proposed)"
+  },
+  {
+   "id": "fsr",
+   "name": "Forensic Science Regulator",
+   "full": "Forensic Science Regulator"
+  },
+  {
+   "id": "laa",
+   "name": "Legal Aid Agency",
+   "full": "Legal Aid Agency"
+  },
+  {
+   "id": "cps",
+   "name": "CPS",
+   "full": "Crown Prosecution Service"
+  },
+  {
+   "id": "ukri",
+   "name": "UKRI",
+   "full": "UK Research and Innovation"
+  },
+  {
+   "id": "dsit",
+   "name": "DSIT",
+   "full": "Department for Science, Innovation and Technology"
+  },
+  {
+   "id": "ofs",
+   "name": "Office for Students",
+   "full": "Office for Students"
+  }
+ ],
+ "topics": [
+  {
+   "id": "digital",
+   "name": "Digital evidence",
+   "re": "digital|deepfake|cloud",
+   "flags": "i",
+   "words": "digital, deepfakes, cloud"
+  },
+  {
+   "id": "ai",
+   "name": "AI",
+   "re": "\\bAI\\b|artificial intelligence|machine learning|algorithm",
+   "flags": "",
+   "words": "AI, machine learning, algorithms"
+  },
+  {
+   "id": "police",
+   "name": "Police forces",
+   "re": "in-house|in house|police forces|National Police Chiefs",
+   "flags": "i",
+   "words": "police forces, in-house, NPCC"
+  },
+  {
+   "id": "independence",
+   "name": "Independence and bias",
+   "re": "independen|\\bbias|sterile corridor",
+   "flags": "i",
+   "words": "independence, bias, sterile corridor"
+  },
+  {
+   "id": "market",
+   "name": "The market",
+   "re": "market|monopol|Eurofins|procure|contract|SMEs?\\b|small and medium",
+   "flags": "i",
+   "words": "market, monopoly, procurement, contracts, SMEs"
+  },
+  {
+   "id": "defence",
+   "name": "The defence",
+   "re": "defence|equality of arms|legal aid",
+   "flags": "i",
+   "words": "defence, equality of arms, legal aid"
+  },
+  {
+   "id": "evidence",
+   "name": "Storing evidence",
+   "re": "storage|stored|archiv|exhibit|retaining evidence|evidence retention",
+   "flags": "i",
+   "words": "storage, archive, exhibits, retaining evidence"
+  },
+  {
+   "id": "regulation",
+   "name": "Regulation and accreditation",
+   "re": "Regulator|regulat|accredit|UKAS",
+   "flags": "i",
+   "words": "Regulator, regulation, accreditation, UKAS"
+  },
+  {
+   "id": "research",
+   "name": "Research",
+   "re": "research|R&D",
+   "flags": "i",
+   "words": "research, R&D"
+  },
+  {
+   "id": "training",
+   "name": "Training and skills",
+   "re": "training|trainee|workforce|skill|degree|career|retire",
+   "flags": "i",
+   "words": "training, workforce, skills, degrees"
+  },
+  {
+   "id": "money",
+   "name": "Funding and costs",
+   "re": "\\bfund|budget|\\bcost|price|\\bfees?\\b|resourc|\\brates?\\b|£",
+   "flags": "i",
+   "words": "funding, budgets, costs, prices, fees, rates"
+  },
+  {
+   "id": "miscarriage",
+   "name": "Miscarriages of justice",
+   "re": "miscarriage",
+   "flags": "i",
+   "words": "miscarriages of justice"
+  }
+ ],
+ "recs": [
+  {
+   "n": 1,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "con",
+   "text": "The issues identified in our previous inquiry have largely got worse. Forensic science is at serious risk of failing the criminal justice system. At the heart of these issues there is muddled and divided responsibility for capacity, resilience, quality, and fairness in forensic science. There is still a strong sense that no one takes overall responsibility for the forensic science system, in particular, ensuring sufficient funding.",
+   "para": 28,
+   "page": 18,
+   "to": [],
+   "words": 66
+  },
+  {
+   "n": 2,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "con",
+   "text": "Our previous inquiry encouraged better joint working between the Home Office and Ministry of Justice. Despite assurances at the time that this would be fixed, structures set up then have not been maintained. Forensic science should belong to and function on behalf of the whole criminal justice system, not just the Home Office.",
+   "para": 29,
+   "page": 18,
+   "to": [],
+   "words": 53
+  },
+  {
+   "n": 3,
+   "ch": 2,
+   "sec": 1,
+   "pri": "service",
+   "kind": "con",
+   "text": "The proposed creation of a new National Police Service to deliver forensics on a national basis offers a much needed opportunity for reform. However, progress has been slow: it was first announced in November 2024 but the Policing Reform White Paper was only published in January 2026. The proposed consolidation of forces will not come into full effect until 2034. Action to fix the forensic science system cannot wait that long.",
+   "para": 30,
+   "page": 19,
+   "to": [],
+   "words": 71
+  },
+  {
+   "n": 4,
+   "ch": 2,
+   "sec": 1,
+   "pri": "service",
+   "kind": "con",
+   "text": "If current governance arrangements were adequate, we would not have seen the stagnation or deterioration of the issues we previously identified. The Government has acknowledged that reform is needed and the Policing Reform White Paper is a welcome first step towards fixing the system, in particular by providing forensics on a national basis. But it is only a first step—further details, and action, are needed urgently to address the crisis facing forensic science, irrespective of the pace at which wider police reform happens.",
+   "para": 31,
+   "page": 19,
+   "to": [],
+   "words": 83
+  },
+  {
+   "n": 5,
+   "ch": 2,
+   "sec": 1,
+   "pri": "service",
+   "kind": "rec",
+   "text": "For reasons explored in greater depth later in this report, we recommend that the national provision of forensic science envisaged under the National Police Service is given sufficient separation from policing to ensure its independence, akin to the “sterile corridor” in place in Scotland. We refer to this as a “national forensic service”. We also advocate the immediate creation of a National Institute for Forensic Science to oversee areas such as research and development and training (see Chapter 5).",
+   "para": 32,
+   "page": 19,
+   "to": [],
+   "words": 79
+  },
+  {
+   "n": 6,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "rec",
+   "text": "The abdication of responsibility for forensic science must end. A Minister in the Home Office and a Minister in the Ministry of Justice should have forensic science explicitly within their remit and they should work together to safeguard all aspects of the system, regardless of institutional arrangements.",
+   "para": 33,
+   "page": 19,
+   "to": [
+    "homeoffice",
+    "moj"
+   ],
+   "words": 47
+  },
+  {
+   "n": 7,
+   "ch": 3,
+   "sec": 2,
+   "pri": "market",
+   "kind": "con",
+   "text": "Our 2019 report warned that the forensic science market was at risk of becoming dysfunctional. This has now happened. Of the three major providers operating in 2018, one has been acquired (Cellmark by Eurofins), and one, Key Forensic Services, has been through and out of administration.",
+   "para": 54,
+   "page": 24,
+   "to": [],
+   "words": 46
+  },
+  {
+   "n": 8,
+   "ch": 3,
+   "sec": 2,
+   "pri": "market",
+   "kind": "con",
+   "text": "The commercial market is a now near-monopoly, with more than 80% of external forensic science services provided by Eurofins. The market is clearly not functioning well; forensic science companies have often been loss-making or operated with very thin margins. The barriers to entry for new businesses are extremely high. The near-monopoly status poses its own risks: for the range and quality of service provision; for the stability of forensic science in the UK should Eurofins exit the market; and for the Regulator who may be unwilling to impose sanctions on a near-monopoly provider.",
+   "para": 55,
+   "page": 24,
+   "to": [],
+   "words": 93
+  },
+  {
+   "n": 9,
+   "ch": 3,
+   "sec": 2,
+   "pri": "market",
+   "kind": "con",
+   "text": "In 2019 we recommended that the Forensic Science Regulator role be expanded and resourced to have oversight of the market. This has not happened. It is unclear that anyone takes overall responsibility for ensuring a healthy market.",
+   "para": 56,
+   "page": 25,
+   "to": [],
+   "words": 37
+  },
+  {
+   "n": 10,
+   "ch": 3,
+   "sec": 2,
+   "pri": "market",
+   "kind": "rec",
+   "text": "The forensic science commercial market is in urgent need of reform, but the Policing Reform White Paper did not address it and leaves its future unclear. The Government should assess the concentration risks in the market due to the near-monopoly of Eurofins, and introduce measures to stabilise the existing provision, lower barriers to entry for new providers, and ensure that contracts from police forces or a National Police Service pay a fair price to the providers.",
+   "para": 57,
+   "page": 25,
+   "to": [
+    "gov"
+   ],
+   "words": 76
+  },
+  {
+   "n": 11,
+   "ch": 3,
+   "sec": 2,
+   "pri": "market",
+   "kind": "rec",
+   "text": "Contract design should be modified to incentivise small and medium-sized enterprises (SMEs) to participate, for example with specialised procurement for niche areas or ring-fenced funding for SMEs. The Government needs to set out the long-term plan for the market in a reformed system, decide who takes overall responsibility for resilience and oversight of the market and provide appropriate resources to exercise this function.",
+   "para": 58,
+   "page": 25,
+   "to": [
+    "gov"
+   ],
+   "words": 63
+  },
+  {
+   "n": 12,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "con",
+   "text": "There is a clear trend for more in-house provision of forensic science services by police forces. This raises concerns about oversight, quality, transparency, inconsistency and fragmentation between the 43 police forces in England and Wales. As individual police cases are increasingly fragmented between in-house capacity and external capacity, there are risks that forensic science becomes commoditised, preventing in-depth, end-to-end, scientifically consistent analysis.",
+   "para": 79,
+   "page": 30,
+   "to": [],
+   "words": 62
+  },
+  {
+   "n": 13,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "con",
+   "text": "Police organisations like the National Police Chiefs’ Council face an unenviable task in trying to coordinate approaches from 43 forces in England and Wales, often through voluntary guidance, and do not seem to have been successful in terms of addressing the risks. We welcome the proposed consolidation of police forces and the creation of the National Police Service to deliver forensics on a national basis, which may partly address this duplication and fragmentation, but questions of oversight and standards will remain.",
+   "para": 80,
+   "page": 30,
+   "to": [],
+   "words": 81
+  },
+  {
+   "n": 14,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "rec",
+   "text": "There is a need for much more transparency around in-house forensic provision: The Home Office should require forces to publish standardised data on their in-house forensics capacities, accreditation status and timeline for achieving accreditation, and any quality incidents. In-house and external forensics expenditure should be individual line items on budgets. This can be done before other reforms take place. Police forces should proactively cooperate with the Forensic Science Regulator to enable audits of their in-house forensics.",
+   "para": 81,
+   "page": 30,
+   "to": [
+    "homeoffice",
+    "police"
+   ],
+   "words": 76
+  },
+  {
+   "n": 15,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "rec",
+   "text": "There is a need to address the “commoditisation” of forensic science. The Home Office should encourage, in procurement and operation models, holistic interpretation of forensic evidence from crime scene to court, not just the cheapest or easiest tests to perform. In particular, the exhibit submission policy from police forces to external forensic science providers urgently needs to be standardised.",
+   "para": 82,
+   "page": 30,
+   "to": [
+    "homeoffice"
+   ],
+   "words": 59
+  },
+  {
+   "n": 16,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "con",
+   "text": "There is also deep concern around a lack of independence or unconscious bias in whether, or how, specific tests are conducted or interpreted. There is a strong argument that, in the long run, forensic science provision should be taken out of the police service as far as is possible—as we did not hear convincing evidence that sufficient safeguards are in place.",
+   "para": 83,
+   "page": 31,
+   "to": [],
+   "words": 61
+  },
+  {
+   "n": 17,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "rec",
+   "text": "We welcome the Government’s plan to consolidate forensic services into a single service. It provides an opportunity to improve oversight, quality, transparency, and consistency. Although the police will always need to be involved in commissioning and organising forensic science, forensic science should maintain its independence from the police.",
+   "para": 84,
+   "page": 31,
+   "to": [
+    "gov"
+   ],
+   "words": 48
+  },
+  {
+   "n": 18,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "rec",
+   "text": "In its creation of a national forensics service, the Government should maintain its independence from the police. One way to do this would be to follow the Scottish model of creating a “sterile corridor” between forensic science and the police. This will take time, but we believe it can be accomplished more quickly than the consolidation of police forces and should be embarked upon with urgency.",
+   "para": 85,
+   "page": 31,
+   "to": [
+    "gov"
+   ],
+   "words": 66
+  },
+  {
+   "n": 19,
+   "ch": 3,
+   "sec": 3,
+   "pri": "service",
+   "kind": "rec",
+   "text": "In the meantime, it is imperative that clear, enforceable standards and as much external scrutiny as possible are applied to in-house forensic science provision, in particular regarding what evidence is collected at crime scenes, which tests are conducted, and how the results are interpreted. Guidance from the National Police Chiefs’ Council alone is unlikely to be sufficient.",
+   "para": 86,
+   "page": 31,
+   "to": [],
+   "words": 57
+  },
+  {
+   "n": 20,
+   "ch": 3,
+   "sec": 4,
+   "pri": "access",
+   "kind": "con",
+   "text": "There is grave concern about equality of arms for forensic science in the courtroom. Defence scrutiny provides crucial external checks on bad forensic science practice and bias. Yet the defence community of forensic experts is underfunded, fragmented, varying in quality, small in scale, and it faces significant administrative and financial barriers to taking part in many trials. This community plays a vital role in ensuring justice is done, but it is being allowed to wither away, risking miscarriages of justice.",
+   "para": 102,
+   "page": 34,
+   "to": [],
+   "words": 80
+  },
+  {
+   "n": 21,
+   "ch": 3,
+   "sec": 4,
+   "pri": "access",
+   "kind": "con",
+   "text": "The process for defence solicitors to obtain forensic expertise is difficult and labour intensive. Legal aid rates for defence expertise remain too low, and lower than the Crown Prosecution Service itself pays for equivalent expertise. The Minister assured us that current legal aid rates can support the demand for defence experts, but the size of the defence expert market will depend on the legal aid rate. The true metric for success is whether bad forensic science is challenged and miscarriages of justice avoided.",
+   "para": 103,
+   "page": 34,
+   "to": [],
+   "words": 83
+  },
+  {
+   "n": 22,
+   "ch": 3,
+   "sec": 4,
+   "pri": "access",
+   "kind": "rec",
+   "text": "The fragility of the defence expert ecosystem is a threat to justice that must be addressed. The Legal Aid Agency urgently needs to review its rates for forensic scientists to facilitate equality of arms. At a minimum, they should be equivalent to the rates the prosecution pays and be paid promptly.",
+   "para": 104,
+   "page": 34,
+   "to": [
+    "laa"
+   ],
+   "words": 51
+  },
+  {
+   "n": 23,
+   "ch": 3,
+   "sec": 4,
+   "pri": "access",
+   "kind": "rec",
+   "text": "Accreditation is likely to be impractical for solo or small defence practitioners, but a National Institute for Forensic Science (see Chapter 5) could maintain a register of approved experts which can be made available to the defence. These could operate under standards set by the Forensic Science Regulator.",
+   "para": 105,
+   "page": 35,
+   "to": [
+    "nifs",
+    "fsr"
+   ],
+   "words": 48
+  },
+  {
+   "n": 24,
+   "ch": 3,
+   "sec": 4,
+   "pri": "access",
+   "kind": "rec",
+   "text": "The Legal Aid Agency and Ministry of Justice should monitor the availability and use of defence forensic experts, as well as promptness of payment, as part of determining whether the rates paid to them are adequate.",
+   "para": 106,
+   "page": 35,
+   "to": [
+    "laa",
+    "moj"
+   ],
+   "words": 36
+  },
+  {
+   "n": 25,
+   "ch": 3,
+   "sec": 5,
+   "pri": "access",
+   "kind": "con",
+   "text": "Streamlined forensic reporting began as a well-intentioned cost-cutting measure but now risks providing insufficient scientific detail to enable the defence to challenge it in court.",
+   "para": 113,
+   "page": 36,
+   "to": [],
+   "words": 25
+  },
+  {
+   "n": 26,
+   "ch": 3,
+   "sec": 5,
+   "pri": "access",
+   "kind": "rec",
+   "text": "The Crown Prosecution Service and Ministry of Justice should investigate and improve the process of Streamlined Forensic Reporting, with forensic scientists at a minimum supervising and counter signing the production of these reports. Minimum standards for SFRs should ensure that they include details of which tests have been undertaken and by whom, as well as an outline of the scientific basis of the tests and any limitations in the findings.",
+   "para": 114,
+   "page": 36,
+   "to": [
+    "cps",
+    "moj"
+   ],
+   "words": 70
+  },
+  {
+   "n": 27,
+   "ch": 3,
+   "sec": 6,
+   "pri": "access",
+   "kind": "con",
+   "text": "A number of forensic science specialisms, particularly those categorised as ‘marks and traces’ (such as fibres and footprints) as well as some biological and forensic toxicology specialisms, are now at severe risk, having declined over many years. The demand for these services has fallen due to changing police policy to the point where they are unlikely to be commercially viable. External forensic science providers may be unable to afford to retain them, nor can we rely on in house provision as it currently exists to consistently apply and maintain this expertise.",
+   "para": 128,
+   "page": 39,
+   "to": [],
+   "words": 91
+  },
+  {
+   "n": 28,
+   "ch": 3,
+   "sec": 6,
+   "pri": "access",
+   "kind": "con",
+   "text": "However, there will continue to be cases which require this specialist expertise. There is a clear risk of avoidable miscarriages of justice in England and Wales from the loss of this “non-commercial” expertise. Despite warning of this issue in our previous inquiry, and promises to put a plan in place to preserve these disciplines, it is still unclear that there is any serious plan to maintain this vital expertise.",
+   "para": 129,
+   "page": 39,
+   "to": [],
+   "words": 69
+  },
+  {
+   "n": 29,
+   "ch": 3,
+   "sec": 6,
+   "pri": "access",
+   "kind": "rec",
+   "text": "Forensic science reform must result in a credible plan for the preservation of specialisms which are now at a crisis point. This could be done through procurement arrangements which include retainers to preserve this expertise, or through a National Institute for Forensic Science which acts as a hub for specialist expertise that is infrequently used and would otherwise be lost, or through the new national forensic service employing these experts to review evidence and cases on a national basis. It is time to stop talking about this and do it.",
+   "para": 130,
+   "page": 39,
+   "to": [],
+   "words": 90
+  },
+  {
+   "n": 30,
+   "ch": 3,
+   "sec": 7,
+   "pri": "archive",
+   "kind": "con",
+   "text": "The current fragmented national approach to evidence storage is a severe risk to the criminal justice system and cannot be allowed to continue. Missing and damaged evidence is collapsing criminal prosecutions and risks preventing re-testing and appeals. Since the closure of the Forensic Science Service, responsibility for retaining evidence has been dispersed across 43 police forces and multiple forensic science providers, producing widely variable practice, inconsistent standards, guidance that is not always followed, and loss or improper storage of exhibits. This responsibility has fallen to police who are often neither well-equipped nor resourced to carry it out. The current system is fragmented and likely to be more expensive and less effective than a national archive. The Forensic Archive that retains pre-2012 evidence has already had to step in on an emergency basis to store evidence from collapsed forensic science providers.",
+   "para": 146,
+   "page": 43,
+   "to": [],
+   "words": 140
+  },
+  {
+   "n": 31,
+   "ch": 3,
+   "sec": 7,
+   "pri": "archive",
+   "kind": "rec",
+   "text": "The burden of long-term evidence retention and storage should be taken away from the police and given to an independent national storage capacity. The Government should reopen the Forensic Archive. It should be empowered and resourced to routinely take new casework, handle transfers from police forces and providers, and deal with a higher volume of retrieval. The Archive could make use of regional hubs for storage, in particular where forces have been able to invest in adequate storage facilities.",
+   "para": 147,
+   "page": 43,
+   "to": [
+    "gov"
+   ],
+   "words": 79
+  },
+  {
+   "n": 32,
+   "ch": 3,
+   "sec": 7,
+   "pri": "archive",
+   "kind": "rec",
+   "text": "While this is being set up, and for short-term operational storage of evidence, police forces should ensure they employ forensic archivists who can ensure that storage is to a high standard. Non-binding guidance from the National Police Chiefs Council is unlikely to be sufficient to ensure consistent storage across the country; the new National Police Service should set standards and inspect how evidence is stored and retained by forces.",
+   "para": 148,
+   "page": 43,
+   "to": [
+    "police",
+    "nps"
+   ],
+   "words": 69
+  },
+  {
+   "n": 33,
+   "ch": 4,
+   "sec": 8,
+   "pri": "institute",
+   "kind": "con",
+   "text": "There is a lack of coordination and funding for forensic science R&D. Neither private companies nor the police have the budgets to invest substantially in research and development. This risks leaving forensic science services ill equipped for an age of rapidly developing technology. Forensic science has been described as a “magpie” discipline which relies on interdisciplinary research to apply new techniques from other areas of science. When research and development is carried out, misaligned priorities, such as a mismatch between police demand for forensic services and the supply of new techniques, risks wasted effort.",
+   "para": 165,
+   "page": 47,
+   "to": [],
+   "words": 94
+  },
+  {
+   "n": 34,
+   "ch": 4,
+   "sec": 8,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "There needs to be a long-term plan for the funding of research and development in forensic science, as well as the diffusion of novel techniques and best practice. A National Institute for Forensic Science could, in coordination with forensic service providers, police, criminal justice experts and academics, develop research priorities based on capabilities that would better serve criminal justice.",
+   "para": 166,
+   "page": 47,
+   "to": [
+    "nifs"
+   ],
+   "words": 59
+  },
+  {
+   "n": 35,
+   "ch": 4,
+   "sec": 8,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "Cutting-edge interdisciplinary and applied research should be supported by UKRI, either through funding for research at a new National Institute of Forensic Science, or through specific grants for that purpose. The Government’s reforms to training the policing workforce should include greater training in newly emerging forensic science specialisms.",
+   "para": 167,
+   "page": 47,
+   "to": [
+    "ukri",
+    "gov"
+   ],
+   "words": 48
+  },
+  {
+   "n": 36,
+   "ch": 4,
+   "sec": 8,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "Research and development in forensic science benefits FSPs and police, and is a public good, but there is systematic underinvestment: An innovation levy, ring-fenced funding from the Home Office’s budget, or support from DSIT’s Missions funds (Safer Streets) could correct this.",
+   "para": 168,
+   "page": 47,
+   "to": [
+    "homeoffice",
+    "dsit"
+   ],
+   "words": 41
+  },
+  {
+   "n": 37,
+   "ch": 4,
+   "sec": 9,
+   "pri": "digital",
+   "kind": "con",
+   "text": "Digital forensics is a growing area of concern. We highlighted the problems with the volume of such evidence, and the forensic science sector’s ability to process, analyse and store it, in our 2019 report, recommending a substantial programme of research into digital forensics. The situation since then has barely improved, with backlogs still undermining timely justice.",
+   "para": 203,
+   "page": 53,
+   "to": [],
+   "words": 56
+  },
+  {
+   "n": 38,
+   "ch": 4,
+   "sec": 9,
+   "pri": "digital",
+   "kind": "con",
+   "text": "The police are expanding their use of cloud storage, but consistency is needed in how digital forensic evidence is stored and analysed. The great majority of digital forensics work is handled in-house by the police. As we have seen with forensics more generally, this raises concerns around accreditation, regulation, and oversight.",
+   "para": 204,
+   "page": 54,
+   "to": [],
+   "words": 51
+  },
+  {
+   "n": 39,
+   "ch": 4,
+   "sec": 9,
+   "pri": "digital",
+   "kind": "con",
+   "text": "Since our 2019 report, AI has developed rapidly. Generative AI presents an increasing challenge to the reliability of digital evidence: deepfake images and other data are increasingly difficult to detect. This will be a challenge for investigators, but also for courts: judges, counsel and jurors will all need to be equipped and assisted in understanding the evidential reliability of such material.",
+   "para": 205,
+   "page": 54,
+   "to": [],
+   "words": 61
+  },
+  {
+   "n": 40,
+   "ch": 4,
+   "sec": 9,
+   "pri": "digital",
+   "kind": "con",
+   "text": "AI is also a potential means of analysing huge volumes of data. However, this needs to be done reliably, fairly, and in a trusted way, something which current AI models struggle with to the standards the criminal justice system demands. We were unconvinced that the current policing and criminal justice system is sufficiently well-equipped to make the best use of these technologies, nor is the market well-positioned to allow new providers to innovate.",
+   "para": 206,
+   "page": 54,
+   "to": [],
+   "words": 73
+  },
+  {
+   "n": 41,
+   "ch": 4,
+   "sec": 9,
+   "pri": "digital",
+   "kind": "rec",
+   "text": "There is clearly an urgent need for a research and development programme, funded by the Government, to address multiple challenges associated with digital evidence, including how to store such evidence, how to undertake trusted analysis of digital forensic data, and how to manage emerging threats from deepfake images. As in many other policy areas, regulation and standards for the use of AI in forensics lag well behind the technology.",
+   "para": 207,
+   "page": 54,
+   "to": [
+    "gov"
+   ],
+   "words": 69
+  },
+  {
+   "n": 42,
+   "ch": 4,
+   "sec": 9,
+   "pri": "digital",
+   "kind": "rec",
+   "text": "We welcome plans in the White Paper to develop AI capabilities, along with £115 million of new funding. It is unclear how much of this funding will be spent strictly on forensics. This should be clarified. The new centralised forensics function should build national capacity in this area, providing guidance and approved software, algorithms, and procedures, for the storage and analysis of digital forensic data and use of AI. These should be developed in coordination with the judicial system to ensure that the procedures are trusted and explainable for use in court. There will also need to be substantial training for officers involved in commissioning and using AI tools to understand their capabilities, limitations and risks.",
+   "para": 208,
+   "page": 54,
+   "to": [
+    "gov",
+    "nfs"
+   ],
+   "words": 116
+  },
+  {
+   "n": 43,
+   "ch": 4,
+   "sec": 10,
+   "pri": "institute",
+   "kind": "con",
+   "text": "There are concerns over the training of the next generation of forensic scientists and the retention of those that already exist; this becomes especially acute as experts trained in the former Forensic Science Service begin to retire. In particular, holistic, crime-scene investigation exposure, and end-to-end forensic science from crime scene to courtroom, is needed, but this practical on-the-job training is happening less often.",
+   "para": 216,
+   "page": 55,
+   "to": [],
+   "words": 63
+  },
+  {
+   "n": 44,
+   "ch": 4,
+   "sec": 10,
+   "pri": "institute",
+   "kind": "con",
+   "text": "Witnesses raised concerns about the inadequacy of some forensic science undergraduate degrees. There is a concern many degrees might be training people for jobs that do not exist given extreme budget constraints in the area and the lack of clear career pathways. When combined with structural issues in how forensic science is provided, the risk is a ‘de-skilling’ of forensic scientists from holistic, expert scientific investigators to providers of commodified tests, to the detriment of justice.",
+   "para": 217,
+   "page": 56,
+   "to": [],
+   "words": 76
+  },
+  {
+   "n": 45,
+   "ch": 4,
+   "sec": 10,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "There is a need to provide quality training for the next generation of forensic scientists. Police forces should, where appropriate, facilitate trainee forensic scientists to follow the progress of individual cases to encourage holistic, end-to-end investigation, from crime scene to courtroom. The Office for Students should review forensic science courses, in particular their quality and the information made available to students about their job prospects, as it is a longstanding area of oversupply. A National Institute for Forensic Science, together with the proposed national forensics service and training function in the National Police Service, could coordinate key training in core methods and novel techniques and bring together forensic science providers, academics, and police forces.",
+   "para": 218,
+   "page": 56,
+   "to": [
+    "police",
+    "ofs",
+    "nifs"
+   ],
+   "words": 114
+  },
+  {
+   "n": 46,
+   "ch": 4,
+   "sec": 10,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "As part of the Government’s renewed workforce and training plan, policing authorities should improve the quality of education in forensic science for all officers. They should seek to broaden the range of career paths that allow the scientifically trained to become forensic scientists.",
+   "para": 219,
+   "page": 56,
+   "to": [
+    "police"
+   ],
+   "words": 43
+  },
+  {
+   "n": 47,
+   "ch": 5,
+   "sec": 11,
+   "pri": "service",
+   "kind": "con",
+   "text": "Forensic science regulation has undergone significant change with the Regulator’s new statutory powers. Well-regulated forensic science is essential for criminal justice, but introducing regulation and increasing requirements for accreditation without taking into account the burden of compliance could undermine the market.",
+   "para": 250,
+   "page": 63,
+   "to": [],
+   "words": 41
+  },
+  {
+   "n": 48,
+   "ch": 5,
+   "sec": 11,
+   "pri": "service",
+   "kind": "rec",
+   "text": "The cost of compliance with regulation should be taken into account in the prices paid by police, the Home Office, and the Ministry of Justice for forensic science. The Forensic Science Regulator will need more resources to enable it to inspect and monitor in-house provision of forensic services, to conduct investigations, to assist providers in compliance, and to upgrade IT systems.",
+   "para": 251,
+   "page": 63,
+   "to": [
+    "police",
+    "homeoffice",
+    "moj"
+   ],
+   "words": 61
+  },
+  {
+   "n": 49,
+   "ch": 5,
+   "sec": 11,
+   "pri": "service",
+   "kind": "rec",
+   "text": "The Home Office should, at the earliest opportunity, complete the framework agreement with the Forensic Science Regulator. This should include a line of reporting where the Regulator can raise issues that relate to defence provision with the Ministry of Justice.",
+   "para": 252,
+   "page": 63,
+   "to": [
+    "homeoffice"
+   ],
+   "words": 40
+  },
+  {
+   "n": 50,
+   "ch": 5,
+   "sec": 11,
+   "pri": "service",
+   "kind": "con",
+   "text": "Concerns have been raised that the Forensic Science Regulator may not be willing to use their powers in a consolidated market if it risks disruption to services, or undermining investigations, although the former Regulator has disputed this. Accreditation is important, as it is the main means of demonstrating compliance with the Forensic Science Regulator’s Code and verifying good practice. The role of the Regulator and accreditation authorities may be challenged by the increasing in-house forensic provision by police forces, particularly when it comes to digital forensics, where we have heard that the vast majority of digital forensics units in the police are not accredited.",
+   "para": 253,
+   "page": 63,
+   "to": [],
+   "words": 104
+  },
+  {
+   "n": 51,
+   "ch": 5,
+   "sec": 11,
+   "pri": "service",
+   "kind": "rec",
+   "text": "Police forces should clarify whether they intend to pursue accreditation for both physical and digital forensics. The Home Office should also publish the accreditation status for all police forces. Police forces should take steps to ensure that their in-house provision is compliant with the Forensic Science Regulator Code and to cooperate with inspection. If police forces do not pursue accreditation, the Government should set out how they will ensure that in-house provision of forensic services by police forces is of high quality.",
+   "para": 254,
+   "page": 63,
+   "to": [
+    "police",
+    "homeoffice",
+    "gov"
+   ],
+   "words": 82
+  },
+  {
+   "n": 52,
+   "ch": 5,
+   "sec": 11,
+   "pri": "service",
+   "kind": "rec",
+   "text": "As the national forensic service is established it will need to work closely with the Forensic Science Regulator to ensure code compliance. Improvements to the forensic science regulatory regime will be undermined by a dysfunctional, fragile, or monopolistic market: these reforms must go hand in hand with stabilisation of the market and wider policing reform.",
+   "para": 255,
+   "page": 64,
+   "to": [
+    "nfs",
+    "fsr"
+   ],
+   "words": 55
+  },
+  {
+   "n": 53,
+   "ch": 5,
+   "sec": 12,
+   "pri": "market",
+   "kind": "con",
+   "text": "UKAS says that its fees for accreditation are set on a cost-recovery basis and are therefore not unduly high. Yet the cost of accreditation is a substantial burden to smaller forensic science companies—often sole traders operating for defence parties—driving them out of the market. Nobody wants forensic science carried out by unqualified people with inappropriate methodologies, but if UKAS is unable to provide accreditation more cheaply, the only solution to maintain a thriving market of small providers is for their fees for providing forensic services to rise, or for these companies to be subsidised to achieve accreditation.",
+   "para": 267,
+   "page": 66,
+   "to": [],
+   "words": 97
+  },
+  {
+   "n": 54,
+   "ch": 5,
+   "sec": 12,
+   "pri": "market",
+   "kind": "rec",
+   "text": "The Government should review the impact of UKAS’s accreditation costs on the market and propose measures to ensure that small providers are able to achieve accreditation while remaining viable businesses. This should include an analysis of whether the cost recovery structure employed by UKAS is justifiable when benchmarked against comparators. It should also include alternative routes to recognising technical expertise and competence for smaller providers, such as a register of experts maintained by the National Institute for Forensic Science, as well as supporting the milestones to compliance model that UKAS and the Regulator are pursuing.",
+   "para": 268,
+   "page": 66,
+   "to": [
+    "gov"
+   ],
+   "words": 95
+  },
+  {
+   "n": 55,
+   "ch": 5,
+   "sec": 13,
+   "pri": "institute",
+   "kind": "con",
+   "text": "Our previous report recommended the establishment of a National Institute for Forensic Science. This did not take place, but witnesses have told us that the recommendation is still important and many such models exist overseas. We believe that there are a number of gaps in the current forensic science system, especially around research, training, and co-ordination which could be filled by such an institute, alongside the national forensics service that the Government will set up in its policing reforms.",
+   "para": 277,
+   "page": 68,
+   "to": [],
+   "words": 79
+  },
+  {
+   "n": 56,
+   "ch": 5,
+   "sec": 13,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "The UK should establish a National Institute for Forensic Science. This can be done now, without waiting for longer-term police reforms. Its role will need to be coordinated with the national forensics service and the National Policing Service, the Forensic Science Regulator, and police procurement, but should include:\n• coordinating R&D priorities across the sector and conducting key R&D projects;\n• providing impartial advice and expertise to police and to defence barristers;\n• maintaining lists of trusted experts and forensic scientists for testifying in court;\n• advocating for the forensic science sector, formalising networks that already exist; and\n• maintaining important databases and guidance for best practice, in coordination with the Forensic Science Regulator.",
+   "para": 278,
+   "page": 68,
+   "to": [
+    "gov"
+   ],
+   "words": 114
+  },
+  {
+   "n": 57,
+   "ch": 5,
+   "sec": 13,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "At least until the national forensics service is set up, it should also include:\n• assessing forensic science capacity across England and Wales, including in police forces and forensic science providers;\n• maintaining expertise in “non-commercial” or lesser-used but still important specialisms in forensic science, filling in the gaps left by for-profit companies and fragmented police provision; and\n• providing a means of training forensic scientists, whether in-house within police forces or external; analysing training needs and ensuring provision is appropriate.",
+   "para": 279,
+   "page": 69,
+   "to": [
+    "nifs"
+   ],
+   "words": 81
+  },
+  {
+   "n": 58,
+   "ch": 5,
+   "sec": 13,
+   "pri": "institute",
+   "kind": "rec",
+   "text": "If the Government elects not to establish such an institute, they should explain to us who is taking responsibility for each of these areas, the action they expect to take to improve the situation, and how progress will be monitored. In the long run, some of the functions of the institute may be transferred into the new national forensics service, but we still think that there is an immediate need for an institute to coordinate R&D, advice, training, and centralised expertise.",
+   "para": 280,
+   "page": 69,
+   "to": [
+    "gov"
+   ],
+   "words": 81
+  }
+ ],
+ "para_pages": {
+  "1": 11,
+  "2": 11,
+  "3": 11,
+  "4": 11,
+  "5": 12,
+  "6": 12,
+  "7": 12,
+  "8": 12,
+  "9": 13,
+  "10": 13,
+  "11": 13,
+  "12": 13,
+  "13": 15,
+  "14": 15,
+  "15": 15,
+  "16": 15,
+  "17": 16,
+  "18": 16,
+  "19": 16,
+  "20": 17,
+  "21": 17,
+  "22": 17,
+  "23": 17,
+  "24": 17,
+  "25": 18,
+  "26": 18,
+  "27": 18,
+  "28": 18,
+  "29": 18,
+  "30": 19,
+  "31": 19,
+  "32": 19,
+  "33": 19,
+  "34": 20,
+  "35": 20,
+  "36": 20,
+  "37": 20,
+  "38": 20,
+  "39": 21,
+  "40": 21,
+  "41": 21,
+  "42": 22,
+  "43": 22,
+  "44": 22,
+  "45": 22,
+  "46": 23,
+  "47": 23,
+  "48": 23,
+  "49": 23,
+  "50": 23,
+  "51": 23,
+  "52": 24,
+  "53": 24,
+  "54": 24,
+  "55": 24,
+  "56": 25,
+  "57": 25,
+  "58": 25,
+  "59": 25,
+  "60": 25,
+  "61": 25,
+  "62": 26,
+  "63": 26,
+  "64": 26,
+  "65": 26,
+  "66": 27,
+  "67": 27,
+  "68": 27,
+  "69": 27,
+  "70": 28,
+  "71": 28,
+  "72": 28,
+  "73": 28,
+  "74": 29,
+  "75": 29,
+  "76": 29,
+  "77": 29,
+  "78": 30,
+  "79": 30,
+  "80": 30,
+  "81": 30,
+  "82": 30,
+  "83": 31,
+  "84": 31,
+  "85": 31,
+  "86": 31,
+  "87": 31,
+  "88": 31,
+  "89": 31,
+  "90": 31,
+  "91": 32,
+  "92": 32,
+  "93": 32,
+  "94": 33,
+  "95": 33,
+  "96": 33,
+  "97": 33,
+  "98": 33,
+  "99": 33,
+  "100": 34,
+  "101": 34,
+  "102": 34,
+  "103": 34,
+  "104": 34,
+  "105": 35,
+  "106": 35,
+  "107": 35,
+  "108": 35,
+  "109": 35,
+  "110": 35,
+  "111": 36,
+  "112": 36,
+  "113": 36,
+  "114": 36,
+  "115": 36,
+  "116": 36,
+  "117": 36,
+  "118": 37,
+  "119": 37,
+  "120": 37,
+  "121": 37,
+  "122": 37,
+  "123": 38,
+  "124": 38,
+  "125": 38,
+  "126": 39,
+  "127": 39,
+  "128": 39,
+  "129": 39,
+  "130": 39,
+  "131": 40,
+  "132": 40,
+  "133": 40,
+  "134": 40,
+  "135": 40,
+  "136": 40,
+  "137": 41,
+  "138": 41,
+  "139": 41,
+  "140": 41,
+  "141": 42,
+  "142": 42,
+  "143": 42,
+  "144": 43,
+  "145": 43,
+  "146": 43,
+  "147": 43,
+  "148": 43,
+  "149": 44,
+  "150": 44,
+  "151": 44,
+  "152": 44,
+  "153": 44,
+  "154": 45,
+  "155": 45,
+  "156": 45,
+  "157": 45,
+  "158": 45,
+  "159": 46,
+  "160": 46,
+  "161": 46,
+  "162": 46,
+  "163": 46,
+  "164": 47,
+  "165": 47,
+  "166": 47,
+  "167": 47,
+  "168": 47,
+  "169": 47,
+  "170": 48,
+  "171": 48,
+  "172": 48,
+  "173": 48,
+  "174": 48,
+  "175": 49,
+  "176": 49,
+  "177": 49,
+  "178": 49,
+  "179": 49,
+  "180": 49,
+  "181": 49,
+  "182": 50,
+  "183": 50,
+  "184": 50,
+  "185": 50,
+  "186": 50,
+  "187": 51,
+  "188": 51,
+  "189": 51,
+  "190": 51,
+  "191": 52,
+  "192": 52,
+  "193": 52,
+  "194": 52,
+  "195": 52,
+  "196": 52,
+  "197": 53,
+  "198": 53,
+  "199": 53,
+  "200": 53,
+  "201": 53,
+  "202": 53,
+  "203": 53,
+  "204": 54,
+  "205": 54,
+  "206": 54,
+  "207": 54,
+  "208": 54,
+  "209": 54,
+  "210": 55,
+  "211": 55,
+  "212": 55,
+  "213": 55,
+  "214": 55,
+  "215": 55,
+  "216": 55,
+  "217": 56,
+  "218": 56,
+  "219": 56,
+  "220": 57,
+  "221": 57,
+  "222": 57,
+  "223": 57,
+  "224": 58,
+  "225": 58,
+  "226": 58,
+  "227": 58,
+  "228": 58,
+  "229": 59,
+  "230": 59,
+  "231": 59,
+  "232": 59,
+  "233": 60,
+  "234": 60,
+  "235": 60,
+  "236": 60,
+  "237": 60,
+  "238": 61,
+  "239": 61,
+  "240": 61,
+  "241": 61,
+  "242": 61,
+  "243": 62,
+  "244": 62,
+  "245": 62,
+  "246": 62,
+  "247": 62,
+  "248": 62,
+  "249": 63,
+  "250": 63,
+  "251": 63,
+  "252": 63,
+  "253": 63,
+  "254": 63,
+  "255": 64,
+  "256": 64,
+  "257": 64,
+  "258": 64,
+  "259": 64,
+  "260": 65,
+  "261": 65,
+  "262": 65,
+  "263": 65,
+  "264": 65,
+  "265": 66,
+  "266": 66,
+  "267": 66,
+  "268": 66,
+  "269": 66,
+  "270": 67,
+  "271": 67,
+  "272": 67,
+  "273": 67,
+  "274": 67,
+  "275": 68,
+  "276": 68,
+  "277": 68,
+  "278": 68,
+  "279": 69,
+  "280": 69
+ }
+}

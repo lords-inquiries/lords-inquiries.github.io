@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Links made for the explorer go to its home */
+if(/(^#|&)(to|topic|q|r|by|pri)=/.test(location.hash))location.replace('explore/'+location.hash);</script>
+<title>Rebuilding forensic science: the Lords report in brief</title>
+<meta name="description" content="The House of Lords Science and Technology Committee’s report on forensic science in England and Wales, in twelve slides: what it found, six themes and its main recommendations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rebuilding forensic science for criminal justice: an urgent need">
+<meta property="og:description" content="The House of Lords Science and Technology Committee’s report in twelve slides: what it found, six themes and its main recommendations.">
+<meta property="og:url" content="__URL__">
+<meta property="og:image" content="__OG__">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="__FONTS__archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+BRIEF: a splash presentation for the Lords report on forensic science in England and Wales. It leads into the explorer.
+IDEA: the report is drawn as a DNA profile (an electropherogram). Each peak is one of its 58 numbered paragraphs, taller for longer ones,
+  grouped by chapter like the loci of a real profile. The trace runs along the foot of the opening and closing slides, and turns into a slim
+  trace at the right edge of every other slide, where the peaks for that slide's theme light up. Every other picture is a small diagram of
+  the specific problem on the slide.
+PALETTE and TYPE: shared with the other report pages: stain ink, slide-glass paper, two greys, one magenta; Archivo and Newsreader.
+MOTION: the trace is read in by a scanning line on arrival and re-read on each slide; it swings between its two positions.
+*/
+@font-face{font-family:"Archivo";src:url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+:root{--sans:"Archivo",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;--padX:max(5vw,24px)}
+[data-tone=light]{--bg:#F3F5F4;--fg:#16232E;--mute:#586570;--line:#D3DADE;--rr:#22313E;--rc:#9DAAB4;--hi:#C8156F;--wash:#F7DDEA;--glass:#E2E8EB;color-scheme:light}
+[data-tone=dark]{--bg:#16232E;--fg:#E8EEF1;--mute:#9FB0BC;--line:#2F3E4A;--rr:#D6DEE4;--rc:#5D6C77;--hi:#FF4FA3;--wash:#4A1A33;--glass:#22313E;color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%}
+@media (min-width:821px) and (min-height:640px){html{scroll-snap-type:y mandatory}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);font-stretch:100%;overflow-x:clip;transition:background-color .5s}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skiplink{position:absolute;left:12px;top:-60px;z-index:60;background:var(--bg);padding:8px 12px;border:2px solid var(--hi)}
+.skiplink:focus{top:12px}
+
+/* fixed chrome */
+.chrome{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--padX);font-size:14px;color:var(--fg);pointer-events:none;transition:color .4s}
+.chrome a{pointer-events:auto}
+.chrome .pill{border:1.5px solid currentColor;border-radius:999px;padding:7px 15px;text-decoration:none;font-weight:600;white-space:nowrap}
+.chrome .pill:hover{background:var(--fg);color:var(--bg)}
+.pager{position:fixed;left:var(--padX);bottom:16px;z-index:40;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--fg);transition:color .4s}
+.pager button{width:38px;height:38px;border-radius:50%;border:1.5px solid currentColor;background:var(--bg);color:inherit;cursor:pointer;font:400 18px/1 var(--sans);transition:background-color .4s}
+.pager button:hover:not(:disabled){background:var(--fg);color:var(--bg)}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager #count{font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pager #slidename{color:var(--mute)}
+#trace{position:fixed;left:0;top:0;z-index:20;pointer-events:none;overflow:visible}
+#trace .hit{pointer-events:auto;cursor:pointer;fill:transparent}
+#trace .labs text{font:500 12px var(--sans);fill:var(--mute)}
+#trace .labs text.num{font:600 10.5px var(--sans);font-stretch:80%;font-variant-numeric:tabular-nums}
+#trace .locus{fill:none;stroke-width:1}
+.bed{display:none}
+#tip{position:fixed;z-index:50;pointer-events:none;width:min(340px,calc(100vw - 16px));background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:10px 12px 11px;font-size:13px;line-height:1.4;opacity:0;transition:opacity .1s;box-shadow:4px 4px 0 var(--line)}
+#tip b{display:block;font-size:14px}
+#tip .x{font:15px/1.4 var(--serif);margin-top:4px}
+#tip .go{color:var(--mute);margin-top:6px}
+
+/* slides */
+.slide{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;padding:84px var(--padX) 76px;background:var(--bg);color:var(--fg);scroll-snap-align:start}
+@media (min-width:821px){.slide.sp{padding-right:calc(var(--padX) + 92px)}}
+.frame{width:100%;max-width:1220px;margin:0 auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:32px clamp(32px,5vw,84px);align-items:center}
+h1{font:740 clamp(44px,5.6vw,90px)/.93 var(--sans);font-stretch:76%;letter-spacing:-.018em;margin:0;text-wrap:balance}
+h2{font:700 clamp(32px,3.5vw,54px)/1 var(--sans);font-stretch:82%;letter-spacing:-.012em;margin:0 0 18px;text-wrap:balance;max-width:21ch}
+h2.quote{font:400 clamp(34px,4vw,62px)/1.08 var(--serif);font-style:italic;letter-spacing:-.01em;max-width:17ch;margin-bottom:24px}
+h3{font:600 14px var(--sans);color:var(--mute);margin:24px 0 6px}
+.kicker{font:650 14.5px var(--sans);color:var(--hi);margin:0 0 10px}
+.sub{font:400 clamp(19px,1.5vw,23px)/1.4 var(--serif);margin:0 0 12px;max-width:36ch}
+.meta{font-size:14.5px;color:var(--mute);margin:0;max-width:52ch}
+.lede{font:400 clamp(18px,1.32vw,21px)/1.46 var(--serif);margin:0;max-width:42ch}
+.hint{font-size:13.5px;line-height:1.45;color:var(--mute);max-width:46ch;margin:24px 0 0}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:10px 20px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 15.5px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.primary{background:var(--hi);border-color:var(--hi);color:#fff}
+.btn.primary:hover{background:var(--hi);color:#fff;filter:brightness(1.1)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+/* the opening and closing slides keep their content above the trace along the foot of the screen */
+@media (min-width:821px){
+  .s-band{align-items:start;padding-top:max(96px,12vh);padding-bottom:calc(min(170px,20vh) + 160px)}
+  .s-title .frame{max-width:none;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px clamp(32px,5vw,90px);align-items:start}
+  .s-next .frame{max-width:none}
+}
+.s-title h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.s-title .side{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* stat, recommendations, links */
+.stat{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;align-items:end;border-top:2px solid var(--fg);padding-top:14px;margin:0 0 16px}
+.stat b{font:800 clamp(58px,6.2vw,104px)/.82 var(--sans);font-stretch:62%;color:var(--hi);letter-spacing:-.01em;white-space:nowrap}
+.stat span{font-size:15px;line-height:1.38;padding-bottom:1px;max-width:36ch}
+.stat small{display:block;margin-top:4px;font-size:12.5px;color:var(--mute)}
+.recs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.recs a{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:14px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.recs .n{font:800 28px/1 var(--sans);font-stretch:62%;padding-top:2px;transition:color .2s}
+.recs .t{font-size:15.5px;line-height:1.42}
+.recs a:hover .n,.recs a:focus-visible .n{color:var(--hi)}
+.recs a:hover .t{text-decoration:underline;text-decoration-color:var(--hi)}
+.more{display:inline-block;margin-top:16px;font-weight:650;color:var(--hi);text-decoration:none;border-bottom:1.5px solid var(--hi);padding-bottom:1px}
+.more:hover{border-bottom-width:3px}
+.note{font-size:13px;color:var(--mute);margin:8px 0 0;max-width:48ch}
+.src{font-size:13px;color:var(--mute);margin:12px 0 0}
+.theme .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:24px clamp(32px,4.5vw,72px);align-items:start;margin-top:6px}
+.theme h2{max-width:25ch}
+
+/* illustrations */
+.ill{margin:0}
+.ill svg{display:block;width:100%;height:auto;overflow:visible;max-width:100%}
+.ill text{font-family:var(--sans);font-size:12.5px;fill:var(--fg)}
+.ill text.m{fill:var(--mute)}
+.ill text.b{font-weight:700}
+.ill text.w{fill:#fff;font-weight:650}
+.ill figcaption{font-size:13.5px;line-height:1.45;color:var(--mute);margin-top:10px;max-width:62ch;min-height:2.9em}
+.ill .ctitle{font-size:13.5px;font-weight:600;color:var(--fg);margin:0 0 10px;max-width:56ch}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0 0}
+.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--fg);border-radius:20px;padding:2px}
+.seg button{border:0;background:none;color:var(--fg);border-radius:999px;padding:5px 13px;font:500 13.5px var(--sans);cursor:pointer;min-height:32px}
+.seg button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.seg button:hover:not([aria-pressed=true]){background:var(--glass)}
+.now,.mdl{transition:opacity .6s}
+[data-state=now] .mdl{opacity:0}
+[data-state=model] .now{opacity:0}
+[data-state=model] .mdl{transition-delay:.5s}
+.mv{transition:transform .9s cubic-bezier(.65,0,.35,1)}
+
+/* reports on reports */
+#ill-reports .doc path{fill:none;stroke:var(--rc);stroke-width:1.5}
+#ill-reports .doc line{stroke:var(--rc);stroke-width:1.2}
+#ill-reports .doc.y19 path:first-child{fill:var(--rr);stroke:var(--rr)}
+#ill-reports .doc.y26 path:first-child{fill:var(--hi);stroke:var(--hi)}
+#ill-reports .doc.y19 line,#ill-reports .doc.y26 line{stroke:var(--bg)}
+#ill-reports .doc.y19 .fold,#ill-reports .doc.y26 .fold{stroke:var(--bg)}
+#ill-reports .doc{transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s}
+#ill-reports .pre .doc{transform:translateY(12px);opacity:0}
+#ill-reports .brk{fill:none;stroke:var(--mute);stroke-width:1}
+/* figure 1 */
+#ill-fig1 .bar{fill:var(--rr)}
+#ill-fig1 .bar.hi{fill:var(--hi)}
+#ill-fig1 .v{font-weight:700;transition:opacity .4s .7s}
+#ill-fig1 .pre .v{opacity:0}
+/* corridor */
+#ill-corridor .force{fill:var(--bg);stroke:var(--fg);stroke-width:1.4}
+#ill-corridor .lab{fill:var(--hi)}
+#ill-corridor .reg{fill:none;stroke:var(--fg);stroke-width:1.3}
+#ill-corridor .reg.nfs{stroke:var(--hi);stroke-width:2;fill:var(--wash)}
+#ill-corridor .cor{fill:url(#hatch)}
+#ill-corridor .arr{fill:none;stroke:var(--fg);stroke-width:1.5}
+#ill-corridor .com{fill:var(--glass);stroke:var(--rc)}
+/* scales */
+#ill-scales .beam{transition:transform 1.1s cubic-bezier(.45,0,.2,1);transform-box:view-box}
+#ill-scales .pan{transition:transform 1.1s cubic-bezier(.45,0,.2,1)}
+#ill-scales .post{stroke:var(--fg);stroke-width:3;stroke-linecap:round}
+#ill-scales .string{stroke:var(--fg);stroke-width:1}
+#ill-scales .dish{fill:var(--glass);stroke:var(--fg);stroke-width:1.5}
+#ill-scales .pan text{text-anchor:middle}
+#ill-scales .pan .it{font-size:11.5px}
+/* market */
+#ill-market .box{fill:var(--glass);stroke:var(--rc);stroke-width:1.2}
+#ill-market .box.kfs{stroke-dasharray:4 3}
+#ill-market .seg-e{fill:var(--hi)}
+#ill-market .seg-o{fill:var(--glass);stroke:var(--rc)}
+#ill-market .arr{fill:none;stroke:var(--fg);stroke-width:1.3}
+/* archive */
+#ill-archive .crate rect{fill:var(--glass);stroke:var(--fg);stroke-width:1.2}
+#ill-archive .crate line{stroke:var(--fg);stroke-width:1}
+#ill-archive [data-state=now] .crate.odd rect{stroke-dasharray:3 2}
+#ill-archive [data-state=now] .crate.faint{opacity:.45}
+#ill-archive .bld{fill:none;stroke:var(--fg);stroke-width:1.6}
+#ill-archive [data-state=model] .bld{stroke:var(--hi);stroke-width:2.2}
+/* hub */
+#ill-hub .spoke{stroke:var(--rc);stroke-width:1.5;transition:stroke .2s}
+#ill-hub .fn{cursor:pointer}
+#ill-hub .fn circle{fill:var(--bg);stroke:var(--fg);stroke-width:2;transition:fill .2s,stroke .2s}
+#ill-hub .fn.on circle{fill:var(--hi);stroke:var(--hi)}
+#ill-hub .fn text{font-weight:600}
+#ill-hub .fn:focus-visible{outline:none}
+#ill-hub .fn:focus-visible circle{stroke:var(--hi);stroke-width:3}
+#ill-hub .spoke.on{stroke:var(--hi);stroke-width:2.5}
+#ill-hub .core{fill:var(--hi)}
+/* devices */
+#ill-devices .ph{fill:var(--rr);transition:opacity .25s}
+#ill-devices .pre .ph{opacity:0}
+
+/* stakes */
+.losses{list-style:none;margin:24px 0 0;padding:0}
+.losses li{display:grid;grid-template-columns:7.2em minmax(0,1fr);gap:18px;align-items:baseline;border-top:1px solid var(--line);padding:14px 0}
+.losses li:last-child{border-bottom:1px solid var(--line)}
+.losses b{font:800 30px/1 var(--sans);font-stretch:64%;color:var(--hi)}
+.losses span{font:400 19px/1.4 var(--serif)}
+
+/* themes */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 30px;margin-top:28px}
+.card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;text-align:left;border:0;border-top:2px solid var(--fg);background:none;color:inherit;padding:14px 0 20px;cursor:pointer;font:inherit}
+.card .cn{grid-row:1 / span 4;font:800 54px/.84 var(--sans);font-stretch:62%;transition:color .2s}
+.card .ct{font:650 18px/1.2 var(--sans);font-stretch:92%}
+.card .cs{font-size:14px;line-height:1.42;color:var(--mute)}
+.card .strip{display:flex;gap:1px;height:10px;margin-top:8px}
+.card .strip i{display:block;background:var(--rc);opacity:.5;border-radius:1px}
+.card .strip i.r{background:var(--rr);opacity:.35}
+.card .strip i.on{background:var(--hi);opacity:1}
+.card .cc{font-size:13px;color:var(--mute);margin-top:2px}
+.card:hover .cn,.card:focus-visible .cn{color:var(--hi)}
+.card:hover .ct{text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:4px}
+
+/* who */
+.wbars{border-top:2px solid var(--fg)}
+.wb{display:grid;grid-template-columns:minmax(0,14.5em) minmax(0,1fr) 2.4em;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;font-size:15px}
+.wb .wt{height:12px;position:relative}
+.wb .wt i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--rr);border-radius:0 6px 6px 0;transition:width .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-color .2s}
+#who.on .wb .wt i{width:var(--w)}
+.wb .wc{font:800 24px/1 var(--sans);font-stretch:62%;text-align:right}
+.wb:hover .wt i,.wb:focus-visible .wt i{background:var(--hi)}
+.wb:hover .wn{text-decoration:underline;text-decoration-color:var(--hi)}
+.wmore{font-size:14px;line-height:1.5;color:var(--mute);margin:14px 0 0;max-width:64ch}
+.wmore a{color:var(--fg)}
+
+/* what happened next */
+.tl{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative;max-width:960px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line)}
+.tl li{position:relative;padding:32px 22px 0 0}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.tl li.done::before{background:var(--hi);border-color:var(--hi)}
+.tl .when{display:block;font:700 15.5px var(--sans)}
+.tl .what{display:block;font-size:15px;line-height:1.42;color:var(--mute);margin-top:4px}
+.small{font-size:12.5px;line-height:1.5;color:var(--mute);margin:26px 0 0;max-width:80ch}
+
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* shorter laptop screens: fit each slide to the screen */
+@media (min-width:821px) and (max-height:900px){
+  .slide{padding-top:max(64px,9vh);padding-bottom:max(56px,8vh)}
+  .s-band{padding-top:max(80px,11vh);padding-bottom:calc(min(170px,20vh) + 150px)}
+  h1{font-size:min(5.6vw,9vh)}
+  h2{font-size:min(3.5vw,5.7vh);margin-bottom:min(18px,2vh)}
+  h2.quote{font-size:min(4vw,6.6vh)}
+  .sub{font-size:min(1.5vw,2.6vh)}
+  .lede{font-size:min(1.32vw,2.35vh)}
+  .acts{margin-top:min(28px,3vh)}
+  .hint{margin-top:min(24px,2.6vh)}
+  .stat{padding-top:min(14px,1.6vh);margin-bottom:min(16px,1.6vh)}
+  .stat b{font-size:min(6.2vw,9.6vh)}
+  .ill svg{max-height:31vh}
+  .ill figcaption{margin-top:6px}
+  .ctl{margin-top:8px}
+  h3{margin:min(24px,2.4vh) 0 4px}
+  .recs a{padding:min(11px,1.1vh) 0}
+  .recs .t{font-size:min(15.5px,2vh)}
+  .recs .n{font-size:min(28px,3.6vh)}
+  .more{margin-top:min(16px,1.8vh)}
+  .theme .kicker{margin-bottom:4px}
+  .cards{margin-top:min(28px,2.6vh)}
+  .card{padding:min(14px,1.4vh) 0 min(20px,2vh)}
+  .card .cs{font-size:min(14px,1.95vh)}
+  .losses li{padding:min(14px,1.5vh) 0}
+  .tl{margin-top:min(30px,3vh)}
+  .small{margin-top:min(26px,2.6vh)}
+}
+@media (max-width:820px){
+  .chrome{position:absolute}
+  .chrome .home{display:none}
+  .pager{display:none}
+  .bed{display:block;position:fixed;left:0;right:0;bottom:0;height:60px;background:var(--bg);border-top:1px solid var(--line);z-index:19;transition:background-color .4s}
+  .slide{padding:76px 20px 96px;min-height:auto}
+  .slide.s-title,.slide.s-find,.slide.s-next{min-height:100svh}
+  .two,.theme .cols{grid-template-columns:1fr}
+  .s-title .side{margin-top:20px}
+  .cards{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:22px;padding-left:30px}
+  .tl::before{left:8px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl li{padding:0}
+  .tl li::before{left:-30px}
+  .wb{grid-template-columns:minmax(0,1fr) 5em 2em}
+  .losses li{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:0s!important}}
+@media print{.chrome,.pager,#trace,.bed,#tip{display:none}.slide{min-height:auto;break-after:page}}
+</style>
+</head>
+<body data-tone="dark">
+<a class="skiplink" href="explore/">Skip to all 58 recommendations</a>
+<header class="chrome"><a class="home" href="__ROOT__science-and-technology/">Lords Science and Technology Committee reports</a><a class="pill" href="explore/">All 58 recommendations</a></header>
+
+<main id="deck">
+
+<section class="slide s-title s-band" id="start" data-tone="dark" data-trace="hero" data-name="Start" aria-labelledby="h-start">
+<div class="frame">
+<h1 id="h-start">Rebuilding forensic science for criminal justice: an urgent need</h1>
+<div class="side">
+<p class="sub">The House of Lords Science and Technology Committee’s report in twelve slides: what it found, six themes and its main recommendations.</p>
+<p class="meta">3rd Report of Session 2024–26 (HL Paper 256), published 17 February 2026.</p>
+<div class="acts"><button type="button" class="btn primary" data-next>Start</button><a class="btn" href="explore/">Go straight to all 58 recommendations</a></div>
+<p class="hint">Scroll, swipe or use the arrow keys. The trace is the report itself, drawn like a DNA profile: each peak is one of its 58 numbered paragraphs, taller for longer ones. The stronger peaks are recommendations; the fainter ones are conclusions.</p>
+</div>
+</div>
+</section>
+
+<section class="slide s-find sp" id="finding" data-tone="dark" data-trace="spine" data-name="The verdict" aria-labelledby="h-finding">
+<div class="frame two">
+<div>
+<h2 class="quote" id="h-finding">“Forensic science is not working for anyone.”</h2>
+<p class="lede">Not for the police, not for forensic scientists, not for lawyers, and ultimately not for the public and the criminal justice system. The forensic scientist Professor Angela Gallop told the committee this; its inquiry “found little to contradict it”.</p>
+</div>
+<div>
+<div class="stat"><b>9</b><span>reports on forensic science in the ten years before the committee’s 2019 report. Seven years on, it finds the issues have “largely got worse”.<small><a data-para="2">Paragraphs 2</a> and <a data-para="28">28</a></small></span></div>
+<figure class="ill" id="ill-reports"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 540 140" class="pre" role="img" aria-label="Nine earlier reports, the committee's 2019 report and this 2026 follow-up, side by side."></svg>
+<figcaption>Many of the problems the report identifies are “painfully familiar from seven years ago” (report summary).</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide sp" id="stakes" data-tone="light" data-trace="spine" data-name="What is at stake" aria-labelledby="h-stakes">
+<div class="frame two">
+<div>
+<h2 id="h-stakes">Failures in forensic science lead to miscarriages of justice</h2>
+<ul class="losses">
+<li><b>Evidence</b><span>Criminal cases are collapsing, often due to missing or damaged evidence.</span></li>
+<li><b>The market</b><span>The market meant to provide many forensic services has collapsed.</span></li>
+<li><b>Fairness</b><span>There is no such thing as “equality of arms” between prosecution and defence.</span></li>
+</ul>
+<p class="src">From the report’s summary.</p>
+</div>
+<figure class="ill" id="ill-fig1"><p class="ctitle">Why evidence was found misleading in 218 unsafe Court of Appeal rulings, 2010 to 2016: reasons, by type of evidence</p>
+<svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 540 214" class="pre" role="img" aria-label="Bar chart. Witness evidence 75 reasons, forensic 61, character 37, suspect 14, police 6."></svg>
+<figcaption>Figure 1 of the report, from Smit, Morgan and Lagnado (2018). Of the 61 forensic reasons, 37 concerned how the evidence was presented in the case and 18 the judge’s directions. Forensic evidence was about a third of the misleading evidence (<a data-para="7">paragraphs 7 and 8</a>).</figcaption></figure>
+</div>
+</section>
+
+<section class="slide sp" id="themes" data-tone="light" data-trace="spine" data-name="Six themes" aria-labelledby="h-themes">
+<div class="frame">
+<h2 id="h-themes">Six themes</h2>
+<p class="lede" style="max-width:62ch">Five follow the headline recommendations in the committee’s summary; the sixth, digital forensics and AI, is a chapter of the report. Choose one to go to it. Each strip shows where its paragraphs sit in the report.</p>
+<div class="cards" id="cards"></div>
+</div>
+</section>
+
+<section class="slide sp theme" id="service" data-tone="light" data-trace="spine" data-pri="service" data-name="Theme 1: an independent service" aria-labelledby="h-service">
+<div class="frame">
+<p class="kicker">Theme 1 of 6</p>
+<h2 id="h-service">An independent national forensic service</h2>
+<div class="cols">
+<div>
+<p class="lede">Police forces now do most forensic work themselves, with patchy oversight and a risk of bias. The Government plans to deliver forensics nationally through a new National Police Service. The committee wants that service kept independent of the police, and set up urgently.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=18"><span class="n"><span class="vh">Recommendation </span>18</span><span class="t">Keep the new national forensics service independent of the police, for example with a Scottish-style “sterile corridor”, and start now rather than wait for police mergers.</span></a></li>
+<li><a href="explore/#r=14"><span class="n"><span class="vh">Recommendation </span>14</span><span class="t">Require police forces to publish data on their in-house forensics, accreditation and quality incidents, with forensics spending shown as separate budget lines.</span></a></li>
+<li><a href="explore/#r=51"><span class="n"><span class="vh">Recommendation </span>51</span><span class="t">Police forces should say whether they will seek accreditation for physical and digital forensics, and the Home Office should publish every force’s status.</span></a></li>
+</ul>
+<a class="more" data-more="service" href="explore/#by=pri&amp;pri=service">All paragraphs on this theme</a>
+<p class="note" data-tracenote></p>
+</div>
+<div>
+<div class="stat"><b>£500m+</b><span>a year: estimated police spending on in-house forensics, over 80% of everything the police spend on forensic services.<small><a data-para="59">Paragraph 59</a></small></span></div>
+<figure class="ill" id="ill-corridor"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 262" data-state="now" role="img" aria-label="Now: forensic labs inside 43 police forces. The committee's model: an independent national forensic service, separated from the police by a sterile corridor."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="now" aria-pressed="true">Now</button><button type="button" data-state="model" aria-pressed="false">The committee’s model</button></div></div>
+<figcaption></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="access" data-tone="light" data-trace="spine" data-pri="access" data-name="Theme 2: equality of arms" aria-labelledby="h-access">
+<div class="frame">
+<p class="kicker">Theme 2 of 6</p>
+<h2 id="h-access">Equality of arms, and saving at-risk specialisms</h2>
+<div class="cols">
+<div>
+<p class="lede">Defence experts are a vital check on bad forensic science, but they are underpaid, fragmented and dwindling. Specialisms such as fibres and footprints are dying out. The committee wants fair pay, a register of experts and a real plan to keep rare skills.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=22"><span class="n"><span class="vh">Recommendation </span>22</span><span class="t">The Legal Aid Agency should urgently review its rates for forensic experts: at a minimum equal to what the prosecution pays, and paid promptly.</span></a></li>
+<li><a href="explore/#r=23"><span class="n"><span class="vh">Recommendation </span>23</span><span class="t">A National Institute for Forensic Science could keep a register of approved experts for the defence, working to the Regulator’s standards.</span></a></li>
+<li><a href="explore/#r=29"><span class="n"><span class="vh">Recommendation </span>29</span><span class="t">Make a credible plan to preserve specialisms at crisis point, through retainers, the institute or the national service: “It is time to stop talking about this and do it.”</span></a></li>
+</ul>
+<a class="more" data-more="access" href="explore/#by=pri&amp;pri=access">All paragraphs on this theme</a>
+<p class="note" data-tracenote></p>
+</div>
+<div>
+<div class="stat"><b>£83</b><span>an hour: what legal aid pays a defence expert in London (£104 elsewhere). The prosecution pays more than £130.<small><a data-para="93">Paragraphs 93</a> and <a data-para="99">99</a></small></span></div>
+<figure class="ill" id="ill-scales"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 262" data-state="now" role="img" aria-label="Scales of justice, tipped towards the prosecution now, and closer to level with the committee's fixes."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="now" aria-pressed="true">Now</button><button type="button" data-state="model" aria-pressed="false">With the committee’s fixes</button></div></div>
+<figcaption></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="market" data-tone="light" data-trace="spine" data-pri="market" data-name="Theme 3: the market" aria-labelledby="h-market">
+<div class="frame">
+<p class="kicker">Theme 3 of 6</p>
+<h2 id="h-market">A stable, competitive market</h2>
+<div class="cols">
+<div>
+<p class="lede">In 2019 the committee warned the commercial market was at risk of becoming dysfunctional; it now has. The committee wants a plan to stabilise it, fair prices, room for smaller firms, and a review of what accreditation costs them.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=10"><span class="n"><span class="vh">Recommendation </span>10</span><span class="t">Assess the risks of Eurofins’ near-monopoly, stabilise existing provision, lower barriers to new providers and make sure contracts pay a fair price.</span></a></li>
+<li><a href="explore/#r=11"><span class="n"><span class="vh">Recommendation </span>11</span><span class="t">Design contracts that bring in small and medium-sized firms, and decide who is responsible for the market’s resilience and oversight.</span></a></li>
+<li><a href="explore/#r=54"><span class="n"><span class="vh">Recommendation </span>54</span><span class="t">Review the impact of UKAS accreditation costs, and help small providers achieve accreditation while staying viable.</span></a></li>
+</ul>
+<a class="more" data-more="market" href="explore/#by=pri&amp;pri=market">All paragraphs on this theme</a>
+<p class="note" data-tracenote></p>
+</div>
+<div>
+<div class="stat"><b>80%+</b><span>of external forensic science services are provided by one company, Eurofins.<small><a data-para="55">Paragraph 55</a></small></span></div>
+<figure class="ill" id="ill-market"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 230" role="img" aria-label="2018: three major providers, Eurofins, Cellmark and Key Forensic Services. Now: Eurofins, including Cellmark, provides over 80%."></svg>
+<figcaption>Of the three major providers in 2018, Cellmark was acquired by Eurofins and Key Forensic Services went into and out of administration (<a data-para="54">paragraph 54</a>). The 2018 boxes show the providers, not their market shares.</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="archive" data-tone="light" data-trace="spine" data-pri="archive" data-name="Theme 4: storing evidence" aria-labelledby="h-archive">
+<div class="frame">
+<p class="kicker">Theme 4 of 6</p>
+<h2 id="h-archive">A national archive for evidence</h2>
+<div class="cols">
+<div>
+<p class="lede">Since the Forensic Science Service closed in 2012, evidence has been kept by 43 police forces and several providers, often without the expertise or money to do it well. Missing and damaged evidence is collapsing prosecutions. The committee wants the Forensic Archive reopened for new cases.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=31"><span class="n"><span class="vh">Recommendation </span>31</span><span class="t">Take long-term evidence storage away from the police: reopen the Forensic Archive and resource it to take new casework, transfers and more retrievals, possibly with regional hubs.</span></a></li>
+<li><a href="explore/#r=32"><span class="n"><span class="vh">Recommendation </span>32</span><span class="t">Meanwhile, police forces should employ forensic archivists, and the National Police Service should set standards and inspect how evidence is stored.</span></a></li>
+</ul>
+<a class="more" data-more="archive" href="explore/#by=pri&amp;pri=archive">All paragraphs on this theme</a>
+<p class="note" data-tracenote></p>
+</div>
+<div>
+<div class="stat"><b>30,000</b><span>prosecutions collapsed between October 2020 and September 2024 due to lost, missing, damaged or insufficient evidence (BBC and University of Leicester analysis).<small><a data-para="131">Paragraph 131</a></small></span></div>
+<figure class="ill" id="ill-archive"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 262" data-state="now" role="img" aria-label="Now: evidence kept in 43 police forces, each in its own way. The committee's model: the Forensic Archive reopened for new cases."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="now" aria-pressed="true">Now</button><button type="button" data-state="model" aria-pressed="false">The committee’s model</button></div></div>
+<figcaption></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="institute" data-tone="light" data-trace="spine" data-pri="institute" data-name="Theme 5: a national institute" aria-labelledby="h-institute">
+<div class="frame">
+<p class="kicker">Theme 5 of 6</p>
+<h2 id="h-institute">A National Institute for Forensic Science, set up now</h2>
+<div class="cols">
+<div>
+<p class="lede">No one coordinates research, training or rare expertise across a fragmented system. The committee first called for a national institute in 2019. It says one can be set up now, without waiting for police reform.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=56"><span class="n"><span class="vh">Recommendation </span>56</span><span class="t">Establish a National Institute for Forensic Science now, to coordinate research, give impartial advice, keep lists of trusted experts and maintain best-practice guidance.</span></a></li>
+<li><a href="explore/#r=34"><span class="n"><span class="vh">Recommendation </span>34</span><span class="t">Make a long-term plan to fund forensic science research; the institute could set research priorities with providers, police, lawyers and academics.</span></a></li>
+<li><a href="explore/#r=45"><span class="n"><span class="vh">Recommendation </span>45</span><span class="t">Train the next generation properly: trainees should follow cases from crime scene to courtroom, and the Office for Students should review forensic science degrees.</span></a></li>
+</ul>
+<a class="more" data-more="institute" href="explore/#by=pri&amp;pri=institute">All paragraphs on this theme</a>
+<p class="note" data-tracenote></p>
+</div>
+<div>
+<div class="stat"><b>2019</b><span>is when the committee first recommended a national institute. It was not set up.<small><a data-para="277">Paragraph 277</a></small></span></div>
+<figure class="ill" id="ill-hub"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 284" role="img" aria-label="The institute at the centre, with eight roles the committee proposes for it around it."></svg>
+<figcaption aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="digital" data-tone="light" data-trace="spine" data-pri="digital" data-name="Theme 6: digital and AI" aria-labelledby="h-digital">
+<div class="frame">
+<p class="kicker">Theme 6 of 6</p>
+<h2 id="h-digital">Digital forensics and AI</h2>
+<div class="cols">
+<div>
+<p class="lede">Digital evidence keeps growing and backlogs have barely improved since 2019. AI could help analyse huge volumes of data, but deepfakes threaten the reliability of evidence. The committee wants a funded research programme and national tools that courts can trust.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=41"><span class="n"><span class="vh">Recommendation </span>41</span><span class="t">Fund a research and development programme on digital evidence: how to store it, how to analyse it in a trusted way, and how to deal with deepfakes.</span></a></li>
+<li><a href="explore/#r=42"><span class="n"><span class="vh">Recommendation </span>42</span><span class="t">Say how much of the new £115 million goes to forensics. The national forensics function should provide approved AI tools and procedures that are explainable in court.</span></a></li>
+</ul>
+<a class="more" data-more="digital" href="explore/#by=pri&amp;pri=digital">All paragraphs on this theme</a>
+<p class="note" data-tracenote></p>
+</div>
+<div>
+<div class="stat"><b>20,000+</b><span>digital devices waiting to be analysed. The backlog has not shrunk in years.<small>Report summary; <a data-para="170">paragraph 170</a></small></span></div>
+<figure class="ill" id="ill-devices"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 540 212" class="pre" role="img" aria-label="Two hundred phone shapes, each standing for 100 devices waiting to be analysed."></svg>
+<figcaption>The digital backlogs the committee identified in 2019 “are just as large now” (report summary). Meanwhile generative AI makes deepfake images ever harder to detect, a challenge for investigators and courts alike (<a data-para="205">paragraph 205</a>).</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp" id="who" data-tone="light" data-trace="spine" data-name="Who is asked to act" aria-labelledby="h-who">
+<div class="frame two">
+<div>
+<h2 id="h-who">Who is asked to act</h2>
+<p class="lede" id="who-lede"></p>
+<p class="note">Point at a body to light up its recommendations on the trace. Choose one to read them in the explorer.</p>
+</div>
+<div>
+<div class="wbars" id="wbars"></div>
+<p class="wmore" id="wmore"></p>
+</div>
+</div>
+</section>
+
+<section class="slide s-next s-band" id="next" data-tone="dark" data-trace="hero" data-lit="all" data-name="What has happened since" aria-labelledby="h-next">
+<div class="frame">
+<h2 id="h-next">What has happened since</h2>
+<ol class="tl">
+<li class="done"><span class="when">17 February 2026</span><span class="what">The report is published.</span></li>
+<li class="done"><span class="when">April 2026</span><span class="what">The Government responds. <a href="https://committees.parliament.uk/publications/52720/documents/293826/default/">Read the response</a></span></li>
+<li class="done"><span class="when">11 November 2026</span><span class="what">Peers debate the report in Grand Committee.</span></li>
+</ol>
+<div class="acts"><a class="btn primary" href="explore/">Explore all 58 conclusions and recommendations</a><a class="btn" data-pdf href="#">Read the full report (PDF)</a><button type="button" class="btn" data-go="0">Back to the start</button></div>
+<p class="small">An unofficial guide, not a Parliament service. Quotes and figures come from the report, with paragraph numbers; the summaries of recommendations are ours, so check the report for the exact wording. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+</div>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Slides"><button type="button" id="prev" aria-label="Previous slide">‹</button><span id="count">1 of 12</span><button type="button" id="next-btn" aria-label="Next slide">›</button><span id="slidename"></span></nav>
+<div class="bed" aria-hidden="true"></div>
+<svg id="trace" aria-hidden="true"></svg>
+<div id="tip" aria-hidden="true"></div>
+
+<script>
+(()=>{
+const D=/*__DATA__*/null;
+const R=D.recs,N=R.length;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isRec=r=>r.kind==='rec';
+const nRec=R.filter(isRec).length;
+const plain=t=>t.replace(/\n• /g,' ');
+const clip=(s,n)=>s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;
+const AC=Object.fromEntries(D.actors.map(a=>[a.id,a]));
+const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
+const priSet=id=>new Set(R.filter(r=>r.pri===id).map(r=>r.n));
+const slides=$$('.slide');
+const NS='http://www.w3.org/2000/svg';
+const svgEl=(tag,attrs)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e};
+const paraHref=n=>D.pdf+'#page='+(D.para_pages[n]||1);
+
+$$('[data-para]').forEach(a=>{a.href=paraHref(a.dataset.para)});
+$$('[data-pdf]').forEach(a=>{a.href=D.pdf});
+$$('[data-more]').forEach(a=>{const n=priSet(a.dataset.more).size;a.textContent=`See all ${n} paragraphs on this theme in the explorer`});
+const traceNote=()=>$$('[data-tracenote]').forEach(p=>{p.textContent=innerWidth>820?'Lit on the trace at the right: where they sit in the report.':'Lit on the trace below: where they sit in the report.'});
+traceNote();
+
+/* ================= the trace: the report as a DNA profile ================= */
+const tr=$('#trace');
+const L0=1000,H0=100,GAP=1.6;
+let slot=0;const xs=[];R.forEach((r,i)=>{if(i&&r.ch!==R[i-1].ch)slot+=GAP;xs.push(slot+.5);slot+=1});
+const U=L0/slot;for(let i=0;i<N;i++)xs[i]*=U;
+const maxW=Math.max(...R.map(r=>r.words));
+const hs=R.map(r=>16+76*Math.sqrt(r.words/maxW));
+const SIG=U*.3;
+const defs=svgEl('defs',{}),clipP=svgEl('clipPath',{id:'tclip'}),clipR=svgEl('rect',{x:-30,y:-30,width:0,height:H0+80});
+clipP.appendChild(clipR);defs.appendChild(clipP);tr.appendChild(defs);
+const G=svgEl('g',{});tr.appendChild(G);
+const inner=svgEl('g',{'clip-path':'url(#tclip)'});G.appendChild(inner);
+const baseL=svgEl('line',{x1:0,y1:0,x2:L0,y2:0,'vector-effect':'non-scaling-stroke'});inner.appendChild(baseL);
+const peaks=R.map((r,i)=>{const x=xs[i],h=hs[i];let d=`M${(x-3*SIG).toFixed(2)},0`;for(let k=-12;k<=12;k++){const dx=k/4*SIG;d+=` L${(x+dx).toFixed(2)},${(h*Math.exp(-dx*dx/(2*SIG*SIG))).toFixed(2)}`}d+=` L${(x+3*SIG).toFixed(2)},0 Z`;const p=svgEl('path',{d});inner.appendChild(p);return p});
+let td='';for(let k=0;k<=1400;k++){const x=k/1400*L0;let y=0;for(let i=0;i<N;i++){const dx=x-xs[i];if(Math.abs(dx)<4*SIG)y+=hs[i]*Math.exp(-dx*dx/(2*SIG*SIG))}
+  y+=1.6+1.1*Math.sin(x*.13)+.7*Math.sin(x*.37+1.3)+.5*Math.sin(x*.91+.4);td+=(k?' L':'M')+x.toFixed(1)+','+y.toFixed(2)}
+const traceL=svgEl('path',{d:td,fill:'none','vector-effect':'non-scaling-stroke','stroke-linejoin':'round'});inner.appendChild(traceL);
+const loci=D.chapters.map(c=>{const idx=R.map((r,i)=>r.ch===c.n?i:-1).filter(i=>i>=0);if(!idx.length)return null;
+  const x0=xs[idx[0]]-U*.45,x1=xs[idx[idx.length-1]]+U*.45;const b=svgEl('rect',{class:'locus',x:x0.toFixed(1),y:H0+10,width:(x1-x0).toFixed(1),height:12,'vector-effect':'non-scaling-stroke'});G.appendChild(b);return{c,x0,x1,b}}).filter(Boolean);
+const scan=svgEl('line',{x1:0,x2:0,y1:-6,y2:H0+26,'vector-effect':'non-scaling-stroke'});G.appendChild(scan);
+const hits=R.map((r,i)=>{const h=svgEl('rect',{class:'hit',x:(xs[i]-U/2).toFixed(1),y:-8,width:U.toFixed(1),height:H0+16});h.dataset.n=r.n;G.appendChild(h);return h});
+const labG=svgEl('g',{class:'labs'});tr.appendChild(labG);
+const locLab=loci.map(l=>{const t=svgEl('text',{'text-anchor':'middle'});t.textContent='Chapter '+l.c.n;labG.appendChild(t);return t});
+const numLab=R.map(r=>{const t=svgEl('text',{'text-anchor':'middle',class:'num'});t.textContent=r.n;labG.appendChild(t);return t});
+let P=null,lit=null,reveal=1,col={},mode='hero',raf=0,sweepRaf=0;
+function colors(){const s=getComputedStyle(document.body);for(const k of['fg','mute','rr','rc','hi'])col[k]=s.getPropertyValue('--'+k).trim()}
+function box(m){
+  const W=innerWidth,H=innerHeight,pad=Math.max(W*.05,24);
+  if(W<=820)return{ox:16,oy:H-14,phi:0,L:W-32,Hs:36,lo:0};
+  if(m==='hero'){const Hs=Math.min(170,H*.18);return{ox:pad,oy:H-100,phi:0,L:W-2*pad,Hs,lo:1}}
+  return{ox:W-84,oy:96,phi:90,L:H-96-64,Hs:50,lo:0};
+}
+function draw(){
+  if(!P)return;const p=P,ph=p.phi*Math.PI/180,ax=Math.cos(ph),ay=Math.sin(ph),sx=Math.sin(ph),sy=-Math.cos(ph),kx=p.L/L0,ky=p.Hs/H0;
+  G.setAttribute('transform',`matrix(${(ax*kx).toFixed(5)},${(ay*kx).toFixed(5)},${(sx*ky).toFixed(5)},${(sy*ky).toFixed(5)},${p.ox.toFixed(2)},${p.oy.toFixed(2)})`);
+  const at=(x,y)=>[p.ox+ax*kx*x+sx*ky*y,p.oy+ay*kx*x+sy*ky*y];
+  clipR.setAttribute('width',(L0*reveal+30).toFixed(1));
+  scan.setAttribute('x1',(L0*reveal).toFixed(1));scan.setAttribute('x2',(L0*reveal).toFixed(1));
+  scan.setAttribute('stroke',col.hi);scan.setAttribute('stroke-width',2);scan.setAttribute('opacity',reveal>0&&reveal<1?1:0);
+  baseL.setAttribute('stroke',col.fg);baseL.setAttribute('opacity',.35);
+  traceL.setAttribute('stroke',col.fg);traceL.setAttribute('stroke-width',1.3);traceL.setAttribute('opacity',.08+.47*p.lo);
+  R.forEach((r,i)=>{const on=!!lit&&lit.has(r.n);const el=peaks[i];el.setAttribute('fill',on?col.hi:(isRec(r)?col.rr:col.rc));el.setAttribute('opacity',(lit&&!on)?.2:1)});
+  loci.forEach((l,j)=>{l.b.setAttribute('stroke',col.mute);l.b.setAttribute('opacity',p.lo);const [x,y]=at((l.x0+l.x1)/2,H0+22);const t=locLab[j];
+    t.setAttribute('x',x.toFixed(1));t.setAttribute('y',(y-6).toFixed(1));t.setAttribute('opacity',p.lo)});
+  const showNums=p.lo>.01&&U*kx>=15;
+  R.forEach((r,i)=>{const t=numLab[i],[x,y]=at(xs[i],0);t.setAttribute('x',x.toFixed(1));t.setAttribute('y',(y+16).toFixed(1));
+    const on=!!lit&&lit.has(r.n);t.setAttribute('opacity',showNums?p.lo*((i+.5)/N<=reveal?1:0):0);t.style.fill=on?col.hi:''});
+}
+function size(){tr.setAttribute('width',innerWidth);tr.setAttribute('height',innerHeight);tr.setAttribute('viewBox',`0 0 ${innerWidth} ${innerHeight}`)}
+const ease=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+function tween(target,ms=950){
+  cancelAnimationFrame(raf);const from={...P};
+  if(reduce||!P){P={...target};draw();return}
+  const t0=performance.now();
+  const step=now=>{const k=Math.min(1,(now-t0)/ms),e=ease(k);for(const key of['ox','oy','phi','L','Hs','lo'])P[key]=from[key]+(target[key]-from[key])*e;draw();if(k<1)raf=requestAnimationFrame(step)};
+  raf=requestAnimationFrame(step);
+}
+function sweep(ms){cancelAnimationFrame(sweepRaf);if(reduce){reveal=1;draw();return}const t0=performance.now();
+  const step=now=>{reveal=Math.min(1,(now-t0)/ms);draw();if(reveal<1)sweepRaf=requestAnimationFrame(step)};reveal=0;sweepRaf=requestAnimationFrame(step)}
+function setLit(s){lit=s;draw()}
+const tip=$('#tip');
+tr.addEventListener('pointerover',e=>{const h=e.target.closest('.hit');if(!h||e.pointerType==='touch')return;const r=R[h.dataset.n-1];
+  tip.innerHTML=`<b>${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</b><div class="x">${esc(clip(plain(r.text),170))}</div><div class="go">Select to read it in the explorer</div>`;
+  const bx=h.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight,vert=P.phi>45;
+  const x=vert?bx.left-tw-12:bx.left+bx.width/2-tw/2,y=vert?bx.top+bx.height/2-th/2:bx.top-th-10;
+  tip.style.left=Math.max(8,Math.min(innerWidth-tw-8,x))+'px';tip.style.top=Math.max(8,Math.min(innerHeight-th-8,y))+'px';tip.style.opacity=1});
+tr.addEventListener('pointerout',e=>{if(e.target.closest('.hit'))tip.style.opacity=0});
+tr.addEventListener('click',e=>{const h=e.target.closest('.hit');if(h)location.href='explore/#r='+h.dataset.n});
+
+/* ================= slides ================= */
+let active=-1;const hooks={};
+function activate(i){
+  if(i===active)return;const prev=active;active=i;const s=slides[i];
+  document.body.dataset.tone=s.dataset.tone;colors();
+  $('#count').textContent=`${i+1} of ${slides.length}`;$('#slidename').textContent=s.dataset.name;
+  $('#prev').disabled=i===0;$('#next-btn').disabled=i===slides.length-1;
+  const was=mode;mode=s.dataset.trace||'spine';
+  lit=s.dataset.pri?priSet(s.dataset.pri):s.dataset.lit==='all'?new Set(R.map(r=>r.n)):null;
+  const target=box(mode);
+  if(!P)P={...target};
+  if(prev>=0&&was===mode&&innerWidth>820)sweep(800);
+  tween(target);
+  slides.forEach((x,j)=>{const h=hooks[x.id];if(!h)return;if(j===i){h.start&&h.start()}else if(h.on){h.stop&&h.stop()}h.on=j===i});
+  history.replaceState(null,'',i?'#'+s.id:location.pathname+location.search);
+}
+const snapOn=()=>matchMedia('(min-width:821px) and (min-height:640px)').matches;
+function goTo(i){
+  i=Math.max(0,Math.min(slides.length-1,i));const s=slides[i];
+  s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  const h=s.querySelector('h1,h2');if(h){h.setAttribute('tabindex','-1');setTimeout(()=>h.focus({preventScroll:true}),reduce?0:650)}
+}
+$('#prev').addEventListener('click',()=>goTo(active-1));
+$('#next-btn').addEventListener('click',()=>goTo(active+1));
+document.addEventListener('click',e=>{const n=e.target.closest('[data-next]');if(n){goTo(active+1);return}const g=e.target.closest('[data-go]');if(g&&/^\d+$/.test(g.dataset.go))goTo(+g.dataset.go)});
+addEventListener('keydown',e=>{
+  if(!snapOn()||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(e.target.closest('input,select,textarea,[contenteditable]'))return;
+  const k=e.key;let d=0;
+  if(k==='ArrowDown'||k==='ArrowRight'||k==='PageDown'||(k===' '&&!e.shiftKey))d=1;
+  else if(k==='ArrowUp'||k==='ArrowLeft'||k==='PageUp'||(k===' '&&e.shiftKey))d=-1;
+  else if(k==='Home'){e.preventDefault();goTo(0);return}else if(k==='End'){e.preventDefault();goTo(slides.length-1);return}
+  if(d){if(e.target.closest('.seg,.fn')&&(k==='ArrowLeft'||k==='ArrowRight'))return;e.preventDefault();
+    const b=slides[active].getBoundingClientRect(),beh=reduce?'auto':'smooth';
+    if(d>0&&b.bottom>innerHeight+4){scrollBy({top:Math.min(b.bottom-innerHeight,innerHeight*.8),behavior:beh});return}
+    if(d<0&&b.top<-4){scrollBy({top:Math.max(b.top,-innerHeight*.8),behavior:beh});return}
+    goTo(active+d)}
+});
+
+/* shared before-and-after helper */
+function twoState(id,captions,autoplay){
+  const fig=$('#'+id),svg=fig.querySelector('svg'),cap=fig.querySelector('figcaption'),btns=[...fig.querySelectorAll('.seg button')];let touched=false,timer=0,played=false;
+  const set=st=>{svg.dataset.state=st;btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===st)));cap.innerHTML=captions[st];cap.querySelectorAll('[data-para]').forEach(a=>{a.href=paraHref(a.dataset.para)})};
+  btns.forEach(b=>b.addEventListener('click',()=>{touched=true;clearTimeout(timer);set(b.dataset.state)}));
+  set('now');
+  return{set,svg,start(){if(autoplay&&!played&&!touched&&!reduce){played=true;timer=setTimeout(()=>{if(!touched)set('model')},2600)}},stop(){clearTimeout(timer)}};
+}
+const onState=(svg,fn)=>new MutationObserver(()=>fn(svg.dataset.state==='model')).observe(svg,{attributes:true,attributeFilter:['data-state']});
+
+/* ================= 1. report after report ================= */
+hooks.finding=(()=>{
+  const svg=$('#ill-reports svg');let h='';
+  const X=k=>k<9?10+k*42:(k===9?410:470);
+  for(let k=0;k<11;k++){const x=X(k),y=10,c=k<9?'old':k===9?'y19':'y26';
+    h+=`<g class="doc ${c}" style="transition-delay:${(k*.08).toFixed(2)}s"><path d="M${x},${y} h24 l10,10 v38 h-34 z"/><path class="fold" d="M${x+24},${y} v10 h10" fill="none"/>${[0,1,2,3].map(j=>`<line x1="${x+6}" x2="${x+(j===3?18:28)}" y1="${y+22+j*7}" y2="${y+22+j*7}"/>`).join('')}</g>`}
+  h+=`<path class="brk" d="M10,68 v6 h370 v-6"/><text class="m" x="10" y="92">Nine reports in the ten years to 2019</text>`;
+  h+=`<text class="b" x="427" y="84" text-anchor="middle">2019</text><text class="m" x="427" y="99" text-anchor="middle">first report</text>`;
+  h+=`<text class="b" x="487" y="84" text-anchor="middle">2026</text><text class="m" x="487" y="99" text-anchor="middle">follow-up</text>`;
+  svg.innerHTML=h;
+  return{start(){requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 2. figure 1, redrawn ================= */
+hooks.stakes=(()=>{
+  const svg=$('#ill-fig1 svg');const rows=[['Witness',75],['Forensic',61],['Character',37],['Suspect',14],['Police',6]],K=5.2,X0=96;
+  const bar=(y,w)=>w<=4?`M${X0},${y} h${w} v22 h${-w} z`:`M${X0},${y} h${(w-4).toFixed(1)} a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h${-(w-4).toFixed(1)} z`;
+  let h='';rows.forEach(([l,v],k)=>{const y=6+k*38;h+=`<text x="86" y="${y+15.5}" text-anchor="end"${l==='Forensic'?' class="b"':''}>${l}</text><path class="bar${l==='Forensic'?' hi':''}" data-w="${v*K}" data-y="${y}" d="${bar(y,0)}"/><text class="v" x="${X0+v*K+8}" y="${y+15.5}">${v}</text>`});
+  h+=`<line x1="${X0}" y1="0" x2="${X0}" y2="${6+5*38-10}" stroke="var(--fg)" stroke-width="1"/><text class="m" x="${X0}" y="${6+5*38+12}">Number of reasons evidence was found misleading</text>`;
+  svg.innerHTML=h;const bars=[...svg.querySelectorAll('.bar')];let done=false;
+  return{start(){svg.classList.remove('pre');if(done)return;done=true;
+    if(reduce){bars.forEach(b=>b.setAttribute('d',bar(+b.dataset.y,+b.dataset.w)));return}
+    const t0=performance.now();const st=now=>{const k=Math.min(1,(now-t0)/900),e=1-Math.pow(1-k,3);bars.forEach(b=>b.setAttribute('d',bar(+b.dataset.y,+b.dataset.w*e)));if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}};
+})();
+
+/* ================= 3. themes ================= */
+{
+  const six=D.priorities.filter(p=>p.id!=='other');
+  $('#cards').innerHTML=six.map((p,i)=>{const its=R.filter(r=>r.pri===p.id),nr=its.filter(isRec).length;
+    return `<button type="button" class="card" data-card="${p.id}"><span class="cn">${i+1}</span><span class="ct">${esc(p.title)}</span><span class="cs">${esc(p.summary)}</span><span class="strip" aria-hidden="true">${R.map(r=>`<i class="${isRec(r)?'r':'c'}${r.pri===p.id?' on':''}" style="flex:${r.words} 1 0"></i>`).join('')}</span><span class="cc">${its.length} paragraphs, ${nr} recommendation${nr===1?'':'s'}</span></button>`}).join('');
+  const cards=$('#cards');
+  cards.addEventListener('click',e=>{const c=e.target.closest('[data-card]');if(c)goTo(slides.findIndex(s=>s.id===c.dataset.card))});
+  const peek=e=>{const c=e.target.closest('[data-card]');if(slides[active]&&slides[active].id==='themes')setLit(c?priSet(c.dataset.card):null)};
+  cards.addEventListener('pointerover',peek);cards.addEventListener('focusin',peek);
+  cards.addEventListener('pointerleave',()=>{if(slides[active].id==='themes')setLit(null)});
+  cards.addEventListener('focusout',e=>{if(!cards.contains(e.relatedTarget)&&slides[active].id==='themes')setLit(null)});
+}
+
+/* ================= 4. the sterile corridor ================= */
+hooks.service=(()=>{
+  const ctl=twoState('ill-corridor',{
+    now:'Now: most police forensic spending stays in-house, spread across 43 forces, raising concerns about oversight, consistency and independence (<a data-para="59">paragraphs 59</a>, <a data-para="79">79</a> and <a data-para="83">83</a>).',
+    model:'The committee’s model: a national forensic service kept independent of the police, like Scotland’s “sterile corridor” between forensic science and the police (<a data-para="85">paragraph 85</a>).'},true);
+  const svg=ctl.svg;
+  const fNow=[],fMod=[],lNow=[],lMod=[];
+  for(let i=0;i<43;i++){const c=i%9,r=Math.floor(i/9);fNow.push([40+c*27,62+r*36]);fMod.push([36+c*19.5,62+r*36]);lNow.push([40+c*27+9,62+r*36-9]);lMod.push([352+(i%7)*25,56+Math.floor(i/7)*25])}
+  let h=`<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--rc)" stroke-width="2"/></pattern><marker id="ahc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1 L8,5 L1,9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>`;
+  h+=`<g class="now" style="color:var(--fg)"><rect class="reg" x="18" y="36" width="270" height="182" rx="10"/><text class="b" x="18" y="24">43 police forces, most forensic work done in-house</text>
+    <rect class="com" x="350" y="146" width="190" height="62" rx="8"/><text x="445" y="173" text-anchor="middle">Commercial providers</text><text class="m" x="445" y="191" text-anchor="middle">the rest of the work</text>
+    <path class="arr" d="M288,178 L346,178" marker-end="url(#ahc)"/></g>`;
+  h+=`<g class="mdl" style="color:var(--fg)"><rect class="reg" x="18" y="36" width="196" height="182" rx="10"/><text class="b" x="18" y="24">Police</text>
+    <rect class="cor" x="226" y="36" width="96" height="182"/><text class="b" x="274" y="132" text-anchor="middle">Sterile</text><text class="b" x="274" y="148" text-anchor="middle">corridor</text>
+    <rect class="reg nfs" x="334" y="36" width="206" height="182" rx="10"/><text class="b" x="334" y="24">Independent national forensic service</text>
+    <path class="arr" d="M214,74 L330,74" marker-end="url(#ahc)"/><text class="m" x="274" y="66" text-anchor="middle">Requests</text>
+    <path class="arr" d="M334,198 L218,198" marker-end="url(#ahc)"/><text class="m" x="274" y="190" text-anchor="middle">Results</text></g>`;
+  h+=fNow.map(([x,y],i)=>`<g class="mv fo" style="transform:translate(${x}px,${y}px)"><circle class="force" r="6"/></g>`).join('');
+  h+=lNow.map(([x,y],i)=>`<g class="mv lb" style="transform:translate(${x}px,${y}px);transition-delay:${(i*.012).toFixed(3)}s"><rect class="lab" x="-3.5" y="-3.5" width="7" height="7" rx="1"/></g>`).join('');
+  h+=`<g class="now"><text class="m" x="18" y="244">Each force with its own lab: </text><rect class="lab" x="182" y="236" width="7" height="7" rx="1"/></g>`;
+  h+=`<g class="mdl"><text class="m" x="334" y="244">Forensic science moved out of the forces</text></g>`;
+  svg.innerHTML=h;
+  const fo=[...svg.querySelectorAll('.fo')],lb=[...svg.querySelectorAll('.lb')];
+  onState(svg,m=>{fo.forEach((g,i)=>{const [x,y]=(m?fMod:fNow)[i];g.style.transform=`translate(${x}px,${y}px)`});lb.forEach((g,i)=>{const [x,y]=(m?lMod:lNow)[i];g.style.transform=`translate(${x}px,${y}px)`})});
+  return ctl;
+})();
+
+/* ================= 5. the scales ================= */
+hooks.access=(()=>{
+  const ctl=twoState('ill-scales',{
+    now:'Now: the prosecution can call on the police, forensic providers and better-paid experts; the defence relies on a dwindling, underpaid community of experts (<a data-para="102">paragraphs 102 to 104</a>). Specialisms such as fibres, footprints and some toxicology are at severe risk (<a data-para="128">paragraph 128</a>).',
+    model:'With the committee’s fixes: legal aid rates at least equal to the prosecution’s and paid promptly, and a register of approved experts open to the defence (recommendations <a href="explore/#r=22">22</a> and <a href="explore/#r=23">23</a>). Better streamlined reports would help the defence check the science (<a href="explore/#r=26">recommendation 26</a>).'},true);
+  const svg=ctl.svg,PX=280,PY=62,ARM=176;
+  const end=(th,dx)=>{const a=th*Math.PI/180;return[PX+dx*Math.cos(a),PY+dx*Math.sin(a)]};
+  const pan=(id,lab,now2,mod2)=>`<g class="pan" id="${id}"><line class="string" x1="0" y1="0" x2="-52" y2="58"/><line class="string" x1="0" y1="0" x2="52" y2="58"/><path class="dish" d="M-62,58 Q0,90 62,58 Z"/><text class="b" y="108">${lab}</text>
+    <g class="now">${now2.map((t,j)=>`<text class="it m" y="${124+j*14}">${t}</text>`).join('')}</g><g class="mdl">${mod2.map((t,j)=>`<text class="it" y="${124+j*14}">${t}</text>`).join('')}</g></g>`;
+  let h=`<line class="post" x1="${PX}" y1="${PY}" x2="${PX}" y2="232"/><rect x="${PX-46}" y="232" width="92" height="9" rx="3" fill="var(--fg)"/>`;
+  h+=`<g class="beam"><line class="post" x1="${PX-ARM}" y1="${PY}" x2="${PX+ARM}" y2="${PY}"/></g><circle cx="${PX}" cy="${PY}" r="7" fill="var(--hi)"/>`;
+  h+=pan('pan-p','Prosecution',['Police and forensic providers','Experts paid over £130 an hour'],['Police and forensic providers','Experts paid over £130 an hour']);
+  h+=pan('pan-d','Defence',['Small, fragmented expert pool','Legal aid: £83 to £104 an hour'],['Rates at least equal to the prosecution','A register of approved experts']);
+  svg.innerHTML=h;
+  const beam=svg.querySelector('.beam'),pp=svg.querySelector('#pan-p'),pd=svg.querySelector('#pan-d');
+  const set=m=>{const th=m?-2:-11;beam.style.transformOrigin=`${PX}px ${PY}px`;beam.style.transform=`rotate(${th}deg)`;const [x1,y1]=end(th,-ARM),[x2,y2]=end(th,ARM);pp.style.transform=`translate(${x1.toFixed(1)}px,${y1.toFixed(1)}px)`;pd.style.transform=`translate(${x2.toFixed(1)}px,${y2.toFixed(1)}px)`};
+  set(false);onState(svg,set);
+  return ctl;
+})();
+
+/* ================= 6. the market ================= */
+hooks.market=(()=>{
+  const svg=$('#ill-market svg');
+  let h=`<defs><marker id="ahm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1,1 L8,5 L1,9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>`;
+  h+=`<text class="b" x="20" y="16">2018: three major providers</text>`;
+  [['Eurofins',20],['Cellmark',200],['Key Forensic Services',380]].forEach(([n,x])=>{h+=`<rect class="box${n.startsWith('Key')?' kfs':''}" x="${x}" y="26" width="160" height="46" rx="6"/><text x="${x+80}" y="54" text-anchor="middle">${n}</text>`});
+  h+=`<g style="color:var(--fg)"><path class="arr" d="M280,74 C280,104 250,112 250,144" marker-end="url(#ahm)"/><path class="arr" d="M470,74 C470,104 492,112 492,144" marker-end="url(#ahm)"/></g>`;
+  h+=`<text class="m" x="268" y="108" text-anchor="end">Acquired by Eurofins</text><text class="m" x="460" y="100" text-anchor="end">In and out of</text><text class="m" x="460" y="114" text-anchor="end">administration</text>`;
+  h+=`<text class="b" x="20" y="140">Now: one provider has over 80%</text>`;
+  h+=`<rect class="seg-e" x="20" y="150" height="50" width="0" rx="6" data-w="416"/><rect class="seg-o" x="440" y="150" width="100" height="50" rx="6"/>`;
+  h+=`<text class="w ew" x="34" y="180" opacity="0">Eurofins, including Cellmark: over 80%</text><text x="490" y="180" text-anchor="middle">Others</text>`;
+  svg.innerHTML=h;const seg=svg.querySelector('.seg-e'),lab=svg.querySelector('.ew');let done=false;
+  return{start(){if(done)return;done=true;if(reduce){seg.setAttribute('width',416);lab.setAttribute('opacity',1);return}
+    const t0=performance.now();const st=now=>{const k=Math.min(1,(now-t0)/1000),e=1-Math.pow(1-k,3);seg.setAttribute('width',(416*e).toFixed(1));lab.setAttribute('opacity',k>.7?(k-.7)/.3:0);if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}};
+})();
+
+/* ================= 7. the archive ================= */
+hooks.archive=(()=>{
+  const ctl=twoState('ill-archive',{
+    now:'Now: evidence is kept by 43 police forces and several providers, with widely variable practice and guidance that is not always followed (<a data-para="146">paragraph 146</a>).',
+    model:'The committee’s model: an independent national store, the Forensic Archive reopened for new casework, perhaps with regional hubs (<a data-para="147">paragraph 147</a>).'},true);
+  const svg=ctl.svg;let seed=5;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const now=[],mdl=[];
+  for(let i=0;i<43;i++){const c=i%9,r=Math.floor(i/9);now.push([34+c*35+(rnd()-.5)*10,48+r*40+(rnd()-.5)*12,(rnd()-.5)*26]);mdl.push([404+(i%6)*22,86+Math.floor(i/6)*18,0])}
+  let h=`<g class="bld-g"><path class="bld" d="M380,72 L466,30 L552,72 Z"/><rect class="bld" x="390" y="72" width="152" height="150"/></g>`;
+  h+=`<g class="now"><text class="b" x="466" y="244" text-anchor="middle">Forensic Archive</text><text class="m" x="466" y="259" text-anchor="middle">pre-2012 evidence, and emergencies</text><text class="b" x="20" y="24">43 police forces, each storing evidence its own way</text></g>`;
+  h+=`<g class="mdl"><text class="b" x="466" y="244" text-anchor="middle">Forensic Archive</text><text class="m" x="466" y="259" text-anchor="middle">reopened for new casework</text><text class="b" x="20" y="24">One national store</text></g>`;
+  h+=now.map(([x,y,r],i)=>`<g class="mv crate${i%5===2?' odd':''}${i%7===4?' faint':''}" style="transform:translate(${x.toFixed(1)}px,${y.toFixed(1)}px) rotate(${r.toFixed(1)}deg);transition-delay:${(i*.015).toFixed(3)}s"><rect x="-8" y="-6" width="16" height="12" rx="1.5"/><line x1="-8" y1="-2" x2="8" y2="-2"/></g>`).join('');
+  svg.innerHTML=h;const cr=[...svg.querySelectorAll('.crate')];
+  onState(svg,m=>cr.forEach((g,i)=>{const [x,y,r]=(m?mdl:now)[i];g.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) rotate(${r.toFixed(1)}deg)`}));
+  return ctl;
+})();
+
+/* ================= 8. the institute ================= */
+hooks.institute=(()=>{
+  const fig=$('#ill-hub'),svg=fig.querySelector('svg'),cap=fig.querySelector('figcaption');
+  const F=[
+    {l:['Research','priorities'],t:'Coordinate research and development priorities across the sector, and carry out key projects.',r:[56]},
+    {l:['Impartial','advice'],t:'Give impartial advice and expertise to the police and to defence barristers.',r:[56]},
+    {l:['Trusted','experts'],t:'Keep lists of trusted experts and forensic scientists for court, a route for small defence experts who cannot afford accreditation.',r:[56,23]},
+    {l:['Best','practice'],t:'Maintain important databases and best-practice guidance, with the Forensic Science Regulator.',r:[56]},
+    {l:['A voice for','the sector'],t:'Advocate for forensic science, formalising networks that already exist.',r:[56]},
+    {l:['National','capacity'],t:'Until the national forensic service exists, assess forensic science capacity across police forces and providers.',r:[57]},
+    {l:['Rare','specialisms'],t:'Keep expertise in “non-commercial” specialisms that companies and police forces are letting go.',r:[57]},
+    {l:['Training'],t:'Analyse training needs and provide training for forensic scientists, inside police forces or outside them.',r:[57]}];
+  const cx=280,cy=140,rx=200,ry=106;
+  let h='';
+  F.forEach((f,i)=>{const a=-Math.PI/2+i/F.length*Math.PI*2;f.x=cx+rx*Math.cos(a);f.y=cy+ry*Math.sin(a);f.a=a;
+    h+=`<line class="spoke" data-i="${i}" x1="${cx}" y1="${cy}" x2="${f.x.toFixed(1)}" y2="${f.y.toFixed(1)}"/>`});
+  h+=`<circle class="core" cx="${cx}" cy="${cy}" r="59"/><text class="w" x="${cx}" y="${cy-10}" text-anchor="middle">National</text><text class="w" x="${cx}" y="${cy+5}" text-anchor="middle">Institute for</text><text class="w" x="${cx}" y="${cy+20}" text-anchor="middle">Forensic Science</text>`;
+  h+=F.map((f,i)=>{const c=Math.cos(f.a),right=c>.2,left=c<-.2,anc=right?'start':left?'end':'middle';const dx=right?13:left?-13:0;const top=Math.sin(f.a)<-.6,bot=Math.sin(f.a)>.6;
+    const ly=top?f.y-14-(f.l.length-1)*14:bot?f.y+22:f.y-(f.l.length-1)*7+4;
+    return `<g class="fn" data-i="${i}" tabindex="0" role="button" aria-label="${esc(f.l.join(' '))}"><circle cx="${f.x.toFixed(1)}" cy="${f.y.toFixed(1)}" r="8"/>${f.l.map((t,j)=>`<text x="${(f.x+dx).toFixed(1)}" y="${(ly+j*14).toFixed(1)}" text-anchor="${anc}">${esc(t)}</text>`).join('')}</g>`}).join('');
+  svg.innerHTML=h;
+  let cur=0,timer=0,touched=false;
+  const sel=i=>{cur=i;const f=F[i];svg.querySelectorAll('.fn').forEach(g=>g.classList.toggle('on',+g.dataset.i===i));svg.querySelectorAll('.spoke').forEach(s=>s.classList.toggle('on',+s.dataset.i===i));
+    cap.innerHTML=esc(f.t.replace(/\.$/,''))+' ('+f.r.map((n,j)=>`<a href="explore/#r=${n}">${j?'':'recommendation'+(f.r.length>1?'s ':' ')}${n}</a>`).join(' and ')+').'};
+  const pick=i=>{touched=true;clearInterval(timer);sel(i)};
+  svg.addEventListener('click',e=>{const g=e.target.closest('.fn');if(g)pick(+g.dataset.i)});
+  svg.addEventListener('keydown',e=>{const g=e.target.closest('.fn');if(!g)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(+g.dataset.i)}
+    else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(+g.dataset.i+(e.key==='ArrowRight'?1:F.length-1))%F.length;svg.querySelector(`.fn[data-i="${n}"]`).focus();pick(n)}});
+  sel(0);
+  return{start(){if(touched||reduce)return;clearInterval(timer);timer=setInterval(()=>sel((cur+1)%F.length),3200)},stop(){clearInterval(timer)}};
+})();
+
+/* ================= 9. the backlog ================= */
+hooks.digital=(()=>{
+  const svg=$('#ill-devices svg');let h='';
+  for(let i=0;i<200;i++){const c=i%25,r=Math.floor(i/25),x=8+c*21,y=4+r*22;h+=`<rect class="ph" x="${x}" y="${y}" width="11" height="18" rx="2.5" style="transition-delay:${(i*.006).toFixed(3)}s"/><rect x="${x+3.5}" y="${y+14}" width="4" height="1.6" rx=".8" fill="var(--bg)"/>`}
+  h+=`<rect class="ph" x="8" y="186" width="11" height="18" rx="2.5"/><text class="m" x="26" y="200">Each stands for 100 devices awaiting analysis</text>`;
+  svg.innerHTML=h;
+  return{start(){requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 10. who is asked to act ================= */
+hooks.who=(()=>{
+  const acts=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||a.full.localeCompare(b.full));
+  const big=acts.filter(a=>actorCount[a.id]>=2),small=acts.filter(a=>actorCount[a.id]<2),max=actorCount[acts[0].id];
+  $('#wbars').innerHTML=big.map((a,i)=>`<a class="wb" href="explore/#to=${a.id}" data-to="${a.id}"><span class="wn">${esc(a.full)}</span><span class="wt"><i style="--w:${(actorCount[a.id]/max*100).toFixed(1)}%;--d:${(i*.07).toFixed(2)}s"></i></span><span class="wc">${actorCount[a.id]}</span></a>`).join('');
+  $('#wmore').innerHTML=small.length?`${small.length===1?'One more body is':small.length+' more bodies are each'} named in one recommendation: `+small.map(a=>`<a href="explore/#to=${a.id}" data-to="${a.id}">${esc(a.full)}</a>`).join(', ')+'.':'';
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length,[a1,a2,a3]=acts;
+  $('#who-lede').textContent=`${a1.full} is asked to act in ${actorCount[a1.id]} of the ${nRec} recommendations, followed by the ${a2.full} (${actorCount[a2.id]}) and ${a3.full.toLowerCase()} (${actorCount[a3.id]}). In ${multi} recommendations, more than one body is asked to act.`;
+  const sec=$('#who');
+  const peek=e=>{const a=e.target.closest('[data-to]');if(slides[active]&&slides[active].id==='who')setLit(a?new Set(R.filter(r=>r.to.includes(a.dataset.to)).map(r=>r.n)):null)};
+  sec.addEventListener('pointerover',peek);sec.addEventListener('focusin',peek);
+  sec.addEventListener('pointerleave',()=>{if(slides[active].id==='who')setLit(null)});
+  return{start(){sec.classList.add('on')}};
+})();
+
+/* ================= start ================= */
+size();colors();
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)activate(slides.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px'});
+const startAt=slides.findIndex(s=>'#'+s.id===location.hash);
+if(startAt>0)slides[startAt].scrollIntoView({behavior:'auto'});
+P={...box(slides[Math.max(0,startAt)].dataset.trace||'spine')};
+if(startAt<=0&&!reduce){reveal=0;const t0=performance.now();const z=now=>{reveal=Math.min(1,(now-t0)/2200);draw();if(reveal<1)requestAnimationFrame(z)};requestAnimationFrame(z)}
+slides.forEach(s=>io.observe(s));
+draw();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();cancelAnimationFrame(raf);P={...P,...box(mode)};draw();traceNote()},120)});
+})();
+</script>
+</body>
+</html>
