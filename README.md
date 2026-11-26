@@ -26,3 +26,9 @@ To refresh the site straight away, open the **Actions** tab, choose **Update sit
 - Committees sometimes keep older inquiries marked as current after reporting; the site follows Parliament's own status.
 - API dates are UK local time; the site shows deadlines in UK time.
 - This is not an official Parliament service. Always check the committee's own page before submitting evidence.
+
+## Science and Technology Committee tracker
+
+`st_build.py` builds `/science-and-technology/`: the committee's reports with links to evidence, Government responses and Lords debates (found in Hansard), plus upcoming evidence sessions and a subscribable calendar (`sessions.ics`).
+
+`evidence_build.py` (**beta**) builds a full-text search of the committee's oral and written evidence since 2016. Document text is cached between runs with the Actions cache, and [Pagefind](https://pagefind.app) builds a static search index; only the index is published, and results link to the official documents.

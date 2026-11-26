@@ -1,0 +1,136 @@
+{
+ "OralEvidence": [
+  {
+   "id": 18076,
+   "activityStartDate": "2026-09-08T10:15:00",
+   "legacyHtmlUrl": null,
+   "committeeBusinesses": [
+    {
+     "id": 8514,
+     "title": "Advanced Research and Invention Agency (ARIA)"
+    }
+   ],
+   "witnesses": [
+    {
+     "organisations": [
+      {
+       "name": "Advanced Research and Invention Agency (ARIA)",
+       "role": "Chief Executive Officer"
+      }
+     ],
+     "name": null
+    }
+   ],
+   "document": {
+    "files": [
+     {
+      "fileDataFormat": "Html"
+     }
+    ]
+   }
+  },
+  {
+   "id": 18100,
+   "activityStartDate": "2026-11-24T10:15:00",
+   "committeeBusinesses": [
+    {
+     "id": 10109,
+     "title": "Future of UK compute in the age of AI"
+    }
+   ],
+   "witnesses": [
+    {
+     "name": "Professor Michael Wooldridge",
+     "organisations": [
+      {
+       "name": "University of Oxford"
+      }
+     ]
+    },
+    {
+     "name": "Professor Anne Trefethen",
+     "organisations": [
+      {
+       "name": "University of Oxford"
+      }
+     ]
+    }
+   ],
+   "document": {
+    "files": [
+     {
+      "fileDataFormat": "Html"
+     }
+    ]
+   }
+  }
+ ],
+ "WrittenEvidence": [
+  {
+   "id": 165965,
+   "internalReference": "PMA0060",
+   "publicationDate": "2026-08-11T11:31:37",
+   "committeeBusiness": {
+    "id": 9659,
+    "title": "Innovation in the NHS: personalised medicine and AI"
+   },
+   "witnesses": [
+    {
+     "organisations": [
+      {
+       "name": "Imperial Policy Forum"
+      }
+     ]
+    }
+   ],
+   "document": {
+    "files": [
+     {
+      "fileDataFormat": "Html"
+     }
+    ]
+   }
+  },
+  {
+   "id": 170001,
+   "internalReference": "CMP0001",
+   "publicationDate": "2026-11-25T09:00:00",
+   "committeeBusiness": {
+    "id": 10109,
+    "title": "Future of UK compute in the age of AI"
+   },
+   "witnesses": [
+    {
+     "name": "Jane <script>alert(1)</script> Doe",
+     "organisations": []
+    }
+   ],
+   "document": {
+    "files": [
+     {
+      "fileDataFormat": "Html"
+     }
+    ]
+   }
+  },
+  {
+   "id": 5,
+   "internalReference": "OLD001",
+   "publicationDate": "2016-05-01T00:00:00",
+   "committeeBusiness": {
+    "title": "EU membership and UK science"
+   },
+   "witnesses": [],
+   "document": {
+    "files": []
+   },
+   "legacyHtmlUrl": null
+  }
+ ],
+ "docs": {
+  "OralEvidence/18076": "<html><head><style>p{}</style><title>x</title></head><body><p>Q1 <b>The Chair:</b> Welcome. How does ARIA choose programme directors?</p><p>Ilan Gur: We look for people with bold ideas about energy and synthetic biology.</p><p>Q2 Lord Example: What about compute and semiconductors?</p><p>Answer: Compute is a bottleneck for many of our programmes.</p></body></html>",
+  "OralEvidence/18100": "<html><body><p>Q1 The Chair: What does sovereign compute mean for the UK?</p><p>Professor Wooldridge: The UK needs access to frontier GPU clusters; exascale is necessary but not sufficient.</p><p>Q2: Energy costs for data centres are a major constraint.</p></body></html>",
+  "WrittenEvidence/165965": "<html><body><h1>Written evidence submitted by Imperial Policy Forum</h1><p>Personalised medicine depends on genomic data and NHS data infrastructure. Federated data environments are essential.</p></body></html>",
+  "WrittenEvidence/170001": "<html><body><p>I believe GPU clusters &amp; data centres need cheap energy. &lt;b&gt;not bold&lt;/b&gt;</p></body></html>"
+ }
+}
