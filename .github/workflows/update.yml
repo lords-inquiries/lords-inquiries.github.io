@@ -41,10 +41,6 @@ jobs:
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
         run: python build.py --out site
 
-      - name: Temporary audit of open calls
-        continue-on-error: true
-        run: python tools/audit.py
-
       # A separate section; if it fails, the main page still publishes.
       - name: Build the Science and Technology Committee reports tracker
         continue-on-error: true

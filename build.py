@@ -36,20 +36,20 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 def get_json(path, params, raw_log=None):
     url = f"{API}/{path}?{urllib.parse.urlencode(params, doseq=True)}"
     last_err = None
-    for attempt in range(4):
+    for attempt in range(6):
         try:
             req = urllib.request.Request(url, headers={
                 "Accept": "application/json",
                 "User-Agent": "lords-inquiries/1.0 (+%s)" % REPO_URL,
             })
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=60) as r:
                 data = json.load(r)
             if raw_log is not None:
                 raw_log[url] = data
             return data
         except Exception as e:  # network blip or 5xx: back off and retry
             last_err = e
-            time.sleep(2 * (attempt + 1))
+            time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"Failed to fetch {url}: {last_err}")
 
 
