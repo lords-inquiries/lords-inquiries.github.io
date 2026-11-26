@@ -65,7 +65,6 @@ select.more{flex:0 0 auto;width:auto;max-width:16em}
 .chip:hover{border-color:var(--ink)}
 .chip[aria-pressed=true]{background:var(--probe);border-color:var(--probe);color:#fff}
 .chip[aria-pressed=true] .c{color:#fff}
-.chip.none{border-style:dashed}
 select.more{font:13.5px var(--sans);color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:3px;min-height:32px;padding:4px 6px}
 .clear{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;padding:6px 2px}
 .status{margin:14px 0 0;font-size:15px;min-height:1.5em}
@@ -141,7 +140,6 @@ h2{font:640 clamp(28px,3.2vw,40px)/1.05 var(--sans);font-stretch:88%;letter-spac
 .net .rn text{font:600 9px var(--sans);font-stretch:70%;fill:var(--paper);pointer-events:none}
 .net .bn{cursor:pointer}
 .net .bn circle{fill:var(--paper);stroke:var(--ink);stroke-width:1.5;transition:fill .2s,stroke .2s,opacity .2s}
-.net .bn.none circle{stroke-dasharray:3 3}
 .net .bn text{font:500 13px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;transition:opacity .2s}
 .net .bn .cnt{font:700 12px var(--sans);font-stretch:70%;stroke:none}
 .net .bn.lit circle{fill:var(--probe);stroke:var(--probe)}
@@ -187,7 +185,6 @@ mark{background:var(--wash);color:inherit;box-shadow:0 2px 0 var(--probe);paddin
 .tag{border:1px solid var(--rule);border-radius:3px;padding:1px 7px;font-size:12.5px;color:var(--ink);background:none;cursor:pointer;min-height:26px}
 .tag:hover{border-color:var(--ink)}
 .tag.on{background:var(--probe);border-color:var(--probe);color:#fff}
-.tag.none{border-style:dashed}
 .item.flash{animation:flash 1.8s ease-out}
 @keyframes flash{0%,30%{background:var(--wash)}100%{background:transparent}}
 .empty{border:1px dashed var(--con);padding:24px;color:var(--muted);text-align:center}
@@ -330,7 +327,7 @@ const pdfAt=r=>D.pdf+'#page='+r.page;
 const secName=s=>s.h2?s.h2:s.h1;
 const secPath=s=>s.h2?s.h1+': '+s.h2:s.h1;
 const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
-const actorsByCount=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||(a.id==='none')-(b.id==='none')||a.name.localeCompare(b.name));
+const actorsByCount=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||a.name.localeCompare(b.name));
 
 /* ---------- state ---------- */
 const st={by:'ch',hl:null}; // hl: {type:'to'|'topic'|'q', v}
@@ -367,8 +364,8 @@ document.title=D.title+': the conclusions and recommendations';
 
 /* ---------- controls ---------- */
 const TOPCHIPS=6;
-$('#actorchips').innerHTML=actorsByCount.filter((a,i)=>i<TOPCHIPS||a.id==='none').map(a=>`<button type="button" class="chip${a.id==='none'?' none':''}" data-to="${a.id}" aria-pressed="false" title="${esc(a.full)}">${esc(a.name)} <span class="c">${actorCount[a.id]}</span></button>`).join('')+
-  `<select class="more" id="moreact" aria-label="Other bodies"><option value="">${actorsByCount.length-TOPCHIPS-1} more…</option>${actorsByCount.filter((a,i)=>i>=TOPCHIPS&&a.id!=='none').map(a=>`<option value="${a.id}">${esc(a.full)} (${actorCount[a.id]})</option>`).join('')}</select>`;
+$('#actorchips').innerHTML=actorsByCount.filter((a,i)=>i<TOPCHIPS).map(a=>`<button type="button" class="chip" data-to="${a.id}" aria-pressed="false" title="${esc(a.full)}">${esc(a.name)} <span class="c">${actorCount[a.id]}</span></button>`).join('')+
+  `<select class="more" id="moreact" aria-label="Other bodies"><option value="">${actorsByCount.length-TOPCHIPS} more…</option>${actorsByCount.filter((a,i)=>i>=TOPCHIPS).map(a=>`<option value="${a.id}">${esc(a.full)} (${actorCount[a.id]})</option>`).join('')}</select>`;
 $('#topicchips').innerHTML=D.topics.map(t=>{const rx=TOP[t.id].rx;const c=R.filter(r=>{rx.lastIndex=0;return rx.test(r.text)}).length;return `<button type="button" class="chip" data-topic="${t.id}" aria-pressed="false" title="Matches: ${esc(t.words)}">${esc(t.name)} <span class="c">${c}</span></button>`}).join('');
 $('#controls').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
@@ -403,8 +400,7 @@ function status(L){
   const n=L.size;
   if(h.type==='to'){
     const a=AC[h.v];
-    el.innerHTML=h.v==='none'?`<span class="dot"></span><b>${n} of the ${nRec} recommendations</b> don’t say who should act.`:
-      `<span class="dot"></span>${esc(a.full)}: asked to act in <b>${n} of the ${nRec} recommendations</b>.`;
+    el.innerHTML=`<span class="dot"></span>${esc(a.full)}: asked to act in <b>${n} of the ${nRec} recommendations</b>.`;
   }else if(h.type==='topic'){
     const t=TOP[h.v];el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> mention ${esc(/^[A-Z]{2,}$/.test(t.name)?t.name:t.name.toLowerCase())} <span style="color:var(--muted)">(matching ${esc(t.words)})</span>.`;
   }else{
@@ -500,7 +496,7 @@ function buildNet(){
   if(W<600){host.hidden=true;$('#nethint').hidden=true;NET.svg=null;return}host.hidden=false;$('#nethint').hidden=false;
   const H=Math.round(Math.min(640,Math.max(470,W*.68)));NET.W=W;NET.H=H;
   const cx=W/2,cy=H/2,rx=W/2-165,ry=H/2-26;
-  const ids=actorsByCount.map(a=>a.id),n=ids.length,RR=R.filter(isRec);
+  const ids=actorsByCount.map(a=>a.id),n=ids.length,RR=R.filter(r=>isRec(r)&&r.to.length);
   // ring order: spread the recommendations out across the middle while keeping links short (seeded local search)
   // two facing arcs, like brackets: left side top to bottom, then right side bottom to top, so neighbours in the order stay neighbours
   const nl=Math.ceil(n/2),nr=n-nl,A=55*Math.PI/180;
@@ -519,7 +515,7 @@ function buildNet(){
   const bodies=order.map((id,i)=>({id,type:'b',a:AC[id],c:actorCount[id],side:i<nl?-1:1,r:6+3*Math.sqrt(actorCount[id]),x:slots[i][0],y:slots[i][1]}));
   NET.slots=slots;NET.nl=nl;
   const BI=Object.fromEntries(bodies.map(b=>[b.id,b]));
-  const recs=R.filter(isRec).map(r=>{const bs=r.to.map(id=>BI[id]);let x=bs.reduce((s,b)=>s+b.x,0)/bs.length,y=bs.reduce((s,b)=>s+b.y,0)/bs.length;
+  const recs=RR.map(r=>{const bs=r.to.map(id=>BI[id]);let x=bs.reduce((s,b)=>s+b.x,0)/bs.length,y=bs.reduce((s,b)=>s+b.y,0)/bs.length;
     const f=bs.length===1?.7:.92;x=cx+(x-cx)*f;y=cy+(y-cy)*f;return{id:'r'+r.n,type:'r',rec:r,x,y,ax:x,ay:y}});
   // spread the pills so none overlap, keeping each near its anchor and clear of the bodies
   for(let it=0;it<260;it++){
@@ -540,7 +536,7 @@ function drawNet(){
   svg.innerHTML=`<path d="${guide(NET.slots.slice(0,NET.nl))}" fill="none" stroke="var(--rule)"/><path d="${guide(NET.slots.slice(NET.nl))}" fill="none" stroke="var(--rule)"/>`+
     links.map(l=>`<path class="lk" fill="none" d="${curve(l)}"/>`).join('')+
     recs.map(p=>`<g class="rn" data-n="${p.rec.n}" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)})"><rect x="-10" y="-6" width="20" height="12" rx="6"/><text text-anchor="middle" dy="3.3">${p.rec.n}</text></g>`).join('')+
-    bodies.map(b=>{const right=b.side>0;return `<g class="bn${b.id==='none'?' none':''}" data-id="${b.id}" transform="translate(${b.x.toFixed(1)},${b.y.toFixed(1)})"><circle r="${b.r.toFixed(1)}"/><text class="cnt" text-anchor="middle" dy="4">${b.c}</text><text class="lab" x="${right?b.r+7:-(b.r+7)}" dy="4" text-anchor="${right?'start':'end'}">${esc(b.a.name)}</text></g>`}).join('');
+    bodies.map(b=>{const right=b.side>0;return `<g class="bn" data-id="${b.id}" transform="translate(${b.x.toFixed(1)},${b.y.toFixed(1)})"><circle r="${b.r.toFixed(1)}"/><text class="cnt" text-anchor="middle" dy="4">${b.c}</text><text class="lab" x="${right?b.r+7:-(b.r+7)}" dy="4" text-anchor="${right?'start':'end'}">${esc(b.a.name)}</text></g>`}).join('');
   NET.svg=svg;NET.linkEls=[...svg.querySelectorAll('.lk')];
   NET.gEls=Object.fromEntries([...svg.querySelectorAll('g')].map(g=>[g.dataset.id||('r'+g.dataset.n),g]));
   paintNet(lit());
@@ -563,12 +559,12 @@ function paintNet(L,peek){
   host.addEventListener('click',e=>{const b=e.target.closest('g.bn');if(b){toggleHl('to',b.dataset.id);return}const r=e.target.closest('g.rn');if(r){hideTip();openItem(+r.dataset.n)}});
 }
 // list beside the network
-$('#wholist').innerHTML=actorsByCount.map(a=>`<li><button type="button" data-to="${a.id}" aria-pressed="false"><span>${esc(a.id==='none'?'No one named':a.full)}${/^[A-Z]{2,}$/.test(a.name)?`<small>${esc(a.name)}</small>`:''}</span><span class="bar"><i style="width:${Math.round(actorCount[a.id]/actorCount[actorsByCount[0].id]*90)+4}px"></i>${actorCount[a.id]}</span></button></li>`).join('');
+$('#wholist').innerHTML=actorsByCount.map(a=>`<li><button type="button" data-to="${a.id}" aria-pressed="false"><span>${esc(a.full)}${/^[A-Z]{2,}$/.test(a.name)?`<small>${esc(a.name)}</small>`:''}</span><span class="bar"><i style="width:${Math.round(actorCount[a.id]/actorCount[actorsByCount[0].id]*90)+4}px"></i>${actorCount[a.id]}</span></button></li>`).join('');
 $('#wholist').addEventListener('click',e=>{const b=e.target.closest('button');if(b)toggleHl('to',b.dataset.to)});
 {
-  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length, nNone=actorCount.none||0;
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length;
   const top=actorsByCount[0];
-  $('#whointro').innerHTML=`Each of the ${nRec} recommendations is joined to every body its wording asks to act. <b>${esc(top.full)}</b> is asked most often (${actorCount[top.id]} times). <b>${multi}</b> recommendations name more than one body, and <b>${nNone}</b> don’t say who should act at all.`;
+  $('#whointro').innerHTML=`Each recommendation is joined to the bodies its wording asks to act. <b>${esc(top.full)}</b> is asked most often (${actorCount[top.id]} times), and <b>${multi}</b> recommendations involve more than one body.`;
 }
 
 /* ---------- reader ---------- */
@@ -576,7 +572,7 @@ function itemHTML(r,rx,L){
   const s=SEC[r.sec];
   return `<article class="item ${isRec(r)?'rec':'con'}" id="r${r.n}"><div class="n"><i></i><a href="#r=${r.n}" data-open="${r.n}">${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</a></div>
   <p class="x">${markup(r.text,rx)}</p>
-  <div class="meta">${r.to.length?`<span class="to">${r.to.map(id=>`<button type="button" class="tag${id==='none'?' none':''}${st.hl&&st.hl.type==='to'&&st.hl.v===id?' on':''}" data-to="${id}" title="${esc(AC[id].full)}">${esc(AC[id].name)}</button>`).join('')}</span>`:''}<a href="${esc(pdfAt(r))}">Paragraph ${r.para}, page ${printed(r)}</a></div></article>`;
+  <div class="meta">${r.to.length?`<span class="to">${r.to.map(id=>`<button type="button" class="tag${st.hl&&st.hl.type==='to'&&st.hl.v===id?' on':''}" data-to="${id}" title="${esc(AC[id].full)}">${esc(AC[id].name)}</button>`).join('')}</span>`:''}<a href="${esc(pdfAt(r))}">Paragraph ${r.para}, page ${printed(r)}</a></div></article>`;
 }
 function paintReader(L){
   const rx=markRx();
@@ -618,7 +614,7 @@ function openItem(n,{fromHash}={}){
   <p class="path">Chapter ${r.ch}, ${esc(ch.title)}<br>${esc(secPath(s))}</p>
   <div class="dx">${markup(r.text,rx)}</div>
   <dl>
-  <dt>Asked to act</dt><dd>${r.to.length?r.to.map(id=>`<button type="button" class="tag${id==='none'?' none':''}" data-to="${id}">${esc(AC[id].full)}</button>`).join(' '):'Nobody: this is a conclusion.'}</dd>
+  ${r.to.length?`<dt>Asked to act</dt><dd>${r.to.map(id=>`<button type="button" class="tag" data-to="${id}">${esc(AC[id].full)}</button>`).join(' ')}</dd>`:''}
   <dt>Priority</dt><dd>${esc(PRI[r.pri].title)}</dd>
   <dt>In the report</dt><dd><a href="${esc(pdfAt(r))}">Paragraph ${r.para}, page ${printed(r)}</a></dd>
   </dl>
@@ -669,7 +665,7 @@ function readHash(){
 
 /* ---------- footer ---------- */
 $('#foot').innerHTML=`<p>Source: ${esc(D.committee)}, <a href="${esc(D.pdf)}"><cite>${esc(D.title)}</cite></a> (${esc(D.number)}, ${esc(D.paper)}), summary of conclusions and recommendations, checked against the paragraphs in the body of the report. Conclusions and recommendations are told apart as the report prints them: bold for conclusions, bold italic for recommendations. <a href="${esc(D.work)}">Inquiry page and evidence</a>.</p>
-<p>Who is asked to act, the topics and the grouping under the six priorities are our reading of the report’s wording; a body may still be expected to act where it isn’t named. An unofficial tool, not a Parliament service. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+<p>Who is asked to act, the topics and the grouping under the six priorities are our reading of the report’s wording. An unofficial tool, not a Parliament service. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
 <p><a href="data.json">Download the data (JSON)</a>. <a href="../../">Open House of Lords inquiries</a>.</p>`;
 
 /* ---------- start ---------- */

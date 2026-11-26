@@ -68,8 +68,8 @@ def validate(d):
             errs.append(f"{where}: empty text")
         if not isinstance(r.get("para"), int) or not isinstance(r.get("page"), int):
             errs.append(f"{where}: para and page must be numbers")
-        if (r.get("kind") == "rec") != bool(r.get("to")):
-            errs.append(f"{where}: recommendations must name who is asked to act (use 'none'), conclusions must not")
+        if r.get("kind") == "con" and r.get("to"):
+            errs.append(f"{where}: conclusions do not ask anyone to act")
         if r.get("words") != len((r.get("text") or "").split()):
             errs.append(f"{where}: words does not match the text")
         key = (chapters.index(r["ch"]) if r.get("ch") in chapters else 0, r.get("para") or 0)

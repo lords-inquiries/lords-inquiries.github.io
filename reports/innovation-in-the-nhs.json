@@ -267,7 +267,7 @@
   {
    "id": "gov",
    "name": "The Government",
-   "full": "The Government, with no department named"
+   "full": "The Government"
   },
   {
    "id": "dhsc",
@@ -277,7 +277,7 @@
   {
    "id": "nhs",
    "name": "The NHS",
-   "full": "The NHS, with no body named"
+   "full": "The NHS"
   },
   {
    "id": "nhse",
@@ -357,17 +357,12 @@
   {
    "id": "regulators",
    "name": "Regulators",
-   "full": "Regulators, not named"
+   "full": "Regulators"
   },
   {
    "id": "research",
    "name": "Research community",
    "full": "The research community"
-  },
-  {
-   "id": "none",
-   "name": "No one named",
-   "full": "The recommendation does not say who should act"
   }
  ],
  "topics": [
@@ -566,9 +561,7 @@
    "text": "Research projects such as Our Future Health are aiming to correct the lack of diversity in genomic datasets, and must be supported in doing so to avoid a rollout of personalised medicines that are less effective in some populations than others.",
    "para": 45,
    "page": 17,
-   "to": [
-    "none"
-   ],
+   "to": [],
    "words": 41
   },
   {
@@ -592,9 +585,7 @@
    "text": "Investments in AI for healthcare should acknowledge and fund the critically important data infrastructure and data-gathering exercises, such as longitudinal health studies.",
    "para": 52,
    "page": 20,
-   "to": [
-    "none"
-   ],
+   "to": [],
    "words": 22
   },
   {
@@ -829,9 +820,7 @@
    "text": "Innovation pilots for priority technologies should include: a credible route to providing a scale-up budget built into the original proposal, setting out where the funding will come from to support routine use; support for implementation; and a decision point for national adoption based on clear and agreed thresholds that define success. Pilots should not be funded unless there is a credible route to routine use if the evidence supports it.",
    "para": 130,
    "page": 35,
-   "to": [
-    "none"
-   ],
+   "to": [],
    "words": 70
   },
   {
@@ -1166,9 +1155,7 @@
    "text": "Sovereignty in respect of data is a very important issue and is recognised as such by most comparable countries; it is even more so in the context of data being used to train AI models. The storage of health data should be owned and controlled by the UK.",
    "para": 231,
    "page": 52,
-   "to": [
-    "none"
-   ],
+   "to": [],
    "words": 48
   },
   {
@@ -1402,9 +1389,7 @@
    "text": "We reiterate the importance of our 2023 recommendations on clinical academics, including a review of the early pipeline: encouraging better uptake of the intercalated BSc for medical training and guaranteed research exposure for all trainee doctors.",
    "para": 305,
    "page": 64,
-   "to": [
-    "none"
-   ],
+   "to": [],
    "words": 36
   },
   {
