@@ -791,10 +791,10 @@ def briefs_html():
             e = html.escape
             url = f"../recommendations/{slug}/"
             cards.append((d["published"], slug, f'''<li class="brief" style="--cb:{e(c["bg"])};--cf:{e(c["fg"])};--cm:{e(c["mute"])};--ch:{e(c.get("link", c["hi"]))}">
-<svg class="motif" viewBox="0 0 480 212" aria-hidden="true" focusable="false">{svg}</svg>
-<div class="bbody"><h3 class="bt"><a href="{url}">{e(d["title"])}<span class="vh">: the report in brief</span></a></h3>
-<p class="bm">{e(d["paper"])}, {when}. {slides} slides; {n} conclusions and recommendations.</p>
-<p class="bx"><span class="go" aria-hidden="true">Open the presentation</span><a class="ex" href="{url}explore/">Explore all {n}<span class="vh"> conclusions and recommendations in {e(d["title"])}</span></a></p></div></li>'''))
+<svg class="motif" viewBox="0 0 480 212" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">{svg}</svg>
+<div class="bbody"><h3 class="bt"><a href="{url}">{e(d["title"])}<span class="vh">: visualise the report</span></a></h3>
+<p class="bm">{e(d["paper"])}, {when}.<span class="bc"> {slides} slides; {n} conclusions and recommendations.</span></p>
+<p class="bx"><span class="go" aria-hidden="true">Visualise the report</span></p></div></li>'''))
         except Exception as ex:
             log(f"Skipping card for {path}: {ex}")
     if not cards:
