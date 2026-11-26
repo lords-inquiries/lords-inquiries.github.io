@@ -39,7 +39,7 @@ jobs:
         env:
           REPO_URL: ${{ github.server_url }}/${{ github.repository }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
-        run: python build.py --out site
+        run: DEBUG_PERIODS=1 python build.py --out site
 
       # A separate section; if it fails, the main page still publishes.
       - name: Build the Science and Technology Committee reports tracker

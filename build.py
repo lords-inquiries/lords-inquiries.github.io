@@ -143,6 +143,9 @@ def shape(b, committee_id, now):
         end = parse_dt(p.get("endDate"))
         if end is None or end > now:
             live.append(end)
+    if os.environ.get("DEBUG_PERIODS") and (b.get("openSubmissionPeriods") or []):
+        print("PERIODS", json.dumps({"id": b["id"], "title": b.get("title"), "type": btype.get("name"),
+              "open": b.get("openSubmissionPeriods"), "closed": b.get("closedSubmissionPeriods")}, ensure_ascii=False), file=sys.stderr)
     if not is_inquiry and not live:
         return None  # one-off sessions, regular sessions, bill scrutiny with no call
     item = {"i": b["id"], "t": (b.get("title") or "").strip(), "c": committee_id, "o": day(b.get("openDate"))}
