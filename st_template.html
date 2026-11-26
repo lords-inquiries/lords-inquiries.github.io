@@ -10,9 +10,9 @@
 /*
 VOICE: a committee clerk's progress board: exact, quiet, every fact one tap away.
 IDEA: the report's life in the House: published, evidence, Government reply, debated.
-PICTURE: each report as a row with a four-stage track; headline figures above.
+PICTURE: each report as a row with a four-stage track; above them, a shelf of the reports in brief, each card in its own presentation's look.
 COLOUR and TYPE: white, ink, Lords red band, gold rule; red for done stages, grey for waiting; Source Serif 4 titles, Libre Franklin text.
-LAYOUT: red band, four figures, filter bar, stacked report rows; stages stack on phones.
+LAYOUT: red band, report cards, filter bar, stacked report rows; stages stack on phones, cards swipe sideways.
 */
 :root{color-scheme:light dark;--bg:light-dark(#ffffff,#141113);--ink:light-dark(#1b1517,#f1ecee);--mute:light-dark(#5e5458,#b3a8ac);--line:light-dark(#e6dfe1,#3a3034);--red:light-dark(#a3172b,#d4485b);--band:#8e1325;--gold:#c9a227;--card:light-dark(#fbf7f8,#1d181a);--wait:light-dark(#f1eeef,#272123)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
@@ -27,11 +27,27 @@ header a{color:#fff}
 h1{font:600 clamp(32px,5vw,50px)/1.05 "Source Serif 4",Georgia,serif;margin:0 0 10px;text-wrap:balance}
 header p{margin:0;max-width:68ch;color:#f6dfe3}
 .meta{margin-top:14px;font-size:14px;color:#f0c9d0}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
-.kpi{border-top:4px solid var(--red);background:var(--card);border-radius:6px;padding:16px 18px}
-.kpi b{display:block;font:600 clamp(34px,4vw,44px)/1 "Source Serif 4",Georgia,serif;color:var(--red)}
-.kpi span{display:block;margin-top:6px;font-size:15px}
-.kpi small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
+@font-face{font-family:"Archivo";src:url(../recommendations/fonts/archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(../recommendations/fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* the reports in brief: each card wears its presentation's colours (set per card) and draws the report's numbered paragraphs */
+.shelf{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.brief{position:relative;display:flex;flex-direction:column;background:var(--cb);color:var(--cf);border-radius:8px;box-shadow:0 0 0 1px light-dark(transparent,rgba(255,255,255,.08));transition:box-shadow .2s}
+.brief .motif{display:block;width:100%;height:auto;padding:14px 12px 4px}
+.bbody{display:flex;flex-direction:column;flex:1;padding:6px 18px 16px}
+.bt{font:700 23px/1.06 "Archivo",system-ui,sans-serif;font-stretch:78%;letter-spacing:-.005em;margin:0 0 8px;text-wrap:balance}
+.bt a{color:inherit;text-decoration:none}
+.bt a::after{content:"";position:absolute;inset:0;border-radius:8px}
+.bm{margin:0;font-size:13px;line-height:1.45;color:var(--cm)}
+.bx{margin:auto 0 0;padding-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.bx .go,.bx .ex{display:inline-flex;align-items:center;min-height:36px;padding:6px 14px;border-radius:999px;font:600 13.5px/1.2 "Libre Franklin",system-ui,sans-serif}
+.bx .go{background:var(--ch);color:var(--cb)}
+.bx .ex{position:relative;z-index:1;color:var(--cf);border:1.5px solid color-mix(in srgb,var(--cf) 45%,transparent);text-decoration:none}
+.bx .ex:hover{border-color:var(--cf)}
+.brief:hover,.brief:has(.bt a:focus-visible){box-shadow:0 0 0 3px var(--ch)}
+.brief:hover .bt a{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--ch);text-underline-offset:5px}
+@media(max-width:1060px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.shelf{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1*max(5vw,16px));padding:4px max(5vw,16px) 12px;scroll-padding-inline:max(5vw,16px)}.brief{scroll-snap-align:start}}
+@media(prefers-reduced-motion:reduce){.brief{transition:none}}
 h2{font:600 26px/1.15 "Source Serif 4",Georgia,serif;margin:0 0 6px}
 .sub{color:var(--mute);margin:0 0 18px;font-size:15px}
 .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:0 0 12px}
@@ -97,9 +113,7 @@ footer p{max-width:84ch;margin:0 0 8px}footer a{color:var(--ink)}
 <p class="meta" id="meta"></p>
 </div></header>
 
-<section class="band"><div class="wrap">
-<div class="kpis" id="kpis"></div>
-</div></section>
+<!--__BRIEFS__-->
 
 <section class="band" style="padding-top:0" id="sessions"><div class="wrap">
 <h2>Evidence sessions</h2>
@@ -147,23 +161,8 @@ const days=(a,b)=>Math.round((Date.parse(b+'T12:00:00Z')-Date.parse(a+'T12:00:00
 const today=new Date().toISOString().slice(0,10);
 const firstGr=r=>r.gr.find(g=>g.d)||r.gr[0];
 const awaiting=r=>!r.gr.length&&r.kind==='Report'&&!!r.due;
-const median=a=>{if(!a.length)return null;const s=[...a].sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:Math.round((s[m-1]+s[m])/2)};
 
 $('#meta').textContent='Updated '+fmt(DATA.generated.slice(0,10))+' · '+R.length+' reports';
-
-{
-  const withGr=R.filter(r=>r.gr.length);
-  const lag=withGr.map(r=>{const g=firstGr(r);return g&&g.d&&r.d?days(r.d,g.d):null}).filter(x=>x!==null&&x>=0);
-  const waiting=R.filter(awaiting);
-  const deb=R.filter(r=>r.deb);
-  const tiles=[
-    [R.length,'reports published','since '+fmt(R.map(r=>r.d).filter(Boolean).sort()[0])],
-    [withGr.length,'Government responses received',median(lag)!==null?'typically '+median(lag)+' days after the report':''],
-    [waiting.length,'awaiting a Government response',waiting.length?'oldest: '+esc(waiting[waiting.length-1].t.slice(0,48))+(waiting[waiting.length-1].t.length>48?'…':''):'none outstanding'],
-    [deb.length,'debated in the Lords',deb.length?'in the chamber or Grand Committee; latest '+fmt(deb.map(r=>r.deb.d).sort().pop()):'']
-  ];
-  $('#kpis').innerHTML=tiles.map(t=>`<div class="kpi"><b>${t[0]}</b><span>${t[1]}</span><small>${t[2]}</small></div>`).join('');
-}
 
 const ysel=$('#y');
 [...new Set(R.map(r=>(r.d||'').slice(0,4)).filter(Boolean))].sort().reverse().forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;ysel.appendChild(o)});

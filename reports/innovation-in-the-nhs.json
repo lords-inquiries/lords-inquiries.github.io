@@ -9,6 +9,7 @@
  "pdf": "https://publications.parliament.uk/pa/ld5902/ldselect/ldsctech/93/93.pdf",
  "page_offset": 2,
  "work": "https://committees.parliament.uk/work/9659/innovation-in-the-nhs-personalised-medicine-and-ai/",
+ "card": {"motif": "helix", "bg": "#16232E", "fg": "#E8EEF1", "mute": "#9FB0BC", "hi": "#FF4FA3", "rr": "#D6DEE4", "rc": "#5D6C77"},
  "finding": "the NHS does not have an innovation problem, but it struggles to adopt proven innovations effectively.",
  "priorities_label": "The committee’s six priorities",
  "priorities_short": "the six priorities",

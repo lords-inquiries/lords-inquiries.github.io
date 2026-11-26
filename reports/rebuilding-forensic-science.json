@@ -14,6 +14,7 @@
  "page_offset": 2,
  "work": "https://committees.parliament.uk/work/9424/forensic-science-followup/",
  "lead": ["Home Office", "Ministry of Justice"],
+ "card": {"motif": "peaks", "bg": "#16232E", "fg": "#E8EEF1", "mute": "#9FB0BC", "hi": "#FF4FA3", "rr": "#D6DEE4", "rc": "#5D6C77"},
  "finding": "forensic science is not working for anyone.",
  "finding_note": "The committee’s report opens with these words from the forensic scientist Professor Angela Gallop, and says its inquiry “found little to contradict it”.",
  "priorities_label": "Six themes",

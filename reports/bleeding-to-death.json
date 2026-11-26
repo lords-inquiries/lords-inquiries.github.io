@@ -13,6 +13,7 @@
  "pdf": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/192/192.pdf",
  "page_offset": 2,
  "work": "https://committees.parliament.uk/work/9014/",
+ "card": {"motif": "drops", "bg": "#0F2A26", "fg": "#EAF2EF", "mute": "#95AEA8", "hi": "#FF4155", "link": "#FF5A6B"},
  "finding": "the UK economy is bleeding out in a national crisis of growth, especially in the science and technology sectors.",
  "finding_note": "The committee’s report opens with these words. It says the UK’s failure to scale its science and technology companies has reached a crisis point.",
  "priorities_label": "Seven themes",

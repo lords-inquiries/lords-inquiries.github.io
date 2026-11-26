@@ -17,6 +17,7 @@ import datetime as dt
 import glob
 import html
 import json
+import math
 import os
 import re
 import sys
@@ -614,6 +615,200 @@ def explorers():
     return out
 
 
+# ----- the reports in brief: one card per report presentation, in that presentation's own look -----
+# Each card draws the report's numbered paragraphs the way its presentation does (the report JSON's
+# "card" sets the motif and colours): drops on an incision, salt caverns, a double helix, or the peaks
+# of a DNA profile. Recommendations are solid, conclusions hollow or fainter; longer paragraphs are larger.
+
+CARD_DEFAULT = {"motif": "bars", "bg": "#1d181a", "fg": "#f1ecee", "mute": "#b3a8ac", "hi": "#d4485b"}
+
+
+def _slots(recs, gap):
+    xs, slot = [], 0.0
+    for i, r in enumerate(recs):
+        if i and r["ch"] != recs[i - 1]["ch"]:
+            slot += gap
+        xs.append(slot + .5)
+        slot += 1
+    return xs, slot
+
+
+def _n(v):
+    return f"{v:.1f}"
+
+
+def _drop(x, y, h, r):
+    if h < 2 * r + .6:
+        rr = max(.3, h / 2)
+        cy = y + h - rr
+        return f"M{_n(x - rr)},{_n(cy)}a{_n(rr)},{_n(rr)} 0 1,0 {_n(2 * rr)},0a{_n(rr)},{_n(rr)} 0 1,0 {_n(-2 * rr)},0Z"
+    n, b, k = max(.5, r * .3), y + h - r, h - 2 * r
+    return (f"M{_n(x - n)},{_n(y)}C{_n(x - n)},{_n(y + k * .55)} {_n(x - r)},{_n(y + k * .7)} {_n(x - r)},{_n(b)}"
+            f"A{_n(r)},{_n(r)} 0 0,0 {_n(x + r)},{_n(b)}C{_n(x + r)},{_n(y + k * .7)} {_n(x + n)},{_n(y + k * .55)} {_n(x + n)},{_n(y)}Z")
+
+
+def _capsule(x, yt, yb, r):
+    return f"M{_n(x - r)},{_n(yt + r)}A{_n(r)},{_n(r)} 0 0,1 {_n(x + r)},{_n(yt + r)}V{_n(yb - r)}A{_n(r)},{_n(r)} 0 0,1 {_n(x - r)},{_n(yb - r)}Z"
+
+
+def _size(recs, lo):
+    top = max(r["words"] for r in recs) or 1
+    return [lo + (1 - lo) * (r["words"] / top) ** .5 for r in recs]
+
+
+def motif_drops(recs, c):
+    """Bleeding to death: a drop for each paragraph, hanging from an incision."""
+    x0, L, y0, H = 22, 436, 32, 166
+    xs, S = _slots(recs, 2.4)
+    U, sz = L / S, _size(recs, .22)
+    r = max(1.6, min(U * .42, 6.5))
+    out = [f'<line x1="{x0 - 10}" y1="{y0}" x2="{x0 + L + 10}" y2="{y0}" stroke="{c["hi"]}" stroke-width="2" stroke-linecap="round"/>']
+    for i, rec in enumerate(recs):
+        d = _drop(x0 + xs[i] * U, y0, max(2 * r + 1, H * sz[i]), r)
+        out.append(f'<path d="{d}" fill="{c["hi"]}"/>' if rec["kind"] == "rec"
+                   else f'<path d="{d}" fill="{c["bg"]}" stroke="{c["hi"]}" stroke-width="1.1"/>')
+    return "".join(out)
+
+
+def motif_caverns(recs, c):
+    """Long-duration energy storage: a salt cavern for each paragraph, beneath the ground."""
+    x0, L, y0, H = 22, 436, 28, 176
+    xs, S = _slots(recs, 2.4)
+    U, sz = L / S, _size(recs, .26)
+    r, sh = max(1.7, min(U * .36, 7)), H * .2
+    out = [f'<rect x="{x0 - 10}" y="{_n(y0 + sh * .55)}" width="{L + 20}" height="{_n(H - sh * .55 + 4)}" rx="5" fill="{c.get("glass", c["bg"])}"/>',
+           '<path d="' + "".join(f"M{_n(x0 + x * U)},{y0}V{_n(y0 + sh)}" for x in xs) + f'" stroke="{c["mute"]}" stroke-width="1"/>',
+           f'<line x1="{x0 - 10}" y1="{y0}" x2="{x0 + L + 10}" y2="{y0}" stroke="{c["fg"]}" stroke-width="1.6" stroke-linecap="round"/>']
+    for i, rec in enumerate(recs):
+        yt = y0 + sh
+        d = _capsule(x0 + xs[i] * U, yt, yt + max(2 * r + 1, (H - sh) * sz[i]), r)
+        fill = c["hi"] if rec["kind"] == "rec" else c["bg"]
+        out.append(f'<path d="{d}" fill="{fill}" stroke="{c["hi"]}" stroke-width="1.2"/>')
+    return "".join(out)
+
+
+def motif_helix(recs, c):
+    """Innovation in the NHS: a double helix with a rung for each paragraph."""
+    N, ax, bx, cy, R, tw, ph = len(recs), 26, 454, 106, 80, 2 * math.pi / 15, .9
+    out, back, front = [], [], []
+    for s in (1, -1):
+        b, f, prev, last, M = "", "", None, None, N * 8
+        for k in range(M + 1):
+            t = k / M
+            th = ph + (t * N - .5) * tw
+            pt = f"{_n(ax + (bx - ax) * t)},{_n(cy + s * R * math.sin(th))}"
+            is_f = math.cos(th) * s >= 0
+            if is_f != prev:
+                seg = ("M" + last + "L" + pt) if last else "M" + pt
+                if is_f:
+                    f += seg
+                else:
+                    b += seg
+            elif is_f:
+                f += "L" + pt
+            else:
+                b += "L" + pt
+            prev, last = is_f, pt
+        back.append(b)
+        front.append(f)
+    out += [f'<path d="{b}" fill="none" stroke="{c["fg"]}" stroke-width="2" opacity=".28"/>' for b in back if b]
+    for i, rec in enumerate(recs):
+        th = ph + i * tw
+        x = ax + (bx - ax) * (i + .5) / N
+        y1, y2 = cy + R * math.sin(th), cy - R * math.sin(th)
+        col = c.get("rr", c["fg"]) if rec["kind"] == "rec" else c.get("rc", c["mute"])
+        out.append(f'<line x1="{_n(x)}" y1="{_n(y1)}" x2="{_n(x)}" y2="{_n(y2)}" stroke="{col}" stroke-width="3" stroke-linecap="round" opacity="{.4 + .6 * abs(math.sin(th)):.2f}"/>')
+    out += [f'<path d="{f}" fill="none" stroke="{c["fg"]}" stroke-width="2" opacity=".9"/>' for f in front if f]
+    return "".join(out)
+
+
+def motif_peaks(recs, c):
+    """Rebuilding forensic science: a DNA profile with a peak for each paragraph, grouped by chapter."""
+    x0, L, base, H = 22, 436, 198, 140
+    xs, S = _slots(recs, 1.6)
+    U = L / S
+    xs = [x0 + x * U for x in xs]
+    top = max(r["words"] for r in recs) or 1
+    hs = [H * (16 + 76 * (r["words"] / top) ** .5) / 100 for r in recs]
+    sig = U * .3
+    g = lambda dx, h: h * math.exp(-dx * dx / (2 * sig * sig))
+    out = []
+    for ch in sorted({r["ch"] for r in recs}, key=[r["ch"] for r in recs].index):
+        idx = [i for i, r in enumerate(recs) if r["ch"] == ch]
+        a, b = xs[idx[0]] - U * .45, xs[idx[-1]] + U * .45
+        out.append(f'<rect x="{_n(a)}" y="{_n(base - H - 32)}" width="{_n(b - a)}" height="10" fill="none" stroke="{c["mute"]}" stroke-width="1"/>')
+    for i, rec in enumerate(recs):
+        x, h = xs[i], hs[i]
+        pts = " ".join(f"L{_n(x + k / 4 * sig)},{_n(base - g(k / 4 * sig, h))}" for k in range(-12, 13))
+        col = c.get("rr", c["fg"]) if rec["kind"] == "rec" else c.get("rc", c["mute"])
+        out.append(f'<path d="M{_n(x - 3 * sig)},{base} {pts} L{_n(x + 3 * sig)},{base} Z" fill="{col}"/>')
+    trace = []
+    for k in range(701):
+        x = x0 + L * k / 700
+        y = sum(g(x - xi, hs[i]) for i, xi in enumerate(xs) if abs(x - xi) < 4 * sig)
+        y += 1.6 + 1.1 * math.sin(x * .13) + .7 * math.sin(x * .37 + 1.3)
+        trace.append(f"{'L' if k else 'M'}{_n(x)},{_n(base - y)}")
+    out.append(f'<path d="{"".join(trace)}" fill="none" stroke="{c["fg"]}" stroke-width="1.2" opacity=".55" stroke-linejoin="round"/>')
+    out.append(f'<line x1="{x0}" y1="{base}" x2="{x0 + L}" y2="{base}" stroke="{c["fg"]}" stroke-width="1" opacity=".35"/>')
+    return "".join(out)
+
+
+def motif_bars(recs, c):
+    """Any other report: a band for each paragraph, wider for longer ones."""
+    x0, L = 22, 436
+    total = sum(r["words"] for r in recs)
+    out, x = [], x0
+    for r in recs:
+        w = L * r["words"] / total
+        col = c["hi"] if r["kind"] == "rec" else c["mute"]
+        out.append(f'<rect x="{_n(x)}" y="70" width="{_n(max(.6, w - 1.2))}" height="70" rx="2" fill="{col}"/>')
+        x += w
+    return "".join(out)
+
+
+MOTIFS = {"drops": motif_drops, "caverns": motif_caverns, "helix": motif_helix, "peaks": motif_peaks, "bars": motif_bars}
+NUMBER_WORDS = "zero one two three four five six seven eight nine ten eleven twelve".split()
+
+
+def briefs_html():
+    """The 'reports in brief' section: a card for every report with a presentation, newest first."""
+    cards = []
+    for path in sorted(glob.glob(os.path.join(HERE, "reports", "*.json"))):
+        slug = os.path.splitext(os.path.basename(path))[0]
+        deck = os.path.join(HERE, "reports", slug + ".deck.html")
+        if not os.path.exists(deck):
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                d = json.load(f)
+            with open(deck, encoding="utf-8") as f:
+                slides = len(re.findall(r'<section class="slide[ "]', f.read()))
+            c = {**CARD_DEFAULT, **(d.get("card") or {})}
+            svg = MOTIFS.get(c["motif"], motif_bars)(d["recs"], c)
+            n = len(d["recs"])
+            pub = dt.date.fromisoformat(d["published"])
+            when = f"{pub.day} {pub.strftime('%B %Y')}"
+            e = html.escape
+            url = f"../recommendations/{slug}/"
+            cards.append((d["published"], slug, f'''<li class="brief" style="--cb:{e(c["bg"])};--cf:{e(c["fg"])};--cm:{e(c["mute"])};--ch:{e(c.get("link", c["hi"]))}">
+<svg class="motif" viewBox="0 0 480 212" aria-hidden="true" focusable="false">{svg}</svg>
+<div class="bbody"><h3 class="bt"><a href="{url}">{e(d["title"])}<span class="vh">: the report in brief</span></a></h3>
+<p class="bm">{e(d["paper"])}, {when}. {slides} slides; {n} conclusions and recommendations.</p>
+<p class="bx"><span class="go" aria-hidden="true">Open the presentation</span><a class="ex" href="{url}explore/">Explore all {n}<span class="vh"> conclusions and recommendations in {e(d["title"])}</span></a></p></div></li>'''))
+        except Exception as ex:
+            log(f"Skipping card for {path}: {ex}")
+    if not cards:
+        return ""
+    cards.sort(reverse=True)
+    k = len(cards)
+    count = NUMBER_WORDS[k] if k < len(NUMBER_WORDS) else str(k)
+    return f'''<section class="band briefs" aria-labelledby="h-briefs"><div class="wrap">
+<h2 id="h-briefs">The reports in brief</h2>
+<p class="sub">Interactive guides to {count} reports: the evidence, the committee’s conclusions and what it wants done. Each card draws the report’s numbered paragraphs as its presentation does.</p>
+<ul class="shelf">{"".join(c for _, _, c in cards)}</ul>
+</div></section>'''
+
+
 def main():
     global DEBUG
     ap = argparse.ArgumentParser()
@@ -644,7 +839,7 @@ def main():
         tpl = f.read()
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     with open(os.path.join(a.out, "index.html"), "w") as f:
-        f.write(tpl.replace("/*__DATA__*/null", blob))
+        f.write(tpl.replace("/*__DATA__*/null", blob).replace("<!--__BRIEFS__-->", briefs_html()))
     with open(os.path.join(a.out, "data.json"), "w") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
     with open(os.path.join(a.out, "sessions.ics"), "w", newline="") as f:

@@ -13,6 +13,7 @@
  "pdf": "https://publications.parliament.uk/pa/ld5804/ldselect/ldsctech/68/68.pdf",
  "page_offset": 2,
  "work": "https://committees.parliament.uk/work/7872/longduration-energy-storage/",
+ "card": {"motif": "caverns", "bg": "#0C1826", "fg": "#E8EDF2", "mute": "#97A6B6", "hi": "#F4A938", "glass": "#14263A"},
  "finding": "deploying long-duration energy storage technologies at scale is critical to ensure the UK can maintain energy security and reach Net Zero.",
  "finding_note": "From the committee’s executive summary. It was concerned that this was not being treated with sufficient urgency.",
  "priorities_label": "Seven themes",
