@@ -362,7 +362,7 @@ $('#lede').textContent='“'+D.finding.charAt(0).toUpperCase()+D.finding.slice(1
 $('#pdflink').href=D.pdf;
 const daysTo=Math.round((Date.parse(D.gr_due+'T12:00:00Z')-Date.now())/864e5);
 $('#prilab').textContent=D.priorities_label||'Priorities';$('#q').placeholder=`Search the ${N} paragraphs`;
-$('#facts').innerHTML=`${D.finding_note?esc(D.finding_note):`That is the central finding of the ${esc(D.committee)}.`} Its report makes <b>${N} numbered points</b>: ${N-nRec} conclusions about what it found and ${nRec} recommendations asking someone to act. ${esc(D.number)}, ${esc(D.paper)}, published ${fmt(D.published)}. `+(D.gr?`The Government responded ${esc(D.gr.label)}${D.gr.url?` (<a href="${esc(D.gr.url)}">read the response</a>)`:''}.`:daysTo>0?`The Government is expected to reply by ${fmt(D.gr_due)}.`:`The Government was expected to reply by ${fmt(D.gr_due)}.`);
+$('#facts').innerHTML=`${D.finding_note?esc(D.finding_note):`That is the central finding of the ${esc(D.committee)}.`} Its report makes <b>${N} numbered points</b>: ${N-nRec} conclusions about what it found and ${nRec} recommendations asking someone to act. ${esc(D.number)}, ${esc(D.paper)}, published ${fmt(D.published)}. `+(D.gr?`The Government responded ${esc(D.gr.label)}${D.gr.url?` (<a href="${esc(D.gr.url)}">read the response</a>)`:''}.`:daysTo>0?`The Government is expected to reply by ${fmt(D.gr_due)}.`:`The Government was expected to reply by ${fmt(D.gr_due)}.`)+(D.lead&&D.lead.length?` ${esc(D.lead.length>1?D.lead.slice(0,-1).join(', ')+' and '+D.lead[D.lead.length-1]:D.lead[0])} ${D.lead.length>1?'are the lead departments':'is the lead department'}.`:'');
 document.title=D.title+': the conclusions and recommendations';
 
 /* ---------- controls ---------- */

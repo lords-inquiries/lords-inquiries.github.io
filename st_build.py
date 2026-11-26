@@ -562,9 +562,13 @@ def build(src, now):
     # link reports that have a recommendations explorer (built by recs_build.py)
     viz = explorers()
     for r in reports:
-        url = viz.get(r.get("paper")) or viz.get(squash(r.get("t")))
-        if url:
-            r["viz"] = url
+        x = viz.get(r.get("paper")) or viz.get(squash(r.get("t")))
+        if x:
+            r["viz"] = x["url"]
+            if x["lead"]:  # the report's own lead departments beat the API's single respondingDepartment
+                if r.get("dept") != x["lead"]:
+                    log(f"Lead department for {r['t'][:50]!r}: {r.get('dept')!r} -> {x['lead']!r}")
+                r["dept"] = x["lead"]
 
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
 
@@ -591,15 +595,20 @@ def squash(s):
 
 
 def explorers():
-    """Map 'HL Paper N (session)' to the recommendations explorer page for that report."""
+    """Map 'HL Paper N (session)' to the recommendations explorer page for that report,
+    and to its lead departments (the report JSON's optional "lead" list)."""
     out = {}
     for path in glob.glob(os.path.join(HERE, "reports", "*.json")):
         try:
             with open(path, encoding="utf-8") as f:
                 d = json.load(f)
-            url = f"../recommendations/{os.path.splitext(os.path.basename(path))[0]}/"
-            out[f"{d['paper']} ({d['session']})"] = url
-            out[squash(d["title"])] = url  # fallback if the API gives the paper number differently
+            lead = d.get("lead") or []
+            x = {
+                "url": f"../recommendations/{os.path.splitext(os.path.basename(path))[0]}/",
+                "lead": " and ".join([", ".join(lead[:-1]), lead[-1]]) if len(lead) > 1 else "".join(lead),
+            }
+            out[f"{d['paper']} ({d['session']})"] = x
+            out[squash(d["title"])] = x  # fallback if the API gives the paper number differently
         except Exception as e:
             log(f"Skipping {path}: {e}")
     return out
