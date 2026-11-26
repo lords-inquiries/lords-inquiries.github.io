@@ -1,0 +1,1314 @@
+{
+ "title": "Long-duration energy storage: get on with it",
+ "committee": "House of Lords Science and Technology Committee",
+ "number": "1st Report of Session 2023–24",
+ "paper": "HL Paper 68",
+ "session": "2023-24",
+ "published": "2024-03-13",
+ "gr_due": "2024-05-13",
+ "gr": {
+  "label": "on 16 May 2024",
+  "url": "https://committees.parliament.uk/publications/44802/documents/222500/default/"
+ },
+ "pdf": "https://publications.parliament.uk/pa/ld5804/ldselect/ldsctech/68/68.pdf",
+ "page_offset": 2,
+ "work": "https://committees.parliament.uk/work/7872/longduration-energy-storage/",
+ "finding": "deploying long-duration energy storage technologies at scale is critical to ensure the UK can maintain energy security and reach Net Zero.",
+ "finding_note": "From the committee’s executive summary. It was concerned that this was not being treated with sufficient urgency.",
+ "priorities_label": "Seven themes",
+ "priorities_short": "the seven themes",
+ "priority_phrase": "one of seven themes",
+ "priorities_note": "The themes are our grouping. Six follow the key recommendations in the committee’s summary, with its call to engage the public folded into hydrogen; the seventh, grid capacity and flexibility, draws on its fourth chapter. Which paragraph sits under which theme is our reading.",
+ "chapters": [
+  {
+   "n": 2,
+   "title": "The need for long-duration energy storage"
+  },
+  {
+   "n": 3,
+   "title": "Policy for long-duration energy storage"
+  },
+  {
+   "n": 4,
+   "title": "Long-duration energy storage in context"
+  }
+ ],
+ "sections": [
+  {
+   "id": 1,
+   "ch": 2,
+   "h1": "The benefits of long-duration energy storage",
+   "h2": ""
+  },
+  {
+   "id": 2,
+   "ch": 2,
+   "h1": "Scale and nature of the need for long-duration energy storage",
+   "h2": ""
+  },
+  {
+   "id": 3,
+   "ch": 2,
+   "h1": "Urgency and pace of delivery",
+   "h2": ""
+  },
+  {
+   "id": 4,
+   "ch": 3,
+   "h1": "The economics of long-duration energy storage, support mechanisms and strategic reserves",
+   "h2": ""
+  },
+  {
+   "id": 5,
+   "ch": 3,
+   "h1": "The role of hydrogen",
+   "h2": "No-regrets investments for hydrogen"
+  },
+  {
+   "id": 6,
+   "ch": 3,
+   "h1": "The role of hydrogen",
+   "h2": "Repurposing gas storage for hydrogen"
+  },
+  {
+   "id": 7,
+   "ch": 3,
+   "h1": "The role of hydrogen",
+   "h2": "Demand and use cases for hydrogen"
+  },
+  {
+   "id": 8,
+   "ch": 3,
+   "h1": "The role of hydrogen",
+   "h2": "Availability of electrolysers for green hydrogen"
+  },
+  {
+   "id": 9,
+   "ch": 3,
+   "h1": "The role of hydrogen",
+   "h2": "Safety"
+  },
+  {
+   "id": 10,
+   "ch": 3,
+   "h1": "Medium-duration energy storage technologies",
+   "h2": "Pumped-storage hydropower"
+  },
+  {
+   "id": 11,
+   "ch": 3,
+   "h1": "Medium-duration energy storage technologies",
+   "h2": "Compressed-air energy storage"
+  },
+  {
+   "id": 12,
+   "ch": 3,
+   "h1": "Medium-duration energy storage technologies",
+   "h2": "Longer-duration battery chemistries"
+  },
+  {
+   "id": 13,
+   "ch": 3,
+   "h1": "Incentivising the right mix of technologies for the grid",
+   "h2": ""
+  },
+  {
+   "id": 14,
+   "ch": 4,
+   "h1": "Planning and regulatory systems",
+   "h2": "Connecting projects to the grid"
+  },
+  {
+   "id": 15,
+   "ch": 4,
+   "h1": "Planning and regulatory systems",
+   "h2": "Obtaining planning permission for energy storage"
+  },
+  {
+   "id": 16,
+   "ch": 4,
+   "h1": "Skills for net zero",
+   "h2": ""
+  },
+  {
+   "id": 17,
+   "ch": 4,
+   "h1": "Minimising the need for long-duration energy storage",
+   "h2": ""
+  },
+  {
+   "id": 18,
+   "ch": 4,
+   "h1": "Minimising the need for long-duration energy storage",
+   "h2": "Demand flexibility"
+  },
+  {
+   "id": 19,
+   "ch": 4,
+   "h1": "Minimising the need for long-duration energy storage",
+   "h2": "Interconnectors"
+  },
+  {
+   "id": 20,
+   "ch": 4,
+   "h1": "Minimising the need for long-duration energy storage",
+   "h2": "Thermal storage"
+  },
+  {
+   "id": 21,
+   "ch": 4,
+   "h1": "The roles of different actors in the energy system",
+   "h2": ""
+  },
+  {
+   "id": 22,
+   "ch": 4,
+   "h1": "Transmission networks and the Strategic Spatial Energy Plan",
+   "h2": ""
+  }
+ ],
+ "priorities": [
+  {
+   "id": "dunkel",
+   "title": "Ride out the dunkelflaute",
+   "summary": "Commit to a strategic reserve on the scale the National Infrastructure Commission suggests, explain how the system would cope with long shortfalls of wind and sun, and look beyond neighbours who share our weather."
+  },
+  {
+   "id": "scale",
+   "title": "Set a target in terawatt-hours",
+   "summary": "Set an explicit minimum for no-regrets long-duration storage by 2035, state targets in both GW and TWh, define medium and long duration, and assess the likely need."
+  },
+  {
+   "id": "grid",
+   "title": "Grid capacity and flexibility",
+   "summary": "Clear the grid connection queue and consider putting storage first, take the big decisions on electricity and hydrogen networks, and reward flexible heating and heat storage."
+  },
+  {
+   "id": "invest",
+   "title": "Make storage investable",
+   "summary": "Finalise a cap and floor with enough funding for storage of different durations, pay for the services storage gives the grid, and back technologies beyond lithium-ion."
+  },
+  {
+   "id": "hydrogen",
+   "title": "Hydrogen, the long-duration store",
+   "summary": "Build a pilot that combines electrolysis, salt-cavern storage and power generation, decide on Rough, say what hydrogen is for, secure electrolysers and win public confidence."
+  },
+  {
+   "id": "pace",
+   "title": "Pace, not perfection",
+   "summary": "Bring forward support and no-regrets investments now, reform and resource the planning system, and train the skilled people hydrogen and storage will need."
+  },
+  {
+   "id": "plan",
+   "title": "A plan and a guiding mind",
+   "summary": "A guiding mind for the energy system: clear roles for the Government, Ofgem and the system operator, and a spatial plan that includes storage and a strategic reserve."
+  }
+ ],
+ "actors": [
+  {
+   "id": "gov",
+   "name": "The Government",
+   "full": "The Government"
+  },
+  {
+   "id": "desnz",
+   "name": "DESNZ",
+   "full": "Department for Energy Security and Net Zero"
+  },
+  {
+   "id": "fso",
+   "name": "System operator",
+   "full": "The electricity system operator: the ESO, and the Future System Operator it became (the National Energy System Operator, NESO, since October 2024)"
+  },
+  {
+   "id": "ofgem",
+   "name": "Ofgem",
+   "full": "Ofgem, the energy regulator"
+  },
+  {
+   "id": "ukri",
+   "name": "UKRI",
+   "full": "UK Research and Innovation"
+  },
+  {
+   "id": "faraday",
+   "name": "Faraday Institution",
+   "full": "The Faraday Institution"
+  },
+  {
+   "id": "industry",
+   "name": "Industry",
+   "full": "Industry, working with the Government"
+  }
+ ],
+ "topics": [
+  {
+   "id": "hydrogen",
+   "name": "Hydrogen",
+   "re": "hydrogen|electroly|salt cavern",
+   "flags": "i",
+   "words": "hydrogen, electrolysers, salt caverns"
+  },
+  {
+   "id": "security",
+   "name": "Security and the reserve",
+   "re": "secur|reserve|crisis|shock|resilien|shortfall",
+   "flags": "i",
+   "words": "energy security, strategic reserve, supply shocks, resilience"
+  },
+  {
+   "id": "targets",
+   "name": "Targets",
+   "re": "\\btargets?\\b|\\bminimum\\b|how much",
+   "flags": "i",
+   "words": "targets, minimums"
+  },
+  {
+   "id": "grid",
+   "name": "The grid",
+   "re": "\\bgrid\\b|connection|transmission|network|congestion|curtail",
+   "flags": "i",
+   "words": "grid, connections, transmission, networks"
+  },
+  {
+   "id": "money",
+   "name": "Money and markets",
+   "re": "cap and floor|business model|subsid|revenue|funding|financial support|support mechanism|payment|invest",
+   "flags": "i",
+   "words": "cap and floor, business models, funding, revenue, investment"
+  },
+  {
+   "id": "gas",
+   "name": "Gas",
+   "re": "natural gas|\\bgas\\b|\\bRough\\b",
+   "flags": "i",
+   "words": "natural gas, gas storage, Rough"
+  },
+  {
+   "id": "tech",
+   "name": "Technologies",
+   "re": "pumped|compressed air|\\bA?CAES\\b|flow batter|iron-air|lithium|thermal",
+   "flags": "i",
+   "words": "pumped hydro, compressed air, flow and iron-air batteries, lithium-ion, thermal storage"
+  },
+  {
+   "id": "planning",
+   "name": "Planning and regulation",
+   "re": "planning|consent|licens|licenc|regulat",
+   "flags": "i",
+   "words": "planning, consenting, licensing, regulation"
+  },
+  {
+   "id": "skills",
+   "name": "Skills",
+   "re": "skill|training|engineer",
+   "flags": "i",
+   "words": "skills, training, engineers"
+  },
+  {
+   "id": "public",
+   "name": "The public",
+   "re": "\\bpublic\\b|communit|perception|acceptab|consumer",
+   "flags": "i",
+   "words": "public engagement, communities, perception, consumers"
+  },
+  {
+   "id": "flex",
+   "name": "Flexibility",
+   "re": "flexib|demand-side|demand side|half-hourly|interconnect",
+   "flags": "i",
+   "words": "flexibility, demand-side response, interconnectors"
+  },
+  {
+   "id": "urgency",
+   "name": "Urgency",
+   "re": "urgen|as soon as possible|timeline|lead-in|lead times|\\bpace\\b|\\b2024\\b|\\b2035\\b",
+   "flags": "i",
+   "words": "urgency, timelines, lead times, 2024 and 2035 deadlines"
+  },
+  {
+   "id": "ssep",
+   "name": "The spatial plan",
+   "re": "Strategic Spatial Energy Plan|\\bthe [Pp]lan\\b",
+   "flags": "",
+   "words": "Strategic Spatial Energy Plan"
+  }
+ ],
+ "recs": [
+  {
+   "n": 1,
+   "ch": 2,
+   "sec": 1,
+   "pri": "grid",
+   "kind": "con",
+   "text": "Energy storage can provide benefits to the grid. It can reduce curtailment and grid congestion, avoiding wasting energy and reducing the cost of renewable electricity. Energy storage facilities provide power that can be turned on and off at will, enhancing grid flexibility. Long-duration energy storage therefore reduces costs elsewhere in the system and allows a greater proportion of cheap renewables to be built and so reduces electricity prices overall.",
+   "para": 11,
+   "page": 13,
+   "to": [],
+   "words": 69
+  },
+  {
+   "n": 2,
+   "ch": 2,
+   "sec": 1,
+   "pri": "dunkel",
+   "kind": "con",
+   "text": "Domestic energy storage is not just about a resilient decarbonised grid—it is about the security and stability of the whole economy. The global energy crisis that began in 2021 has been an object lesson in the UK’s vulnerability to global wholesale energy price fluctuations, and the consequent effects on inflation. The UK had less storage capacity than comparator nations and came to regret and partially reverse its closure of the Rough gas storage facility.",
+   "para": 12,
+   "page": 13,
+   "to": [],
+   "words": 74
+  },
+  {
+   "n": 3,
+   "ch": 2,
+   "sec": 1,
+   "pri": "dunkel",
+   "kind": "con",
+   "text": "The UK is currently a net importer of gas for heating and power. With storage, it can develop sufficient offshore renewable generation to be more energy self-sufficient and better insulated from future global shocks. The UK could export its hydrogen and sell its energy storage capacity and expertise internationally if it develops a leading position.",
+   "para": 14,
+   "page": 16,
+   "to": [],
+   "words": 55
+  },
+  {
+   "n": 4,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "con",
+   "text": "A fully decarbonised electricity system will need substantial energy storage across a range of timescales due to increasing variability of supply and demand in an electrified, renewable-powered economy. Estimates of how much long‑duration energy storage will be needed differ depending on assumptions about future energy mix, demand, future climate and desired resilience. These assumptions affect, but do not eliminate, the need for long‑duration energy storage.",
+   "para": 23,
+   "page": 20,
+   "to": [],
+   "words": 65
+  },
+  {
+   "n": 5,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "con",
+   "text": "However, there is a consensus that tens of terawatt-hours of long-duration electricity storage will be needed to decarbonise the grid, but the Government has not committed to an explicit target. This is several orders of magnitude more low-carbon storage than the UK currently has and will require different technologies from those currently used, such as the 10 TWh of natural gas storage, to be compatible with Net Zero.",
+   "para": 24,
+   "page": 21,
+   "to": [],
+   "words": 68
+  },
+  {
+   "n": 6,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "The Government should, as a matter of urgency, set an explicit minimum target for how much “no-regrets” long-duration energy storage and generating capacity it wants to see operational by 2035. It should set out a credible timescale with interim milestones for achieving this that works backwards from 2035, accounting for decision time, planning and consenting, and construction of facilities. It should also expand on the 30 GW target of short-term storage, interconnection and demand-side response set out in the Smart Systems and Flexibility Plan by outlining the minimum contribution to flexibility that each technology should make.",
+   "para": 25,
+   "page": 21,
+   "to": [
+    "gov"
+   ],
+   "words": 96
+  },
+  {
+   "n": 7,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "con",
+   "text": "For energy storage systems, energy stored, typical storage duration, final output electrical energy, and the instantaneous power that can be delivered are important parameters.",
+   "para": 26,
+   "page": 21,
+   "to": [],
+   "words": 24
+  },
+  {
+   "n": 8,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "Government policies and targets relating to energy storage—such as the 10 GW hydrogen production target—should make clear both the power (GW) and the energy (TWh) it is intended to produce and store.",
+   "para": 26,
+   "page": 21,
+   "to": [
+    "gov"
+   ],
+   "words": 32
+  },
+  {
+   "n": 9,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "con",
+   "text": "A range of energy storage technologies will be needed for different energy system services. We are concerned that the excessive policy and investment focus on lithium-ion storage projects has left policymakers, investors and regulators less able to appreciate the need for longer-duration technologies. There is a clear distinction between technologies which perform best across hours and for daily variations (“medium-duration energy storage”), and technologies which can store energy across days, weeks and months (“long‑duration energy storage”), which a definition of long-duration energy storage as anything greater than six hours may not capture.",
+   "para": 31,
+   "page": 22,
+   "to": [],
+   "words": 92
+  },
+  {
+   "n": 10,
+   "ch": 2,
+   "sec": 2,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "The Government, supported by modelling from the Future System Operator, should clarify its definitions for medium- and long-duration energy storage and the roles they are expected to play. It should set or endorse a series of metrics that allow technologies to be compared according to the energy system services that they provide. It should use these to publish an Assessment of Likely Need for long-duration energy storage by the end of 2024; this should include storage timescales, energy stored and power capacity required. It should commit to supporting a range of technologies, beyond just batteries, through financial support mechanisms and research grants for less mature technologies.",
+   "para": 32,
+   "page": 22,
+   "to": [
+    "gov",
+    "fso"
+   ],
+   "words": 106
+  },
+  {
+   "n": 11,
+   "ch": 2,
+   "sec": 3,
+   "pri": "pace",
+   "kind": "con",
+   "text": "There are long lead-in times for delivering energy storage—typically estimated around 7–10 years for most technologies. If the Government waits until there is a clear picture of exactly how supply, demand and the energy system will evolve, it cannot possibly develop storage in time for a decarbonised grid by 2035.",
+   "para": 35,
+   "page": 23,
+   "to": [],
+   "words": 50
+  },
+  {
+   "n": 12,
+   "ch": 2,
+   "sec": 3,
+   "pri": "pace",
+   "kind": "rec",
+   "text": "The Government should focus on “pace not perfection” in delivering no‑regrets projects—it is always possible to iterate on policy as uncertainties are resolved. It should bring forward its support schemes and no-regrets investments as soon as possible.",
+   "para": 35,
+   "page": 23,
+   "to": [
+    "gov"
+   ],
+   "words": 37
+  },
+  {
+   "n": 13,
+   "ch": 3,
+   "sec": 4,
+   "pri": "invest",
+   "kind": "con",
+   "text": "The economics of long-duration energy storage projects are challenging and they will require additional financial support mechanisms. Our witnesses generally favoured a cap and floor mechanism, and we are pleased to see the Government is actively consulting on introducing one. The Government has also stated that it is “minded to” provide a revenue floor for hydrogen transportation and storage but how this will interact with the proposed long-duration energy storage cap and floor subsidy is unclear. Hydrogen and electricity policies should be considered and designed together.",
+   "para": 46,
+   "page": 27,
+   "to": [],
+   "words": 86
+  },
+  {
+   "n": 14,
+   "ch": 3,
+   "sec": 4,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "The Government should, as a matter of urgency, finalise and set out the details of its business models to support commercial long-duration energy storage. We recommend that cap and floor support mechanisms are designed to support technologies that supply energy across different timescales, recognising the distinction between those that store energy for up to 24 hours and those that can store energy over days and weeks. The Government should clarify which technologies it considers to be eligible for the streams at different readiness levels, and whether the long-duration energy storage support mechanisms will be open to hydrogen. We recommend that hydrogen facilities intended for long-duration storage should be eligible for support and that the Government should resolve any overlaps between its policies.",
+   "para": 47,
+   "page": 27,
+   "to": [
+    "gov"
+   ],
+   "words": 122
+  },
+  {
+   "n": 15,
+   "ch": 3,
+   "sec": 4,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "The funding allocated to this business model must be sufficient to support deployment at scale, in line with its aim to balance the overall system, and the Government should outline the scale of funding that will be associated with its support schemes. We recommend that minimum targets for the overall long-duration energy storage capacity the model should support will help ensure support mechanisms are set appropriately to bring forward the necessary scale and range of projects.",
+   "para": 48,
+   "page": 28,
+   "to": [
+    "gov"
+   ],
+   "words": 76
+  },
+  {
+   "n": 16,
+   "ch": 3,
+   "sec": 4,
+   "pri": "dunkel",
+   "kind": "con",
+   "text": "The National Infrastructure Commission has recommended a strategic reserve of 25 TWh of electricity storage by 2040. Since the economic incentive is to cycle storage often, there is a concern over how to ensure commercially operated storage is available when it is needed most. Maintaining reserve storage will likely not be profitable even with a cap and floor subsidy. The Government has not made a clear commitment to developing a strategic reserve or explained whether it thinks green hydrogen or natural gas will fulfil that role. It has not explained how it will respond to generation shortfalls without a strategic reserve, or how it will replace the storage capacity provided by Rough.",
+   "para": 57,
+   "page": 30,
+   "to": [],
+   "words": 112
+  },
+  {
+   "n": 17,
+   "ch": 3,
+   "sec": 4,
+   "pri": "dunkel",
+   "kind": "rec",
+   "text": "The Government should commit to, and develop plans for, a strategic reserve of energy storage alongside commercially operated storage on the scale suggested by the National Infrastructure Commission. This could be in the form of facilities owned and operated by the Government or strategic reserve storage capacity could be contracted out. If the Government intends to procure strategic reserve energy storage, it needs to work with industry to set out procurement terms and a scale of funding that will ensure a stable reserve and security of supply.",
+   "para": 58,
+   "page": 30,
+   "to": [
+    "gov"
+   ],
+   "words": 87
+  },
+  {
+   "n": 18,
+   "ch": 3,
+   "sec": 4,
+   "pri": "dunkel",
+   "kind": "rec",
+   "text": "If unabated natural gas is to play a role, the Government must explain how this is compatible with climate change targets, in particular the Sixth Carbon budget and a decarbonised electricity system by 2035. If it will not pursue a strategic reserve, it must explain how the energy system will respond to shortfalls of renewable generation such as those highlighted by the Royal Society.",
+   "para": 59,
+   "page": 31,
+   "to": [
+    "gov"
+   ],
+   "words": 64
+  },
+  {
+   "n": 19,
+   "ch": 3,
+   "sec": 5,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "Although many of the components of a facility used to generate, store and convert hydrogen back into electricity are technologically mature, there are no facilities that do all three at scale in the UK. A large-scale demonstrator could help to “de-risk” investment by serving as a successful model for later projects to follow. The Committee welcomes the announcement that two projects will be supported under the hydrogen transportation and business model, but the scale of these projects is unclear.",
+   "para": 65,
+   "page": 32,
+   "to": [],
+   "words": 79
+  },
+  {
+   "n": 20,
+   "ch": 3,
+   "sec": 5,
+   "pri": "hydrogen",
+   "kind": "rec",
+   "text": "The Government should, as soon as possible, identify a portfolio of “no‑regrets” investments into long-duration energy storage projects. This should include commissioning a pilot project that combines onsite electrolysis, hydrogen storage in salt caverns (on the scale of hundreds of GWh) and electricity generation from hydrogen. Ideally, this should be a part of, or close to, the existing hydrogen clusters. Lessons learned from this project, in terms of what is required in skills, planning and capital/operational costs should be published as the project progresses to develop policy and de-risk future projects. The Government should set out the scale of storage of the projects it intends to support with its hydrogen transportation and storage business model.",
+   "para": 66,
+   "page": 32,
+   "to": [
+    "gov"
+   ],
+   "words": 115
+  },
+  {
+   "n": 21,
+   "ch": 3,
+   "sec": 6,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "We heard that there could be some scope for repurposing gas storage facilities to store hydrogen in the future. This is at a lower technology readiness level than purpose-built salt caverns for storing hydrogen, which have been deployed before, but may be faster to develop.",
+   "para": 69,
+   "page": 33,
+   "to": [],
+   "words": 45
+  },
+  {
+   "n": 22,
+   "ch": 3,
+   "sec": 6,
+   "pri": "hydrogen",
+   "kind": "rec",
+   "text": "The Government should work with Centrica to understand its proposed project to repurpose the Rough gas storage facility for hydrogen, with a view to determining, by the end of 2024, whether it will support this project.",
+   "para": 69,
+   "page": 33,
+   "to": [
+    "gov"
+   ],
+   "words": 36
+  },
+  {
+   "n": 23,
+   "ch": 3,
+   "sec": 7,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "We welcome the Government’s ambitious target for 10 GW of clean hydrogen by 2030. However, clarity over the role of hydrogen is needed to decide on key details of storage and transportation infrastructure. Credible forecasts of demand for hydrogen would help investors to commit. We heard that decarbonising hydrogen-using industries and long-duration energy storage are good uses for low-carbon hydrogen, while domestic heating and light transport may be a distraction.",
+   "para": 74,
+   "page": 35,
+   "to": [],
+   "words": 70
+  },
+  {
+   "n": 24,
+   "ch": 3,
+   "sec": 7,
+   "pri": "hydrogen",
+   "kind": "rec",
+   "text": "The Government needs to clarify the role it sees for hydrogen on the future energy system assuming its target is met, with an indication of how the clean hydrogen produced in 2030 will be used. It should bring forward the decision on whether hydrogen will be used in domestic heating from 2026— we advise against it. Hydrogen use should also be ruled out in locations and for applications that would be prohibitively expensive or without supporting infrastructure.",
+   "para": 75,
+   "page": 35,
+   "to": [
+    "gov"
+   ],
+   "words": 77
+  },
+  {
+   "n": 25,
+   "ch": 3,
+   "sec": 8,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "Meeting hydrogen targets will require substantial additional electrolyser capacity, which could become a serious production bottleneck for hydrogen if not addressed. We heard that there is strong international competition for such capacity, notably from the EU and US which have significant hydrogen subsidies.",
+   "para": 78,
+   "page": 36,
+   "to": [],
+   "words": 43
+  },
+  {
+   "n": 26,
+   "ch": 3,
+   "sec": 8,
+   "pri": "hydrogen",
+   "kind": "rec",
+   "text": "The Government should set out in its response to this report how it intends to obtain sufficient electrolyser capacity to meet its hydrogen production targets and ensure its approach supports domestic manufacture and research and development.",
+   "para": 78,
+   "page": 36,
+   "to": [
+    "gov"
+   ],
+   "words": 36
+  },
+  {
+   "n": 27,
+   "ch": 3,
+   "sec": 9,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "Industry has significant experience with using hydrogen as an industrial gas and there do not appear to be major safety concerns.",
+   "para": 79,
+   "page": 36,
+   "to": [],
+   "words": 21
+  },
+  {
+   "n": 28,
+   "ch": 3,
+   "sec": 9,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "We heard no evidence to suggest that hydrogen is unsafe, especially when used as an industrial gas. However, the public perception of safety is vital, as negative perceptions of hydrogen projects could prove to be an obstacle in the planning process. We were disappointed that the Government does not seem to recognise this distinction or its crucial role in securing public support, and the Government has work to do to explain the role of hydrogen and its safety profile to the public.",
+   "para": 85,
+   "page": 38,
+   "to": [],
+   "words": 82
+  },
+  {
+   "n": 29,
+   "ch": 3,
+   "sec": 9,
+   "pri": "hydrogen",
+   "kind": "rec",
+   "text": "DESNZ should commission research in the next six months into the public acceptability of hydrogen storage, in particular in the local communities which are most likely to host it. A public information and dialogue campaign that explains the envisaged role for hydrogen, as well as its safety aspects, is essential and must be a priority for the Government—it cannot be left to developers. The campaign should emphasise the importance and benefits of these energy infrastructure projects for national and economic security, as well as the industry experience with producing and using large volumes of hydrogen today.",
+   "para": 86,
+   "page": 38,
+   "to": [
+    "desnz"
+   ],
+   "words": 96
+  },
+  {
+   "n": 30,
+   "ch": 3,
+   "sec": 9,
+   "pri": "hydrogen",
+   "kind": "con",
+   "text": "Some uncertainties remain around some of the operating and safety parameters for hydrogen storage—for example, the potential for microbial production of hydrogen sulphide.",
+   "para": 87,
+   "page": 38,
+   "to": [],
+   "words": 23
+  },
+  {
+   "n": 31,
+   "ch": 3,
+   "sec": 9,
+   "pri": "hydrogen",
+   "kind": "rec",
+   "text": "The Government should work with UKRI to commission research into the safety aspects of hydrogen storage and transportation, as well as the public acceptability of hydrogen transport and storage facilities.",
+   "para": 88,
+   "page": 38,
+   "to": [
+    "gov",
+    "ukri"
+   ],
+   "words": 30
+  },
+  {
+   "n": 32,
+   "ch": 3,
+   "sec": 10,
+   "pri": "invest",
+   "kind": "con",
+   "text": "Pumped-storage hydropower could play a valuable role in partially fulfilling medium-duration storage needs. We heard from the pumped-storage hydropower industry that a pipeline of projects is at various stages of development but will require additional support mechanisms to proceed. Projects could take seven or more years to construct, so final investment decisions are urgent if they are to be ready by 2035.",
+   "para": 92,
+   "page": 39,
+   "to": [],
+   "words": 62
+  },
+  {
+   "n": 33,
+   "ch": 3,
+   "sec": 10,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "The Government should consult with the pumped-storage hydropower industry to determine the levels of the cap and floor support mechanism that might be needed to support projects that already have planning permission. Projects that can demonstrate their cost-effectiveness should be supported by the long-duration energy storage business model.",
+   "para": 93,
+   "page": 39,
+   "to": [
+    "gov"
+   ],
+   "words": 48
+  },
+  {
+   "n": 34,
+   "ch": 3,
+   "sec": 11,
+   "pri": "invest",
+   "kind": "con",
+   "text": "Advanced compressed air energy storage (ACAES) could store energy on the timescale of 4–24 hours and help to manage medium-term variations in demand. However, as a relatively new technology, cost estimates vary widely. The Royal Society found that the availability of some CAES could reduce overall costs for the energy system under some circumstances if it can cycle quickly.",
+   "para": 96,
+   "page": 40,
+   "to": [],
+   "words": 59
+  },
+  {
+   "n": 35,
+   "ch": 3,
+   "sec": 11,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "The Government should investigate the costs and efficiencies of large ACAES, for example through researching comparable systems that have been operated in other countries, with a view to supporting them through the long-duration energy storage business model in 2024.",
+   "para": 96,
+   "page": 40,
+   "to": [
+    "gov"
+   ],
+   "words": 39
+  },
+  {
+   "n": 36,
+   "ch": 3,
+   "sec": 12,
+   "pri": "invest",
+   "kind": "con",
+   "text": "Lithium-ion batteries have been a central focus of battery development in the UK because of their uses in the automotive sector, but alternative chemistries such as flow batteries or iron-air batteries will be more suitable for medium‑duration grid-scale storage across multiple days. The UK has some pilot projects for flow batteries which could be expanded.",
+   "para": 100,
+   "page": 41,
+   "to": [],
+   "words": 55
+  },
+  {
+   "n": 37,
+   "ch": 3,
+   "sec": 12,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "The Government’s industrial battery policy should outline a clearer role for flow batteries and iron-air batteries that might have grid-scale applications. The Faraday Institution and related battery R&D funding initiatives should be expanded to enable dedicated funding to chemistries that can be useful for grid-scale storage.",
+   "para": 101,
+   "page": 41,
+   "to": [
+    "gov",
+    "faraday"
+   ],
+   "words": 46
+  },
+  {
+   "n": 38,
+   "ch": 3,
+   "sec": 12,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "Early-stage technologies like ACAES, flow batteries, and large-scale thermal storage would benefit from the commission of large-scale demonstration projects and the Government should consider co-funding some large-scale pilot projects with industry.",
+   "para": 102,
+   "page": 41,
+   "to": [
+    "gov",
+    "industry"
+   ],
+   "words": 31
+  },
+  {
+   "n": 39,
+   "ch": 3,
+   "sec": 13,
+   "pri": "invest",
+   "kind": "con",
+   "text": "There is agreement that a mix of technologies is likely to be needed for long-duration energy storage. Hydrogen is likely to be the best solution for storage across multiple weeks and months, but there is a range of competing technologies for storage across hours and days, which can also provide different services to the grid. Long-duration energy storage developers argue that the overall value they provide to the grid in terms of electricity system services is not yet properly incentivised, meaning the revenue stack for projects does not always add up. More information about how the Future System Operator will procure energy system services would encourage investment and healthy competition. Financial support mechanisms and market arrangements should be designed support a mix of storage technologies that provide the services the grid needs.",
+   "para": 108,
+   "page": 42,
+   "to": [],
+   "words": 132
+  },
+  {
+   "n": 40,
+   "ch": 3,
+   "sec": 13,
+   "pri": "invest",
+   "kind": "rec",
+   "text": "The Government, supported by the Future System Operator and as part of its planning, should incentivise the right mix of technologies by specifying in detail which energy system services it wants to procure, including storage capacity and duration, in line with the Assessment of Likely Need. This should include suggested levels of payment and published modelling should project the likely levels of demand so that revenue streams can be forecast. Energy storage projects that can provide additional services to the grid should be incentivised to do so by receiving additional payments above the “revenue floor” if they are eligible for the commercial long-duration energy storage cap and floor mechanism.",
+   "para": 109,
+   "page": 42,
+   "to": [
+    "gov",
+    "fso"
+   ],
+   "words": 109
+  },
+  {
+   "n": 41,
+   "ch": 4,
+   "sec": 14,
+   "pri": "grid",
+   "kind": "con",
+   "text": "We heard from would-be long-duration energy storage project developers that connecting to the grid is a barrier that can prove fatal to projects. The Committee welcomes the recent announcement that Ofgem is reforming the queue to remove non-viable projects, as well as the reforms proposed in the Connection Action Plan. This will be critical to ensuring a pipeline of projects can be developed in time.",
+   "para": 113,
+   "page": 43,
+   "to": [],
+   "words": 65
+  },
+  {
+   "n": 42,
+   "ch": 4,
+   "sec": 14,
+   "pri": "grid",
+   "kind": "rec",
+   "text": "Ofgem and the ESO should reduce the grid connection queue urgently and speed up timelines to connect projects to the grid. They should publish updates on how the reforms are progressing reducing the queue of proposed projects. They should consider prioritising storage projects for accessing the queue given their additional benefits such as alleviating grid constraints as well as acting as flexible generation.",
+   "para": 114,
+   "page": 44,
+   "to": [
+    "ofgem",
+    "fso"
+   ],
+   "words": 63
+  },
+  {
+   "n": 43,
+   "ch": 4,
+   "sec": 15,
+   "pri": "pace",
+   "kind": "con",
+   "text": "We have heard that obtaining planning permission for energy storage facilities can be difficult and add significantly to timelines. It is not clear that the planning system has distinct guidance for energy storage facilities as opposed to energy generation. There currently is no regulatory licensing regime for the onshore storage of hydrogen, so developers need additional guidance from Government.",
+   "para": 119,
+   "page": 45,
+   "to": [],
+   "words": 59
+  },
+  {
+   "n": 44,
+   "ch": 4,
+   "sec": 15,
+   "pri": "pace",
+   "kind": "rec",
+   "text": "The planning system must be reformed and sufficiently resourced to deal with the additional strain on it from new energy projects. It must recognise storage for its own value for energy system resilience by the end of 2024. The Government, working closely with Ofgem, should identify and set out the regulatory barriers to storage project developments and explain what actions it will take to address them. This should include more detailed guidance for developers on navigating the planning system, as well as clarifying how onshore storage of hydrogen will be regulated and licensed.",
+   "para": 120,
+   "page": 45,
+   "to": [
+    "gov",
+    "ofgem"
+   ],
+   "words": 93
+  },
+  {
+   "n": 45,
+   "ch": 4,
+   "sec": 16,
+   "pri": "pace",
+   "kind": "con",
+   "text": "As with many other Net Zero ambitions, the availability of relevant skills, including all types of engineers and particularly those with experience of hydrogen, will be a barrier to scaling up technologies.",
+   "para": 126,
+   "page": 46,
+   "to": [],
+   "words": 32
+  },
+  {
+   "n": 46,
+   "ch": 4,
+   "sec": 16,
+   "pri": "pace",
+   "kind": "rec",
+   "text": "The Government should work with industry to determine and set out an assessment and estimate of the numbers of skilled individuals that will be needed to deliver on its hydrogen targets, and across which professions, and work with industry to fund training and retraining programmes accordingly. Training skilled individuals has the longest lead time and so needs to be happening now if projects are to scale up.",
+   "para": 127,
+   "page": 46,
+   "to": [
+    "gov",
+    "industry"
+   ],
+   "words": 67
+  },
+  {
+   "n": 47,
+   "ch": 4,
+   "sec": 17,
+   "pri": "grid",
+   "kind": "con",
+   "text": "Long- and medium-duration energy storage for the electricity system will be critical for a fully decarbonised grid, but it will not always be the cheapest option: energy efficiency, thermal energy storage, demand-side response and interconnectors can minimise our reliance on energy storage, especially on shorter timescales.",
+   "para": 129,
+   "page": 47,
+   "to": [],
+   "words": 46
+  },
+  {
+   "n": 48,
+   "ch": 4,
+   "sec": 18,
+   "pri": "dunkel",
+   "kind": "con",
+   "text": "Flexible demand can help to smooth out variations across hours and days. In extreme cases of low generation, it may help balance the system if electrified industries shut down temporarily to reduce peak demand, but it does not seem that mechanisms for this have been explored. However, there could also be demand-side risks, such as a “run on the plugs”, for example if a much higher than normal number of drivers decide to charge their electric vehicles simultaneously due to concerns over supply.",
+   "para": 134,
+   "page": 47,
+   "to": [],
+   "words": 83
+  },
+  {
+   "n": 49,
+   "ch": 4,
+   "sec": 18,
+   "pri": "dunkel",
+   "kind": "rec",
+   "text": "The Government should build on initiatives from the National Grid Energy System Operator like the Demand Flexibility Service, expanding them and making them permanent. This should involve a robust programme of consumer research to ensure people who provide flexibility are incentivised, rewarded, and protected appropriately, but also to understand any potential flaws in how the system works in practice in a range of circumstances. The Government should support the roll-out of market-wide half-hourly settlement, which will help energy companies offer electricity tariffs that encourage people to operate appliances flexibly. It should explore the potential for more serious demand-side interventions where supply is extremely limited.",
+   "para": 135,
+   "page": 48,
+   "to": [
+    "gov"
+   ],
+   "words": 104
+  },
+  {
+   "n": 50,
+   "ch": 4,
+   "sec": 19,
+   "pri": "dunkel",
+   "kind": "con",
+   "text": "Interconnectors with other countries can reduce, but not eliminate, the need for energy storage and curtailment on the grid and could allow us to export our storage capacity. There are security and political risks associated with over-reliance on interconnectors, especially in an energy crisis which is likely to be Europe-wide. The Government’s ambition to more than double interconnector capacity by 2030 is welcome and successful deployment so far demonstrates the value of cap-and-floor subsidies.",
+   "para": 138,
+   "page": 48,
+   "to": [],
+   "words": 74
+  },
+  {
+   "n": 51,
+   "ch": 4,
+   "sec": 19,
+   "pri": "dunkel",
+   "kind": "rec",
+   "text": "The Government should pursue expansion of GB interconnectors as part of its energy security strategy, ensuring we can trade efficiently with the EU market. It should explore the potential for interconnectors that could help manage seasonal demand and mitigate risks from weather systems that extend across Northern Europe, by connecting further afield with EU Member States, such as Southern European States, as well as the Middle East and North Africa.",
+   "para": 139,
+   "page": 49,
+   "to": [
+    "gov"
+   ],
+   "words": 70
+  },
+  {
+   "n": 52,
+   "ch": 4,
+   "sec": 20,
+   "pri": "grid",
+   "kind": "con",
+   "text": "Thermal energy storage, both domestically and as part of heat networks, could play a significant role. It can shift peak demand times and help with the integration of electrified heating such as heat pumps. A few small-scale projects have been supported through the Longer Duration Energy Storage Demonstration Programme, but we encourage the Government to do more to support thermal energy storage.",
+   "para": 142,
+   "page": 49,
+   "to": [],
+   "words": 62
+  },
+  {
+   "n": 53,
+   "ch": 4,
+   "sec": 20,
+   "pri": "grid",
+   "kind": "rec",
+   "text": "Ofgem and the Future System Operator should identify ways of incentivising businesses and households to provide flexible heating that can support the grid. Thermal storage and an assessment of flexibility should be included in existing policy mechanisms, such as Energy Performance Certificates, the Energy Saving Materials technology list for VAT relief, grants such as the Boiler Upgrade Scheme, and the Clean Heat Market Mechanism.",
+   "para": 143,
+   "page": 49,
+   "to": [
+    "ofgem",
+    "fso"
+   ],
+   "words": 64
+  },
+  {
+   "n": 54,
+   "ch": 4,
+   "sec": 21,
+   "pri": "plan",
+   "kind": "con",
+   "text": "There are many actors with a role in delivering long-duration storage, from the Department of Energy Security and Net Zero, Ofgem, the proposed Future System Operator, energy companies, the electricity transmission network owners and so on. In particular, the FSO has a potentially difficult role in coordinating and balancing supply and demand on a grid that is larger, more complex, decentralised and variable than before. There is a need for an overall “guiding mind” with the authority to take decisions and coordinate actions.",
+   "para": 150,
+   "page": 50,
+   "to": [],
+   "words": 83
+  },
+  {
+   "n": 55,
+   "ch": 4,
+   "sec": 21,
+   "pri": "plan",
+   "kind": "rec",
+   "text": "The Government must ensure that stakeholder organisations coordinate their efforts, that responsibilities and remits are clearly delineated and foster a shared vision of how the future energy system should look and how to get there. The role and powers of the Future System Operator and the Secretary of State need to be clarified, especially with respect to ensuring resilience and security of energy supply, and the FSO needs to be appropriately empowered and resourced to fulfil its mandate.",
+   "para": 151,
+   "page": 51,
+   "to": [
+    "gov"
+   ],
+   "words": 78
+  },
+  {
+   "n": 56,
+   "ch": 4,
+   "sec": 22,
+   "pri": "grid",
+   "kind": "con",
+   "text": "Transportation and transmission networks for hydrogen and electricity will need to be substantially improved and expanded. There is a need for sensible coordination in the design of hydrogen and electricity systems. Co-locating electrolysers and hydrogen-to-power generation with storage seems the most efficient option, but this will require significant electricity transmission infrastructure connecting storage sites to generation and to the grid. Hydrogen pipelines could connect storage to planned hydrogen industrial hubs. Without some assurance around how transmission networks will evolve, it will be hard for investors to make large-scale investment decisions into storage.",
+   "para": 154,
+   "page": 51,
+   "to": [],
+   "words": 92
+  },
+  {
+   "n": 57,
+   "ch": 4,
+   "sec": 22,
+   "pri": "grid",
+   "kind": "rec",
+   "text": "There is an urgent need for key strategic decisions and investment into the transportation networks for both electricity and hydrogen. These network decisions should support the deployment of large-scale long-duration energy storage and a strategic energy reserve. These decisions should be communicated as part of the Strategic Spatial Energy Plan and delivered by a cross-departmental Ministerial Working Group, as currently exists for electricity network transmission infrastructure.",
+   "para": 164,
+   "page": 53,
+   "to": [
+    "gov"
+   ],
+   "words": 66
+  },
+  {
+   "n": 58,
+   "ch": 4,
+   "sec": 22,
+   "pri": "plan",
+   "kind": "con",
+   "text": "We welcome the commitment to develop a Strategic Spatial Energy Plan, which is critical for long duration energy storage, but details remain unclear. We are unclear about the level of detail—for example, whether the Plan will be at the regional level or identify major facilities—as well as who will take responsibility for delivering on the plan once it has been developed by the Future System Operator. It is also unclear whether the plan will be given a statutory basis and how it will fit within the planning system. There is a risk that the Future System Operator develops a plan with substantial implications for national infrastructure and public expenditure, requiring coordinated action from many actors in the energy system, which the Government does not fully commit to, and so there is a lack of follow-through. ‘Endorsement’ of the plan may not be enough.",
+   "para": 165,
+   "page": 53,
+   "to": [],
+   "words": 143
+  },
+  {
+   "n": 59,
+   "ch": 4,
+   "sec": 22,
+   "pri": "plan",
+   "kind": "rec",
+   "text": "The Strategic Spatial Energy Plan should include locations for long-duration energy storage and the supporting infrastructure. It must include provisions that support the Government’s targets for hydrogen, and address the need for long-duration energy storage on the grid and a strategic reserve. It should be developed iteratively, and updated at regular intervals, with close collaboration between the FSO, Ofgem and the Government.",
+   "para": 166,
+   "page": 54,
+   "to": [
+    "fso",
+    "ofgem",
+    "gov"
+   ],
+   "words": 62
+  },
+  {
+   "n": 60,
+   "ch": 4,
+   "sec": 22,
+   "pri": "plan",
+   "kind": "rec",
+   "text": "The Future System Operator needs to be sufficiently empowered and resourced to develop a credible plan. As it does so, it must identify the key strategic, infrastructure and investment decisions that the plan entails. These decisions must then be made swiftly by the Government, which must then commit to ensure every actor in the system is working to deliver on them. Ofgem should endorse it in line with its Net Zero mandate.",
+   "para": 167,
+   "page": 54,
+   "to": [
+    "fso",
+    "gov",
+    "ofgem"
+   ],
+   "words": 72
+  },
+  {
+   "n": 61,
+   "ch": 4,
+   "sec": 22,
+   "pri": "plan",
+   "kind": "rec",
+   "text": "We urge the Government to publish timelines for developing the plan and details of what it will contain as soon as possible. It should consider whether a statutory basis for the plan is needed to ensure it is carried out.",
+   "para": 168,
+   "page": 54,
+   "to": [
+    "gov"
+   ],
+   "words": 40
+  }
+ ],
+ "para_pages": {
+  "1": 9,
+  "2": 9,
+  "3": 9,
+  "4": 9,
+  "5": 9,
+  "6": 10,
+  "7": 10,
+  "8": 10,
+  "9": 11,
+  "10": 12,
+  "11": 13,
+  "12": 13,
+  "13": 15,
+  "14": 16,
+  "15": 16,
+  "16": 16,
+  "17": 16,
+  "18": 17,
+  "19": 17,
+  "20": 17,
+  "21": 20,
+  "22": 20,
+  "23": 20,
+  "24": 21,
+  "25": 21,
+  "26": 21,
+  "27": 21,
+  "28": 21,
+  "29": 22,
+  "30": 22,
+  "31": 22,
+  "32": 22,
+  "33": 23,
+  "34": 23,
+  "35": 23,
+  "36": 24,
+  "37": 24,
+  "38": 24,
+  "39": 24,
+  "40": 25,
+  "41": 26,
+  "42": 26,
+  "43": 26,
+  "44": 27,
+  "45": 27,
+  "46": 27,
+  "47": 27,
+  "48": 28,
+  "49": 28,
+  "50": 28,
+  "51": 28,
+  "52": 29,
+  "53": 30,
+  "54": 30,
+  "55": 30,
+  "56": 30,
+  "57": 30,
+  "58": 30,
+  "59": 31,
+  "60": 31,
+  "61": 31,
+  "62": 31,
+  "63": 31,
+  "64": 32,
+  "65": 32,
+  "66": 32,
+  "67": 32,
+  "68": 32,
+  "69": 33,
+  "70": 34,
+  "71": 34,
+  "72": 35,
+  "73": 35,
+  "74": 35,
+  "75": 35,
+  "76": 36,
+  "77": 36,
+  "78": 36,
+  "79": 36,
+  "80": 37,
+  "81": 37,
+  "82": 37,
+  "83": 37,
+  "84": 37,
+  "85": 38,
+  "86": 38,
+  "87": 38,
+  "88": 38,
+  "89": 38,
+  "90": 38,
+  "91": 39,
+  "92": 39,
+  "93": 39,
+  "94": 39,
+  "95": 39,
+  "96": 40,
+  "97": 40,
+  "98": 40,
+  "99": 40,
+  "100": 41,
+  "101": 41,
+  "102": 41,
+  "103": 41,
+  "104": 41,
+  "105": 41,
+  "106": 42,
+  "107": 42,
+  "108": 42,
+  "109": 42,
+  "110": 43,
+  "111": 43,
+  "112": 43,
+  "113": 43,
+  "114": 44,
+  "115": 44,
+  "116": 44,
+  "117": 44,
+  "118": 45,
+  "119": 45,
+  "120": 45,
+  "121": 45,
+  "122": 45,
+  "123": 46,
+  "124": 46,
+  "125": 46,
+  "126": 46,
+  "127": 46,
+  "128": 46,
+  "129": 47,
+  "130": 47,
+  "131": 47,
+  "132": 47,
+  "133": 47,
+  "134": 47,
+  "135": 48,
+  "136": 48,
+  "137": 48,
+  "138": 48,
+  "139": 49,
+  "140": 49,
+  "141": 49,
+  "142": 49,
+  "143": 49,
+  "144": 49,
+  "145": 49,
+  "146": 50,
+  "147": 50,
+  "148": 50,
+  "149": 50,
+  "150": 50,
+  "151": 51,
+  "152": 51,
+  "153": 51,
+  "154": 51,
+  "155": 51,
+  "156": 52,
+  "157": 52,
+  "158": 52,
+  "159": 52,
+  "160": 52,
+  "161": 53,
+  "162": 53,
+  "163": 53,
+  "164": 53,
+  "165": 53,
+  "166": 54,
+  "167": 54,
+  "168": 54
+ }
+}

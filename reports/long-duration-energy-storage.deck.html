@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Links made for the explorer go to its home */
+if(/(^#|&)(to|topic|q|r|by|pri)=/.test(location.hash))location.replace('explore/'+location.hash);</script>
+<title>Long-duration energy storage: the Lords report in brief</title>
+<meta name="description" content="The House of Lords Science and Technology Committee’s report on long-duration energy storage in 17 slides: more electricity, more weather, the dunkelflaute, the grid, and what the committee wants done.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Long-duration energy storage: get on with it">
+<meta property="og:description" content="The House of Lords Science and Technology Committee’s report in 17 slides: the evidence, what it concluded, and what it wants done.">
+<meta property="og:url" content="__URL__">
+<meta property="og:image" content="__OG__">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="preload" href="__FONTS__archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+BRIEF: a splash presentation for the Lords report "Long-duration energy storage: get on with it" (HL Paper 68). It takes readers
+  through the evidence, the committee's conclusions and its recommendations, then into the explorer. Emphasis, as asked: electricity,
+  grid capacity and the dunkelflaute.
+IDEA: the report is drawn as salt caverns, the stores the report expects to hold hydrogen. A ground line runs across the opening slide
+  and 61 caverns are dissolved out of the salt beneath it: one for each numbered conclusion and recommendation, grouped by chapter,
+  deeper for longer paragraphs. Recommendations fill with stored energy; conclusions stay hollow. On every other slide the caverns become
+  a strip along the foot of the screen, where the ones for that slide light up. On the dunkelflaute slide they drain and refill with the
+  Royal Society's store as it runs through 37 years of weather. On the closing slides every cavern is full.
+PALETTE: a still winter night. Navy for the dark slides, an overcast grey for the light ones, amber for stored energy and anything the
+  slide is about, one steel blue for wind and comparisons. TYPE: shared with the other report pages: Archivo and Newsreader.
+MOTION: one orchestrated moment: the ground line draws, shafts are drilled and the caverns open and fill. Diagrams play once when their
+  slide opens; everything else answers the reader.
+*/
+@font-face{font-family:"Archivo";src:url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+:root{--sans:"Archivo",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;--padX:max(5vw,24px)}
+[data-tone=light]{--land:#CDD5DD;--bg:#E3E8EC;--fg:#101C29;--mute:#4C5B6B;--line:#C0CAD3;--hi:#9A5209;--amber:#C98312;--onhi:#fff;--wash:#F1DEC2;--glass:#D3DBE2;--cool:#255F94;--cool2:#3F9CC4;--soft:#93A3B3;--violet:#8061B4;--rust:#A0563A;color-scheme:light}
+[data-tone=dark]{--land:#1B2D42;--bg:#0C1826;--fg:#E8EDF2;--mute:#97A6B6;--line:#23364A;--hi:#F4A938;--amber:#F4A938;--onhi:#0C1826;--wash:#3A2B14;--glass:#14263A;--cool:#6FA8DC;--cool2:#8FC6E6;--soft:#4A5F75;--violet:#A88BE0;--rust:#D27F5E;color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%}
+@media (min-width:821px) and (min-height:640px){html{scroll-snap-type:y mandatory}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);font-stretch:100%;overflow-x:clip;transition:background-color .5s}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skiplink{position:absolute;left:12px;top:-60px;z-index:60;background:var(--bg);padding:8px 12px;border:2px solid var(--hi)}
+.skiplink:focus{top:12px}
+
+/* fixed chrome */
+.chrome{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--padX);font-size:14px;color:var(--fg);pointer-events:none;transition:color .4s}
+.chrome a{pointer-events:auto}
+.chrome .pill{border:1.5px solid currentColor;border-radius:999px;padding:7px 15px;text-decoration:none;font-weight:600;white-space:nowrap}
+.chrome .pill:hover{background:var(--fg);color:var(--bg)}
+.pager{position:fixed;left:var(--padX);bottom:16px;z-index:40;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--fg);transition:color .4s}
+.pager button{width:38px;height:38px;border-radius:50%;border:1.5px solid currentColor;background:var(--bg);color:inherit;cursor:pointer;font:400 18px/1 var(--sans);transition:background-color .4s}
+.pager button:hover:not(:disabled){background:var(--fg);color:var(--bg)}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager #count{font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pager #slidename{color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(37vw - var(--padX) - 177px)}
+
+/* the salt caverns */
+#salt{position:fixed;left:0;top:0;z-index:20;pointer-events:none;overflow:visible}
+#salt .hit{pointer-events:auto;cursor:pointer;fill:transparent}
+#salt .band{fill:var(--glass);transition:fill .5s}
+#salt .ground{stroke:var(--fg);stroke-width:1.6;stroke-linecap:round;transition:stroke .5s}
+#salt .shafts{stroke:var(--mute);stroke-width:1;fill:none;transition:stroke .5s}
+#salt .cv .o{fill:var(--bg);stroke:var(--hi);stroke-width:1.3;transition:fill .5s,stroke .5s}
+#salt .cv .f{fill:var(--hi);transition:fill .5s}
+#salt .cv{transition:opacity .35s}
+#salt .cv.off{opacity:.45}
+#salt .cv.off .o{stroke:var(--soft)}
+#salt .cv.off .f{fill:var(--soft)}
+#salt .labs text{font:500 12px var(--sans);fill:var(--mute)}
+.bed{display:none}
+#tip{position:fixed;z-index:50;pointer-events:none;width:min(340px,calc(100vw - 16px));background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:10px 12px 11px;font-size:13px;line-height:1.4;opacity:0;transition:opacity .1s;box-shadow:4px 4px 0 var(--line)}
+#tip b{display:block;font-size:14px}
+#tip .x{font:15px/1.4 var(--serif);margin-top:4px}
+#tip .go{color:var(--mute);margin-top:6px}
+
+/* slides */
+.slide{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;padding:84px var(--padX) 84px;background:var(--bg);color:var(--fg);scroll-snap-align:start}
+.frame{width:100%;max-width:1240px;margin:0 auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:32px clamp(32px,5vw,84px);align-items:center}
+h1{margin:0;text-wrap:balance}
+h1 .t2{display:block;font:560 clamp(26px,2.7vw,44px)/1.04 var(--sans);font-stretch:84%;letter-spacing:-.01em;margin-bottom:.22em}
+h1 .t1{display:block;font:820 clamp(76px,10.6vw,176px)/.84 var(--sans);font-stretch:62%;letter-spacing:-.012em;color:var(--hi)}
+h2{font:700 clamp(32px,3.5vw,54px)/1 var(--sans);font-stretch:82%;letter-spacing:-.012em;margin:0 0 18px;text-wrap:balance;max-width:21ch}
+h2.quote{font:400 clamp(34px,4vw,62px)/1.08 var(--serif);font-style:italic;letter-spacing:-.01em;max-width:18ch;margin-bottom:24px}
+h3{font:600 14px var(--sans);color:var(--mute);margin:22px 0 6px}
+.kicker{font:650 14.5px var(--sans);color:var(--hi);margin:0 0 10px}
+.sub{font:400 clamp(19px,1.5vw,23px)/1.4 var(--serif);margin:0 0 12px;max-width:36ch}
+.meta{font-size:14.5px;color:var(--mute);margin:0;max-width:52ch}
+.lede{font:400 clamp(18px,1.32vw,21px)/1.46 var(--serif);margin:0;max-width:44ch}
+.lede+.lede{margin-top:12px}
+.hint{font-size:13.5px;line-height:1.45;color:var(--mute);max-width:48ch;margin:24px 0 0}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:10px 20px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 15.5px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.primary{background:var(--hi);border-color:var(--hi);color:var(--onhi)}
+.btn.primary:hover{background:var(--hi);color:var(--onhi);filter:brightness(1.1)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+@media (min-width:821px){
+  .s-band{align-items:start;padding-top:max(96px,12vh);padding-bottom:calc(min(170px,21vh) + 128px)}
+  .s-title .frame{max-width:none;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px clamp(32px,5vw,90px);align-items:start}
+  .s-band.s-close .frame{max-width:none}
+}
+.s-title h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.s-title .side{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* quotes, recommendations, links */
+.pull{position:relative;margin:0 0 18px;font:400 clamp(18px,1.4vw,22px)/1.36 var(--serif);font-style:italic;max-width:40ch}
+.pull::before{content:"\201C";position:absolute;left:-.52em;top:-.06em;color:var(--hi);font-size:1.7em;line-height:1}
+.lede+.pull{margin-top:20px}
+.pull cite{display:block;font:400 13.5px/1.4 var(--sans);font-style:normal;color:var(--mute);margin-top:6px;max-width:52ch}
+.recs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.recs a{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:14px;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.recs .n{font:800 28px/1 var(--sans);font-stretch:62%;padding-top:2px;transition:color .2s}
+.recs .t{font-size:15px;line-height:1.42}
+.recs a:hover .n,.recs a:focus-visible .n{color:var(--hi)}
+.recs a:hover .t{text-decoration:underline;text-decoration-color:var(--hi)}
+.more{display:inline-block;margin-top:14px;font-weight:650;color:var(--hi);text-decoration:none;border-bottom:1.5px solid var(--hi);padding-bottom:1px}
+.more:hover{border-bottom-width:3px}
+.note{font-size:13px;color:var(--mute);margin:8px 0 0;max-width:50ch}
+.src{font-size:13px;color:var(--mute);margin:12px 0 0}
+.theme .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:24px clamp(32px,4.5vw,72px);align-items:start;margin-top:4px}
+.theme h2{max-width:34ch}
+.theme .lede{margin-bottom:16px}
+
+/* illustrations */
+.ill{margin:0}
+.ill svg{display:block;width:100%;height:auto;overflow:visible;max-width:100%}
+.ill text{font-family:var(--sans);font-size:12.5px;fill:var(--fg)}
+.ill text.m{fill:var(--mute)}
+.ill text.b{font-weight:700}
+.ill text.r{fill:var(--hi);font-weight:700}
+.ill text.w{fill:var(--bg);font-weight:650}
+.ill text.big{font:800 26px var(--sans);font-stretch:62%}
+.ill text.halo,.ill .halo text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+.ill .grid line,.ill line.gl{stroke:var(--line);stroke-width:1}
+.ill .axis{stroke:var(--mute);stroke-width:1.2;fill:none}
+.ill figcaption{font-size:13.5px;line-height:1.45;color:var(--mute);margin-top:10px;max-width:64ch;min-height:2.9em}
+.ill figcaption b{color:var(--fg)}
+.ill .ctitle{font-size:13.5px;font-weight:600;color:var(--fg);margin:0 0 10px;max-width:58ch}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0 0}
+.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--fg);border-radius:20px;padding:2px}
+.seg button{border:0;background:none;color:var(--fg);border-radius:999px;padding:5px 13px;font:500 13.5px var(--sans);cursor:pointer;min-height:32px}
+.seg button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.seg button:hover:not([aria-pressed=true]){background:var(--glass)}
+.mini{border:1.5px solid var(--fg);border-radius:999px;background:none;color:var(--fg);padding:5px 13px;font:500 13.5px var(--sans);cursor:pointer;min-height:32px}
+.mini:hover{background:var(--glass)}
+.sa,.sb{transition:opacity .6s}
+[data-state=a] .sb,[data-state=b] .sa{opacity:0;pointer-events:none}
+[data-state=a] .sa,[data-state=b] .sb{transition-delay:.25s}
+.range{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mute);flex:1 1 280px}
+.range input{flex:1;accent-color:var(--hi);min-height:28px}
+.range output{font-weight:650;color:var(--fg);min-width:8.5em}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--mute);margin:0 0 8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend i.hatch{background:repeating-linear-gradient(45deg,var(--mute) 0 1.5px,transparent 1.5px 4px);outline:1px solid var(--mute);outline-offset:-1px}
+.swap{position:relative}
+.swap>svg+svg{position:absolute;left:0;top:0}
+
+/* 2. the verdict: gas in store */
+#ill-gas .bw{transform-box:fill-box;transform-origin:left center;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+#ill-gas.pre .bw{transform:scaleX(0)}
+#ill-gas .bar{fill:var(--soft)}
+#ill-gas .bar.uk{fill:var(--hi)}
+#ill-gas .rough{fill:none;stroke:var(--hi);stroke-width:1.5;stroke-dasharray:4 3}
+#ill-gas .tiny{stroke:var(--hi);stroke-width:2}
+
+/* 3. power */
+#ill-mix .seg2{transition:fill .5s,opacity .5s}
+#ill-mix .gw{transform-box:fill-box;transform-origin:center bottom;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+#ill-mix.pre .gw{transform:scaleY(0)}
+#ill-mix .s-firm{fill:var(--violet)}#ill-mix .s-gas{fill:var(--rust)}#ill-mix .s-wind{fill:var(--cool)}#ill-mix .s-solar{fill:var(--cool2)}#ill-mix .s-dlc{fill:var(--amber)}
+#ill-mix .s-imp{fill:url(#hatch-mix);stroke:var(--mute);stroke-width:1}
+#ill-mix[data-state=b] .s-firm,#ill-mix[data-state=b] .s-gas{fill:var(--soft);opacity:.55}
+#ill-mix[data-state=b] .s-imp{opacity:.4}
+#ill-mix .seg2.hl{stroke:var(--fg);stroke-width:2}
+#ill-mix .zero{stroke:var(--fg);stroke-width:1.2}
+.legend i.s-firm{background:var(--violet)}.legend i.s-gas{background:var(--rust)}.legend i.s-wind{background:var(--cool)}.legend i.s-solar{background:var(--cool2)}.legend i.s-dlc{background:var(--amber)}
+
+/* 4. dunkelflaute */
+#ill-dunkel .env{fill:var(--hi)}
+#ill-dunkel .band{fill:var(--line);transition:x .7s cubic-bezier(.65,0,.35,1),width .7s cubic-bezier(.65,0,.35,1)}
+#ill-dunkel .brk{fill:none;stroke:var(--fg);stroke-width:1.5}
+#ill-dunkel .cont{stroke:var(--mute);stroke-width:1;stroke-dasharray:3 3}
+#ill-dunkel .cur{stroke:var(--fg);stroke-width:1.4}
+#ill-dunkel .curdot{fill:var(--fg);stroke:var(--bg);stroke-width:2}
+#ill-dunkel .wipe{transition:none}
+
+/* 5. spikes */
+#ill-spike .dy{transition:transform .9s cubic-bezier(.65,0,.35,1)}
+#ill-spike .st{fill:var(--soft)}
+#ill-spike .pw{fill:var(--amber)}
+#ill-spike .dy.on .st{fill:var(--fg)}
+#ill-spike .dy.on .pw{fill:var(--hi)}
+#ill-spike .mth{transition:opacity .5s}
+#ill-spike .ref{stroke:var(--fg);stroke-width:1;stroke-dasharray:3 3}
+
+/* 6. neighbours */
+#ill-map .land{fill:var(--land)}
+#ill-map .bord{fill:none;stroke:var(--line);stroke-width:.8;vector-effect:non-scaling-stroke}
+#ill-map .gbs{fill:var(--fg)}
+#ill-map .calm{fill:url(#calm);stroke:var(--hi);stroke-width:1.4;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}
+#ill-map .ic{fill:none;stroke:var(--hi);stroke-width:2;stroke-linecap:round}
+#ill-map .ic2{fill:none;stroke:var(--cool);stroke-width:2;stroke-dasharray:6 5;stroke-linecap:round}
+#ill-map .end{fill:var(--hi);stroke:var(--bg);stroke-width:1.5}
+#ill-map .end2{fill:var(--cool);stroke:var(--bg);stroke-width:1.5}
+#ill-map .lab{font-size:12.5px;paint-order:stroke;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round}
+#ill-map .lab.c2{fill:var(--cool);font-weight:650}
+#ill-map .calmlab{font:italic 15px var(--serif);fill:var(--fg);paint-order:stroke;stroke:var(--bg);stroke-width:4px}
+
+/* 7. themes */
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 28px;margin-top:26px}
+.card{display:grid;grid-template-rows:auto auto 1fr auto;gap:6px;text-align:left;border:0;border-top:2px solid var(--fg);background:none;color:inherit;padding:14px 0 18px;cursor:pointer;font:inherit}
+.card .ct{font:650 18px/1.18 var(--sans);font-stretch:90%}
+.card .cs{font-size:13.5px;line-height:1.42;color:var(--mute)}
+.card .strip{display:flex;align-items:flex-start;gap:1px;height:18px;margin-top:6px;border-top:1.5px solid var(--fg)}
+.card .strip i{display:block;flex:1 1 0;margin-top:3px;border:1px solid var(--soft);border-radius:2px 2px 4px 4px;opacity:.6}
+.card .strip i.on{background:var(--hi);border-color:var(--hi);opacity:1}
+.card .cc{font-size:13px;color:var(--mute)}
+.card:hover .ct,.card:focus-visible .ct{text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:4px}
+.cards .lead{border-top:2px solid var(--fg);padding-top:14px;font:400 17px/1.45 var(--serif);color:var(--fg);margin:0}
+
+/* 8. strategic reserve */
+#ill-res .wind{fill:var(--cool);opacity:.85}
+#ill-res .lane{fill:none;stroke:var(--line);stroke-width:1}
+#ill-res .lvl{fill:none;stroke-width:2.2;stroke-linejoin:round}
+#ill-res .lvl.com{stroke:var(--fg);stroke-width:1.3}
+#ill-res .lvl.res{stroke:var(--hi);stroke-width:2.6}
+#ill-res .still{fill:var(--glass)}
+#ill-res .short{fill:url(#hatch-res);stroke:var(--fg);stroke-width:1}
+#ill-res .cover{fill:var(--wash);stroke:var(--hi);stroke-width:1}
+
+/* 9. scale */
+#ill-scale .sq{fill:none;stroke:var(--fg);stroke-width:1.4}
+#ill-scale .sq.now{fill:var(--hi);stroke:var(--hi)}
+#ill-scale .sq.need{fill:var(--wash);stroke:var(--hi)}
+#ill-scale .sq.one{fill:none;stroke:var(--hi);stroke-width:1.8;stroke-dasharray:4 3}
+#ill-scale .rul .ln{stroke:var(--fg);stroke-width:1.4}
+#ill-scale .rul .rg{stroke:var(--hi);stroke-width:8;stroke-linecap:round}
+#ill-scale .rul .rg.h2{stroke:var(--hi)}
+#ill-scale .rul .mx{fill:var(--hi)}
+#ill-scale .rul .row{cursor:pointer}
+#ill-scale .rul .row:focus{outline:none}
+#ill-scale .rul .row.on text{font-weight:700}
+#ill-scale .rul .row:focus-visible text{text-decoration:underline}
+#ill-scale .thr{stroke:var(--mute);stroke-width:1.2;stroke-dasharray:4 3}
+
+/* 10. grid */
+#ill-grid .gbl{fill:var(--glass);stroke:var(--line);stroke-width:1}
+#ill-grid .tl{fill:none;stroke:var(--fg);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+#ill-grid .neck{fill:none;stroke:var(--hi);stroke-width:2}
+#ill-grid .tb{stroke:var(--fg);stroke-width:1.8;stroke-linecap:round;transition:stroke .4s,opacity .4s}
+#ill-grid .tb.idle{stroke:var(--soft)}
+#ill-grid .pt{fill:var(--cool)}
+#ill-grid .pt.g{fill:var(--rust)}
+#ill-grid .pt.x{fill:var(--soft)}
+#ill-grid .city{fill:var(--fg)}
+#ill-grid .gasp{fill:var(--rust);transition:opacity .5s}
+#ill-grid .store .o{fill:var(--bg);stroke:var(--hi);stroke-width:1.6}
+#ill-grid .store .f{fill:var(--hi)}
+
+/* 11. cap and floor */
+#ill-cap .mk{fill:none;stroke:var(--fg);stroke-width:2;stroke-linejoin:round}
+#ill-cap .capl{stroke:var(--cool);stroke-width:1.6;stroke-dasharray:6 4}
+#ill-cap .flrl{stroke:var(--hi);stroke-width:1.6;stroke-dasharray:6 4}
+#ill-cap .above{fill:url(#hatch-cap)}
+#ill-cap .below{fill:var(--amber);fill-opacity:.85}
+#ill-cap .kept{fill:none;stroke:var(--fg);stroke-width:2.6;stroke-linejoin:round}
+#ill-cap[data-state=b] .mk{opacity:.3;stroke-width:1.4}
+
+/* 12. hydrogen */
+#ill-h2 .sky{fill:none}
+#ill-h2 .salt{fill:var(--glass)}
+#ill-h2 .ground{stroke:var(--fg);stroke-width:1.6}
+#ill-h2 .pipe{fill:none;stroke:var(--mute);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#ill-h2 .kit{fill:var(--bg);stroke:var(--fg);stroke-width:1.6}
+#ill-h2 .cav{fill:var(--bg);stroke:var(--hi);stroke-width:2}
+#ill-h2 .cavf{fill:var(--hi);opacity:.9}
+#ill-h2 .pe{fill:var(--cool)}
+#ill-h2 .ph{fill:var(--hi)}
+#ill-h2 .blade{stroke:var(--fg);stroke-width:2;stroke-linecap:round}
+#ill-h2 .meter{font:800 30px var(--sans);font-stretch:62%}
+
+/* 13. pace */
+#ill-pace .bar0{fill:var(--amber)}
+#ill-pace .bar1{fill:var(--amber)}
+#ill-pace .late{fill:var(--fg);opacity:.85}
+#ill-pace .late1{fill:url(#hatch-late);stroke:var(--fg);stroke-width:1}
+#ill-pace .tgt{stroke:var(--fg);stroke-width:2}
+#ill-pace .startl{stroke:var(--hi);stroke-width:1.5;stroke-dasharray:3 3}
+#ill-pace .bars rect{transition:x .35s,width .35s}
+
+/* 14. plan */
+#ill-plan .silo{cursor:pointer}
+#ill-plan .silo rect{fill:var(--glass);stroke:var(--fg);stroke-width:1.5;transition:fill .3s,stroke .3s}
+#ill-plan .silo.on rect{fill:var(--wash);stroke:var(--hi)}
+#ill-plan .silo text{font-size:12px;font-weight:650;text-anchor:middle;pointer-events:none}
+#ill-plan .silo:focus{outline:none}
+#ill-plan .silo:focus-visible rect{stroke-width:3.5;stroke:var(--hi)}
+#ill-plan .planb{fill:var(--hi);transition:opacity .6s,transform .9s cubic-bezier(.65,0,.35,1);transform-box:fill-box;transform-origin:left center}
+#ill-plan[data-state=a] .planb{transform:scaleX(0);opacity:0}
+#ill-plan .arw path{fill:none;stroke:var(--hi);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ill-plan .q{font:italic 400 22px var(--serif);text-anchor:middle;fill:var(--mute)}
+
+/* 15. who */
+.wbars{border-top:2px solid var(--fg)}
+.wb{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 2.4em;gap:14px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;font-size:15px}
+.wb .wt{height:12px;position:relative}
+.wb .wt i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--fg);border-radius:0 6px 6px 0;transition:width .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-color .2s}
+#who.on .wb .wt i{width:var(--w)}
+.wb .wc{font:800 24px/1 var(--sans);font-stretch:62%;text-align:right}
+.wb:hover .wt i,.wb:focus-visible .wt i{background:var(--hi)}
+.wb:hover .wn{text-decoration:underline;text-decoration-color:var(--hi)}
+.wmore{font-size:14px;line-height:1.5;color:var(--mute);margin:14px 0 0;max-width:64ch}
+.wmore a{color:var(--fg)}
+
+/* 16 and 17. close */
+.s-close h2.quote{max-width:26ch;font-size:clamp(36px,5vw,80px)}
+@media (min-width:821px) and (max-height:900px){.s-close h2.quote{font-size:min(5vw,8.2vh)}}
+.tl{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative;max-width:1240px;row-gap:22px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line)}
+.tl li{position:relative;padding:30px 22px 0 0}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.tl li.done::before{background:var(--hi);border-color:var(--hi)}
+.tl .when{display:block;font:700 15px var(--sans)}
+.tl .what{display:block;font-size:14px;line-height:1.42;color:var(--mute);margin-top:4px}
+.tl .what a{color:var(--fg)}
+.small{font-size:12.5px;line-height:1.5;color:var(--mute);margin:22px 0 0;max-width:84ch}
+
+@media (max-width:1100px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* shorter laptop screens: fit each slide to the screen */
+@media (min-width:821px) and (max-height:900px){
+  .slide{padding-top:max(62px,8.6vh);padding-bottom:max(66px,9vh)}
+  .s-band{padding-top:max(76px,10.4vh);padding-bottom:calc(min(170px,21vh) + 94px)}
+  h1 .t1{font-size:min(10.6vw,16.4vh)}
+  h1 .t2{font-size:min(2.7vw,4.5vh)}
+  h2{font-size:min(3.5vw,5.6vh);margin-bottom:min(16px,1.8vh)}
+  h2.quote{font-size:min(4vw,6.6vh)}
+  .sub{font-size:min(1.5vw,2.6vh)}
+  .lede{font-size:min(1.32vw,2.3vh)}
+  .theme .lede{margin-bottom:min(16px,1.8vh)}
+  .pull{font-size:min(1.4vw,2.5vh);margin-bottom:min(18px,2vh)}
+  .acts{margin-top:min(28px,3vh)}
+  .hint{margin-top:min(24px,2.6vh)}
+  .ill svg{max-height:44vh}
+  .ill figcaption{margin-top:6px}
+  .ctl{margin-top:8px}
+  .recs a{padding:min(10px,1.05vh) 0}
+  .recs .t{font-size:min(15px,1.95vh)}
+  .recs .n{font-size:min(28px,3.6vh)}
+  .more{margin-top:min(14px,1.6vh)}
+  .theme .kicker{margin-bottom:4px}
+  .cards{margin-top:min(26px,2.4vh)}
+  .card{padding:min(14px,1.4vh) 0 min(18px,1.8vh)}
+  .card .cs{font-size:min(13.5px,1.9vh)}
+  .tl{margin-top:min(26px,2.6vh);row-gap:min(22px,2.2vh)}
+  .tl li{padding-top:min(30px,3.2vh)}
+  .tl .what{font-size:min(14px,1.85vh)}
+  .small{margin-top:min(22px,2.2vh)}
+}
+@media (max-width:820px){
+  .chrome{position:absolute}
+  .chrome .home{display:none}
+  .pager{display:none}
+  .bed{display:block;position:fixed;left:0;right:0;bottom:0;height:66px;background:var(--bg);border-top:1px solid var(--line);z-index:19;transition:background-color .4s}
+  .slide{padding:76px 20px 104px;min-height:auto}
+  .slide.s-title,.slide.s-close{min-height:100svh}
+  .two,.theme .cols{grid-template-columns:1fr}
+  .s-title .side{margin-top:20px}
+  .cards{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:22px;padding-left:30px}
+  .tl::before{left:8px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl li{padding:0}
+  .tl li::before{left:-30px}
+  .pull{margin-left:.6em}
+  .wb{grid-template-columns:minmax(0,1fr) 60px 2em}
+  .range{flex-wrap:wrap;gap:4px 12px}
+  .range input{flex:1 1 100%;order:3}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:0s!important}}
+@media print{.chrome,.pager,#salt,.bed,#tip{display:none}.slide{min-height:auto;break-after:page}}
+</style>
+</head>
+<body data-tone="dark">
+<a class="skiplink" href="explore/">Skip to all 61 conclusions and recommendations</a>
+<header class="chrome"><a class="home" href="__ROOT__science-and-technology/">Lords Science and Technology Committee reports</a><a class="pill" href="explore/">All 61 conclusions and recommendations</a></header>
+
+<main id="deck">
+
+<section class="slide s-title s-band" id="start" data-tone="dark" data-cut="hero" data-name="Start" aria-labelledby="h-start">
+<div class="frame">
+<h1 id="h-start"><span class="t2">Long-duration energy storage:</span><span class="t1">get on with it</span></h1>
+<div class="side">
+<p class="sub">The House of Lords Science and Technology Committee’s report in 17 slides: why the UK must store energy for days, weeks and months, and what the committee wants done.</p>
+<p class="meta">1st Report of Session 2023–24 (HL Paper 68), published 13 March 2024.</p>
+<div class="acts"><button type="button" class="btn primary" data-next>Start</button><a class="btn" href="explore/">See all 61 conclusions and recommendations</a></div>
+<p class="hint">Scroll, swipe or use the arrow keys. Each cavern beneath the line is one of the report’s 61 numbered conclusions and recommendations, deeper for longer paragraphs; filled ones are recommendations. Point at one to read it.</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="verdict" data-tone="dark" data-lit="2 3 5" data-name="The verdict" aria-labelledby="h-verdict">
+<div class="frame two">
+<div>
+<h2 class="quote" id="h-verdict">“The long-duration storage replaces fossil fuels as back-up stores of energy.”</h2>
+<p class="lede">Deploying it at scale is “critical to ensure the UK can maintain energy security and reach Net Zero”, the committee says, but it is not being treated with sufficient urgency. Today the back-up is gas, and the UK keeps far less of it than its neighbours. The energy crisis that began in 2021 was “an object lesson” in the UK’s vulnerability (conclusion 2).</p>
+<p class="src">From the report’s summary.</p>
+</div>
+<figure class="ill" id="ill-gas"><p class="ctitle">Natural gas in storage, terawatt-hours</p>
+<svg viewBox="0 0 540 292" class="pre" role="img" aria-label="Bar chart. Germany stores 217 terawatt-hours of natural gas, Italy 162, France 122 and the UK about 10. The Rough store alone held 41 at its peak. The UK's low-carbon storage, pumped hydro and batteries, holds about 0.03, too small to see."></svg>
+<figcaption>From box 1 and <a data-para="10">paragraph 10</a> of the report. Gas is measured by the energy it contains. Rough, in the North Sea off Yorkshire, was closed in 2017 and partly reopened in 2022, as the UK “came to regret” the closure (conclusion 2).</figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="power" data-tone="light" data-lit="4" data-name="More electricity, more weather" aria-labelledby="h-power">
+<div class="frame two">
+<div>
+<h2 id="h-power">More electricity, more weather</h2>
+<p class="lede">To reach Net Zero, heating and transport move onto electricity, and most of it will come from wind and sun. The Climate Change Committee expects demand to rise by half by 2035 and to double by 2050 (box 3). Supply and demand will both be larger and more variable (summary), and both depend more and more on the weather (box 3).</p>
+<blockquote class="pull">Three different demand profiles: daily, weekly and seasonal.”<cite>Caroline Still of Aurora Energy Research, on where storage will be needed; variations in demand will “become more extreme” (<a data-para="15">paragraph 15</a>).</cite></blockquote>
+</div>
+<figure class="ill" id="ill-mix" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Colour by"><button type="button" data-state="a" aria-pressed="true">Every source</button><button type="button" data-state="b" aria-pressed="false">Wind and solar</button></div></div>
+<div class="legend" aria-hidden="true"><span><i class="s-wind"></i>Wind</span><span><i class="s-solar"></i>Solar</span><span><i class="s-firm"></i>Nuclear, bioenergy and other</span><span><i class="s-gas"></i>Unabated gas</span><span><i class="s-dlc"></i>Dispatchable low-carbon</span><span><i class="hatch"></i>Net imports (exports below zero)</span></div>
+<svg viewBox="0 0 540 300" class="pre" role="img" aria-label="Stacked bar chart of electricity generation in 2025, 2030 and 2035 under the Climate Change Committee's central scenario. Total generation grows from about 290 to about 570 terawatt-hours. Wind and solar grow from about half of it to about seven tenths. In 2035, 39 terawatt-hours comes from dispatchable low-carbon sources, much of it storage."></svg>
+<figcaption id="mix-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="dunkel" data-tone="dark" data-lit="16 18" data-name="The dunkelflaute" aria-labelledby="h-dunkel">
+<div class="frame two">
+<div>
+<h2 id="h-dunkel">Dark and still: the dunkelflaute</h2>
+<p class="lede">Germans call it the dunkelflaute. The report calls it the “dark doldrums”: an extended period of low wind in winter, when solar output is low too (<a data-para="133">paragraph 133</a>). The Royal Society modelled 37 years of weather and found “periods with virtually no wind” and “three consecutive years where demand would significantly outstrip the average supply” (<a data-para="49">paragraph 49</a>).</p>
+<p class="lede">Its estimate of the storage needed, 100 TWh, is higher than others partly because it looked across so many years rather than one ‘typical’ year, and partly because it assumed a grid of only wind, solar and storage (box 3).</p>
+<p class="note">The caverns along the foot of the screen follow the store.</p>
+</div>
+<figure class="ill" id="ill-dunkel" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="a" aria-pressed="true">A typical year</button><button type="button" data-state="b" aria-pressed="false">The worst run</button></div></div>
+<svg viewBox="0 0 540 290" role="img" aria-label="Chart of hydrogen in a 123 terawatt-hour store across 37 years of weather. It usually stays between about 80 and 123 terawatt-hours, dipping by about 35 in a typical year, but in years 30 to 32 it falls from full to about 21."></svg>
+<div class="ctl"><label class="range"><span>Move through the years</span><input type="range" id="dunkel-range" min="0" max="370" value="0" aria-describedby="dunkel-out"><output id="dunkel-out">Year 1</output></label></div>
+<figcaption id="dunkel-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="spikes" data-tone="light" data-lit="7 8" data-name="Power on demand" aria-labelledby="h-spikes">
+<div class="frame two">
+<div>
+<h2 id="h-spikes">Power on demand, not just energy in store</h2>
+<p class="lede">A store has to hold enough energy (TWh) and release it fast enough (GW) when it is needed. The Government’s targets should say both (recommendation 8). In the Climate Change Committee’s 2035 scenario, industry, shipping and other steady uses take around 10 GW of hydrogen every day, while ordinary power stations burning it swing from almost nothing to around 24 GW (Figure 4).</p>
+<p class="note">Point at a day to read it.</p>
+</div>
+<figure class="ill" id="ill-spike" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Order"><button type="button" data-state="a" aria-pressed="true">Through the year</button><button type="button" data-state="b" aria-pressed="false">Busiest days first</button></div></div>
+<div class="legend" aria-hidden="true"><span><i style="background:var(--soft)"></i>Industry, shipping, combined heat and power, and other</span><span><i style="background:var(--amber)"></i>Ordinary power stations</span></div>
+<svg viewBox="0 0 540 270" role="img" aria-label="Daily average hydrogen demand in 2035, one bar per day. Steady demand is about 10 gigawatts every day. Demand from power stations varies from almost nothing to about 24 gigawatts, above 20 on about 21 days and below 5 on about half the days."></svg>
+<figcaption id="spike-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="neighbours" data-tone="light" data-lit="50 51" data-name="Our neighbours share our weather" aria-labelledby="h-neighbours">
+<div class="frame two">
+<div>
+<h2 id="h-neighbours">Our neighbours share our weather</h2>
+<p class="lede">Links to other countries’ grids are “very important”, but “European weather cycles are broadly similar to ours”: when wind is low here, it is likely to be low across the continent (<a data-para="20">paragraphs 20</a> and <a data-para="137">137</a>). The committee warns against over-reliance on them “in an energy crisis which is likely to be Europe-wide” (conclusion 50).</p>
+<blockquote class="pull">If we are all suffering from a shortage of electricity, I very much doubt that they will give it to us.”<cite>Professor Sir Peter Bruce, Royal Society (<a data-para="20">paragraph 20</a>).</cite></blockquote>
+</div>
+<figure class="ill" id="ill-map" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Map"><button type="button" data-state="a" aria-pressed="true">Our neighbours</button><button type="button" data-state="b" aria-pressed="false">Further afield</button></div></div>
+<svg viewBox="0 0 540 400" role="img" aria-label="Map. Great Britain's interconnectors run to France, Belgium, the Netherlands, Denmark, Norway and the island of Ireland, all under the same Northern European weather. The committee suggests links further afield, to Southern Europe, North Africa and the Middle East."></svg>
+<figcaption id="map-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="themes" data-tone="light" data-name="Seven themes" aria-labelledby="h-themes">
+<div class="frame">
+<h2 id="h-themes">Seven themes</h2>
+<p class="lede" style="max-width:72ch">Six follow the key recommendations in the committee’s summary, with its call to engage the public folded into hydrogen; the seventh, the grid, draws on its fourth chapter. Choose one to go to it.</p>
+<div class="cards" id="cards"></div>
+</div>
+</section>
+
+<section class="slide theme" id="reserve" data-tone="dark" data-pri="dunkel" data-name="Theme 1: the dunkelflaute" aria-labelledby="h-reserve">
+<div class="frame">
+<p class="kicker">Theme 1 of 7</p>
+<h2 id="h-reserve">Ride out the dunkelflaute</h2>
+<div class="cols">
+<div>
+<p class="lede">Commercial stores make money by charging and discharging often, so there is no guarantee they will be full when a long, still spell arrives (conclusion 16). The National Infrastructure Commission recommends a strategic reserve of 25 TWh by 2040 (<a data-para="51">paragraph 51</a>). The Government has made no clear commitment.</p>
+<blockquote class="pull">We do not provide reserves on most of the things in the British economy … Nearly always, the answer is no.”<cite>Graham Stuart MP, the minister who gave evidence. He added: “if we need [a strategic reserve], we will bring one forward” (<a data-para="55">paragraph 55</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=17"><span class="n"><span class="vh">Recommendation </span>17</span><span class="t">Commit to a strategic reserve of stored energy on the scale the National Infrastructure Commission suggests, owned by the Government or contracted out, with terms and funding worked out with industry.</span></a></li>
+<li><a href="explore/#r=18"><span class="n"><span class="vh">Recommendation </span>18</span><span class="t">If unabated gas is to play a role, explain how that fits climate targets. Without a reserve, explain how the system will cope with shortfalls like those the Royal Society found.</span></a></li>
+</ul>
+<a class="more" data-more="dunkel" href="explore/#pri=dunkel"></a>
+</div>
+<figure class="ill" id="ill-res" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Storage"><button type="button" data-state="a" aria-pressed="true">Commercial storage only</button><button type="button" data-state="b" aria-pressed="false">With a strategic reserve</button></div></div>
+<svg viewBox="0 0 540 300" role="img" aria-label="Illustration over eight winter weeks. Wind output varies until a still spell of about two weeks. A commercial store cycles up and down every day and is empty within two days of the still spell starting, leaving a shortfall. A strategic reserve stays full until the still spell and covers it."></svg>
+<figcaption id="res-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="scale" data-tone="light" data-pri="scale" data-name="Theme 2: a target" aria-labelledby="h-scale">
+<div class="frame">
+<p class="kicker">Theme 2 of 7</p>
+<h2 id="h-scale">Set a target in terawatt-hours</h2>
+<div class="cols">
+<div>
+<p class="lede">Witnesses agreed that tens of terawatt-hours of long-duration storage will be needed, “several orders of magnitude” more low-carbon storage than the UK has (conclusion 5). The Government has set no target. Officials told the committee: “at the moment, we do not have a … ‘no-regrets’ level” (<a data-para="21">paragraph 21</a>).</p>
+<blockquote class="pull">Whether it is 20 or 100 [TWh] … does not really matter.”<cite>Daniel Murrant of the Energy Systems Catapult; at the moment the UK has “fractions of a terawatt hour” (<a data-para="16">paragraph 16</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=6"><span class="n"><span class="vh">Recommendation </span>6</span><span class="t">Set an explicit minimum target for “no-regrets” long-duration storage by 2035, with interim milestones that work back from 2035.</span></a></li>
+<li><a href="explore/#r=8"><span class="n"><span class="vh">Recommendation </span>8</span><span class="t">State storage targets in both power (GW) and energy (TWh), including the 10 GW hydrogen production target.</span></a></li>
+<li><a href="explore/#r=10"><span class="n"><span class="vh">Recommendation </span>10</span><span class="t">Define medium- and long-duration storage, publish an Assessment of Likely Need by the end of 2024, and support technologies beyond batteries.</span></a></li>
+</ul>
+<a class="more" data-more="scale" href="explore/#pri=scale"></a>
+</div>
+<figure class="ill" id="ill-scale" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Measure"><button type="button" data-state="a" aria-pressed="true">How much</button><button type="button" data-state="b" aria-pressed="false">How long</button></div></div>
+<div class="swap"><svg viewBox="0 0 540 320" class="sa" role="img" aria-label="Squares sized by energy stored: the UK's grid batteries, 2.6 gigawatt-hours; its pumped hydro, 26.7; one large hydrogen salt cavern, about 200; 10 terawatt-hours, which one witness called pretty low-regrets; the National Infrastructure Commission's 25 terawatt-hour strategic reserve; and the Royal Society's estimate of 100 terawatt-hours."></svg>
+<svg viewBox="0 0 540 320" class="sb" role="group" aria-label="How long different technologies can store energy for, on a scale from an hour to a year"></svg></div>
+<div class="ctl sa"><label class="range"><span>Zoom</span><input type="range" id="scale-zoom" min="0" max="1000" value="0" aria-label="Zoom out from today's storage to what is needed"><output id="scale-out">Today’s storage</output></label></div>
+<figcaption id="scale-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="grid" data-tone="light" data-pri="grid" data-name="Theme 3: the grid" aria-labelledby="h-grid">
+<div class="frame">
+<p class="kicker">Theme 3 of 7</p>
+<h2 id="h-grid">Grid capacity and flexibility</h2>
+<div class="cols">
+<div>
+<p class="lede">When the lines south are full, wind farms in the north are turned down and gas plants in the south turned up, at a cost of about £1.6 billion in 2022 by one estimate (<a data-para="9">paragraph 9</a>). Storage can soak up the surplus and ease congestion (conclusion 1), but projects queue for years to connect. One was offered a connection date of November 2037 (<a data-para="111">paragraph 111</a>).</p>
+<ul class="recs">
+<li><a href="explore/#r=42"><span class="n"><span class="vh">Recommendation </span>42</span><span class="t">Ofgem and the system operator should cut the connection queue urgently, report progress, and consider moving storage projects up the queue.</span></a></li>
+<li><a href="explore/#r=57"><span class="n"><span class="vh">Recommendation </span>57</span><span class="t">Take the strategic decisions on electricity and hydrogen networks now, set them out in the Strategic Spatial Energy Plan, and deliver them through a cross-departmental Ministerial Working Group.</span></a></li>
+<li><a href="explore/#r=53"><span class="n"><span class="vh">Recommendation </span>53</span><span class="t">Ofgem and the system operator should find ways to reward flexible heating; build heat storage into Energy Performance Certificates, VAT relief and grant schemes.</span></a></li>
+</ul>
+<a class="more" data-more="grid" href="explore/#pri=grid"></a>
+</div>
+<figure class="ill" id="ill-grid" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Storage"><button type="button" data-state="a" aria-pressed="true">Lines full</button><button type="button" data-state="b" aria-pressed="false">With storage</button></div></div>
+<svg viewBox="0 0 540 340" role="img" aria-label="Diagram on a map of Great Britain. Wind farms in Scotland send power south along two transmission routes that are full at the border. Without storage, surplus wind is turned down and gas plants in the south turn up. With storage in the north, the surplus is stored and the gas plants stay off."></svg>
+<figcaption id="grid-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="invest" data-tone="light" data-pri="invest" data-name="Theme 4: investment" aria-labelledby="h-invest">
+<div class="frame">
+<p class="kicker">Theme 4 of 7</p>
+<h2 id="h-invest">Make storage investable</h2>
+<div class="cols">
+<div>
+<p class="lede">Storage pays its way by buying cheap and selling dear, which rewards frequent cycling, not energy held for weeks. Michael Liebreich told the committee there was “almost no investment going into” storage longer than 48 hours (<a data-para="37">paragraph 37</a>). The Government is consulting on a cap and floor; the committee wants the details finalised “as a matter of urgency” (recommendation 14).</p>
+<ul class="recs">
+<li><a href="explore/#r=14"><span class="n"><span class="vh">Recommendation </span>14</span><span class="t">Finalise the business models; design the cap and floor for storage across hours and across days and weeks, and open it to hydrogen.</span></a></li>
+<li><a href="explore/#r=15"><span class="n"><span class="vh">Recommendation </span>15</span><span class="t">Fund the scheme enough to deploy at scale, and set minimum targets for the capacity it should support.</span></a></li>
+<li><a href="explore/#r=40"><span class="n"><span class="vh">Recommendation </span>40</span><span class="t">Say which services the grid needs, from capacity to duration, and pay storage for providing them on top of the revenue floor.</span></a></li>
+<li><a href="explore/#r=37"><span class="n"><span class="vh">Recommendation </span>37</span><span class="t">Give flow and iron-air batteries a clearer role in battery policy, and fund grid-scale chemistries, not just lithium-ion.</span></a></li>
+</ul>
+<a class="more" data-more="invest" href="explore/#pri=invest"></a>
+</div>
+<figure class="ill" id="ill-cap" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Revenue"><button type="button" data-state="a" aria-pressed="true">The market alone</button><button type="button" data-state="b" aria-pressed="false">With a cap and floor</button></div><button type="button" class="mini" id="cap-again">Try another future</button></div>
+<svg viewBox="0 0 540 290" role="img" aria-label="Illustration of a storage project's yearly revenue over 20 years. In the market alone it swings widely. With a cap and floor, revenue above the cap is handed back and revenue below the floor is topped up, so it stays between the two."></svg>
+<figcaption id="cap-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="hydrogen" data-tone="dark" data-pri="hydrogen" data-name="Theme 5: hydrogen" aria-labelledby="h-hydrogen">
+<div class="frame">
+<p class="kicker">Theme 5 of 7</p>
+<h2 id="h-hydrogen">Hydrogen, the long-duration store</h2>
+<div class="cols">
+<div>
+<p class="lede">For storage over weeks and months, the front-runner is hydrogen: made from water with surplus wind and solar, stored underground and burned for power when needed. The parts are proven, but no UK facility does all three at scale (conclusion 19).</p>
+<blockquote class="pull">I would want to build a demonstrator … to learn what we need to do when we come to scale it.”<cite>Professor Sir Peter Bruce, Royal Society (<a data-para="61">paragraph 61</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=20"><span class="n"><span class="vh">Recommendation </span>20</span><span class="t">Commission a pilot that combines electrolysis, salt-cavern storage on the scale of hundreds of GWh and hydrogen power, near the existing clusters, and publish what it learns.</span></a></li>
+<li><a href="explore/#r=24"><span class="n"><span class="vh">Recommendation </span>24</span><span class="t">Say what hydrogen is for, and decide sooner than 2026 on hydrogen for home heating; the committee advises against it.</span></a></li>
+<li><a href="explore/#r=29"><span class="n"><span class="vh">Recommendation </span>29</span><span class="t">Research public acceptability within six months and run a public campaign on hydrogen’s role and safety; it “cannot be left to developers”.</span></a></li>
+</ul>
+<a class="more" data-more="hydrogen" href="explore/#pri=hydrogen"></a>
+</div>
+<figure class="ill" id="ill-h2" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Phase"><button type="button" data-state="a" aria-pressed="true">Store a surplus</button><button type="button" data-state="b" aria-pressed="false">Release in a still spell</button></div></div>
+<svg viewBox="0 0 540 340" role="img" aria-label="Cross-section. A wind turbine powers an electrolyser, which makes hydrogen that is piped down a well into a salt cavern. In a still spell the hydrogen comes back up to a power station. Of 100 units of electricity put in, 30 to 40 come back."></svg>
+<figcaption id="h2-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="pace" data-tone="light" data-pri="pace" data-name="Theme 6: pace" aria-labelledby="h-pace">
+<div class="frame">
+<p class="kicker">Theme 6 of 7</p>
+<h2 id="h-pace">Pace, not perfection</h2>
+<div class="cols">
+<div>
+<p class="lede">Storage typically takes 7–10 years to deliver (conclusion 11), so the decisions for 2035 are needed now. “If it waits until it knows precisely how much storage is needed, it will be too late to build it” (summary). A lack of green skills, grid queues and planning delays all put the timeline at risk (summary).</p>
+<blockquote class="pull">The worst decision that we can make is to … not make those decisions.”<cite>Rachel Hay, Climate Change Committee (<a data-para="34">paragraph 34</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=12"><span class="n"><span class="vh">Recommendation </span>12</span><span class="t">Pace, not perfection: bring forward support schemes and no-regrets investments as soon as possible.</span></a></li>
+<li><a href="explore/#r=44"><span class="n"><span class="vh">Recommendation </span>44</span><span class="t">Reform and resource the planning system, recognise storage for its own value by the end of 2024, and set out how onshore hydrogen storage will be regulated.</span></a></li>
+<li><a href="explore/#r=46"><span class="n"><span class="vh">Recommendation </span>46</span><span class="t">Work out how many skilled people the hydrogen targets need, and fund training now: it has the longest lead time.</span></a></li>
+</ul>
+<a class="more" data-more="pace" href="explore/#pri=pace"></a>
+</div>
+<figure class="ill" id="ill-pace"><p class="ctitle">Lead times the committee heard, from the year work starts</p>
+<svg viewBox="0 0 540 278" role="img" aria-label="Timeline from 2023 to 2042 with the 2035 target marked. Bars show lead times: most storage 7 to 10 years, gas pipelines 7 to 12, electricity transmission 12 to 14. Move the start year to see which finish by 2035."></svg>
+<div class="ctl"><label class="range"><span>Start work in</span><input type="range" id="pace-year" min="2023" max="2030" value="2024" step="1" aria-describedby="pace-cap"><output id="pace-out">2024</output></label></div>
+<figcaption id="pace-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="plan" data-tone="dark" data-pri="plan" data-name="Theme 7: a plan" aria-labelledby="h-plan">
+<div class="frame">
+<p class="kicker">Theme 7 of 7</p>
+<h2 id="h-plan">A plan and a guiding mind</h2>
+<div class="cols">
+<div>
+<p class="lede">Many bodies have a hand in storage, and “historically, the energy system has been quite siloed” (<a data-para="144">paragraph 144</a>). The committee welcomes the Strategic Spatial Energy Plan, but warns it could become “a dead letter” if the Government cannot coordinate everyone to deliver it. The system needs “a guiding mind capable of making key strategic decisions” (summary).</p>
+<blockquote class="pull">A plan that all … stakeholders can focus on … will provide a focal point.”<cite>Nick Winser, Electricity Networks Commissioner (<a data-para="147">paragraph 147</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=55"><span class="n"><span class="vh">Recommendation </span>55</span><span class="t">Make the bodies coordinate, with clear remits; clarify who answers for security of supply; empower and resource the system operator.</span></a></li>
+<li><a href="explore/#r=59"><span class="n"><span class="vh">Recommendation </span>59</span><span class="t">The plan should include sites for long-duration storage and its infrastructure, hydrogen and a strategic reserve, and be updated regularly.</span></a></li>
+<li><a href="explore/#r=60"><span class="n"><span class="vh">Recommendation </span>60</span><span class="t">The Government must take the plan’s decisions swiftly and commit every actor to them; Ofgem should endorse it.</span></a></li>
+</ul>
+<a class="more" data-more="plan" href="explore/#pri=plan"></a>
+</div>
+<figure class="ill" id="ill-plan" data-state="a">
+<div class="ctl" style="margin:0 0 6px"><div class="seg" role="group" aria-label="View"><button type="button" data-state="a" aria-pressed="true">Silos</button><button type="button" data-state="b" aria-pressed="false">With a plan</button></div></div>
+<svg viewBox="0 0 540 330" role="group" aria-label="Five bodies with a role in storage, shown as silos"></svg>
+<figcaption id="plan-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide" id="who" data-tone="light" data-name="Who is asked to act" aria-labelledby="h-who">
+<div class="frame two">
+<div>
+<h2 id="h-who">Who is asked to act</h2>
+<p class="lede" id="who-lede"></p>
+<p class="note">Point at a body to light up its recommendations along the strip. Choose one to read them in the explorer.</p>
+</div>
+<div>
+<div class="wbars" id="wbars"></div>
+<p class="wmore" id="wmore"></p>
+</div>
+</div>
+</section>
+
+<section class="slide s-band s-close" id="prize" data-tone="dark" data-cut="hero" data-lit="all" data-charge="1" data-name="The prize" aria-labelledby="h-prize">
+<div class="frame">
+<h2 class="quote" id="h-prize">“Time is running out for the UK to secure that brighter future.”</h2>
+<p class="lede" style="max-width:58ch">The prize, the committee says, is clear: cheaper Net Zero electricity, a strong domestic energy storage industry, and an economy insulated from volatile energy markets and imported fossil fuels. “We urge the Government to take action now” (summary).</p>
+</div>
+</section>
+
+<section class="slide s-close" id="next" data-tone="dark" data-lit="all" data-charge="1" data-name="What has happened since" aria-labelledby="h-next">
+<div class="frame">
+<h2 id="h-next">What has happened since</h2>
+<ol class="tl">
+<li class="done"><span class="when">16 May 2024</span><span class="what">The Government responds: no minimum target yet, a strategic reserve to be considered, and the cap and floor designed by the end of 2024. <a href="https://committees.parliament.uk/publications/44802/documents/222500/default/">Read the response</a></span></li>
+<li class="done"><span class="when">1 October 2024</span><span class="what">The National Energy System Operator, the Future System Operator the report discusses, takes over from the ESO in public ownership. <a href="https://www.neso.energy/news/national-energy-system-operator-launches-today">NESO</a></span></li>
+<li class="done"><span class="when">October 2024</span><span class="what">The Government confirms a cap and floor scheme for long-duration electricity storage, run by Ofgem. Ministers commission the first Strategic Spatial Energy Plan from NESO.</span></li>
+<li class="done"><span class="when">13 December 2024</span><span class="what">The Clean Power 2030 Action Plan aims for 4–6 GW of long-duration storage by 2030, alongside 23–27 GW of batteries. <a href="https://www.gov.uk/government/publications/clean-power-2030-action-plan">GOV.UK</a></span></li>
+<li class="done"><span class="when">9 January 2025</span><span class="what">The House of Lords debates the report.</span></li>
+<li class="done"><span class="when">April to September 2025</span><span class="what">Ofgem opens the first window; 171 projects apply and 77 pass its eligibility checks.</span></li>
+<li class="done"><span class="when">26 June 2026</span><span class="what">Ofgem is minded to support 16 projects, about 7.6 GW, using pumped hydro, compressed air, lithium-ion and flow batteries. <a href="https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers">Ofgem</a></span></li>
+<li class="done"><span class="when">October 2026</span><span class="what">The deadline for the first Strategic Spatial Energy Plan moves from the end of 2026 to the end of 2027. <a href="https://www.gov.uk/government/publications/strategic-spatial-energy-plan-deadline-extension">GOV.UK</a></span></li>
+</ol>
+<div class="acts"><a class="btn primary" href="explore/">Explore all 61 conclusions and recommendations</a><a class="btn" data-pdf href="#">Read the full report (PDF)</a><button type="button" class="btn" data-go="0">Back to the start</button></div>
+<p class="small">An unofficial guide, not a Parliament service. Quotes and figures come from the report, with paragraph numbers; charts marked as redrawn are read from the report’s figures, so values are approximate, and diagrams marked as illustrations are not data. The summaries of recommendations are ours, so check the report for the exact wording. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Map outlines from Natural Earth. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+</div>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Slides"><button type="button" id="prev" aria-label="Previous slide">‹</button><span id="count">1 of 17</span><button type="button" id="next-btn" aria-label="Next slide">›</button><span id="slidename"></span></nav>
+<div class="bed" aria-hidden="true"></div>
+<svg id="salt" aria-hidden="true"></svg>
+<div id="tip" aria-hidden="true"></div>
+
+<script>
+(()=>{
+const D=/*__DATA__*/null;
+const MAP={"eu":{"W":540,"H":400,"land":"M540,390L539,389L535,387L533,385L531,383L529,382L526,379L522,377L521,376L516,377L516,373L516,370L515,363L514,360L514,361L513,364L514,371L514,376L514,380L514,383L512,383L508,381L505,380L501,377L500,375L497,372L494,370L492,368L489,363L488,368L489,369L491,370L493,372L493,374L495,376L497,378L502,381L506,384L507,387L510,390L511,390L513,392L515,397L517,398L519,400L0,400L0,400L2,399L5,399L10,397L11,396L13,393L16,390L17,388L20,386L22,385L26,386L31,386L37,385L42,382L49,380L53,377L58,373L61,370L62,367L62,366L61,363L61,361L63,355L66,352L70,348L71,347L72,343L77,340L80,338L84,336L91,335L96,334L99,333L100,331L106,325L112,315L112,314L115,314L117,314L118,314L117,316L119,320L121,322L123,323L125,324L129,324L132,324L132,325L136,326L139,324L139,327L145,329L148,329L150,329L154,327L156,325L158,324L163,323L165,323L168,323L169,321L172,319L177,318L180,317L186,317L190,317L192,317L196,316L201,316L203,315L212,316L214,317L216,319L218,319L221,317L224,317L226,316L227,315L228,315L229,315L232,317L235,316L235,315L238,316L241,318L243,317L247,317L250,316L253,314L258,312L259,313L262,314L262,316L263,318L263,319L264,319L266,318L267,317L270,315L271,318L269,319L268,322L265,324L265,326L266,329L270,332L270,335L271,336L269,341L265,345L262,347L261,349L261,350L262,353L265,355L267,355L267,357L269,356L270,355L271,356L272,358L273,359L272,360L275,360L278,361L283,364L287,364L293,363L296,364L298,364L302,365L305,367L312,368L314,371L314,373L315,376L318,379L322,380L329,381L335,382L340,383L343,384L349,388L352,389L355,389L359,386L362,382L363,378L362,376L360,373L359,370L359,368L361,365L363,362L365,360L369,357L372,356L374,354L376,354L380,354L383,355L389,356L390,359L392,360L397,360L400,361L406,360L408,360L409,361L411,363L412,364L414,364L419,362L424,362L432,362L436,363L439,362L440,363L446,362L451,363L453,363L455,361L459,357L462,356L463,353L464,352L468,350L465,353L466,353L469,351L469,349L470,349L474,350L477,348L480,349L477,348L477,351L479,351L481,352L482,350L486,351L490,348L491,349L493,348L495,347L498,346L500,343L502,339L502,335L502,331L502,326L502,321L502,317L502,315L502,310L503,308L502,306L503,303L504,302L504,301L502,299L501,296L501,294L500,292L498,291L498,287L498,286L495,283L496,282L497,278L497,276L495,276L493,279L492,281L491,281L489,281L485,281L483,282L481,284L480,288L477,291L472,293L470,295L467,295L466,295L461,292L459,291L454,291L448,292L448,293L448,296L448,298L448,299L446,299L442,302L438,302L436,300L434,297L431,298L429,297L427,298L427,299L425,300L426,299L423,300L422,301L420,301L421,300L424,299L426,295L421,297L418,298L417,297L420,296L419,295L416,294L414,291L415,290L415,287L412,287L409,286L409,286L406,286L406,284L406,282L407,281L408,283L410,283L412,282L410,281L409,280L410,277L409,277L408,275L406,274L408,271L407,270L401,273L400,267L402,266L402,264L404,261L406,261L409,259L411,261L413,260L414,259L413,258L414,258L415,259L417,258L420,258L423,257L424,256L421,255L422,254L429,251L425,251L422,250L422,248L423,247L429,246L432,245L436,245L440,244L441,241L445,236L446,234L454,228L461,227L465,225L467,223L468,223L468,225L470,226L473,227L475,225L477,225L479,227L480,228L482,228L484,226L486,226L487,227L493,226L494,226L498,225L506,220L509,220L512,220L513,219L517,214L520,210L520,209L521,206L520,203L518,202L515,197L514,197L511,197L510,196L508,195L505,196L500,194L495,193L493,191L486,189L482,189L478,187L476,189L475,188L472,186L470,186L468,186L467,186L469,184L467,184L468,183L470,183L474,181L473,180L473,178L474,176L474,174L474,173L475,174L475,172L477,171L473,169L472,169L470,167L471,167L473,165L475,165L474,164L476,162L479,158L477,157L476,157L476,158L473,160L474,158L471,161L466,163L466,166L463,168L462,169L461,169L460,170L459,171L456,173L454,176L453,179L452,180L453,178L452,176L452,179L450,180L451,182L453,184L457,187L459,187L460,186L462,186L464,184L466,184L466,188L462,190L460,189L457,193L457,194L454,195L453,197L452,199L450,202L448,202L446,201L446,197L445,195L443,194L441,195L439,194L437,195L436,194L439,189L440,188L442,185L441,184L440,185L438,184L436,185L433,187L429,186L427,186L429,185L428,184L426,184L425,184L431,183L432,181L431,182L429,182L427,181L426,178L424,176L426,179L427,182L424,183L424,181L423,183L421,184L419,186L419,188L418,191L417,194L413,197L415,201L415,202L415,207L411,209L410,206L409,207L410,208L410,211L410,212L409,214L410,218L410,221L411,223L410,225L408,225L407,228L408,233L407,234L405,237L407,238L411,241L411,243L413,245L415,246L420,247L421,247L421,250L420,251L414,251L413,252L411,252L409,253L409,255L408,257L404,260L401,265L400,266L400,263L402,261L404,260L404,259L398,260L397,259L396,258L390,258L389,258L387,260L384,259L381,262L378,262L378,263L380,265L380,266L381,266L383,266L384,268L383,267L380,267L379,268L381,269L381,271L380,270L378,269L376,268L377,270L379,271L379,272L377,272L375,269L372,268L371,267L371,266L369,267L369,268L369,271L370,272L372,275L373,276L375,278L377,280L378,281L376,282L376,280L374,280L373,281L375,283L376,283L374,285L372,285L374,286L378,287L379,288L381,288L383,289L385,290L386,291L387,296L386,297L382,293L379,295L378,296L379,297L380,299L381,299L383,300L380,302L379,301L376,300L376,302L379,306L380,308L380,310L382,312L380,311L378,309L376,309L375,312L376,313L374,312L374,310L371,307L370,308L370,311L368,309L366,307L366,306L367,304L365,302L363,301L362,300L361,299L362,297L363,295L365,295L366,293L367,292L370,294L373,294L377,295L376,294L378,294L378,292L376,292L371,290L370,292L367,291L363,293L361,291L361,293L360,293L358,290L356,289L356,287L359,287L359,286L356,286L353,284L351,283L350,281L348,279L348,278L346,276L343,274L341,272L342,272L341,269L341,266L341,263L340,261L341,258L341,256L339,256L338,255L337,254L335,252L331,250L325,247L323,247L320,245L320,245L324,246L324,246L323,245L319,243L317,241L313,240L309,240L309,239L305,236L302,232L304,232L303,231L300,227L299,224L299,223L296,221L294,221L294,223L292,226L291,226L289,223L288,219L289,219L290,218L290,217L289,216L288,217L286,216L284,218L280,220L280,219L278,220L278,222L279,225L280,225L279,227L279,227L278,228L279,231L280,234L282,236L284,237L287,240L289,240L291,243L294,251L295,252L298,255L301,257L304,258L306,259L311,258L312,258L312,260L310,262L310,263L311,264L316,265L321,267L324,269L329,271L330,272L332,274L334,275L334,277L333,280L331,279L329,275L325,275L323,274L322,273L320,274L318,278L317,281L318,283L320,284L323,286L324,290L323,291L322,291L320,292L319,294L319,298L317,300L315,303L312,303L311,301L313,299L313,297L313,296L314,294L316,294L315,292L315,291L313,287L312,284L310,280L309,279L306,279L303,278L304,276L303,274L301,273L298,274L299,272L297,272L296,272L293,268L292,267L288,267L287,267L285,265L283,265L278,260L276,258L274,256L271,254L270,255L270,253L268,251L267,250L266,249L265,248L265,246L264,244L263,242L262,238L261,236L258,235L255,233L250,232L249,233L245,237L242,239L240,239L239,239L239,239L237,240L235,242L233,243L233,244L231,245L228,246L226,246L225,245L223,244L222,243L220,242L220,242L218,242L216,242L213,240L212,239L205,243L203,246L203,250L204,252L204,253L203,254L204,257L201,259L195,262L193,264L188,264L184,265L181,268L182,269L179,270L177,273L173,277L170,281L170,282L170,286L171,289L173,290L171,292L168,293L165,296L164,298L162,301L163,302L162,302L158,302L155,304L153,305L151,308L148,310L147,309L145,309L143,309L139,308L137,308L134,307L129,307L125,309L123,308L121,309L118,311L116,312L112,310L111,308L111,305L110,303L112,301L111,302L110,300L107,297L104,296L102,296L98,297L96,295L92,294L88,294L91,290L92,286L92,284L93,281L93,278L95,279L94,278L90,278L90,275L92,275L93,274L94,272L92,274L90,274L89,274L91,267L94,266L98,260L98,259L100,255L101,253L102,250L102,247L103,243L103,241L104,240L103,240L103,238L105,237L104,236L105,235L105,234L105,232L104,233L104,232L105,230L104,230L103,228L104,226L107,225L110,225L112,225L113,223L115,222L117,222L119,223L120,225L122,226L123,226L130,227L132,227L133,228L136,229L137,230L142,232L144,232L147,232L150,232L154,234L155,234L159,236L162,236L164,236L165,236L167,234L169,229L170,223L172,222L171,221L171,222L172,217L173,213L175,216L176,218L176,215L175,213L173,211L173,210L174,211L174,208L174,204L172,203L170,201L168,197L169,195L168,193L169,192L171,193L170,192L167,192L166,191L166,190L166,189L164,189L164,188L163,188L161,186L159,186L156,184L153,183L153,181L151,180L154,179L152,178L155,178L154,177L151,177L152,175L153,174L157,174L159,174L161,173L163,173L165,174L167,178L169,177L171,177L172,178L173,177L173,178L176,178L175,176L176,172L174,167L175,166L179,167L179,169L179,170L184,171L186,172L189,171L191,171L189,170L189,168L193,166L197,165L200,163L200,162L201,157L202,156L203,155L208,154L211,153L214,152L216,152L218,152L220,152L218,151L217,152L216,151L215,150L215,149L218,150L219,151L220,151L219,150L220,150L218,147L220,145L220,145L223,142L223,140L224,136L225,135L226,135L229,133L230,132L234,130L239,130L240,131L242,132L241,131L241,129L242,128L247,128L249,130L249,129L250,130L251,127L251,126L253,126L255,126L258,129L256,126L254,125L253,124L253,121L251,121L252,120L254,119L254,118L252,115L252,114L251,111L252,111L252,108L248,106L249,102L249,100L249,95L251,95L252,96L253,95L255,93L255,94L256,90L254,90L253,94L251,94L250,93L250,92L252,89L256,89L258,88L260,84L262,83L264,82L263,84L264,85L264,88L262,90L262,95L263,96L266,96L266,97L266,98L264,99L263,99L262,99L262,103L260,104L261,104L258,107L258,110L257,113L259,113L259,115L260,117L261,118L260,119L261,119L265,121L267,120L267,122L266,123L266,124L268,124L270,125L272,122L274,122L277,119L280,119L281,121L283,122L285,122L286,125L289,126L291,127L291,125L288,125L286,125L286,122L288,124L289,124L291,123L299,120L301,119L303,116L305,115L307,114L311,112L314,112L317,113L315,113L317,116L319,117L322,116L323,115L324,114L325,112L325,110L328,108L330,105L330,105L329,108L331,109L332,108L332,105L332,102L330,99L330,96L329,94L329,87L330,85L330,81L331,78L336,76L337,77L340,80L341,82L344,83L346,82L347,80L348,78L346,72L346,70L346,67L345,67L344,68L342,68L340,65L340,63L339,62L339,61L338,59L340,57L342,57L343,54L344,54L346,53L349,53L349,51L350,51L355,51L358,52L363,51L363,50L363,47L363,46L365,47L365,45L368,45L368,42L371,42L374,42L374,41L371,40L367,40L364,39L364,36L363,36L361,38L359,38L358,40L356,39L353,41L352,39L352,41L351,42L349,41L350,42L349,44L348,43L346,46L343,47L341,48L338,50L337,50L335,52L334,52L335,50L333,48L333,49L331,50L331,48L331,46L329,46L327,45L326,44L325,45L324,45L323,41L323,37L323,34L323,33L322,30L321,29L321,26L320,24L319,22L319,20L321,17L320,15L322,15L324,13L324,9L325,9L327,6L330,1L330,0L540,0ZM317,0L318,1L318,2L316,4L315,8L313,11L311,12L310,13L308,14L307,16L305,17L305,21L302,22L303,24L301,26L300,26L300,28L301,29L301,30L300,33L301,35L299,35L299,37L300,40L301,46L303,47L303,48L305,47L307,50L309,51L309,52L310,53L311,54L312,56L308,60L306,61L307,62L309,60L310,61L309,62L309,64L304,67L301,70L298,70L297,70L300,71L301,72L300,72L301,75L300,76L301,78L300,80L301,83L300,86L300,88L300,92L299,95L298,98L297,99L296,98L294,99L292,99L290,99L290,100L289,100L287,103L287,104L288,106L287,108L285,108L282,109L279,108L279,105L279,104L277,100L276,98L278,98L277,96L278,96L278,94L277,94L275,91L274,88L273,85L272,85L272,83L271,82L271,79L269,78L269,75L268,75L268,74L267,67L268,67L268,67L265,66L264,63L264,59L264,61L263,62L263,65L261,68L259,68L259,68L256,69L257,70L254,73L252,76L249,77L245,79L242,79L242,77L241,78L240,77L240,76L239,76L235,72L234,70L235,67L237,69L239,67L238,68L236,66L237,64L239,61L236,63L235,64L233,65L232,65L233,62L233,60L234,59L236,60L239,58L237,58L236,57L238,54L239,53L241,51L241,54L242,50L239,52L235,58L232,59L233,55L235,55L236,54L234,54L233,52L233,50L235,49L234,49L233,47L233,44L236,44L238,43L241,44L243,43L244,45L244,44L247,43L246,41L245,43L243,43L242,42L241,43L239,43L235,43L233,41L233,39L235,39L233,36L233,34L236,34L239,35L241,35L243,35L239,35L236,33L234,33L234,31L235,31L237,29L239,28L239,29L242,28L243,28L240,28L241,26L243,26L246,26L247,27L248,27L247,26L250,25L250,25L247,25L246,25L243,25L243,24L245,22L248,21L250,21L251,22L253,24L251,20L251,19L253,18L253,17L252,16L254,15L256,15L256,17L257,15L259,15L260,18L262,17L264,17L264,15L267,13L266,12L268,10L267,10L265,11L265,13L262,15L260,16L259,14L258,14L258,13L260,11L260,10L262,8L263,6L265,4L268,2L267,2L267,0L317,0ZM173,171L171,171L171,170ZM166,113L165,114L163,114L164,112L166,111L167,111ZM429,187L430,187L427,187L426,187ZM398,266L396,266L396,265L398,264ZM273,342L271,343L272,341ZM270,354L267,354L268,352L269,352L270,353ZM315,78L314,79L314,82L314,83L313,85L312,87L312,88L310,89L311,87L310,85L310,81L312,78L313,78L314,77ZM301,97L300,97L300,94L301,90L302,90L303,85L304,85L302,91ZM185,293L184,293L184,292ZM200,282L203,282L203,283L201,286L199,287L197,286L196,284L194,285L193,283L198,280L201,280ZM210,282L207,280L207,279L210,280ZM184,290L184,291L182,290L184,288L186,288L186,289ZM16,372L15,372L16,370L19,370L20,369L19,371ZM9,379L7,379L6,378L9,378L10,376L13,373L14,373L14,375L12,379ZM0,316L1,317L3,319L1,320L0,319L0,316ZM233,43L232,43L232,42ZM233,52L232,52L232,50ZM253,14L252,14L254,13L254,14ZM251,18L249,17L250,17ZM226,134L225,133L226,132ZM218,148L218,149L217,148ZM303,328L302,329L301,327ZM264,249L263,251L261,251L261,250ZM310,300L308,306L307,309L308,312L309,314L308,316L308,318L304,318L302,317L300,315L298,314L296,314L291,312L289,310L287,309L285,309L283,308L282,306L283,304L285,302L287,304L289,302L291,302L294,304L295,304L297,303L299,303L301,303L304,301L306,301L310,300ZM257,272L259,276L258,277L257,279L258,281L257,289L256,291L256,292L254,291L252,291L252,293L250,294L248,294L246,291L246,288L247,285L248,284L246,283L247,278L246,276L245,274L245,271L246,272L248,272L250,271L254,268L256,269L257,270ZM247,292L246,294L246,292ZM130,108L128,106L130,107ZM150,99L149,100L147,102L145,103L146,104L144,104L143,105L144,108L147,110L149,109L150,107L150,107L151,111L154,112L154,113L153,113L154,117L153,120L153,125L152,126L151,129L148,130L149,132L147,132L146,131L141,131L139,133L136,134L135,132L134,134L131,135L127,135L126,134L123,134L126,132L122,132L125,131L123,131L121,130L121,129L125,127L122,126L124,125L126,126L126,124L128,123L132,123L134,123L133,122L131,123L129,122L126,122L129,121L130,119L132,118L134,117L133,116L131,116L130,115L129,114L129,114L127,113L128,111L130,111L130,110L132,109L132,109L130,108L131,106L130,104L132,104L135,105L136,106L137,105L140,106L140,105L142,104L143,103L141,103L140,101L143,100L143,99L144,97L147,97L148,97L148,98L147,100L149,99L149,98L151,96L152,98ZM355,294L356,295L357,296L357,297L355,297L354,295L353,296L354,294L355,294L355,293ZM359,300L358,301L356,300L357,299ZM356,291L354,291L355,289L356,289ZM349,282L347,282L345,280L346,278L347,279L347,280L348,282ZM379,283L380,284L384,285L386,285L388,290L391,290L391,292L389,292L388,291L386,288L383,289L382,287L378,285L376,285L374,285L376,283L378,282ZM382,281L381,281L380,280ZM390,283L388,282L388,281ZM387,262L386,263L385,262L385,261L386,260ZM381,315L380,315L380,313L382,314ZM421,315L421,316L419,314L420,311L420,314ZM415,299L415,299L414,298ZM415,302L416,300L418,299L419,299ZM402,302L402,302L400,301L401,299L402,300ZM400,301L398,302L399,300ZM403,308L402,309L402,308ZM412,290L414,290L414,290L412,292L410,291ZM405,295L405,293L408,292L407,294ZM411,304L410,305L410,305ZM394,306L394,307L392,308L392,306ZM395,294L395,295L393,293L393,292L395,292ZM398,295L397,296L396,295ZM404,287L403,287L402,287L403,285L401,283L402,283L404,283L404,286ZM404,274L406,277L405,278L403,278L399,276L402,274ZM395,263L394,263L393,263L394,262ZM394,268L394,270L391,270L391,269ZM426,309L424,309L424,306L425,304L428,302L427,307L426,307ZM390,321L392,321L394,321L395,322L398,321L401,320L402,321L406,321L408,320L408,322L412,320L413,319L413,322L409,323L404,325L400,326L399,325L397,324L391,324L389,325L387,323L388,321L388,322L389,320ZM285,119L285,120L283,120L282,121L281,120L281,118L283,116L284,118L284,118ZM269,119L267,119L267,118ZM249,115L249,114L251,114L250,115ZM256,250L256,252L256,253L257,257L255,260L255,262L253,266L250,264L251,263L250,262L250,260L249,260L249,258L248,257L249,256L248,255L250,253L252,252L253,251L254,251L255,248L256,248ZM173,209L173,210L172,207ZM317,49L318,49L317,51L317,52L316,52L315,50ZM329,47L330,47L330,49L328,48ZM324,45L324,46L323,45ZM335,66L337,66L339,67L336,70L334,71L333,74L332,73L333,71L331,71L331,69L330,68L333,67L333,67ZM336,63L335,63L334,65L333,63L331,63L333,62L333,61L335,61ZM339,66L337,65L339,65ZM170,30L169,28L170,28ZM169,21L168,22L168,21ZM172,21L172,23L171,22L171,24L170,22L169,20L171,20ZM173,21L172,21L173,20ZM277,104L277,105L275,106L275,108L276,110L274,111L274,115L272,115L272,114L271,111L269,111L268,109L268,108L267,105L269,104L270,102L271,103L271,105L272,105L273,103L272,102L274,100L277,101ZM264,106L266,109L265,111L263,112L260,111L259,109L259,107L262,106L264,107ZM269,114L272,115L272,116L270,117L267,116L267,114ZM265,116L264,115L266,112ZM277,113L274,114L275,112ZM261,114L259,114L259,112L260,113ZM264,104L264,104L264,102L265,103ZM293,112L290,111L291,109L293,110ZM472,305L474,304L473,302L478,301L483,298L484,296L487,294L483,300L483,301L484,302L485,303L482,304L481,307L479,308L477,309L476,311L475,310L474,311L471,310L469,308L469,307L470,307L471,305ZM315,245L319,245L320,246L316,246ZM320,244L315,244L313,243ZM316,242L314,242L313,241L316,241ZM299,224L298,225L296,223L297,222ZM299,227L298,227L298,226ZM302,231L300,230L298,228L303,231ZM303,236L302,236L300,234ZM296,228L296,228L295,225L294,223L295,222L296,225ZM323,247L325,248L321,247Z","borders":"M281,260L281,260M154,112L151,111L150,107L150,107L149,109L147,110L144,108L143,105L144,104L146,104L145,103L147,102L149,100L150,99M275,360L275,367L276,368L275,369L269,373L266,375L265,377L263,378L262,381L263,386L263,389L259,393L255,395L251,373L244,368L243,363L242,361L238,359L236,353L236,350L239,348L240,346L242,344L244,342L244,338L245,337L244,335L245,332L244,329L245,323L244,322L246,319L247,318L247,317M294,158L294,159L292,157L290,157L291,158L288,160L285,161L285,162L282,163L281,164L280,164L278,165L277,167L275,166L276,168L279,170L278,172L280,175L281,176L282,176L286,180L286,180L289,182L288,184L288,185L286,184L286,187L281,189L281,190L283,192L282,194L283,195L283,197L281,196L281,195L279,195L277,195L277,196L273,196L270,198L268,198L267,197L264,197L263,199L261,198L258,196L257,197L258,198L257,200L256,202L257,202L259,203L260,204L262,204L263,203L264,204L263,207L264,208L262,207L261,209L261,211L261,211L260,210L257,211L256,209L255,209L255,211L253,213L253,215L252,216L251,214L251,213L250,213L248,211L248,209L245,211L246,212L245,214L243,215L241,214L238,215L237,214L235,212L236,210L235,209L233,209L231,210L231,210L230,212L229,211L230,210L230,208L231,206L233,205L233,203L235,202L238,199L237,198L238,197L239,198L241,197L242,196L243,196L248,196L249,196L248,195L250,194L252,195L254,195L257,197M268,67L269,69L270,69L271,64L270,61L271,58L273,57L274,55L275,51L273,46L273,45L275,44L276,41L275,39L272,37L273,30L272,27L271,23L272,22L271,19L272,16L272,15L274,11L275,10L277,9L280,10L281,8L281,5L279,3L280,0M164,236L164,237L167,238L166,240L167,240L170,242L172,242L173,244L175,244L177,246L183,247L183,245L189,247L189,248L189,250L191,250L194,252L195,251L199,252L199,252L202,251L204,252M102,296L103,291L104,289L107,287L108,287L109,285L108,285L106,282L108,279L110,277L111,276L110,274L109,272L109,270L108,268L111,268L112,268L114,265L114,263L116,262L116,261L117,258L117,254L119,252L122,251L124,250L123,248L121,247L121,244L117,243L116,244L115,244L112,243L111,242L109,243L108,242L109,240L109,239L106,239L104,240M281,237L281,237M294,158L296,154L295,152L293,151L293,150L292,148L293,145L292,142L292,140L291,139L288,136L290,133L290,131L289,126M288,125L288,124M242,132L241,135L240,139L238,139L238,141L240,142L240,144L238,145L238,147L235,148L234,147L232,149L234,152L233,155L233,156L231,157L232,158L232,160L230,160L229,159L231,156L229,154L227,154L226,153L226,152L224,152L224,151L223,152L222,151L221,152L220,152L220,153L218,154L215,153L215,153L214,152M145,329L146,330L148,333L148,335L148,337L148,338L148,340L147,345L148,347L147,350L148,353L148,355L149,358L151,360L151,361L149,362L149,365L149,365L137,363L132,363L131,365L126,366L123,366L122,369L122,371L123,373L122,374L119,374L116,376L111,377L109,377L106,380L102,382L99,382L94,382L92,381L91,383L90,384L85,382L84,382L80,384L78,384L75,386L67,389L66,390L64,400M239,239L239,239M257,200L257,202M255,400L253,397L255,395M264,204L266,205L268,205L269,203L272,203L274,203L277,202L277,203L279,206L285,207L289,208M240,239L240,238L242,235L241,234L239,235L237,234L235,232L235,230L237,228L236,227L234,226L234,223L235,223L237,222L238,220L235,217L235,216L237,214M242,196L242,195L242,192L242,191L243,188L244,184L247,181L247,181L243,179L242,178L238,179L238,178L236,178L235,175L234,175M232,167L233,169L234,170L235,171L234,175L233,174L231,174L230,173L230,172L229,170L230,169L231,166L232,167L233,166L234,165L234,163L233,162L234,162L232,160M252,114L253,114L256,115L259,115M191,250L191,249L190,248L189,248M208,154L208,157L210,159L212,158L212,161L215,162L215,164L218,164L219,165L218,168L220,168L222,168L223,166L223,168L223,170L226,172L228,174L230,173M290,218L291,218L288,215L289,214L288,213L289,211L287,211L289,208L295,208L297,207L299,206L302,205L304,205L306,205L306,203L307,202L308,201L310,201L310,199L309,198L309,196L311,196L311,194L309,193L310,192L311,193L314,192L313,191L314,189L312,187L311,185L312,182L311,181L308,181L307,181L305,181L303,180L302,180L299,179L297,179L297,182L296,182L295,184L294,184L293,184L290,184L289,182","gb":"M172.5,143.5L172,143.8L170.2,144L167.8,145.3L166,144.7L164.9,143L163.7,142.2L162.5,142.3L161.7,142.1L162.9,141.3L161.7,140.8L161,140L159.6,139.8L157.3,140.6L155.9,139.4L155.7,138.9L155.8,137.5L155.4,137.3L156.8,136.2L158.3,136L160.7,135.3L162,135L163.9,133.9L164.9,132.3L165.5,131.7L164.9,130.8L165.4,129.8L165.2,128.5L165.4,127.4L163.7,127.3L162,127.9L161.4,127.9L161.8,127L163.6,126L164.3,125L166,124.1L168.2,123.5L169.3,123.8L171.5,123.6L172.8,124.9L172.6,123.3L173.4,123.1L174.1,124.6L175.2,124.7L174.2,124.1L173.5,122.1L173.7,121.3L174.9,119.8L174.2,119.2L174.6,117.8L175.5,117.3L176.2,115.4L176.1,115L175.3,114.9L174.1,115.2L173.3,113.9L172.2,110.9L172.2,109.8L173.4,107.7L175,106.4L176.5,106.2L174,105.6L173.2,105.7L172.5,106.1L171.6,106.2L170.3,107L169.2,106.8L168.9,106.1L168.2,106L166.7,106.6L165,105.2L164.4,105.9L164,106.8L163.4,105.9L163,104.7L163.1,103.2L163.8,103.3L164.7,101.7L167.3,98.2L167.2,97L166.4,95.7L166.9,93.8L167.5,93.2L168.9,93.5L167.5,91.9L168,90.7L166.9,92L165.8,92.3L164.8,93.2L164.9,91.9L165.6,90.7L167,89.7L164.9,90.9L163.9,91.8L163.7,93.7L163.5,94.3L161.6,98.3L160.9,98.8L160.4,98.6L160.3,97.9L161.7,95L162.8,93.8L162.2,93.5L162.8,90.9L163.3,90.1L163.7,88.8L165.2,86.1L167,83.6L164.3,85.3L163.7,85.5L162.4,84.9L162.1,84.3L162.1,83.4L161.2,82.9L161.9,82.5L162.9,82.5L164,81.9L163.3,81.2L164.2,80.7L165.4,79.3L165.9,77.9L165.5,76.7L164.8,76L164.8,75.3L165.3,74.7L166.5,74.4L166,74L165.8,72.9L166.6,71.3L167.1,70.7L168.6,71.1L169,70.8L169.8,71.2L168.7,69.1L169.5,67.1L171.5,67.2L171.3,66.2L171.7,64.3L172.7,63.7L173.4,64L173.8,64.8L175.2,64.4L175.4,65.1L176.9,64.9L178.9,65L180.1,64.9L181.3,65L182.5,64.8L183.7,65.2L183.1,66.5L183,67.4L182.1,68.5L180.8,69.2L178.3,70.9L176.8,71.7L176.3,72.9L177.3,73.5L175.7,74.8L175.1,75.8L176.8,75.9L179.8,75.2L180.4,75.3L181.6,75.9L183,75.9L186.6,76.7L187.7,76.6L188.3,77L188.8,77.8L189.1,79.2L187.2,81.6L186.5,83.3L185,85.8L183.7,87.1L183.1,88.1L182.4,88.8L181.2,89.5L179.4,89.6L178.3,90.1L180.3,90.3L181.6,91.4L181.3,92.1L180.7,92.6L179.3,92.5L177.9,93.5L176.6,93.9L174.6,93.1L175.1,93.7L178.4,95.1L179.9,94.5L181.3,94.7L183.9,96.6L185.5,99.5L186.4,100.8L186.6,101.6L186.9,107.1L187.4,110L188,111.5L190.4,113.1L190.9,113.6L192.5,116.4L193.3,117.5L194.1,118.4L193.2,119.4L193.6,121.2L194.7,124.3L193.5,123.7L192.3,122.5L191,122.6L189.7,122.3L190.8,122.8L192.1,123L194.5,125.9L195.3,127.5L195.6,129.5L195.1,130.3L193.1,132.1L194.6,133.3L195.3,133.2L196.7,131.8L197.7,131.8L199.3,132.3L200,132.3L202.1,133.3L203.8,135.1L204.1,136L204,138.3L203.1,140.4L202.8,141.7L202.3,142.4L201.2,143.4L200.4,143.7L199.9,143.5L200,144.9L198.7,145.4L197.8,145.1L196.2,145.8L197.2,146.3L197.3,146.8L197,147.6L196.3,147.9L194.9,148L194.4,148.3L194.8,148.5L195.3,149.5L196.7,150L199.3,150.1L200.4,150.4L200,152.4L199.7,152.7L197.4,153.6L196.6,154.9L195.3,154.6L194.6,155.1L193.5,155.3L191.8,156L191,156L188.3,155.1L186.5,154.9L184.1,155L183.5,154.9L181.8,153.8L180.8,153.5L179.9,152.9L180.3,153.8L178.9,154.5L176.4,154.4L175.3,154.1L175.6,155.3L175,155.5L172.9,154.7L172.3,155.1L171.5,154.7L170,153.5L168.5,153.1L165.5,153.5L164.8,154.3L163.6,156.7L162.8,157.5L161.9,157.4L161.3,156.7L160,155.7L159.6,155.1L158.7,155.3L157.2,155.2L155.5,155.5L152.9,156.7L152.2,157.7L151.4,157.7L150.8,156.9L150.1,156.5L148.7,156.8L148.6,155.9L149.4,155.3L151.1,155.1L152.8,154L154,152.8L154.9,152.6L155.2,152.1L157.6,150.3L158.4,148.2L160.1,148L161.2,146.3L163.7,146.3L165.3,146.7L166.8,147.3L168.5,147.5L169.2,147.1L170.7,145.6L173.1,143.7L174.4,142.4ZM165.7,122.8L166.6,123.2L166.3,123.6L164.1,124.7L163.5,124.1L163.2,123L163.4,121.6L164.1,121.4L165.1,121.6ZM187.7,59.1L187.1,59L187.5,58.4L188.7,58.5ZM198.6,46L198,44.9L198.6,43.6L199.1,43.7L198.8,44.4ZM197.1,45.5L197.8,47L198.4,46.8L196.8,51.6L196,52.9L195.8,52.5L196.6,50.3L196.4,49.4L195.5,49.5L195.4,48.8L194.8,48.6L194.7,48.1L195.7,48.1L196.4,47.7L196.2,46.2L195.7,45.9L196.7,44.7L197.3,44.7ZM200.5,42.8L200,44.2L199.6,44.1L199.7,42.9ZM183.3,63.3L182.7,63.3L182.2,62.1L183,62ZM184.6,64.2L184.2,63.1L185,63.2ZM184.4,60.8L184.3,61.1L185.7,61.6L186,61.9L185.3,62.5L184.6,61.9L183.6,61.9L183.3,60.9L182.7,61.2L182.7,60.6L183.2,59.4L184.1,59.5L184.6,60ZM186.6,59.4L186.1,59.6L186,58.6L185.2,57.9L185.5,57.3ZM158,83.7L157.6,83.5L158.4,82.9L158.9,83ZM164.5,98.2L163.7,98L163.2,97.5L163.1,96L163.8,95.1L164.2,95L164.7,95.7L164.8,96.8ZM162.5,87.5L159.9,87.5L159.1,87.3L159.3,86.8L160,86.8L160.6,85.4L159.7,84.4L160,83.8L161.2,83.7L161.9,85.1L162.9,85.9ZM159.3,91.5L159.2,93.9L158.9,94.6L157.4,94.9L157.8,94.2L157.7,93L156.7,93.6L156.5,93.5L157.1,92.2L157.6,91.8L158,92.1ZM160,93L159.5,92.5L159.8,91.7L160.7,91.3L160.4,91.1L160.8,90.5L162.2,90L161.5,91.2ZM164.8,64.6L163.6,66.4L162.1,67.1L162.9,67.5L162.7,68.1L160.9,69L160,69.7L159.7,69.7L158.8,70.4L158.3,69.5L159.9,68.6L158.9,67.4L159.4,67L159,66.4L159.2,65.4L159.8,65L160.4,65.7L161.4,65.7L161.2,64.7L161.6,64.4L162.9,63.9L164.9,63ZM160.9,79.9L160.5,80L160.1,79.2L160.9,78.9ZM163,74.2L162.7,75.2L162.6,76.3L163,76.7L164,77.2L165.1,77.3L165.2,77.9L163.1,79.5L162.7,79.3L162.9,77.6L162.1,77.7L161.2,77.3L160.8,75.7L159.5,75L159.2,74L159.7,73.5L160.3,73.7L160.4,72.9L161.9,72.8L162.2,72.1L162.8,72.4L163.1,73.2ZM157.2,70.8L157.7,71.5L156.9,72.4L156.1,72.3L155.2,71.2L155.3,70.9L156.8,71ZM155.5,77L154.7,76.6L154.7,75.5L155.2,73.8L156,74.1ZM154.1,78.4L153.5,78.4L153.6,77.7L154,77.7ZM182,155.6L181.4,155.9L180.9,156.4L180.2,156.5L178.8,155.3L178.9,154.9L179.8,154.8L180.4,154.4L181.5,155Z","ni":"M154.3,111.7L153,111.7L151.4,111.4L151.7,110.2L151,109.7L150.6,108.8L150.4,107.5L149.7,106.9L148.5,107.9L148.6,108.6L147,109.6L145.5,109L145.2,108.4L144.1,107.8L144.1,107L142.9,105.2L142.9,104.8L143.7,104.3L145.4,104L145.9,103.6L145.1,102.9L145.3,102.3L146.2,102.6L147.5,102.3L148.4,101.2L149.3,99.7L150.4,99.2L151.1,99.9L151.6,99.6L152.4,98.6L153.9,98.8L155.5,98.7L157.6,99.4L158,100.3L158,101.6L158.5,103.1L159.2,104.4L159.1,105L157.9,105.6L157.8,106.1L158.7,105.9L159.7,106.2L160,106.8L160,108.2L159.8,108.8L159.5,107.9L158.9,107.4L158.6,109.2L159.2,109.5L158.6,110.5L157.1,110.6L156.1,112L155.5,112.4Z","pts":{"gb":[182.6,127.2],"thames":[196.7,150.7],"kent":[198.6,152],"hants":[181.3,153.7],"blyth":[186.6,105.8],"lincs":[192.2,131.4],"ayr":[165.4,100.7],"deeside":[173,125.3],"calais":[203.2,155.9],"normandy":[181.6,171.3],"zeebrugge":[212.8,152.1],"maasvlakte":[218.9,145.6],"revsing":[254.6,107.4],"kvilldal":[240.7,61.7],"ni":[158.8,103.9],"dublin":[153.6,118.3],"madrid":[142.3,266.5],"iberia":[119.4,278.1],"italy":[281.2,253.2],"morocco":[98.5,350.5],"tunisia":[255.6,345.1],"egypt":[471.5,360.9],"me":[509.6,331.2],"ns":[216.3,99.7],"norway":[252,45],"denmark":[254.1,99.5],"nl":[230.1,143.6],"be":[222,159.9],"fr":[202.4,197.6],"de":[261.8,155.7],"ie":[140.4,118.7],"es":[142.8,268.9],"it":[281.9,248.6],"ma":[98.7,358.9],"dz":[185,388.3],"north":[208.2,18.6],"south":[260.4,374.4],"nwA":[147.4,22.1],"neA":[279.4,37.7],"swA":[103.4,173.8],"seA":[286.8,195.5],"cw":[121.6,99.6],"ce":[309.4,117.3],"cn":[224.7,40],"cs":[211.6,189.5]}},"gb":{"W":236,"H":336,"land":"M114.6,284.2L113.2,285.5L108.7,286.7L106.8,288L103.3,290.9L102.7,291.1L97.5,290.3L93.8,286.4L91.4,284.7L90.4,284.5L87.1,285.4L84.9,285.3L86.1,283.5L87.7,282.5L84.2,281.7L82.2,279.9L79.4,279.6L78.1,279.9L75.8,281.4L72.3,283.1L68.2,280.4L67.4,279.4L67.5,277.3L66.9,275.6L65.8,275L67.4,273L69.2,271.6L73.2,270.4L79.3,267.3L82.7,266L85.9,263.6L87.2,262.2L89.1,257.7L90.5,255.7L89.3,255.1L88.7,253.6L89.5,250.7L88.2,247.1L88.6,244.2L83.9,244.6L79.6,247L77.8,247.2L77.8,246L78.7,244.6L80.8,242.7L83.1,241.1L84.6,238.3L85.8,237.1L88.7,234.9L94.2,232.5L97.3,232.8L99.4,232.4L101.2,231.5L103.1,231.3L107.2,234.1L106,230L107.9,229L110.5,232.8L111.5,233.2L113.6,232.7L110.6,231.4L109.7,230.2L107.9,226.4L108.1,224.2L110.6,219.7L108.6,218.4L108.5,216.3L108.8,214.4L111.1,212.8L111.8,210.2L112.2,207.4L111.8,206.1L109.5,206.3L107.4,207.7L106.4,207.6L103.7,204.4L102.1,202.1L99.4,197.1L99.1,194.1L101.5,187.8L105,183.8L109.1,182.4L108.4,182.1L102.2,182L100.1,182.4L98.1,184L96,184.7L92.8,187.4L89.7,187.3L88.5,185.5L86.8,185.5L84.9,186.9L83,187.7L80.7,186.7L77.7,184.8L76.4,187.1L75.9,189.5L73.9,187.3L72.2,184.2L71.6,182.4L71.7,180.3L72.7,179.5L73.7,180.3L75.5,175.4L78.9,169.2L80.1,167.4L81,164.9L80.9,163.3L80.3,161.9L77.5,158.8L78.1,153.4L79.3,151.5L83.1,151.7L81.6,150.7L78.8,148L79.7,144.8L77.4,148.7L74.5,149.8L73.7,151.4L72.6,151.5L72,152.8L71.9,149.3L72.4,147.3L73.2,145.8L76.4,142.4L74.9,143.4L71.4,146.5L69.1,149.3L68.8,150.6L69.4,154.5L69.1,156.2L65.6,167.7L64,169.5L62.5,169.2L61.9,167.3L63.8,160.4L64.4,158.9L67.1,155.1L65.9,155.4L65.2,154.7L65.7,147.3L66.8,144.9L67.3,141.4L68.3,138.4L69.3,136.2L70.2,133.5L71.3,132.3L71.7,130.4L73.9,126.2L73.4,126.4L67.3,131.7L65.8,132.7L62.2,131.6L61.1,130.2L60.7,127.6L59.3,127.5L58.1,126.6L59.8,125.3L62.4,124.9L65,122.8L62.9,121.2L65.1,119.6L67.7,115.3L68.5,111.4L67,108.2L64.8,106.7L64.5,105L65.6,103.1L68.6,101.8L67.1,101L66.2,97.9L67.7,93.3L68.7,91.6L72.9,91.9L73.9,91.1L76,92L75.7,91.2L72.4,86.8L72.2,86L73.3,83.8L73.7,80.9L74.8,80.5L78.1,80.8L79,80.4L77.9,77.8L78.4,72.5L79.3,71.1L80.8,70.5L82.6,71.1L84,73.1L87.6,71.4L88.5,73.2L92.4,71.9L97.7,71.5L100.8,70.7L104.2,70.4L107.3,69.5L110.5,70L110.4,71.4L109.6,73.6L109.7,76.1L109.1,77.8L107.8,79.5L104.6,82L98.6,87.5L95,90.3L94.2,93.6L96.3,94L97.1,94.7L96.6,95.6L93.4,98.8L92.3,101.9L94.8,101.9L96.7,101.3L100.7,99.5L104.4,98.2L106.1,98.2L109.6,99.3L113.3,98.9L123.3,99.3L126.1,98.6L127.9,99.4L129.5,101.4L130.9,105L130,107.2L128.4,109.3L126.9,112.1L125.8,116.9L123,124.2L120.1,128.2L118.9,131.1L117.3,133.4L114.2,135.8L109.6,136.8L106.8,138.7L105.1,139.3L107,139.2L108.9,138.6L112.3,138.3L116.3,140.8L115.9,142.8L114.3,144.4L110.6,144.6L107.2,148L104.1,149.5L102,149.3L98.4,148.3L96.8,147.3L98.2,148.9L99.8,149.8L109.4,151.9L113,149.7L117,149.7L124.8,153.5L130.2,160.6L133.3,163.7L134,165.9L135.6,173.2L137.4,180.3L139.8,188L140.8,190.1L142.2,191.6L149.3,195L150.8,196L153.7,199.3L156.4,202.8L158.9,205.5L161.6,207.6L160.3,208.8L159.4,210.6L161.3,215.3L163.6,219L165.6,223L164.2,222.1L162.1,222.1L158.5,219.3L155.1,220L151.5,219.8L154.7,220.7L158.1,220.7L166,227.3L168.7,231.3L170.4,236.6L169.4,239.1L167.8,240.6L164.9,244.5L169.3,247.4L171.3,246.8L174.4,242.4L177,242L181.5,242.5L183.5,242.2L187.5,243.1L189.5,244L194.9,248L196.1,250.3L196.7,253.2L197,256.6L195.4,262.5L195,266.1L194.1,268.4L191.4,271.4L189.7,272.6L188.1,272.3L188.9,274.3L189.1,276.1L187.5,277.4L185.8,278L183.1,277.5L179.3,280L182.1,281.1L182.7,282.4L182.1,284.7L180.5,285.8L176.5,286.5L173.4,288.3L175.3,287.6L176.7,288.1L177.7,290L178.5,290.5L182.4,291.2L184.7,291.1L189.4,290.4L192.4,290.6L192.3,296.2L191.7,297L185.7,300.6L184.5,303L184.2,304.4L180.6,304.3L179,305.8L176.1,306.9L171.7,309.4L169.8,309.9L161.9,308.5L157.2,308.8L150.7,310.3L149,310L146.6,308.8L144,307.9L141.1,307.6L138.5,306.4L140.1,308.7L136.6,310.9L129.9,312L126.7,311.7L128,314.6L126.6,315.4L120.5,314.3L118.9,315.5L116.7,315L114.5,313.3L112.2,312.2L109.9,311.6L107.9,311.8L100.1,314.2L98.4,316.8L97.6,320.4L96.4,323.6L94.5,326.1L92.3,326.4L90.2,324.6L86.3,322.6L85,321.2L82.5,322.2L78.5,322.6L74.1,323.9L72.3,324.9L67.6,328.5L66.2,331.3L64,331.8L62.2,329.8L60,329L57.7,329.6L56.3,330.5L55.7,329.7L55.7,328L57.5,326.1L62.1,324.8L66.1,321.1L68.1,318.8L68.9,317.5L71.1,316.4L71.8,314.9L77.4,309.2L77.9,307.9L78.8,303.1L83.2,301.8L85.4,296.9L86,296.5L92,295.8L96.5,296L101,297L103.2,297.1L105.5,296.8L107.3,295.5L110.5,290.8L112.2,288.7L116.1,284.6L119.1,280.6L117.1,282ZM87.2,231.7L87.9,232.4L89.9,232.3L89.2,233.6L83.8,237.4L83,236L82,236L80.7,233.4L80.5,229.6L82.5,228.6L85.2,228.8ZM118.7,51.9L116.9,51.9L117.9,50.1L118.9,49.7L120.9,49.9L120.6,50.7ZM141.7,12.6L141.3,13L139.8,9.9L140.8,6.4L142.1,6.4L142.3,8.2L141.6,8.4ZM137.7,12L138,14.1L138.8,13.6L140,15.6L141.5,14.8L140.4,22.1L139.8,24.9L139.5,28.2L138.8,29.3L138,32.1L137.1,31.1L138.3,24.9L137.6,22.7L135.2,23.1L134.6,21.4L132.7,21.2L132.4,19.8L134.9,19.5L136.8,18.2L135.6,14.1L134.1,13.7L134,12.6L134.8,12.2L136.1,10.1L137.8,9.8ZM145.5,3.5L144.8,7.4L143.6,7.3L143.1,5.6L143.3,4L144.8,2.9ZM112.6,66.8L111.8,66.3L110.9,64.3L113.1,64.2ZM110.7,57.9L110.5,58.7L114.4,59.5L115.3,60.3L114.8,61.8L113.7,62.2L111.6,60.7L108.9,61.3L108,60.7L107.8,58.8L106.3,59.7L106,58.2L106.8,54.8L109.2,54.7L110.8,55.8L111.3,57.1ZM115.9,53.2L114.5,54L113.9,53.3L113.9,51.4L111.5,50L111,48.7L112.1,48.3L113.9,50.1L114.6,51.6L116,52.2ZM49.8,130.1L48.8,129.8L50.7,127.8L52,127.8ZM73.5,166.2L71.3,166.1L69.7,165L68.8,160.8L70.2,158.1L71.4,157.9L72.9,159.5L73.7,162.4ZM63.4,138.3L56.5,139.6L54.2,139.3L54.6,138L56.5,137.6L57.5,133.5L54.8,131.4L55.3,129.7L57.1,128.8L58.4,128.8L59.6,130L60.9,132.3L62.7,132.8L63.9,133.9ZM56.7,150.6L57.1,154.5L57.5,157L56.9,159L54,160.4L53,160.3L53.8,158.4L53.3,156.6L53.7,155.2L52.9,155.1L50.7,157.2L50,156.9L51.1,153.3L52.4,152.1L53.4,152.7ZM59.2,154.3L57.9,154.5L57.5,153.2L58.1,150.8L60.4,149.5L59.5,148.9L60.1,147.3L62.6,145.5L63.9,145.3L62.5,148.6ZM60.1,76.3L57.7,81.5L56.1,82.9L53.8,84.2L55.7,84.3L56.2,84.9L55.8,86.5L53.1,88.8L51.3,89.6L49.4,92L48.4,92L46.6,94.2L45.6,93.8L44.7,92.1L46.8,90.7L47.1,89.9L48.6,89L45.5,86.3L46.8,85L45.2,83.5L45.4,80.9L46.8,79.6L48.7,81.1L51.3,80.8L50.5,78.1L51.3,77L54.6,75.4L58.7,72.5L59.7,72.1L60.3,74.2ZM56.1,118.9L55,119.2L53.7,117.1L55.5,116.2L56.2,116.9ZM59.3,102.5L58.8,105.5L59.1,108.4L60.2,109.4L63.2,110.2L66.1,110.2L66.7,111.5L61.7,116.8L60.6,116.5L60.6,111.9L58.4,112.4L55.8,111.6L54.1,107.7L50.3,106.3L49.1,103.8L50.1,102.3L51.8,102.5L52.2,101.6L51.7,100.3L55.7,99.3L56.1,97.4L57.9,98L59.1,100.1ZM42.4,95.9L44,97.8L42.4,100.5L40.1,100.3L37.1,98L37.4,97L41.2,96.7ZM40.3,113.2L38.1,112.5L37.7,109.5L38.3,104.9L40.6,105.3ZM37.2,117.5L35.7,117.8L35.1,117.1L35.5,116.1L36.7,115.8L37.4,116.5ZM145.4,312.6L143.7,313.7L142.8,315.4L140.8,315.8L136.7,313.3L135.7,313.4L136.6,312.3L139.2,311.3L140.6,310.1L143.8,311.2Z","pts":{"moray":[107.8,92.4],"forth":[123.9,138.4],"wind1":[83.2,140.6],"wind2":[99.7,162.5],"wind3":[117.4,107.8],"wind4":[75.8,82.2],"border":[116.9,170.4],"highland":[79.1,119],"london":[163.4,287.5],"brum":[129.1,257.5],"manc":[123.6,226.9],"leeds":[135.4,217.7],"bristol":[115.9,289.5],"gas":[176.8,288.6],"gas2":[141.9,239.1],"shet":[137.9,19.2]}}},F3={"lo":[72.3,42.3,39.6,41.3,47.8,55.8,63.8,78.0,107.1,103.6,100.0,109.8,116.7,107.9,107.8,113.1,96.2,97.1,104.2,97.5,96.0,96.4,110.5,110.9,109.6,108.3,109.4,112.4,110.9,106.0,117.4,109.5,110.4,87.2,81.9,82.8,85.9,80.8,91.0,96.3,84.5,61.1,59.0,73.4,76.9,91.0,90.6,92.8,101.6,107.9,119.4,117.2,116.2,114.7,108.8,120.1,79.4,78.7,82.9,83.7,83.5,89.5,86.4,72.0,79.5,93.3,90.8,95.7,97.8,119.7,107.7,110.0,114.3,117.8,111.1,114.7,119.2,119.2,98.2,84.1,86.4,117.4,117.0,111.0,117.0,114.9,106.2,105.5,82.2,72.7,92.2,90.3,102.5,99.1,93.9,81.4,74.6,81.8,93.3,106.8,112.1,116.6,112.2,104.0,98.4,94.3,96.6,113.2,113.2,112.8,101.7,112.8,111.3,120.3,120.8,116.5,115.4,111.3,110.6,111.5,118.5,114.5,119.3,120.8,117.1,112.1,99.1,97.6,97.5,90.5,94.0,107.4,114.0,110.9,100.9,71.6,71.6,82.6,87.5,91.9,90.9,81.5,79.8,86.4,94.1,107.2,115.5,119.7,114.8,117.0,106.4,113.6,114.3,108.1,111.3,117.2,122.5,122.5,119.3,116.3,110.9,110.1,110.9,98.8,98.7,105.5,112.4,90.2,83.4,89.5,90.3,100.6,101.6,112.4,109.3,95.5,114.3,107.9,117.5,108.7,99.3,96.8,88.4,91.4,76.4,74.5,89.5,95.2,86.3,88.5,83.2,83.6,90.9,73.2,73.2,84.6,83.7,94.1,87.6,105.6,114.8,118.9,119.5,119.5,117.5,111.3,99.0,83.1,89.1,96.6,103.9,104.7,108.9,111.9,99.2,110.9,111.3,114.7,121.1,122.7,109.4,101.9,101.9,103.9,113.8,117.0,117.0,120.0,111.9,114.0,105.5,81.8,71.9,72.0,81.5,90.2,97.8,97.8,94.8,70.0,67.2,56.3,55.4,56.2,64.6,65.4,51.1,25.7,20.8,26.5,42.0,45.7,56.6,63.5,86.0,70.4,63.7,67.2,75.3,76.4,86.1,89.1,91.0,64.8,68.0,80.9,84.4,84.5,85.1,102.9,116.6,112.7,112.7,109.0,105.7,99.3,107.1,94.9,109.4,109.7,104.8,112.8,112.8,113.9,103.8,103.8,103.8,103.3,96.6,103.6,103.6,103.6,102.8,83.1,83.1,83.1],"hi":[91.5,75.7,45.1,52.6,58.1,70.4,80.3,122.6,122.6,112.5,112.8,120.8,122.4,120.1,121.5,122.7,115.1,111.9,109.4,104.8,101.3,112.4,121.5,117.8,122.6,120.8,109.4,120.1,120.9,121.6,122.7,121.7,122.7,122.0,90.2,92.9,93.9,89.1,104.7,109.8,108.6,95.6,73.4,79.1,98.2,114.0,114.0,105.5,122.3,121.6,121.4,119.2,122.5,114.7,121.8,122.7,121.5,89.5,88.4,94.5,91.8,94.8,110.1,92.6,101.0,102.4,98.0,104.4,120.8,119.7,122.6,115.9,121.4,122.7,121.1,122.4,119.2,119.2,122.4,117.8,122.5,117.4,122.4,122.0,122.4,121.4,122.4,122.6,121.6,93.5,96.7,103.7,102.5,112.1,122.7,112.4,98.2,96.7,111.7,115.1,121.0,116.6,122.7,117.3,120.7,104.1,107.8,117.8,122.2,122.3,121.6,122.4,120.9,122.3,122.6,121.8,121.6,122.3,120.1,122.4,118.5,119.1,122.0,120.8,117.1,122.5,120.1,110.1,111.4,102.4,111.2,112.5,116.6,120.9,122.7,115.6,91.8,89.5,94.6,91.9,101.8,101.8,92.9,103.2,109.7,116.3,120.8,121.9,122.6,122.3,122.3,122.4,121.2,117.4,120.1,122.5,122.5,122.5,119.9,122.7,121.5,115.5,122.8,120.1,105.3,121.6,122.4,117.1,92.1,92.2,101.8,100.6,122.4,117.8,121.6,120.8,122.3,120.2,122.6,120.4,107.8,111.2,105.5,107.1,99.0,90.6,97.9,101.9,98.3,99.7,98.8,104.1,92.9,91.0,91.0,87.5,104.0,115.3,116.3,121.6,122.6,122.4,119.5,119.5,122.6,122.1,115.5,101.7,99.4,107.1,108.6,112.1,116.7,122.1,122.6,121.3,121.2,120.4,122.1,122.7,121.4,120.2,120.2,110.5,122.6,122.4,122.2,120.4,122.4,120.8,117.1,100.8,80.8,85.3,93.6,110.6,110.8,114.6,112.9,99.4,72.6,68.9,63.3,71.1,86.2,82.2,73.4,57.4,43.2,42.6,47.0,58.2,71.4,102.8,99.6,97.1,78.0,79.5,81.1,96.6,87.9,95.6,98.7,89.7,84.9,90.3,93.2,90.3,110.1,121.6,122.7,121.6,121.6,119.3,111.7,114.7,114.5,112.4,121.5,119.7,115.8,122.3,122.3,119.4,117.4,122.4,122.4,122.4,106.3,111.9,111.0,111.0,115.8,103.2,90.2,90.2]},F4={"total":[10.9,10.9,10.9,11.0,11.0,12.1,12.1,16.7,19.1,19.1,12.6,12.6,23.6,23.6,31.5,31.5,30.5,11.3,10.8,11.4,11.4,10.5,10.5,19.3,19.3,10.2,17.3,29.4,24.7,28.8,16.2,16.2,29.5,33.7,20.8,20.6,34.5,32.0,24.8,33.2,22.7,32.8,34.5,22.9,12.7,11.7,13.6,15.6,10.1,13.4,13.7,10.3,10.3,10.2,10.3,10.1,14.3,13.2,16.0,24.4,25.0,28.3,11.2,13.2,13.1,16.4,10.2,13.7,10.2,12.2,17.2,27.7,34.3,33.7,27.5,18.2,16.1,19.4,14.4,16.6,22.3,22.0,20.8,25.2,18.5,23.0,25.0,17.1,10.9,10.7,9.9,10.3,18.0,18.2,12.5,17.0,12.6,14.5,11.6,10.0,11.9,20.8,30.8,27.9,18.9,12.7,17.3,12.8,12.7,17.1,24.5,19.6,15.5,19.4,22.9,15.1,11.3,17.5,14.7,10.9,11.0,12.7,17.1,25.8,27.9,17.5,22.3,18.9,14.2,19.9,9.9,10.0,9.9,9.9,11.8,10.1,13.3,18.2,11.0,14.5,10.5,10.2,12.3,15.5,12.1,9.8,9.8,14.2,20.0,21.1,25.5,24.3,22.6,12.4,14.2,16.3,15.3,15.9,13.6,9.9,9.9,15.7,22.8,22.2,23.3,19.7,9.8,9.8,13.9,23.5,20.6,23.3,10.7,9.8,9.8,9.8,12.9,18.1,18.7,14.2,9.8,9.8,9.9,15.1,17.0,14.9,21.4,18.7,17.6,10.0,14.3,22.9,15.4,14.4,19.9,10.5,10.4,9.9,12.2,9.9,10.3,20.8,18.5,9.9,10.6,16.4,26.1,22.0,20.5,18.9,17.5,21.5,22.6,14.0,17.2,20.7,21.2,21.6,21.2,17.3,29.3,27.1,25.6,13.9,12.3,17.2,20.0,12.5,15.7,13.1,13.6,15.6,23.1,28.6,11.6,17.8,31.1,14.0,13.4,10.9,13.1,13.9,14.5,14.8,12.4,17.6,24.2,19.5,19.4,16.1,16.0,18.1,14.5,11.9,13.5,16.9,14.4,10.6,12.8,10.3,10.7,10.6,14.9,18.5,17.4,15.9,12.8,12.2,12.5,17.8,20.4,12.7,12.3,12.1,12.7,12.7,12.8,19.4,12.8,14.6,14.8,18.5,17.2,23.0,12.7,10.1,16.8,15.6,23.3,12.6,11.8,14.6,20.8,21.5,20.4,25.8,32.4,32.9,23.8,14.4,10.1,10.2,11.4,11.4,10.4,10.1,10.2,12.1,12.4,17.7,14.3,10.5,15.1,14.0,14.6,16.2,17.6,14.1,24.6,32.9,31.0,16.3,22.5,11.4,10.6,13.7,10.4,18.3,23.7,10.2,19.8,27.6,19.9,25.5,35.0,16.4,22.6,16.9,20.8,23.4,17.8,24.7,24.9,10.2,19.6,34.4,35.0,34.9,13.7,10.2,13.3,13.3,34.7,25.3,10.8,18.7,11.5,10.8,10.8,11.3,11.3,14.1,14.1,11.0,10.8],"steady":[10.0,10.0,10.0,10.1,10.1,10.1,10.1,10.3,10.3,10.4,10.3,10.3,10.5,10.5,10.6,10.6,10.6,10.4,10.3,10.2,10.2,10.2,10.2,10.5,10.5,10.1,10.4,10.5,10.5,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.7,10.6,10.5,10.5,10.2,10.4,10.4,10.0,10.2,10.3,10.1,10.0,10.0,10.1,10.0,10.2,10.4,10.2,10.4,10.4,10.4,10.2,10.4,10.2,10.4,10.0,10.2,10.0,10.0,10.2,10.3,10.4,10.4,10.4,10.4,10.1,10.3,10.3,10.1,10.4,10.4,10.4,10.3,10.3,10.3,10.4,10.2,10.1,10.0,9.9,10.0,10.4,10.3,10.1,10.4,10.4,10.3,10.1,9.9,10.1,10.3,10.4,10.4,10.4,10.3,10.4,10.4,10.3,10.4,10.4,10.4,10.3,10.3,10.4,10.1,10.0,10.3,10.1,10.0,10.1,10.0,10.2,10.3,10.3,10.1,10.3,10.2,10.0,10.2,9.8,9.9,9.9,9.9,10.0,10.0,10.1,10.3,10.0,10.0,10.0,9.9,10.0,10.1,10.0,9.7,9.7,9.8,10.1,10.1,10.1,10.1,10.2,9.9,9.9,10.2,10.2,10.0,10.1,9.8,9.8,10.0,10.2,10.2,10.2,10.2,9.8,9.8,9.9,10.2,10.2,10.2,9.9,9.8,9.8,9.8,9.9,10.1,10.1,9.9,9.7,9.7,9.8,10.0,10.1,9.9,10.1,10.1,10.0,9.8,9.9,10.2,10.1,10.0,10.2,9.9,9.8,9.8,9.9,9.8,9.8,10.1,10.0,9.8,9.8,10.0,10.1,10.1,10.1,10.1,10.2,10.2,10.2,10.1,10.1,10.1,10.1,10.1,10.1,10.2,10.2,10.1,10.1,10.1,9.8,10.0,10.1,9.9,9.8,10.0,9.8,9.9,10.1,10.1,9.8,10.1,10.2,10.1,10.1,9.9,9.9,10.1,10.1,10.1,10.0,10.1,10.1,10.1,10.1,10.1,10.1,10.1,9.9,9.8,10.0,10.2,10.1,9.8,9.9,9.8,9.9,9.9,10.1,10.2,10.2,10.2,10.2,9.9,10.0,10.2,10.2,10.1,9.9,9.9,10.0,10.1,10.0,10.3,10.3,10.0,10.1,10.3,10.3,10.3,10.3,10.0,10.3,10.3,10.4,10.3,10.3,10.3,10.3,10.3,10.3,10.3,10.3,10.3,10.3,10.3,10.0,10.1,10.2,10.3,10.1,10.0,10.1,10.2,10.5,10.5,10.5,10.1,10.2,10.4,10.4,10.4,10.5,10.4,10.4,10.4,10.5,10.5,10.5,10.2,10.2,10.4,10.1,10.4,10.4,10.1,10.4,10.5,10.5,10.5,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.5,10.1,10.4,10.6,10.6,10.7,10.5,10.1,10.3,10.3,10.5,10.5,10.3,10.5,10.4,10.0,10.0,10.4,10.4,10.3,10.3,10.2,10.0]};
+const R=D.recs,N=R.length;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isRec=r=>r.kind==='rec';
+const nRec=R.filter(isRec).length;
+const plain=t=>t.replace(/\n• /g,' ');
+const clip=(s,n)=>s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;
+const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
+const priSet=id=>new Set(R.filter(r=>r.pri===id).map(r=>r.n));
+const slides=$$('.slide');
+const NS='http://www.w3.org/2000/svg';
+const svgEl=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e};
+const txt=(parent,x,y,s,attrs={})=>{const a={x,y,...attrs};if(a['font-size']){a.style=`font-size:${a['font-size']}px;${a.style||''}`;delete a['font-size']}const t=svgEl('text',a,parent);t.textContent=s;return t};
+const paraHref=n=>D.pdf+'#page='+(D.para_pages[n]||1);
+const linkParas=el=>el.querySelectorAll('[data-para]').forEach(a=>{a.href=paraHref(a.dataset.para)});
+const ease=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+const back=k=>{const c1=1.5,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,k)=>a+(b-a)*k;
+const r0=v=>Math.round(v);
+function animate(ms,fn,done){if(reduce){fn(1);done&&done();return()=>{}}let id,t0=performance.now();const step=now=>{const k=clamp((now-t0)/ms);fn(k);if(k<1)id=requestAnimationFrame(step);else done&&done()};id=requestAnimationFrame(step);return()=>cancelAnimationFrame(id)}
+function rng(seed){let s=(seed>>>0)||1;return()=>{s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;return s/4294967296}}
+const hatch=(svg,id,stroke,gap=5,w=1.3)=>{const defs=svg.querySelector('defs')||svgEl('defs',{},svg);const p=svgEl('pattern',{id,width:gap,height:gap,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},defs);svgEl('line',{x1:0,y1:0,x2:0,y2:gap,style:`stroke:${stroke};stroke-width:${w}px`},p);return p};
+/* a run of particles along a polyline: one loop for every animated diagram */
+function polyline(pts){const seg=[];let L=0;for(let i=1;i<pts.length;i++){const[a,b]=[pts[i-1],pts[i]],l=Math.hypot(b[0]-a[0],b[1]-a[1]);seg.push([a,b,L,l]);L+=l}
+  return{L,at(d){d=clamp(d,0,L);for(const[a,b,s,l]of seg)if(d<=s+l){const k=l?(d-s)/l:0;return[a[0]+(b[0]-a[0])*k,a[1]+(b[1]-a[1])*k]}const z=pts[pts.length-1];return[z[0],z[1]]}}}
+
+linkParas(document);
+$$('[data-pdf]').forEach(a=>{a.href=D.pdf});
+$$('[data-more]').forEach(a=>{const n=priSet(a.dataset.more).size;a.textContent=`See all ${n} paragraphs on this theme in the explorer`});
+
+/* ================= the salt caverns: the report as 61 stores ================= */
+const salt=$('#salt');
+const GAP=2.4;
+let slot=0;const us=[];R.forEach((r,i)=>{if(i&&r.ch!==R[i-1].ch)slot+=GAP;us.push(slot+.5);slot+=1});const S=slot;
+const maxW=Math.max(...R.map(r=>r.words));
+const lf=R.map(r=>.26+.74*Math.sqrt(r.words/maxW));
+const band=svgEl('rect',{class:'band',rx:6},salt),shafts=svgEl('path',{class:'shafts'},salt),ground=svgEl('line',{class:'ground'},salt);
+const gCav=svgEl('g',{},salt),gLab=svgEl('g',{class:'labs'},salt),gHit=svgEl('g',{},salt);
+const cav=R.map(r=>{const g=svgEl('g',{class:'cv '+(isRec(r)?'r':'c')},gCav);return{g,o:svgEl('path',{class:'o'},g),f:svgEl('path',{class:'f'},g)}});
+const hits=R.map(r=>{const h=svgEl('rect',{class:'hit'},gHit);h.dataset.n=r.n;return h});
+const chapLab=D.chapters.map(c=>({i0:R.findIndex(r=>r.ch===c.n),t:txt(gLab,0,0,'Chapter '+c.n)}));
+let P=null,lit=null,lineK=1,level=1,charge=0,beat=0,mode='hero',raf=0;
+const drill=R.map(()=>1),grow=R.map(()=>1),fillK=R.map(()=>1);
+const q=v=>v.toFixed(2);
+function capsule(x,yt,yb,r){return `M${q(x-r)},${q(yt+r)}A${q(r)},${q(r)} 0 0,1 ${q(x+r)},${q(yt+r)}V${q(yb-r)}A${q(r)},${q(r)} 0 0,1 ${q(x-r)},${q(yb-r)}Z`}
+function capFill(x,yt,yb,r,f){
+  if(f<=.004)return '';
+  if(f>=.996)return capsule(x,yt,yb,r);
+  const yf=yb-(yb-yt)*f;
+  if(yf>=yb-r){const d=yf-(yb-r),w=Math.sqrt(Math.max(0,r*r-d*d));return `M${q(x-w)},${q(yf)}A${q(r)},${q(r)} 0 0,0 ${q(x+w)},${q(yf)}Z`}
+  if(yf>=yt+r)return `M${q(x-r)},${q(yf)}H${q(x+r)}V${q(yb-r)}A${q(r)},${q(r)} 0 0,1 ${q(x-r)},${q(yb-r)}Z`;
+  const d=yt+r-yf,w=Math.sqrt(Math.max(0,r*r-d*d));
+  return `M${q(x-w)},${q(yf)}H${q(x+w)}A${q(r)},${q(r)} 0 0,1 ${q(x+r)},${q(yt+r)}V${q(yb-r)}A${q(r)},${q(r)} 0 0,1 ${q(x-r)},${q(yb-r)}V${q(yt+r)}A${q(r)},${q(r)} 0 0,1 ${q(x-w)},${q(yf)}Z`;
+}
+function lay(m){
+  const W=innerWidth,H=innerHeight;
+  if(W<=820)return{x0:14,y0:H-56,L:W-28,Hs:42,lo:0};
+  const pad=Math.max(W*.05,24);
+  if(m==='hero'){const Hs=Math.min(170,H*.21);return{x0:pad,y0:H-64-Hs,L:W-2*pad,Hs,lo:1}}
+  const x0=Math.round(W*.37);return{x0,y0:H-58,L:W-pad-x0,Hs:44,lo:0};
+}
+function draw(){
+  if(!P)return;
+  const{x0,y0,L,Hs,lo}=P,U=L/S,r=Math.max(1.7,Math.min(U*.3,Hs*.035+2.2,7));
+  const x1=x0-12,x2=x1+(L+24)*lineK,sh=Hs*.22;
+  ground.setAttribute('x1',q(x1));ground.setAttribute('x2',q(x2));ground.setAttribute('y1',q(y0));ground.setAttribute('y2',q(y0));
+  band.setAttribute('x',q(x1));band.setAttribute('width',q(Math.max(0,x2-x1)));band.setAttribute('y',q(y0+sh*.55));band.setAttribute('height',q(Hs-sh*.55+3));band.setAttribute('opacity',(lo*.85*lineK).toFixed(2));
+  let sd='';
+  R.forEach((rec,i)=>{
+    const x=x0+us[i]*U,on=!!lit&&lit.has(rec.n),c=cav[i];
+    const dz=sh*drill[i];if(dz>.3)sd+=`M${x.toFixed(1)},${y0.toFixed(1)}V${(y0+dz).toFixed(1)}`;
+    const full=Math.max(2*r+1,(Hs-sh)*lf[i]),h=full*grow[i],rr=r*(on?1+.35*beat:1),yt=y0+sh;
+    if(h<1){c.o.setAttribute('d','');c.f.setAttribute('d','')}
+    else{const yb=yt+Math.max(h,2*rr+.5);c.o.setAttribute('d',capsule(x,yt,yb,rr));c.f.setAttribute('d',capFill(x,yt,yb,rr,fillK[i]*(isRec(rec)?level:charge)))}
+    c.g.classList.toggle('off',!!lit&&!on);
+    const hb=hits[i];hb.setAttribute('x',(x-U/2).toFixed(1));hb.setAttribute('y',(y0-6).toFixed(1));hb.setAttribute('width',U.toFixed(1));hb.setAttribute('height',(Hs+12).toFixed(1));
+  });
+  shafts.setAttribute('d',sd);
+  chapLab.forEach(c=>{const x=x0+us[c.i0]*U-r;c.t.setAttribute('x',x.toFixed(1));c.t.setAttribute('y',(y0-10).toFixed(1));c.t.setAttribute('opacity',(lo*lineK).toFixed(2))});
+}
+function size(){salt.setAttribute('width',innerWidth);salt.setAttribute('height',innerHeight);salt.setAttribute('viewBox',`0 0 ${innerWidth} ${innerHeight}`)}
+function tween(target,ms=950){
+  cancelAnimationFrame(raf);const from={...P};
+  if(reduce||!P){P={...target};draw();return}
+  const t0=performance.now();
+  const step=now=>{const k=Math.min(1,(now-t0)/ms),e=ease(k);for(const key of['x0','y0','L','Hs','lo'])P[key]=from[key]+(target[key]-from[key])*e;draw();if(k<1)raf=requestAnimationFrame(step)};
+  raf=requestAnimationFrame(step);
+}
+let stopCharge=()=>{},stopBeat=()=>{},stopLevel=()=>{};
+function setCharge(to){stopCharge();const c0=charge;stopCharge=animate(to?1600:500,k=>{charge=c0+(to-c0)*ease(k);draw()})}
+function setLevel(v,ms=0){stopLevel();if(!ms){level=v;draw();return}const l0=level;stopLevel=animate(ms,k=>{level=l0+(v-l0)*ease(k);draw()})}
+function pulse(){stopBeat();stopBeat=animate(560,k=>{beat=Math.sin(Math.PI*k);draw()},()=>{beat=0;draw()})}
+function setLit(s){lit=s;draw()}
+const tip=$('#tip');
+salt.addEventListener('pointerover',e=>{const h=e.target.closest('.hit');if(!h||e.pointerType==='touch')return;const r=R[h.dataset.n-1];
+  tip.innerHTML=`<b>${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</b><div class="x">${esc(clip(plain(r.text),170))}</div><div class="go">Select to read it in the explorer</div>`;
+  const bx=h.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
+  tip.style.left=Math.max(8,Math.min(innerWidth-tw-8,bx.left+bx.width/2-tw/2))+'px';tip.style.top=Math.max(8,bx.top-th-10)+'px';tip.style.opacity=1});
+salt.addEventListener('pointerout',e=>{if(e.target.closest('.hit'))tip.style.opacity=0});
+salt.addEventListener('click',e=>{const h=e.target.closest('.hit');if(h)location.href='explore/#r='+h.dataset.n});
+
+/* ================= slides ================= */
+let active=-1;const hooks={};
+function litFor(s){
+  if(s.dataset.lit==='all')return new Set(R.map(r=>r.n));
+  if(s.dataset.lit)return new Set(s.dataset.lit.split(' ').map(Number));
+  if(s.dataset.pri)return priSet(s.dataset.pri);
+  return null;
+}
+function activate(i){
+  if(i===active)return;const prev=active;active=i;const s=slides[i];
+  document.body.dataset.tone=s.dataset.tone;
+  $('#count').textContent=`${i+1} of ${slides.length}`;$('#slidename').textContent=s.dataset.name;
+  $('#prev').disabled=i===0;$('#next-btn').disabled=i===slides.length-1;
+  const was=mode;mode=s.dataset.cut||'strip';
+  lit=litFor(s);
+  const target=lay(mode);if(!P)P={...target};
+  tween(target);
+  if(!!s.dataset.charge!==charge>.5)setCharge(s.dataset.charge?1:0);
+  if(prev>=0&&lit&&mode==='strip'&&lit.size<N)setTimeout(pulse,was===mode?120:900);
+  slides.forEach((x,j)=>{const h=hooks[x.id];if(!h)return;if(j===i){h.start&&h.start()}else if(h.on){h.stop&&h.stop()}h.on=j===i});
+  history.replaceState(null,'',i?'#'+s.id:location.pathname+location.search);
+}
+const snapOn=()=>matchMedia('(min-width:821px) and (min-height:640px)').matches;
+function goTo(i){
+  i=Math.max(0,Math.min(slides.length-1,i));const s=slides[i];
+  s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  const h=s.querySelector('h1,h2');if(h){h.setAttribute('tabindex','-1');setTimeout(()=>h.focus({preventScroll:true}),reduce?0:650)}
+}
+$('#prev').addEventListener('click',()=>goTo(active-1));
+$('#next-btn').addEventListener('click',()=>goTo(active+1));
+document.addEventListener('click',e=>{const n=e.target.closest('[data-next]');if(n){goTo(active+1);return}const g=e.target.closest('[data-go]');if(g&&/^\d+$/.test(g.dataset.go))goTo(+g.dataset.go)});
+addEventListener('keydown',e=>{
+  if(!snapOn()||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(e.target.closest('input,select,textarea,[contenteditable]'))return;
+  const k=e.key;let d=0;
+  if(k==='ArrowDown'||k==='ArrowRight'||k==='PageDown'||(k===' '&&!e.shiftKey))d=1;
+  else if(k==='ArrowUp'||k==='ArrowLeft'||k==='PageUp'||(k===' '&&e.shiftKey))d=-1;
+  else if(k==='Home'){e.preventDefault();goTo(0);return}else if(k==='End'){e.preventDefault();goTo(slides.length-1);return}
+  if(d){if(e.target.closest('.seg,.row,.silo')&&(k==='ArrowLeft'||k==='ArrowRight'))return;e.preventDefault();
+    const b=slides[active].getBoundingClientRect(),beh=reduce?'auto':'smooth';
+    if(d>0&&b.bottom>innerHeight+4){scrollBy({top:Math.min(b.bottom-innerHeight,innerHeight*.8),behavior:beh});return}
+    if(d<0&&b.top<-4){scrollBy({top:Math.max(b.top,-innerHeight*.8),behavior:beh});return}
+    goTo(active+d)}
+});
+
+/* two views in one figure */
+function twoState(id,captions,onSet){
+  const fig=$('#'+id),btns=[...fig.querySelectorAll('.seg button')],cap=fig.querySelector('figcaption');let st='a';
+  const set=s=>{st=s;fig.dataset.state=s;btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===s)));if(cap&&captions){cap.innerHTML=captions[s];linkParas(cap)}onSet&&onSet(s)};
+  btns.forEach(b=>b.addEventListener('click',()=>set(b.dataset.state)));
+  set('a');return{set,get:()=>st,fig};
+}
+
+/* ================= 2. the verdict: gas in store (box 1) ================= */
+hooks.verdict=(()=>{
+  const fig=$('#ill-gas'),svg=fig.querySelector('svg'),g=svgEl('g',{},svg);
+  const X0=124,WB=350,MAX=217,BH=22;
+  const hbar=(x,y,w,h,r=4)=>{r=Math.min(r,w/2,h/2);return `M${x},${y}H${x+w-r}A${r},${r} 0 0,1 ${x+w},${y+r}V${y+h-r}A${r},${r} 0 0,1 ${x+w-r},${y+h}H${x}Z`};
+  svgEl('line',{class:'axis',x1:X0,x2:X0,y1:2,y2:278},g);
+  [['Germany',217],['Italy',162],['France',122],['United Kingdom',10,'uk']].forEach(([n,v,k],i)=>{
+    const y=6+i*42,w=WB*v/MAX;txt(g,X0-10,y+BH/2+4.5,n,{'text-anchor':'end',class:k?'r':''});
+    const gb=svgEl('g',{class:'bw'},g);gb.style.transitionDelay=(i*.12)+'s';svgEl('path',{class:'bar'+(k?' uk':''),d:hbar(X0,y,w,BH)},gb);
+    txt(gb,X0+w+8,y+BH/2+4.5,`${v} TWh`,{class:k?'r':'b'})});
+  const yR=184,wR=WB*41/MAX;
+  txt(g,X0-10,yR+BH/2+4.5,'Rough, at its peak',{'text-anchor':'end',class:'m'});
+  const gr=svgEl('g',{class:'bw'},g);gr.style.transitionDelay='.6s';svgEl('path',{class:'rough',d:hbar(X0,yR,wR,BH)},gr);
+  txt(gr,X0+wR+8,yR+BH/2+4.5,'41 TWh, 70% of UK gas storage then',{class:'m'});
+  const yL=238;
+  txt(g,X0-10,yL+9,'UK low-carbon',{'text-anchor':'end',class:'m'});txt(g,X0-10,yL+25,'storage',{'text-anchor':'end',class:'m'});
+  svgEl('line',{class:'tiny',x1:X0,x2:X0+1,y1:yL+4,y2:yL+26},g);
+  txt(g,X0+10,yL+12,'About 0.03 TWh of pumped hydro and batteries:',{class:'r'});txt(g,X0+10,yL+28,'too small to see at this scale',{class:'m'});
+  let played=false;
+  return{start(){if(played)return;played=true;requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 3. more electricity, more weather (redrawn from Figure 2) ================= */
+hooks.power=(()=>{
+  const fig=$('#ill-mix'),svg=fig.querySelector('svg'),cap=$('#mix-cap');
+  hatch(svg,'hatch-mix','var(--mute)',4.5,1.2);
+  const YR=[2025,2030,2035];
+  const V={nuc:[31.7,32.8,71.8],oth:[59.0,41.7,33.9],beccs:[0,10.0,20.0],off:[92.9,207.0,256.5],on:[38.9,60.6,74.6],sol:[15.6,40.0,64.5],dlc:[0,39.5,38.9],gas:[51.2,17.3,10.6],imp:[41.2,-46.8,-35.0]};
+  const SER=[
+    {id:'firm',name:'Nuclear, bioenergy and other',v:i=>V.nuc[i]+V.oth[i]+V.beccs[i],det:i=>`nuclear ${r0(V.nuc[i])}, other ${r0(V.oth[i])}`+(V.beccs[i]?`, bioenergy with carbon capture ${r0(V.beccs[i])}`:'')},
+    {id:'gas',name:'Unabated gas',v:i=>V.gas[i]},
+    {id:'wind',name:'Wind',v:i=>V.off[i]+V.on[i],det:i=>`offshore ${r0(V.off[i])}, onshore ${r0(V.on[i])}`},
+    {id:'solar',name:'Solar',v:i=>V.sol[i]},
+    {id:'dlc',name:'Dispatchable low-carbon',v:i=>V.dlc[i],det:()=>'“much of which will be provided by energy storage”'}];
+  const Ym=v=>238-v*(222/600),BW=78,XC=[170,310,450];
+  const g=svgEl('g',{},svg);
+  [0,100,200,300,400,500,600].forEach(v=>{svgEl('line',{class:'gl',x1:64,x2:530,y1:Ym(v),y2:Ym(v)},g);txt(g,56,Ym(v)+4,v,{'text-anchor':'end',class:'m'})});
+  txt(g,0,Ym(600)-12,'TWh a year',{class:'m'});
+  const share=i=>{const dom=SER.reduce((a,s)=>a+s.v(i),0);return Math.round(100*(SER[2].v(i)+SER[3].v(i))/dom)};
+  const segs=[];
+  YR.forEach((y,i)=>{
+    const gb=svgEl('g',{class:'gw'},g);gb.style.transformOrigin=`${XC[i]}px ${Ym(0)}px`;gb.style.transformBox='view-box';gb.style.transitionDelay=(i*.15)+'s';
+    let acc=0;
+    SER.forEach(s=>{const v=s.v(i);if(v<=0)return;const r=svgEl('rect',{class:'seg2 s-'+s.id,x:XC[i]-BW/2,width:BW,y:Ym(acc+v),height:Ym(acc)-Ym(acc+v),stroke:'var(--bg)','stroke-width':1.5},gb);segs.push({r,s,i,v});acc+=v});
+    const im=V.imp[i],ri=svgEl('rect',{class:'seg2 s-imp',x:XC[i]-BW/2+.75,width:BW-1.5,y:im>0?Ym(acc+im):Ym(0),height:Math.abs(Ym(im)-Ym(0))},gb);
+    segs.push({r:ri,s:{id:'imp',name:im>0?'Net imports':'Net exports'},i,v:Math.abs(im)});
+    txt(g,XC[i],282,y,{'text-anchor':'middle',class:'b'});
+    const t=txt(g,XC[i],Ym(acc+Math.max(0,im))-8,`${share(i)}% wind and solar`,{'text-anchor':'middle',class:'sb b'});
+  });
+  svgEl('line',{class:'zero',x1:64,x2:530,y1:Ym(0),y2:Ym(0)},g);
+  const top35=SER.reduce((a,s)=>a+s.v(2),0);
+  txt(g,XC[2]+BW/2+6,Ym(top35-19.5)+4,'39 TWh',{class:'r sa'});
+  const def={a:'Redrawn from the report’s Figure 2 (Climate Change Committee and AFRY, central scenario); values read from the chart, so approximate. In 2035, 39 TWh of ‘dispatchable low-carbon’ generation balances the system, “much of which will be provided by energy storage”. Point at a block for its value.',
+    b:'Wind and solar rise from about half of generation in 2025 to about 70% in 2030 and 2035 (read from the report’s Figure 2, so approximate). Exports in those years go to neighbours through interconnectors.'};
+  const ui=twoState('ill-mix',def);
+  segs.forEach(o=>{o.r.addEventListener('pointerenter',()=>{segs.forEach(x=>x.r.classList.toggle('hl',x===o));const det=o.s.det?` (${o.s.det(o.i)})`:'';cap.innerHTML=`<b>${YR[o.i]} · ${o.s.name}: about ${r0(o.v)} TWh</b>${det}.`});
+    o.r.addEventListener('pointerleave',()=>{o.r.classList.remove('hl');cap.innerHTML=def[ui.get()]})});
+  let played=false;
+  return{start(){if(played)return;played=true;requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 4. the dunkelflaute (redrawn from Figure 3) ================= */
+hooks.dunkel=(()=>{
+  const fig=$('#ill-dunkel'),svg=fig.querySelector('svg'),inp=$('#dunkel-range'),out=$('#dunkel-out');
+  const lo=F3.lo,hi=F3.hi,B=lo.length,YRS=37,PER=B/YRS,CAP=123;
+  const X0=44,X1=528,Y0=248,Y1=14,X=y=>X0+(X1-X0)*y/YRS,Yv=v=>Y0-(Y0-Y1)*v/140;
+  const g=svgEl('g',{},svg);
+  [0,20,40,60,80,100,120,140].forEach(v=>{svgEl('line',{class:'gl',x1:X0,x2:X1,y1:Yv(v),y2:Yv(v)},g);txt(g,X0-8,Yv(v)+4,v,{'text-anchor':'end',class:'m'})});
+  for(let y=0;y<=35;y+=5)txt(g,X(y),Y0+18,y,{'text-anchor':'middle',class:'m'});
+  txt(g,X1,Y0+36,'Years of weather',{'text-anchor':'end',class:'m'});txt(g,X0-34,Y0+36,'TWh in store',{class:'m'});
+  const hb=svgEl('rect',{class:'band',y:Y1,height:Y0-Y1,x:X0,width:0},g);
+  let d='';for(let i=0;i<B;i++)d+=(i?'L':'M')+X((i+.5)/PER).toFixed(1)+','+Yv(hi[i]).toFixed(1);
+  for(let i=B-1;i>=0;i--)d+='L'+X((i+.5)/PER).toFixed(1)+','+Yv(Math.min(lo[i],hi[i]-.9)).toFixed(1);
+  svgEl('path',{class:'env',d:d+'Z'},g);
+  // the typical year (median swing) and the worst run
+  const yr=y=>{const a=Math.round(y*PER),b=Math.round((y+1)*PER);let mn=1e9,mx=-1e9;for(let i=a;i<b;i++){mn=Math.min(mn,lo[i]);mx=Math.max(mx,hi[i])}return{mn,mx,sw:mx-mn}};
+  const swings=[...Array(YRS).keys()].map(y=>({y,...yr(y)}));const med=swings.map(s=>s.sw).sort((a,b)=>a-b)[Math.floor(YRS/2)];
+  const ty=swings.filter(s=>s.mx>118).sort((a,b)=>Math.abs(a.sw-med)-Math.abs(b.sw-med))[0];
+  let kT=0;for(let i=1;i<B;i++)if(lo[i]<lo[kT])kT=i;
+  let kP=kT;while(kP>0&&hi[kP]<CAP*.97)kP--;
+  const dd=hi[kP]-lo[kT];
+  const brk=svgEl('path',{class:'brk'},g),bl1=txt(g,0,0,'',{class:'b halo'}),bl2=txt(g,0,0,'',{class:'m halo'});
+  const xc=X(kT/PER)+12;
+  svgEl('path',{class:'cont',d:`M${X(kT/PER)-4},${Yv(lo[kT])}H${xc+6}`},g);
+  svgEl('path',{class:'brk',d:`M${xc},${Yv(lo[kT])+2}V${Yv(0)-2}M${xc-3},${Yv(lo[kT])+6}l3,-4l3,4M${xc-3},${Yv(0)-6}l3,4l3,-4`},g);
+  txt(g,xc+8,Yv(lo[kT]/2)+4,'Contingency',{class:'m halo'});
+  const cur=svgEl('line',{class:'cur',y1:Y1,y2:Y0},g),dot=svgEl('circle',{class:'curdot',r:5},g);
+  function bracket(xa,xb,top,bot,label,sub){
+    hb.setAttribute('x',xa);hb.setAttribute('width',Math.max(2,xb-xa));
+    const x=xb+8;brk.setAttribute('d',`M${x-5},${Yv(top)}H${x}V${Yv(bot)}H${x-5}`);
+    const right=x+8+120<X1+8,tx=right?x+8:xa-8,anchor=right?'start':'end';
+    bl1.setAttribute('x',tx);bl1.setAttribute('y',Yv((top+bot)/2)-2);bl1.setAttribute('text-anchor',anchor);bl1.textContent=label;
+    bl2.setAttribute('x',tx);bl2.setAttribute('y',Yv((top+bot)/2)+14);bl2.setAttribute('text-anchor',anchor);bl2.textContent=sub}
+  const view={a:()=>bracket(X(ty.y),X(ty.y+1),ty.mx,ty.mn,`About ${r0(ty.sw)} TWh`,'in a typical year'),
+              b:()=>bracket(X(kP/PER),X(kT/PER),hi[kP],lo[kT],`About ${Math.round(dd/5)*5} TWh`,'drawn down in the worst run')};
+  const caps={a:`<b>A typical year.</b> In a year with a median swing, the store dips by about ${r0(ty.sw)} TWh and refills. Redrawn from the report’s Figure 3 (Royal Society: a 123 TWh store filled by 89 GW of electrolysers); values read from the chart, so approximate.`,
+    b:`<b>The worst run.</b> Around the 30th and 31st years, a run of low-wind years drains about ${Math.round(dd/5)*5} TWh, from nearly full to the contingency held back. Analysing weather over an extended period “substantially changes the amount of storage needed” (Figure 3).`};
+  const ui=twoState('ill-dunkel',caps,s=>view[s]());
+  function at(v){const y=clamp(v/10,0,YRS-.001),i=Math.min(B-1,Math.floor(y*PER)),m=(lo[i]+hi[i])/2;
+    cur.setAttribute('x1',X(y));cur.setAttribute('x2',X(y));dot.setAttribute('cx',X(y));dot.setAttribute('cy',Yv(m));
+    out.textContent=`Year ${Math.floor(y)+1}: ${r0(lo[i])}–${r0(hi[i])} TWh`;if(hooks.dunkel&&hooks.dunkel.on)setLevel(clamp(m/CAP))}
+  let stopPlay=()=>{},played=false;
+  inp.addEventListener('input',()=>{stopPlay();at(+inp.value)});
+  at(0);
+  return{start(){if(played){at(+inp.value);return}played=true;const v0=+inp.value;
+      stopPlay=animate(7000,k=>{inp.value=Math.round(lerp(v0,370,k));at(+inp.value)})},
+    stop(){stopPlay();setLevel(1,700)}};
+})();
+
+/* ================= 5. power on demand (redrawn from Figure 4) ================= */
+hooks.spikes=(()=>{
+  const fig=$('#ill-spike'),svg=fig.querySelector('svg'),cap=$('#spike-cap');
+  const T=F4.total,Sd=F4.steady,ND=T.length,Pw=T.map((t,i)=>Math.max(0,t-Sd[i]));
+  const X0=34,X1=532,Y0=236,Y1=12,DW=(X1-X0)/ND,Yv=v=>Y0-(Y0-Y1)*v/40;
+  const g=svgEl('g',{},svg);
+  [0,10,20,30,40].forEach(v=>{svgEl('line',{class:'gl',x1:X0,x2:X1,y1:Yv(v),y2:Yv(v)},g);txt(g,X0-6,Yv(v)+4,v,{'text-anchor':'end',class:'m'})});
+txt(g,X0+4,Yv(40)+14,'GW',{class:'m'});
+  const order=[...Pw.keys()].sort((a,b)=>Pw[b]-Pw[a]),rank=[];order.forEach((d,k)=>rank[d]=k);
+  const gd=svgEl('g',{},g);
+  const days=T.map((t,i)=>{const e=svgEl('g',{class:'dy'},gd);e.style.transform=`translateX(${(i*DW).toFixed(2)}px)`;
+    svgEl('rect',{class:'st',x:X0,width:(DW+.35).toFixed(2),y:Yv(Sd[i]),height:Y0-Yv(Sd[i])},e);
+    svgEl('rect',{class:'pw',x:X0,width:(DW+.35).toFixed(2),y:Yv(T[i]),height:Math.max(0,Yv(Sd[i])-Yv(T[i]))},e);return e});
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],mlen=[31,28,31,30,31,30,31,31,30,31,30,31];
+  const gm=svgEl('g',{class:'mth sa'},g);let dd=0;months.forEach((m,j)=>{txt(gm,X0+(dd+mlen[j]/2)*DW,Y0+16,m,{'text-anchor':'middle',class:'m'});dd+=mlen[j]});
+  const n20=Pw.filter(p=>p>20).length,half=[...Pw].sort((a,b)=>a-b)[Math.floor(ND/2)];
+  const gb=svgEl('g',{class:'sb'},g);
+  svgEl('line',{class:'ref',x1:X0+n20*DW,x2:X0+n20*DW,y1:Yv(36),y2:Y0},gb);txt(gb,X0+n20*DW+6,Yv(34),`${n20} days above 20 GW for power`,{class:'b'});
+  svgEl('line',{class:'ref',x1:X0+ND/2*DW,x2:X0+ND/2*DW,y1:Yv(24),y2:Y0},gb);txt(gb,X0+ND/2*DW+6,Yv(22),`Half the days: about ${r0(half)} GW or less`,{class:'b'});
+  txt(gb,X0,Y0+16,'Busiest day',{class:'m'});txt(gb,X1,Y0+16,'Quietest day',{'text-anchor':'end',class:'m'});
+  const def={a:'Redrawn from the report’s Figure 4 (Climate Change Committee and AFRY, central scenario for 2035); values read from the chart, so approximate. Demand for hydrogen for power is volatile; industry and shipping are steady.',
+    b:`The same 365 days, busiest first. Power stations need more than 20 GW of hydrogen on about ${n20} days, and about ${r0(half)} GW or less on half of them. The stores must deliver that power on the few days it is needed.`};
+  const ui=twoState('ill-spike',def,s=>{days.forEach((e,i)=>{const k=s==='b'?rank[i]:i;e.style.transitionDelay=reduce?'0s':(s==='b'?rank[i]:i)*1.6+'ms';e.style.transform=`translateX(${(k*DW).toFixed(2)}px)`})});
+  const dateOf=i=>new Date(Date.UTC(2035,0,1+i)).toLocaleDateString('en-GB',{day:'numeric',month:'long',timeZone:'UTC'});
+  const hit=svgEl('rect',{x:X0,y:Y1,width:X1-X0,height:Y0-Y1,fill:'transparent'},g);
+  let on=-1;
+  hit.addEventListener('pointermove',e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());
+    const k=clamp(Math.floor((p.x-X0)/DW),0,ND-1),i=ui.get()==='b'?order[k]:k;if(i===on)return;if(on>=0)days[on].classList.remove('on');on=i;days[i].classList.add('on');
+    cap.innerHTML=`<b>${dateOf(i)}</b>: about ${r0(T[i])} GW of hydrogen in all, ${r0(Pw[i])} GW of it for power stations.`});
+  hit.addEventListener('pointerleave',()=>{if(on>=0)days[on].classList.remove('on');on=-1;cap.innerHTML=def[ui.get()]});
+  return{};
+})();
+
+/* ================= 6. our neighbours share our weather ================= */
+hooks.neighbours=(()=>{
+  const fig=$('#ill-map'),svg=fig.querySelector('svg'),E=MAP.eu,Pp=E.pts;
+  const defs=svgEl('defs',{},svg);const pat=svgEl('pattern',{id:'calm',width:7,height:7,patternUnits:'userSpaceOnUse',patternTransform:'rotate(-35)'},defs);
+  svgEl('rect',{width:7,height:7,style:'fill:var(--wash);opacity:.28'},pat);svgEl('line',{x1:0,y1:0,x2:7,y2:0,style:'stroke:var(--hi);stroke-width:1px;opacity:.45'},pat);
+  const cpm=svgEl('clipPath',{id:'map-clip'},defs);svgEl('rect',{x:0,y:0,width:540,height:400,rx:6},cpm);
+  const frame=svgEl('g',{'clip-path':'url(#map-clip)'},svg);
+  const base=svgEl('g',{},frame);
+  svgEl('path',{class:'land',d:E.land},base);svgEl('path',{class:'land',d:E.ni},base);
+  svgEl('path',{class:'bord',d:E.borders},base);
+  const cx=(Pp.cw[0]+Pp.ce[0])/2,cy=(Pp.cn[1]+Pp.cs[1])/2,rx=(Pp.ce[0]-Pp.cw[0])/2,ry=(Pp.cs[1]-Pp.cn[1])/2;
+  const calm=svgEl('ellipse',{class:'calm',cx,cy,rx,ry},base);
+  svgEl('path',{class:'gbs',d:E.gb},base);
+  const over=svgEl('g',{},frame);
+  const LINKS=[['kent','calais'],['hants','normandy'],['kent','zeebrugge'],['thames','maasvlakte'],['lincs','revsing'],['blyth','kvilldal'],['ayr','ni'],['deeside','dublin']];
+  const FAR=[['hants','iberia'],['hants','italy'],['hants','morocco'],['hants','me']];
+  const LAB=[['France','fr'],['Belgium','be'],['Netherlands','nl'],['Denmark','denmark'],['Norway','norway'],['Ireland','ie']];
+  const FARL=[['Southern Europe','iberia',0,22,'middle'],['North Africa','morocco',10,-10,'start'],['Middle East','me',-8,-12,'end']];
+  const arcs=LINKS.map(()=>({p:svgEl('path',{class:'ic'},over),a:svgEl('circle',{class:'end',r:3},over),b:svgEl('circle',{class:'end',r:3},over)}));
+  const far=FAR.map(()=>({p:svgEl('path',{class:'ic2 sb'},over),b:svgEl('circle',{class:'end2 sb',r:3.5},over)}));
+  const labs=LAB.map(([t])=>txt(over,0,0,t,{class:'lab'+(t==='Great Britain'?' b':'')}));
+  const farl=FARL.map(([t])=>txt(over,0,0,t,{class:'lab c2 sb'}));
+  const calmT=[txt(over,0,0,'One weather system can',{class:'calmlab sa'}),txt(over,0,0,'stretch across Northern Europe',{class:'calmlab sa'})];
+  // views: zoomed in on the North Sea, and the whole map
+  const box=['nwA','neA','swA','seA'].map(k=>Pp[k]),bx0=Math.min(...box.map(p=>p[0])),bx1=Math.max(...box.map(p=>p[0])),by0=Math.min(...box.map(p=>p[1])),by1=Math.max(...box.map(p=>p[1]));
+  const kA=Math.min(540/(bx1-bx0),400/(by1-by0));
+  const VA={k:kA,tx:270-kA*(bx0+bx1)/2,ty:200-kA*(by0+by1)/2},VB={k:1,tx:0,ty:(400-E.H)/2};
+  let V={...VA};
+  const T=p=>[p[0]*V.k+V.tx,p[1]*V.k+V.ty];
+  const arc=(a,b,bend)=>{const[x1,y1]=a,[x2,y2]=b,mx=(x1+x2)/2,my=(y1+y2)/2,dx=x2-x1,dy=y2-y1;return `M${x1.toFixed(1)},${y1.toFixed(1)}Q${(mx-dy*bend).toFixed(1)},${(my+dx*bend).toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`};
+  function place(){
+    base.setAttribute('transform',`translate(${V.tx.toFixed(2)},${V.ty.toFixed(2)}) scale(${V.k.toFixed(4)})`);
+    LINKS.forEach(([a,b],j)=>{const A=T(Pp[a]),Bp=T(Pp[b]);arcs[j].p.setAttribute('d',arc(A,Bp,.18));arcs[j].a.setAttribute('cx',A[0]);arcs[j].a.setAttribute('cy',A[1]);arcs[j].b.setAttribute('cx',Bp[0]);arcs[j].b.setAttribute('cy',Bp[1])});
+    FAR.forEach(([a,b],j)=>{const A=T(Pp[a]),Bp=T(Pp[b]);far[j].p.setAttribute('d',arc(A,Bp,-.16));far[j].b.setAttribute('cx',Bp[0]);far[j].b.setAttribute('cy',Bp[1])});
+    LAB.forEach(([t,k],j)=>{const p=T(Pp[k]),ie=t==='Ireland';labs[j].setAttribute('x',p[0]+(ie?-14:6));labs[j].setAttribute('y',p[1]+(ie?20:4));labs[j].setAttribute('text-anchor','start')});
+    FARL.forEach(([t,k,dx,dy,an],j)=>{const p=T(Pp[k]);farl[j].setAttribute('x',p[0]+dx);farl[j].setAttribute('y',p[1]+dy);farl[j].setAttribute('text-anchor',an)});
+    const ct=T([cx-rx*.98,cy-ry*.86]);calmT.forEach((t,j)=>{t.setAttribute('x',Math.max(8,ct[0]));t.setAttribute('y',Math.max(18,ct[1])+j*18)});
+  }
+  let stopZ=()=>{};
+  const to=W=>{stopZ();const V0={...V};stopZ=animate(1100,k=>{const e=ease(k);V={k:Math.exp(lerp(Math.log(V0.k),Math.log(W.k),e)),tx:lerp(V0.tx,W.tx,e),ty:lerp(V0.ty,W.ty,e)};place()})};
+  const caps={a:'Great Britain’s interconnectors in 2024 ran to France, Belgium, the Netherlands, Denmark, Norway and the island of Ireland; the lines are schematic. The shaded area illustrates a weather system that “extend[s] across Northern Europe” (<a data-para="139">paragraph 139</a>).',
+    b:'The committee wants the Government to explore links further afield, to Southern Europe, the Middle East and North Africa, to help with seasonal demand and escape Northern European weather (recommendation 51). Michael Liebreich suggested places north–south with very different weather, or east–west in other time zones (<a data-para="137">paragraph 137</a>).'};
+  place();
+  twoState('ill-map',caps,s=>to(s==='b'?VB:VA));
+  return{};
+})();
+
+/* ================= 7. themes ================= */
+const ORDER=['dunkel','scale','grid','invest','hydrogen','pace','plan'],SLIDE={dunkel:'reserve',scale:'scale',grid:'grid',invest:'invest',hydrogen:'hydrogen',pace:'pace',plan:'plan'};
+{
+  const PR=Object.fromEntries(D.priorities.map(p=>[p.id,p]));
+  $('#cards').innerHTML=ORDER.map(id=>{const p=PR[id],its=R.filter(r=>r.pri===id),nr=its.filter(isRec).length;
+    return `<button type="button" class="card" data-card="${id}"><span class="ct">${esc(p.title)}</span><span class="cs">${esc(p.summary)}</span><span class="strip" aria-hidden="true">${R.map(r=>`<i class="${r.pri===id?'on':''}" style="height:${Math.round(4+10*lf[r.n-1])}px"></i>`).join('')}</span><span class="cc">${its.length} paragraphs, ${nr} recommendation${nr===1?'':'s'}</span></button>`}).join('')
+    +`<p class="lead">Every one of the 61 paragraphs sits under one theme. The grouping is ours, not the committee’s.</p>`;
+  const cards=$('#cards');
+  cards.addEventListener('click',e=>{const c=e.target.closest('[data-card]');if(c)goTo(slides.findIndex(s=>s.id===SLIDE[c.dataset.card]))});
+  const peek=e=>{const c=e.target.closest('[data-card]');if(slides[active]&&slides[active].id==='themes')setLit(c?priSet(c.dataset.card):null)};
+  cards.addEventListener('pointerover',peek);cards.addEventListener('focusin',peek);
+  cards.addEventListener('pointerleave',()=>{if(slides[active].id==='themes')setLit(null)});
+  cards.addEventListener('focusout',e=>{if(!cards.contains(e.relatedTarget)&&slides[active].id==='themes')setLit(null)});
+}
+
+/* ================= 8. theme 1: a strategic reserve (illustration) ================= */
+hooks.reserve=(()=>{
+  const fig=$('#ill-res'),svg=fig.querySelector('svg');
+  hatch(svg,'hatch-res','var(--fg)',5,1.2);
+  const X0=96,X1=530,DAYS=56,X=d=>X0+(X1-X0)*d/DAYS,S0=33,S1=47;
+  const L={wind:[18,84],com:[124,174],res:[212,262]};
+  const yIn=(lane,v)=>L[lane][1]-(L[lane][1]-L[lane][0])*v;
+  const g=svgEl('g',{},svg);
+  svgEl('rect',{class:'still',x:X(S0),width:X(S1)-X(S0),y:4,height:266},g);
+  txt(g,(X(S0)+X(S1))/2,284,'A still spell of two weeks',{'text-anchor':'middle',class:'b'});
+  for(let w=0;w<=8;w++)svgEl('line',{class:'gl',x1:X(w*7),x2:X(w*7),y1:L.wind[1]+6,y2:L.wind[1]+10},g);
+  [['Wind','wind'],['Commercial','com'],['Strategic','res']].forEach(([t,k])=>{txt(g,0,L[k][0]+18,t,{class:'b'});txt(g,0,L[k][0]+34,k==='wind'?'output':k==='com'?'store':'reserve',{class:'b'});svgEl('path',{class:'lane',d:`M${X0},${L[k][1]}H${X1}`},g)});
+  // synthetic but deterministic weather and stores
+  const rand=rng(7),M=56*24,wind=[],com=[],res=[];
+  let w=.6;for(let h=0;h<=M;h++){const d=h/24;w+= (rand()-.5)*.09+(.62-w)*.02;w=clamp(w,.12,1);
+    const still=d>=S0&&d<S1,edge=still?Math.min(1,(d-S0)*2,(S1-d)*2):0;wind.push(still?lerp(w,.05+.03*Math.sin(h/5),edge):w)}
+  let c=.5;for(let h=0;h<=M;h++){const d=h/24;
+    if(d<S0||d>S1+2.5){c=.5+.38*Math.sin(2*Math.PI*(d-.3))}else if(d<S1){c=Math.max(0,c-.026)}else{c=Math.min(.5+.38*Math.sin(2*Math.PI*(d-.3)),c+.02)}
+    com.push(clamp(c))}
+  let rv=1;for(let h=0;h<=M;h++){const d=h/24;if(d>=S0&&d<S1)rv-=.55/(14*24);else if(d>=S1)rv=Math.min(1,rv+.12/(9*24));res.push(rv)}
+  const path=(arr,lane,step=3)=>{let s='';for(let h=0;h<=M;h+=step)s+=(h?'L':'M')+X(h/24).toFixed(1)+','+yIn(lane,arr[h]).toFixed(1);return s};
+  let wa=`M${X0},${L.wind[1]}`;for(let h=0;h<=M;h+=3)wa+='L'+X(h/24).toFixed(1)+','+yIn('wind',wind[h]).toFixed(1);wa+=`L${X1},${L.wind[1]}Z`;
+  const clipId='res-clip',cp=svgEl('clipPath',{id:clipId},svg.querySelector('defs')),cr=svgEl('rect',{x:0,y:0,width:X1+10,height:300},cp);
+  const gc=svgEl('g',{'clip-path':`url(#${clipId})`},g);
+  svgEl('path',{class:'wind',d:wa},gc);
+  const empty=com.findIndex((v,h)=>h/24>S0&&v<=0)/24;
+  const gap=svgEl('path',{class:'short',d:`M${X(empty)},${yIn('wind',.5)}H${X(S1)}V${yIn('wind',.06)}H${X(empty)}Z`},gc);
+  const cov=svgEl('path',{class:'cover',d:`M${X(S0)},${yIn('wind',.5)}H${X(S1)}V${yIn('wind',.06)}H${X(S0)}Z`},gc);
+  svgEl('path',{d:`M${X0},${yIn('wind',.5)}H${X1}`,style:'stroke:var(--fg);stroke-width:1.2;stroke-dasharray:5 4;fill:none'},gc);
+  txt(gc,X1,yIn('wind',.5)-6,'Demand',{'text-anchor':'end',class:'m halo'});
+  svgEl('path',{class:'lvl com',d:path(com,'com',2)},gc);
+  const rp=svgEl('path',{class:'lvl res',d:path(res,'res')},gc),rp0=svgEl('path',{class:'lvl res',d:`M${X0},${yIn('res',0)}H${X1}`,style:'stroke:var(--soft);stroke-dasharray:4 4'},gc);
+  const tGap=txt(gc,(X(empty)+X(S1))/2,yIn('wind',.28)+4,'Shortfall',{'text-anchor':'middle',class:'b'});
+  const tCov=txt(gc,(X(S0)+X(S1))/2,yIn('wind',.28)+4,'Reserve covers it',{'text-anchor':'middle',class:'b'});
+  const tNone=txt(gc,X0+6,yIn('res',0)-6,'No reserve',{class:'m'});
+  const showB=b=>{[cov,rp,tCov].forEach(e=>e.style.opacity=b?1:0);[gap,tGap,rp0,tNone].forEach(e=>e.style.opacity=b?0:1)};
+  [cov,rp,tCov,gap,tGap,rp0,tNone].forEach(e=>e.style.transition='opacity .5s');
+  const caps={a:'<b>Commercial storage only.</b> Stores built to trade fill and empty every day. When a long, still spell arrives they run dry within a day or two, leaving a gap. An illustration of the committee’s argument (conclusion 16), not modelling.',
+    b:'<b>With a strategic reserve.</b> A reserve held full for rare events carries the system through. Because it is needed only infrequently, paying it for use “would not be much use”; it would need “a capacity-payment type of product”, said Nick Winser (<a data-para="51">paragraph 51</a>).'};
+  twoState('ill-res',caps,s=>showB(s==='b'));
+  let played=false;cr.setAttribute('width',reduce?X1+10:0);
+  return{start(){if(played)return;played=true;animate(2600,k=>cr.setAttribute('width',(X1+10)*ease(k)))}};
+})();
+
+/* ================= 9. theme 2: how much, and how long ================= */
+hooks.scale=(()=>{
+  const fig=$('#ill-scale'),[svA,svB]=fig.querySelectorAll('svg'),inp=$('#scale-zoom'),out=$('#scale-out'),cap=$('#scale-cap');
+  // A: squares sized by energy
+  const X0=26,YB=306,TOPY=6;
+  const SQ=[
+    {v:2.6,t:'UK grid batteries',s:'2.6 GWh',c:'now'},
+    {v:26.7,t:'UK pumped hydro',s:'26.7 GWh',c:'now'},
+    {v:200,t:'One large salt cavern of hydrogen',s:'about 200 GWh',c:'one'},
+    {v:10000,t:'10 TWh, “pretty low-regrets”',s:'David Joffe, Climate Change Committee',c:'need'},
+    {v:25000,t:'25 TWh strategic reserve',s:'National Infrastructure Commission, by 2040',c:'need'},
+    {v:100000,t:'100 TWh',s:'the Royal Society’s estimate',c:'need'}];
+  const defs=svgEl('defs',{},svA),cp=svgEl('clipPath',{id:'sq-clip'},defs);svgEl('rect',{x:0,y:0,width:540,height:YB+1},cp);
+  const g=svgEl('g',{'clip-path':'url(#sq-clip)'},svA),gl=svgEl('g',{},svA);
+  const els=SQ.slice().reverse().map(o=>({o,r:svgEl('rect',{class:'sq '+o.c,x:X0},g)})).reverse();
+  SQ.forEach(o=>{o.l1=txt(gl,0,0,o.t,{class:'b'});o.l2=txt(gl,0,0,o.s,{class:'m'})});
+  const speck=txt(gl,0,0,'',{class:'r'}),speck2=txt(gl,0,0,'',{class:'m'}),lead=svgEl('path',{style:'stroke:var(--hi);stroke-width:1.2;fill:none'},gl);
+  const s0=150/Math.sqrt(26.7),s1=286/Math.sqrt(100000);
+  function zoom(z){const s=Math.exp(lerp(Math.log(s0),Math.log(s1),z));
+    els.forEach(({o,r})=>{const a=o.v<1000?Math.sqrt(o.v)*s:Math.sqrt(o.v)*s;r.setAttribute('y',(YB-a).toFixed(1));r.setAttribute('width',a.toFixed(1));r.setAttribute('height',a.toFixed(1));o.a=a});
+    let used=[];
+    SQ.forEach(o=>{const a=o.a,show=a>=16&&YB-a>=TOPY+12;let x=X0+a+8,y=YB-a+13,anc='start';
+      if(x+170>536){x=X0+a-8;y=YB-a+18;anc='end'}
+      if(used.some(u=>Math.abs(u-y)<30))y+=0;
+      [o.l1,o.l2].forEach((t,j)=>{t.setAttribute('x',x);t.setAttribute('y',y+j*15);t.setAttribute('text-anchor',anc);t.style.opacity=show?1:0});used.push(y)});
+    const tiny=SQ[1].a<14;speck.style.opacity=speck2.style.opacity=lead.style.opacity=tiny?1:0;
+    if(tiny){const xx=X0+SQ[1].a,yy=YB-SQ[1].a;lead.setAttribute('d',`M${xx+2},${yy-2}L${X0+16},${YB-26}`);speck.setAttribute('x',X0+20);speck.setAttribute('y',YB-30);speck.textContent='Today’s low-carbon storage:';speck2.setAttribute('x',X0+20);speck2.setAttribute('y',YB-15);speck2.textContent='a speck in the corner'}
+    out.textContent=z<.15?'Today’s storage':z>.85?'What is needed':'Zooming out…'}
+  inp.addEventListener('input',()=>{stopZ();zoom(inp.value/1000)});
+  // B: how long, from box 2
+  const H0=.25,H1=17520,BX0=150,BX1=530,lx=h=>BX0+(BX1-BX0)*(Math.log(h)-Math.log(H0))/(Math.log(H1)-Math.log(H0));
+  const gb=svgEl('g',{class:'rul'},svB);
+  const TK=[[1,'1 hour'],[6,'6 hours'],[24,'1 day'],[168,'1 week'],[730,'1 month'],[8760,'1 year']];
+  const ZT=58,ZB=292;
+  svgEl('rect',{x:lx(4),width:lx(24)-lx(4),y:ZT-22,height:ZB-ZT+22,style:'fill:var(--glass)'},gb);
+  svgEl('rect',{x:lx(72),width:BX1-lx(72),y:ZT-22,height:ZB-ZT+22,style:'fill:var(--wash);opacity:.7'},gb);
+  txt(gb,lx(4)+4,ZT-28,'Medium',{class:'b'});txt(gb,lx(72)+6,ZT-28,'Long duration',{class:'b'});
+  txt(gb,lx(4)+4,ZT-10,'4–24 h',{class:'m'});txt(gb,lx(72)+6,ZT-10,'days to years',{class:'m'});
+  TK.forEach(([h,t])=>{svgEl('line',{class:'gl',x1:lx(h),x2:lx(h),y1:ZT,y2:ZB},gb);txt(gb,lx(h),ZB+16,t,{'text-anchor':'middle',class:'m'})});
+  svgEl('line',{class:'thr',x1:lx(6),x2:lx(6),y1:ZT-4,y2:ZB+2},gb);
+  const TECH=[
+    {n:'Lithium-ion',a:1,b:2,from:H0,lab:'1–2 hours at most',d:'Seconds, minutes, or 1–2 hours at most, at a round-trip efficiency of up to 90%. The largest single installation is around 3 GWh.'},
+    {n:'Liquid air',a:2,b:4,lab:'a few hours',d:'Storage for a few hours, on less than GWh scale, at a round-trip efficiency of around 55%.'},
+    {n:'Pumped hydro',b:15,from:H0,lab:'up to 15 hours',d:'Typically up to 15 hours, at 50–80% efficiency. The UK has 2.8 GW; Dinorwig, the largest, stores about 9.1 GWh. It needs the right landscape.'},
+    {n:'Compressed air',a:6,b:24,lab:'6–24 hours',d:'6–24 hours, at 40–70% efficiency; a single cavern could store up to 10 GWh. Commercial-scale plants exist, especially in China.'},
+    {n:'Flow batteries',b:100,from:H0,lab:'up to 100 hours',d:'Up to 100 hours, at 50–80% efficiency. The largest today stores 400 MWh, but GWh scale is possible.'},
+    {n:'Metal-anode batteries',b:200,from:H0,lab:'up to 200 hours',d:'Up to 200 hours, at 40–70% efficiency, but at an earlier stage of development.'},
+    {n:'Hydrogen',a:168,b:8760,more:true,lab:'weeks to months, even years',d:'Weeks and months, even years, at a round-trip efficiency of only 30–40%, but storing large volumes for months is relatively cheap. A single large cavern could store 200 GWh.'}];
+  const rows=TECH.map((o,j)=>{const y=ZT+18+j*32,r=svgEl('g',{class:'row',tabindex:0,role:'button','aria-label':o.n+': '+o.lab},gb);
+    svgEl('rect',{x:0,y:y-14,width:BX1,height:28,fill:'transparent'},r);
+    txt(r,0,y+4,o.n);
+    if(o.from)svgEl('line',{class:'ln',x1:lx(o.from),x2:lx(o.a||o.b),y1:y,y2:y,'stroke-dasharray':'2 3'},r);
+    if(o.a)svgEl('line',{class:'rg',x1:lx(o.a),x2:lx(o.b),y1:y,y2:y},r);else svgEl('circle',{class:'mx',cx:lx(o.b),cy:y,r:5},r);
+    if(o.more)svgEl('path',{d:`M${lx(o.b)+8},${y}h18m-5,-4l5,4l-5,4`,style:'stroke:var(--hi);stroke-width:2;fill:none'},r);
+    const right=lx(o.b)+(o.more?32:10);txt(r,right+200>BX1+60?lx(o.a||o.b)-10:right,y-9,o.lab,{class:'m','text-anchor':right+200>BX1+60?'end':'start','font-size':'11.5'});
+    return r});
+  const capB='How long each technology can typically keep supplying power, from box 2 of the report, on a scale from minutes to years. The report calls 4 to 24 hours ‘medium duration’ and days to years ‘long duration’ (<a data-para="6">paragraph 6</a>); the Government proposed counting anything over 6 hours, dashed (<a data-para="44">paragraph 44</a>). Choose a row.';
+  const pick=j=>{rows.forEach((r,k)=>r.classList.toggle('on',k===j));if(j<0){cap.innerHTML=capB;linkParas(cap);return}cap.innerHTML=`<b>${esc(TECH[j].n)}.</b> ${esc(TECH[j].d)} (box 2)`};
+  rows.forEach((r,j)=>{r.addEventListener('pointerenter',()=>pick(j));r.addEventListener('focus',()=>pick(j));r.addEventListener('click',()=>pick(j));r.addEventListener('pointerleave',()=>pick(-1))});
+  const capA='Each square’s area is the energy it stores: the UK’s low-carbon storage today from box 1, a single salt cavern from <a data-para="61">paragraph 61</a>, and the scale the evidence points to (<a data-para="17">paragraphs 17</a> and <a data-para="51">51</a>, box 3). Drag to zoom.';
+  twoState('ill-scale',{a:capA,b:capB});
+  let stopZ=()=>{},played=false;
+  zoom(0);
+  return{start(){if(played)return;played=true;setTimeout(()=>{stopZ=animate(3600,k=>{const z=ease(k);inp.value=Math.round(z*1000);zoom(z)})},700)},stop(){stopZ()}};
+})();
+
+/* ================= 10. theme 3: the grid (diagram on a map of Great Britain) ================= */
+hooks.grid=(()=>{
+  const fig=$('#ill-grid'),svg=fig.querySelector('svg'),G=MAP.gb,Q=G.pts;
+  const g=svgEl('g',{},svg);
+  svgEl('path',{class:'gbl',d:G.land},g);
+  const W=[['wind4','highland','wind1','wind2','border','manc','brum','london'],['moray','wind3','forth','border','leeds','gas2','london']];
+  const routes=W.map(r=>polyline(r.map(k=>Q[k])));
+  W.forEach(r=>svgEl('path',{class:'tl',d:'M'+r.map(k=>Q[k].join(',')).join('L')},g));
+  const nb=Q.border;svgEl('circle',{class:'neck',cx:nb[0],cy:nb[1],r:11},g);
+  ['london','brum','manc','leeds','bristol'].forEach(k=>svgEl('circle',{class:'city',cx:Q[k][0],cy:Q[k][1],r:k==='london'?4.5:3.2},g));
+  const gas=['gas','gas2'].map(k=>{const[x,y]=Q[k],e=svgEl('g',{class:'gasp'},g);svgEl('rect',{x:x-6,y:y-5,width:12,height:9,rx:1.5},e);svgEl('rect',{x:x+1,y:y-12,width:3,height:8},e);return e});
+  const st=svgEl('g',{class:'store'},g),sx=52,sy=96,sh=30;
+  svgEl('path',{class:'o',d:capsule(sx,sy,sy+sh,7)},st);const sf=svgEl('path',{class:'f'},st);
+  const TB=['wind1','wind2','wind3','wind4','moray'].map((k,j)=>{const[x,y]=Q[k],e=svgEl('g',{},g),m=svgEl('line',{class:'tb',x1:x,y1:y,x2:x,y2:y-16},e);const bl=[0,1,2].map(()=>svgEl('line',{class:'tb'},e));return{k,x,y:y-16,bl,m,ang:j*.7,idle:false}});
+  const blades=t=>t.bl.forEach((b,j)=>{const a=t.ang+j*2.094;b.setAttribute('x1',t.x);b.setAttribute('y1',t.y);b.setAttribute('x2',(t.x+10*Math.cos(a)).toFixed(1));b.setAttribute('y2',(t.y+10*Math.sin(a)).toFixed(1))});
+  TB.forEach(blades);
+  const gp=svgEl('g',{},g);
+  const LX=262,lab=(y,tx,ty)=>{const l=svgEl('path',{style:'stroke:var(--mute);stroke-width:1;fill:none'},g),t1=txt(g,LX,y,'',{class:'b'}),t2=txt(g,LX,y+16,'',{class:'m'});
+    const o={l,t1,t2,set(a,b,x,yy){t1.textContent=a;t2.textContent=b;l.setAttribute('d',`M${LX-4},${y-4}L${x},${yy}`)}};if(tx!=null)o.set('','',tx,ty);return o};
+  const l1=lab(36),l2=lab(102),l3=lab(170),l4=lab(236),l5=lab(298);
+  l1.set('Wind in the north','strongest where few people live',Q.moray[0]+6,Q.moray[1]-14);
+  l3.set('Lines south are full','at the border, in this diagram',nb[0]+12,nb[1]-2);
+  l4.set('Demand in the south','most of the people and industry',Q.brum[0]+6,Q.brum[1]-2);
+  let st8='a',fill=.15,parts=[],run=0,last=0,spawnT=0;
+  function setState(s){st8=s;TB.forEach(t=>{t.idle=s==='a'&&(t.k==='wind3'||t.k==='moray');t.bl.concat(t.m).forEach(b=>b.classList.toggle('idle',t.idle))});
+    gas.forEach(e=>e.style.opacity=s==='a'?1:.22);
+    if(s==='a'){l2.set('Wind turned down','surplus with nowhere to go',Q.wind3[0]+8,Q.wind3[1]-12);l5.set('Gas turned up','to meet demand in the south',Q.gas[0]+8,Q.gas[1])}
+    else{l2.set('Storage soaks up the surplus','and releases it when lines have room',sx+9,sy+12);l5.set('Gas stays off','in this diagram',Q.gas[0]+8,Q.gas[1])}
+    if(reduce||!run){fill=s==='b'?.8:.15;sf.setAttribute('d',capFill(sx,sy,sy+sh,7,fill))}}
+  const toStore=['wind3','moray','wind4'].map(k=>polyline([[Q[k][0],Q[k][1]],[sx,sy+sh/2]]));
+  const gasRoute=[polyline([Q.gas,Q.london]),polyline([Q.gas2,Q.brum])];
+  function frame(now){const dt=Math.min(.05,(now-(last||now))/1000);last=now;spawnT-=dt;
+    TB.forEach(t=>{if(!t.idle)t.ang+=dt*3.2;blades(t)});
+    if(spawnT<=0){spawnT=.17;parts.push({p:routes[Math.random()<.5?0:1],d:0,v:62,c:''});
+      if(st8==='a')parts.push({p:gasRoute[Math.random()<.5?0:1],d:0,v:30,c:'g'});
+      else parts.push({p:toStore[Math.floor(Math.random()*3)],d:0,v:45,c:'',into:true})}
+    parts=parts.filter(o=>{o.d+=o.v*dt;if(o.d>=o.p.L){if(o.into)fill=Math.min(.9,fill+.012);o.el&&o.el.remove();return false}
+      if(!o.el)o.el=svgEl('circle',{class:'pt '+o.c,r:2.4},gp);const[x,y]=o.p.at(o.d);o.el.setAttribute('cx',x.toFixed(1));o.el.setAttribute('cy',y.toFixed(1));return true});
+    if(st8==='a')fill=Math.max(.15,fill-dt*.06);
+    sf.setAttribute('d',capFill(sx,sy,sy+sh,7,fill));
+    run=requestAnimationFrame(frame)}
+  const caps={a:'<b>Lines full.</b> When transmission lines are at capacity, surplus wind in the north is turned down and gas in the south turned up, which costs money and adds emissions (<a data-para="9">paragraph 9</a>). A diagram, not a map of real projects.',
+    b:'<b>With storage.</b> Storage near the wind farms can “alleviate constraints” and “de-bottleneck” the grid (<a data-para="112">paragraph 112</a>), releasing energy when the lines have room. It does not replace new lines: the committee wants networks “substantially improved and expanded” too (conclusion 56).'};
+  twoState('ill-grid',caps,setState);
+  return{start(){if(reduce)return;last=0;cancelAnimationFrame(run);run=requestAnimationFrame(frame)},
+    stop(){cancelAnimationFrame(run);run=0;parts.forEach(o=>o.el&&o.el.remove());parts=[]}};
+})();
+
+/* ================= 11. theme 4: cap and floor (illustration) ================= */
+hooks.invest=(()=>{
+  const fig=$('#ill-cap'),svg=fig.querySelector('svg');
+  hatch(svg,'hatch-cap','var(--cool)',5,1.4);
+  const NY=20,X0=58,X1=526,Y0=240,Y1=14,X=t=>X0+(X1-X0)*t/(NY-1),Yv=v=>Y0-(Y0-Y1)*v/200,CAPV=130,FLR=70;
+  const g=svgEl('g',{},svg),defs=svg.querySelector('defs');
+  [0,50,100,150,200].forEach(v=>svgEl('line',{class:'gl',x1:X0,x2:X1,y1:Yv(v),y2:Yv(v)},g));
+  for(let t=0;t<NY;t+=5)txt(g,X(t),Y0+18,'Year '+(t+1),{'text-anchor':'middle',class:'m'});
+  txt(g,X0-8,Yv(190)+4,'Revenue',{'text-anchor':'end',class:'m'});
+  const c1=svgEl('clipPath',{id:'cap-up'},defs);svgEl('rect',{x:0,y:0,width:540,height:Yv(CAPV)},c1);
+  const c2=svgEl('clipPath',{id:'cap-dn'},defs);svgEl('rect',{x:0,y:Yv(FLR),width:540,height:300},c2);
+  const above=svgEl('path',{class:'above sb','clip-path':'url(#cap-up)'},g),below=svgEl('path',{class:'below sb','clip-path':'url(#cap-dn)'},g);
+  svgEl('line',{class:'capl',x1:X0,x2:X1,y1:Yv(CAPV),y2:Yv(CAPV)},g);svgEl('line',{class:'flrl',x1:X0,x2:X1,y1:Yv(FLR),y2:Yv(FLR)},g);
+  txt(g,X0-8,Yv(CAPV)+4,'Cap',{'text-anchor':'end',class:'b'});txt(g,X0-8,Yv(FLR)+4,'Floor',{'text-anchor':'end',class:'b'});
+  const mk=svgEl('path',{class:'mk'},g),kept=svgEl('path',{class:'kept sb'},g);
+  const ta=txt(g,0,0,'Handed back',{class:'b sb','text-anchor':'middle'}),tb=txt(g,0,0,'Topped up',{class:'b sb','text-anchor':'middle'});
+  let seed=3,cur=null;
+  const series=s=>{const r=rng(s*7919+1),v=[];let x=100;for(let t=0;t<NY;t++){const e=(r()+r()+r()-1.5)*1.6;x=100+.5*(x-100)+38*e;v.push(clamp(x,12,192))}return v};
+  function paint(v){const pts=v.map((y,t)=>[X(t),Yv(y)]),line='M'+pts.map(p=>p.map(n=>n.toFixed(1)).join(',')).join('L');
+    mk.setAttribute('d',line);
+    above.setAttribute('d',line+`L${X1},${Yv(CAPV)}L${X0},${Yv(CAPV)}Z`);below.setAttribute('d',line+`L${X1},${Yv(FLR)}L${X0},${Yv(FLR)}Z`);
+    let kd='';for(let i=0;i<=200;i++){const t=i/200*(NY-1),a=Math.floor(Math.min(t,NY-2)),k=t-a,y=lerp(v[a],v[a+1],k);kd+=(i?'L':'M')+X(t).toFixed(1)+','+Yv(clamp(y,FLR,CAPV)).toFixed(1)}
+    kept.setAttribute('d',kd);
+    const iu=v.indexOf(Math.max(...v)),idn=v.indexOf(Math.min(...v));
+    ta.setAttribute('x',X(iu));ta.setAttribute('y',Yv(Math.max(...v))-8);ta.style.visibility=Math.max(...v)>CAPV+8?'visible':'hidden';
+    tb.setAttribute('x',X(idn));tb.setAttribute('y',Yv(Math.min(...v))+18);tb.style.visibility=Math.min(...v)<FLR-8?'visible':'hidden'}
+  function next(){const v1=series(seed++),v0=cur||v1.map(()=>100);cur=v1;animate(650,k=>paint(v0.map((y,i)=>lerp(y,v1[i],ease(k)))))}
+  $('#cap-again').addEventListener('click',next);
+  const caps={a:'<b>The market alone.</b> Income from trading swings with prices, so storage can be “a risky and uncertain investment, regardless of how important” it is for the grid (box 4). An illustration, not data.',
+    b:'<b>With a cap and floor.</b> If revenue falls below the floor, the difference is paid to the project; above the cap, the extra is handed back. The floor limits investors’ risk, while the project still has reason to earn up to the cap. The same scheme has supported electricity interconnectors (box 4).'};
+  twoState('ill-cap',caps);
+  next();
+  return{};
+})();
+
+/* ================= 12. theme 5: hydrogen, the long-duration store ================= */
+hooks.hydrogen=(()=>{
+  const fig=$('#ill-h2'),svg=fig.querySelector('svg');
+  const g=svgEl('g',{},svg),GY=128;
+  svgEl('rect',{class:'salt',x:0,y:196,width:540,height:134,rx:6},g);
+  txt(g,532,322,'Rock salt',{'text-anchor':'end',class:'m'});
+  svgEl('line',{class:'ground',x1:0,x2:540,y1:GY,y2:GY},g);
+  // kit on the surface
+  const TX=46,TY=50;svgEl('line',{class:'blade',x1:TX,y1:GY,x2:TX,y2:TY},g);const blades=[0,1,2].map(()=>svgEl('line',{class:'blade'},g));
+  const kit=(x,w,h,label)=>{svgEl('rect',{class:'kit',x,y:GY-h,width:w,height:h,rx:3},g);txt(g,x+w/2,GY-h-10,label,{'text-anchor':'middle',class:'b'})};
+  kit(116,72,28,'Electrolyser');svgEl('rect',{class:'kit',x:344,y:GY-34,width:64,height:34,rx:3},g);svgEl('rect',{class:'kit',x:394,y:GY-54,width:8,height:20},g);txt(g,372,GY-62,'Power station',{'text-anchor':'middle',class:'b'});
+  const PX=486;svgEl('path',{class:'kit',d:`M${PX-12},${GY}L${PX},${GY-62}L${PX+12},${GY}M${PX-9},${GY-16}H${PX+9}M${PX-6},${GY-34}H${PX+6}M${PX-14},${GY-50}H${PX+14}`,style:'fill:none'},g);
+  txt(g,PX,GY-70,'Grid',{'text-anchor':'middle',class:'b'});txt(g,TX,TY-30+0,'Wind',{'text-anchor':'middle',class:'b'});
+  // well, cavern, pipes
+  const WX=268,CT=212,CB=314,CR=36;
+  svgEl('path',{class:'pipe',d:`M188,${GY-10}H${WX}V${CT}`},g);svgEl('path',{class:'pipe',d:`M${WX},${GY-10}H344`},g);
+  svgEl('path',{class:'pipe',d:`M${TX},${GY-4}H116`,style:'stroke-dasharray:2 4'},g);svgEl('path',{class:'pipe',d:`M408,${GY-12}H${PX-10}`,style:'stroke-dasharray:2 4'},g);
+  svgEl('path',{class:'cav',d:capsule(WX,CT,CB,CR)},g);const cf=svgEl('path',{class:'cavf'},g);
+  txt(g,WX+CR+12,CT+30,'Salt cavern',{class:'b'});
+  txt(g,WX+CR+12,CT+48,'One large cavern holds',{class:'m'});txt(g,WX+CR+12,CT+64,'about 200 GWh: more than',{class:'m'});txt(g,WX+CR+12,CT+80,'seven times the UK’s',{class:'m'});txt(g,WX+CR+12,CT+96,'pumped hydro',{class:'m'});
+  const mIn=txt(g,24,174,'100',{class:'meter'}),mInL=txt(g,24,190,'units of electricity in',{class:'m'});
+  const mOut=txt(g,516,174,'30–40',{class:'meter','text-anchor':'end'}),mOutL=txt(g,516,190,'units back out',{class:'m','text-anchor':'end'});
+  const gp=svgEl('g',{},g);
+  const R1=polyline([[TX,GY-4],[116,GY-4]]),R2=polyline([[188,GY-10],[WX,GY-10],[WX,CT+8]]),R3=polyline([[WX,CT+8],[WX,GY-10],[344,GY-10]]),R4=polyline([[408,GY-12],[PX-10,GY-12]]);
+  let st8='a',lev=.35,parts=[],run=0,last=0,sp=0,ang=0;
+  const setMeters=s=>{mIn.style.opacity=mInL.style.opacity=s==='a'?1:.3;mOut.style.opacity=mOutL.style.opacity=s==='b'?1:.3};
+  function frame(now){const dt=Math.min(.05,(now-(last||now))/1000);last=now;sp-=dt;
+    if(st8==='a')ang+=dt*3;blades.forEach((b,j)=>{const a=ang+j*2.094;b.setAttribute('x1',TX);b.setAttribute('y1',TY);b.setAttribute('x2',(TX+22*Math.cos(a)).toFixed(1));b.setAttribute('y2',(TY+22*Math.sin(a)).toFixed(1))});
+    if(sp<=0){sp=.2;if(st8==='a'){parts.push({p:R1,d:0,v:60,c:'pe'});parts.push({p:R2,d:0,v:70,c:'ph',into:1})}else{parts.push({p:R3,d:0,v:70,c:'ph'});parts.push({p:R4,d:0,v:60,c:'pe'})}}
+    parts=parts.filter(o=>{o.d+=o.v*dt;if(o.d>=o.p.L){o.el&&o.el.remove();return false}if(!o.el)o.el=svgEl('circle',{class:o.c,r:3},gp);const[x,y]=o.p.at(o.d);o.el.setAttribute('cx',x.toFixed(1));o.el.setAttribute('cy',y.toFixed(1));return true});
+    lev=clamp(lev+(st8==='a'?.05:-.05)*dt,.12,.9);cf.setAttribute('d',capFill(WX,CT,CB,CR,lev));
+    run=requestAnimationFrame(frame)}
+  const caps={a:'<b>Store a surplus.</b> Surplus electricity from wind and solar splits water into hydrogen and oxygen, and the hydrogen is pumped into a cavern in underground rock salt (box 2). A single large cavern could store around 200 GWh (<a data-para="61">paragraph 61</a>).',
+    b:'<b>Release in a still spell.</b> The hydrogen comes back up and is burned to generate electricity. Only 30–40% of the electricity comes back, but storing large volumes for months is relatively cheap, so hydrogen suits long, infrequent use (box 2).'};
+  twoState('ill-h2',caps,s=>{st8=s;setMeters(s);if(reduce)cf.setAttribute('d',capFill(WX,CT,CB,CR,s==='a'?.8:.25))});
+  cf.setAttribute('d',capFill(WX,CT,CB,CR,lev));blades.forEach((b,j)=>{const a=j*2.094;b.setAttribute('x1',TX);b.setAttribute('y1',TY);b.setAttribute('x2',TX+22*Math.cos(a));b.setAttribute('y2',TY+22*Math.sin(a))});
+  return{start(){if(reduce)return;last=0;cancelAnimationFrame(run);run=requestAnimationFrame(frame)},stop(){cancelAnimationFrame(run);parts.forEach(o=>o.el&&o.el.remove());parts=[]}};
+})();
+
+/* ================= 13. theme 6: pace, not perfection ================= */
+hooks.pace=(()=>{
+  const fig=$('#ill-pace'),svg=fig.querySelector('svg'),inp=$('#pace-year'),out=$('#pace-out'),cap=$('#pace-cap');
+  hatch(svg,'hatch-pace','var(--amber)',5,1.6);hatch(svg,'hatch-late','var(--fg)',5,1.4);
+  const Y0=2023,Y1=2042,X0=178,X1=528,X=y=>X0+(X1-X0)*(y-Y0)/(Y1-Y0);
+  const g=svgEl('g',{},svg);
+  for(let y=2025;y<=2040;y+=5){svgEl('line',{class:'gl',x1:X(y),x2:X(y),y1:28,y2:236},g);txt(g,X(y),254,y,{'text-anchor':'middle',class:'m'})}
+  svgEl('line',{class:'tgt',x1:X(2035),x2:X(2035),y1:16,y2:236},g);txt(g,X(2035)-6,24,'2035: a decarbonised grid',{class:'b','text-anchor':'end'});
+  const sl=svgEl('line',{class:'startl',y1:30,y2:236},g),slt=txt(g,0,272,'',{class:'r','text-anchor':'middle'});
+  const ROWS=[
+    {n:'Most storage',s:'conclusion 11',a:7,b:10},
+    {n:'Gas pipelines',s:'paragraph 33',a:7,b:12},
+    {n:'Electricity transmission',s:'paragraph 33',a:12,b:14,half:7}];
+  const gb=svgEl('g',{class:'bars'},g);
+  const bars=ROWS.map((o,j)=>{const y=52+j*56;txt(g,0,y+4,o.n,{class:'b'});txt(g,0,y+20,`${o.a}–${o.b} years (${o.s})`,{class:'m'});
+    return{o,y,lead:svgEl('rect',{class:'bar0',y:y-1,height:2},gb),e:svgEl('rect',{class:'bar1',y:y-9,height:18,rx:3},gb),l:svgEl('rect',{class:'late1',y:y-9,height:18,rx:3},gb),
+      h:o.half?svgEl('path',{style:'fill:none;stroke:var(--fg);stroke-width:1.5;stroke-dasharray:2 2'},gb):null,ht:o.half?txt(gb,0,0,'if halved, as planned',{class:'m','font-size':'11.5'}):null}});
+  const yG=52+3*56-4;
+  txt(g,0,yG+4,'A grid connection',{class:'b'});txt(g,0,yG+20,'one project’s offer (paragraph 111)',{class:'m'});
+  svgEl('path',{d:`M${X(2037.83)},${yG-9}l9,9l-9,9l-9,-9z`,style:'fill:var(--fg)'},g);txt(g,X(2037.83)-14,yG+4,'November 2037',{'text-anchor':'end',class:'b'});
+  function set(y){out.textContent=y;sl.setAttribute('x1',X(y));sl.setAttribute('x2',X(y));slt.setAttribute('x',X(y));slt.textContent='Work starts';
+    bars.forEach(({o,y:yy,lead,e,l,h,ht})=>{const a=y+o.a,b=y+o.b;
+      lead.setAttribute('x',X(y));lead.setAttribute('width',Math.max(0,X(a)-X(y)));
+      const ea=a,eb=Math.min(b,2035);e.setAttribute('x',X(ea));e.setAttribute('width',Math.max(0,X(eb)-X(ea)));
+      const la=Math.max(a,2035);l.setAttribute('x',X(la));l.setAttribute('width',Math.max(0,X(b)-X(la)));
+      if(h){const xh=X(y+o.half);h.setAttribute('d',`M${xh},${yy-14}V${yy+14}`);ht.setAttribute('x',xh-4);ht.setAttribute('y',yy-16);ht.setAttribute('text-anchor','end')}});
+    const a=y+7,b=y+10,v=b<=2035?'in time for 2035.':a>2035?'too late for 2035.':'in time for 2035 only if it goes quickly.';
+    cap.innerHTML=`<b>Start in ${y}:</b> most storage would be ready between ${a} and ${b}, ${v} Shaded bars run from the shortest to the longest lead time; the part after 2035 is hatched. Lead times from conclusion 11 and <a data-para="33">paragraph 33</a>; the plan to halve transmission times to 7 years is in <a data-para="152">paragraph 152</a>.`;linkParas(cap)}
+  inp.addEventListener('input',()=>set(+inp.value));
+  set(+inp.value);
+  return{};
+})();
+
+/* ================= 14. theme 7: a plan and a guiding mind ================= */
+hooks.plan=(()=>{
+  const fig=$('#ill-plan'),svg=fig.querySelector('svg'),cap=$('#plan-cap');
+  const g=svgEl('g',{},svg);
+  const SILOS=[
+    {n:['System','operator'],b:'writes the plan',d:'“The whole-system planner, the operator of the electricity system and an expert adviser”, DESNZ officials said (<a data-para="148">paragraph 148</a>). The committee wants it “appropriately empowered and resourced” (recommendation 55).'},
+    {n:['The','Government'],b:'decides, commits all',d:'“The Government’s role is to set the policy direction” (<a data-para="148">paragraph 148</a>). The committee wants it to take the plan’s decisions swiftly and commit every actor to delivering them (recommendation 60).'},
+    {n:['Ofgem'],b:'endorses it',d:'“The independent regulator … it makes decisions on business and investment plans” (<a data-para="148">paragraph 148</a>). It now has a Net Zero mandate, and should endorse the plan in line with it (recommendation 60).'},
+    {n:['Network','owners'],b:'build the lines',d:'They own the wires and substations. Networks for electricity and hydrogen “will need to be substantially improved and expanded” (conclusion 56).'},
+    {n:['Energy','companies'],b:'build the stores',d:'They build and run storage. Without some assurance about how networks will evolve, “it will be hard for investors to make large-scale investment decisions into storage” (conclusion 56).'}];
+  const SW=86,GAPW=(540-5*SW)/4,TOP=70,BOT=290,PY=172;
+  const band=svgEl('rect',{class:'planb',x:0,y:PY-15,width:540,height:30,rx:4},g);
+  const bt=txt(g,270,PY+5,'The Strategic Spatial Energy Plan',{'text-anchor':'middle',class:'w sb','font-size':'14'});
+  const q=txt(g,270,34,'Who takes the decisions?',{class:'q sa'});
+  const silos=SILOS.map((s,j)=>{const x=j*(SW+GAPW),e=svgEl('g',{class:'silo',tabindex:0,role:'button','aria-label':s.n.join(' ')},g);
+    svgEl('rect',{x,y:TOP,width:SW,height:BOT-TOP,rx:SW/2.6},e);
+    s.n.forEach((t,k)=>txt(e,x+SW/2,TOP+40+k*16,t));
+    const bl=txt(g,x+SW/2,BOT+22,s.b,{'text-anchor':'middle',class:'m sb','font-size':'11.5'});
+    return e});
+  g.appendChild(band);g.appendChild(bt);
+  const arw=svgEl('g',{class:'arw sb'},g);
+  for(let j=0;j<4;j++){const x=(j+1)*(SW+GAPW)-GAPW/2;svgEl('path',{d:`M${x-8},${PY-26}h16m-5,-4l5,4l-5,4`},arw)}
+  const caps={a:'<b>Silos.</b> “There are lots of different bodies and, historically, the energy system has been quite siloed in how it thinks and how it operates” (Claire Dykta, then at the ESO, <a data-para="144">paragraph 144</a>). Choose a body to see its role.',
+    b:'<b>With a plan.</b> The system operator writes the Strategic Spatial Energy Plan, the Government takes its decisions swiftly and commits everyone to them, and Ofgem endorses it (recommendation 60). The committee asks whether the plan needs a statutory basis (recommendation 61).'};
+  const ui=twoState('ill-plan',caps);
+  const pick=j=>{silos.forEach((e,k)=>e.classList.toggle('on',k===j));if(j<0){cap.innerHTML=caps[ui.get()];linkParas(cap);return}cap.innerHTML=`<b>${SILOS[j].n.join(' ')}.</b> ${SILOS[j].d}`;linkParas(cap)};
+  silos.forEach((e,j)=>{e.addEventListener('click',()=>pick(j));e.addEventListener('focus',()=>pick(j));e.addEventListener('pointerenter',()=>pick(j));e.addEventListener('pointerleave',()=>pick(-1))});
+  return{};
+})();
+
+/* ================= 15. who is asked to act ================= */
+hooks.who=(()=>{
+  const acts=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||a.full.localeCompare(b.full));
+  const big=acts.filter(a=>actorCount[a.id]>=2),small=acts.filter(a=>actorCount[a.id]<2),max=actorCount[acts[0].id];
+  $('#wbars').innerHTML=big.map((a,i)=>`<a class="wb" href="explore/#to=${a.id}" data-to="${a.id}" title="${esc(a.full)}"><span class="wn">${esc(a.name)}</span><span class="wt"><i style="--w:${(actorCount[a.id]/max*100).toFixed(1)}%;--d:${(i*.07).toFixed(2)}s"></i></span><span class="wc">${actorCount[a.id]}</span></a>`).join('');
+  const the=a=>({gov:'the Government',fso:'the system operator',ofgem:'Ofgem',industry:'industry',desnz:'the Department for Energy Security and Net Zero',ukri:'UK Research and Innovation',faraday:'the Faraday Institution'}[a.id]||a.full);
+  $('#wmore').innerHTML=small.length?`${small.length} more bodies are each named in one recommendation: `+small.map(a=>`<a href="explore/#to=${a.id}" data-to="${a.id}">${esc(the(a))}</a>`).join(', ')+'. The system operator is the ESO, which became the National Energy System Operator in October 2024.':'';
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length,[a1,a2,a3]=acts;
+  const T=s=>s.charAt(0).toUpperCase()+s.slice(1);
+  $('#who-lede').textContent=`${T(the(a1))} is asked to act in ${actorCount[a1.id]} of the ${nRec} recommendations, followed by ${the(a2)} (${actorCount[a2.id]}) and ${the(a3)} (${actorCount[a3.id]}). In ${multi} recommendations, more than one body is asked to act.`;
+  const sec=$('#who');
+  const peek=e=>{const a=e.target.closest('[data-to]');if(slides[active]&&slides[active].id==='who')setLit(a?new Set(R.filter(r=>r.to.includes(a.dataset.to)).map(r=>r.n)):null)};
+  sec.addEventListener('pointerover',peek);sec.addEventListener('focusin',peek);
+  sec.addEventListener('pointerleave',()=>{if(slides[active].id==='who')setLit(null)});
+  return{start(){sec.classList.add('on')}};
+})();
+
+/* ================= start ================= */
+size();
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)activate(slides.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px'});
+const startAt=slides.findIndex(s=>'#'+s.id===location.hash);
+if(startAt>0)slides[startAt].scrollIntoView({behavior:'auto'});
+const s0=slides[Math.max(0,startAt)];
+P={...lay(s0.dataset.cut||'strip')};
+if(s0.dataset.charge)charge=1;
+if(startAt<=0&&!reduce){lineK=0;drill.fill(0);grow.fill(0);fillK.fill(0);
+  animate(2800,k=>{const t=k*2800;lineK=clamp(t/650);R.forEach((r,i)=>{const o=900*us[i]/S;drill[i]=ease(clamp((t-250-o)/380));grow[i]=back(clamp((t-560-o)/620));fillK[i]=ease(clamp((t-1150-o)/700))});draw()},()=>{lineK=1;drill.fill(1);grow.fill(1);fillK.fill(1);draw()})}
+slides.forEach(s=>io.observe(s));
+draw();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();cancelAnimationFrame(raf);P={...P,...lay(mode)};draw()},120)});
+})();
+</script>
+</body>
+</html>
