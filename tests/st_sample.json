@@ -249,6 +249,13 @@
    "SittingDate": "2023-01-01T00:00:00",
    "DebateSectionExtId": "X",
    "House": "Lords"
+  },
+  {
+   "Title": "Rebuilding Forensic Science",
+   "SittingDate": "2026-06-01T00:00:00",
+   "DebateSectionExtId": "F-1",
+   "House": "Lords",
+   "DebateSection": "Lords Chamber"
   }
  ],
  "business": [

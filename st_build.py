@@ -206,6 +206,12 @@ def words(s):
     return {w for w in re.findall(r"[a-z0-9]+", (s or "").lower()) if w not in STOP and len(w) > 2}
 
 
+def subject(t):
+    """The subject part of a title: before the colon or dash, without quote marks."""
+    t = re.split(r"\s*[:?]\s+|\s+[-–—]\s+", (t or "").strip())[0]
+    return t.strip(" \"'“”‘’").strip()
+
+
 def debate_title_core(t):
     return re.sub(r"\(\s*science\s+and\s+technology\s+committee\s+report\s*\)", "", t or "", flags=re.I).strip(" -:")
 
@@ -364,6 +370,40 @@ def build(src, now):
                 best, best_key = r, k
         if best and (not best.get("deb") or d["date"] > best["deb"]["d"]):
             best["deb"] = {"d": d["date"], "url": d["url"], "t": d["title"]}
+
+    # Fallback: some debates are titled by subject only, without
+    # "(Science and Technology Committee Report)". Search for each unmatched
+    # report's subject and inquiry name, and accept only close title matches.
+    for r in reports:
+        if r.get("deb") or not r["d"]:
+            continue
+        terms = {subject(r["t"]), subject(r["inq"] or "")} - {""}
+        target = words(r["t"]) | words(r["inq"] or "")
+        found = []
+        for term in terms:
+            try:
+                for h in src.hansard_debates(term, r["d"]):
+                    title = re.sub(r"\s+", " ", pick(h, "title", default="")).strip()
+                    date = day(pick(h, "sittingDate"))
+                    section = pick(h, "debateSection", default="")
+                    if section not in ("Lords Chamber", "Grand Committee") or not date or date < r["d"]:
+                        continue
+                    if date > str(int(r["d"][:4]) + 4) + r["d"][4:]:
+                        continue  # too long after the report to be its debate
+                    w = words(debate_title_core(title))
+                    hit = w & target
+                    if len(hit) >= 2 and len(hit) / len(w) >= 0.75:
+                        link = hansard_link(h)
+                        if link:
+                            found.append((len(hit) / len(w), date, title, link))
+            except Exception as e:
+                log(f"Hansard subject search failed for {term!r}: {e}")
+        if DEBUG:
+            log(f"  fallback {r['t'][:50]!r} terms={sorted(terms)} -> {[(round(f[0],2), f[1], f[2]) for f in found][:5]}")
+        if found:
+            found.sort(key=lambda f: (-f[0], f[1]))  # best score, then earliest
+            sc, date, title, link = found[0]
+            r["deb"] = {"d": date, "url": link, "t": title}
 
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
     return {"generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "committee": COMMITTEE_NAME, "committeeId": COMMITTEE_ID, "reports": reports}
