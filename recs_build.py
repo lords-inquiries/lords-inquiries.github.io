@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
-"""Build an interactive explorer for the conclusions and recommendations of a committee report.
+"""Build pages for exploring the conclusions and recommendations of committee reports.
 
 Each reports/<slug>.json holds one report's summary of conclusions and
 recommendations, transcribed from the published report and checked against
-the paragraphs in its body. It becomes <out>/<slug>/index.html and
-<out>/<slug>/data.json; the shared typefaces go to <out>/fonts/.
+the paragraphs in its body. For each report this writes:
+
+    <out>/<slug>/index.html          the report in brief: a slide presentation, from
+                                     reports/<slug>.deck.html if there is one, otherwise
+                                     a redirect to the explorer
+    <out>/<slug>/explore/index.html  the explorer (recs_template.html)
+    <out>/<slug>/data.json           the data
+    <out>/<slug>/og.png              link-preview image, from reports/<slug>.og.png
+
+and the shared typefaces go to <out>/fonts/. Set SITE_URL for absolute links
+in link previews (default https://lords-inquiries.github.io/).
 
 Usage:
     python recs_build.py --out site/recommendations
@@ -22,6 +31,13 @@ import shutil
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+SITE_URL = (os.environ.get("SITE_URL") or "https://lords-inquiries.github.io/").rstrip("/") + "/"
+REDIRECT = """<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><title>Redirecting</title>
+<meta http-equiv="refresh" content="0; url=explore/">
+<script>location.replace('explore/'+location.hash)</script></head>
+<body><p><a href="explore/">Go to the explorer</a></p></body></html>
+"""
 SLUG = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 REQUIRED = ("title", "committee", "number", "paper", "session", "published", "pdf", "finding",
@@ -83,6 +99,10 @@ def validate(d):
     for a in actors:
         if a not in used:
             errs.append(f"actor {a!r} is listed but nothing names it")
+    for k, v in (d.get("para_pages") or {}).items():
+        if not str(k).isdigit() or not isinstance(v, int):
+            errs.append(f"para_pages: bad entry {k!r}: {v!r}")
+            break
     return errs
 
 
@@ -128,19 +148,39 @@ def main():
         shutil.copy(os.path.join(HERE, "recs_assets", "fonts", name), fonts)
     for slug, d, _ in reports:
         dest = os.path.join(a.out, slug)
-        os.makedirs(dest, exist_ok=True)
+        os.makedirs(os.path.join(dest, "explore"), exist_ok=True)
         blob = json.dumps(d, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
         n_rec = sum(r["kind"] == "rec" for r in d["recs"])
         desc = (f"Explore the {len(d['recs'])} conclusions and recommendations of the {d['committee']} report "
                 f"{d['title']} ({d['paper']}): where they fall, who they ask to act ({n_rec} recommendations), and each in full.")
         page = (tpl.replace("__TITLE__", html.escape(d["title"] + ": the conclusions and recommendations"))
                    .replace("__DESC__", html.escape(desc))
+                   .replace("__FONTS__", "../../fonts/")
+                   .replace("__ROOT__", "../../../")
                    .replace("/*__DATA__*/null", blob))
-        with open(os.path.join(dest, "index.html"), "w", encoding="utf-8") as f:
+        with open(os.path.join(dest, "explore", "index.html"), "w", encoding="utf-8") as f:
             f.write(page)
         with open(os.path.join(dest, "data.json"), "w", encoding="utf-8") as f:
             json.dump(d, f, ensure_ascii=False, indent=1)
-        print(f"Wrote {dest}/index.html")
+
+        og = os.path.join(a.src, slug + ".og.png")
+        if os.path.exists(og):
+            shutil.copy(og, os.path.join(dest, "og.png"))
+        deck_src = os.path.join(a.src, slug + ".deck.html")
+        if os.path.exists(deck_src):
+            with open(deck_src, encoding="utf-8") as f:
+                deck = f.read()
+            url = f"{SITE_URL}recommendations/{slug}/"
+            if not os.path.exists(og):
+                deck = "\n".join(l for l in deck.split("\n") if "__OG__" not in l and "twitter:card" not in l)
+            deck = (deck.replace("__FONTS__", "../fonts/").replace("__ROOT__", "../../")
+                        .replace("__URL__", url).replace("__OG__", url + "og.png")
+                        .replace("/*__DATA__*/null", blob))
+        else:
+            deck = REDIRECT
+        with open(os.path.join(dest, "index.html"), "w", encoding="utf-8") as f:
+            f.write(deck)
+        print(f"Wrote {dest}/ (" + ("presentation" if os.path.exists(deck_src) else "redirect") + " and explore/)")
 
 
 if __name__ == "__main__":

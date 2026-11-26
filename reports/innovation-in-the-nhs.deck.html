@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Links made for the explorer when it lived at this address go to its new home */
+if(/(^#|&)(to|topic|q|r|by|pri)=/.test(location.hash))location.replace('explore/'+location.hash);</script>
+<title>Innovation in the NHS: the Lords report in brief</title>
+<meta name="description" content="The House of Lords Science and Technology Committee’s report on innovation in the NHS, in twelve slides: its central finding, six priorities and main recommendations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Innovation in the NHS: Personalised Medicine and AI—lost opportunities?">
+<meta property="og:description" content="The House of Lords Science and Technology Committee’s report in twelve slides: its central finding, six priorities and main recommendations.">
+<meta property="og:url" content="__URL__">
+<meta property="og:image" content="__OG__">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="__FONTS__archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+BRIEF: a splash presentation for a Lords report on why the NHS struggles to adopt genomics and AI. It leads into the explorer.
+IDEA: the report is drawn as a double helix. Each rung is one of its 75 numbered paragraphs (dark = recommendation, pale = conclusion).
+  The helix stays on screen through the deck: large on the opening and closing slides, a slim spine on the others, where the rungs for the
+  slide's theme light up. Every other picture is a small, specific diagram of the problem the slide describes.
+PALETTE: stain ink, slide-glass paper, two G-band greys, one fluorophore magenta. Ink slides open and close the deck.
+TYPE: Archivo across its width axis (condensed numerals, semi-condensed headlines), Newsreader for the committee's words.
+MOTION: the helix zips up once on arrival and turns half a turn when you change slide. Diagrams play when their slide opens.
+*/
+@font-face{font-family:"Archivo";src:url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+:root{--sans:"Archivo",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;--padX:max(5vw,24px)}
+[data-tone=light]{--bg:#F3F5F4;--fg:#16232E;--mute:#586570;--line:#D3DADE;--rr:#22313E;--rc:#9DAAB4;--hi:#C8156F;--wash:#F7DDEA;--glass:#E2E8EB;color-scheme:light}
+[data-tone=dark]{--bg:#16232E;--fg:#E8EEF1;--mute:#9FB0BC;--line:#2F3E4A;--rr:#D6DEE4;--rc:#5D6C77;--hi:#FF4FA3;--wash:#4A1A33;--glass:#22313E;color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%}
+@media (min-width:821px) and (min-height:640px){html{scroll-snap-type:y mandatory}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);font-stretch:100%;overflow-x:clip;transition:background-color .5s}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skiplink{position:absolute;left:12px;top:-60px;z-index:60;background:var(--bg);padding:8px 12px;border:2px solid var(--hi)}
+.skiplink:focus{top:12px}
+
+/* fixed chrome */
+.chrome{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--padX);font-size:14px;color:var(--fg);pointer-events:none;transition:color .4s}
+.chrome a{pointer-events:auto}
+.chrome .pill{border:1.5px solid currentColor;border-radius:999px;padding:7px 15px;text-decoration:none;font-weight:600;white-space:nowrap}
+.chrome .pill:hover{background:var(--fg);color:var(--bg)}
+.pager{position:fixed;left:var(--padX);bottom:16px;z-index:40;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--fg);transition:color .4s}
+.pager button{width:38px;height:38px;border-radius:50%;border:1.5px solid currentColor;background:var(--bg);color:inherit;cursor:pointer;font:400 18px/1 var(--sans);transition:background-color .4s}
+.pager button:hover:not(:disabled){background:var(--fg);color:var(--bg)}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager #count{font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pager #slidename{color:var(--mute)}
+#helix{position:fixed;left:0;top:0;z-index:20;pointer-events:none;overflow:visible}
+#helix .hit{pointer-events:auto;cursor:pointer;fill:transparent}
+#helix .lab{font:500 12px var(--sans);fill:var(--mute)}
+.bed{display:none}
+#tip{position:fixed;z-index:50;pointer-events:none;width:min(340px,calc(100vw - 16px));background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:10px 12px 11px;font-size:13px;line-height:1.4;opacity:0;transition:opacity .1s;box-shadow:4px 4px 0 var(--line)}
+#tip b{display:block;font-size:14px}
+#tip .x{font:15px/1.4 var(--serif);margin-top:4px}
+#tip .go{color:var(--mute);margin-top:6px}
+
+/* slides */
+.slide{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;padding:84px var(--padX) 76px;background:var(--bg);color:var(--fg);scroll-snap-align:start}
+@media (min-width:821px){.slide.sp{padding-right:calc(var(--padX) + 92px)}}
+.frame{width:100%;max-width:1220px;margin:0 auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:32px clamp(32px,5vw,84px);align-items:center}
+h1{font:740 clamp(44px,6vw,94px)/.93 var(--sans);font-stretch:76%;letter-spacing:-.018em;margin:0 0 28px;text-wrap:balance}
+h2{font:700 clamp(32px,3.5vw,54px)/1 var(--sans);font-stretch:82%;letter-spacing:-.012em;margin:0 0 18px;text-wrap:balance;max-width:21ch}
+h2.quote{font:400 clamp(30px,3.4vw,52px)/1.13 var(--serif);font-style:italic;letter-spacing:-.01em;max-width:21ch;margin-bottom:24px}
+h3{font:600 14px var(--sans);color:var(--mute);margin:24px 0 6px}
+.kicker{font:650 14.5px var(--sans);color:var(--hi);margin:0 0 10px}
+.sub{font:400 clamp(19px,1.6vw,24px)/1.4 var(--serif);margin:0 0 12px;max-width:36ch}
+.meta{font-size:14.5px;color:var(--mute);margin:0;max-width:52ch}
+.lede{font:400 clamp(18px,1.32vw,21px)/1.46 var(--serif);margin:0;max-width:42ch}
+.hint{font-size:13.5px;line-height:1.45;color:var(--mute);max-width:48ch;margin:30px 0 0}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:10px 20px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 15.5px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.primary{background:var(--hi);border-color:var(--hi);color:#fff}
+.btn.primary:hover{background:var(--hi);color:#fff;filter:brightness(1.1)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 0}
+.s-title .frame,.s-next .frame{max-width:none;margin:0;width:min(54vw,760px)}
+.s-title h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.s-title .sub,.s-title .meta,.s-title .acts,.s-title .hint{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* stat, recommendations, links */
+.stat{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;align-items:end;border-top:2px solid var(--fg);padding-top:14px;margin:0 0 16px}
+.stat b{font:800 clamp(58px,6.2vw,104px)/.82 var(--sans);font-stretch:62%;color:var(--hi);letter-spacing:-.01em;white-space:nowrap}
+.stat span{font-size:15px;line-height:1.38;padding-bottom:1px;max-width:36ch}
+.stat small{display:block;margin-top:4px;font-size:12.5px;color:var(--mute)}
+.recs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.recs a{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:14px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.recs .n{font:800 28px/1 var(--sans);font-stretch:62%;padding-top:2px;transition:color .2s}
+.recs .t{font-size:15.5px;line-height:1.42}
+.recs a:hover .n,.recs a:focus-visible .n{color:var(--hi)}
+.recs a:hover .t{text-decoration:underline;text-decoration-color:var(--hi)}
+.more{display:inline-block;margin-top:16px;font-weight:650;color:var(--hi);text-decoration:none;border-bottom:1.5px solid var(--hi);padding-bottom:1px}
+.more:hover{border-bottom-width:3px}
+.note{font-size:13px;color:var(--mute);margin:8px 0 0;max-width:48ch}
+.src{font-size:13px;color:var(--mute);margin:12px 0 0}
+.theme .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:24px clamp(32px,4.5vw,72px);align-items:start;margin-top:6px}
+.theme h2{max-width:25ch}
+
+/* illustrations */
+.ill{margin:0}
+.ill svg{display:block;width:100%;height:auto;overflow:visible}
+.ill text{font-family:var(--sans);font-size:12.5px;fill:var(--fg)}
+.ill text.m{fill:var(--mute)}
+.ill text.b{font-weight:700}
+.ill figcaption{font-size:13.5px;line-height:1.45;color:var(--mute);margin-top:10px;max-width:62ch;min-height:2.9em}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0 0}
+.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--fg);border-radius:20px;padding:2px}
+.seg button{border:0;background:none;color:var(--fg);border-radius:999px;padding:5px 13px;font:500 13.5px var(--sans);cursor:pointer;min-height:32px}
+.seg button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.seg button:hover:not([aria-pressed=true]){background:var(--glass)}
+
+/* 200 trusts */
+.tq{fill:none;stroke:var(--rc);stroke-width:1.2;transition:fill .3s}
+.tq.v{fill:var(--rc)}
+.trav{fill:var(--hi);transition:transform .3s ease}
+/* loop */
+.lp-arc{fill:none;stroke:var(--fg);stroke-width:1.6}
+.lp-brk{fill:none;stroke:var(--hi);stroke-width:2.2;stroke-dasharray:4 4}
+.lp-node{fill:var(--bg);stroke:var(--fg);stroke-width:2}
+.lp-dot{fill:var(--hi)}
+/* scale */
+#ill-scale .nd{transition:transform .9s cubic-bezier(.65,0,.35,1)}
+#ill-scale .tr circle{fill:var(--bg);stroke:var(--fg);stroke-width:1.6;transition:fill .4s,stroke .4s}
+#ill-scale [data-state=model] .tr circle{fill:var(--hi);stroke:var(--hi);transition-delay:calc(1s + var(--d))}
+#ill-scale .hub circle{fill:var(--fg)}
+#ill-scale .ed{stroke:var(--fg);stroke-width:1.2}
+#ill-scale .fl{stroke:var(--hi);stroke-width:2;stroke-dasharray:3 9;animation:flow 1.1s linear infinite}
+#ill-scale .ed,#ill-scale .fl,#ill-scale .hub,#ill-scale .ml{opacity:0;transition:opacity .5s}
+#ill-scale [data-state=model] .ed{opacity:.35;transition-delay:.7s}
+#ill-scale [data-state=model] .fl{opacity:1;transition-delay:1s}
+#ill-scale [data-state=model] .hub,#ill-scale [data-state=model] .ml{opacity:1;transition-delay:.5s}
+#ill-scale .pulse{fill:none;stroke:var(--hi);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite;animation-delay:var(--d)}
+#ill-scale [data-state=model] .pulse{visibility:hidden}
+@keyframes flow{to{stroke-dashoffset:-12}}
+@keyframes pulse{0%{opacity:0;transform:scale(.5)}15%{opacity:1}70%,100%{opacity:0;transform:scale(2.6)}}
+/* data */
+#ill-data .tile{transition:transform .9s cubic-bezier(.65,0,.35,1)}
+#ill-data .tile rect{fill:var(--glass);stroke:var(--rc);stroke-width:1}
+#ill-data .tile text{font-size:12px;text-anchor:middle}
+#ill-data .tg{fill:none;stroke:var(--rc);stroke-width:1.3}
+#ill-data .dr{fill:var(--bg);stroke:var(--fg);stroke-width:1.2}
+#ill-data .cv{fill:none;stroke:var(--fg);stroke-width:1.3}
+#ill-data .door{fill:var(--wash);stroke:var(--hi);stroke-width:2}
+#ill-data .now,#ill-data .mdl{transition:opacity .6s}
+#ill-data [data-state=now] .mdl{opacity:0}
+#ill-data [data-state=model] .now{opacity:0}
+#ill-data [data-state=model] .mdl{transition-delay:.6s}
+/* personalised medicine */
+#ill-pm .mk{cursor:pointer}
+#ill-pm .mk line{stroke:var(--fg);stroke-width:1.5}
+#ill-pm .mk circle{fill:var(--bg);stroke:var(--fg);stroke-width:2;transition:fill .2s,stroke .2s}
+#ill-pm .mk.on circle{fill:var(--hi);stroke:var(--hi)}
+#ill-pm .mk text{text-anchor:middle;font-weight:600}
+#ill-pm .mk{transition:transform .6s cubic-bezier(.2,.8,.2,1.2),opacity .4s}
+#ill-pm .pre .mk{transform:translateY(-16px);opacity:0}
+/* people */
+#ill-people .seg2{fill:var(--rc);opacity:.55}
+#ill-people .prot{fill:var(--hi)}
+#ill-people .gl{transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s}
+#ill-people .pre .gl{transform:translateY(10px);opacity:0}
+#ill-people .gl path,#ill-people .gl circle{fill:var(--fg)}
+#ill-people .gl text{text-anchor:middle;font-size:11.5px;font-stretch:88%}
+/* budget */
+#ill-budget .ax{stroke:var(--fg);stroke-width:1}
+#ill-budget .cost{fill:var(--fg)}
+#ill-budget .area{fill:var(--wash)}
+#ill-budget .ln{fill:none;stroke:var(--hi);stroke-width:2.5;stroke-linejoin:round}
+#ill-budget .rest{fill:none;stroke:var(--rc);stroke-width:2;stroke-dasharray:4 4}
+#ill-budget .guide{stroke:var(--fg);stroke-width:1;stroke-dasharray:2 4;opacity:.5}
+#ill-budget .sel{stroke:var(--fg);stroke-width:1}
+.range{display:flex;align-items:center;gap:12px;font-size:14px;flex-wrap:wrap}
+.range input{accent-color:var(--hi);width:min(280px,60vw)}
+.verdict{font-weight:600;color:var(--fg);min-height:1.5em;margin:6px 0 0;font-size:14.5px}
+/* ai */
+#ill-ai .st{cursor:pointer}
+#ill-ai .st circle{fill:var(--bg);stroke:var(--fg);stroke-width:2;transition:fill .25s,stroke .25s}
+#ill-ai .st text{text-anchor:middle;font-weight:650;font-size:12.5px;transition:fill .25s}
+#ill-ai .st.on circle{fill:var(--hi);stroke:var(--hi)}
+#ill-ai .st.on text{fill:#fff}
+#ill-ai .ar{fill:none;stroke:var(--fg);stroke-width:1.6}
+#ill-ai .bub path{fill:var(--glass);stroke:var(--fg);stroke-width:1.5;transition:fill .25s,stroke .25s}
+#ill-ai .bub.on path{fill:var(--wash);stroke:var(--hi)}
+#ill-ai .bub{cursor:pointer}
+
+/* stakes */
+.losses{list-style:none;margin:24px 0 0;padding:0}
+.losses li{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:18px;align-items:baseline;border-top:1px solid var(--line);padding:14px 0}
+.losses li:last-child{border-bottom:1px solid var(--line)}
+.losses b{font:800 34px/1 var(--sans);font-stretch:64%;color:var(--hi)}
+.losses span{font:400 19px/1.4 var(--serif)}
+
+/* priorities */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 30px;margin-top:28px}
+.card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;text-align:left;border:0;border-top:2px solid var(--fg);background:none;color:inherit;padding:14px 0 20px;cursor:pointer;font:inherit}
+.card .cn{grid-row:1 / span 4;font:800 54px/.84 var(--sans);font-stretch:62%;transition:color .2s}
+.card .ct{font:650 18px/1.2 var(--sans);font-stretch:92%}
+.card .cs{font-size:14px;line-height:1.42;color:var(--mute)}
+.card .strip{display:flex;gap:1px;height:10px;margin-top:8px}
+.card .strip i{display:block;background:var(--rc);opacity:.5;border-radius:1px}
+.card .strip i.r{background:var(--rr);opacity:.35}
+.card .strip i.on{background:var(--hi);opacity:1}
+.card .cc{font-size:13px;color:var(--mute);margin-top:2px}
+.card:hover .cn,.card:focus-visible .cn{color:var(--hi)}
+.card:hover .ct{text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:4px}
+
+/* who */
+.wbars{border-top:2px solid var(--fg)}
+.wb{display:grid;grid-template-columns:minmax(0,14.5em) minmax(0,1fr) 2.4em;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;font-size:15px}
+.wb .wt{height:12px;position:relative}
+.wb .wt i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--rr);border-radius:0 6px 6px 0;transition:width .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-color .2s}
+#who.on .wb .wt i{width:var(--w)}
+.wb .wc{font:800 24px/1 var(--sans);font-stretch:62%;text-align:right}
+.wb:hover .wt i,.wb:focus-visible .wt i{background:var(--hi)}
+.wb:hover .wn{text-decoration:underline;text-decoration-color:var(--hi)}
+.wmore{font-size:14px;line-height:1.5;color:var(--mute);margin:14px 0 0;max-width:64ch}
+.wmore a{color:var(--fg)}
+
+/* what next */
+.tl{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative}
+.tl::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line)}
+.tl li{position:relative;padding:32px 22px 0 0}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.tl li.done::before{background:var(--hi);border-color:var(--hi)}
+.tl .when{display:block;font:700 15.5px var(--sans)}
+.tl .what{display:block;font-size:15px;line-height:1.42;color:var(--mute);margin-top:4px}
+.tl .count{display:block;font:800 64px/.86 var(--sans);font-stretch:62%;color:var(--hi);margin-top:12px}
+.tl .today{position:absolute;top:-24px;font-size:12.5px;font-weight:650;color:var(--hi);transform:translateX(-50%);white-space:nowrap}
+.tl .today::after{content:"";position:absolute;left:50%;top:20px;width:2px;height:14px;background:var(--hi);margin-left:-1px}
+.small{font-size:12.5px;line-height:1.5;color:var(--mute);margin:34px 0 0;max-width:72ch}
+
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* shorter laptop screens: fit each slide to the screen */
+@media (min-width:821px) and (max-height:900px){
+  .slide{padding-top:max(64px,9vh);padding-bottom:max(56px,8vh)}
+  h1{font-size:min(6vw,9.4vh);margin-bottom:min(28px,3vh)}
+  h2{font-size:min(3.5vw,5.7vh);margin-bottom:min(18px,2vh)}
+  h2.quote{font-size:min(3.4vw,5.6vh)}
+  .sub{font-size:min(1.6vw,2.6vh)}
+  .s-title .frame{width:min(56vw,800px)}
+  .lede{font-size:min(1.32vw,2.35vh)}
+  .acts{margin-top:min(30px,3.2vh)}
+  .hint{margin-top:min(30px,3.2vh)}
+  .stat{padding-top:min(14px,1.6vh);margin-bottom:min(16px,1.6vh)}
+  .stat b{font-size:min(6.2vw,9.6vh)}
+  .ill svg{max-height:31vh}
+  .ill figcaption{margin-top:6px}
+  .ctl{margin-top:8px}
+  h3{margin:min(24px,2.4vh) 0 4px}
+  .recs a{padding:min(11px,1.1vh) 0}
+  .recs .t{font-size:min(15.5px,2vh)}
+  .recs .n{font-size:min(28px,3.6vh)}
+  .more{margin-top:min(16px,1.8vh)}
+  .theme .kicker{margin-bottom:4px}
+  .cards{margin-top:min(28px,2.6vh)}
+  .card{padding:min(14px,1.4vh) 0 min(20px,2vh)}
+  .card .cs{font-size:min(14px,1.95vh)}
+  .losses li{padding:min(14px,1.5vh) 0}
+}
+.ill svg{max-width:100%}
+@media (max-width:820px){
+  .chrome{position:absolute}
+  .chrome .home{display:none}
+  .pager{display:none}
+  .bed{display:block;position:fixed;left:0;right:0;bottom:0;height:60px;background:var(--bg);border-top:1px solid var(--line);z-index:19;transition:background-color .4s}
+  .slide{padding:76px 20px 96px;min-height:auto}
+  .slide.s-title,.slide.s-find,.slide.s-next{min-height:100svh}
+  .s-title .frame,.s-next .frame{width:100%}
+  .two,.theme .cols{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:26px;padding-left:30px}
+  .tl::before{left:8px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl li{padding:0}
+  .tl li::before{left:-30px}
+  .tl .today{display:none}
+  .wb{grid-template-columns:minmax(0,1fr) 5em 2em}
+  .losses li{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:0s!important}}
+@media print{.chrome,.pager,#helix,.bed,#tip{display:none}.slide{min-height:auto;break-after:page}}
+</style>
+</head>
+<body data-tone="dark">
+<a class="skiplink" href="explore/">Skip to all 75 recommendations</a>
+<header class="chrome"><a class="home" href="__ROOT__science-and-technology/">Lords Science and Technology Committee reports</a><a class="pill" href="explore/">All 75 recommendations</a></header>
+
+<main id="deck">
+
+<section class="slide s-title" id="start" data-tone="dark" data-helix="hero" data-name="Start" aria-labelledby="h-start">
+<div class="frame">
+<h1 id="h-start">Innovation in the NHS: Personalised Medicine and AI—lost opportunities?</h1>
+<p class="sub">The House of Lords Science and Technology Committee’s report in twelve slides: what it found, its six priorities and its main recommendations.</p>
+<p class="meta">1st Report of Session 2026–27 (HL Paper 93), published 26 November 2026.</p>
+<div class="acts"><button type="button" class="btn primary" data-next>Start</button><a class="btn" href="explore/">Go straight to all 75 recommendations</a></div>
+<p class="hint">Scroll, swipe or use the arrow keys. The double helix is the report itself: each rung is one of its 75 numbered paragraphs. The stronger rungs are recommendations; the fainter ones are conclusions.</p>
+</div>
+</section>
+
+<section class="slide s-find sp" id="finding" data-tone="dark" data-helix="spine" data-name="The central finding" aria-labelledby="h-finding">
+<div class="frame two">
+<div>
+<h2 class="quote" id="h-finding">“The NHS does not have an innovation problem, but it struggles to adopt proven innovations effectively.”</h2>
+<p class="lede">That is the committee’s central finding. The NHS has many clinicians who want to innovate, and no shortage of new ideas. What fails is adoption: unclear lines of accountability, poor structures to promote and budget for innovation, and procurement repeated trust by trust.</p>
+</div>
+<div>
+<div class="stat"><b>200+</b><span>NHS trusts, each running its own procurement and relying on different evidence to adopt something new.<small>Report summary</small></span></div>
+<figure class="ill" id="ill-200"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 540 196" role="img" aria-label="Two hundred squares, one for each trust. A dot visits them one at a time."></svg>
+<figcaption>One supplier told the committee it faced talking to 200 different officials across various trusts (<a data-para="121">paragraph 121</a>).</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide sp" id="stakes" data-tone="light" data-helix="spine" data-name="What is at stake" aria-labelledby="h-stakes">
+<div class="frame two">
+<div>
+<h2 id="h-stakes">The price is paid in lost opportunities</h2>
+<ul class="losses">
+<li><b>Growth</b><span>Lost economic opportunities for productivity and growth, with the UK’s life sciences industry falling behind.</span></li>
+<li><b>The NHS</b><span>Lost opportunities to ease pressure on a strained and fragile health service.</span></li>
+<li><b>Patients</b><span>Lost lives, where more effective treatment was not available.</span></li>
+</ul>
+<p class="src">From the report’s summary.</p>
+</div>
+<figure class="ill" id="ill-loop"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 520 316" role="img" aria-label="A loop from UK research to the life sciences industry, the NHS, patient care and economic growth, broken at the step where the NHS adopts innovations."></svg>
+<figcaption>The committee describes a reinforcing loop between research, industry, the NHS, patient care and growth that is “currently not working as it should” (<a data-para="64">paragraph 64</a>). Its central finding points to the weak link: adoption.</figcaption></figure>
+</div>
+</section>
+
+<section class="slide sp" id="priorities" data-tone="light" data-helix="spine" data-name="Six priorities" aria-labelledby="h-pri">
+<div class="frame">
+<h2 id="h-pri">Six priorities</h2>
+<p class="lede" style="max-width:60ch">The committee sums up its recommendations under six headings that cut across the report’s chapters. Choose one to go to it. Each strip shows where that priority’s paragraphs sit in the report.</p>
+<div class="cards" id="cards"></div>
+</div>
+</section>
+
+<section class="slide sp theme" id="scale" data-tone="light" data-helix="spine" data-pri="scale" data-name="Priority 1: national scale" aria-labelledby="h-scale">
+<div class="frame">
+<p class="kicker">Priority 1 of 6</p>
+<h2 id="h-scale">Fund and commission innovations that work at a national scale</h2>
+<div class="cols">
+<div>
+<p class="lede">Too many innovations get stuck as pilots in a single trust, with no route to routine use. The committee wants proven technologies commissioned and bought once, nationally or regionally, and spread to every trust.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=23"><span class="n"><span class="vh">Recommendation </span>23</span><span class="t">Replace “haphazard and proliferating pilots” with a proof-of-value process that leads to sustained adoption, shift funding towards implementation, and ringfence trusts’ innovation budgets.</span></a></li>
+<li><a href="explore/#r=25"><span class="n"><span class="vh">Recommendation </span>25</span><span class="t">Make the Genomic Medicine Service the template for other priority innovations: national priorities and commissioning, regional delivery, and a clear route from evidence to routine use.</span></a></li>
+<li><a href="explore/#r=27"><span class="n"><span class="vh">Recommendation </span>27</span><span class="t">Buy priority technologies through national or regional frameworks, with standard contracts and a funding route from one trust to many, and expand “passporting” between trusts.</span></a></li>
+</ul>
+<a class="more" data-more="scale" href="explore/#by=pri&amp;pri=scale">All paragraphs on this priority</a>
+<p class="note" data-helixnote></p>
+</div>
+<div>
+<div class="stat"><b>3%</b><span>“transformation” budgets are often where a trust’s money for innovation comes from, and other priorities compete for them.<small><a data-para="106">Paragraph 106</a></small></span></div>
+<figure class="ill" id="ill-scale"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 290" data-state="now" role="img" aria-label="Twelve trusts. Now: pilots flare and fade in single trusts. The committee's model: national commissioning, regional delivery, reaching every trust."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="now" aria-pressed="true">Now</button><button type="button" data-state="model" aria-pressed="false">The committee’s model</button></div></div>
+<figcaption></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="data" data-tone="light" data-helix="spine" data-pri="data" data-name="Priority 2: health data" aria-labelledby="h-data">
+<div class="frame">
+<p class="kicker">Priority 2 of 6</p>
+<h2 id="h-data">Build a sovereign health data capability for the UK</h2>
+<div class="cols">
+<div>
+<p class="lede">The UK’s health data are exceptionally rich, but access for research has gone backwards since the pandemic. The committee wants the new Health Data Research Service properly backed as a single front door, with UK-owned capacity to store and analyse the data.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=41"><span class="n"><span class="vh">Recommendation </span>41</span><span class="t">Back the Health Data Research Service with sustained, long-term investment. It should publish a strategy and success metrics and be a single front door to NHS data, UK Biobank and Our Future Health.</span></a></li>
+<li><a href="explore/#r=44"><span class="n"><span class="vh">Recommendation </span>44</span><span class="t">Set out a framework for commercial partnerships, “fair trade rather than free trade in health data”, and justify the self-funding model so UK SMEs and researchers keep access.</span></a></li>
+<li><a href="explore/#r=53"><span class="n"><span class="vh">Recommendation </span>53</span><span class="t">Set a clear direction on how UK health data can be used to train clinical AI models, and develop a sovereign AI capability for health.</span></a></li>
+</ul>
+<a class="more" data-more="data" href="explore/#by=pri&amp;pri=data">All paragraphs on this priority</a>
+<p class="note" data-helixnote></p>
+</div>
+<div>
+<div class="stat"><b>57m</b><span>people’s NHS records were used to train the Foresight AI model in a secure data environment. Access was then paused for over a year over trust, privacy and terms of use.<small><a data-para="222">Paragraphs 222 to 225</a></small></span></div>
+<figure class="ill" id="ill-data"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 300" data-state="now" role="img" aria-label="Six data sources. Now: separate, tangled routes to researchers. The committee's model: one front door, the Health Data Research Service."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="now" aria-pressed="true">Now</button><button type="button" data-state="model" aria-pressed="false">The committee’s model</button></div></div>
+<figcaption></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="medicine" data-tone="light" data-helix="spine" data-pri="pm" data-name="Priority 3: personalised medicine" aria-labelledby="h-medicine">
+<div class="frame">
+<p class="kicker">Priority 3 of 6</p>
+<h2 id="h-medicine">Roll out personalised medicine with supporting evidence</h2>
+<div class="cols">
+<div>
+<p class="lede">Genomics is strongest at diagnosing and treating disease, especially cancer, and weaker at predicting it in healthy people. The committee says: take the near-term wins now, and build the evidence before relying on prediction.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=7"><span class="n"><span class="vh">Recommendation </span>7</span><span class="t">NHS England should publish a pharmacogenomics implementation plan, starting with high-impact drug–gene interactions and the prevention of severe adverse drug reactions.</span></a></li>
+<li><a href="explore/#r=2"><span class="n"><span class="vh">Recommendation </span>2</span><span class="t">Build the evidence on newborn genomic screening and polygenic risk scores before rolling them out, with enough genomic counsellors and training.</span></a></li>
+<li><a href="explore/#r=5"><span class="n"><span class="vh">Recommendation </span>5</span><span class="t">Work out how many pathologists, oncologists and radiologists are needed for cancer genomics results to arrive in time to guide first treatment.</span></a></li>
+</ul>
+<a class="more" data-more="pm" href="explore/#by=pri&amp;pri=pm">All paragraphs on this priority</a>
+<p class="note" data-helixnote></p>
+</div>
+<div>
+<div class="stat"><b>99.5%</b><span>of genomes in the 100,000 Genomes Project had at least one gene variant that would make a particular medicine ineffective or harmful.<small><a data-para="34">Paragraph 34</a></small></span></div>
+<figure class="ill" id="ill-pm"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 196" class="pre" role="img" aria-label="A scale from strong evidence (diagnosing and treating disease) to more research needed (predicting disease in healthy people), with four uses of genomics placed along it."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Choose a use of genomics" id="pm-btns"></div></div>
+<figcaption aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="workforce" data-tone="light" data-helix="spine" data-pri="people" data-name="Priority 4: workforce and trials" aria-labelledby="h-workforce">
+<div class="frame">
+<p class="kicker">Priority 4 of 6</p>
+<h2 id="h-workforce">Invest in the workforce and clinical trials</h2>
+<div class="cols">
+<div>
+<p class="lede">Time is the greatest constraint on clinicians’ research, training and innovation, and the clinical academics who bridge research and care are in decline. The committee wants protected time, a workforce plan fit for genomics and AI, and faster clinical trials.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=69"><span class="n"><span class="vh">Recommendation </span>69</span><span class="t">Give clinicians, whether consultants or not, contractually protected time for research, training and implementing innovation.</span></a></li>
+<li><a href="explore/#r=75"><span class="n"><span class="vh">Recommendation </span>75</span><span class="t">Don’t assume AI will cut headcount in the short to medium term. Plan for pharmacogenomics-trained pharmacists, genomic counsellors and data scientists, and modernise training.</span></a></li>
+<li><a href="explore/#r=67"><span class="n"><span class="vh">Recommendation </span>67</span><span class="t">Speed up recruitment to clinical trials, reduce the regulatory burden once they run, and let funders experiment with trial design, including AI.</span></a></li>
+</ul>
+<a class="more" data-more="people" href="explore/#by=pri&amp;pri=people">All paragraphs on this priority</a>
+<p class="note" data-helixnote></p>
+</div>
+<div>
+<div class="stat"><b>6%</b><span>fewer clinical academics than in 2012, while the number of NHS consultants grew by 50%.<small><a data-para="300">Paragraph 300</a></small></span></div>
+<figure class="ill" id="ill-people"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 600 220" class="pre" role="img" aria-label="A consultant's working time with a quarter set aside for supporting activities, and seven roles the workforce plan needs."></svg>
+<figcaption>Consultants should get at least 25% of their time for supporting activities such as research, but the committee heard this has been eroded (<a data-para="295">paragraph 295</a>). Below, the roles it says the workforce plan must provide for, and clinical academics (recommendations <a href="explore/#r=5">5</a> and <a href="explore/#r=75">75</a>, <a data-para="304">paragraph 304</a>).</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="budgets" data-tone="light" data-helix="spine" data-pri="account" data-name="Priority 5: accountability and budgets" aria-labelledby="h-budgets">
+<div class="frame">
+<p class="kicker">Priority 5 of 6</p>
+<h2 id="h-budgets">Provide clear accountability and better budgeting for innovation</h2>
+<div class="cols">
+<div>
+<p class="lede">It is often unclear who is responsible for adopting innovation, and annual budgets struggle with one-off costs for treatments that pay back over many years. The committee wants named accountability and budgets that look further ahead.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=31"><span class="n"><span class="vh">Recommendation </span>31</span><span class="t">Give each trust a single accountable contact for innovation, and the DHSC a named Senior Responsible Owner for adoption nationally, with adoption tracked trust by trust.</span></a></li>
+<li><a href="explore/#r=33"><span class="n"><span class="vh">Recommendation </span>33</span><span class="t">Use outcome-based payment and multi-year budgets for curative and advanced therapies where they are cost-effective in the long run.</span></a></li>
+<li><a href="explore/#r=58"><span class="n"><span class="vh">Recommendation </span>58</span><span class="t">The DHSC should tell NICE how to weigh wider social and economic benefits, such as prevention and productivity, in its appraisals.</span></a></li>
+</ul>
+<a class="more" data-more="account" href="explore/#by=pri&amp;pri=account">All paragraphs on this priority</a>
+<p class="note" data-helixnote></p>
+</div>
+<div>
+<div class="stat"><b>£1.65m</b><span>per treatment for a potentially curative gene-editing therapy for sickle-cell anaemia.<small><a data-para="143">Paragraph 143</a></small></span></div>
+<figure class="ill" id="ill-budget"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 240" role="img" aria-label="Illustration: a one-off cost at year zero, and a benefit that adds up year by year until it outweighs the cost."></svg>
+<div class="ctl range"><label for="yrs">Years counted</label><input id="yrs" type="range" min="1" max="10" value="1" step="1"><output id="yrs-out" for="yrs">1</output></div>
+<p class="verdict" id="verdict" aria-live="polite"></p>
+<figcaption>Illustrative, not real figures. Annual budgets struggle with large one-off costs for curative therapies, despite the long-term benefit (<a data-para="147">paragraphs 147 and 148</a>).</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp theme" id="ai" data-tone="light" data-helix="spine" data-pri="ai" data-name="Priority 6: regulating AI" aria-labelledby="h-ai">
+<div class="frame">
+<p class="kicker">Priority 6 of 6</p>
+<h2 id="h-ai">Modernise and clarify regulation for AI in healthcare</h2>
+<div class="cols">
+<div>
+<p class="lede">AI tools are being developed faster than the rules can keep up, and clinicians are unsure which tools are safe and where liability lies. The committee wants the MHRA able to approve and monitor AI throughout its life, and clear guidance for clinicians.</p>
+<h3>Main recommendations</h3>
+<ul class="recs">
+<li><a href="explore/#r=61"><span class="n"><span class="vh">Recommendation </span>61</span><span class="t">Give the MHRA the powers it needs, through legislation if necessary, to approve software and AI as medical devices and to keep monitoring them once they are in use.</span></a></li>
+<li><a href="explore/#r=63"><span class="n"><span class="vh">Recommendation </span>63</span><span class="t">The DHSC, royal colleges and regulators should give clinicians practical guidance on using AI: approved tools, human oversight, liability and audit.</span></a></li>
+<li><a href="explore/#r=65"><span class="n"><span class="vh">Recommendation </span>65</span><span class="t">Decide whether the Government or the MHRA regulates general-purpose chatbots used for medical purposes, and research how well they perform.</span></a></li>
+</ul>
+<a class="more" data-more="ai" href="explore/#by=pri&amp;pri=ai">All paragraphs on this priority</a>
+<p class="note" data-helixnote></p>
+</div>
+<div>
+<div class="stat"><b>28%</b><span>of GPs surveyed by the Nuffield Trust were using AI in some capacity.<small><a data-para="274">Paragraph 274</a></small></span></div>
+<figure class="ill" id="ill-ai"><svg preserveAspectRatio="xMinYMid meet" viewBox="0 0 560 262" role="img" aria-label="The life of an AI medical device: approve, deploy, monitor, update; and general-purpose chatbots, with no clear regulator."></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="Choose a stage" id="ai-btns"></div></div>
+<figcaption aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="slide sp" id="who" data-tone="light" data-helix="spine" data-name="Who is asked to act" aria-labelledby="h-who">
+<div class="frame two">
+<div>
+<h2 id="h-who">Who is asked to act</h2>
+<p class="lede" id="who-lede"></p>
+<p class="note">Point at a body to light up its recommendations on the helix. Choose one to read them in the explorer.</p>
+</div>
+<div>
+<div class="wbars" id="wbars"></div>
+<p class="wmore" id="wmore"></p>
+</div>
+</div>
+</section>
+
+<section class="slide s-next" id="next" data-tone="dark" data-helix="hero" data-lit="all" data-name="What happens next" aria-labelledby="h-next">
+<div class="frame">
+<h2 id="h-next">What happens next</h2>
+<ol class="tl" id="tl"></ol>
+<div class="acts"><a class="btn primary" href="explore/">Explore all 75 conclusions and recommendations</a><a class="btn" data-pdf href="#">Read the full report (PDF)</a><button type="button" class="btn" data-go="0">Back to the start</button></div>
+<p class="small">An unofficial guide, not a Parliament service. Quotes and figures come from the report, with paragraph numbers; the summaries of recommendations are ours, so check the report for the exact wording. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+</div>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Slides"><button type="button" id="prev" aria-label="Previous slide">‹</button><span id="count">1 of 12</span><button type="button" id="next-btn" aria-label="Next slide">›</button><span id="slidename"></span></nav>
+<div class="bed" aria-hidden="true"></div>
+<svg id="helix" aria-hidden="true"></svg>
+<div id="tip" aria-hidden="true"></div>
+
+<script>
+(()=>{
+const D=/*__DATA__*/null;
+const R=D.recs,N=R.length;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isRec=r=>r.kind==='rec';
+const nRec=R.filter(isRec).length;
+const plain=t=>t.replace(/\n• /g,' ');
+const clip=(s,n)=>s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;
+const fmt=s=>new Date(s+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+const AC=Object.fromEntries(D.actors.map(a=>[a.id,a]));
+const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
+const priSet=id=>new Set(R.filter(r=>r.pri===id).map(r=>r.n));
+const slides=$$('.slide');
+const SLIDE_OF_PRI={scale:'scale',data:'data',pm:'medicine',people:'workforce',account:'budgets',ai:'ai'};
+const svgEl=(tag,attrs)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e};
+
+/* links to the report and to paragraphs */
+$$('[data-para]').forEach(a=>{a.href=D.pdf+'#page='+(D.para_pages[a.dataset.para]||1)});
+$$('[data-pdf]').forEach(a=>{a.href=D.pdf});
+$$('[data-more]').forEach(a=>{const n=priSet(a.dataset.more).size;a.textContent=`See all ${n} paragraphs on this priority in the explorer`});
+$$('[data-helixnote]').forEach(p=>{p.textContent=innerWidth>820?'Lit on the helix at the right: where they sit in the report.':'Lit on the helix below: where they sit in the report.'});
+
+/* ================= the helix ================= */
+const hx=$('#helix');
+const TW=Math.PI*2/15;
+const G={labels:svgEl('g',{}),backA:svgEl('path',{fill:'none'}),backB:svgEl('path',{fill:'none'}),rungs:svgEl('g',{}),frontA:svgEl('path',{fill:'none'}),frontB:svgEl('path',{fill:'none'}),hits:svgEl('g',{})};
+Object.values(G).forEach(g=>hx.appendChild(g));
+const rungEls=R.map(()=>{const l=svgEl('line',{'stroke-linecap':'round'});G.rungs.appendChild(l);return l});
+const hitEls=R.map(r=>{const h=svgEl('rect',{class:'hit'});h.dataset.n=r.n;G.hits.appendChild(h);return h});
+const chStart=D.chapters.map(c=>({c,i:R.findIndex(r=>r.ch===c.n)})).filter(x=>x.i>=0);
+const labEls=chStart.map(x=>{const t=svgEl('text',{class:'lab','text-anchor':'end'});t.textContent='Chapter '+x.c.n;G.labels.appendChild(t);return t});
+let P=null,lit=null,reveal=1,col={},mode='hero',raf=0;
+function colors(){const s=getComputedStyle(document.body);for(const k of['fg','mute','rr','rc','hi'])col[k]=s.getPropertyValue('--'+k).trim()}
+function box(m){
+  const W=innerWidth,H=innerHeight,pad=Math.max(W*.05,24);
+  if(W<=820)return{o:'h',x0:16,x1:W-16,y0:H-52,y1:H-10,R:12,sw:1.4,rw:2.6,lo:0};
+  if(m==='hero'){const x0=Math.round(W*.6),x1=W-pad;return{o:'v',x0,x1,y0:96,y1:H-70,R:Math.max(60,Math.min(128,(x1-x0)/2-46)),sw:2.6,rw:Math.min(5,(H-166)/N*.52),lo:1}}
+  return{o:'v',x0:W-88,x1:W-24,y0:96,y1:H-66,R:18,sw:1.7,rw:Math.min(3.8,(H-162)/N*.42),lo:0};
+}
+function draw(){
+  if(!P)return;const p=P,v=p.o==='v';
+  const ax=v?(p.x0+p.x1)/2:p.x0,ay=v?p.y0:(p.y0+p.y1)/2,bx=v?ax:p.x1,by=v?p.y1:ay;
+  const nx=v?1:0,ny=v?0:1,len=v?by-ay:bx-ax,sp=len/N;
+  const at=(t,s)=>{const th=p.phase+(t*N-.5)*TW,k=Math.sin(th)*s;return[ax+(bx-ax)*t+nx*p.R*k,ay+(by-ay)*t+ny*p.R*k,Math.cos(th)*s]};
+  for(const [s,back,front] of [[1,G.backA,G.frontA],[-1,G.backB,G.frontB]]){
+    let b='',f='',prev=null,last=null;const M=N*6;
+    for(let k=0;k<=M;k++){const t=k/M;if(t>reveal+1e-9)break;const [x,y,d]=at(t,s);const isF=d>=0;const pt=x.toFixed(1)+','+y.toFixed(1);
+      if(isF!==prev){const start=last?'M'+last:'M'+pt;if(isF)f+=start+(last?'L'+pt:'');else b+=start+(last?'L'+pt:'')}
+      else{if(isF)f+='L'+pt;else b+='L'+pt}
+      prev=isF;last=pt}
+    back.setAttribute('d',b);front.setAttribute('d',f);
+    for(const el of[back,front]){el.setAttribute('stroke',col.fg);el.setAttribute('stroke-width',p.sw)}
+    back.setAttribute('opacity',.28);front.setAttribute('opacity',.9);
+  }
+  R.forEach((r,i)=>{const t=(i+.5)/N,el=rungEls[i],h=hitEls[i];
+    if(t>reveal){el.setAttribute('opacity',0);h.setAttribute('width',0);return}
+    const [x1,y1]=at(t,1),[x2,y2]=at(t,-1);const face=Math.abs(Math.sin(p.phase+i*TW));
+    el.setAttribute('x1',x1.toFixed(1));el.setAttribute('y1',y1.toFixed(1));el.setAttribute('x2',x2.toFixed(1));el.setAttribute('y2',y2.toFixed(1));
+    const on=!!lit&&lit.has(r.n);
+    el.setAttribute('stroke',on?col.hi:(isRec(r)?col.rr:col.rc));el.setAttribute('stroke-width',p.rw);
+    el.setAttribute('opacity',((lit&&!on)?.2:1)*(.4+.6*face));
+    if(v){h.setAttribute('x',ax-p.R-10);h.setAttribute('y',ay+i*sp);h.setAttribute('width',2*p.R+20);h.setAttribute('height',sp)}
+    else{h.setAttribute('x',ax+i*sp);h.setAttribute('y',ay-p.R-8);h.setAttribute('width',sp);h.setAttribute('height',2*p.R+16)}
+  });
+  chStart.forEach((x,j)=>{const t=(x.i+.5)/N,[cx,cy]=[ax,ay+(by-ay)*t];const e=labEls[j];e.setAttribute('x',(cx-p.R-24).toFixed(1));e.setAttribute('y',(cy+4).toFixed(1));e.setAttribute('opacity',v?p.lo*(t<=reveal?1:0):0)});
+}
+function size(){hx.setAttribute('width',innerWidth);hx.setAttribute('height',innerHeight);hx.setAttribute('viewBox',`0 0 ${innerWidth} ${innerHeight}`)}
+function tween(target,ms=950){
+  cancelAnimationFrame(raf);const from={...P};
+  if(reduce||!P||from.o!==target.o){P={...target};draw();return}
+  const t0=performance.now();
+  const step=now=>{const k=Math.min(1,(now-t0)/ms),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+    for(const key of['x0','x1','y0','y1','R','sw','rw','phase','lo'])P[key]=from[key]+(target[key]-from[key])*e;
+    draw();if(k<1)raf=requestAnimationFrame(step)};
+  raf=requestAnimationFrame(step);
+}
+function setLit(s){lit=s;draw()}
+// tooltip on rungs
+const tip=$('#tip');
+hx.addEventListener('pointerover',e=>{const h=e.target.closest('.hit');if(!h||e.pointerType==='touch')return;const r=R[h.dataset.n-1];
+  tip.innerHTML=`<b>${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</b><div class="x">${esc(clip(plain(r.text),170))}</div><div class="go">Select to read it in the explorer</div>`;
+  const bx=h.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
+  let x=P.o==='v'?bx.left-tw-12:bx.left+bx.width/2-tw/2,y=P.o==='v'?bx.top+bx.height/2-th/2:bx.top-th-10;
+  tip.style.left=Math.max(8,Math.min(innerWidth-tw-8,x))+'px';tip.style.top=Math.max(8,Math.min(innerHeight-th-8,y))+'px';tip.style.opacity=1});
+hx.addEventListener('pointerout',e=>{if(e.target.closest('.hit'))tip.style.opacity=0});
+hx.addEventListener('click',e=>{const h=e.target.closest('.hit');if(h)location.href='explore/#r='+h.dataset.n});
+
+/* ================= slides ================= */
+let active=-1;
+const hooks={};
+function activate(i){
+  if(i===active)return;const prev=active;active=i;const s=slides[i];
+  document.body.dataset.tone=s.dataset.tone;colors();
+  $('#count').textContent=`${i+1} of ${slides.length}`;$('#slidename').textContent=s.dataset.name;
+  $('#prev').disabled=i===0;$('#next-btn').disabled=i===slides.length-1;
+  mode=s.dataset.helix||'spine';
+  lit=s.dataset.pri?priSet(s.dataset.pri):s.dataset.lit==='all'?new Set(R.map(r=>r.n)):null;
+  const target={...box(mode),phase:(P?P.phase:0)+(prev<0?0:Math.PI*(i>prev?1:-1))};
+  if(!P){P={...target}}
+  tween(target);
+  slides.forEach((x,j)=>{const h=hooks[x.id];if(!h)return;if(j===i){h.start&&h.start()}else if(h.on){h.stop&&h.stop()}h.on=j===i});
+  history.replaceState(null,'',i?'#'+s.id:location.pathname+location.search);
+}
+const snapOn=()=>matchMedia('(min-width:821px) and (min-height:640px)').matches;
+function goTo(i){
+  i=Math.max(0,Math.min(slides.length-1,i));const s=slides[i];
+  s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  const h=s.querySelector('h1,h2');if(h){h.setAttribute('tabindex','-1');setTimeout(()=>h.focus({preventScroll:true}),reduce?0:650)}
+}
+let io;
+$('#prev').addEventListener('click',()=>goTo(active-1));
+$('#next-btn').addEventListener('click',()=>goTo(active+1));
+document.addEventListener('click',e=>{const n=e.target.closest('[data-next]');if(n){goTo(active+1);return}const g=e.target.closest('[data-go]');if(g&&/^\d+$/.test(g.dataset.go)){goTo(+g.dataset.go)}});
+addEventListener('keydown',e=>{
+  if(!snapOn()||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(e.target.closest('input,select,textarea,[contenteditable]'))return;
+  const k=e.key;let d=0;
+  if(k==='ArrowDown'||k==='ArrowRight'||k==='PageDown'||(k===' '&&!e.shiftKey))d=1;
+  else if(k==='ArrowUp'||k==='ArrowLeft'||k==='PageUp'||(k===' '&&e.shiftKey))d=-1;
+  else if(k==='Home'){e.preventDefault();goTo(0);return}else if(k==='End'){e.preventDefault();goTo(slides.length-1);return}
+  if(d){if(e.target.closest('.seg')&&(k==='ArrowLeft'||k==='ArrowRight'))return;e.preventDefault();
+    // a slide taller than the screen scrolls through first, then moves on
+    const b=slides[active].getBoundingClientRect(),beh=reduce?'auto':'smooth';
+    if(d>0&&b.bottom>innerHeight+4){scrollBy({top:Math.min(b.bottom-innerHeight,innerHeight*.8),behavior:beh});return}
+    if(d<0&&b.top<-4){scrollBy({top:Math.max(b.top,-innerHeight*.8),behavior:beh});return}
+    goTo(active+d)}
+});
+
+/* ================= 1. two hundred trusts ================= */
+hooks.finding=(()=>{
+  const svg=$('#ill-200 svg'),C=25,RW=8,S=14,GP=7,X0=11,Y0=6,pos=[];
+  for(let r=0;r<RW;r++)for(let c=0;c<C;c++){const cc=r%2?C-1-c:c;pos.push([X0+cc*(S+GP),Y0+r*(S+GP)])}
+  svg.innerHTML=pos.map(([x,y])=>`<rect class="tq" x="${x}" y="${y}" width="${S}" height="${S}" rx="3"/>`).join('')+`<circle class="trav" r="6" opacity="0"/><text class="m" x="${X0}" y="${Y0+RW*(S+GP)+14}"></text>`;
+  const sq=[...svg.querySelectorAll('.tq')],dot=svg.querySelector('.trav'),txt=svg.querySelector('text');let k=0,timer=0;
+  const show=i=>{const [x,y]=pos[i];dot.setAttribute('opacity',1);dot.style.transform=`translate(${x+S/2}px,${y+S/2}px)`;sq[i].classList.add('v');txt.textContent=`Trust ${i+1}: its own procurement, its own evidence, its own governance`};
+  const reset=()=>{sq.forEach(s=>s.classList.remove('v'));k=0};
+  return{start(){clearInterval(timer);reset();dot.style.transition='none';show(0);void dot.getBBox();dot.style.transition='';
+      if(reduce){for(let i=1;i<24;i++)show(i);return}k=1;timer=setInterval(()=>{if(k>=pos.length)reset();show(k);k++},380)},
+    stop(){clearInterval(timer)}};
+})();
+
+/* ================= 2. the broken loop ================= */
+hooks.stakes=(()=>{
+  const svg=$('#ill-loop svg'),cx=260,cy=160,r=114,dg=Math.PI/180;
+  const P2=a=>[cx+r*Math.cos(a*dg),cy+r*Math.sin(a*dg)];
+  const arc=(a1,a2)=>{const [x1,y1]=P2(a1),[x2,y2]=P2(a2);return `M${x1.toFixed(1)},${y1.toFixed(1)}A${r},${r} 0 ${a2-a1>180?1:0} 1 ${x2.toFixed(1)},${y2.toFixed(1)}`};
+  const nodes=[{a:-90,l:['UK research'],x:0,y:-20,an:'middle'},{a:-18,l:['Life sciences','industry'],x:16,y:4,an:'start'},{a:54,l:['The NHS','testbed and adopter'],x:14,y:22,an:'start'},{a:126,l:['Better patient','care'],x:-14,y:22,an:'end'},{a:198,l:['Economic','growth'],x:-16,y:4,an:'end'}];
+  let h=`<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1,1 L8,5 L1,9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs><g style="color:var(--fg)">`;
+  const segs=[[-90,-18],[54,126],[126,198],[198,270]];
+  segs.forEach(([a,b])=>{h+=`<path class="lp-arc" d="${arc(a+11,b-11)}" marker-end="url(#ah)"/>`});
+  h+=`<path class="lp-brk" d="${arc(-7,11)}"/><path class="lp-brk" d="${arc(25,43)}"/>`;
+  const [bx,by]=[cx+(r-20)*Math.cos(18*dg),cy+(r-20)*Math.sin(18*dg)];
+  h+=`<text class="b" x="${(bx-8).toFixed(1)}" y="${(by-4).toFixed(1)}" text-anchor="end">Adoption:</text><text x="${(bx-8).toFixed(1)}" y="${(by+12).toFixed(1)}" text-anchor="end">the weak link</text>`;
+  nodes.forEach(n=>{const [x,y]=P2(n.a);h+=`<circle class="lp-node" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="8"/>`;
+    n.l.forEach((t,j)=>{h+=`<text${j?' class="m"':' class="b"'} x="${(x+n.x).toFixed(1)}" y="${(y+n.y+j*15).toFixed(1)}" text-anchor="${n.an}">${esc(t)}</text>`})});
+  h+=`</g><path id="lp-path" d="${arc(198,371)}" fill="none" stroke="none"/><circle class="lp-dot" r="6" cx="-20" cy="-20" opacity="0"/>`;
+  svg.innerHTML=h;
+  const path=svg.querySelector('#lp-path'),dot=svg.querySelector('.lp-dot'),L=path.getTotalLength();let raf2=0,t0=0;
+  const frame=now=>{const T=3200,hold=900,k=((now-t0)%(T+hold));const f=Math.min(1,k/T);const e=1-Math.pow(1-f,2);const p=path.getPointAtLength(e*L);
+    dot.setAttribute('cx',p.x.toFixed(1));dot.setAttribute('cy',p.y.toFixed(1));dot.setAttribute('opacity',k>T?Math.max(0,1-(k-T)/hold):1);raf2=requestAnimationFrame(frame)};
+  return{start(){if(reduce){const p=path.getPointAtLength(L);dot.setAttribute('cx',p.x);dot.setAttribute('cy',p.y);dot.setAttribute('opacity',1);return}t0=performance.now();cancelAnimationFrame(raf2);raf2=requestAnimationFrame(frame)},stop(){cancelAnimationFrame(raf2)}};
+})();
+
+/* ================= 3. priorities ================= */
+{
+  const six=D.priorities.filter(p=>p.id!=='other');
+  $('#cards').innerHTML=six.map((p,i)=>{const its=R.filter(r=>r.pri===p.id),nr=its.filter(isRec).length;
+    return `<button type="button" class="card" data-card="${p.id}"><span class="cn">${i+1}</span><span class="ct">${esc(p.title)}</span><span class="cs">${esc(p.summary)}</span><span class="strip" aria-hidden="true">${R.map(r=>`<i class="${isRec(r)?'r':'c'}${r.pri===p.id?' on':''}" style="flex:${r.words} 1 0"></i>`).join('')}</span><span class="cc">${its.length} paragraphs, ${nr} recommendations</span></button>`}).join('');
+  const cards=$('#cards');
+  cards.addEventListener('click',e=>{const c=e.target.closest('[data-card]');if(c)goTo(slides.findIndex(s=>s.id===SLIDE_OF_PRI[c.dataset.card]))});
+  const peek=e=>{const c=e.target.closest('[data-card]');if(slides[active]&&slides[active].id==='priorities')setLit(c?priSet(c.dataset.card):null)};
+  cards.addEventListener('pointerover',peek);cards.addEventListener('focusin',peek);
+  cards.addEventListener('pointerleave',()=>{if(slides[active].id==='priorities')setLit(null)});
+  cards.addEventListener('focusout',e=>{if(!cards.contains(e.relatedTarget)&&slides[active].id==='priorities')setLit(null)});
+}
+
+/* shared toggle helper for the before/after diagrams */
+function twoState(id,captions,autoplay){
+  const fig=$('#'+id),svg=fig.querySelector('svg'),cap=fig.querySelector('figcaption'),btns=[...fig.querySelectorAll('.seg button')];let touched=false,timer=0,played=false;
+  const set=st=>{svg.dataset.state=st;btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===st)));cap.innerHTML=captions[st];
+    cap.querySelectorAll('[data-para]').forEach(a=>{a.href=D.pdf+'#page='+(D.para_pages[a.dataset.para]||1)})};
+  btns.forEach(b=>b.addEventListener('click',()=>{touched=true;clearTimeout(timer);set(b.dataset.state)}));
+  set('now');
+  return{set,start(){if(autoplay&&!played&&!touched&&!reduce){played=true;timer=setTimeout(()=>{if(!touched)set('model')},2600)}},stop(){clearTimeout(timer)}};
+}
+
+/* ================= 4. pilots to national scale ================= */
+hooks.scale=(()=>{
+  const svg=$('#ill-scale svg');const nat=[280,40],reg=[[150,128],[280,128],[410,128]];
+  const tModel=[];reg.forEach(([x])=>[-54,-18,18,54].forEach(dx=>tModel.push([x+dx,222])));
+  const tNow=[[64,96],[150,212],[214,122],[262,250],[318,78],[354,172],[408,246],[456,100],[500,204],[116,158],[238,190],[486,262]];
+  let h='';
+  reg.forEach(([x,y])=>{h+=`<line class="ed" x1="${nat[0]}" y1="${nat[1]}" x2="${x}" y2="${y}"/><line class="fl" x1="${nat[0]}" y1="${nat[1]}" x2="${x}" y2="${y}"/>`});
+  tModel.forEach(([x,y],i)=>{const [rx,ry]=reg[Math.floor(i/4)];h+=`<line class="ed" x1="${rx}" y1="${ry}" x2="${x}" y2="${y}"/><line class="fl" x1="${rx}" y1="${ry}" x2="${x}" y2="${y}"/>`});
+  h+=`<g class="hub"><circle cx="${nat[0]}" cy="${nat[1]}" r="13"/>${reg.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="9"/>`).join('')}</g>`;
+  h+=`<g class="ml"><text class="b" x="300" y="44">National priorities and commissioning</text><text class="m" x="20" y="132">Regional</text><text class="m" x="20" y="146">delivery</text><text class="m" x="20" y="226">Every trust</text></g>`;
+  [0,3,5,8,10].forEach((ti,j)=>{const [x,y]=tNow[ti];h+=`<circle class="pulse" cx="${x}" cy="${y}" r="9" style="--d:${(j*.55).toFixed(2)}s"/>`});
+  h+=tNow.map(([x,y],i)=>`<g class="nd tr" style="transform:translate(${x}px,${y}px);--d:${(i*.06).toFixed(2)}s"><circle r="7.5"/></g>`).join('');
+  h+=`<text class="m now-l" x="20" y="286"></text>`;
+  svg.innerHTML=h;
+  const trs=[...svg.querySelectorAll('.tr')];
+  const ctl=twoState('ill-scale',{
+    now:'Now: innovations get stuck as pilots in individual trusts, with no follow-through to routine commissioning or national deployment (<a data-para="105">paragraph 105</a>).',
+    model:'The committee’s model, based on the Genomic Medicine Service: national priorities and commissioning, regional delivery, and a route to every trust (<a data-para="120">paragraph 120</a>).'},true);
+  new MutationObserver(()=>{const m=svg.dataset.state==='model';trs.forEach((g,i)=>{const [x,y]=(m?tModel:tNow)[i];g.style.transform=`translate(${x}px,${y}px)`})}).observe(svg,{attributes:true,attributeFilter:['data-state']});
+  return ctl;
+})();
+
+/* ================= 5. one front door for data ================= */
+hooks.data=(()=>{
+  const svg=$('#ill-data svg');
+  const src=['GP records','Hospital records','UK Biobank','Our Future Health','Genomic data','Secure data environments'];
+  const now=[[104,40,-6],[262,76,5],[88,132,4],[240,168,-5],[110,234,6],[270,262,-3]];
+  const mdl=src.map((_,k)=>[96,40+k*44,0]);
+  const res=[512,150],door=[313,112,36,76];
+  let h=`<defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1,1 L8,5 L1,9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs>`;
+  h+=`<g class="now">`+now.map(([x,y],k)=>`<path class="tg" d="M${x+74},${y} C${x+170},${y+(k%2?-70:70)} 420,${150+(k-2.5)*38} ${res[0]-16},${res[1]}"/>`).join('')+`</g>`;
+  h+=`<g class="mdl" style="color:var(--fg)">`+mdl.map(([x,y])=>`<path class="cv" d="M${x+74},${y} C${x+150},${y} 250,150 ${door[0]},150"/>`).join('')+
+    `<rect class="door" x="${door[0]}" y="${door[1]}" width="${door[2]}" height="${door[3]}" rx="5"/><circle cx="${door[0]+28}" cy="150" r="2.4" fill="var(--hi)"/>`+
+    `<path class="cv" d="M${door[0]+door[2]},150 L${res[0]-20},150" marker-end="url(#ah2)"/>`+
+    `<text class="b" x="${door[0]+18}" y="${door[1]-10}" text-anchor="middle">HDRS</text><text x="${door[0]+18}" y="${door[1]+door[3]+18}" text-anchor="middle">One front door</text><text class="m" x="${door[0]+18}" y="${door[1]+door[3]+33}" text-anchor="middle">Data kept in the UK</text></g>`;
+  h+=`<g class="now dr-g"></g>`;
+  h+=src.map((s,k)=>{const [x,y,r]=now[k];return `<g class="tile" style="transform:translate(${x}px,${y}px) rotate(${r}deg)"><rect x="-74" y="-15" width="148" height="30" rx="6"/><text y="4">${esc(s)}</text></g>`}).join('');
+  h+=`<circle cx="${res[0]}" cy="${res[1]}" r="14" fill="var(--fg)"/><text x="${res[0]}" y="${res[1]+32}" text-anchor="middle">Researchers</text><text x="${res[0]}" y="${res[1]+47}" text-anchor="middle">and UK SMEs</text>`;
+  svg.innerHTML=h;
+  // a separate door on each tangled route
+  const dg=svg.querySelector('.dr-g');svg.querySelectorAll('.tg').forEach((p,k)=>{const L=p.getTotalLength(),q=p.getPointAtLength(L*(.52+(k%3)*.08));dg.appendChild(svgEl('rect',{class:'dr',x:(q.x-3.5).toFixed(1),y:(q.y-7).toFixed(1),width:7,height:14,rx:1.5}))});
+  const tiles=[...svg.querySelectorAll('.tile')];
+  const ctl=twoState('ill-data',{
+    now:'Now: researchers deal with many data holders separately, and access takes months or years. It has gone backwards since the COVID-19 pandemic (report summary; <a data-para="170">paragraph 170</a>).',
+    model:'The committee’s model: the Health Data Research Service as a single front door to NHS data, UK Biobank and Our Future Health, with storage under UK ownership and control (<a data-para="189">paragraphs 189</a> and <a data-para="212">212</a>).'},true);
+  new MutationObserver(()=>{const m=svg.dataset.state==='model';tiles.forEach((g,k)=>{const [x,y,r]=(m?mdl:now)[k];g.style.transform=`translate(${x}px,${y}px) rotate(${r}deg)`})}).observe(svg,{attributes:true,attributeFilter:['data-state']});
+  return ctl;
+})();
+
+/* ================= 6. where genomics is strongest ================= */
+hooks.medicine=(()=>{
+  const fig=$('#ill-pm'),svg=fig.querySelector('svg'),cap=fig.querySelector('figcaption');
+  const M=[
+    {id:'cancer',x:86,l:'Cancer genomics',t:'Strong evidence for diagnosis and treatment. But shortages of pathologists and radiologists slow results: some genomic tests take 9 to 12 months, too late to guide treatment.',p:[28,31]},
+    {id:'pgx',x:218,l:'Pharmacogenomics',t:'One of the clearest near-term opportunities. About 250,000 people a year are hospitalised with adverse drug reactions, and up to 40% of those have a drug-to-genome component.',p:[35,38]},
+    {id:'newborn',x:352,l:'Newborn screening',t:'The Generation Study aims to sequence 100,000 newborns to gather the evidence. The committee wants that evidence before any universal rollout.',p:[12,24]},
+    {id:'prs',x:492,l:'Polygenic risk scores',t:'Predicting disease in healthy people is weaker, and works less well for people without recent northern European ancestry because the datasets are skewed. More research is needed.',p:[23,41]}];
+  let h=`<defs><linearGradient id="ev" x1="0" x2="1"><stop offset="0" style="stop-color:var(--fg)"/><stop offset=".5" style="stop-color:var(--fg);stop-opacity:.75"/><stop offset="1" style="stop-color:var(--rc);stop-opacity:.6"/></linearGradient></defs>`;
+  h+=`<rect x="30" y="122" width="500" height="12" rx="6" fill="url(#ev)"/>`;
+  h+=`<text class="b" x="30" y="156">Diagnosing and treating disease</text><text class="m" x="30" y="172">Strong evidence</text>`;
+  h+=`<text class="b" x="530" y="156" text-anchor="end">Predicting it in healthy people</text><text class="m" x="530" y="172" text-anchor="end">More research needed</text>`;
+  h+=M.map((m,i)=>`<g class="mk" data-id="${m.id}" style="transition-delay:${(i*.12).toFixed(2)}s"><line x1="${m.x}" y1="118" x2="${m.x}" y2="80"/><circle cx="${m.x}" cy="72" r="9"/><text x="${m.x}" y="48">${esc(m.l)}</text></g>`).join('');
+  svg.innerHTML=h;
+  $('#pm-btns').innerHTML=M.map(m=>`<button type="button" data-id="${m.id}" aria-pressed="false">${esc(m.l)}</button>`).join('');
+  const sel=id=>{const m=M.find(x=>x.id===id);svg.querySelectorAll('.mk').forEach(g=>g.classList.toggle('on',g.dataset.id===id));
+    $$('#pm-btns button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));
+    cap.innerHTML=esc(m.t)+` (<a href="${D.pdf}#page=${D.para_pages[m.p[0]]}">paragraphs ${m.p[0]}</a> and <a href="${D.pdf}#page=${D.para_pages[m.p[1]]}">${m.p[1]}</a>).`};
+  svg.addEventListener('click',e=>{const g=e.target.closest('.mk');if(g)sel(g.dataset.id)});
+  $('#pm-btns').addEventListener('click',e=>{const b=e.target.closest('button');if(b)sel(b.dataset.id)});
+  sel('pgx');
+  return{start(){requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 7. people and time ================= */
+hooks.workforce=(()=>{
+  const svg=$('#ill-people svg');
+  let h=`<text class="m" x="20" y="14">A consultant’s working time</text>`;
+  for(let i=0;i<20;i++)h+=`<rect class="${i<5?'prot':'seg2'}" x="${20+i*28}" y="24" width="26" height="22" rx="2"/>`;
+  h+=`<path d="M20,54 v6 h138 v-6" fill="none" stroke="var(--fg)" stroke-width="1"/><text x="20" y="76">At least 25% for supporting activities, including research</text>`;
+  const roles=[['Pathologists',''],['Radiologists',''],['Oncologists',''],['Genomic','counsellors'],['Pharmacists','(genomics)'],['Data','scientists'],['Clinical','academics']];
+  h+=roles.map((r,k)=>{const x=46+k*84;return `<g class="gl" style="transition-delay:${(.15+k*.09).toFixed(2)}s"><circle cx="${x}" cy="118" r="10"/><path d="M${x-17},160 Q${x-17},138 ${x},138 Q${x+17},138 ${x+17},160 Z"/><text x="${x}" y="180">${esc(r[0])}</text>${r[1]?`<text x="${x}" y="194">${esc(r[1])}</text>`:''}</g>`}).join('');
+  svg.innerHTML=h;
+  return{start(){requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 8. one-off cost, lasting benefit ================= */
+hooks.budgets=(()=>{
+  const svg=$('#ill-budget svg'),inp=$('#yrs'),out=$('#yrs-out'),ver=$('#verdict');
+  const X=y=>70+y*46,base=196,cost=118,per=17,Y=v=>base-v;
+  const draw2=n=>{
+    const pts=[];for(let y=0;y<=10;y++)pts.push([X(y),Y(per*y)]);
+    const cnt=pts.slice(0,n+1),rest=pts.slice(n);
+    let h=`<text class="m" x="536" y="236" text-anchor="end" font-style="italic">Illustrative, not real figures</text>`;
+    h+=`<line class="guide" x1="86" y1="${Y(cost)}" x2="530" y2="${Y(cost)}"/><text class="m" x="530" y="${Y(cost)-6}" text-anchor="end">Cost</text>`;
+    h+=`<path class="area" d="M${X(0)},${base} L${cnt.map(p=>p.join(',')).join(' L')} L${X(n)},${base} Z"/>`;
+    h+=`<path class="rest" d="M${rest.map(p=>p.join(',')).join(' L')}"/><path class="ln" d="M${cnt.map(p=>p.join(',')).join(' L')}"/>`;
+    h+=`<rect class="cost" x="58" y="${Y(cost)}" width="24" height="${cost}" rx="2"/><text x="70" y="${Y(cost)-9}" text-anchor="middle">One-off cost</text>`;
+    h+=`<line class="ax" x1="50" y1="${base}" x2="536" y2="${base}"/>`;
+    [0,5,10].forEach(y=>{h+=`<text class="m" x="${X(y)}" y="${base+18}" text-anchor="middle">${y?'Year '+y:'Year 0'}</text>`});
+    h+=`<line class="sel" x1="${X(n)}" y1="${base}" x2="${X(n)}" y2="30"/><text x="${X(n)+(n>7?-6:6)}" y="40" text-anchor="${n>7?'end':'start'}" class="b">Counted: ${n} year${n>1?'s':''}</text>`;
+    h+=`<line x1="250" y1="${Y(40)}" x2="272" y2="${Y(40)}" stroke="var(--hi)" stroke-width="2.5"/><text x="278" y="${Y(40)+4}">Benefit to patients and the NHS, adding up</text>`;
+    svg.innerHTML=h;out.textContent=n;
+    ver.textContent=per*n<cost?(n===1?'Counted over one year, the cost dwarfs the benefit.':`Counted over ${n} years, the cost still outweighs the benefit.`):`Counted over ${n} years, the benefit outweighs the one-off cost.`;
+  };
+  inp.addEventListener('input',()=>draw2(+inp.value));draw2(1);
+  return{};
+})();
+
+/* ================= 9. AI across its life ================= */
+hooks.ai=(()=>{
+  const fig=$('#ill-ai'),svg=fig.querySelector('svg'),cap=fig.querySelector('figcaption');
+  const cx=148,cy=132,r=92,dg=Math.PI/180;
+  const S=[
+    {id:'approve',a:-90,l:'Approve',t:'Today, approved private companies assess AI medical devices for a UKCA mark; the MHRA cannot approve them itself. The committee wants it to have that power.',p:[257,264]},
+    {id:'deploy',a:0,l:'Deploy',t:'Clinicians are unsure about accuracy, regulation and liability. The committee wants practical guidance on approved tools, human oversight, liability and audit.',p:[270,271]},
+    {id:'monitor',a:90,l:'Monitor',t:'AI can change after approval. One radiologist found a software upgrade had changed a lung cancer screening tool’s sensitivity without anyone being told.',p:[259]},
+    {id:'update',a:180,l:'Update',t:'So regulation has to follow AI through its life, including continuing monitoring once it is on the market.',p:[263,264]},
+    {id:'chat',l:'Chatbots',t:'Clinicians and the public use general-purpose chatbots for medical questions, but who regulates that is unclear. The committee wants the Government and the MHRA to decide.',p:[278,279]}];
+  const P3=a=>[cx+r*Math.cos(a*dg),cy+r*Math.sin(a*dg)];
+  const arc=(a1,a2)=>{const [x1,y1]=P3(a1),[x2,y2]=P3(a2);return `M${x1.toFixed(1)},${y1.toFixed(1)}A${r},${r} 0 0 1 ${x2.toFixed(1)},${y2.toFixed(1)}`};
+  let h=`<defs><marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1,1 L8,5 L1,9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs><g style="color:var(--fg)">`;
+  [-90,0,90,180].forEach(a=>{h+=`<path class="ar" d="${arc(a+24,a+66)}" marker-end="url(#ah3)"/>`});
+  h+=`</g>`+S.slice(0,4).map(s=>{const [x,y]=P3(s.a);return `<g class="st" data-id="${s.id}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="31"/><text x="${x.toFixed(1)}" y="${(y+4.5).toFixed(1)}">${s.l}</text></g>`}).join('');
+  h+=`<text class="m" x="${cx}" y="${cy-4}" text-anchor="middle">An AI tool’s</text><text class="m" x="${cx}" y="${cy+12}" text-anchor="middle">life</text>`;
+  h+=`<g class="bub" data-id="chat"><path d="M330,92 h176 a14,14 0 0 1 14,14 v58 a14,14 0 0 1 -14,14 h-136 l-22,20 l4,-20 h-22 a14,14 0 0 1 -14,-14 v-58 a14,14 0 0 1 14,-14 z"/><text class="b" x="425" y="122" text-anchor="middle">General-purpose chatbots</text><text x="425" y="142" text-anchor="middle">used for medical questions:</text><text x="425" y="160" text-anchor="middle" font-style="italic">who regulates them?</text></g>`;
+  svg.innerHTML=h;
+  $('#ai-btns').innerHTML=S.map(s=>`<button type="button" data-id="${s.id}" aria-pressed="false">${s.l}</button>`).join('');
+  let cur=0,timer=0,touched=false;
+  const sel=id=>{const s=S.find(x=>x.id===id);cur=S.indexOf(s);svg.querySelectorAll('[data-id]').forEach(g=>g.classList.toggle('on',g.dataset.id===id));
+    $$('#ai-btns button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));
+    cap.innerHTML=esc(s.t)+' ('+s.p.map((n,i)=>`<a href="${D.pdf}#page=${D.para_pages[n]}">${i?'':'paragraph'+(s.p.length>1?'s ':' ')}${n}</a>`).join(' and ')+').'};
+  const pick=id=>{touched=true;clearInterval(timer);sel(id)};
+  svg.addEventListener('click',e=>{const g=e.target.closest('[data-id]');if(g)pick(g.dataset.id)});
+  $('#ai-btns').addEventListener('click',e=>{const b=e.target.closest('button');if(b)pick(b.dataset.id)});
+  sel('approve');
+  return{start(){if(touched||reduce)return;clearInterval(timer);timer=setInterval(()=>sel(S[(cur+1)%S.length].id),3400)},stop(){clearInterval(timer)}};
+})();
+
+/* ================= 10. who is asked to act ================= */
+hooks.who=(()=>{
+  const acts=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||a.full.localeCompare(b.full));
+  const big=acts.filter(a=>actorCount[a.id]>=2),small=acts.filter(a=>actorCount[a.id]<2),max=actorCount[acts[0].id];
+  $('#wbars').innerHTML=big.map((a,i)=>`<a class="wb" href="explore/#to=${a.id}" data-to="${a.id}"><span class="wn">${esc(a.full)}</span><span class="wt"><i style="--w:${(actorCount[a.id]/max*100).toFixed(1)}%;--d:${(i*.07).toFixed(2)}s"></i></span><span class="wc">${actorCount[a.id]}</span></a>`).join('');
+  $('#wmore').innerHTML=`${small.length} more bodies are each named in one recommendation: `+small.map(a=>`<a href="explore/#to=${a.id}" data-to="${a.id}">${esc(a.full)}</a>`).join(', ')+'.';
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length;
+  $('#who-lede').textContent=`The Government is asked to act in ${actorCount.gov} of the ${nRec} recommendations, followed by the NHS (${actorCount.nhs}) and the Department of Health and Social Care (${actorCount.dhsc}). In ${multi} recommendations, more than one body is asked to act.`;
+  const sec=$('#who');
+  const peek=e=>{const a=e.target.closest('[data-to]');if(slides[active]&&slides[active].id==='who')setLit(a?new Set(R.filter(r=>r.to.includes(a.dataset.to)).map(r=>r.n)):null)};
+  sec.addEventListener('pointerover',peek);sec.addEventListener('focusin',peek);
+  sec.addEventListener('pointerleave',()=>{if(slides[active].id==='who')setLit(null)});
+  return{start(){sec.classList.add('on')}};
+})();
+
+/* ================= 11. what happens next ================= */
+hooks.next=(()=>{
+  const pub=D.published,due=D.gr_due,today=new Date().toISOString().slice(0,10);
+  const todayUK=new Date().toLocaleDateString('en-CA',{timeZone:'Europe/London'});
+  const days=Math.round((Date.parse(due+'T12:00:00Z')-Date.parse(todayUK+'T12:00:00Z'))/864e5);
+  const f=Math.min(1,Math.max(0,(Date.now()-Date.parse(pub+'T00:00:00Z'))/(Date.parse(due+'T00:00:00Z')-Date.parse(pub+'T00:00:00Z'))));
+  $('#tl').innerHTML=`<span class="today" style="left:${(f*100/3).toFixed(2)}%" aria-hidden="true">Today</span>
+    <li class="done"><span class="when">${fmt(pub)}</span><span class="what">The report is published.</span></li>
+    <li${days<0?' class="done"':''}><span class="when">By ${fmt(due)}</span><span class="what">The Government is expected to respond. It normally replies within two months.</span>${days>0?`<span class="count">${days} ${days===1?'day':'days'}</span><span class="what">to go</span>`:''}</li>
+    <li><span class="when">After that</span><span class="what">The House of Lords may debate the report and the Government’s response.</span></li>`;
+  return{};
+})();
+
+/* ================= start ================= */
+size();colors();
+io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)activate(slides.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px'});
+const startAt=slides.findIndex(s=>'#'+s.id===location.hash);
+if(startAt>0){slides[startAt].scrollIntoView({behavior:'auto'})}
+P={...box(slides[Math.max(0,startAt)].dataset.helix||'spine'),phase:0};
+if(startAt<=0&&!reduce){reveal=0;const t0=performance.now();const z=now=>{reveal=Math.min(1,(now-t0)/1700);reveal=1-Math.pow(1-reveal,3);draw();if(reveal<1)requestAnimationFrame(z)};requestAnimationFrame(z)}
+slides.forEach(s=>io.observe(s));
+draw();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();cancelAnimationFrame(raf);P={...P,...box(mode)};draw();
+  $$('[data-helixnote]').forEach(p=>{p.textContent=innerWidth>820?'Lit on the helix at the right: where they sit in the report.':'Lit on the helix below: where they sit in the report.'})},120)});
+})();
+</script>
+</body>
+</html>

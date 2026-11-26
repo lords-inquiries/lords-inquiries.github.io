@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>__TITLE__</title>
 <meta name="description" content="__DESC__">
-<link rel="preload" href="../fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /*
 SUBJECT: a Lords committee report on why the NHS struggles to adopt genomics and AI. Readers: peers, officials, journalists, NHS and industry people.
@@ -17,9 +17,9 @@ PALETTE: slide-glass paper, stain ink, two G-band greys, one fluorophore magenta
 TYPE: Archivo (variable width) for structure and labels, condensed for numbers; Newsreader for the committee's own words.
 LAYOUT: left-aligned, wide measure for the map, a reading measure (<75ch) for text. One orchestrated moment: the bands lay themselves down on load.
 */
-@font-face{font-family:"Archivo";src:url(../fonts/archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(../fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
-@font-face{font-family:"Newsreader";src:url(../fonts/newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(../fonts/newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
-@font-face{font-family:"Newsreader";src:url(../fonts/newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(../fonts/newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:"Archivo";src:url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
 :root{
   color-scheme:light dark;
   --paper:#F3F5F4;--ink:#16232E;--muted:#586570;--rule:#D3DADE;--rule2:#E3E8EA;
@@ -37,6 +37,7 @@ button{font:inherit;color:inherit}
 .wrap{max-width:1280px;margin:0 auto;padding:0 max(4vw,16px)}
 
 /* top links */
+.crumbs{display:flex;flex-wrap:wrap;gap:6px 20px}
 .top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:18px;font-size:14px;color:var(--muted)}
 
 /* hero */
@@ -249,7 +250,7 @@ footer p{max-width:86ch;margin:0 0 10px}
 </head>
 <body>
 <div class="wrap">
-<nav class="top" aria-label="Site"><a href="../../science-and-technology/">Lords Science and Technology Committee reports</a><a id="pdflink" href="#">Read the full report (PDF)</a></nav>
+<nav class="top" aria-label="Site"><span class="crumbs"><a href="__ROOT__science-and-technology/">Lords Science and Technology Committee reports</a><a href="../">The report in brief</a></span><a id="pdflink" href="#">Read the full report (PDF)</a></nav>
 
 <header class="hero">
 <h1 id="title"></h1>
@@ -335,6 +336,7 @@ function matcher(){
   const h=st.hl; if(!h)return null;
   if(h.type==='to')return r=>r.to.includes(h.v);
   if(h.type==='topic'){const rx=TOP[h.v].rx;return r=>{rx.lastIndex=0;return rx.test(r.text)}}
+  if(h.type==='pri')return r=>r.pri===h.v;
   const q=h.v.toLowerCase();return r=>(r.text+' '+r.to.map(id=>AC[id].name+' '+AC[id].full).join(' ')).toLowerCase().includes(q);
 }
 function markRx(){
@@ -403,6 +405,8 @@ function status(L){
     el.innerHTML=`<span class="dot"></span>${esc(a.full)}: asked to act in <b>${n} of the ${nRec} recommendations</b>.`;
   }else if(h.type==='topic'){
     const t=TOP[h.v];el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> mention ${esc(/^[A-Z]{2,}$/.test(t.name)?t.name:t.name.toLowerCase())} <span style="color:var(--muted)">(matching ${esc(t.words)})</span>.`;
+  }else if(h.type==='pri'){
+    el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> sit under “${esc(PRI[h.v].title)}”${h.v==='other'?'':', one of the committee’s six priorities'}.`;
   }else{
     el.innerHTML=n?`<span class="dot"></span>“${esc(h.v)}” appears in <b>${n} of the ${N} paragraphs</b>.`:`No paragraph mentions “${esc(h.v)}”. Try a shorter word, or pick a topic.`;
   }
@@ -651,22 +655,22 @@ $('#miniclear').addEventListener('click',()=>setHl(null));
 $('#minichange').addEventListener('click',()=>{$('#controls').scrollIntoView({behavior:reduce?'auto':'smooth'});$('#q').focus({preventScroll:true})});
 function syncHash(){
   const p=new URLSearchParams();if(st.by!=='ch')p.set('by',st.by);
-  if(st.hl)p.set(st.hl.type==='to'?'to':st.hl.type==='topic'?'topic':'q',st.hl.v);
+  if(st.hl)p.set(st.hl.type,st.hl.v);
   if(cur)p.set('r',cur);
   const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search);
 }
 function readHash(){
   const p=new URLSearchParams(location.hash.slice(1));
   if(p.get('by')==='pri'){st.by='pri';$$('[data-by]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.by==='pri')))}
-  const to=p.get('to'),tp=p.get('topic'),q=p.get('q');
-  st.hl=to&&AC[to]?{type:'to',v:to}:tp&&TOP[tp]?{type:'topic',v:tp}:q?{type:'q',v:q}:null;
+  const to=p.get('to'),tp=p.get('topic'),q=p.get('q'),pr=p.get('pri');
+  st.hl=to&&AC[to]?{type:'to',v:to}:tp&&TOP[tp]?{type:'topic',v:tp}:pr&&PRI[pr]?{type:'pri',v:pr}:q?{type:'q',v:q}:null;
   return +p.get('r')||0;
 }
 
 /* ---------- footer ---------- */
 $('#foot').innerHTML=`<p>Source: ${esc(D.committee)}, <a href="${esc(D.pdf)}"><cite>${esc(D.title)}</cite></a> (${esc(D.number)}, ${esc(D.paper)}), summary of conclusions and recommendations, checked against the paragraphs in the body of the report. Conclusions and recommendations are told apart as the report prints them: bold for conclusions, bold italic for recommendations. <a href="${esc(D.work)}">Inquiry page and evidence</a>.</p>
 <p>Who is asked to act, the topics and the grouping under the six priorities are our reading of the report’s wording. An unofficial tool, not a Parliament service. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
-<p><a href="data.json">Download the data (JSON)</a>. <a href="../../">Open House of Lords inquiries</a>.</p>`;
+<p><a href="../">The report in brief</a>. <a href="../data.json">Download the data (JSON)</a>. <a href="__ROOT__">Open House of Lords inquiries</a>.</p>`;
 
 /* ---------- start ---------- */
 const startItem=readHash();
