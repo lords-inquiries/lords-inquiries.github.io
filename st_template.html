@@ -233,7 +233,7 @@ function sess(e,past){
   const getPf=()=>ready||(ready=(async()=>{pf=await import('./evidence-index/pagefind.js');await pf.options({excerptLength:30});pf.init();return pf})());
   const num=n=>Number(n).toLocaleString('en-GB');
   fetch('evidence-index/stats.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(s=>{
-    const part=(k,label)=>s[k].indexed<s[k].listed?`${num(s[k].indexed)} of ${num(s[k].listed)} ${label} (the rest are still being collected)`:`${num(s[k].listed)} ${label}`;
+    const part=(k,label)=>s[k].pending?`${num(s[k].indexed)} of ${num(s[k].listed)} ${label} (the rest are still being collected)`:`${num(s[k].indexed)} ${label}`;
     $('#evstats').textContent='Searching '+part('oral','oral evidence transcripts')+' and '+part('written','written submissions')+' since 2016. Updated '+fmt(s.generated.slice(0,10))+'.';
   }).catch(()=>{
     $('#evstats').textContent='The search index is still being built. Please check back tomorrow.';

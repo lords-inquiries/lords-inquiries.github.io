@@ -262,7 +262,8 @@ def main():
             with open(os.path.join(a.pages, f"{short}-{item['id']}.html"), "w") as f:
                 f.write(page(kind, item, meta, d["text"]))
             indexed += 1
-        stats[short] = {"listed": len(items), "indexed": indexed}
+        pending = sum(1 for item in items if cached(item) is None)
+        stats[short] = {"listed": len(items), "indexed": indexed, "pending": pending}
         log(f"  {kind}: {indexed} of {len(items)} indexed")
 
     os.makedirs(os.path.dirname(a.stats), exist_ok=True)
