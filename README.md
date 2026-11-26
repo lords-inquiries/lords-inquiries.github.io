@@ -8,7 +8,7 @@ A free, unofficial website listing every current inquiry run by a House of Lords
 
 - `build.py` queries the public [UK Parliament Committees API](https://committees-api.parliament.uk) for every Lords and joint committee, collects their open committee business, and keeps inquiries plus anything with an open written-evidence period. One-off and regular evidence sessions are left out.
 - It writes a static site to `site/`: `index.html` (the page), `data.json` (the data, for reuse) and `feed.xml` (an RSS feed of open calls).
-- A GitHub Actions workflow (`.github/workflows/update.yml`) runs every morning, rebuilds the site and publishes it with GitHub Pages. If the API returns suspiciously little data, the build stops and yesterday's site stays up.
+- A GitHub Actions workflow (`.github/workflows/update.yml`) runs every morning (three scheduled slots between about 5am and 8am UTC, in case GitHub skips one), rebuilds the site and publishes it with GitHub Pages. If the API returns suspiciously little data, the build stops and yesterday's site stays up.
 
 No dependencies beyond the Python 3.9+ standard library.
 

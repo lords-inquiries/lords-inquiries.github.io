@@ -2,7 +2,12 @@ name: Update site
 
 on:
   schedule:
-    - cron: "17 5 * * *"   # every morning, about 5:17am GMT / 6:17am BST
+    # GitHub sometimes delays or skips scheduled runs, so there are three
+    # morning slots (times are UTC). Each run rebuilds from scratch, so
+    # extra runs are harmless.
+    - cron: "17 5 * * *"
+    - cron: "43 6 * * *"
+    - cron: "11 8 * * *"
   workflow_dispatch:        # "Run workflow" button for a manual refresh
   push:
     branches: [main]
