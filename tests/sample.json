@@ -173,8 +173,9 @@
       "startDate": "2026-11-11T09:00:00",
       "endDate": "2027-01-15T23:59:00",
       "submissionType": "WrittenEvidence",
-      "statusMessage": "x",
-      "allowSubmissionsPastEndDate": false
+      "statusMessage": "<p>The committee welcomes responses</p>",
+      "allowSubmissionsPastEndDate": false,
+      "isPromoted": true
      }
     ],
     "closedSubmissionPeriods": [],
@@ -258,8 +259,9 @@
       "startDate": "2026-10-26T09:00:00",
       "endDate": "2026-11-30T18:00:00",
       "submissionType": "WrittenEvidence",
-      "statusMessage": "x",
-      "allowSubmissionsPastEndDate": false
+      "statusMessage": "<p>The committee welcomes responses</p>",
+      "allowSubmissionsPastEndDate": false,
+      "isPromoted": true
      }
     ],
     "closedSubmissionPeriods": [],
@@ -310,8 +312,9 @@
       "startDate": "2026-05-14T09:00:00",
       "endDate": "2026-11-26T17:00:00",
       "submissionType": "WrittenEvidence",
-      "statusMessage": "x",
-      "allowSubmissionsPastEndDate": false
+      "statusMessage": "<p>The committee welcomes responses</p>",
+      "allowSubmissionsPastEndDate": false,
+      "isPromoted": true
      }
     ],
     "closedSubmissionPeriods": [],
@@ -370,8 +373,9 @@
       "startDate": "2025-07-29T09:00:00",
       "endDate": null,
       "submissionType": "WrittenEvidence",
-      "statusMessage": "x",
-      "allowSubmissionsPastEndDate": false
+      "statusMessage": null,
+      "allowSubmissionsPastEndDate": false,
+      "isPromoted": false
      }
     ],
     "closedSubmissionPeriods": [],
@@ -441,8 +445,9 @@
       "startDate": "2024-09-30T09:00:00",
       "endDate": null,
       "submissionType": "WrittenEvidence",
-      "statusMessage": "x",
-      "allowSubmissionsPastEndDate": false
+      "statusMessage": null,
+      "allowSubmissionsPastEndDate": false,
+      "isPromoted": false
      }
     ],
     "closedSubmissionPeriods": [],
@@ -622,7 +627,9 @@
     "openSubmissionPeriods": [
      {
       "endDate": "2026-11-13T23:59:00",
-      "submissionType": "WrittenEvidence"
+      "submissionType": "WrittenEvidence",
+      "isPromoted": true,
+      "statusMessage": "<p>The committee welcomes responses</p>"
      }
     ],
     "closedSubmissionPeriods": []

@@ -134,18 +134,25 @@ def written(p):
     return "written" in t.lower() or "evidence" in t.lower()
 
 
+def is_real_call(p):
+    """Committees leave some placeholder evidence periods 'open' indefinitely (no end
+    date, not promoted, no message) so evidence can be published without a public call.
+    The website shows no call for these. A real call is promoted, or at least has a
+    closing date and an invitation message."""
+    if p.get("isPromoted"):
+        return True
+    return bool(p.get("endDate")) and bool((p.get("statusMessage") or "").strip())
+
+
 def shape(b, committee_id, now):
     btype = b.get("type") or {}
     is_inquiry = bool(btype.get("isInquiry")) or (btype.get("name") == "Inquiry")
-    open_periods = [p for p in (b.get("openSubmissionPeriods") or []) if written(p)]
+    open_periods = [p for p in (b.get("openSubmissionPeriods") or []) if written(p) and is_real_call(p)]
     live = []
     for p in open_periods:
         end = parse_dt(p.get("endDate"))
         if end is None or end > now:
             live.append(end)
-    if os.environ.get("DEBUG_PERIODS") and (b.get("openSubmissionPeriods") or []):
-        print("PERIODS", json.dumps({"id": b["id"], "title": b.get("title"), "type": btype.get("name"),
-              "open": b.get("openSubmissionPeriods"), "closed": b.get("closedSubmissionPeriods")}, ensure_ascii=False), file=sys.stderr)
     if not is_inquiry and not live:
         return None  # one-off sessions, regular sessions, bill scrutiny with no call
     item = {"i": b["id"], "t": (b.get("title") or "").strip(), "c": committee_id, "o": day(b.get("openDate"))}
