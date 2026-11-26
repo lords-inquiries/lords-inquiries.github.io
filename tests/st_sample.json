@@ -164,6 +164,23 @@
     "governmentResponses": [],
     "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/43779/43779.htm",
     "documents": []
+   },
+   {
+    "id": 56025,
+    "description": "1st Report - Innovation in the NHS: Personalised Medicine and AI\u2013lost opportunities?",
+    "publicationStartDate": "2026-11-26T00:01:00",
+    "hlPaper": {
+     "number": "HL Paper 93",
+     "sessionDescription": "2026-27"
+    },
+    "type": {
+     "id": 1
+    },
+    "businesses": [],
+    "governmentResponses": {
+     "publication": [],
+     "responseDeadline": "2027-01-26T00:00:00"
+    }
    }
   ],
   "2": [
@@ -204,12 +221,14 @@
   "WrittenEvidence": {
    "9424": 40,
    "9014": 120,
-   "7872": 75
+   "7872": 75,
+   "9659": 95
   },
   "OralEvidence": {
    "9424": 10,
    "9014": 18,
-   "7872": 0
+   "7872": 0,
+   "9659": 20
   }
  },
  "hansard": [
@@ -230,6 +249,24 @@
    "SittingDate": "2023-01-01T00:00:00",
    "DebateSectionExtId": "X",
    "House": "Lords"
+  }
+ ],
+ "business": [
+  {
+   "id": 9659,
+   "title": "Innovation in the NHS: personalised medicine and AI",
+   "type": {
+    "isInquiry": true
+   },
+   "openDate": "2026-03-03T00:00:00"
+  },
+  {
+   "id": 9014,
+   "title": "Financing and Scaling UK Science and Technology",
+   "type": {
+    "isInquiry": true
+   },
+   "openDate": "2025-03-20T00:00:00"
   }
  ]
 }

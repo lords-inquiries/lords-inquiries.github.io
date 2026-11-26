@@ -85,6 +85,16 @@ class Live:
             if not items or skip >= data.get("totalResults", 0):
                 return out
 
+    def inquiries(self):
+        out, skip = [], 0
+        while True:
+            data = capi("CommitteeBusiness", CommitteeId=COMMITTEE_ID, Take=100, Skip=skip)
+            items = data.get("items") or []
+            out += items
+            skip += 100
+            if not items or skip >= data.get("totalResults", 0):
+                return out
+
     def evidence_count(self, kind, business_id):
         data = capi(kind, CommitteeBusinessId=business_id, Take=1)
         return data.get("totalResults")
@@ -120,6 +130,9 @@ class Sample:
 
     def publications(self, type_ids):
         return [p for t in type_ids for p in self.d["publications"].get(str(t), [])]
+
+    def inquiries(self):
+        return self.d.get("business", [])
 
     def evidence_count(self, kind, business_id):
         return self.d["evidence"].get(kind, {}).get(str(business_id))
@@ -229,6 +242,21 @@ def check_links(reports):
             log(f"LINK FAIL {u}: {e}")
 
 
+def match_inquiry(title, date, inquiries):
+    """A brand-new report may not be linked to its inquiry yet: match by title."""
+    best, best_key = {}, None
+    tw = words(title)
+    for b in inquiries:
+        bw = words(pick(b, "title", default=""))
+        if not bw or (date and day(pick(b, "openDate")) and day(pick(b, "openDate")) > date):
+            continue
+        score = len(bw & tw) / len(bw)
+        k = (score, day(pick(b, "openDate")) or "")
+        if score >= 0.6 and (best_key is None or k > best_key):
+            best, best_key = b, k
+    return best
+
+
 # ---------- build ----------
 
 def build(src, now):
@@ -269,6 +297,12 @@ def build(src, now):
             uniq.append(d)
     debates = uniq
 
+    try:
+        inquiries = [b for b in src.inquiries() if (pick(pick(b, "type", default={}), "isInquiry"))]
+    except Exception as e:
+        log(f"Inquiry list failed: {e}")
+        inquiries = []
+
     reports, seen_titles = [], set()
     for p in sorted(raw_reports, key=lambda x: pick(x, "publicationStartDate", default="")):
         pid = p["id"]
@@ -281,7 +315,7 @@ def build(src, now):
         seen_titles.add(key)
         date = day(pick(p, "publicationStartDate"))
         bus = [b for b in (pick(p, "businesses", default=[]) or []) if isinstance(b, dict)]
-        inquiry = bus[0] if bus else {}
+        inquiry = bus[0] if bus else match_inquiry(title, date, inquiries)
         bid = pick(inquiry, "id")
 
         rec = {

@@ -99,6 +99,7 @@ const fmt=s=>s?new Date(s+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric
 const days=(a,b)=>Math.round((Date.parse(b+'T12:00:00Z')-Date.parse(a+'T12:00:00Z'))/864e5);
 const today=new Date().toISOString().slice(0,10);
 const firstGr=r=>r.gr.find(g=>g.d)||r.gr[0];
+const awaiting=r=>!r.gr.length&&r.kind==='Report'&&!!r.due;
 const median=a=>{if(!a.length)return null;const s=[...a].sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:Math.round((s[m-1]+s[m])/2)};
 
 $('#meta').textContent='Updated '+fmt(DATA.generated.slice(0,10))+' · '+R.length+' reports';
@@ -106,13 +107,13 @@ $('#meta').textContent='Updated '+fmt(DATA.generated.slice(0,10))+' · '+R.lengt
 {
   const withGr=R.filter(r=>r.gr.length);
   const lag=withGr.map(r=>{const g=firstGr(r);return g&&g.d&&r.d?days(r.d,g.d):null}).filter(x=>x!==null&&x>=0);
-  const waiting=R.filter(r=>!r.gr.length&&r.kind==='Report');
+  const waiting=R.filter(awaiting);
   const deb=R.filter(r=>r.deb);
   const tiles=[
     [R.length,'reports published','since '+fmt(R.map(r=>r.d).filter(Boolean).sort()[0])],
     [withGr.length,'Government responses received',median(lag)!==null?'typically '+median(lag)+' days after the report':''],
     [waiting.length,'awaiting a Government response',waiting.length?'oldest: '+esc(waiting[waiting.length-1].t.slice(0,48))+(waiting[waiting.length-1].t.length>48?'…':''):'none outstanding'],
-    [deb.length,'debated in the Lords chamber',deb.length?'latest '+fmt(deb.map(r=>r.deb.d).sort().pop()):'']
+    [deb.length,'debated in the Lords',deb.length?'in the chamber or Grand Committee; latest '+fmt(deb.map(r=>r.deb.d).sort().pop()):'']
   ];
   $('#kpis').innerHTML=tiles.map(t=>`<div class="kpi"><b>${t[0]}</b><span>${t[1]}</span><small>${t[2]}</small></div>`).join('');
 }
@@ -134,7 +135,7 @@ function ev(r,key,label,path){
 function row(r){
   const g=firstGr(r);
   const grS=r.gr.length?stage('Government response',g.d?fmt(g.d):'Published',g.d&&r.d?days(r.d,g.d)+' days after report'+(r.gr.length>1?' · '+r.gr.length+' responses':''):'',g.url,true)
-    :stage('Government response',r.kind==='Report'?'Awaiting':'Not expected',r.kind==='Report'?(r.due&&r.due>=today?'Due by '+fmt(r.due):r.d?days(r.d,today)+' days since report':''):'','',false);
+    :awaiting(r)?stage('Government response','Awaiting',r.due>=today?'Due by '+fmt(r.due):'Was due '+fmt(r.due),'',false):stage('Government response','Not found','','',false);
   const dS=r.deb?stage('Lords debate',fmt(r.deb.d),'Read in Hansard',r.deb.url,true):stage('Lords debate','Not found','','',false);
   return `<article class="rep"><div><div class="when">${fmt(r.d)}${r.paper?' · '+esc(r.paper):''}${r.kind!=='Report'?' · '+esc(r.kind):''}</div>
   <h3><a href="${esc(r.url)}">${esc(r.t)}</a></h3>
@@ -144,7 +145,7 @@ function row(r){
 function render(){
   const q=$('#q').value.trim().toLowerCase(),f=$('#f').value,y=ysel.value;
   const rows=R.filter(r=>(!y||(r.d||'').startsWith(y))&&(!q||(r.t+' '+(r.inq||'')+' '+(r.dept||'')).toLowerCase().includes(q))&&
-    (!f||(f==='nogr'&&!r.gr.length&&r.kind==='Report')||(f==='nodeb'&&!r.deb)||(f==='deb'&&r.deb)));
+    (!f||(f==='nogr'&&awaiting(r))||(f==='nodeb'&&!r.deb)||(f==='deb'&&r.deb)));
   $('#count').textContent=rows.length+' of '+R.length+' reports';
   $('#list').innerHTML=rows.length?rows.map(row).join(''):'<div class="empty">No reports match. Try clearing the search or filters.</div>';
 }
