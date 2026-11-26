@@ -193,15 +193,27 @@ def paper(p):
     return None
 
 
+PAPER_PAGE = re.compile(r"^(https://publications\.parliament\.uk/pa/[^?#]+?/([^/]+))/[^/]+\.html?$")
+
+
 def pub_url(p):
+    """Link to the report as a PDF where possible.
+
+    On publications.parliament.uk a paper's PDF sits in its folder, named after
+    the folder (.../ldsctech/256/25602.htm -> .../ldsctech/256/256.pdf). Failing
+    that, use the committee site's copy of the document, then the HTML page.
+    """
     url = pick(p, "additionalContentUrl")
-    if url:
-        return url
+    m = PAPER_PAGE.match(url or "")
+    if m:
+        return f"{m.group(1)}/{m.group(2)}.pdf"
     docs = pick(p, "documents", default=[]) or []
     for d in docs:
         doc_id = pick(d, "documentId", "id")
         if doc_id:
             return f"https://committees.parliament.uk/publications/{p['id']}/documents/{doc_id}/default/"
+    if url:
+        return url
     return f"https://committees.parliament.uk/committee/{COMMITTEE_ID}/science-and-technology-committee/publications/"
 
 
@@ -608,6 +620,8 @@ def main():
     n_gr = sum(1 for r in data["reports"] if r["gr"])
     n_deb = sum(1 for r in data["reports"] if r.get("deb"))
     print(f"S&T: {n} reports, {n_gr} with government response, {n_deb} with a matched Lords debate")
+    n_pdf = sum(1 for r in data["reports"] if r["url"].endswith(".pdf"))
+    print(f"S&T: {n_pdf} of {n} report links go straight to a PDF")
     if DEBUG:
         for r in data["reports"][:40]:
             log(f"  {r['d']} | {r['t'][:60]} | we={r.get('we')} oe={r.get('oe')} | gr={[g['d'] for g in r['gr']]} | deb={r.get('deb', {}).get('t')}")
