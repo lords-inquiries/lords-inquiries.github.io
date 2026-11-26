@@ -14,6 +14,7 @@ Usage:
 """
 import argparse
 import datetime as dt
+import glob
 import html
 import json
 import os
@@ -546,6 +547,13 @@ def build(src, now):
             sc, date, title, link = found[0]
             r["deb"] = {"d": date, "url": link, "t": title}
 
+    # link reports that have a recommendations explorer (built by recs_build.py)
+    viz = explorers()
+    for r in reports:
+        url = viz.get(r.get("paper")) or viz.get(squash(r.get("t")))
+        if url:
+            r["viz"] = url
+
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
 
     events = []
@@ -564,6 +572,25 @@ def build(src, now):
 
     return {"generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "committee": COMMITTEE_NAME, "committeeId": COMMITTEE_ID,
             "reports": reports, "events": events}
+
+
+def squash(s):
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+def explorers():
+    """Map 'HL Paper N (session)' to the recommendations explorer page for that report."""
+    out = {}
+    for path in glob.glob(os.path.join(HERE, "reports", "*.json")):
+        try:
+            with open(path, encoding="utf-8") as f:
+                d = json.load(f)
+            url = f"../recommendations/{os.path.splitext(os.path.basename(path))[0]}/"
+            out[f"{d['paper']} ({d['session']})"] = url
+            out[squash(d["title"])] = url  # fallback if the API gives the paper number differently
+        except Exception as e:
+            log(f"Skipping {path}: {e}")
+    return out
 
 
 def main():

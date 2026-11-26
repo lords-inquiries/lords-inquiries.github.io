@@ -53,6 +53,11 @@ jobs:
           python st_build.py --sample tests/st_sample.json --out /tmp/test-st
           python st_build.py --out site/science-and-technology
 
+      # Interactive explorers of individual reports' recommendations (data in reports/).
+      - name: Build the report recommendation explorers
+        continue-on-error: true
+        run: python recs_build.py --out site/recommendations
+
       # BETA: full-text search of oral and written evidence. Document text is
       # cached between runs so only new documents are downloaded; the time
       # budget lets a long backfill continue over several runs.

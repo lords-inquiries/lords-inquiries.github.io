@@ -1,0 +1,1467 @@
+{
+ "title": "Innovation in the NHS: Personalised Medicine and AI—lost opportunities?",
+ "committee": "House of Lords Science and Technology Committee",
+ "number": "1st Report of Session 2026–27",
+ "paper": "HL Paper 93",
+ "session": "2026-27",
+ "published": "2026-11-26",
+ "gr_due": "2027-01-26",
+ "pdf": "https://publications.parliament.uk/pa/ld5902/ldselect/ldsctech/93/93.pdf",
+ "page_offset": 2,
+ "work": "https://committees.parliament.uk/work/9659/innovation-in-the-nhs-personalised-medicine-and-ai/",
+ "finding": "the NHS does not have an innovation problem, but it struggles to adopt proven innovations effectively.",
+ "chapters": [
+  {
+   "n": 2,
+   "title": "Personalised medicine and AI"
+  },
+  {
+   "n": 3,
+   "title": "Translation, commercialisation and economic return"
+  },
+  {
+   "n": 4,
+   "title": "Enhancing NHS adoption of innovations"
+  },
+  {
+   "n": 5,
+   "title": "Health data for research"
+  },
+  {
+   "n": 6,
+   "title": "Regulation, clinical trials and workforce"
+  }
+ ],
+ "sections": [
+  {
+   "id": 1,
+   "ch": 2,
+   "h1": "Universal newborn screening for prevention and polygenic risk scores",
+   "h2": "Polygenic risk scores"
+  },
+  {
+   "id": 2,
+   "ch": 2,
+   "h1": "Cancer genomics: diagnosis and treatment",
+   "h2": ""
+  },
+  {
+   "id": 3,
+   "ch": 2,
+   "h1": "Pharmacogenomics",
+   "h2": ""
+  },
+  {
+   "id": 4,
+   "ch": 2,
+   "h1": "Diversity in genomic datasets",
+   "h2": ""
+  },
+  {
+   "id": 5,
+   "ch": 2,
+   "h1": "AI in the NHS",
+   "h2": "AI and good data"
+  },
+  {
+   "id": 6,
+   "ch": 2,
+   "h1": "AI in the NHS",
+   "h2": "Adoption of AI in the NHS"
+  },
+  {
+   "id": 7,
+   "ch": 3,
+   "h1": "Research, life sciences industry, NHS and economic growth",
+   "h2": ""
+  },
+  {
+   "id": 8,
+   "ch": 3,
+   "h1": "NHS and innovation vendors",
+   "h2": ""
+  },
+  {
+   "id": 9,
+   "ch": 3,
+   "h1": "Relationship between public bodies and NHS priorities",
+   "h2": ""
+  },
+  {
+   "id": 10,
+   "ch": 3,
+   "h1": "International regulatory alignment",
+   "h2": ""
+  },
+  {
+   "id": 11,
+   "ch": 4,
+   "h1": "Scaling pilots to routine adoption",
+   "h2": "Budgeting for innovation"
+  },
+  {
+   "id": 12,
+   "ch": 4,
+   "h1": "National commissioning of priority technologies",
+   "h2": ""
+  },
+  {
+   "id": 13,
+   "ch": 4,
+   "h1": "Requirements across trusts",
+   "h2": ""
+  },
+  {
+   "id": 14,
+   "ch": 4,
+   "h1": "Designing pilots to support scale and funding implementation",
+   "h2": ""
+  },
+  {
+   "id": 15,
+   "ch": 4,
+   "h1": "Accountability and funding",
+   "h2": "Innovation at national level"
+  },
+  {
+   "id": 16,
+   "ch": 4,
+   "h1": "Budgeting for personalised medicine",
+   "h2": ""
+  },
+  {
+   "id": 17,
+   "ch": 4,
+   "h1": "Shifting to prevention",
+   "h2": ""
+  },
+  {
+   "id": 18,
+   "ch": 5,
+   "h1": "Health data for research",
+   "h2": "Health data and public trust"
+  },
+  {
+   "id": 19,
+   "ch": 5,
+   "h1": "The Health Data Research Service and primary care data",
+   "h2": "Primary care data and the HDRS"
+  },
+  {
+   "id": 20,
+   "ch": 5,
+   "h1": "HDRS funding and access to data",
+   "h2": ""
+  },
+  {
+   "id": 21,
+   "ch": 5,
+   "h1": "Sovereign digital capability in the NHS",
+   "h2": ""
+  },
+  {
+   "id": 22,
+   "ch": 5,
+   "h1": "Secure data environments and health data for training AI",
+   "h2": ""
+  },
+  {
+   "id": 23,
+   "ch": 6,
+   "h1": "Roles of NICE and MHRA",
+   "h2": ""
+  },
+  {
+   "id": 24,
+   "ch": 6,
+   "h1": "Challenges for the existing regulatory structures",
+   "h2": "Appraisal metrics"
+  },
+  {
+   "id": 25,
+   "ch": 6,
+   "h1": "MHRA resources",
+   "h2": ""
+  },
+  {
+   "id": 26,
+   "ch": 6,
+   "h1": "Regulating AI as a medical device",
+   "h2": ""
+  },
+  {
+   "id": 27,
+   "ch": 6,
+   "h1": "General-purpose large language models as medical devices",
+   "h2": ""
+  },
+  {
+   "id": 28,
+   "ch": 6,
+   "h1": "Clinical trials",
+   "h2": "AI and clinical trials"
+  },
+  {
+   "id": 29,
+   "ch": 6,
+   "h1": "Workforce",
+   "h2": "Protect research time and training time for clinicians"
+  },
+  {
+   "id": 30,
+   "ch": 6,
+   "h1": "Workforce",
+   "h2": "Reverse the decline in clinical academic numbers"
+  },
+  {
+   "id": 31,
+   "ch": 6,
+   "h1": "Workforce",
+   "h2": "Academic funding and evaluation"
+  },
+  {
+   "id": 32,
+   "ch": 6,
+   "h1": "Workforce",
+   "h2": "Medical training and workforce planning"
+  }
+ ],
+ "priorities": [
+  {
+   "id": "scale",
+   "title": "Fund and commission innovations that work at a national scale",
+   "summary": "Move from single-trust pilots to proof of value across the system: national or regional procurement, standard contracts, passporting between trusts, and the Genomic Medicine Service as a template."
+  },
+  {
+   "id": "data",
+   "title": "Build a sovereign health data capability for the UK",
+   "summary": "Sustained investment in the Health Data Research Service, a published strategy and metrics, access for UK SMEs and academics, and compute to train sovereign clinical AI models."
+  },
+  {
+   "id": "pm",
+   "title": "Roll out personalised medicine with supporting evidence",
+   "summary": "Build the evidence for newborn screening and polygenic risk scores; prioritise diagnosis and treatment such as pharmacogenomics and cancer genomics."
+  },
+  {
+   "id": "people",
+   "title": "Invest in the workforce and clinical trials",
+   "summary": "Protect clinicians’ time for research and training, reverse the decline in clinical academics, and keep speeding up clinical trials."
+  },
+  {
+   "id": "account",
+   "title": "Provide clear accountability and better budgeting for innovation",
+   "summary": "A single accountable contact for innovation in each trust, adoption metrics, multi-year or outcome-based budgets, and broader NICE appraisal criteria."
+  },
+  {
+   "id": "ai",
+   "title": "Modernise and clarify regulation for AI in healthcare",
+   "summary": "More powers and resources for the MHRA across the lifecycle of AI as a medical device, and guidance for clinicians on large language models."
+  },
+  {
+   "id": "other",
+   "title": "Outside the six headline priorities",
+   "summary": "Paragraphs on translation, the life sciences economy and international regulatory alignment that the summary’s six priorities do not cover."
+  }
+ ],
+ "actors": [
+  {
+   "id": "gov",
+   "name": "The Government",
+   "full": "The Government, with no department named"
+  },
+  {
+   "id": "dhsc",
+   "name": "DHSC",
+   "full": "Department of Health and Social Care"
+  },
+  {
+   "id": "nhs",
+   "name": "The NHS",
+   "full": "The NHS, with no body named"
+  },
+  {
+   "id": "nhse",
+   "name": "NHS England",
+   "full": "NHS England"
+  },
+  {
+   "id": "trusts",
+   "name": "NHS trusts",
+   "full": "NHS trusts"
+  },
+  {
+   "id": "hdrs",
+   "name": "HDRS",
+   "full": "Health Data Research Service"
+  },
+  {
+   "id": "mhra",
+   "name": "MHRA",
+   "full": "Medicines and Healthcare products Regulatory Agency"
+  },
+  {
+   "id": "nice",
+   "name": "NICE",
+   "full": "National Institute for Health and Care Excellence"
+  },
+  {
+   "id": "ge",
+   "name": "Genomics England",
+   "full": "Genomics England"
+  },
+  {
+   "id": "catapults",
+   "name": "Catapults",
+   "full": "Life sciences Catapults"
+  },
+  {
+   "id": "colleges",
+   "name": "Royal Colleges",
+   "full": "Royal Colleges"
+  },
+  {
+   "id": "medschools",
+   "name": "Medical schools",
+   "full": "Medical schools"
+  },
+  {
+   "id": "dbist",
+   "name": "DBIST",
+   "full": "Department for Business, Innovation, Science and Trade"
+  },
+  {
+   "id": "funders",
+   "name": "Research funders",
+   "full": "Health research funders"
+  },
+  {
+   "id": "ukri",
+   "name": "UKRI",
+   "full": "UK Research and Innovation"
+  },
+  {
+   "id": "nihr",
+   "name": "NIHR",
+   "full": "National Institute for Health and Care Research"
+  },
+  {
+   "id": "unis",
+   "name": "Academic institutions",
+   "full": "Academic institutions"
+  },
+  {
+   "id": "ref",
+   "name": "REF",
+   "full": "Research Excellence Framework"
+  },
+  {
+   "id": "regulators",
+   "name": "Regulators",
+   "full": "Regulators, not named"
+  },
+  {
+   "id": "research",
+   "name": "Research community",
+   "full": "The research community"
+  },
+  {
+   "id": "none",
+   "name": "No one named",
+   "full": "The recommendation does not say who should act"
+  }
+ ],
+ "topics": [
+  {
+   "id": "ai",
+   "name": "AI",
+   "re": "\\bAI\\b|artificial intelligence|\\bLLMs?\\b|foundation models?",
+   "flags": "",
+   "words": "AI, LLMs, foundation models"
+  },
+  {
+   "id": "genomics",
+   "name": "Genomics",
+   "re": "genom|polygenic",
+   "flags": "i",
+   "words": "genomics, genomic, polygenic"
+  },
+  {
+   "id": "data",
+   "name": "Health data",
+   "re": "\\bdata\\b(?! scientists)|\\bHDRS\\b|Health Data Research Service",
+   "flags": "i",
+   "words": "data, HDRS"
+  },
+  {
+   "id": "pilots",
+   "name": "Pilots and scaling",
+   "re": "\\bpilot|at scale|to scale|scale-up|routine (?:use|commissioning)|spread from one trust",
+   "flags": "i",
+   "words": "pilots, scale, routine use"
+  },
+  {
+   "id": "procurement",
+   "name": "Procurement",
+   "re": "procure",
+   "flags": "i",
+   "words": "procurement, procured"
+  },
+  {
+   "id": "money",
+   "name": "Funding and budgets",
+   "re": "\\bfund|budget|invest|resourc|payment",
+   "flags": "i",
+   "words": "funding, budgets, investment, resources, payment"
+  },
+  {
+   "id": "workforce",
+   "name": "Workforce and training",
+   "re": "workforce|training(?! AI| on | clinical foundation)|pathologist|radiologist|oncologist|counsellor|pharmacist|clinical academic|data scientist",
+   "flags": "i",
+   "words": "workforce, training, named professions"
+  },
+  {
+   "id": "trust",
+   "name": "Public trust",
+   "re": "public trust|trusted|transparen|public engagement|privacy|public acceptability",
+   "flags": "i",
+   "words": "public trust, transparency, privacy"
+  },
+  {
+   "id": "prevention",
+   "name": "Prevention",
+   "re": "prevention|preventing ill|shift to prevent",
+   "flags": "i",
+   "words": "prevention"
+  },
+  {
+   "id": "sovereign",
+   "name": "Sovereignty",
+   "re": "sovereign",
+   "flags": "i",
+   "words": "sovereign, sovereignty"
+  },
+  {
+   "id": "trials",
+   "name": "Clinical trials",
+   "re": "clinical trial",
+   "flags": "i",
+   "words": "clinical trials"
+  }
+ ],
+ "recs": [
+  {
+   "n": 1,
+   "ch": 2,
+   "sec": 1,
+   "pri": "pm",
+   "kind": "con",
+   "text": "Genomics often works better for precision diagnosis and treatment than for prediction in healthy individuals. Further research is needed to establish the evidence base for wider use of polygenic risk scores, and this will take time. There is a risk of excessive optimism in hoping the UK’s genomic medicine successes will enable a shift to prevention.",
+   "para": 23,
+   "page": 14,
+   "to": [],
+   "words": 56
+  },
+  {
+   "n": 2,
+   "ch": 2,
+   "sec": 1,
+   "pri": "pm",
+   "kind": "rec",
+   "text": "The evidence base for genomic diagnosis and treatment is strong. The Government should improve the evidence base on the use of genomic screening in newborns and for prediction and prevention in healthy populations (i.e. polygenic risk scores) before rolling these out. It should ensure that sufficient genomic counsellors and genomics training opportunities for clinical practitioners are available. The NHS may wish to focus initially on near-term wins in other areas of genomic medicine, or using risk scores internally to prioritise screening efforts.",
+   "para": 24,
+   "page": 14,
+   "to": [
+    "gov",
+    "nhs"
+   ],
+   "words": 82
+  },
+  {
+   "n": 3,
+   "ch": 2,
+   "sec": 1,
+   "pri": "pm",
+   "kind": "rec",
+   "text": "Developments in genomics have considerable potential for the NHS. This comes with a huge education and training task for NHS leaders. The NHS also has a role to play in educating the public about what is and what is not possible in terms of prevention, particularly in respect of polygenic risk scores.",
+   "para": 25,
+   "page": 14,
+   "to": [
+    "nhs"
+   ],
+   "words": 52
+  },
+  {
+   "n": 4,
+   "ch": 2,
+   "sec": 2,
+   "pri": "pm",
+   "kind": "con",
+   "text": "We welcome the Government’s ambitions for cancer genomics for diagnosis and treatment, but their achievement risks being limited by the lack of trained pathologists and radiologists who are required to implement cancer genomics, resulting in delays in testing and analysis.",
+   "para": 31,
+   "page": 15,
+   "to": [],
+   "words": 40
+  },
+  {
+   "n": 5,
+   "ch": 2,
+   "sec": 2,
+   "pri": "pm",
+   "kind": "rec",
+   "text": "The Government should, as part of its workforce plan, assess the required numbers of pathologists, oncologists, and radiologists to implement cancer genomics universally and return test results and analysis early enough to inform first-line treatment. It should work with medical schools and the Royal Colleges to ensure that the training offer keeps up to date with new technologies.",
+   "para": 32,
+   "page": 15,
+   "to": [
+    "gov",
+    "colleges",
+    "medschools"
+   ],
+   "words": 58
+  },
+  {
+   "n": 6,
+   "ch": 2,
+   "sec": 3,
+   "pri": "pm",
+   "kind": "con",
+   "text": "Pharmacogenomics is one of the clearest near-term opportunities for personalised medicine. The NHS intends to integrate it into routine clinical practice as part of the 10 Year Health Plan for England: it will be an important test for the practicality of integrating genomic medicine into routine primary care across the NHS, not just in specialist centres.",
+   "para": 38,
+   "page": 16,
+   "to": [],
+   "words": 56
+  },
+  {
+   "n": 7,
+   "ch": 2,
+   "sec": 3,
+   "pri": "pm",
+   "kind": "rec",
+   "text": "NHS England should publish a pharmacogenomics implementation plan, beginning with high-impact drug–gene interactions, the prevention of severe adverse drug reactions, and groups where health inequalities or high-risk prescribing make implementation especially valuable.",
+   "para": 39,
+   "page": 17,
+   "to": [
+    "nhse"
+   ],
+   "words": 32
+  },
+  {
+   "n": 8,
+   "ch": 2,
+   "sec": 4,
+   "pri": "pm",
+   "kind": "con",
+   "text": "A lack of diversity in genomic datasets is an urgent problem. Genomic databases are skewed towards people of northern European ancestry, meaning risk scores and diagnostics work less well for those from other backgrounds, with implications for the rollout of clinical genomics in the NHS.",
+   "para": 44,
+   "page": 17,
+   "to": [],
+   "words": 45
+  },
+  {
+   "n": 9,
+   "ch": 2,
+   "sec": 4,
+   "pri": "pm",
+   "kind": "rec",
+   "text": "Research projects such as Our Future Health are aiming to correct the lack of diversity in genomic datasets, and must be supported in doing so to avoid a rollout of personalised medicines that are less effective in some populations than others.",
+   "para": 45,
+   "page": 17,
+   "to": [
+    "none"
+   ],
+   "words": 41
+  },
+  {
+   "n": 10,
+   "ch": 2,
+   "sec": 5,
+   "pri": "data",
+   "kind": "con",
+   "text": "AI requires good quality data and effective oversight and curation of the data on which the AI is being trained. AI cannot create observations: there is still a need for real-world measurement of clinical variables, particularly with longitudinal health studies. The UK has exceptional research assets in the form of studies like UK Biobank and Our Future Health, and significant potential from NHS data.",
+   "para": 51,
+   "page": 20,
+   "to": [],
+   "words": 64
+  },
+  {
+   "n": 11,
+   "ch": 2,
+   "sec": 5,
+   "pri": "data",
+   "kind": "rec",
+   "text": "Investments in AI for healthcare should acknowledge and fund the critically important data infrastructure and data-gathering exercises, such as longitudinal health studies.",
+   "para": 52,
+   "page": 20,
+   "to": [
+    "none"
+   ],
+   "words": 22
+  },
+  {
+   "n": 12,
+   "ch": 2,
+   "sec": 6,
+   "pri": "scale",
+   "kind": "con",
+   "text": "There is a wide variety of AI tools being developed for possible healthcare applications, faster than regulation, adoption and evaluation frameworks can keep up. There is a risk that the NHS might acquire AI products that do not address its most pressing clinical problems: witnesses argued that industry too often offers what it has already built, rather than what the NHS most needs.",
+   "para": 56,
+   "page": 21,
+   "to": [],
+   "words": 63
+  },
+  {
+   "n": 13,
+   "ch": 2,
+   "sec": 6,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "The Department of Health and Social Care should publish priority problem statements for AI in healthcare, tied to specific clinical pathways and patient outcomes—for example, in radiology and pathology—and should use procurement and innovation funding to direct solutions towards those needs.",
+   "para": 57,
+   "page": 21,
+   "to": [
+    "dhsc"
+   ],
+   "words": 41
+  },
+  {
+   "n": 14,
+   "ch": 3,
+   "sec": 7,
+   "pri": "other",
+   "kind": "con",
+   "text": "The life sciences industry offers enormous potential for economic prosperity through reindustrialisation in the UK. Better innovation in the NHS can support productivity: directly through a more efficient and effective NHS, and a healthier population and indirectly through supporting more productive innovative industries such as the life sciences. Maintaining our position in these industries is essential for wealth creation in the UK. There can be a powerful reinforcing effect between the UK’s excellent research, its life sciences industry, the NHS as a testbed and driver of healthcare innovation, the quality of patient care and economic growth. But this is currently not working as it should and the UK’s position in the life sciences is under threat from overseas competition.",
+   "para": 64,
+   "page": 23,
+   "to": [],
+   "words": 119
+  },
+  {
+   "n": 15,
+   "ch": 3,
+   "sec": 8,
+   "pri": "scale",
+   "kind": "con",
+   "text": "There is misalignment between the NHS and external innovators. The NHS is often approached by people proposing innovations which do not fit into existing clinical pathways. On the other side, there is a lack of signalling from the NHS on the types of innovations that it requires. A single front door into NHS procurement often does not exist. We discuss in Chapter 4 how the NHS can reform its procurement processes to more effectively support innovation across trusts.",
+   "para": 75,
+   "page": 24,
+   "to": [],
+   "words": 78
+  },
+  {
+   "n": 16,
+   "ch": 3,
+   "sec": 8,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "The NHS needs to be a more effective customer for innovation. This requires clearer signalling around the types of innovations that the NHS requires, how they fit into clinical pathways, and the evidence base that it requires to adopt them. There is a role for the Industrial Strategy ‘concierge service’ to provide routes into the regulators and national NHS procurement for life sciences companies. This requires aligning the businesses the industrial strategy supports with the NHS’s priorities.",
+   "para": 76,
+   "page": 25,
+   "to": [
+    "nhs",
+    "gov"
+   ],
+   "words": 77
+  },
+  {
+   "n": 17,
+   "ch": 3,
+   "sec": 9,
+   "pri": "other",
+   "kind": "con",
+   "text": "Public bodies, such as Genomics England and the Catapults, that have intended to assist in translation have not always succeeded.",
+   "para": 83,
+   "page": 26,
+   "to": [],
+   "words": 20
+  },
+  {
+   "n": 18,
+   "ch": 3,
+   "sec": 9,
+   "pri": "other",
+   "kind": "rec",
+   "text": "Public sector organisations in the life sciences, such as Genomics England and the life sciences Catapults, should be supported and resourced to enable translation and commercial partnerships in the UK. They should align their support with the NHS’s priorities and demand, and report on commercial metrics as key performance indicators.",
+   "para": 84,
+   "page": 26,
+   "to": [
+    "ge",
+    "catapults"
+   ],
+   "words": 50
+  },
+  {
+   "n": 19,
+   "ch": 3,
+   "sec": 10,
+   "pri": "other",
+   "kind": "con",
+   "text": "Judicious regulatory alignment with international regulatory bodies, and fuller use of the Access Consortium, matter not only to speed up approval of medicines developed elsewhere but also to give UK-based SMEs a quicker route into larger overseas markets.",
+   "para": 90,
+   "page": 27,
+   "to": [],
+   "words": 38
+  },
+  {
+   "n": 20,
+   "ch": 3,
+   "sec": 10,
+   "pri": "other",
+   "kind": "rec",
+   "text": "The Government, through the MHRA, should align with international regulators where this makes sense for the UK and deepen the Access Consortium, pursuing regulatory harmonisation with other markets, so UK life sciences companies can scale and sell internationally without relocating.",
+   "para": 91,
+   "page": 27,
+   "to": [
+    "gov",
+    "mhra"
+   ],
+   "words": 40
+  },
+  {
+   "n": 21,
+   "ch": 4,
+   "sec": 11,
+   "pri": "scale",
+   "kind": "con",
+   "text": "Innovations can get stuck in a phase of pilots in individual trusts, intended to gather evidence, but with no follow-through to routine commissioning or national deployment. A lack of national strategy, budgeting and commissioning for innovations, together with fragmented procurement practices, duplicated local governance, uncertain reimbursement for companies and insufficient implementation funding are to blame.",
+   "para": 105,
+   "page": 31,
+   "to": [],
+   "words": 55
+  },
+  {
+   "n": 22,
+   "ch": 4,
+   "sec": 11,
+   "pri": "scale",
+   "kind": "con",
+   "text": "Innovation is often a victim of budgetary pressures. The NHS capital expenditure budget is squeezed, limiting innovations which require upfront investment in equipment. At an individual trust level, innovation is often funded out of 3% “transformation” budgets, for which there are competing priorities. Funding is skewed towards invention and pilots, and away from implementing proven innovations at scale.",
+   "para": 106,
+   "page": 32,
+   "to": [],
+   "words": 58
+  },
+  {
+   "n": 23,
+   "ch": 4,
+   "sec": 11,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "The NHS must adopt an innovation strategy that replaces haphazard and proliferating pilots in individual Trusts with a proof of value process that leads to sustained adoption. A review of funding across the innovation pathway should consider rebalancing the allocation of funding towards implementation. There should be more explicit ringfencing for innovation budgets within NHS trusts; these budgets should not be raided for other purposes.",
+   "para": 107,
+   "page": 32,
+   "to": [
+    "nhs",
+    "trusts"
+   ],
+   "words": 65
+  },
+  {
+   "n": 24,
+   "ch": 4,
+   "sec": 12,
+   "pri": "scale",
+   "kind": "con",
+   "text": "The NHS has shown that it can effectively adopt innovation nationally when leadership, commissioning and the workforce are aligned. The Genomic Medicine Service and the Genomic Test Directory are examples of this, with national commissioning and an approved test directory delivered regionally. But this model is not widely used for AI, personalised medicine and other advanced therapies.",
+   "para": 119,
+   "page": 34,
+   "to": [],
+   "words": 57
+  },
+  {
+   "n": 25,
+   "ch": 4,
+   "sec": 12,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "The Government should implement the Genomic Medicine Service model as a template for other high-priority innovations: national priorities; infrastructure and commissioning; regional delivery capacity; clear, regularly reviewed standards of what the NHS expects to deliver; and explicit routes from evidence generation to routine commissioning.",
+   "para": 120,
+   "page": 34,
+   "to": [
+    "gov"
+   ],
+   "words": 44
+  },
+  {
+   "n": 26,
+   "ch": 4,
+   "sec": 13,
+   "pri": "scale",
+   "kind": "con",
+   "text": "Trust-by-trust commissioning and procurement is a major barrier to scale. Even where technologies have regulatory approval and have demonstrated patient benefit, companies are often required to negotiate with individual trusts. Unnecessary duplication in procurement processes is costly for the NHS and frustrating for innovators; standardised processes would save time and money.",
+   "para": 124,
+   "page": 34,
+   "to": [],
+   "words": 51
+  },
+  {
+   "n": 27,
+   "ch": 4,
+   "sec": 13,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "For priority technologies, the NHS and the DHSC should provide national or regional framework procurement, including standard contracts, standard terms for the governance of data and intellectual property, and an identified funding route that allows innovations to spread from one trust to many. “Passporting” approved innovations from one trust to another should be expanded.",
+   "para": 125,
+   "page": 35,
+   "to": [
+    "nhs",
+    "dhsc"
+   ],
+   "words": 54
+  },
+  {
+   "n": 28,
+   "ch": 4,
+   "sec": 14,
+   "pri": "scale",
+   "kind": "con",
+   "text": "Not all pilots will succeed, but those that are launched should have a pathway to success. Too often, the NHS can fund piloting, but not the long-term transformation or access fees needed to adopt a given technology routinely.",
+   "para": 129,
+   "page": 35,
+   "to": [],
+   "words": 38
+  },
+  {
+   "n": 29,
+   "ch": 4,
+   "sec": 14,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "Innovation pilots for priority technologies should include: a credible route to providing a scale-up budget built into the original proposal, setting out where the funding will come from to support routine use; support for implementation; and a decision point for national adoption based on clear and agreed thresholds that define success. Pilots should not be funded unless there is a credible route to routine use if the evidence supports it.",
+   "para": 130,
+   "page": 35,
+   "to": [
+    "none"
+   ],
+   "words": 70
+  },
+  {
+   "n": 30,
+   "ch": 4,
+   "sec": 15,
+   "pri": "account",
+   "kind": "con",
+   "text": "We welcome the Government’s recognition that innovation requires national support and local flexibility. However, the evidence we received suggests that it is often unclear, both in individual trusts and at the level of NHS England, who takes responsibility for the adoption of innovation in the NHS. Fragmented responsibilities delay adoption. There is insufficient monitoring of which trusts are adopting innovations, which makes it difficult to hold anyone to account for uneven adoption.",
+   "para": 141,
+   "page": 37,
+   "to": [],
+   "words": 72
+  },
+  {
+   "n": 31,
+   "ch": 4,
+   "sec": 15,
+   "pri": "account",
+   "kind": "rec",
+   "text": "Each trust should have a single accountable point of contact for clinicians and innovators interested in innovation adoption. The Department of Health and Social Care should designate a named Senior Responsible Owner for NHS Innovation Adoption nationally, who has the authority to align regulators, research funders, integrated care boards and other bodies around agreed national priorities for innovation. The DHSC should consider requiring trusts to report metrics on their adoption for key priority innovations, and should support trusts that lag behind.",
+   "para": 142,
+   "page": 37,
+   "to": [
+    "trusts",
+    "dhsc"
+   ],
+   "words": 81
+  },
+  {
+   "n": 32,
+   "ch": 4,
+   "sec": 16,
+   "pri": "account",
+   "kind": "con",
+   "text": "Annual NHS budgeting has struggled to accommodate large, but one-off costs for curative and advanced therapies, such as CAR-T cell and gene-editing therapy for sickle-cell disease, despite the potential long-term benefit to patients. The current system, which lacks multi-year budgeting, has a negative effect on the NHS’s ability to fund treatments that are more cost-effective in the long term. This needs to be addressed.",
+   "para": 147,
+   "page": 38,
+   "to": [],
+   "words": 64
+  },
+  {
+   "n": 33,
+   "ch": 4,
+   "sec": 16,
+   "pri": "account",
+   "kind": "rec",
+   "text": "In order to recognise the value of curative and advanced therapies on a longer-term basis, outcome-based payment and multi-year budgeting for advanced and curative therapies should be used by the NHS where it is cost-effective in the long run.",
+   "para": 148,
+   "page": 38,
+   "to": [
+    "nhs"
+   ],
+   "words": 39
+  },
+  {
+   "n": 34,
+   "ch": 4,
+   "sec": 17,
+   "pri": "account",
+   "kind": "con",
+   "text": "We are concerned to hear about the lack of leadership and the lack of a national budget for prevention. Given that prevention measures are difficult to measure and may pay back over long periods, they risk being perpetually crowded out by immediate funding pressures.",
+   "para": 154,
+   "page": 39,
+   "to": [],
+   "words": 44
+  },
+  {
+   "n": 35,
+   "ch": 4,
+   "sec": 17,
+   "pri": "account",
+   "kind": "rec",
+   "text": "The Government should ensure accountability and budget allocations for priority areas. A shift to prevention will require a longer-term change in mindset on the part of the NHS and on the part of patients.",
+   "para": 155,
+   "page": 39,
+   "to": [
+    "gov"
+   ],
+   "words": 34
+  },
+  {
+   "n": 36,
+   "ch": 5,
+   "sec": 18,
+   "pri": "data",
+   "kind": "con",
+   "text": "The UK has exceptionally rich health data. But gaining access to these data for research has been a perennial policy problem. We heard that it has gone backwards since the COVID-19 pandemic, at a huge cost to the life sciences sector, NHS and health system, and ultimately to patients.",
+   "para": 170,
+   "page": 42,
+   "to": [],
+   "words": 49
+  },
+  {
+   "n": 37,
+   "ch": 5,
+   "sec": 18,
+   "pri": "data",
+   "kind": "con",
+   "text": "Concerns over the privacy of health data have scuppered previous attempts to address this. Trusted access to health data is critical. But public trust cannot be assumed; it must be earned through transparency and visible patient benefit, as well as clear lines of accountability for the controllership of data.",
+   "para": 171,
+   "page": 42,
+   "to": [],
+   "words": 49
+  },
+  {
+   "n": 38,
+   "ch": 5,
+   "sec": 18,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The narrative around health data needs to be reframed. The Government, NHS, HDRS and the research community should articulate the risks of not using health data, rather than just the risks of using it.",
+   "para": 172,
+   "page": 42,
+   "to": [
+    "gov",
+    "nhs",
+    "hdrs",
+    "research"
+   ],
+   "words": 34
+  },
+  {
+   "n": 39,
+   "ch": 5,
+   "sec": 18,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The HDRS should maintain continuous public engagement; publish examples of how data use has benefited patients and the NHS; and be transparent about commercial access and safeguards.",
+   "para": 173,
+   "page": 42,
+   "to": [
+    "hdrs"
+   ],
+   "words": 27
+  },
+  {
+   "n": 40,
+   "ch": 5,
+   "sec": 19,
+   "pri": "data",
+   "kind": "con",
+   "text": "The Committee welcomes the establishment of the Health Data Research Service. However, we are concerned it is expected to accomplish a great deal and that, over a year from its initial announcement, it has not yet published a strategy. Key priorities from witnesses include simplifying and streamlining access to existing data assets, using the HDRS to assist with clinical trial enrolment, and unlocking access to primary care data.",
+   "para": 188,
+   "page": 45,
+   "to": [],
+   "words": 68
+  },
+  {
+   "n": 41,
+   "ch": 5,
+   "sec": 19,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The Health Data Research Service should be backed with sustained, long-term investment and political commitment, with realistic expectations. It should:\n• publish a strategy setting out its priority activities and expected timelines, including how it will support broad access to health data for UK researchers and SMEs;\n• function as a single front door for access to health data for research held across the NHS and in existing research assets (Biobank and Our Future Health);\n• adopt clear metrics for its success and report on them;\n• strongly encourage linking primary care data;\n• support the build-out of sovereign data capacity, including storing data in UK-based data centres (as discussed in the later report section on Sovereign digital capability in the NHS);\n• consider taking on data controllership of key national data assets like GP data.",
+   "para": 189,
+   "page": 45,
+   "to": [
+    "hdrs"
+   ],
+   "words": 136
+  },
+  {
+   "n": 42,
+   "ch": 5,
+   "sec": 19,
+   "pri": "data",
+   "kind": "rec",
+   "text": "Finding a solution to the problem of accessing primary care data should be undertaken urgently. The Government should therefore consult GPs and those representing patients about the feasibility of legislating to clarify who has specific responsibility for controlling research uses of GP data.",
+   "para": 190,
+   "page": 45,
+   "to": [
+    "gov"
+   ],
+   "words": 43
+  },
+  {
+   "n": 43,
+   "ch": 5,
+   "sec": 20,
+   "pri": "data",
+   "kind": "con",
+   "text": "The Government aims for the Health Data Research Service to be self-funding through commercial partnerships by 2030. As there is not yet clarity around which services the HDRS will offer, and what prices it will charge, it is impossible to assess whether this is a realistic ambition. But we are concerned that this obligation to be self-funding may limit the HDRS’s ability to support academic researchers and UK-based SMEs. There may be risks to the public acceptability of the HDRS if it relies on big commercial partnerships for its funding.",
+   "para": 200,
+   "page": 47,
+   "to": [],
+   "words": 90
+  },
+  {
+   "n": 44,
+   "ch": 5,
+   "sec": 20,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The HDRS and its sponsoring department need to set out their framework for commercial partnerships and ensuring fair trade rather than free trade in health data for the UK. The Government should ensure that the HDRS supports access for a broad range of SMEs and life sciences researchers in the UK. The Government should explain and justify the HDRS “self-funding” model, benchmarking fees against international competitors. The Government should take wider, indirect economic benefits from supporting health research through the HDRS into account.",
+   "para": 201,
+   "page": 47,
+   "to": [
+    "hdrs",
+    "gov"
+   ],
+   "words": 83
+  },
+  {
+   "n": 45,
+   "ch": 5,
+   "sec": 21,
+   "pri": "data",
+   "kind": "con",
+   "text": "AI and data infrastructure across the NHS is uneven and there is often a lack of interoperability between systems. The NHS is overreliant on a small number of key US suppliers for critical digital infrastructure. This raises concerns around data confidentiality, ownership and control, which intersect with patient concerns around how health data are used and the importance of safeguarding UK health data as a critical national asset.",
+   "para": 210,
+   "page": 49,
+   "to": [],
+   "words": 68
+  },
+  {
+   "n": 46,
+   "ch": 5,
+   "sec": 21,
+   "pri": "data",
+   "kind": "rec",
+   "text": "NHS trusts and NHS digital transformation efforts must work in partnership with the HDRS to improve the underlying clinical digital infrastructure of the NHS, including through the adoption and enforcement of common interoperability standards.",
+   "para": 211,
+   "page": 49,
+   "to": [
+    "trusts",
+    "nhs",
+    "hdrs"
+   ],
+   "words": 34
+  },
+  {
+   "n": 47,
+   "ch": 5,
+   "sec": 21,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The NHS should make procurement decisions with a view to the urgent need to build sovereign UK data storage and analysis capacity, under UK ownership and control.",
+   "para": 212,
+   "page": 49,
+   "to": [
+    "nhs"
+   ],
+   "words": 27
+  },
+  {
+   "n": 48,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "con",
+   "text": "A simpler, more consistent system of secure data environments would be easier to police and more accessible for researchers.",
+   "para": 217,
+   "page": 50,
+   "to": [],
+   "words": 19
+  },
+  {
+   "n": 49,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The Government should establish a national accreditation framework for secure data environments, as recommended by the Sudlow Review. The Health Data Research Service should play a key role in setting these standards. It should also seek to retire or consolidate data assets where appropriate.",
+   "para": 218,
+   "page": 50,
+   "to": [
+    "gov",
+    "hdrs"
+   ],
+   "words": 44
+  },
+  {
+   "n": 50,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "con",
+   "text": "It is unclear how data held within secure data environments can be used for training AI models, and how those AI models can then be used. Secure data environments may not have access to sufficient compute to train AI models.",
+   "para": 227,
+   "page": 51,
+   "to": [],
+   "words": 40
+  },
+  {
+   "n": 51,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The Government and the HDRS should ensure secure data environments have access to sufficient compute to train UK-based AI models.",
+   "para": 228,
+   "page": 51,
+   "to": [
+    "gov",
+    "hdrs"
+   ],
+   "words": 20
+  },
+  {
+   "n": 52,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "con",
+   "text": "Clinical foundation models that have the potential to predict ill-health are being developed. But they require training on curated, UK-specific data. The Government’s approach to using health data for training clinical foundation models, even in the NHS’s own secure data environments, is unclear, as the Foresight story illustrates.",
+   "para": 229,
+   "page": 51,
+   "to": [],
+   "words": 48
+  },
+  {
+   "n": 53,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "rec",
+   "text": "The Government needs to set a clear direction of exactly how UK health data can be used to train clinical foundation models and under what circumstances. The UK should develop a sovereign AI capability for health, rather than relying on importing models that are not optimised for use in the UK health system.",
+   "para": 230,
+   "page": 51,
+   "to": [
+    "gov"
+   ],
+   "words": 53
+  },
+  {
+   "n": 54,
+   "ch": 5,
+   "sec": 22,
+   "pri": "data",
+   "kind": "rec",
+   "text": "Sovereignty in respect of data is a very important issue and is recognised as such by most comparable countries; it is even more so in the context of data being used to train AI models. The storage of health data should be owned and controlled by the UK.",
+   "para": 231,
+   "page": 52,
+   "to": [
+    "none"
+   ],
+   "words": 48
+  },
+  {
+   "n": 55,
+   "ch": 6,
+   "sec": 23,
+   "pri": "scale",
+   "kind": "con",
+   "text": "The new MHRA–NICE Aligned Pathway is a good start in preventing duplication in regulatory processes. The National HealthTech Access Programme is a positive initiative to ensure approved and appraised technologies are adopted more widely.",
+   "para": 237,
+   "page": 55,
+   "to": [],
+   "words": 34
+  },
+  {
+   "n": 56,
+   "ch": 6,
+   "sec": 23,
+   "pri": "scale",
+   "kind": "rec",
+   "text": "Both programmes should be expanded, and critically, NICE, MHRA, the DHSC, and the NHS should work closely together to ensure that technologies that have received regulatory approval and a positive appraisal are swiftly adopted and procured by NHS trusts.",
+   "para": 238,
+   "page": 55,
+   "to": [
+    "nice",
+    "mhra",
+    "dhsc",
+    "nhs"
+   ],
+   "words": 39
+  },
+  {
+   "n": 57,
+   "ch": 6,
+   "sec": 24,
+   "pri": "account",
+   "kind": "con",
+   "text": "The NICE appraisal model faces challenges in assessing measures for preventing ill health. It should take into account the wider social or economic benefits of curative therapies, or technologies developed in the UK. NICE’s methods are evolving, but will need to adapt to rapidly developing technologies whose benefits may accrue outside narrow NHS budgets.",
+   "para": 248,
+   "page": 56,
+   "to": [],
+   "words": 54
+  },
+  {
+   "n": 58,
+   "ch": 6,
+   "sec": 24,
+   "pri": "account",
+   "kind": "rec",
+   "text": "The Department of Health and Social Care should clarify to NICE how wider social and economic benefits, such as the impact of new treatments on prevention, workforce productivity and the UK’s economic growth are to be weighed. It should do so with a view to ensuring that the long-term benefits from positive appraisals for its technologies are taken into account.",
+   "para": 249,
+   "page": 56,
+   "to": [
+    "dhsc"
+   ],
+   "words": 60
+  },
+  {
+   "n": 59,
+   "ch": 6,
+   "sec": 25,
+   "pri": "ai",
+   "kind": "rec",
+   "text": "The DHSC should support a fee-and-performance model for the MHRA that funds additional expert capacity in exchange for guaranteed timelines for scientific advice and other services. The Government must ensure that resourcing, in terms of expertise as well as finances, for the MHRA does not become a limiting factor in the UK’s ability to assess novel treatments and medicines.",
+   "para": 256,
+   "page": 57,
+   "to": [
+    "dhsc",
+    "gov"
+   ],
+   "words": 59
+  },
+  {
+   "n": 60,
+   "ch": 6,
+   "sec": 26,
+   "pri": "ai",
+   "kind": "con",
+   "text": "We welcome the Government’s commitment to reform in the regulation of AI as a medical device, including through measures proposed in the Health Bill to enable the MHRA to better regulate in this area. Regulation should include post-deployment monitoring to adapt to AI tools that can change over time. The terminology around AI and software constituting a ‘medical device’ could cause confusion.",
+   "para": 263,
+   "page": 58,
+   "to": [],
+   "words": 62
+  },
+  {
+   "n": 61,
+   "ch": 6,
+   "sec": 26,
+   "pri": "ai",
+   "kind": "rec",
+   "text": "The Government should give the MHRA the powers it needs, through legislation if necessary, to approve and regulate software and AI as medical devices for the UK market. The MHRA’s expanded responsibility should include initial safety and performance assessment, and continuing post-market monitoring of software and AI as medical devices.",
+   "para": 264,
+   "page": 58,
+   "to": [
+    "gov",
+    "mhra"
+   ],
+   "words": 50
+  },
+  {
+   "n": 62,
+   "ch": 6,
+   "sec": 26,
+   "pri": "ai",
+   "kind": "con",
+   "text": "Amongst clinicians there is wide variation in AI use, underpinned by uncertainty around accuracy, regulation, liability and whether tools have been validated in real-world clinical settings.",
+   "para": 270,
+   "page": 59,
+   "to": [],
+   "words": 26
+  },
+  {
+   "n": 63,
+   "ch": 6,
+   "sec": 26,
+   "pri": "ai",
+   "kind": "rec",
+   "text": "The DHSC, the royal colleges and regulators should develop practical professional guidance on AI use in clinical pathways, covering approved tools that have been subject to the MHRA’s lifecycle assessment, and providing for human oversight, liability and audit standards for AI tools.",
+   "para": 271,
+   "page": 59,
+   "to": [
+    "dhsc",
+    "colleges",
+    "regulators"
+   ],
+   "words": 42
+  },
+  {
+   "n": 64,
+   "ch": 6,
+   "sec": 27,
+   "pri": "ai",
+   "kind": "con",
+   "text": "Clinicians and the general public make widespread use of general-purpose LLMs that are not approved or regulated as medical devices for medical purposes. Without accessible, regulated alternatives, this is likely to continue, yet who regulates this is unclear.",
+   "para": 278,
+   "page": 60,
+   "to": [],
+   "words": 38
+  },
+  {
+   "n": 65,
+   "ch": 6,
+   "sec": 27,
+   "pri": "ai",
+   "kind": "rec",
+   "text": "The Government and the MHRA should decide which of them takes ownership of the regulation of general-purpose LLMs for medical uses. Working with the Department for Business, Innovation, Science and Trade (DBIST), the DHSC and MHRA should commission research into their effectiveness for healthcare tasks, and adopt proportionate evidence-based regulation and guidance for when general-purpose LLMs can and can’t be used.",
+   "para": 279,
+   "page": 60,
+   "to": [
+    "gov",
+    "mhra",
+    "dbist",
+    "dhsc"
+   ],
+   "words": 61
+  },
+  {
+   "n": 66,
+   "ch": 6,
+   "sec": 28,
+   "pri": "people",
+   "kind": "con",
+   "text": "The UK has made real progress in speeding up clinical trials, but there is more to do to ensure it is competitive internationally. The traditional model of clinical trials will increasingly be challenged by AI.",
+   "para": 292,
+   "page": 62,
+   "to": [],
+   "words": 35
+  },
+  {
+   "n": 67,
+   "ch": 6,
+   "sec": 28,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government, including the NHS, DHSC and MHRA, should redouble efforts to speed up the recruitment to and delivery of clinical trials and reduce the burden of regulation once they are running. Health research funders should be empowered to experiment with clinical trial design, including assessing AI alternatives and retaining more data for AI analysis.",
+   "para": 293,
+   "page": 62,
+   "to": [
+    "gov",
+    "nhs",
+    "dhsc",
+    "mhra",
+    "funders"
+   ],
+   "words": 55
+  },
+  {
+   "n": 68,
+   "ch": 6,
+   "sec": 29,
+   "pri": "people",
+   "kind": "con",
+   "text": "Time is often the greatest constraint on clinicians’ ability to undertake research and training, and implement innovations. Contractual provisions intended to give consultants time to undertake activities like research have been eroded by day-to-day pressures, but this erosion of time for training and research prevents the adoption of innovations which are necessary to save time, improve care, and ultimately to reduce waiting lists and relieve the pressure on the NHS.",
+   "para": 298,
+   "page": 63,
+   "to": [],
+   "words": 70
+  },
+  {
+   "n": 69,
+   "ch": 6,
+   "sec": 29,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government’s workforce plans must ensure that clinicians, whether consultants or not, have contractually protected time for research, training and implementing innovation.",
+   "para": 299,
+   "page": 63,
+   "to": [
+    "gov"
+   ],
+   "words": 22
+  },
+  {
+   "n": 70,
+   "ch": 6,
+   "sec": 30,
+   "pri": "people",
+   "kind": "con",
+   "text": "Clinical academics are a critical bridge between research and patient care. We remain concerned about the decline in clinical academic numbers, an issue which has persisted since the committee looked at the subject in 2023, and those clinical academics that remain are under the same time pressures as other NHS clinicians described above.",
+   "para": 304,
+   "page": 64,
+   "to": [],
+   "words": 53
+  },
+  {
+   "n": 71,
+   "ch": 6,
+   "sec": 30,
+   "pri": "people",
+   "kind": "rec",
+   "text": "We reiterate the importance of our 2023 recommendations on clinical academics, including a review of the early pipeline: encouraging better uptake of the intercalated BSc for medical training and guaranteed research exposure for all trainee doctors.",
+   "para": 305,
+   "page": 64,
+   "to": [
+    "none"
+   ],
+   "words": 36
+  },
+  {
+   "n": 72,
+   "ch": 6,
+   "sec": 31,
+   "pri": "people",
+   "kind": "con",
+   "text": "Academic evaluation and funding criteria should reward translational and clinical impact, not just academic novelty. NIHR have already taken strides in this direction.",
+   "para": 310,
+   "page": 65,
+   "to": [],
+   "words": 23
+  },
+  {
+   "n": 73,
+   "ch": 6,
+   "sec": 31,
+   "pri": "people",
+   "kind": "rec",
+   "text": "UKRI, the NIHR, academic institutions, and the REF need to reform the academic incentive structure to recognise and reward clinical implementation, start-up creation, and patient benefit, not just publications.",
+   "para": 311,
+   "page": 65,
+   "to": [
+    "ukri",
+    "nihr",
+    "unis",
+    "ref"
+   ],
+   "words": 29
+  },
+  {
+   "n": 74,
+   "ch": 6,
+   "sec": 32,
+   "pri": "people",
+   "kind": "con",
+   "text": "We are concerned about shortages in the specialist workforce, including in the fields of radiology, pathology and clinical oncology.",
+   "para": 316,
+   "page": 66,
+   "to": [],
+   "words": 19
+  },
+  {
+   "n": 75,
+   "ch": 6,
+   "sec": 32,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The forthcoming NHS ten-year workforce plan should not assume that AI will reduce headcount in the short to medium term. It is likely to require extra support for pharmacogenomics-trained pharmacists, genomic counsellors and data scientists. Moreover, the Government should ensure that the training offer for all clinicians is modernised and includes guidance on how to make the best use of genomics and AI.",
+   "para": 317,
+   "page": 66,
+   "to": [
+    "gov",
+    "nhs"
+   ],
+   "words": 63
+  }
+ ]
+}

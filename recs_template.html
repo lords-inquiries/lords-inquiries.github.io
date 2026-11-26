@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="preload" href="../fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+SUBJECT: a Lords committee report on why the NHS struggles to adopt genomics and AI. Readers: peers, officials, journalists, NHS and industry people.
+IDEA: read the report the way a genomicist reads a genome. Each chapter is a chromosome-like strip; each numbered paragraph is a band in it.
+  Dark bands ask someone to act (recommendations); pale bands record what the committee found (conclusions). Band width follows paragraph length.
+  "Highlight" works like a fluorescent probe: pick a body or a topic and the matching bands light up across every view.
+PALETTE: slide-glass paper, stain ink, two G-band greys, one fluorophore magenta for anything highlighted. Nothing else carries colour.
+TYPE: Archivo (variable width) for structure and labels, condensed for numbers; Newsreader for the committee's own words.
+LAYOUT: left-aligned, wide measure for the map, a reading measure (<75ch) for text. One orchestrated moment: the bands lay themselves down on load.
+*/
+@font-face{font-family:"Archivo";src:url(../fonts/archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(../fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(../fonts/newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(../fonts/newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(../fonts/newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(../fonts/newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+:root{
+  color-scheme:light dark;
+  --paper:#F3F5F4;--ink:#16232E;--muted:#586570;--rule:#D3DADE;--rule2:#E3E8EA;
+  --rec:#22313E;--con:#9DAAB4;--probe:#C8156F;--wash:#F7DDEA;--focus:#C8156F;
+  --sans:"Archivo",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root{--paper:#0E161D;--ink:#E4EBEF;--muted:#9AA8B3;--rule:#2A3843;--rule2:#1C2831;--rec:#D6DEE4;--con:#5F6C77;--probe:#FF4FA3;--wash:#4A1A33;--focus:#FF4FA3}}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans);font-stretch:100%;overflow-x:clip}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-color:var(--probe)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+button{font:inherit;color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 max(4vw,16px)}
+
+/* top links */
+.top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:18px;font-size:14px;color:var(--muted)}
+
+/* hero */
+.hero{padding:clamp(22px,3.6vw,46px) 0 clamp(18px,2.4vw,28px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px clamp(24px,4vw,64px);align-items:end}
+h1{font:640 clamp(34px,4.4vw,62px)/.98 var(--sans);font-stretch:86%;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.lede{font:400 clamp(19px,1.7vw,23px)/1.36 var(--serif);font-style:italic;margin:0 0 14px;max-width:34ch}
+.facts{font-size:15px;color:var(--muted);margin:0;max-width:52ch}
+.facts b{color:var(--ink);font-weight:600}
+
+/* controls */
+.controls{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:12px 0 10px}
+.crow{display:grid;grid-template-columns:7.2em minmax(0,1fr);gap:8px 12px;align-items:center}
+.crow.first{display:flex;flex-wrap:wrap;gap:10px 22px}
+.crow+.crow{margin-top:8px}
+.ctl-label{font-size:13px;color:var(--muted);font-weight:500}
+.seg{display:inline-flex;border:1px solid var(--ink);border-radius:999px;padding:2px}
+.seg button{border:0;background:none;border-radius:999px;padding:6px 14px;font-size:14px;cursor:pointer;min-height:34px}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.search{display:flex;align-items:center;gap:8px;flex:1 1 260px;max-width:380px}
+.search input{flex:1;font:15px var(--sans);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:6px 2px;min-height:36px;border-radius:0}
+.search input::placeholder{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+select.more{flex:0 0 auto;width:auto;max-width:16em}
+.chip{border:1px solid var(--rule);background:transparent;border-radius:3px;padding:4px 9px;font-size:13.5px;cursor:pointer;min-height:32px;display:inline-flex;gap:6px;align-items:baseline}
+.chip .c{font-stretch:75%;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--probe);border-color:var(--probe);color:#fff}
+.chip[aria-pressed=true] .c{color:#fff}
+.chip.none{border-style:dashed}
+select.more{font:13.5px var(--sans);color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:3px;min-height:32px;padding:4px 6px}
+.clear{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;padding:6px 2px}
+.status{margin:14px 0 0;font-size:15px;min-height:1.5em}
+.status b{font-weight:600}
+.status .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--probe);margin-right:8px;vertical-align:1px}
+
+/* follow-along bar */
+.minibar{position:fixed;left:0;right:0;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--ink);transform:translateY(-105%);transition:transform .25s;font-size:14px}
+.minibar.show{transform:none}
+.minibar .wrap{display:flex;gap:8px 18px;align-items:center;min-height:46px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.minibar .t{flex:1 1 300px}
+.minibar .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--probe);margin-right:8px;vertical-align:1px}
+.minibar button{border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:6px 2px;font-size:14px}
+.srow{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;justify-content:space-between;margin:14px 0 0}
+.srow .status{margin:0;flex:1 1 420px}
+.step{border:1px solid var(--ink);background:none;border-radius:999px;padding:6px 14px;font-size:14px;cursor:pointer;min-height:36px;white-space:nowrap}
+.step:hover{background:var(--ink);color:var(--paper)}
+
+/* the map */
+.mapwrap{padding:18px 0 8px}
+.map{position:relative;user-select:none;-webkit-user-select:none}
+.band{position:absolute;left:0;top:0;border:0;padding:0;background:var(--con);cursor:pointer;transition:transform .7s cubic-bezier(.65,0,.35,1),width .7s cubic-bezier(.65,0,.35,1),opacity .25s,background-color .25s;will-change:transform}
+.band.rec{background:var(--rec)}
+.band.l{border-top-left-radius:999px;border-bottom-left-radius:999px}
+.band.r{border-top-right-radius:999px;border-bottom-right-radius:999px}
+.band.dim{opacity:.2}
+.band.lit{background:var(--probe);opacity:1}
+.band.lit::after{content:"";position:absolute;left:50%;top:-11px;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:var(--probe)}
+.band:hover,.band:focus-visible{outline:2px solid var(--ink);outline-offset:2px;z-index:2}
+.band.pre{transform-origin:left center}
+.map.instant .band{transition:none}
+.rowlab{position:absolute;left:0;top:0;transition:opacity .3s}
+.rowlab .num{font:700 34px/1 var(--sans);font-stretch:62%;margin-right:10px;float:left;margin-top:-2px}
+.rowlab .t{font-size:14.5px;line-height:1.25;display:block;overflow:hidden}
+.rowlab .s{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;font-variant-numeric:tabular-nums}
+.rowlab.pri .t{font-size:14px}
+.seclab{position:absolute;top:0;left:0;font-size:12px;color:var(--muted);white-space:nowrap;border-top:1px solid var(--con);padding:3px 0 0 1px;line-height:1.1;transition:opacity .3s;pointer-events:none}
+.seclab::before,.seclab::after{content:"";position:absolute;top:-4px;height:4px;border-left:1px solid var(--con)}
+.seclab::before{left:0}.seclab::after{right:0}
+.key{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:13.5px;color:var(--muted);margin:10px 0 0;padding-bottom:6px}
+.key span{display:inline-flex;align-items:center;gap:8px}
+.key i{display:inline-block;width:26px;height:12px;border-radius:999px;background:var(--rec)}
+.key i.con{background:var(--con)}
+.key i.w{width:46px;background:linear-gradient(90deg,var(--con) 0 9px,transparent 9px 11px,var(--con) 11px 46px)}
+.note{font-size:13.5px;color:var(--muted);max-width:80ch;margin:4px 0 0}
+
+/* tooltip */
+#tip{position:fixed;z-index:30;pointer-events:none;width:min(360px,calc(100vw - 16px));background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:10px 12px 11px;font-size:13px;line-height:1.4;opacity:0;transition:opacity .1s;box-shadow:4px 4px 0 var(--rule)}
+#tip .h{font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center}
+#tip .h i{width:18px;height:8px;border-radius:999px;background:var(--rec);display:inline-block}
+#tip .h i.con{background:var(--con)}
+#tip .w{color:var(--muted);margin:1px 0 6px}
+#tip .x{font:15px/1.4 var(--serif)}
+
+/* sections */
+section.part{padding:clamp(40px,6vw,80px) 0 0}
+h2{font:640 clamp(28px,3.2vw,40px)/1.05 var(--sans);font-stretch:88%;letter-spacing:-.01em;margin:0 0 10px}
+.intro{font-size:16px;color:var(--muted);max-width:68ch;margin:0 0 22px}
+.intro b{color:var(--ink);font-weight:600}
+
+/* network */
+.who{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(250px,1fr);gap:24px 40px;align-items:start}
+.net{position:relative;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.net svg{display:block;width:100%;height:auto}
+.net[hidden]{display:none}
+.net .lk{stroke:var(--con);stroke-width:1;opacity:.8;transition:opacity .2s,stroke .2s}
+.net .lk.lit{stroke:var(--probe);opacity:1;stroke-width:1.6}
+.net .lk.dim{opacity:.12}
+.net .rn rect{fill:var(--rec);transition:fill .2s,opacity .2s}
+.net .rn{cursor:pointer}
+.net .rn.lit rect{fill:var(--probe)}
+.net .rn.dim rect{opacity:.18}
+.net .rn text{font:600 9px var(--sans);font-stretch:70%;fill:var(--paper);pointer-events:none}
+.net .bn{cursor:pointer}
+.net .bn circle{fill:var(--paper);stroke:var(--ink);stroke-width:1.5;transition:fill .2s,stroke .2s,opacity .2s}
+.net .bn.none circle{stroke-dasharray:3 3}
+.net .bn text{font:500 13px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;transition:opacity .2s}
+.net .bn .cnt{font:700 12px var(--sans);font-stretch:70%;stroke:none}
+.net .bn.lit circle{fill:var(--probe);stroke:var(--probe)}
+.net .bn.lit .cnt{fill:#fff}
+.net .bn.dim circle,.net .bn.dim text{opacity:.25}
+.hint{font-size:13px;color:var(--muted);margin:8px 0 0}
+.wholist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.wholist li{border-bottom:1px solid var(--rule)}
+.wholist button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:8px 2px;cursor:pointer;font-size:14.5px;min-height:40px}
+.wholist .bar{display:flex;align-items:center;gap:8px;font-stretch:75%;font-weight:600;font-variant-numeric:tabular-nums}
+.wholist .bar i{display:block;height:8px;border-radius:999px;background:var(--rec)}
+.wholist button:hover{background:var(--rule2)}
+.wholist button[aria-pressed=true]{color:var(--probe)}
+.wholist button[aria-pressed=true] .bar i{background:var(--probe)}
+.wholist small{display:block;color:var(--muted);font-size:12.5px}
+.wholist button[aria-pressed=true] small{color:inherit}
+
+/* reader */
+.colheads{display:grid;grid-template-columns:4.5rem minmax(0,1fr) minmax(0,1fr);gap:0 clamp(20px,3vw,44px);border-top:1px solid var(--ink);padding:10px 0;font-size:14px;color:var(--muted)}
+.colheads span{display:flex;align-items:center;gap:8px}
+.colheads i{display:inline-block;width:22px;height:9px;border-radius:999px;background:var(--rec)}
+.colheads i.con{background:var(--con)}
+.sec{display:grid;grid-template-columns:4.5rem minmax(0,1fr) minmax(0,1fr);gap:6px clamp(20px,3vw,44px);border-top:1px solid var(--rule);padding:22px 0 26px;scroll-margin-top:120px}
+.sec .ch{font:700 34px/1 var(--sans);font-stretch:62%;color:var(--muted)}
+.sec .ch small{display:block;font:400 12px/1.2 var(--sans);font-stretch:100%;margin-top:4px}
+.sec h3{grid-column:2 / -1;margin:0 0 6px;font:600 19px/1.25 var(--sans);font-stretch:94%}
+.sec h3 small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-bottom:2px}
+.sec .col{display:flex;flex-direction:column;gap:18px}
+.sec .col:empty::before{content:"";display:block}
+.item{position:relative;padding-left:0;scroll-margin-top:130px}
+.item .n{display:flex;align-items:center;gap:8px;font:600 13.5px var(--sans);margin-bottom:4px}
+.item .n i{display:inline-block;width:22px;height:9px;border-radius:999px;background:var(--rec)}
+.item.con .n i{background:var(--con)}
+.item .n a{text-decoration:none}
+.item .n a:hover{text-decoration:underline}
+.item .x{font:400 17.5px/1.55 var(--serif);margin:0;max-width:62ch;hyphens:manual}
+.item .x ul{margin:6px 0 0;padding-left:1.1em}
+.item .x li{margin:3px 0}
+mark{background:var(--wash);color:inherit;box-shadow:0 2px 0 var(--probe);padding:0 1px}
+#drawer:focus{outline:none}
+.item .meta{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-top:8px;font-size:13px;color:var(--muted)}
+.item .meta .to{display:inline-flex;flex-wrap:wrap;gap:4px}
+.tag{border:1px solid var(--rule);border-radius:3px;padding:1px 7px;font-size:12.5px;color:var(--ink);background:none;cursor:pointer;min-height:26px}
+.tag:hover{border-color:var(--ink)}
+.tag.on{background:var(--probe);border-color:var(--probe);color:#fff}
+.tag.none{border-style:dashed}
+.item.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%,30%{background:var(--wash)}100%{background:transparent}}
+.empty{border:1px dashed var(--con);padding:24px;color:var(--muted);text-align:center}
+
+/* drawer */
+#drawer{position:fixed;z-index:40;top:0;right:0;bottom:0;width:min(520px,100vw);background:var(--paper);border-left:1px solid var(--ink);box-shadow:-10px 0 0 rgba(0,0,0,.04);transform:translateX(102%);transition:transform .35s cubic-bezier(.3,0,.2,1);display:flex;flex-direction:column;visibility:hidden}
+#drawer.open{transform:none;visibility:visible}
+#drawer .dh{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--rule);gap:12px}
+#drawer .nav{display:flex;gap:6px}
+#drawer .nav button,#drawer .x-close{border:1px solid var(--rule);background:none;border-radius:3px;min-width:40px;min-height:36px;cursor:pointer;font-size:14px;padding:4px 10px}
+#drawer .nav button:hover,#drawer .x-close:hover{border-color:var(--ink)}
+#drawer .db{overflow:auto;padding:22px 24px 40px;flex:1}
+#drawer .kind{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+#drawer .kind i{display:inline-block;width:30px;height:11px;border-radius:999px;background:var(--rec)}
+#drawer .kind i.con{background:var(--con)}
+#drawer .big{font:700 64px/1 var(--sans);font-stretch:62%;margin:10px 0 2px}
+#drawer .path{font-size:14px;color:var(--muted);margin:0 0 18px}
+#drawer .mini{position:relative;height:12px;margin:12px 0 14px}
+#drawer .mini button{position:absolute;top:0;height:12px;border:0;padding:0;background:var(--con);cursor:pointer;opacity:.55}
+#drawer .mini button.rec{background:var(--rec)}
+#drawer .mini button.lit{background:var(--probe);opacity:1}
+#drawer .mini button.cur{opacity:1;outline:2px solid var(--ink);outline-offset:1px;z-index:1}
+#drawer .mini:hover button{opacity:.8}
+#drawer .pos{font-size:13.5px;color:var(--probe);margin:-4px 0 12px}
+#drawer .dx{font:400 20px/1.55 var(--serif);margin:0 0 20px}
+#drawer .dx ul{padding-left:1.1em;margin:8px 0 0}
+#drawer dl{margin:0;display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:10px 14px;font-size:14px;border-top:1px solid var(--rule);padding-top:14px}
+#drawer dt{color:var(--muted)}
+#drawer dd{margin:0}
+#drawer .mates{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px}
+#drawer .mates h4{margin:0 0 8px;font-size:14px;font-weight:600}
+#drawer .mates button{display:grid;grid-template-columns:30px 2.2em minmax(0,1fr);gap:8px;align-items:baseline;border:0;background:none;width:100%;text-align:left;padding:6px 0;cursor:pointer;font-size:14px}
+#drawer .mates button i{display:inline-block;width:26px;height:9px;border-radius:999px;background:var(--rec)}
+#drawer .mates button i.con{background:var(--con)}
+#drawer .mates button b{font-weight:600}
+#drawer .mates button span{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#drawer .mates button:hover span{color:var(--ink)}
+#drawer .mates button[aria-current=true]{color:var(--probe)}
+
+footer{margin-top:clamp(48px,7vw,96px);border-top:1px solid var(--ink);padding:22px 0 48px;font-size:14px;color:var(--muted)}
+footer p{max-width:86ch;margin:0 0 10px}
+
+@media (max-width:980px){.hero{grid-template-columns:1fr}.who{grid-template-columns:1fr}}
+@media (max-width:720px){
+  .colheads{display:none}
+  .sec{grid-template-columns:1fr}
+  .sec h3{grid-column:1}
+  .sec .ch{font-size:15px;font-stretch:100%;font-weight:600}
+  .sec .ch small{display:inline;margin-left:6px}
+  .sec .col.cons:not(:empty)::before{content:"What the committee found";font-size:13px;color:var(--muted)}
+  .sec .col.recs:not(:empty)::before{content:"What it asks for";font-size:13px;color:var(--muted)}
+  .crow{grid-template-columns:1fr;gap:4px}
+  .crow .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-right:calc(-1 * max(4vw,16px));scrollbar-width:thin}
+  .chip,select.more{flex:0 0 auto;white-space:nowrap}
+  .crow.first{gap:10px}
+  .seg button{padding:6px 10px;font-size:13.5px}
+  #drawer{top:auto;height:min(86vh,720px);width:100%;border-left:0;border-top:1px solid var(--ink);transform:translateY(102%)}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:0s!important;animation:none!important}}
+@media print{.controls,#drawer,#tip,.hint,.minibar{display:none}.sec{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top" aria-label="Site"><a href="../../science-and-technology/">Lords Science and Technology Committee reports</a><a id="pdflink" href="#">Read the full report (PDF)</a></nav>
+
+<header class="hero">
+<h1 id="title"></h1>
+<div>
+<p class="lede" id="lede"></p>
+<p class="facts" id="facts"></p>
+</div>
+</header>
+</div>
+
+<div class="minibar" id="minibar" aria-hidden="true"><div class="wrap"><span class="t" id="minitext"></span><button type="button" id="minichange">Change</button><button type="button" id="miniclear">Clear highlight</button></div></div>
+<div class="controls" id="controls"><div class="wrap">
+<div class="crow first">
+<span class="ctl-label" id="arrlab">Arrange by</span>
+<div class="seg" role="group" aria-labelledby="arrlab"><button type="button" data-by="ch" aria-pressed="true">Chapter</button><button type="button" data-by="pri" aria-pressed="false">The committee’s six priorities</button></div>
+<label class="search"><span class="ctl-label">Highlight</span><input id="q" type="search" placeholder="Search the 75 paragraphs" autocomplete="off"></label>
+<button type="button" class="clear" id="clear" hidden>Clear highlight</button>
+</div>
+<div class="crow"><span class="ctl-label">Who must act</span><div class="chips" id="actorchips"></div></div>
+<div class="crow"><span class="ctl-label">Topics</span><div class="chips" id="topicchips"></div></div>
+</div></div>
+
+<main>
+<div class="wrap">
+<div class="srow"><p class="status" id="status" aria-live="polite"></p><button type="button" class="step" id="step"></button></div>
+<div class="mapwrap">
+<div class="map" id="map" role="group" aria-label="Map of the report: one band per numbered conclusion or recommendation. Use the arrow keys to move between bands and Enter to read one."></div>
+<div class="key" aria-hidden="true"><span><i></i>Recommendation: asks someone to act</span><span><i class="con"></i>Conclusion: what the committee found</span><span><i class="w"></i>Wider bands are longer paragraphs</span></div>
+<p class="note" id="mapnote"></p>
+</div>
+
+<section class="part" id="who" aria-labelledby="whoh">
+<h2 id="whoh">Who is asked to act</h2>
+<p class="intro" id="whointro"></p>
+<div class="who">
+<div><div class="net" id="net"></div><p class="hint" id="nethint">Point at a body to trace its recommendations; select it to highlight them everywhere. Select a pill to read that recommendation.</p></div>
+<ol class="wholist" id="wholist"></ol>
+</div>
+</section>
+
+<section class="part" id="read" aria-labelledby="readh">
+<h2 id="readh">Section by section</h2>
+<p class="intro" id="readintro"></p>
+<div class="colheads" aria-hidden="true"><span></span><span><i class="con"></i>What the committee found</span><span><i></i>What it asks for</span></div>
+<div id="secs"></div>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<aside id="drawer" aria-labelledby="dtitle" tabindex="-1">
+<div class="dh"><div class="nav"><button type="button" id="dprev" aria-label="Previous paragraph">‹</button><button type="button" id="dnext" aria-label="Next paragraph">›</button></div><button type="button" class="x-close" id="dclose">Close</button></div>
+<div class="db" id="dbody"></div>
+</aside>
+<div id="tip" role="tooltip" aria-hidden="true"></div>
+
+<script>
+{
+const D=/*__DATA__*/null;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const fmt=s=>new Date(s+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+const R=D.recs, N=R.length;
+const CH=Object.fromEntries(D.chapters.map(c=>[c.n,c]));
+const SEC=Object.fromEntries(D.sections.map(s=>[s.id,s]));
+const PRI=Object.fromEntries(D.priorities.map(p=>[p.id,p]));
+const AC=Object.fromEntries(D.actors.map(a=>[a.id,a]));
+const TOP=Object.fromEntries(D.topics.map(t=>[t.id,{...t,rx:new RegExp(t.re,(t.flags||'')+'g')}]));
+const isRec=r=>r.kind==='rec';
+const nRec=R.filter(isRec).length;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const printed=r=>r.page-(D.page_offset||0);
+const pdfAt=r=>D.pdf+'#page='+r.page;
+const secName=s=>s.h2?s.h2:s.h1;
+const secPath=s=>s.h2?s.h1+': '+s.h2:s.h1;
+const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
+const actorsByCount=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||(a.id==='none')-(b.id==='none')||a.name.localeCompare(b.name));
+
+/* ---------- state ---------- */
+const st={by:'ch',hl:null}; // hl: {type:'to'|'topic'|'q', v}
+function matcher(){
+  const h=st.hl; if(!h)return null;
+  if(h.type==='to')return r=>r.to.includes(h.v);
+  if(h.type==='topic'){const rx=TOP[h.v].rx;return r=>{rx.lastIndex=0;return rx.test(r.text)}}
+  const q=h.v.toLowerCase();return r=>(r.text+' '+r.to.map(id=>AC[id].name+' '+AC[id].full).join(' ')).toLowerCase().includes(q);
+}
+function markRx(){
+  const h=st.hl; if(!h)return null;
+  if(h.type==='topic')return new RegExp(TOP[h.v].re,(TOP[h.v].flags||'')+'g');
+  if(h.type==='q')return new RegExp(h.v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+  return null;
+}
+function lit(){const m=matcher();return m?new Set(R.filter(m).map(r=>r.n)):null}
+
+/* ---------- text ---------- */
+function markup(t,rx){
+  const lines=t.split('\n');
+  const mk=s=>{if(!rx)return esc(s);let out='',i=0;rx.lastIndex=0;let m;while((m=rx.exec(s))){if(!m[0]){rx.lastIndex++;continue}out+=esc(s.slice(i,m.index))+'<mark>'+esc(m[0])+'</mark>';i=m.index+m[0].length}return out+esc(s.slice(i))};
+  const head=mk(lines[0]);const bul=lines.slice(1).filter(l=>l.startsWith('• ')).map(l=>'<li>'+mk(l.slice(2))+'</li>');
+  return head+(bul.length?'<ul>'+bul.join('')+'</ul>':'');
+}
+const plain=t=>t.replace(/\n• /g,' ');
+
+/* ---------- header ---------- */
+$('#title').textContent=D.title;
+$('#lede').textContent='“'+D.finding.charAt(0).toUpperCase()+D.finding.slice(1)+'”';
+$('#pdflink').href=D.pdf;
+const daysTo=Math.round((Date.parse(D.gr_due+'T12:00:00Z')-Date.now())/864e5);
+$('#facts').innerHTML=`That is the central finding of the ${esc(D.committee)}. Its report makes <b>${N} numbered points</b>: ${N-nRec} conclusions about what it found and ${nRec} recommendations asking someone to act. ${esc(D.number)}, ${esc(D.paper)}, published ${fmt(D.published)}. `+(daysTo>0?`The Government is expected to reply by ${fmt(D.gr_due)}.`:`The Government was expected to reply by ${fmt(D.gr_due)}.`);
+document.title=D.title+': the conclusions and recommendations';
+
+/* ---------- controls ---------- */
+const TOPCHIPS=6;
+$('#actorchips').innerHTML=actorsByCount.filter((a,i)=>i<TOPCHIPS||a.id==='none').map(a=>`<button type="button" class="chip${a.id==='none'?' none':''}" data-to="${a.id}" aria-pressed="false" title="${esc(a.full)}">${esc(a.name)} <span class="c">${actorCount[a.id]}</span></button>`).join('')+
+  `<select class="more" id="moreact" aria-label="Other bodies"><option value="">${actorsByCount.length-TOPCHIPS-1} more…</option>${actorsByCount.filter((a,i)=>i>=TOPCHIPS&&a.id!=='none').map(a=>`<option value="${a.id}">${esc(a.full)} (${actorCount[a.id]})</option>`).join('')}</select>`;
+$('#topicchips').innerHTML=D.topics.map(t=>{const rx=TOP[t.id].rx;const c=R.filter(r=>{rx.lastIndex=0;return rx.test(r.text)}).length;return `<button type="button" class="chip" data-topic="${t.id}" aria-pressed="false" title="Matches: ${esc(t.words)}">${esc(t.name)} <span class="c">${c}</span></button>`}).join('');
+$('#controls').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.by){setBy(b.dataset.by);return}
+  if(b.dataset.to){toggleHl('to',b.dataset.to);return}
+  if(b.dataset.topic){toggleHl('topic',b.dataset.topic);return}
+});
+$('#moreact').addEventListener('change',e=>{if(e.target.value)setHl({type:'to',v:e.target.value})});
+let qT;$('#q').addEventListener('input',e=>{clearTimeout(qT);qT=setTimeout(()=>{const v=e.target.value.trim();setHl(v.length>=2?{type:'q',v}:null,{keepQ:true})},140)});
+$('#clear').addEventListener('click',()=>{setHl(null);$('#q').focus()});
+function toggleHl(type,v){setHl(st.hl&&st.hl.type===type&&st.hl.v===v?null:{type,v})}
+function setHl(h,o={}){
+  st.hl=h;
+  if(!o.keepQ)$('#q').value=h&&h.type==='q'?h.v:'';
+  $$('[data-to]').forEach(b=>b.setAttribute('aria-pressed',String(!!h&&h.type==='to'&&h.v===b.dataset.to)));
+  $$('[data-topic]').forEach(b=>b.setAttribute('aria-pressed',String(!!h&&h.type==='topic'&&h.v===b.dataset.topic)));
+  const more=$('#moreact');more.value=h&&h.type==='to'&&[...more.options].some(o=>o.value===h.v)?h.v:'';
+  more.classList.toggle('on',!!more.value);
+  $('#clear').hidden=!h;
+  paint();syncHash();
+}
+function setBy(by){
+  if(st.by===by)return;st.by=by;
+  $$('[data-by]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.by===by)));
+  layout(true);syncHash();
+}
+
+/* ---------- status line ---------- */
+function status(L){
+  const el=$('#status');const h=st.hl;
+  if(!h){el.innerHTML=`Pick a body or a topic, or search, to light up the paragraphs that match. Tap any band to read it.`;return}
+  const n=L.size;
+  if(h.type==='to'){
+    const a=AC[h.v];
+    el.innerHTML=h.v==='none'?`<span class="dot"></span><b>${n} of the ${nRec} recommendations</b> don’t say who should act.`:
+      `<span class="dot"></span>${esc(a.full)}: asked to act in <b>${n} of the ${nRec} recommendations</b>.`;
+  }else if(h.type==='topic'){
+    const t=TOP[h.v];el.innerHTML=`<span class="dot"></span><b>${n} of the ${N} paragraphs</b> mention ${esc(/^[A-Z]{2,}$/.test(t.name)?t.name:t.name.toLowerCase())} <span style="color:var(--muted)">(matching ${esc(t.words)})</span>.`;
+  }else{
+    el.innerHTML=n?`<span class="dot"></span>“${esc(h.v)}” appears in <b>${n} of the ${N} paragraphs</b>.`:`No paragraph mentions “${esc(h.v)}”. Try a shorter word, or pick a topic.`;
+  }
+}
+
+/* ---------- the map ---------- */
+const map=$('#map');
+const bands=R.map(r=>{const b=document.createElement('button');b.type='button';b.className='band '+(isRec(r)?'rec':'con');b.dataset.n=r.n;b.tabIndex=r.n===1?0:-1;
+  b.setAttribute('aria-label',(isRec(r)?'Recommendation ':'Conclusion ')+r.n+': '+plain(r.text).slice(0,90)+'…');map.appendChild(b);return b});
+let labels=[], geo={};
+function groups(){
+  if(st.by==='ch')return D.chapters.map(c=>({key:'c'+c.n,num:c.n,title:c.title,items:R.filter(r=>r.ch===c.n)})).filter(g=>g.items.length);
+  return D.priorities.map((p,i)=>({key:'p'+p.id,num:p.id==='other'?'':i+1,title:p.title,pri:p,items:R.filter(r=>r.pri===p.id)})).filter(g=>g.items.length);
+}
+function layout(animate){
+  const W=map.clientWidth, narrow=W<700;
+  const G=groups();
+  const labW=narrow?0:(st.by==='ch'?250:290), countW=narrow?0:0;
+  const trackW=W-labW-countW, gap=2, bandH=narrow?24:28;
+  const rowH=narrow?104:(st.by==='ch'?80:76);
+  const maxWords=Math.max(...G.map(g=>g.items.reduce((s,r)=>s+r.words,0)+0));
+  const maxN=Math.max(...G.map(g=>g.items.length));
+  const k=(trackW-(maxN-1)*gap)/maxWords;
+  geo={};
+  labels.forEach(l=>l.remove());labels=[];
+  G.forEach((g,gi)=>{
+    const y0=gi*rowH+(narrow?58:16);
+    let x=labW;
+    g.items.forEach((r,i)=>{const w=Math.max(4,r.words*k);geo[r.n]={x,y:y0,w,h:bandH,first:i===0,last:i===g.items.length-1,gi};x+=w+gap});
+    const lab=document.createElement('div');lab.className='rowlab'+(st.by==='pri'?' pri':'');
+    const nr=g.items.filter(isRec).length;
+    lab.innerHTML=(g.num!==''?`<span class="num" aria-hidden="true">${g.num}</span>`:'')+`<span class="t">${esc(g.title)}</span><span class="s">${g.items.length} paragraphs, ${nr} ${nr===1?'recommendation':'recommendations'}</span>`;
+    lab.style.width=(narrow?W:labW-24)+'px';
+    lab.style.transform=`translate(0px,${narrow?y0-56:y0-6}px)`;
+    if(narrow)lab.querySelector('.t').style.whiteSpace='nowrap',lab.querySelector('.t').style.textOverflow='ellipsis';
+    map.appendChild(lab);labels.push(lab);
+    if(st.by==='ch'){
+      // section ticks under the track: show a label only where it fits
+      const ctx=layout.ctx||(layout.ctx=document.createElement('canvas').getContext('2d'));ctx.font='12px Archivo, system-ui, sans-serif';
+      const spans=[];g.items.forEach(r=>{const s=spans[spans.length-1];if(s&&s.sec===r.sec)s.to=r.n;else spans.push({sec:r.sec,from:r.n,to:r.n})});
+      spans.forEach(sp=>{
+        const a=geo[sp.from],b=geo[sp.to];const w=b.x+b.w-a.x;const name=secName(SEC[sp.sec]);
+        const s=document.createElement('div');s.className='seclab';s.style.transform=`translate(${a.x}px,${y0+bandH+5}px)`;
+        s.textContent=ctx.measureText(name).width+6<=w?name:'';s.style.height=s.textContent?'':'6px';
+        s.style.width=w+'px';map.appendChild(s);labels.push(s);
+      });
+    }
+  });
+  map.style.height=(G.length*rowH+(narrow?58:16)-12)+'px';
+  map.classList.toggle('instant',!animate);
+  R.forEach((r,i)=>{const g=geo[r.n],b=bands[i];
+    b.style.transitionDelay=animate&&!reduce?(i*5)+'ms':'0ms';
+    b.style.transform=`translate(${g.x}px,${g.y}px)`;b.style.width=g.w+'px';b.style.height=g.h+'px';
+    b.classList.toggle('l',g.first);b.classList.toggle('r',g.last);});
+  if(!animate)requestAnimationFrame(()=>map.classList.remove('instant'));
+  $('#mapnote').textContent=st.by==='pri'?'The committee’s summary sets out six headline priorities (report pages 5 to 6). They cut across chapters. Which paragraph sits under which priority is our reading; five paragraphs fit none of them.':'';
+}
+function paintMap(L){
+  bands.forEach((b,i)=>{const n=i+1;b.classList.toggle('lit',!!L&&L.has(n));b.classList.toggle('dim',!!L&&!L.has(n))});
+}
+// roving focus and keys
+map.addEventListener('keydown',e=>{
+  const b=e.target.closest('.band');if(!b)return;const n=+b.dataset.n;let t=null;
+  if(e.key==='ArrowRight')t=Math.min(N,n+1);else if(e.key==='ArrowLeft')t=Math.max(1,n-1);
+  else if(e.key==='Home')t=1;else if(e.key==='End')t=N;
+  else if(e.key==='ArrowDown'||e.key==='ArrowUp'){const g=geo[n];const row=R.filter(r=>geo[r.n].gi===g.gi+(e.key==='ArrowDown'?1:-1));if(row.length)t=row.reduce((a,r)=>Math.abs(geo[r.n].x-g.x)<Math.abs(geo[a.n].x-g.x)?r:a).n}
+  if(t){e.preventDefault();bands.forEach(x=>x.tabIndex=-1);bands[t-1].tabIndex=0;bands[t-1].focus();showTip(bands[t-1],R[t-1])}
+});
+map.addEventListener('click',e=>{const b=e.target.closest('.band');if(b){hideTip();openItem(+b.dataset.n)}});
+map.addEventListener('pointerover',e=>{const b=e.target.closest('.band');if(b&&e.pointerType!=='touch')showTip(b,R[b.dataset.n-1])});
+map.addEventListener('pointerout',e=>{if(e.target.closest('.band'))hideTip()});
+map.addEventListener('focusout',hideTip);
+
+/* ---------- tooltip ---------- */
+const tip=$('#tip');
+function showTip(el,r){
+  const s=SEC[r.sec];
+  tip.innerHTML=`<div class="h"><i class="${isRec(r)?'':'con'}"></i>${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</div><div class="w">${esc(secPath(s))}${r.to.length?'<br>Asks: '+esc(r.to.map(id=>AC[id].name).join(', ')):''}</div><div class="x">${esc(clip(plain(r.text),230))}</div>`;
+  const bx=el.getBoundingClientRect(),tw=tip.offsetWidth;
+  tip.style.left=Math.max(8,Math.min(innerWidth-tw-8,bx.left+bx.width/2-tw/2))+'px';
+  const th=tip.offsetHeight;tip.style.top=(bx.top-th-14<8?bx.bottom+10:bx.top-th-14)+'px';tip.style.opacity=1;
+}
+const clip=(s,n)=>s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;
+function hideTip(){tip.style.opacity=0}
+addEventListener('scroll',hideTip,{passive:true});
+
+/* ---------- network: bodies on a ring, each recommendation pulled towards the bodies it names ---------- */
+const NET={};
+function buildNet(){
+  const host=$('#net');const W=host.clientWidth;
+  if(W<600){host.hidden=true;$('#nethint').hidden=true;NET.svg=null;return}host.hidden=false;$('#nethint').hidden=false;
+  const H=Math.round(Math.min(640,Math.max(470,W*.68)));NET.W=W;NET.H=H;
+  const cx=W/2,cy=H/2,rx=W/2-165,ry=H/2-26;
+  const ids=actorsByCount.map(a=>a.id),n=ids.length,RR=R.filter(isRec);
+  // ring order: spread the recommendations out across the middle while keeping links short (seeded local search)
+  // two facing arcs, like brackets: left side top to bottom, then right side bottom to top, so neighbours in the order stay neighbours
+  const nl=Math.ceil(n/2),nr=n-nl,A=55*Math.PI/180;
+  const arc=(k,m,side)=>{const f=m>1?k/(m-1):.5,ph=-A+2*A*f;return[cx+side*rx*Math.cos(ph),cy+ry*Math.sin(ph)/Math.sin(A)]};
+  const slots=[...Array(nl)].map((_,k)=>arc(k,nl,-1)).concat([...Array(nr)].map((_,k)=>arc(nr-1-k,nr,1)));
+  const anchor=(pos,r)=>{let x=0,y=0;r.to.forEach(id=>{x+=pos[id][0];y+=pos[id][1]});x/=r.to.length;y/=r.to.length;const f=r.to.length===1?.7:.92;return[cx+(x-cx)*f,cy+(y-cy)*f]};
+  const cost=o=>{const pos={};o.forEach((id,i)=>pos[id]=slots[i]);const A=RR.map(r=>anchor(pos,r));let c=0;
+    for(let i=0;i<A.length;i++){for(let j=i+1;j<A.length;j++){const d=Math.hypot(A[i][0]-A[j][0],A[i][1]-A[j][1]);if(d<46)c+=(46-d)**2}
+      RR[i].to.forEach(id=>{c+=.6*Math.hypot(A[i][0]-pos[id][0],A[i][1]-pos[id][1])})}
+    return c};
+  let order=ids.slice(),seed=11;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  // start from an interleave of busy and quiet bodies
+  {const busy=ids.filter(id=>actorCount[id]>=5),quiet=ids.filter(id=>actorCount[id]<5),o=[];const step=quiet.length/busy.length;busy.forEach((b,i)=>{o.push(b);o.push(...quiet.slice(Math.round(i*step),Math.round((i+1)*step)))});order=o}
+  let best=cost(order);
+  for(let k=0;k<5000;k++){const i=Math.floor(rnd()*n),j=Math.floor(rnd()*n);if(i===j)continue;const o=order.slice();[o[i],o[j]]=[o[j],o[i]];const c=cost(o);if(c<=best){best=c;order=o}}
+  const bodies=order.map((id,i)=>({id,type:'b',a:AC[id],c:actorCount[id],side:i<nl?-1:1,r:6+3*Math.sqrt(actorCount[id]),x:slots[i][0],y:slots[i][1]}));
+  NET.slots=slots;NET.nl=nl;
+  const BI=Object.fromEntries(bodies.map(b=>[b.id,b]));
+  const recs=R.filter(isRec).map(r=>{const bs=r.to.map(id=>BI[id]);let x=bs.reduce((s,b)=>s+b.x,0)/bs.length,y=bs.reduce((s,b)=>s+b.y,0)/bs.length;
+    const f=bs.length===1?.7:.92;x=cx+(x-cx)*f;y=cy+(y-cy)*f;return{id:'r'+r.n,type:'r',rec:r,x,y,ax:x,ay:y}});
+  // spread the pills so none overlap, keeping each near its anchor and clear of the bodies
+  for(let it=0;it<260;it++){
+    for(let i=0;i<recs.length;i++)for(let j=i+1;j<recs.length;j++){const p=recs[i],q=recs[j];let dx=q.x-p.x,dy=q.y-p.y;const ex=(dx/22)**2+(dy/14)**2;if(ex<1){if(!dx&&!dy){dx=rnd()-.5;dy=rnd()-.5}const d=Math.hypot(dx,dy)||1,o=(1-Math.sqrt(ex))*6;p.x-=dx/d*o;p.y-=dy/d*o;q.x+=dx/d*o;q.y+=dy/d*o}}
+    recs.forEach(p=>{bodies.forEach(b=>{const dx=p.x-b.x,dy=p.y-b.y,d=Math.hypot(dx,dy)||1,m=b.r+16;if(d<m){p.x+=dx/d*(m-d);p.y+=dy/d*(m-d)}});p.x+=(p.ax-p.x)*.04;p.y+=(p.ay-p.y)*.04;
+      p.x=Math.max(cx-rx*.97,Math.min(cx+rx*.97,p.x));p.y=Math.max(cy-ry-6,Math.min(cy+ry+6,p.y))});
+  }
+  NET.nodes=[...bodies,...recs];NET.bodies=bodies;NET.recs=recs;NET.BI=BI;NET.cx=cx;NET.cy=cy;
+  NET.links=[];recs.forEach(p=>p.rec.to.forEach(id=>NET.links.push({s:p,t:BI[id]})));
+  drawNet();
+}
+function drawNet(){
+  const {W,H,bodies,recs,links,cx,cy}=NET;const host=$('#net');const ns='http://www.w3.org/2000/svg';
+  let svg=host.querySelector('svg');if(!svg){svg=document.createElementNS(ns,'svg');svg.setAttribute('role','img');svg.setAttribute('aria-label','Diagram linking each recommendation to the bodies it asks to act. The list beside it gives the same information.');host.prepend(svg)}
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const curve=l=>{const mx=(l.s.x+l.t.x)/2,my=(l.s.y+l.t.y)/2,qx=mx+(cx-mx)*.18,qy=my+(cy-my)*.18;return `M${l.s.x.toFixed(1)},${l.s.y.toFixed(1)}Q${qx.toFixed(1)},${qy.toFixed(1)} ${l.t.x.toFixed(1)},${l.t.y.toFixed(1)}`};
+  const guide=pts=>'M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join('L');
+  svg.innerHTML=`<path d="${guide(NET.slots.slice(0,NET.nl))}" fill="none" stroke="var(--rule)"/><path d="${guide(NET.slots.slice(NET.nl))}" fill="none" stroke="var(--rule)"/>`+
+    links.map(l=>`<path class="lk" fill="none" d="${curve(l)}"/>`).join('')+
+    recs.map(p=>`<g class="rn" data-n="${p.rec.n}" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)})"><rect x="-10" y="-6" width="20" height="12" rx="6"/><text text-anchor="middle" dy="3.3">${p.rec.n}</text></g>`).join('')+
+    bodies.map(b=>{const right=b.side>0;return `<g class="bn${b.id==='none'?' none':''}" data-id="${b.id}" transform="translate(${b.x.toFixed(1)},${b.y.toFixed(1)})"><circle r="${b.r.toFixed(1)}"/><text class="cnt" text-anchor="middle" dy="4">${b.c}</text><text class="lab" x="${right?b.r+7:-(b.r+7)}" dy="4" text-anchor="${right?'start':'end'}">${esc(b.a.name)}</text></g>`}).join('');
+  NET.svg=svg;NET.linkEls=[...svg.querySelectorAll('.lk')];
+  NET.gEls=Object.fromEntries([...svg.querySelectorAll('g')].map(g=>[g.dataset.id||('r'+g.dataset.n),g]));
+  paintNet(lit());
+}
+function paintNet(L,peek){
+  if(!NET.svg)return;const h=st.hl;
+  // peek: a body under the pointer previews its links without changing the highlight
+  const focusB=peek||(h&&h.type==='to'?h.v:null);
+  const on=peek?new Set(R.filter(r=>r.to.includes(peek)).map(r=>r.n)):L;
+  NET.recs.forEach(p=>{const g=NET.gEls[p.id];g.classList.toggle('lit',!!on&&on.has(p.rec.n));g.classList.toggle('dim',!!on&&!on.has(p.rec.n))});
+  NET.bodies.forEach(b=>{const g=NET.gEls[b.id];const touches=on&&R.some(r=>on.has(r.n)&&r.to.includes(b.id));g.classList.toggle('lit',b.id===focusB);g.classList.toggle('dim',!!on&&!touches&&b.id!==focusB)});
+  NET.links.forEach((l,i)=>{const x=!!on&&on.has(l.s.rec.n)&&(!focusB||l.t.id===focusB||!peek&&h&&h.type!=='to');NET.linkEls[i].classList.toggle('lit',x);NET.linkEls[i].classList.toggle('dim',!!on&&!x)});
+}
+{
+  const host=$('#net');
+  host.addEventListener('pointerover',e=>{const b=e.target.closest('g.bn');const r=e.target.closest('g.rn');
+    if(b&&e.pointerType!=='touch')paintNet(lit(),b.dataset.id);
+    if(r&&e.pointerType!=='touch')showTip(r,R[r.dataset.n-1]);});
+  host.addEventListener('pointerout',e=>{if(e.target.closest('g.bn'))paintNet(lit());if(e.target.closest('g.rn'))hideTip()});
+  host.addEventListener('click',e=>{const b=e.target.closest('g.bn');if(b){toggleHl('to',b.dataset.id);return}const r=e.target.closest('g.rn');if(r){hideTip();openItem(+r.dataset.n)}});
+}
+// list beside the network
+$('#wholist').innerHTML=actorsByCount.map(a=>`<li><button type="button" data-to="${a.id}" aria-pressed="false"><span>${esc(a.id==='none'?'No one named':a.full)}${/^[A-Z]{2,}$/.test(a.name)?`<small>${esc(a.name)}</small>`:''}</span><span class="bar"><i style="width:${Math.round(actorCount[a.id]/actorCount[actorsByCount[0].id]*90)+4}px"></i>${actorCount[a.id]}</span></button></li>`).join('');
+$('#wholist').addEventListener('click',e=>{const b=e.target.closest('button');if(b)toggleHl('to',b.dataset.to)});
+{
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length, nNone=actorCount.none||0;
+  const top=actorsByCount[0];
+  $('#whointro').innerHTML=`Each of the ${nRec} recommendations is joined to every body its wording asks to act. <b>${esc(top.full)}</b> is asked most often (${actorCount[top.id]} times). <b>${multi}</b> recommendations name more than one body, and <b>${nNone}</b> don’t say who should act at all.`;
+}
+
+/* ---------- reader ---------- */
+function itemHTML(r,rx,L){
+  const s=SEC[r.sec];
+  return `<article class="item ${isRec(r)?'rec':'con'}" id="r${r.n}"><div class="n"><i></i><a href="#r=${r.n}" data-open="${r.n}">${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</a></div>
+  <p class="x">${markup(r.text,rx)}</p>
+  <div class="meta">${r.to.length?`<span class="to">${r.to.map(id=>`<button type="button" class="tag${id==='none'?' none':''}${st.hl&&st.hl.type==='to'&&st.hl.v===id?' on':''}" data-to="${id}" title="${esc(AC[id].full)}">${esc(AC[id].name)}</button>`).join('')}</span>`:''}<a href="${esc(pdfAt(r))}">Paragraph ${r.para}, page ${printed(r)}</a></div></article>`;
+}
+function paintReader(L){
+  const rx=markRx();
+  const html=D.sections.map(s=>{
+    const its=R.filter(r=>r.sec===s.id&&(!L||L.has(r.n)));if(!its.length)return'';
+    const ch=CH[s.ch];
+    return `<div class="sec" id="s${s.id}"><div class="ch" aria-hidden="true">${s.ch}<small>${esc(ch.title)}</small></div><h3>${s.h2?`<small>${esc(s.h1)}</small>`:''}${esc(secName(s))}</h3><div></div>
+    <div class="col cons">${its.filter(r=>!isRec(r)).map(r=>itemHTML(r,rx,L)).join('')}</div><div class="col recs">${its.filter(isRec).map(r=>itemHTML(r,rx,L)).join('')}</div></div>`;
+  }).join('');
+  $('#secs').innerHTML=html||'<div class="empty">Nothing matches. Clear the highlight to see every section.</div>';
+  const nS=new Set(R.filter(r=>!L||L.has(r.n)).map(r=>r.sec)).size;
+  $('#readintro').innerHTML=L?`Showing the <b>${L.size}</b> matching paragraphs, in ${nS} of the report’s ${D.sections.length} sections. <button type="button" class="clear" data-clear>Show everything</button>`:
+    `All ${N} paragraphs in the report’s own order, grouped by the ${D.sections.length} sections they close. In each section the committee sets out what it found, then what it wants done.`;
+}
+$('#read').addEventListener('click',e=>{
+  if(e.target.closest('[data-clear]')){setHl(null);return}
+  const t=e.target.closest('[data-to]');if(t){toggleHl('to',t.dataset.to);return}
+  const o=e.target.closest('[data-open]');if(o){e.preventDefault();openItem(+o.dataset.open)}
+});
+
+/* ---------- drawer ---------- */
+const drawer=$('#drawer');let cur=0,lastFocus=null;
+function seq(){const L=lit();return L&&L.size&&(!cur||L.has(cur))?[...L].sort((a,b)=>a-b):R.map(r=>r.n)}
+function minimap(n,L){
+  const W=Math.min(472,innerWidth-48),gapC=6,gap=1;const tw=R.reduce((s,r)=>s+r.words,0);
+  const k=(W-(D.chapters.length-1)*gapC-(N-1)*gap)/tw;let x=0,prev=null;
+  return `<div class="mini" aria-hidden="true" style="width:${W}px">`+R.map(r=>{if(prev!==null&&r.ch!==prev)x+=gapC-gap;prev=r.ch;const w=Math.max(1.5,r.words*k);
+    const el=`<button type="button" tabindex="-1" data-go="${r.n}" class="${isRec(r)?'rec':'con'}${L&&L.has(r.n)?' lit':''}${r.n===n?' cur':''}" style="left:${x.toFixed(1)}px;width:${w.toFixed(1)}px" title="${isRec(r)?'Recommendation':'Conclusion'} ${r.n}"></button>`;x+=w+gap;return el}).join('')+'</div>';
+}
+function openItem(n,{fromHash}={}){
+  const r=R[n-1];if(!r)return;cur=n;
+  if(!drawer.classList.contains('open'))lastFocus=document.activeElement;
+  const s=SEC[r.sec],ch=CH[r.ch],rx=markRx();
+  const mates=R.filter(x=>x.sec===r.sec);
+  $('#dbody').innerHTML=`<div class="kind"><i class="${isRec(r)?'':'con'}"></i>${isRec(r)?'Recommendation: asks someone to act':'Conclusion: what the committee found'}</div>
+  <div class="big" id="dtitle">${r.n}<span style="font-size:20px;font-stretch:100%;font-weight:400;color:var(--muted)"> of ${N}</span></div>
+  ${minimap(n,lit())}
+  ${(()=>{const q=seq();return q.length<N?`<p class="pos">${q.indexOf(n)+1} of the ${q.length} highlighted. Use ‹ › or the arrow keys to step through them.</p>`:''})()}
+  <p class="path">Chapter ${r.ch}, ${esc(ch.title)}<br>${esc(secPath(s))}</p>
+  <div class="dx">${markup(r.text,rx)}</div>
+  <dl>
+  <dt>Asked to act</dt><dd>${r.to.length?r.to.map(id=>`<button type="button" class="tag${id==='none'?' none':''}" data-to="${id}">${esc(AC[id].full)}</button>`).join(' '):'Nobody: this is a conclusion.'}</dd>
+  <dt>Priority</dt><dd>${esc(PRI[r.pri].title)}</dd>
+  <dt>In the report</dt><dd><a href="${esc(pdfAt(r))}">Paragraph ${r.para}, page ${printed(r)}</a></dd>
+  </dl>
+  ${mates.length>1?`<div class="mates"><h4>The rest of this section</h4>${mates.map(m=>`<button type="button" data-go="${m.n}"${m.n===n?' aria-current="true"':''}><i class="${isRec(m)?'':'con'}"></i><b>${m.n}</b><span>${esc(clip(plain(m.text),90))}</span></button>`).join('')}</div>`:''}`;
+  {const q=seq(),i=q.indexOf(n);$('#dprev').disabled=i<=0;$('#dnext').disabled=i<0||i>=q.length-1;}
+  drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
+  bands.forEach(b=>b.tabIndex=-1);bands[n-1].tabIndex=0;
+  $('#dbody').scrollTop=0;
+  if(!fromHash)drawer.focus({preventScroll:true});
+  syncHash();
+}
+function closeDrawer(){if(!drawer.classList.contains('open'))return;drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');cur=0;syncHash();if(lastFocus&&document.contains(lastFocus))lastFocus.focus({preventScroll:true})}
+$('#dclose').addEventListener('click',closeDrawer);
+const stepBy=d=>{const q=seq(),i=q.indexOf(cur);const t=q[i+d];if(t)openItem(t)};
+$('#dprev').addEventListener('click',()=>stepBy(-1));
+$('#dnext').addEventListener('click',()=>stepBy(1));
+drawer.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){openItem(+g.dataset.go);return}const t=e.target.closest('[data-to]');if(t)toggleHl('to',t.dataset.to)});
+addEventListener('keydown',e=>{
+  if(!drawer.classList.contains('open'))return;
+  if(e.key==='Escape'){closeDrawer()}
+  else if((e.key==='ArrowRight'||e.key==='ArrowLeft')&&!e.target.closest('input,select,.map')){e.preventDefault();stepBy(e.key==='ArrowRight'?1:-1)}
+});
+document.addEventListener('pointerdown',e=>{if(drawer.classList.contains('open')&&!drawer.contains(e.target)&&!e.target.closest('.band,.rn,[data-open],[data-go],.chip,.tag,.controls'))closeDrawer()});
+
+/* ---------- paint + url ---------- */
+function paint(){const L=lit();paintMap(L);paintNet(L);paintReader(L);status(L);stepLabel(L);mini(L);if(cur)openItem(cur,{fromHash:true})}
+function stepLabel(L){const b=$('#step');b.hidden=!!L&&!L.size;b.textContent=L?`Read the ${L.size} highlighted, one by one`:`Read all ${N}, one by one`}
+$('#step').addEventListener('click',()=>{const q=seq();cur=0;openItem((lit()&&lit().size?[...lit()].sort((a,b)=>a-b):q)[0])});
+let ctlVisible=true;
+function mini(L){const m=$('#minibar');m.classList.toggle('show',!!st.hl&&!ctlVisible);m.setAttribute('aria-hidden',String(!(st.hl&&!ctlVisible)));
+  if(st.hl)$('#minitext').innerHTML='<span class="dot"></span>'+$('#status').innerHTML.replace(/<span class="dot"><\/span>/,'')}
+new IntersectionObserver(es=>{const e=es[0];ctlVisible=e.isIntersecting||e.boundingClientRect.top>0;mini(lit())}).observe($('#controls'));
+$('#miniclear').addEventListener('click',()=>setHl(null));
+$('#minichange').addEventListener('click',()=>{$('#controls').scrollIntoView({behavior:reduce?'auto':'smooth'});$('#q').focus({preventScroll:true})});
+function syncHash(){
+  const p=new URLSearchParams();if(st.by!=='ch')p.set('by',st.by);
+  if(st.hl)p.set(st.hl.type==='to'?'to':st.hl.type==='topic'?'topic':'q',st.hl.v);
+  if(cur)p.set('r',cur);
+  const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search);
+}
+function readHash(){
+  const p=new URLSearchParams(location.hash.slice(1));
+  if(p.get('by')==='pri'){st.by='pri';$$('[data-by]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.by==='pri')))}
+  const to=p.get('to'),tp=p.get('topic'),q=p.get('q');
+  st.hl=to&&AC[to]?{type:'to',v:to}:tp&&TOP[tp]?{type:'topic',v:tp}:q?{type:'q',v:q}:null;
+  return +p.get('r')||0;
+}
+
+/* ---------- footer ---------- */
+$('#foot').innerHTML=`<p>Source: ${esc(D.committee)}, <a href="${esc(D.pdf)}"><cite>${esc(D.title)}</cite></a> (${esc(D.number)}, ${esc(D.paper)}), summary of conclusions and recommendations, checked against the paragraphs in the body of the report. Conclusions and recommendations are told apart as the report prints them: bold for conclusions, bold italic for recommendations. <a href="${esc(D.work)}">Inquiry page and evidence</a>.</p>
+<p>Who is asked to act, the topics and the grouping under the six priorities are our reading of the report’s wording; a body may still be expected to act where it isn’t named. An unofficial tool, not a Parliament service. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+<p><a href="data.json">Download the data (JSON)</a>. <a href="../../">Open House of Lords inquiries</a>.</p>`;
+
+/* ---------- start ---------- */
+const startItem=readHash();
+if(st.hl){$('#q').value=st.hl.type==='q'?st.hl.v:'';setHl(st.hl,{keepQ:true})}
+layout(false);
+if(!reduce&&!startItem&&!st.hl){
+  bands.forEach((b,i)=>{b.style.transition='none';b.style.clipPath='inset(0 100% 0 0)'});
+  requestAnimationFrame(()=>requestAnimationFrame(()=>bands.forEach((b,i)=>{b.style.transition=`clip-path .5s cubic-bezier(.2,.7,.2,1) ${120+i*14}ms`;b.style.clipPath='inset(0 0 0 0)';
+    b.addEventListener('transitionend',function f(e){if(e.propertyName==='clip-path'){b.style.transition='';b.style.clipPath='';b.removeEventListener('transitionend',f)}})})));
+}
+buildNet();
+paint();
+if(startItem)openItem(startItem,{fromHash:true});
+let rT,lastW=map.clientWidth;addEventListener('resize',()=>{clearTimeout(rT);rT=setTimeout(()=>{if(Math.abs(map.clientWidth-lastW)<2)return;lastW=map.clientWidth;layout(false);buildNet()},150)});
+addEventListener('hashchange',()=>{const n=readHash();setHl(st.hl,{});layout(false);if(n)openItem(n,{fromHash:true});else closeDrawer()});
+}
+</script>
+</body>
+</html>
