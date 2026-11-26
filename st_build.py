@@ -213,7 +213,8 @@ def subject(t):
 
 
 def debate_title_core(t):
-    return re.sub(r"\(\s*science\s+and\s+technology\s+committee\s+report\s*\)", "", t or "", flags=re.I).strip(" -:")
+    # drop a trailing "(Science and Technology Committee Report)", "(S&T Committee Report)", "(STC Report)" etc.
+    return re.sub(r"\([^)]*\breport\b[^)]*\)\s*$", "", t or "", flags=re.I).strip(" -:")
 
 
 def hansard_link(r):
