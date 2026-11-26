@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Links made for the explorer go to its home */
+if(/(^#|&)(to|topic|q|r|by|pri)=/.test(location.hash))location.replace('explore/'+location.hash);</script>
+<title>Bleeding to death: the Lords report in brief</title>
+<meta name="description" content="The House of Lords Science and Technology Committee’s report on the UK’s failure to scale its science and technology companies, in 17 slides: the evidence, what the committee concluded, and what it wants done.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bleeding to death: the science and technology growth emergency">
+<meta property="og:description" content="The House of Lords Science and Technology Committee’s report in 17 slides: the evidence, what it concluded, and what it wants done.">
+<meta property="og:url" content="__URL__">
+<meta property="og:image" content="__OG__">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="preload" href="__FONTS__archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+BRIEF: a splash presentation for the Lords report "Bleeding to death: the science and technology growth emergency" (HL Paper 192).
+  It takes readers through the evidence, the committee's conclusions and its recommendations, then into the explorer.
+IDEA: the report is drawn as a wound. A single incision runs across the opening slide and 70 drops bead along it: one for each numbered
+  conclusion and recommendation, grouped by chapter, longer for longer paragraphs; solid drops are recommendations, hollow ones conclusions.
+  On every other slide the incision becomes a strip along the foot of the screen, where the drops for that slide light up. On the closing
+  slides the cut is stitched. Every other picture is a diagram of one piece of evidence, most of them redrawn from the report's own figures.
+PALETTE: the operating theatre. Scrub green (chosen by surgeons because it rests eyes tired by red) for paper and ink, arterial red for the
+  drops and anything the slide is about, one teal for comparisons. TYPE: shared with the other report pages: Archivo and Newsreader.
+MOTION: one orchestrated moment: the incision opens and the drops bead along it. Diagrams play once when their slide opens.
+*/
+@font-face{font-family:"Archivo";src:url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+:root{--sans:"Archivo",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;--padX:max(5vw,24px)}
+[data-tone=light]{--bg:#E8EFEC;--fg:#0F2420;--mute:#4B5E59;--line:#C2D0CB;--hi:#C8102E;--wash:#F2D5DA;--glass:#D9E4E0;--teal:#2C6A62;--soft:#97AAA4;color-scheme:light}
+[data-tone=dark]{--bg:#0F2A26;--fg:#EAF2EF;--mute:#95AEA8;--line:#2A4A44;--hi:#FF4155;--wash:#4D1A24;--glass:#183A35;--teal:#7CC0B4;--soft:#4E6D67;color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%}
+@media (min-width:821px) and (min-height:640px){html{scroll-snap-type:y mandatory}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);font-stretch:100%;overflow-x:clip;transition:background-color .5s}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skiplink{position:absolute;left:12px;top:-60px;z-index:60;background:var(--bg);padding:8px 12px;border:2px solid var(--hi)}
+.skiplink:focus{top:12px}
+
+/* fixed chrome */
+.chrome{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--padX);font-size:14px;color:var(--fg);pointer-events:none;transition:color .4s}
+.chrome a{pointer-events:auto}
+.chrome .pill{border:1.5px solid currentColor;border-radius:999px;padding:7px 15px;text-decoration:none;font-weight:600;white-space:nowrap}
+.chrome .pill:hover{background:var(--fg);color:var(--bg)}
+.pager{position:fixed;left:var(--padX);bottom:16px;z-index:40;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--fg);transition:color .4s}
+.pager button{width:38px;height:38px;border-radius:50%;border:1.5px solid currentColor;background:var(--bg);color:inherit;cursor:pointer;font:400 18px/1 var(--sans);transition:background-color .4s}
+.pager button:hover:not(:disabled){background:var(--fg);color:var(--bg)}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager #count{font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pager #slidename{color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(37vw - var(--padX) - 177px)}
+
+/* the incision */
+#cut{position:fixed;left:0;top:0;z-index:20;pointer-events:none;overflow:visible}
+#cut .hit{pointer-events:auto;cursor:pointer;fill:transparent}
+#cut .incision{stroke:var(--hi);stroke-width:2;stroke-linecap:round;transition:stroke .5s}
+#cut .dr{transition:fill .5s,stroke .5s,opacity .35s}
+#cut .dr.r{fill:var(--hi)}
+#cut .dr.c{fill:var(--bg);stroke:var(--hi);stroke-width:1.4}
+#cut .dr.off{opacity:.5}
+#cut .dr.r.off{fill:var(--soft)}
+#cut .dr.c.off{stroke:var(--soft)}
+#cut .stitch{stroke:var(--fg);stroke-width:2.2;stroke-linecap:round;fill:none;transition:stroke .5s}
+#cut .labs text{font:500 12px var(--sans);fill:var(--mute)}
+#cut .drip{fill:var(--hi)}
+.bed{display:none}
+#tip{position:fixed;z-index:50;pointer-events:none;width:min(340px,calc(100vw - 16px));background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:10px 12px 11px;font-size:13px;line-height:1.4;opacity:0;transition:opacity .1s;box-shadow:4px 4px 0 var(--line)}
+#tip b{display:block;font-size:14px}
+#tip .x{font:15px/1.4 var(--serif);margin-top:4px}
+#tip .go{color:var(--mute);margin-top:6px}
+
+/* slides */
+.slide{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;padding:84px var(--padX) 84px;background:var(--bg);color:var(--fg);scroll-snap-align:start}
+.frame{width:100%;max-width:1240px;margin:0 auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:32px clamp(32px,5vw,84px);align-items:center}
+h1{margin:0;text-wrap:balance}
+h1 .t1{display:block;font:820 clamp(68px,9.4vw,156px)/.84 var(--sans);font-stretch:62%;letter-spacing:-.012em}
+h1 .t2{display:block;font:560 clamp(26px,2.7vw,44px)/1.04 var(--sans);font-stretch:84%;letter-spacing:-.01em;margin-top:.32em;max-width:17ch}
+h2{font:700 clamp(32px,3.5vw,54px)/1 var(--sans);font-stretch:82%;letter-spacing:-.012em;margin:0 0 18px;text-wrap:balance;max-width:21ch}
+h2.quote{font:400 clamp(34px,4vw,62px)/1.08 var(--serif);font-style:italic;letter-spacing:-.01em;max-width:18ch;margin-bottom:24px}
+h3{font:600 14px var(--sans);color:var(--mute);margin:22px 0 6px}
+.kicker{font:650 14.5px var(--sans);color:var(--hi);margin:0 0 10px}
+.sub{font:400 clamp(19px,1.5vw,23px)/1.4 var(--serif);margin:0 0 12px;max-width:36ch}
+.meta{font-size:14.5px;color:var(--mute);margin:0;max-width:52ch}
+.lede{font:400 clamp(18px,1.32vw,21px)/1.46 var(--serif);margin:0;max-width:44ch}
+.lede+.lede{margin-top:12px}
+.hint{font-size:13.5px;line-height:1.45;color:var(--mute);max-width:48ch;margin:24px 0 0}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:10px 20px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 15.5px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.primary{background:var(--hi);border-color:var(--hi);color:#fff}
+.btn.primary:hover{background:var(--hi);color:#fff;filter:brightness(1.1)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+@media (min-width:821px){
+  .s-band{align-items:start;padding-top:max(96px,12vh);padding-bottom:calc(min(160px,19vh) + 120px)}
+  .s-title .frame{max-width:none;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px clamp(32px,5vw,90px);align-items:start}
+  .s-band.s-close .frame{max-width:none}
+  .s-band.s-close{padding-bottom:150px}
+}
+.s-title h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.s-title .side{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* quotes, recommendations, links */
+.pull{position:relative;margin:0 0 18px;font:400 clamp(18px,1.4vw,22px)/1.36 var(--serif);font-style:italic;max-width:40ch}
+.pull::before{content:"\201C";position:absolute;left:-.52em;top:-.06em;color:var(--hi);font-size:1.7em;line-height:1}
+.lede+.pull{margin-top:20px}
+.pull cite{display:block;font:400 13.5px/1.4 var(--sans);font-style:normal;color:var(--mute);margin-top:6px;max-width:52ch}
+.recs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.recs a{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:14px;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.recs .n{font:800 28px/1 var(--sans);font-stretch:62%;padding-top:2px;transition:color .2s}
+.recs .t{font-size:15px;line-height:1.42}
+.recs a:hover .n,.recs a:focus-visible .n{color:var(--hi)}
+.recs a:hover .t{text-decoration:underline;text-decoration-color:var(--hi)}
+.more{display:inline-block;margin-top:14px;font-weight:650;color:var(--hi);text-decoration:none;border-bottom:1.5px solid var(--hi);padding-bottom:1px}
+.more:hover{border-bottom-width:3px}
+.note{font-size:13px;color:var(--mute);margin:8px 0 0;max-width:50ch}
+.src{font-size:13px;color:var(--mute);margin:12px 0 0}
+.theme .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:24px clamp(32px,4.5vw,72px);align-items:start;margin-top:4px}
+.theme h2{max-width:24ch}
+.theme .lede{margin-bottom:16px}
+
+/* illustrations */
+.ill{margin:0}
+.ill svg{display:block;width:100%;height:auto;overflow:visible;max-width:100%}
+.ill text{font-family:var(--sans);font-size:12.5px;fill:var(--fg)}
+.ill text.m{fill:var(--mute)}
+.ill text.b{font-weight:700}
+.ill text.r{fill:var(--hi);font-weight:700}
+.ill text.w{fill:var(--bg);font-weight:650}
+.ill figcaption{font-size:13.5px;line-height:1.45;color:var(--mute);margin-top:10px;max-width:64ch;min-height:2.9em}
+.ill figcaption b{color:var(--fg)}
+.ill .ctitle{font-size:13.5px;font-weight:600;color:var(--fg);margin:0 0 10px;max-width:58ch}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0 0}
+.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--fg);border-radius:20px;padding:2px}
+.seg button{border:0;background:none;color:var(--fg);border-radius:999px;padding:5px 13px;font:500 13.5px var(--sans);cursor:pointer;min-height:32px}
+.seg button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.seg button:hover:not([aria-pressed=true]){background:var(--glass)}
+.sa,.sb{transition:opacity .6s}
+[data-state=a] .sb,[data-state=b] .sa{opacity:0;pointer-events:none}
+[data-state=a] .sa,[data-state=b] .sb{transition-delay:.25s}
+.range{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mute);flex:1 1 280px}
+.range input{flex:1;accent-color:var(--hi);min-height:28px}
+.range output{font-weight:650;color:var(--fg);min-width:9em}
+.swap{position:relative}
+.swap>svg+svg,.swap>svg+canvas{position:absolute;left:0;top:0}
+
+/* 2. verdict */
+#ill-world circle{transition:fill .4s,stroke .4s,opacity .5s}
+#ill-world .u{fill:var(--soft)}
+#ill-world .uk{fill:var(--hi)}
+#ill-world .pre circle{opacity:0}
+
+/* 3. the gap */
+#ill-gap .area{fill:var(--glass)}
+#ill-gap .curve{fill:none;stroke:var(--fg);stroke-width:2}
+#ill-gap .band{fill:var(--glass)}
+#ill-gap .inst{stroke:var(--fg);stroke-width:2;stroke-linecap:round}
+#ill-gap .inst.on{stroke:var(--hi);stroke-width:3.2}
+#ill-gap .brk{fill:none;stroke:var(--mute);stroke-width:1.2}
+#ill-gap .brk.s{stroke:var(--hi);stroke-width:1.6}
+#ill-gap .axis{stroke:var(--mute);stroke-width:1.2;fill:none}
+#ill-gap .ah{fill:var(--mute)}
+#ill-gap .co{fill:var(--fg);stroke:var(--bg);stroke-width:3;transition:fill .3s}
+#ill-gap .co.out{fill:var(--hi)}
+#ill-gap .away{fill:none;stroke:var(--hi);stroke-width:2;stroke-dasharray:5 5;opacity:0;transition:opacity .4s}
+#ill-gap .away.on{opacity:1}
+#ill-gap .awayt{opacity:0;transition:opacity .4s}
+#ill-gap .awayt.on{opacity:1}
+
+/* 4. the loop */
+#ill-loop .arc{fill:none;stroke:var(--fg);stroke-width:2.2;transition:stroke-dasharray .5s,opacity .5s}
+#ill-loop[data-state=b] .arc{stroke-dasharray:3 6;opacity:.6}
+#ill-loop .ah{fill:var(--fg)}
+#ill-loop .nd{cursor:pointer}
+#ill-loop .nd circle{fill:var(--bg);stroke:var(--fg);stroke-width:2;transition:fill .3s,stroke .3s}
+#ill-loop .nd.on circle{fill:var(--hi);stroke:var(--hi)}
+#ill-loop .nd text{font-size:13.5px;font-weight:600}
+#ill-loop .nd:focus{outline:none}
+#ill-loop .nd:focus-visible circle{stroke:var(--hi);stroke-width:4}
+#ill-loop .pulse{fill:var(--hi)}
+#ill-loop .cutm{stroke:var(--hi);stroke-width:3.2;stroke-linecap:round}
+#ill-loop .ctr{font:italic 400 30px var(--serif)}
+#ill-loop .ctr2{font-size:12.5px}
+
+/* 5. themes */
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 28px;margin-top:26px}
+.card{display:grid;grid-template-rows:auto auto 1fr auto;gap:6px;text-align:left;border:0;border-top:2px solid var(--fg);background:none;color:inherit;padding:14px 0 18px;cursor:pointer;font:inherit}
+.card .ct{font:650 18px/1.18 var(--sans);font-stretch:90%}
+.card .cs{font-size:13.5px;line-height:1.42;color:var(--mute)}
+.card .strip{display:flex;align-items:flex-start;gap:1px;height:16px;margin-top:6px;border-top:1.5px solid var(--hi)}
+.card .strip i{display:block;background:var(--soft);opacity:.55;border-radius:0 0 3px 3px}
+.card .strip i.on{background:var(--hi);opacity:1}
+.card .cc{font-size:13px;color:var(--mute)}
+.card:hover .ct,.card:focus-visible .ct{text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:4px}
+.cards .lead{grid-column:span 1;border-top:2px solid var(--fg);padding-top:14px;font:400 17px/1.45 var(--serif);color:var(--fg)}
+
+/* 6. leaving */
+#ill-leave .nm{font-size:13px;cursor:default}
+#ill-leave .nm.on{fill:var(--hi);font-weight:700}
+#ill-leave .ln{fill:none;stroke:var(--hi);stroke-width:1.6;opacity:.8;transition:opacity .3s,stroke-width .3s}
+#ill-leave.peek .ln{opacity:.15}
+#ill-leave.peek .ln.on{opacity:1;stroke-width:3}
+#ill-leave .hub{fill:var(--hi)}
+#ill-leave .row{cursor:pointer}
+#ill-leave .row:focus{outline:none}
+#ill-leave .row:focus-visible .nm{text-decoration:underline}
+
+/* 7. pensions */
+#ill-pen .grid line{stroke:var(--line);stroke-width:1}
+#ill-pen .ser{fill:none;stroke-width:1.8;stroke-linejoin:round}
+#ill-pen .ser.uk{stroke:var(--hi);stroke-width:3.4}
+#ill-pen .ser.nonuk{stroke:var(--teal)}
+#ill-pen .ser.bonds{stroke:var(--fg)}
+#ill-pen .ser.other{stroke:var(--mute);stroke-dasharray:4 3}
+#ill-pen .cur{stroke:var(--fg);stroke-width:1;opacity:.6}
+#ill-pen .pt{stroke:var(--bg);stroke-width:2}
+#ill-pen .seg2 rect{transition:opacity .3s}
+#ill-pen .pen{fill:var(--hi)}
+#ill-pen .gov{fill:var(--teal)}
+#ill-pen .oth{fill:var(--soft)}
+
+/* 8. listings */
+#ill-list rect{transition:opacity .4s}
+#ill-list .pre rect.u{opacity:0}
+
+/* 9. procurement */
+#ill-sbir .sq{fill:var(--fg)}
+#ill-sbir .sq.uk{fill:var(--hi)}
+#ill-sbir .cell{fill:none;stroke:var(--soft);stroke-width:1}
+#ill-sbir .cell.on{fill:var(--hi);stroke:var(--hi)}
+
+/* 10. public investment */
+#ill-pipe .pipe{fill:var(--fg)}
+#ill-pipe .lip{fill:var(--fg)}
+#ill-pipe .pc{fill:var(--bg)}
+#ill-pipe .pc.out{fill:var(--hi)}
+#ill-pipe .bar{fill:var(--soft)}
+#ill-pipe .bar.uk{fill:var(--hi)}
+#ill-pipe .bar.fr{fill:var(--teal)}
+#ill-pipe .bw{transform-box:fill-box;transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+#ill-pipe.pre .bw{transform:scaleX(0)}
+
+/* 11. visas */
+#ill-visa canvas{display:block;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--mute);margin-top:8px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+
+/* 12. universities */
+#ill-uni rect{transition:fill .35s}
+#ill-uni .c0{fill:none;stroke:var(--soft)}
+#ill-uni .c1{fill:var(--hi)}
+
+/* 13. council */
+#ill-council .table{fill:var(--glass);stroke:var(--line)}
+#ill-council .seat{cursor:pointer}
+#ill-council .seat circle{fill:var(--bg);stroke:var(--fg);stroke-width:1.6;transition:fill .3s,stroke .3s}
+#ill-council .seat text{font-size:11.5px;font-weight:700;text-anchor:middle;pointer-events:none}
+#ill-council .seat.on circle{fill:var(--hi);stroke:var(--hi)}
+#ill-council .seat.on text{fill:#fff}
+#ill-council .seat:focus{outline:none}
+#ill-council .seat:focus-visible circle{stroke-width:3.5;stroke:var(--hi)}
+#ill-council .arw{transition:transform 1.1s cubic-bezier(.65,0,.35,1)}
+#ill-council .arw path{fill:none;stroke:var(--hi);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ill-council .ctr{font:italic 400 26px var(--serif);text-anchor:middle;transition:opacity .6s}
+
+/* 14. vital signs */
+.monitor{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
+.ch{display:grid;grid-template-columns:minmax(0,1fr) 74px;gap:10px;align-items:center;border:1px solid var(--line);border-radius:6px;padding:10px 12px;text-decoration:none;color:inherit;background:var(--glass);transition:border-color .2s}
+.ch:hover,.ch:focus-visible{border-color:var(--hi)}
+.ch .cl{font-size:13.5px;line-height:1.35}
+.ch svg{display:block;width:74px;height:30px}
+.ch svg path{fill:none;stroke:var(--hi);stroke-width:1.8;stroke-linejoin:round;stroke-dasharray:150;stroke-dashoffset:150}
+#vitals.on .ch svg path{animation:sweep 2.6s linear infinite;animation-delay:var(--d)}
+@keyframes sweep{0%{stroke-dashoffset:150}70%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+
+/* 15. who */
+.wbars{border-top:2px solid var(--fg)}
+.wb{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 2.4em;gap:14px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;font-size:15px}
+.wb .wt{height:12px;position:relative}
+.wb .wt i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--fg);border-radius:0 6px 6px 0;transition:width .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-color .2s}
+#who.on .wb .wt i{width:var(--w)}
+.wb .wc{font:800 24px/1 var(--sans);font-stretch:62%;text-align:right}
+.wb:hover .wt i,.wb:focus-visible .wt i{background:var(--hi)}
+.wb:hover .wn{text-decoration:underline;text-decoration-color:var(--hi)}
+.wmore{font-size:14px;line-height:1.5;color:var(--mute);margin:14px 0 0;max-width:64ch}
+.wmore a{color:var(--fg)}
+
+/* 16 and 17. close */
+.s-close h2.quote{max-width:26ch;font-size:clamp(36px,5vw,80px)}
+@media (min-width:821px) and (max-height:900px){.s-close h2.quote{font-size:min(5vw,8.2vh)}}
+.tl{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative;max-width:1100px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line)}
+.tl li{position:relative;padding:32px 26px 0 0}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.tl li.done::before{background:var(--hi);border-color:var(--hi)}
+.tl .when{display:block;font:700 15.5px var(--sans)}
+.tl .what{display:block;font-size:15px;line-height:1.42;color:var(--mute);margin-top:4px}
+.tl .what a{color:var(--fg)}
+.small{font-size:12.5px;line-height:1.5;color:var(--mute);margin:26px 0 0;max-width:84ch}
+
+@media (max-width:1100px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* shorter laptop screens: fit each slide to the screen */
+@media (min-width:821px) and (max-height:900px){
+  .slide{padding-top:max(62px,8.6vh);padding-bottom:max(66px,9vh)}
+  .s-band{padding-top:max(80px,11vh);padding-bottom:calc(min(160px,19vh) + 88px)}
+  h1 .t1{font-size:min(9.4vw,14.6vh)}
+  h1 .t2{font-size:min(2.7vw,4.5vh)}
+  h2{font-size:min(3.5vw,5.6vh);margin-bottom:min(16px,1.8vh)}
+  h2.quote{font-size:min(4vw,6.6vh)}
+  .sub{font-size:min(1.5vw,2.6vh)}
+  .lede{font-size:min(1.32vw,2.3vh)}
+  .theme .lede{margin-bottom:min(16px,1.8vh)}
+  .pull{font-size:min(1.4vw,2.5vh);margin-bottom:min(18px,2vh)}
+  .acts{margin-top:min(28px,3vh)}
+  .hint{margin-top:min(24px,2.6vh)}
+  .ill svg{max-height:44vh}
+  .ill figcaption{margin-top:6px}
+  .ctl{margin-top:8px}
+  .recs a{padding:min(10px,1.05vh) 0}
+  .recs .t{font-size:min(15px,1.95vh)}
+  .recs .n{font-size:min(28px,3.6vh)}
+  .more{margin-top:min(14px,1.6vh)}
+  .theme .kicker{margin-bottom:4px}
+  .cards{margin-top:min(26px,2.4vh)}
+  .card{padding:min(14px,1.4vh) 0 min(18px,1.8vh)}
+  .card .cs{font-size:min(13.5px,1.9vh)}
+  .ch{padding:min(10px,1.1vh) 12px}
+  .ch .cl{font-size:min(13.5px,1.9vh)}
+  .tl{margin-top:min(30px,3vh)}
+  .small{margin-top:min(26px,2.6vh)}
+}
+@media (max-width:820px){
+  .chrome{position:absolute}
+  .chrome .home{display:none}
+  .pager{display:none}
+  .bed{display:block;position:fixed;left:0;right:0;bottom:0;height:62px;background:var(--bg);border-top:1px solid var(--line);z-index:19;transition:background-color .4s}
+  .slide{padding:76px 20px 100px;min-height:auto}
+  .slide.s-title,.slide.s-close{min-height:100svh}
+  .two,.theme .cols{grid-template-columns:1fr}
+  .s-title .side{margin-top:20px}
+  .cards{grid-template-columns:1fr}
+  .monitor{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:22px;padding-left:30px}
+  .tl::before{left:8px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl li{padding:0}
+  .tl li::before{left:-30px}
+  .pull{margin-left:.6em}
+  .wb{grid-template-columns:minmax(0,1fr) 60px 2em}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:0s!important}}
+@media print{.chrome,.pager,#cut,.bed,#tip{display:none}.slide{min-height:auto;break-after:page}}
+</style>
+</head>
+<body data-tone="dark">
+<a class="skiplink" href="explore/">Skip to all 70 conclusions and recommendations</a>
+<header class="chrome"><a class="home" href="__ROOT__science-and-technology/">Lords Science and Technology Committee reports</a><a class="pill" href="explore/">All 70 conclusions and recommendations</a></header>
+
+<main id="deck">
+
+<section class="slide s-title s-band" id="start" data-tone="dark" data-cut="hero" data-name="Start" aria-labelledby="h-start">
+<div class="frame">
+<h1 id="h-start"><span class="t1">Bleeding to death:</span><span class="t2">the science and technology growth emergency</span></h1>
+<div class="side">
+<p class="sub">The House of Lords Science and Technology Committee’s report in 17 slides: the evidence, what the committee concluded, and what it wants done.</p>
+<p class="meta">2nd Report of Session 2024–26 (HL Paper 192), published 5 November 2025.</p>
+<div class="acts"><button type="button" class="btn primary" data-next>Start</button><a class="btn" href="explore/">Go straight to all 70 conclusions and recommendations</a></div>
+<p class="hint">Scroll, swipe or use the arrow keys. Each drop along the cut is one of the report’s 70 numbered conclusions and recommendations, longer for longer paragraphs. Solid drops are recommendations, hollow ones conclusions. Point at one to read it.</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="verdict" data-tone="dark" data-lit-pri="other" data-name="The verdict" aria-labelledby="h-verdict">
+<div class="frame two">
+<div>
+<h2 class="quote" id="h-verdict">“The UK economy is bleeding out in a national crisis of growth.”</h2>
+<p class="lede">The committee says the UK’s failure to scale its science and technology companies has “reached a crisis point”. A procession of promising companies has moved overseas rather than grow here, and the UK’s inability to keep the economic benefits of its research is “a fatal flaw in any growth strategy”.</p>
+<p class="src">From the report’s summary. The inquiry heard from 40 witnesses and received over a hundred pieces of written evidence (<a data-para="10">paragraph 10</a>).</p>
+</div>
+<figure class="ill" id="ill-world"><p class="ctitle">World-class research, few world-class companies</p>
+<svg viewBox="0 0 540 300" class="pre" role="img" aria-label="Four of the world's top ten universities are British. Of the world's top 100 industrial R&D spenders, three are British: none in the top ten, AstraZeneca between 11th and 20th, GSK and HSBC lower down."></svg>
+<figcaption>Each dot is one place in a global ranking; positions within a band are not exact. From the report’s summary; the companies are named in footnote 2 (<a data-para="1">paragraph 1</a>), from House of Commons Library figures.</figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="gap" data-tone="light" data-lit="1 2 4" data-name="The scale-up gap" aria-labelledby="h-gap">
+<div class="frame two">
+<div>
+<h2 id="h-gap">Good at starting companies, poor at scaling them</h2>
+<p class="lede">In 2014 the OECD ranked the UK third in the world for start-ups and 13th for scaling up. A decade on, “many of the same fundamental challenges remain” (<a data-para="19">paragraph 19</a>).</p>
+<p class="lede">Early-stage money is in relatively good health. The shortage comes when a company needs hundreds of millions to grow, and it looks abroad, usually to the US (<a data-para="57">paragraph 57</a>).</p>
+</div>
+<figure class="ill" id="ill-gap"><p class="ctitle">Where public finance institutions sit as a company grows, and where finance falls short</p>
+<svg viewBox="0 0 540 352" role="img" aria-label="Diagram. Supply of finance relative to demand dips in a commercialisation gap and falls much further in a scale-up gap. Innovate UK covers emerging innovations, the British Business Bank early growth, the National Wealth Fund and UK Export Finance growth and maturity."></svg>
+<div class="ctl"><label class="range"><span>Move a company along</span><input type="range" id="gap-range" min="0" max="1000" value="0" aria-describedby="gap-cap"><output id="gap-out">Start-up</output></label></div>
+<figcaption id="gap-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="loop" data-tone="dark" data-lit="2 10 13 18" data-name="The doom loop" aria-labelledby="h-loop">
+<div class="frame two">
+<div>
+<h2 id="h-loop">A doom loop</h2>
+<p class="lede">“The UK is in a ‘doom loop’: its capital pools are shallow, its institutional investors risk-averse, and its technology companies undervalued.” Start-ups multiply, struggle to raise scale-up money at home, and move overseas to find it. The committee warns of an ‘incubator economy’ (conclusion 2, <a data-para="28">paragraph 28</a>).</p>
+<p class="note">Choose a step in the loop to see the evidence, or switch to see where the committee’s recommendations would cut it.</p>
+</div>
+<figure class="ill" id="ill-loop"><svg viewBox="0 0 540 340" role="group" aria-label="The doom loop, in five steps"></svg>
+<div class="ctl"><div class="seg" role="group" aria-label="View"><button type="button" data-state="a" aria-pressed="true">The loop</button><button type="button" data-state="b" aria-pressed="false">Where the committee would cut it</button></div></div>
+<figcaption id="loop-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="themes" data-tone="light" data-name="Seven themes" aria-labelledby="h-themes">
+<div class="frame">
+<h2 id="h-themes">Seven themes</h2>
+<p class="lede" style="max-width:70ch">Six follow the headline recommendations in the committee’s summary; the seventh, keeping companies in the UK, comes from its second chapter. Choose one to go to it. Each strip is the report’s 70 drops, with the theme’s paragraphs in red.</p>
+<div class="cards" id="cards"></div>
+</div>
+</section>
+
+<section class="slide theme" id="stay" data-tone="light" data-pri="stay" data-name="Theme 1: keep companies here" aria-labelledby="h-stay">
+<div class="frame">
+<p class="kicker">Theme 1 of 7</p>
+<h2 id="h-stay">Keep companies in the UK</h2>
+<div class="cols">
+<div>
+<blockquote class="pull">It is nobody’s responsibility.”<cite>Ceri Smith, Director General of the Office for Investment, when asked whose job it is to try to keep technology companies in the UK (<a data-para="52">paragraph 52</a>).</cite></blockquote>
+<p class="lede">The committee calls the Government’s approach to overseas takeovers “notably laissez-faire”, and says rising conflict and fast-moving technology now make critical companies a matter of national interest, if not national security (conclusions 10 and 11).</p>
+<h3>The committee recommends</h3>
+<ul class="recs">
+<li><a href="explore/#r=12"><span class="n"><span class="vh">Recommendation </span>12</span><span class="t">Tell new investment apart from takeovers; run exit surveys and founder interviews when companies list or sell abroad; decide which technologies the UK must control, and take equity stakes through public investment bodies.</span></a></li>
+</ul>
+<a class="more" data-more="stay" href="explore/#pri=stay"></a>
+</div>
+<figure class="ill" id="ill-leave"><p class="ctitle">Companies named in the report that were sold to overseas owners or listed overseas</p>
+<svg viewBox="0 0 540 330" role="group" aria-label="Thirteen companies and where they went"></svg>
+<figcaption id="leave-cap" aria-live="polite">Point at a company to see what the report says about it.</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="capital" data-tone="light" data-pri="capital" data-name="Theme 2: UK capital" aria-labelledby="h-capital">
+<div class="frame">
+<p class="kicker">Theme 2 of 7</p>
+<h2 id="h-capital">Put UK capital to work</h2>
+<div class="cols">
+<div>
+<p class="lede">UK workplace pension schemes manage over £2 trillion (<a data-para="59">paragraph 59</a>), yet their investment in UK companies has collapsed. The committee calls the fall “shocking”, and says that because its origins are largely political, it can be reversed politically.</p>
+<blockquote class="pull">Anybody who thinks this is going to be fixed by Mansion House needs their head examined.”<cite>Professor Sir John Bell (<a data-para="75">paragraph 75</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=16"><span class="n"><span class="vh">Recommendation </span>16</span><span class="t">Insist that pension schemes consolidate; track how much reaches UK science and technology; set targets for the end of 2027 and keep the power to mandate; ask members how much they want invested in the UK; consider clawing back tax relief.</span></a></li>
+<li><a href="explore/#r=17"><span class="n"><span class="vh">Recommendation </span>17</span><span class="t">The Pensions and Science ministers and the British Business Bank should make sure the reforms reach innovative companies, not only other assets.</span></a></li>
+</ul>
+<a class="more" data-more="capital" href="explore/#pri=capital"></a>
+</div>
+<figure class="ill" id="ill-pen" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Chart"><button type="button" data-state="a" aria-pressed="true">Pension funds’ assets</button><button type="button" data-state="b" aria-pressed="false">Who funds venture capital</button></div></div>
+<svg viewBox="0 0 540 290" role="img" aria-label="Line chart, 1997 to 2022. The share of UK pension fund assets in UK equities falls from 53% to about 4%, while bonds rise from 15% to around half. Second chart: pension funds provide 72% of venture capital in the US and 10% in the UK."></svg>
+<div class="ctl sa"><label class="range"><span>Year</span><input type="range" id="pen-year" min="1997" max="2022" value="2022"><output id="pen-out"></output></label></div>
+<figcaption id="pen-cap"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="markets" data-tone="light" data-pri="capital" data-lit="18 19 20 21 22" data-name="Theme 2: stock markets" aria-labelledby="h-markets">
+<div class="frame">
+<p class="kicker">Theme 2 of 7, continued</p>
+<h2 id="h-markets">A drought in London’s stock market</h2>
+<div class="cols">
+<div>
+<p class="lede">Companies list in New York expecting higher valuations, a perception that “may not be entirely borne out” (<a data-para="20">paragraph 20</a>). Each one that goes “reduces activity and capital in the UK market, perpetuating a vicious cycle” (report summary).</p>
+<ul class="recs">
+<li><a href="explore/#r=20"><span class="n"><span class="vh">Recommendation </span>20</span><span class="t">Steer capital into UK markets: shift ISA limits from cash towards shares, a stamp duty holiday for listings, new savings vehicles for UK science and technology, and campaigns for financial literacy.</span></a></li>
+<li><a href="explore/#r=22"><span class="n"><span class="vh">Recommendation </span>22</span><span class="t">Keep R&amp;D tax credits at current levels and tackle the fraud rather than recast the scheme; reuse money recovered for scale-up support.</span></a></li>
+</ul>
+<p class="note">R&amp;D tax credits cost about £7.5 billion in 2022/23, when error and fraud were estimated at 17.6% (<a data-para="107">paragraphs 107</a> and <a data-para="109">109</a>).</p>
+</div>
+<figure class="ill" id="ill-list"><svg viewBox="0 0 540 296" class="pre" role="img" aria-label="In the first eight months of 2025, 7 UK companies listed in London and 129 in the US. Of 20 UK companies that listed in New York in the last decade raising over £100 million, 3 trade above their listing price, 7 are 75% below it and 10 have delisted."></svg>
+<figcaption>Top: from the report’s summary. Bottom: evidence from Marcus Stuttard of the London Stock Exchange Group (<a data-para="95">paragraph 95</a>).</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="procure" data-tone="light" data-pri="procure" data-name="Theme 3: procurement" aria-labelledby="h-procure">
+<div class="frame">
+<p class="kicker">Theme 3 of 7</p>
+<h2 id="h-procure">Buy from innovators</h2>
+<div class="cols">
+<div>
+<blockquote class="pull">The most valuable thing for any company we can invest in is not us investing more in that company; it is the company getting a purchase order.”<cite>Saul Klein, venture investor (<a data-para="117">paragraph 117</a>).</cite></blockquote>
+<p class="lede">Public bodies spent £434 billion on procurement in 2024/25, but risk aversion and a habit of favouring large incumbents shut innovative small firms out (conclusion 23). As Lord O’Donnell put it: “No one ever got fired for buying IBM” (<a data-para="120">paragraph 120</a>).</p>
+<ul class="recs">
+<li><a href="explore/#r=25"><span class="n"><span class="vh">Recommendation </span>25</span><span class="t">A mandatory share of every department’s and local authority’s procurement budget for innovative UK small firms, rising to 3%; more Contracts for Innovation; outcome-based, stage-gated contracts; ministers who back officials when innovation fails; a presumption in favour of buying British.</span></a></li>
+</ul>
+<a class="more" data-more="procure" href="explore/#pri=procure"></a>
+</div>
+<figure class="ill" id="ill-sbir" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Chart"><button type="button" data-state="a" aria-pressed="true">The US and UK schemes</button><button type="button" data-state="b" aria-pressed="false">The committee’s target</button></div></div>
+<svg viewBox="0 0 540 300" role="img" aria-label="Squares sized by spending: one year of the US Small Business Innovation Research programme, 6.2 billion dollars; twenty years of the UK's equivalent, 1.5 billion pounds; the UK scheme in 2024/25, 42 million pounds. Second view: a grid of 100 cells with 3 highlighted, the committee's 3% target."></svg>
+<figcaption id="sbir-cap"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="public" data-tone="light" data-pri="public" data-name="Theme 4: public investment" aria-labelledby="h-public">
+<div class="frame">
+<p class="kicker">Theme 4 of 7</p>
+<h2 id="h-public">One public investment pipeline, at scale</h2>
+<div class="cols">
+<div>
+<p class="lede">Innovate UK, the British Business Bank and the National Wealth Fund each back companies at a different stage, but the landscape is “fragmented, overly complicated, and small in scale”, and companies fall through a ‘leaky pipeline’ (conclusion 26). One investor described “pinballing around” between them (<a data-para="135">paragraph 135</a>).</p>
+<ul class="recs">
+<li><a href="explore/#r=27"><span class="n"><span class="vh">Recommendation </span>27</span><span class="t">At the very least, work much more closely, make clear who does what, and track referrals from one body to the next as a key performance indicator.</span></a></li>
+<li><a href="explore/#r=29"><span class="n"><span class="vh">Recommendation </span>29</span><span class="t">Put the British Business Bank on a statutory footing, scale it and the National Wealth Fund up significantly, and consolidate them, with a strong case for including Innovate UK.</span></a></li>
+<li><a href="explore/#r=39"><span class="n"><span class="vh">Recommendation </span>39</span><span class="t">Give the National Wealth Fund a target for the number of late-stage funding rounds it backs in each Parliament.</span></a></li>
+</ul>
+<a class="more" data-more="public" href="explore/#pri=public"></a>
+</div>
+<figure class="ill" id="ill-pipe" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Chart"><button type="button" data-state="a" aria-pressed="true">The leaky pipeline</button><button type="button" data-state="b" aria-pressed="false">Against the world’s wealth funds</button></div></div>
+<svg viewBox="0 0 540 330" class="pre" role="img" aria-label="Diagram: three pipe sections, Innovate UK, the British Business Bank and the National Wealth Fund, with gaps between them where companies drip out. Second view: bar chart of sovereign wealth funds; Norway's is about 1,945 billion dollars, the UK National Wealth Fund about 36 billion."></svg>
+<figcaption id="pipe-cap"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="people" data-tone="light" data-pri="people" data-name="Theme 5: talent" aria-labelledby="h-people">
+<div class="frame">
+<p class="kicker">Theme 5 of 7: talent, networks and regulation</p>
+<h2 id="h-people">The red carpet, not red tape</h2>
+<div class="cols">
+<div>
+<p class="lede">Up-front visa costs for scientists are around 17 times those in other research-intensive countries: over £20,000 for a family of four on a five-year Global Talent visa (<a data-para="185">paragraphs 185</a> and <a data-para="189">189</a>). The committee calls the Home Office’s unwillingness to review the barriers “an absurd act of national self-harm” (conclusion 43).</p>
+<ul class="recs">
+<li><a href="explore/#r=44"><span class="n"><span class="vh">Recommendation </span>44</span><span class="t">Use the Global Talent Taskforce and a much bigger Global Talent Fund, and do not let the Home Office block the abolition of fees for top talent.</span></a></li>
+<li><a href="explore/#r=45"><span class="n"><span class="vh">Recommendation </span>45</span><span class="t">Let the Immigration Health Surcharge be paid over time, make attracting talent a primary Home Office goal, and review the Scale-up Worker visa.</span></a></li>
+<li><a href="explore/#r=54"><span class="n"><span class="vh">Recommendation </span>54</span><span class="t">A concierge service with the power to clear blockages for high-potential companies, and a regulatory front door for innovators (recommendation 59).</span></a></li>
+</ul>
+<a class="more" data-more="people" href="explore/#pri=people"></a>
+</div>
+<figure class="ill" id="ill-visa"><p class="ctitle">Scale-up Worker visas granted in 2024, against the UK’s scale-up companies</p>
+<canvas width="540" height="290" role="img" aria-label="A field of 34,000 grey dots, one for each scale-up company, with 44 red dots, one for each Scale-up Worker visa granted in 2024."></canvas>
+<div class="legend"><span><i style="background:var(--soft)"></i>34,000 scale-up companies (estimated)</span><span><i style="background:var(--hi)"></i>44 Scale-up Worker visas</span></div>
+<figcaption>The visa was launched in 2022 to bring in people with the skills scale-ups need (<a data-para="192">paragraph 192</a>). Red dots are placed at random. One founder told the committee a standard work visa took six to eight months: “half the lifetime of a company” (<a data-para="189">paragraph 189</a>).</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="research" data-tone="light" data-pri="research" data-name="Theme 6: research" aria-labelledby="h-research">
+<div class="frame">
+<p class="kicker">Theme 6 of 7</p>
+<h2 id="h-research">Protect the research base</h2>
+<div class="cols">
+<div>
+<p class="lede">University research is not funded at full cost and leans on fees from overseas students, whose numbers are falling, while inflation has eroded the real value of tuition fees by a third (<a data-para="250">paragraph 250</a>). A planned levy on international students will make things worse, the committee says (conclusion 60).</p>
+<blockquote class="pull">‘We want 30% of the company, royalties and licensing fees.’ That company is dead on arrival.”<cite>Dr Patrick Rose of Germany’s innovation agency, SPRIND, on some universities’ terms for spin-outs (<a data-para="257">paragraph 257</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=61"><span class="n"><span class="vh">Recommendation </span>61</span><span class="t">Set out a long-term plan to restore university finances, particularly for research. An international student levy is “likely to be self-defeating”.</span></a></li>
+<li><a href="explore/#r=63"><span class="n"><span class="vh">Recommendation </span>63</span><span class="t">Research funders such as UKRI should track the patents and spin-outs they support; keep implementing the independent review of spin-outs.</span></a></li>
+</ul>
+</div>
+<figure class="ill" id="ill-uni"><p class="ctitle">Up to 72% of higher education providers could face a deficit in 2025/26</p>
+<svg viewBox="0 0 540 200" class="pre" role="img" aria-label="A grid of 100 squares, 72 of them red."></svg>
+<figcaption>Office for Students estimate, November 2024 (<a data-para="250">paragraph 250</a>). The UK has four of the world’s top ten universities, and is “an international outlier in how much of its public sector research happens in universities” (<a data-para="251">paragraph 251</a>).</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="council" data-tone="dark" data-pri="council" data-name="Theme 7: leadership" aria-labelledby="h-council">
+<div class="frame">
+<p class="kicker">Theme 7 of 7</p>
+<h2 id="h-council">Leadership from the top</h2>
+<div class="cols">
+<div>
+<p class="lede">None of this will succeed, the committee says, without leadership from the Prime Minister and Chancellor. Its central recommendation is a National Council for Science, Technology and Growth, modelled on the National Security Council: meeting often, settling conflicts between departments and deciding which technologies the UK must control.</p>
+<blockquote class="pull">We have a constitution that is all about departments, and there is very little about cross-department work.”<cite>Lord O’Donnell, former Cabinet Secretary (<a data-para="25">paragraph 25</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=68"><span class="n"><span class="vh">Recommendation </span>68</span><span class="t">Set up the council with the Prime Minister, Chancellor, Science Minister and the main departments, as a real forum for decisions, not a rubber stamp.</span></a></li>
+<li><a href="explore/#r=69"><span class="n"><span class="vh">Recommendation </span>69</span><span class="t">Give it the prominence, resources and working practices of the National Security Council.</span></a></li>
+<li><a href="explore/#r=9"><span class="n"><span class="vh">Recommendation </span>9</span><span class="t">The Treasury must take responsibility for driving growth, and use its Green Book review to value the long-term returns from R&amp;D.</span></a></li>
+</ul>
+</div>
+<figure class="ill" id="ill-council" data-state="a">
+<div class="ctl" style="margin:0 0 6px"><div class="seg" role="group" aria-label="View"><button type="button" data-state="a" aria-pressed="true">Today</button><button type="button" data-state="b" aria-pressed="false">With a council</button></div></div>
+<svg viewBox="0 0 540 350" role="group" aria-label="The proposed council's members around a table"></svg>
+<figcaption id="council-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide" id="vitals" data-tone="dark" data-lit="66 67" data-name="Vital signs" aria-labelledby="h-vitals">
+<div class="frame two">
+<div>
+<h2 id="h-vitals">Vital signs, published every six months</h2>
+<p class="lede">To keep up the pressure, the committee wants the Government to track these measures, publish them every six months, and use any that lag to spur action through the council and cross-government committees (recommendations 66 and 67).</p>
+<blockquote class="pull">My desire would be to make as many of those things public as possible so that we can hold our own feet to the fire.”<cite>Lord Vallance, then Minister for Science (<a data-para="265">paragraph 265</a>).</cite></blockquote>
+</div>
+<div class="monitor" id="monitor"></div>
+</div>
+</section>
+
+<section class="slide" id="who" data-tone="light" data-name="Who is asked to act" aria-labelledby="h-who">
+<div class="frame two">
+<div>
+<h2 id="h-who">Who is asked to act</h2>
+<p class="lede" id="who-lede"></p>
+<p class="note">Point at a body to light up its recommendations along the strip. Choose one to read them in the explorer.</p>
+</div>
+<div>
+<div class="wbars" id="wbars"></div>
+<p class="wmore" id="wmore"></p>
+</div>
+</div>
+</section>
+
+<section class="slide s-band s-close" id="prize" data-tone="dark" data-cut="hero" data-lit="all" data-heal="1" data-name="The prize" aria-labelledby="h-prize">
+<div class="frame">
+<h2 class="quote" id="h-prize">“The most likely candidate to become the Government’s ‘trillion-dollar tech company by 2035’ probably already exists.”</h2>
+<p class="lede" style="max-width:56ch">The Government must stop the bleeding, the committee says: convince that company, and dozens of others looking overseas, that the best future for them is in the UK. If it helps entrepreneurs, unlocks investment, changes the culture around innovation and organises its efforts, “it can still reap enormous rewards for the nation” (conclusion 70).</p>
+</div>
+</section>
+
+<section class="slide s-band s-close" id="next" data-tone="dark" data-cut="hero" data-lit="all" data-heal="1" data-name="What has happened since" aria-labelledby="h-next">
+<div class="frame">
+<h2 id="h-next">What has happened since</h2>
+<ol class="tl">
+<li class="done"><span class="when">5 November 2025</span><span class="what">The report is published.</span></li>
+<li class="done"><span class="when">3 February 2026</span><span class="what">The Government responds, saying it welcomes and agrees with most of the recommendations. <a href="https://committees.parliament.uk/publications/51379/documents/285273/default/">Read the response</a></span></li>
+<li class="done"><span class="when">July 2026</span><span class="what">The Government spreads the work of the Department for Science, Innovation and Technology across other departments; Business and Trade becomes the Department for Business, Innovation, Science and Trade. <a href="https://www.gov.uk/government/news/machinery-of-government-changes-fact-sheet">GOV.UK</a></span></li>
+</ol>
+<div class="acts"><a class="btn primary" href="explore/">Explore all 70 conclusions and recommendations</a><a class="btn" data-pdf href="#">Read the full report (PDF)</a><button type="button" class="btn" data-go="0">Back to the start</button></div>
+<p class="small">An unofficial guide, not a Parliament service. Quotes and figures come from the report, with paragraph numbers; charts marked as redrawn are read from the report’s figures, so values are approximate. The summaries of recommendations are ours, so check the report for the exact wording. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+</div>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Slides"><button type="button" id="prev" aria-label="Previous slide">‹</button><span id="count">1 of 17</span><button type="button" id="next-btn" aria-label="Next slide">›</button><span id="slidename"></span></nav>
+<div class="bed" aria-hidden="true"></div>
+<svg id="cut" aria-hidden="true"></svg>
+<div id="tip" aria-hidden="true"></div>
+
+<script>
+(()=>{
+const D=/*__DATA__*/null;
+const R=D.recs,N=R.length;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isRec=r=>r.kind==='rec';
+const nRec=R.filter(isRec).length;
+const plain=t=>t.replace(/\n• /g,' ');
+const clip=(s,n)=>s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;
+const AC=Object.fromEntries(D.actors.map(a=>[a.id,a]));
+const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
+const priSet=id=>new Set(R.filter(r=>r.pri===id).map(r=>r.n));
+const slides=$$('.slide');
+const NS='http://www.w3.org/2000/svg';
+const svgEl=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e};
+const txt=(parent,x,y,s,attrs={})=>{const a={x,y,...attrs};if(a['font-size']){a.style=`font-size:${a['font-size']}px;${a.style||''}`;delete a['font-size']}const t=svgEl('text',a,parent);t.textContent=s;return t};
+const paraHref=n=>D.pdf+'#page='+(D.para_pages[n]||1);
+const linkParas=el=>el.querySelectorAll('[data-para]').forEach(a=>{a.href=paraHref(a.dataset.para)});
+const ease=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+const back=k=>{const c1=1.5,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+function animate(ms,fn,done){if(reduce){fn(1);done&&done();return()=>{}}let id,t0=performance.now();const step=now=>{const k=clamp((now-t0)/ms);fn(k);if(k<1)id=requestAnimationFrame(step);else done&&done()};id=requestAnimationFrame(step);return()=>cancelAnimationFrame(id)}
+
+linkParas(document);
+$$('[data-pdf]').forEach(a=>{a.href=D.pdf});
+$$('[data-more]').forEach(a=>{const n=priSet(a.dataset.more).size;a.textContent=`See all ${n} paragraphs on this theme in the explorer`});
+
+/* ================= the incision: the report as 70 drops ================= */
+const cut=$('#cut');
+const GAP=2.4;
+let slot=0;const us=[];R.forEach((r,i)=>{if(i&&r.ch!==R[i-1].ch)slot+=GAP;us.push(slot+.5);slot+=1});const S=slot;
+const maxW=Math.max(...R.map(r=>r.words));
+const lf=R.map(r=>.22+.78*Math.sqrt(r.words/maxW));
+const gDrops=svgEl('g',{},cut),line=svgEl('line',{class:'incision'},cut),gSt=svgEl('g',{},cut),gDrip=svgEl('g',{},cut),gLab=svgEl('g',{class:'labs'},cut),gHit=svgEl('g',{},cut);
+const drops=R.map(r=>svgEl('path',{class:'dr '+(isRec(r)?'r':'c')},gDrops));
+const hits=R.map(r=>{const h=svgEl('rect',{class:'hit'},gHit);h.dataset.n=r.n;return h});
+const chapLab=D.chapters.map(c=>{const i0=R.findIndex(r=>r.ch===c.n);const t=txt(gLab,0,0,'Chapter '+c.n);return{i0,t}});
+const stitches=[];for(let k=0;k<64;k++)stitches.push(svgEl('path',{class:'stitch'},gSt));
+let P=null,lit=null,lineK=1,heal=0,stitchK=0,beat=0,mode='hero',raf=0;
+const grow=R.map(()=>1);
+function dropPath(x,y,h,r){
+  if(h<=0.2)return '';
+  if(h<2*r+.6){const rr=Math.max(.3,h/2),cy=y+h-rr;return `M${(x-rr).toFixed(2)},${cy.toFixed(2)}a${rr.toFixed(2)},${rr.toFixed(2)} 0 1,0 ${(2*rr).toFixed(2)},0a${rr.toFixed(2)},${rr.toFixed(2)} 0 1,0 ${(-2*rr).toFixed(2)},0Z`}
+  const n=Math.max(.5,r*.3),b=y+h-r,k=h-2*r,f=v=>v.toFixed(2);
+  return `M${f(x-n)},${f(y)}C${f(x-n)},${f(y+k*.55)} ${f(x-r)},${f(y+k*.7)} ${f(x-r)},${f(b)}A${f(r)},${f(r)} 0 0,0 ${f(x+r)},${f(b)}C${f(x+r)},${f(y+k*.7)} ${f(x+n)},${f(y+k*.55)} ${f(x+n)},${f(y)}Z`;
+}
+function lay(m,healed){
+  const W=innerWidth,H=innerHeight;
+  if(W<=820)return{x0:14,y0:H-50,L:W-28,Hs:36,lo:0};
+  const pad=Math.max(W*.05,24);
+  if(m==='hero'){const Hs=Math.min(160,H*.19);return{x0:pad,y0:healed?H-112:H-58-Hs,L:W-2*pad,Hs,lo:1}}
+  const x0=Math.round(W*.37);return{x0,y0:H-52,L:W-pad-x0,Hs:34,lo:0};
+}
+function draw(){
+  if(!P)return;
+  const{x0,y0,L,Hs,lo}=P,U=L/S,r=Math.max(1.5,Math.min(U*.34,Hs*.075+1.6,6.5));
+  const x1=x0-10,x2=x1+(L+20)*lineK;
+  line.setAttribute('x1',x1);line.setAttribute('x2',x2);line.setAttribute('y1',y0);line.setAttribute('y2',y0);
+  R.forEach((rec,i)=>{
+    const x=x0+us[i]*U,full=Math.max(2*r+1,Hs*lf[i]),h0=full+(2*r+1-full)*heal,on=!!lit&&lit.has(rec.n);
+    const rr=r*(on?1+.45*beat:1)*(1-.3*heal);
+    drops[i].setAttribute('d',dropPath(x,y0,h0*grow[i],rr));
+    drops[i].classList.toggle('off',!!lit&&!on);
+    const hb=hits[i];hb.setAttribute('x',(x-U/2).toFixed(1));hb.setAttribute('y',(y0-8).toFixed(1));hb.setAttribute('width',U.toFixed(1));hb.setAttribute('height',(Hs+16).toFixed(1));
+  });
+  chapLab.forEach(c=>{const x=x0+us[c.i0]*U-r;c.t.setAttribute('x',x.toFixed(1));c.t.setAttribute('y',(y0-12).toFixed(1));c.t.setAttribute('opacity',(lo*lineK).toFixed(2))});
+  stitches.forEach((s,k)=>{const i=2*k+1;if(i>=N-1||heal<=0){s.setAttribute('d','');return}const f=us[i]/S;if(f>stitchK){s.setAttribute('d','');return}
+    const x=x0+(us[i]+us[i+1])/2*U,a=Math.min(9,3+U*.4);s.setAttribute('d',`M${(x-a*.2).toFixed(1)},${(y0-a).toFixed(1)}L${(x+a*.2).toFixed(1)},${(y0+a).toFixed(1)}`)});
+}
+function size(){cut.setAttribute('width',innerWidth);cut.setAttribute('height',innerHeight);cut.setAttribute('viewBox',`0 0 ${innerWidth} ${innerHeight}`)}
+function tween(target,ms=950){
+  cancelAnimationFrame(raf);const from={...P};
+  if(reduce||!P){P={...target};draw();return}
+  const t0=performance.now();
+  const step=now=>{const k=Math.min(1,(now-t0)/ms),e=ease(k);for(const key of['x0','y0','L','Hs','lo'])P[key]=from[key]+(target[key]-from[key])*e;draw();if(k<1)raf=requestAnimationFrame(step)};
+  raf=requestAnimationFrame(step);
+}
+let stopHeal=()=>{},stopBeat=()=>{};
+function setHeal(to){stopHeal();const h0=heal,s0=stitchK;
+  if(to)stopHeal=animate(1500,k=>{heal=h0+(1-h0)*ease(clamp(k/.6));stitchK=clamp((k-.3)/.7);draw()});
+  else stopHeal=animate(500,k=>{heal=h0*(1-ease(k));stitchK=s0*(1-k);draw()});
+}
+function pulse(){stopBeat();stopBeat=animate(560,k=>{beat=Math.sin(Math.PI*k);draw()},()=>{beat=0;draw()})}
+function setLit(s){lit=s;draw()}
+/* a few drops fall from the opening slide's cut, then stop */
+let drips=0,dripT=0;
+function drip(){
+  if(reduce||drips>=3||mode!=='hero'||slides[active].id!=='start'||innerWidth<=820)return;drips++;
+  const cand=R.map((r,i)=>i).filter(i=>isRec(R[i])).sort((a,b)=>lf[b]-lf[a]).slice(0,12);const i=cand[Math.floor(Math.random()*cand.length)];
+  const U=P.L/S,r=Math.max(1.5,Math.min(U*.34,P.Hs*.075+1.6,6.5)),x=P.x0+us[i]*U,y=P.y0+Math.max(2*r+1,P.Hs*lf[i]);
+  const c=svgEl('circle',{class:'drip',cx:x,cy:y,r:r*.7},gDrip);
+  animate(1100,k=>{c.setAttribute('cy',(y+k*k*(innerHeight-y+20)).toFixed(1));c.setAttribute('opacity',(1-k*.5).toFixed(2))},()=>c.remove());
+  dripT=setTimeout(drip,2600);
+}
+const tip=$('#tip');
+cut.addEventListener('pointerover',e=>{const h=e.target.closest('.hit');if(!h||e.pointerType==='touch')return;const r=R[h.dataset.n-1];
+  tip.innerHTML=`<b>${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</b><div class="x">${esc(clip(plain(r.text),170))}</div><div class="go">Select to read it in the explorer</div>`;
+  const bx=h.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
+  tip.style.left=Math.max(8,Math.min(innerWidth-tw-8,bx.left+bx.width/2-tw/2))+'px';tip.style.top=Math.max(8,bx.top-th-10)+'px';tip.style.opacity=1});
+cut.addEventListener('pointerout',e=>{if(e.target.closest('.hit'))tip.style.opacity=0});
+cut.addEventListener('click',e=>{const h=e.target.closest('.hit');if(h)location.href='explore/#r='+h.dataset.n});
+
+/* ================= slides ================= */
+let active=-1;const hooks={};
+function litFor(s){
+  if(s.dataset.lit==='all')return new Set(R.map(r=>r.n));
+  if(s.dataset.lit)return new Set(s.dataset.lit.split(' ').map(Number));
+  if(s.dataset.pri)return priSet(s.dataset.pri);
+  if(s.dataset.litPri)return priSet(s.dataset.litPri);
+  return null;
+}
+function activate(i){
+  if(i===active)return;const prev=active;active=i;const s=slides[i];
+  document.body.dataset.tone=s.dataset.tone;
+  $('#count').textContent=`${i+1} of ${slides.length}`;$('#slidename').textContent=s.dataset.name;
+  $('#prev').disabled=i===0;$('#next-btn').disabled=i===slides.length-1;
+  const was=mode;mode=s.dataset.cut||'strip';
+  lit=litFor(s);
+  const target=lay(mode,!!s.dataset.heal);if(!P)P={...target};
+  tween(target);
+  if(!!s.dataset.heal!==heal>0.5)setHeal(!!s.dataset.heal);
+  if(prev>=0&&lit&&mode==='strip')setTimeout(pulse,was===mode?120:900);
+  slides.forEach((x,j)=>{const h=hooks[x.id];if(!h)return;if(j===i){h.start&&h.start()}else if(h.on){h.stop&&h.stop()}h.on=j===i});
+  history.replaceState(null,'',i?'#'+s.id:location.pathname+location.search);
+}
+const snapOn=()=>matchMedia('(min-width:821px) and (min-height:640px)').matches;
+function goTo(i){
+  i=Math.max(0,Math.min(slides.length-1,i));const s=slides[i];
+  s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  const h=s.querySelector('h1,h2');if(h){h.setAttribute('tabindex','-1');setTimeout(()=>h.focus({preventScroll:true}),reduce?0:650)}
+}
+$('#prev').addEventListener('click',()=>goTo(active-1));
+$('#next-btn').addEventListener('click',()=>goTo(active+1));
+document.addEventListener('click',e=>{const n=e.target.closest('[data-next]');if(n){goTo(active+1);return}const g=e.target.closest('[data-go]');if(g&&/^\d+$/.test(g.dataset.go))goTo(+g.dataset.go)});
+addEventListener('keydown',e=>{
+  if(!snapOn()||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(e.target.closest('input,select,textarea,[contenteditable]'))return;
+  const k=e.key;let d=0;
+  if(k==='ArrowDown'||k==='ArrowRight'||k==='PageDown'||(k===' '&&!e.shiftKey))d=1;
+  else if(k==='ArrowUp'||k==='ArrowLeft'||k==='PageUp'||(k===' '&&e.shiftKey))d=-1;
+  else if(k==='Home'){e.preventDefault();goTo(0);return}else if(k==='End'){e.preventDefault();goTo(slides.length-1);return}
+  if(d){if(e.target.closest('.seg,.nd,.seat,.row')&&(k==='ArrowLeft'||k==='ArrowRight'))return;e.preventDefault();
+    const b=slides[active].getBoundingClientRect(),beh=reduce?'auto':'smooth';
+    if(d>0&&b.bottom>innerHeight+4){scrollBy({top:Math.min(b.bottom-innerHeight,innerHeight*.8),behavior:beh});return}
+    if(d<0&&b.top<-4){scrollBy({top:Math.max(b.top,-innerHeight*.8),behavior:beh});return}
+    goTo(active+d)}
+});
+
+/* two views in one figure */
+function twoState(id,captions,onSet){
+  const fig=$('#'+id),btns=[...fig.querySelectorAll('.seg button')],cap=fig.querySelector('figcaption');let st='a';
+  const set=s=>{st=s;fig.dataset.state=s;btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===s)));if(cap&&captions){cap.innerHTML=captions[s];linkParas(cap)}onSet&&onSet(s)};
+  btns.forEach(b=>b.addEventListener('click',()=>set(b.dataset.state)));
+  set('a');return{set,get:()=>st,fig};
+}
+
+/* ================= 2. the verdict ================= */
+hooks.verdict=(()=>{
+  const svg=$('#ill-world svg');const g=svgEl('g',{},svg);const dots=[];
+  const X0=168,DX=19,R0=6.4;
+  txt(g,0,16,'Universities',{class:'b'});
+  txt(g,0,44,'World top 10',{class:'m'});
+  for(let k=0;k<10;k++)dots.push([svgEl('circle',{cx:X0+k*DX,cy:40,r:R0,class:k<4?'uk':'u'},g),k<4]);
+  txt(g,X0+10*DX+6,44,'4 are British',{class:'r'});
+  txt(g,0,92,'Industrial R&D spenders',{class:'b'});
+  const yR=k=>114+k*17;
+  txt(g,0,yR(0)+4,'Top 10',{class:'m'});txt(g,0,yR(1)+4,'11th to 20th',{class:'m'});txt(g,0,yR(2)+4,'21st to 100th',{class:'m'});
+  svgEl('path',{d:`M${X0-16},${yR(2)-6} v${17*7+12}`,stroke:'currentColor',fill:'none',opacity:.35},g);
+  for(let k=0;k<10;k++)for(let c=0;c<10;c++){const uk=(k===1&&c===0)||(k===2&&c<2);dots.push([svgEl('circle',{cx:X0+c*DX,cy:yR(k),r:R0,class:uk?'uk':'u'},g),uk])}
+  txt(g,X0+10*DX+6,yR(0)+4,'none British',{class:'m'});
+  txt(g,X0+10*DX+6,yR(1)+4,'AstraZeneca',{class:'r'});
+  txt(g,X0+10*DX+6,yR(2)+4,'GSK and HSBC',{class:'r'});
+  let played=false;
+  return{start(){if(played)return;played=true;svg.classList.remove('pre');dots.forEach(([c,uk],j)=>{c.style.transitionDelay=(uk?.9+j*.004:j*.004)+'s'})}};
+})();
+
+/* ================= 3. the scale-up gap (redrawn from Figure 1) ================= */
+hooks.gap=(()=>{
+  const svg=$('#ill-gap svg'),rng=$('#gap-range'),out=$('#gap-out'),cap=$('#gap-cap');
+  const CURVE='M99.317,274.282C99.317,274.282 121.660,245.433 135.062,245.433C148.464,245.433 150.984,257.701 162.779,263.952C171.570,268.613 182.327,273.468 211.749,273.121C241.171,272.775 260.557,257.399 265.380,253.768C270.202,250.136 282.655,235.986 297.930,258.904C313.206,281.819 323.313,309.752 325.823,315.046C328.332,320.341 329.114,324.390 336.836,324.447C347.947,324.529 370.804,302.433 389.380,286.867C415.680,264.826 453.500,242.343 509.721,229.098';
+  const X=x=>40+(x-99.3)*(492/410.4),Y=y=>176+(y-229.1)*1.24,SX=492/410.4,SY=1.24;
+  const g=svgEl('g',{},svg);
+  [['Emerging innovations',99.3,233],['Growth',237,371],['Maturity',375,509.7]].forEach(([t,a,b])=>{svgEl('rect',{class:'band',x:X(a),y:6,width:X(b)-X(a),height:24},g);txt(g,(X(a)+X(b))/2,22,t,{'text-anchor':'middle'})});
+  const inst=[['Innovate UK',103,285],['British Business Bank',173,396],['National Wealth Fund',307,509.7],['UK Export Finance',348,509.7]].map(([t,a,b],k)=>{const y=58+k*27;txt(g,X(a),y-7,t,{class:'m'});return{a,b,el:svgEl('line',{class:'inst',x1:X(a),x2:X(b),y1:y,y2:y},g)}});
+  const tr=`matrix(${SX},0,0,${SY},${40-99.3*SX},${176-229.1*SY})`;
+  svgEl('path',{class:'area',d:CURVE+'L509.721,344.635L99.317,344.635Z',transform:tr},g);
+  svgEl('path',{class:'curve',d:CURVE,transform:tr,'vector-effect':'non-scaling-stroke'},g);
+  const yb=Y(244);
+  svgEl('path',{class:'brk',d:`M${X(153)},${yb+5}V${yb}H${X(263)}V${yb+5}`},g);txt(g,(X(153)+X(263))/2,yb-6,'Commercialisation gap',{'text-anchor':'middle',class:'m'});
+  svgEl('path',{class:'brk s',d:`M${X(293)},${yb+5}V${yb}H${X(446)}V${yb+5}`},g);txt(g,(X(293)+X(446))/2,yb-6,'Scale-up gap',{'text-anchor':'middle',class:'r'});
+  svgEl('path',{class:'axis',d:`M40,${Y(344.6)+10}H526`},g);svgEl('path',{class:'ah',d:`M532,${Y(344.6)+10}l-8,-4.5v9z`},g);
+  txt(g,40,Y(344.6)+26,'Company growth and size of investment',{class:'m'});
+  txt(g,0,0,'Supply of finance relative to demand',{class:'m',transform:`translate(28,${Y(344.6)}) rotate(-90)`,'font-size':'11.5'});
+  const away=svgEl('path',{class:'away'},g),awayT=txt(g,0,0,'Looks overseas for capital',{class:'r awayt','text-anchor':'end'});
+  const co=svgEl('circle',{class:'co',r:7.5},g);
+  const probe=svgEl('path',{d:CURVE},null);
+  const look=[];{const tmp=svgEl('svg',{width:0,height:0,style:'position:absolute'},document.body);tmp.appendChild(probe);const L=probe.getTotalLength();for(let k=0;k<=600;k++){const p=probe.getPointAtLength(L*k/600);look.push([p.x,p.y])}tmp.remove()}
+  const yAt=x=>{for(let k=1;k<look.length;k++)if(look[k][0]>=x){const[a,b]=[look[k-1],look[k]];return a[1]+(b[1]-a[1])*(x-a[0])/((b[0]-a[0])||1)}return look[look.length-1][1]};
+  const ST={
+    start:['Start-up','<b>Emerging innovations.</b> The UK now has twice as many start-ups as in the 1980s, and has created over 185 unicorns (<a data-para="14">paragraphs 14</a> and <a data-para="15">15</a>). Innovate UK grants are often the first public money in.'],
+    cgap:['Commercialisation gap','<b>The commercialisation gap:</b> money to prove a technology and build a first product. Innovate UK’s grants are heavily oversubscribed; it paused its flagship Smart Grants when fewer than one applicant in ten was being funded (<a data-para="157">paragraph 157</a>).'],
+    growth:['Growth','<b>Growth.</b> The British Business Bank is the largest investor in UK venture capital funds; its programmes have backed 22 of the UK’s unicorns (<a data-para="165">paragraph 165</a>).'],
+    sgap:['Scale-up gap','<b>The scale-up gap:</b> money to scale to maturity. Companies find it abroad, usually in the US. “Just as they are becoming economically interesting, they leave the UK” (Louis Taylor, British Business Bank, <a data-para="21">paragraph 21</a>). The public bodies here have only “nominal responsibility” for their parts of the pipeline (<a data-para="135">paragraph 135</a>).'],
+    mature:['Maturity','<b>Maturity.</b> The National Wealth Fund invests at least £25 million at a time, preferring technologies at readiness level 7 or above (<a data-para="175">paragraph 175</a>).']};
+  const stage=x=>x<153?'start':x<263?'cgap':x<300?'growth':x<446?'sgap':'mature';
+  let cur='';
+  const foot=' Redrawn from Figure 1 of the report (Department for Business and Trade, Industrial Strategy); a diagram, not a measurement.';
+  function place(v){
+    const x=99.6+v/1000*409.8,y=yAt(x),st=stage(x);
+    co.setAttribute('cx',X(x).toFixed(1));co.setAttribute('cy',Y(y).toFixed(1));
+    const outq=st==='sgap';co.classList.toggle('out',outq);
+    inst.forEach(o=>o.el.classList.toggle('on',x>=o.a&&x<=o.b));
+    if(outq){const x1=X(x),y1=Y(y),x2=532,y2=Y(229.1)-8,xe=X(446)+14;away.setAttribute('d',x1>xe-70?`M${x1+8},${y1-8}C${x1+34},${y1-30} ${x2-34},${y2+34} ${x2},${y2}`:`M${x1+8},${y1-6}C${x1+70},${y1-10} ${xe-10},${yb+40} ${xe},${yb+14}S${x2-20},${y2+4} ${x2},${y2}`);awayT.setAttribute('x',x2);awayT.setAttribute('y',y2-8)}
+    away.classList.toggle('on',outq);awayT.classList.toggle('on',outq);
+    if(st!==cur){cur=st;out.textContent=ST[st][0];cap.innerHTML=ST[st][1]+foot;linkParas(cap)}
+  }
+  rng.addEventListener('input',()=>{stopAuto();place(+rng.value)});
+  let stopAuto=()=>{},played=false;
+  place(0);
+  return{start(){if(played)return;played=true;const target=(336.8-99.6)/409.8*1000;
+    stopAuto=animate(4200,k=>{const v=target*ease(k);rng.value=v;place(v)})}};
+})();
+
+/* ================= 4. the doom loop ================= */
+hooks.loop=(()=>{
+  const svg=$('#ill-loop svg'),cap=$('#loop-cap');
+  const NODES=[
+    ['Shallow pools','of UK capital','UK pension funds put half their assets into UK shares in 1997; now it is under 5% (report summary).','Consolidate pension schemes, set targets for how much they invest in the UK, and keep the power to mandate.',[16]],
+    ['Risk-averse','investors','Pension funds provide 72% of venture capital in the US, and just 10% in the UK (<a data-para="63">paragraph 63</a>).','Train specialist investors, and use British Business Bank funds to bring pension money into scale-ups.',[16,37]],
+    ['Undervalued','companies','Without “vibrant markets with high liquidity and research capabilities that can properly price and value these companies, the markets will always be more attractive in the US” (Sir Jonathan Symonds, <a data-para="98">paragraph 98</a>).','Steer savers into UK shares, through ISA reform and a stamp duty holiday for listings.',[20]],
+    ['Companies sell','or list overseas','Oxford Ionics, OrganOx and Wise all went during the inquiry (<a data-para="23">paragraph 23</a>).','Exit interviews when companies leave, sovereign control of critical technologies, and public equity stakes.',[12]],
+    ['Less activity','in UK markets','Listing overseas “reduces activity and capital in the UK market, perpetuating a vicious cycle”. Only 7 UK companies listed in London in the first eight months of 2025 (report summary).','Public contracts as a first customer, and a National Wealth Fund target for late-stage rounds.',[25,39]]];
+  const cx=270,cy=170,RR=112,n=NODES.length,ang=k=>-Math.PI/2+k*2*Math.PI/n;
+  const defs=svgEl('defs',{},svg),mk=svgEl('marker',{id:'loopah',viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:7,markerHeight:7,orient:'auto-start-reverse'},defs);svgEl('path',{d:'M0,0L10,5L0,10z',class:'ah'},mk);
+  const g=svgEl('g',{},svg);
+  for(let k=0;k<n;k++){const a0=ang(k)+.2,a1=ang(k+1)-.2;svgEl('path',{class:'arc',d:`M${cx+RR*Math.cos(a0)},${cy+RR*Math.sin(a0)}A${RR},${RR} 0 0,1 ${cx+RR*Math.cos(a1)},${cy+RR*Math.sin(a1)}`,'marker-end':'url(#loopah)'},g)}
+  const cuts=[];for(let k=0;k<n;k++){const a=(ang(k)+ang(k+1))/2,x=cx+RR*Math.cos(a),y=cy+RR*Math.sin(a),dx=Math.cos(a)*13,dy=Math.sin(a)*13;cuts.push(svgEl('line',{class:'cutm sb',x1:x-dx,y1:y-dy,x2:x+dx,y2:y+dy},g))}
+  const c1=txt(g,cx,cy-2,'doom loop',{class:'ctr','text-anchor':'middle'});const c2=txt(g,cx,cy+18,'goes round and round',{class:'ctr2 m','text-anchor':'middle'});
+  const pulseC=svgEl('circle',{class:'pulse sa',r:5.5},g);
+  const nodes=NODES.map((d,k)=>{const a=ang(k),x=cx+RR*Math.cos(a),y=cy+RR*Math.sin(a);const ng=svgEl('g',{class:'nd',tabindex:0,role:'button','aria-label':d[0]+' '+d[1]},g);
+    svgEl('circle',{cx:x,cy:y,r:9},ng);const right=Math.cos(a)>.2,left=Math.cos(a)<-.2,anc=right?'start':left?'end':'middle';const lx=x+Math.cos(a)*22+(right?2:left?-2:0),ly=y+Math.sin(a)*24+(Math.sin(a)<-.5?-14:4);
+    txt(ng,lx,ly,d[0],{'text-anchor':anc});txt(ng,lx,ly+16,d[1],{'text-anchor':anc,class:'m'});return ng});
+  let sel=0,fig=null;
+  fig=twoState('ill-loop',null,s=>{c1.textContent=s==='a'?'doom loop':'cut the loop';c2.textContent=s==='a'?'goes round and round':'the committee’s remedies';show(sel)});
+  function show(k){sel=k;nodes.forEach((x,j)=>x.classList.toggle('on',j===k));const d=NODES[k],b=!!fig&&fig.get()==='b';
+    cap.innerHTML=b?`<b>${esc(d[0]+' '+d[1])}.</b> ${d[3]} ${d[4].map(n=>`<a href="explore/#r=${n}">Recommendation ${n}</a>`).join(', ')}. Where each recommendation bites is our reading.`:`<b>${esc(d[0]+' '+d[1])}.</b> ${d[2]}`;linkParas(cap)}
+  nodes.forEach((x,k)=>{x.addEventListener('click',()=>{stopRun();show(k)});x.addEventListener('focus',()=>{stopRun();show(k)});x.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(k)}});x.addEventListener('pointerenter',()=>{stopRun();show(k)})});
+  show(0);
+  let raf2=0,t0=0,running=false,touched=false;
+  function frame(now){const T=(now-t0)/22000,t=T%1,a=-Math.PI/2+t*2*Math.PI;pulseC.setAttribute('cx',cx+RR*Math.cos(a));pulseC.setAttribute('cy',cy+RR*Math.sin(a));
+    if(T>=1)touched=true;if(!touched){const k=Math.floor(t*n+.0001)%n;if(k!==sel)show(k)}raf2=requestAnimationFrame(frame)}
+  $$('#ill-loop .seg button').forEach(b=>b.addEventListener('click',()=>{touched=true}));
+  function stopRun(){touched=true}
+  return{start(){if(reduce){pulseC.setAttribute('cx',cx);pulseC.setAttribute('cy',cy-RR);return}if(!running){running=true;t0=performance.now();raf2=requestAnimationFrame(frame)}},stop(){running=false;cancelAnimationFrame(raf2)}};
+})();
+
+/* ================= 5. themes ================= */
+const ORDER=['stay','capital','procure','public','people','research','council'];
+{
+  const PR=Object.fromEntries(D.priorities.map(p=>[p.id,p]));
+  $('#cards').innerHTML=ORDER.map(id=>{const p=PR[id],its=R.filter(r=>r.pri===id),nr=its.filter(isRec).length;
+    return `<button type="button" class="card" data-card="${id}"><span class="ct">${esc(p.title)}</span><span class="cs">${esc(p.summary)}</span><span class="strip" aria-hidden="true">${R.map(r=>`<i class="${r.pri===id?'on':''}" style="flex:1 1 0;height:${Math.round(5+11*lf[r.n-1])}px"></i>`).join('')}</span><span class="cc">${its.length} paragraphs, ${nr} recommendation${nr===1?'':'s'}</span></button>`}).join('')
+    +`<p class="lead">And the diagnosis: ${priSet('other').size} conclusions frame the report, from the doom loop to the case for urgent, radical action across government.</p>`;
+  const cards=$('#cards');
+  cards.addEventListener('click',e=>{const c=e.target.closest('[data-card]');if(c)goTo(slides.findIndex(s=>s.id===c.dataset.card))});
+  const peek=e=>{const c=e.target.closest('[data-card]');if(slides[active]&&slides[active].id==='themes')setLit(c?priSet(c.dataset.card):null)};
+  cards.addEventListener('pointerover',peek);cards.addEventListener('focusin',peek);
+  cards.addEventListener('pointerleave',()=>{if(slides[active].id==='themes')setLit(null)});
+  cards.addEventListener('focusout',e=>{if(!cards.contains(e.relatedTarget)&&slides[active].id==='themes')setLit(null)});
+}
+
+/* ================= 6. leaving ================= */
+hooks.stay=(()=>{
+  const svg=$('#ill-leave svg'),cap=$('#leave-cap'),fig=$('#ill-leave');
+  const CO=[
+    ['Oxford Ionics','s','Bought for $1 billion by an American company, IonQ, in June 2025, during the inquiry. “Otherwise we are just subsidising R&D” (Tom Adeyoola, Innovate UK).',23],
+    ['OrganOx','s','An Oxford spin-out making organ preservation devices for transplant, sold to a Japanese company for $1.5 billion in August 2025.',23],
+    ['Deliveroo','s','Acquired by DoorDash, after a London listing that was seen as unsuccessful.',4],
+    ['ARM','sl','The chip designer was bought by Japan’s SoftBank, then listed on Nasdaq in 2023. “I was surprised that ARM was allowed to be sold. I thought that was a strategic interest” (Lord O’Donnell).',46],
+    ['DeepMind','s','Named by Angus Hanton among technology companies the UK has “allowed … to be taken over in a way that other countries would not”.',43],
+    ['Sophos','s','Named with DeepMind and ARM as technology companies the UK allowed to be taken over (Angus Hanton).',43],
+    ['Darktrace','s','Sold overseas. Describing the sale of her former company, Baroness Gustafsson, then Minister for Investment, said a listed company is obliged to put an offer to its shareholders.',96],
+    ['Cobham','s','One of three defence companies sold to American acquirers in five years, with Meggitt and Ultra (Angus Hanton).',46],
+    ['Meggitt','s','A defence company sold to an American acquirer (Angus Hanton).',46],
+    ['Ultra','s','A defence company sold to an American acquirer (Angus Hanton).',46],
+    ['Wise','l','Announced in June 2025 that it would move its primary listing to New York. The Financial Times called the lack of domestic equity capital “an emergency for the British economy”.',23],
+    ['AstraZeneca','l','The UK’s largest R&D spender, worth £159 billion in May 2025, upgraded its New York listing in September 2025.',93],
+    ['Autolus','l','Floated on Nasdaq “because that is where the capital in our sector aggregates” (Chris Vann, Autolus Therapeutics).',94]];
+  const g=svgEl('g',{},svg),HS={s:[452,108],l:[452,262]};
+  [['s','Sold to overseas owners'],['l','Listed overseas']].forEach(([k,t])=>{const[x,y]=HS[k];svgEl('circle',{class:'hub',cx:x,cy:y,r:9},g);txt(g,x+16,y+4,t.split(' ').slice(0,2).join(' '),{class:'b'});txt(g,x+16,y+20,t.split(' ').slice(2).join(' '),{class:'b'})});
+  const rows=CO.map((c,k)=>{const y=20+k*23.5,row=svgEl('g',{class:'row',tabindex:0,role:'button','aria-label':c[0]},g);const t=txt(row,0,y+4,c[0],{class:'nm'});svgEl('rect',{x:-4,y:y-11,width:150,height:22,fill:'transparent'},row);
+    const lines=c[1].split('').map(h=>{const[x,yh]=HS[h];return svgEl('path',{class:'ln',d:`M126,${y}C250,${y} ${x-150},${yh} ${x-12},${yh}`},g)});return{c,t,row,lines}});
+  const totals=rows.flatMap(r=>r.lines);totals.forEach(p=>{const L=p.getTotalLength?p.getTotalLength():300;p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.dataset.len=L});
+  function pick(k){fig.classList.toggle('peek',k>=0);rows.forEach((r,j)=>{r.t.classList.toggle('on',j===k);r.lines.forEach(l=>l.classList.toggle('on',j===k))});
+    if(k<0){cap.textContent='Point at a company to see what the report says about it.';return}const c=rows[k].c;cap.innerHTML=`<b>${esc(c[0])}.</b> ${esc(c[2])} (<a data-para="${c[3]}">paragraph ${c[3]}</a>)`;linkParas(cap)}
+  rows.forEach((r,k)=>{r.row.addEventListener('pointerenter',()=>pick(k));r.row.addEventListener('focus',()=>pick(k));r.row.addEventListener('click',()=>pick(k))});
+  svg.addEventListener('pointerleave',()=>pick(-1));
+  let played=false;
+  return{start(){if(played)return;played=true;totals.forEach((p,j)=>{const L=+p.dataset.len;if(reduce){p.style.strokeDashoffset=0;return}p.style.transition=`stroke-dashoffset .9s ${(j*.12).toFixed(2)}s cubic-bezier(.4,0,.2,1)`;requestAnimationFrame(()=>{p.style.strokeDashoffset=0})})}};
+})();
+
+/* ================= 7. pensions (redrawn from Figures 2 and 3) ================= */
+hooks.capital=(()=>{
+  const svg=$('#ill-pen svg'),out=$('#pen-out'),yr=$('#pen-year');
+  const F2={uk:[53,51,51,48,46,39,39,37,33,32,26,21,23,21,18,18,17,14,15,16,16,10,8,6,6,4],nonuk:[20,20,24,23,25,25,28,29,32,32,30,28,28,29,26,26,26,26,26,23,21,22,20,20,21,26],bonds:[15,19,17,20,20,26,24,25,24,24,30,34,34,34,40,37,38,42,41,44,45,52,54,56,55,47],other:[12,10,8,9,9,10,9,9,11,12,14,17,15,16,17,19,19,19,18,17,18,16,18,18,17,22]};
+  const NM={uk:'UK equities',nonuk:'Non-UK equities',bonds:'Bonds',other:'Other and cash'};
+  const A=svgEl('g',{class:'sa'},svg),B=svgEl('g',{class:'sb'},svg);
+  const x0=34,x1=400,y0=22,y1=250,X=i=>x0+(x1-x0)*i/25,Y=v=>y1-(y1-y0)*v/60;
+  const gr=svgEl('g',{class:'grid'},A);for(let v=0;v<=60;v+=10){svgEl('line',{x1:x0,x2:x1,y1:Y(v),y2:Y(v)},gr);txt(A,x0-6,Y(v)+4,v+'%',{'text-anchor':'end',class:'m','font-size':'11.5'})}
+  [0,5,10,15,20,25].forEach(i=>txt(A,X(i),y1+18,String(1997+i),{'text-anchor':'middle',class:'m','font-size':'11.5'}));
+  const order=['other','nonuk','bonds','uk'];const paths={};
+  order.forEach(k=>{paths[k]=svgEl('path',{class:'ser '+k,d:F2[k].map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(v).toFixed(1)).join('')},A)});
+  const endY={uk:Y(4),bonds:Y(47),nonuk:Y(26),other:Y(22)};endY.other+=6;endY.nonuk-=4;
+  const endT=order.map(k=>txt(A,x1+8,endY[k]+4,'',{class:k==='uk'?'r':'m','font-size':'12'}));
+  const cur=svgEl('line',{class:'cur',y1:y0,y2:y1},A);const pts=order.map(k=>svgEl('circle',{class:'pt',r:4.2,fill:k==='uk'?'var(--hi)':k==='nonuk'?'var(--teal)':k==='bonds'?'var(--fg)':'var(--mute)'},A));
+  function at(i){cur.setAttribute('x1',X(i));cur.setAttribute('x2',X(i));order.forEach((k,j)=>{pts[j].setAttribute('cx',X(i));pts[j].setAttribute('cy',Y(F2[k][i]));endT[j].textContent=`${NM[k]} ${F2[k][i]}%`});
+    out.textContent=String(1997+i);yr.value=1997+i}
+  const hit=svgEl('rect',{x:x0,y:y0,width:x1-x0,height:y1-y0,fill:'transparent',style:'cursor:crosshair'},A);
+  hit.addEventListener('pointermove',e=>{const b=hit.getBoundingClientRect();at(Math.round(clamp((e.clientX-b.left)/b.width)*25))});
+  yr.addEventListener('input',()=>at(+yr.value-1997));
+  at(25);
+  /* Figure 3 */
+  const F3={UK:[['Pension funds',10,'pen'],['Government',25,'gov'],['European Investment Fund',21,'oth'],['Corporations',9,'oth'],['Other',13,'oth'],['VC and private equity funds',8,'oth'],['Wealthy individuals',6,'oth'],['Funds of funds',4,'oth'],['Endowments',2,'oth'],['Foundations',2,'oth']],
+            US:[['Pension funds',72,'pen'],['Government',3,'gov'],['Corporations',8,'oth'],['Endowments',8,'oth'],['Other',4,'oth'],['VC and private equity funds',3,'oth'],['Funds of funds',2,'oth']]};
+  const bx0=44,bx1=530,BW=bx1-bx0;const read=txt(B,bx0,276,'',{class:'m'});
+  Object.entries(F3).forEach(([c,segs],j)=>{const y=44+j*134;txt(B,0,y+30,c,{class:'b','font-size':'15'});let x=bx0;
+    segs.forEach(([nm,v,cl])=>{const w=BW*v/100;const r=svgEl('rect',{x:x+1,y,width:Math.max(0,w-2),height:46,class:cl},B);r.addEventListener('pointerenter',()=>{read.textContent=`${c}: ${nm}, ${v}%`});
+      if(cl==='pen')txt(B,x+1,y-8,`${nm} ${v}%`,{class:'r','font-size':'13'});else if(cl==='gov')txt(B,x+1,y+64,`${nm} ${v}%`,{class:'b','font-size':'13'});else if(nm.startsWith('European'))txt(B,x+1,y+64,`European Investment Fund ${v}%`,{class:'m','font-size':'13'});
+      x+=w});});
+  read.textContent='Point at a segment to read it. Grey segments: other sources.';
+  const caps={a:'Redrawn from Figure 2 of the report (Financial Times; New Financial). Values read from the chart. The share in UK shares fell from 53% in 1997 to about 4% in 2022; the summary calls it a 90% decline.',
+    b:'Redrawn from Figure 3 of the report (Centre for British Progress, from British Business Bank data, 2022). In the UK, pension funds provide less venture capital than the Government does directly (<a data-para="63">paragraph 63</a>).'};
+  twoState('ill-pen',caps);
+  const ukP=paths.uk,L=ukP.getTotalLength();ukP.style.strokeDasharray=L;ukP.style.strokeDashoffset=0;
+  let played=false;
+  return{start(){if(played||reduce)return;played=true;ukP.style.transition='none';ukP.style.strokeDashoffset=L;at(0);requestAnimationFrame(()=>requestAnimationFrame(()=>{ukP.style.transition='stroke-dashoffset 2.4s cubic-bezier(.45,0,.55,1)';ukP.style.strokeDashoffset=0}));
+    animate(2400,k=>at(Math.round(ease(k)*25)))}};
+})();
+
+/* ================= 8. listings ================= */
+hooks.markets=(()=>{
+  const svg=$('#ill-list svg');const g=svgEl('g',{},svg);const units=[];
+  txt(g,0,14,'Companies listing their shares, first eight months of 2025',{class:'b'});
+  const sq=(x,y,s,fill,stroke)=>{const r=svgEl('rect',{x,y,width:s,height:s,rx:1.5,class:'u',fill:fill||'none',stroke:stroke||'none','stroke-width':1.4},g);units.push(r);return r};
+  txt(g,0,46,'UK',{class:'b'});for(let k=0;k<7;k++)sq(64+k*13,35,10,'var(--hi)');txt(g,64+7*13+8,45,'7',{class:'r','font-size':'15'});
+  txt(g,0,78,'US',{class:'b'});for(let k=0;k<129;k++){const c=k%33,rw=Math.floor(k/33);sq(64+c*13,66+rw*13,10,'var(--fg)')}txt(g,64+33*13+4,77,'129',{class:'b','font-size':'15'});
+  txt(g,0,168,'UK companies that listed in New York in the last decade, raising over £100m',{class:'b'});
+  txt(g,0,186,'Where their shares stand now',{class:'m'});
+  const kinds=[...Array(3).fill('a'),...Array(7).fill('d'),...Array(10).fill('x')];
+  kinds.forEach((k,j)=>{const x=j*25.5;k==='a'?sq(x,200,20,'var(--fg)'):k==='d'?sq(x,200,20,'var(--hi)'):sq(x+1,201,18,'none','var(--soft)')});
+  svgEl('rect',{x:0,y:236,width:11,height:11,rx:1.5,fill:'var(--fg)'},g);txt(g,18,246,'3 trade above their listing price',{class:'b'});
+  svgEl('rect',{x:0,y:256,width:11,height:11,rx:1.5,fill:'var(--hi)'},g);txt(g,18,266,'7 are 75% below their listing price',{class:'r'});
+  svgEl('rect',{x:.7,y:276.7,width:9.6,height:9.6,rx:1.5,fill:'none',stroke:'var(--soft)','stroke-width':1.4},g);txt(g,18,286,'10 have delisted',{class:'m'});
+  let played=false;
+  return{start(){if(played)return;played=true;svg.classList.remove('pre');units.forEach((u,j)=>{u.style.transitionDelay=(j<136?j*.006:1.1+(j-136)*.05)+'s'})}};
+})();
+
+/* ================= 9. procurement ================= */
+{
+  const svg=$('#ill-sbir svg');const A=svgEl('g',{class:'sa'},svg),B=svgEl('g',{class:'sb'},svg);
+  const RATE=1.3,us=6.2/RATE,base=258,S0=190;const side=v=>S0*Math.sqrt(v/us);
+  const items=[['One year of the US','Small Business Innovation','Research programme',' $6.2bn',us,''],['Twenty years of the','UK’s version, SBRI','',' £1.5bn',1.5,'uk'],['The UK scheme,','now Contracts for','Innovation, 2024/25',' £42m',.042,'uk']];
+  let x=0;items.forEach(([l1,l2,l3,v,val,cl],k)=>{const s=Math.max(2.5,side(val));svgEl('rect',{class:'sq '+cl,x,y:base-s,width:s,height:s},A);
+    const lx=x,vy=base-s-58;txt(A,lx,vy,v.trim(),{class:k?'r':'b','font-size':'20'});
+    [l1,l2,l3].filter(Boolean).forEach((t,j)=>txt(A,lx,vy+17+j*15,t,{class:'m','font-size':'12'}));
+    x+=s+(k===1?34:30)});
+  const cells=[];for(let k=0;k<100;k++){const c=k%20,rw=Math.floor(k/20);cells.push(svgEl('rect',{class:'cell'+(k<3?' on':''),x:c*23,y:40+rw*23,width:19,height:19,rx:2},B))}
+  txt(B,0,18,'Each square is 1% of a department’s or local authority’s procurement budget',{class:'m'});
+  txt(B,0,200,'3%',{class:'r','font-size':'34'});txt(B,60,186,'spent with innovative, UK-based small firms,',{class:'b'});txt(B,60,202,'rising over time to around the US level',{class:'b'});
+  twoState('ill-sbir',{a:'Squares sized by spending, with dollars converted at $1.30 to the pound (our assumption). The US programme spends about 8% of eligible federal contracts; the UK’s has funded £1.5 billion in 20 years (<a data-para="126">paragraph 126</a>).',
+    b:'The committee’s target for each department and local authority, overseen by a cross-government committee and published annually (recommendation 25). Many US agencies must spend at least 3.2% of their procurement budget with small firms (<a data-para="125">paragraph 125</a>).'});
+}
+
+/* ================= 10. public investment ================= */
+hooks.public=(()=>{
+  const svg=$('#ill-pipe svg');const A=svgEl('g',{class:'sa'},svg),B=svgEl('g',{class:'sb'},svg);
+  const segs=[['Innovate UK','Grants for early-stage','technology',6,166],['British Business Bank','Equity, guarantees and debt','as companies start to scale',186,350],['National Wealth Fund','Rounds of £25m and more,','near-market technology',370,534]];
+  const py=96,ph=40;
+  segs.forEach(([t,s1,s2,a,b])=>{svgEl('rect',{class:'pipe',x:a,y:py,width:b-a,height:ph,rx:4},A);svgEl('rect',{class:'lip',x:a-3,y:py-4,width:8,height:ph+8,rx:2},A);svgEl('rect',{class:'lip',x:b-5,y:py-4,width:8,height:ph+8,rx:2},A);
+    txt(A,a,py-44,t,{class:'b','font-size':'13.5'});txt(A,a,py-27,s1,{class:'m','font-size':'12'});txt(A,a,py-12,s2,{class:'m','font-size':'12'})});
+  /* companies flow through the pipes; some fall out at each gap (an illustration, not data) */
+  const partG=svgEl('g',{},A),parts=[];let seed=11;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const GAPS=[[166,186],[350,370]];let praf=0,plast=0,spawn=0,flowing=false;
+  function ptick(now){const dt=Math.min(.05,(now-(plast||now))/1000);plast=now;spawn-=dt;
+    if(spawn<=0){spawn=.42;parts.push({x:4,y:py+ph/2,vy:0,fall:false,gi:0,el:svgEl('circle',{r:3.8,class:'pc'},partG)})}
+    for(const q of parts){
+      if(!q.fall){q.x+=78*dt;const gp=GAPS[q.gi];if(gp&&q.x>=gp[0]+6){q.gi++;if(rnd()<.42)q.fall=true}}
+      else{q.vy+=420*dt;q.y+=q.vy*dt;q.x+=10*dt}
+      const inGap=GAPS.some(([a,b])=>q.x>a&&q.x<b);q.el.setAttribute('cx',q.x.toFixed(1));q.el.setAttribute('cy',q.y.toFixed(1));
+      q.el.setAttribute('class','pc'+(q.fall||inGap?' out':''));q.el.setAttribute('opacity',q.fall?Math.max(0,1-(q.y-py-ph/2)/150).toFixed(2):1);
+      if(q.y>py+ph/2+150||q.x>531){q.el.remove();q.dead=true}}
+    for(let k=parts.length-1;k>=0;k--)if(parts[k].dead)parts.splice(k,1);
+    if(flowing)praf=requestAnimationFrame(ptick)}
+  const flow=on=>{if(reduce)on=false;if(on===flowing)return;flowing=on;cancelAnimationFrame(praf);plast=0;if(on)praf=requestAnimationFrame(ptick)};
+  svgEl('path',{d:`M176,${py+ph+120}V${py+ph+104}M360,${py+ph+120}V${py+ph+104}M176,${py+ph+120}H360`,stroke:'var(--hi)',fill:'none','stroke-width':1.4},A);
+  txt(A,268,py+ph+140,'“Co-investment stops at a certain',{class:'r','text-anchor':'middle'});txt(A,268,py+ph+156,'funding size or technology readiness level”',{class:'r','text-anchor':'middle'});
+  const F4=[['Norway NBIM',1945],['China SAFE IC',1582],['China CIC',1332],['UAE AIDA',1109],['Kuwait KIA',1002],['Singapore GIC',936],['Saudi Arabia PIF',930],['Qatar QIA',524],['UAE ICD',400],['Türkiye TWF',360],['UAE Mubadala',330],['Singapore Temasek',324],['UAE ADQ',251],['South Korea KIC',207],['Australia Future Fund',193],['France Bpifrance',60],['UK National Wealth Fund',36]];
+  const lx=148,maxv=1945,bw=320;
+  F4.forEach(([n,v],k)=>{const y=6+k*18.6,cl=n.startsWith('UK')?'uk':n.startsWith('France')?'fr':'';txt(B,lx-8,y+11,n,{'text-anchor':'end',class:cl==='uk'?'r':'m','font-size':'12'});
+    const gb=svgEl('g',{class:'bw'},B);svgEl('rect',{class:'bar '+cl,x:lx,y,width:Math.max(2,bw*v/maxv),height:13,rx:2},gb);gb.style.transitionDelay=(k*.04)+'s';
+    txt(B,lx+Math.max(2,bw*v/maxv)+6,y+11,'$'+v.toLocaleString('en-GB')+'bn',{class:cl==='uk'?'r':'m','font-size':'12'})});
+  const fig=$('#ill-pipe');
+  twoState('ill-pipe',{a:'From the report’s description of the three bodies (<a data-para="133">paragraphs 133</a> and <a data-para="175">175</a>). The quotation is from recommendation 27.',
+    b:'Redrawn from Figure 4 of the report: the 15 largest sovereign wealth funds, with France’s Bpifrance and the UK’s National Wealth Fund (data from GlobalSWF.com); values read from the chart. The top ten state-owned investors each manage over $1 trillion (Box 2).'},s=>{flow(s==='a'&&!!hooks.public&&!!hooks.public.on)});
+  let played=false;
+  return{start(){flowing=false;flow(fig.dataset.state==='a');if(!played){played=true;fig.querySelector('svg').classList.remove('pre')}},stop(){flow(false)}};
+})();
+
+/* ================= 11. visas ================= */
+hooks.people=(()=>{
+  const cv=$('#ill-visa canvas'),ctx=cv.getContext('2d');
+  const COLS=250,ROWS=136;let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const red=[];const used=new Set();while(red.length<44){const k=Math.floor(rnd()*COLS*ROWS);if(!used.has(k)){used.add(k);red.push(k)}}
+  let shown=44;
+  function paint(){const w=cv.clientWidth||540,h=Math.round(w*ROWS/COLS),dpr=Math.min(2,devicePixelRatio||1);if(cv.width!==Math.round(w*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}cv.style.height=h+'px';
+    const st=getComputedStyle(document.body),soft=st.getPropertyValue('--soft').trim(),hi=st.getPropertyValue('--hi').trim();
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const pd=4,dx=(w-2*pd)/COLS,dy=(h-2*pd)/ROWS,s=Math.max(.8,dx*.52);ctx.fillStyle=soft;
+    for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++)ctx.fillRect(pd+c*dx+(dx-s)/2,pd+r*dy+(dy-s)/2,s,s);
+    ctx.fillStyle=hi;for(let j=0;j<shown;j++){const k=red[j],c=k%COLS,r=Math.floor(k/COLS);ctx.beginPath();ctx.arc(pd+c*dx+dx/2,pd+r*dy+dy/2,Math.max(2.6,dx*1.35),0,7);ctx.fill()}}
+  addEventListener('resize',()=>paint());
+  let played=false;
+  return{start(){paint();if(played||reduce)return;played=true;shown=0;animate(2200,k=>{shown=Math.round(44*k);paint()})}};
+})();
+
+/* ================= 12. universities ================= */
+hooks.research=(()=>{
+  const svg=$('#ill-uni svg');const g=svgEl('g',{},svg);const cells=[];
+  for(let k=0;k<100;k++){const c=k%20,r=Math.floor(k/20);cells.push(svgEl('rect',{x:c*26.6,y:r*30,width:21,height:24,rx:2,class:'c0'},g))}
+  txt(g,0,192,'72',{class:'r','font-size':'40'});txt(g,52,176,'in every 100 higher education providers',{class:'b'});txt(g,52,192,'could face a deficit in 2025/26',{class:'b'});
+  let played=false;
+  return{start(){if(played)return;played=true;cells.forEach((c,k)=>{if(k<72){c.style.transitionDelay=(reduce?0:k*.018)+'s';c.setAttribute('class','c1')}})}};
+})();
+
+/* ================= 13. the council ================= */
+hooks.council=(()=>{
+  const svg=$('#ill-council svg'),cap=$('#council-cap');
+  const SEATS=[
+    ['PM','Prime Minister','The committee wants clear and decisive leadership “especially from the Prime Minister and the Chancellor” (conclusion 4).'],
+    ['HMT','Chancellor and Treasury','The Treasury “must take responsibility for driving growth across the economy”, and value the long-term returns from R&D (recommendation 9).'],
+    ['Sci','Minister for Science','Should work with the Minister for Pensions and the British Business Bank so that pension reforms reach innovative companies (recommendation 17).'],
+    ['DSIT','Science, Innovation and Technology','A ‘horizontal role’ across government, and the framework for measuring progress on scaling up (conclusion 65, recommendation 66).'],
+    ['DBT','Business and Trade','Exit surveys when companies list or sell abroad (recommendation 12); its business growth service could host a concierge for high-potential firms (recommendation 54).'],
+    ['HO','Home Office','Should make attracting global talent a primary goal alongside reducing net migration (recommendation 45).'],
+    ['MoD','Defence','Its plan to spend 10% of its equipment budget on novel technologies is an example other departments can follow (conclusion 24).'],
+    ['DHSC','Health and Social Care','The life sciences industry “has never been so negative about the UK” (Sir John Bell); the NHS is “bulletproof to innovation” (paragraphs 7 and 121).'],
+    ['DESNZ','Energy Security and Net Zero','One of the delivery departments the council should bring together (recommendation 5).'],
+    ['DWP','Work and Pensions','Pensions policy, where the committee wants the Mansion House reforms to reach UK science and technology companies (recommendation 16).'],
+    ['DfE','Education','Training matched to Skills England’s assessments (recommendation 47), and the universities that need a long-term funding plan (recommendation 61).'],
+    ['BBB NWF','Public investment bodies','The heads of the British Business Bank and the National Wealth Fund should join as needed (recommendation 68).'],
+    ['CSA','Scientific advisers','The report’s summary lists scientific advisers among the council’s members.']];
+  const cx=270,cy=178,rx=196,ry=142,n=SEATS.length;
+  const g=svgEl('g',{},svg);svgEl('ellipse',{class:'table',cx,cy,rx:122,ry:76},g);
+  const ctr=txt(g,cx,cy+9,'',{class:'ctr'});
+  let seed=3;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const seats=SEATS.map((s,k)=>{const a=-Math.PI/2+k*2*Math.PI/n,x=cx+rx*Math.cos(a),y=cy+ry*Math.sin(a);
+    const out=a*180/Math.PI+(rnd()-.5)*80,inn=Math.atan2(cy-y,cx-x)*180/Math.PI;
+    const ag=svgEl('g',{class:'arw',style:`transform-origin:${x}px ${y}px`},g);svgEl('path',{d:`M${x+25},${y}h22m-6,-5l6,5l-6,5`},ag);
+    const sg=svgEl('g',{class:'seat',tabindex:0,role:'button','aria-label':s[1]},g);svgEl('circle',{cx:x,cy:y,r:22},sg);
+    const parts=s[0].split(' ');parts.forEach((p,j)=>txt(sg,x,y+4+(j-(parts.length-1)/2)*12,p,{}));
+    return{s,ag,sg,out,inn}});
+  let sel=-1;
+  const capFor=st=>st==='a'?'“DSIT will say, ‘We want global talent’, and the Home Office will say, ‘We will try to put you off’” (Sir Adrian Smith, President of the Royal Society, <a data-para="191">paragraph 191</a>). Choose a seat to see what the report asks of it.':'A council meeting frequently, able to meet in a crisis and to call in others as needed, with the prominence, resources and working practices of the National Security Council (recommendations 68 and 69). Choose a seat to see what the report asks of it.';
+  const fig=twoState('ill-council',null,st=>{seats.forEach(o=>{o.ag.style.transform=`rotate(${st==='a'?o.out:o.inn}deg)`});ctr.textContent=st==='a'?'':'growth';if(sel<0){cap.innerHTML=capFor(st);linkParas(cap)}});
+  function pick(k){sel=k;seats.forEach((o,j)=>o.sg.classList.toggle('on',j===k));if(k<0){cap.innerHTML=capFor(fig.get());linkParas(cap);return}const s=SEATS[k];cap.innerHTML=`<b>${esc(s[1])}.</b> ${esc(s[2])}`}
+  seats.forEach((o,k)=>{o.sg.addEventListener('pointerenter',()=>pick(k));o.sg.addEventListener('focus',()=>pick(k));o.sg.addEventListener('click',()=>pick(k))});
+  svg.addEventListener('pointerleave',()=>pick(-1));
+  let played=false,timer=0;
+  return{start(){if(played||reduce)return;played=true;timer=setTimeout(()=>{if(fig.get()==='a'&&sel<0)fig.set('b')},3200)},stop(){clearTimeout(timer)}};
+})();
+
+/* ================= 14. vital signs ================= */
+{
+  const M=['Scale-up funding at each round, every quarter, including from the British Business Bank, the National Wealth Fund and pension funds',
+    'Foreign against domestic capital in late-stage rounds, and company valuations, such as the number of unicorns',
+    'Spin-out companies, patents and research publications supported by public funding',
+    'The total value and speed of Innovate UK grants',
+    'Business R&D spending, and foreign direct investment in R&D and new infrastructure',
+    'Innovative procurement and contracts with UK small firms, by department, against US-style targets',
+    'People in STEM skills training, and STEM and digital visas issued',
+    'Listings and sales at home, against technology companies sold or floated overseas'];
+  $('#monitor').innerHTML=M.map((m,k)=>`<a class="ch" href="explore/#r=66" style="--d:${(k*.31).toFixed(2)}s"><span class="cl">${esc(m)}</span><svg viewBox="0 0 92 34" aria-hidden="true"><path d="M0,22H34L39,10L45,30L50,4L55,22H92"/></svg></a>`).join('');
+  hooks.vitals={start(){$('#vitals').classList.add('on')},stop(){$('#vitals').classList.remove('on')}};
+}
+
+/* ================= 15. who is asked to act ================= */
+hooks.who=(()=>{
+  const acts=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||a.full.localeCompare(b.full));
+  const big=acts.filter(a=>actorCount[a.id]>=2),small=acts.filter(a=>actorCount[a.id]<2),max=actorCount[acts[0].id];
+  $('#wbars').innerHTML=big.map((a,i)=>`<a class="wb" href="explore/#to=${a.id}" data-to="${a.id}" title="${esc(a.full)}"><span class="wn">${esc(a.name==='DSIT'?'DSIT':a.name)}</span><span class="wt"><i style="--w:${(actorCount[a.id]/max*100).toFixed(1)}%;--d:${(i*.07).toFixed(2)}s"></i></span><span class="wc">${actorCount[a.id]}</span></a>`).join('');
+  $('#wmore').innerHTML=small.length?`${small.length} more bodies are each named in one recommendation: `+small.map(a=>`<a href="explore/#to=${a.id}" data-to="${a.id}">${esc(a.full)}</a>`).join(', ')+'.':'';
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length,[a1,a2]=acts,next=acts.filter(a=>a!==a1&&a!==a2&&actorCount[a.id]===actorCount[acts[2].id]);
+  const the=a=>/^(The |HM )/.test(a.full)?a.full.replace(/^The /,'the '):/^(Innovate UK|Universities|Research funders|Pension funds|Ministers)/.test(a.full)?a.full:'the '+a.full;
+  $('#who-lede').textContent=`${a1.full} is asked to act in ${actorCount[a1.id]} of the ${nRec} recommendations, followed by ${the(a2)} (${actorCount[a2.id]}), and ${next.map(the).join(' and ')} (${actorCount[next[0].id]}${next.length>1?' each':''}). In ${multi} recommendations, more than one body is asked to act.`;
+  const sec=$('#who');
+  const peek=e=>{const a=e.target.closest('[data-to]');if(slides[active]&&slides[active].id==='who')setLit(a?new Set(R.filter(r=>r.to.includes(a.dataset.to)).map(r=>r.n)):null)};
+  sec.addEventListener('pointerover',peek);sec.addEventListener('focusin',peek);
+  sec.addEventListener('pointerleave',()=>{if(slides[active].id==='who')setLit(null)});
+  return{start(){sec.classList.add('on')}};
+})();
+
+/* ================= start ================= */
+size();
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)activate(slides.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px'});
+const startAt=slides.findIndex(s=>'#'+s.id===location.hash);
+if(startAt>0)slides[startAt].scrollIntoView({behavior:'auto'});
+const s0=slides[Math.max(0,startAt)];
+P={...lay(s0.dataset.cut||'strip',!!s0.dataset.heal)};
+if(s0.dataset.heal){heal=1;stitchK=1}
+if(startAt<=0&&!reduce){lineK=0;grow.fill(0);
+  animate(2300,k=>{const t=k*2300;lineK=clamp(t/700);R.forEach((r,i)=>{grow[i]=back(clamp((t-260-1250*us[i]/S)/700))});draw()},()=>{lineK=1;grow.fill(1);draw();dripT=setTimeout(drip,900)})}
+slides.forEach(s=>io.observe(s));
+draw();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();cancelAnimationFrame(raf);P={...P,...lay(mode,!!slides[active].dataset.heal)};draw()},120)});
+})();
+</script>
+</body>
+</html>

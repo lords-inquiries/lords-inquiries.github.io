@@ -1,0 +1,1616 @@
+{
+ "title": "Bleeding to death: the science and technology growth emergency",
+ "committee": "House of Lords Science and Technology Committee",
+ "number": "2nd Report of Session 2024–26",
+ "paper": "HL Paper 192",
+ "session": "2024-26",
+ "published": "2025-11-05",
+ "gr_due": "2026-01-05",
+ "gr": {
+  "label": "on 3 February 2026",
+  "url": "https://committees.parliament.uk/publications/51379/documents/285273/default/"
+ },
+ "pdf": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/192/192.pdf",
+ "page_offset": 2,
+ "work": "https://committees.parliament.uk/work/9014/",
+ "finding": "the UK economy is bleeding out in a national crisis of growth, especially in the science and technology sectors.",
+ "finding_note": "The committee’s report opens with these words. It says the UK’s failure to scale its science and technology companies has reached a crisis point.",
+ "priorities_label": "Seven themes",
+ "priorities_short": "the seven themes",
+ "priority_phrase": "one of seven themes",
+ "priorities_note": "Six themes follow the headline recommendations in the committee’s summary (report pages 4 to 6); the seventh, keeping companies in the UK, comes from its second chapter. Which paragraph sits under which theme is our reading; five conclusions that set out the diagnosis fit none of them.",
+ "chapters": [
+  {
+   "n": 2,
+   "title": "Failing to scale in the UK"
+  },
+  {
+   "n": 3,
+   "title": "Enabling private sector financing"
+  },
+  {
+   "n": 4,
+   "title": "Public sector investment and procurement"
+  },
+  {
+   "n": 5,
+   "title": "Non-financial barriers to scaling"
+  },
+  {
+   "n": 6,
+   "title": "Leadership, cross-government coordination and delivery"
+  }
+ ],
+ "sections": [
+  {
+   "id": 1,
+   "ch": 2,
+   "h1": "Characterising the scale-up problem",
+   "h2": ""
+  },
+  {
+   "id": 2,
+   "ch": 2,
+   "h1": "Risk appetite, the Treasury, and long-termism",
+   "h2": ""
+  },
+  {
+   "id": 3,
+   "ch": 2,
+   "h1": "Science and technology companies and the UK national interest",
+   "h2": ""
+  },
+  {
+   "id": 4,
+   "ch": 3,
+   "h1": "Pension funds and the Mansion House reforms",
+   "h2": ""
+  },
+  {
+   "id": 5,
+   "ch": 3,
+   "h1": "UK capital markets",
+   "h2": ""
+  },
+  {
+   "id": 6,
+   "ch": 3,
+   "h1": "R&D tax credits",
+   "h2": ""
+  },
+  {
+   "id": 7,
+   "ch": 4,
+   "h1": "Public procurement",
+   "h2": ""
+  },
+  {
+   "id": 8,
+   "ch": 4,
+   "h1": "Public sector investment bodies",
+   "h2": "Scale and consolidation"
+  },
+  {
+   "id": 9,
+   "ch": 4,
+   "h1": "Public sector investment bodies",
+   "h2": "Innovate UK"
+  },
+  {
+   "id": 10,
+   "ch": 4,
+   "h1": "Public sector investment bodies",
+   "h2": "British Business Bank"
+  },
+  {
+   "id": 11,
+   "ch": 4,
+   "h1": "Public sector investment bodies",
+   "h2": "National Wealth Fund"
+  },
+  {
+   "id": 12,
+   "ch": 5,
+   "h1": "People and skills: visas, skills, career trajectories",
+   "h2": "Visas"
+  },
+  {
+   "id": 13,
+   "ch": 5,
+   "h1": "People and skills: visas, skills, career trajectories",
+   "h2": "Skills"
+  },
+  {
+   "id": 14,
+   "ch": 5,
+   "h1": "People and skills: visas, skills, career trajectories",
+   "h2": "Career permeability"
+  },
+  {
+   "id": 15,
+   "ch": 5,
+   "h1": "Networks",
+   "h2": ""
+  },
+  {
+   "id": 16,
+   "ch": 5,
+   "h1": "Standards and regulation",
+   "h2": ""
+  },
+  {
+   "id": 17,
+   "ch": 5,
+   "h1": "Research foundations: R&D funding, universities, spin-out companies",
+   "h2": "University funding"
+  },
+  {
+   "id": 18,
+   "ch": 5,
+   "h1": "Research foundations: R&D funding, universities, spin-out companies",
+   "h2": "Spin-out companies and intellectual property"
+  },
+  {
+   "id": 19,
+   "ch": 6,
+   "h1": "Leadership, cross-government coordination and delivery",
+   "h2": ""
+  }
+ ],
+ "priorities": [
+  {
+   "id": "stay",
+   "title": "Keep companies in the UK",
+   "summary": "End the laissez-faire approach to takeovers and overseas listings: find out why companies leave, decide which technologies the UK needs to control, and use public investment to take stakes."
+  },
+  {
+   "id": "capital",
+   "title": "Put UK capital to work",
+   "summary": "Make the Mansion House pension reforms deliver money to UK science and technology companies, with targets and a reserve power to mandate; steer savers towards UK markets; keep R&D tax credits."
+  },
+  {
+   "id": "procure",
+   "title": "Buy from innovators",
+   "summary": "Make public procurement an engine of innovation: a target rising to 3% of spending with innovative UK small firms, outcome-based contracts, and ministers who back sensible risk."
+  },
+  {
+   "id": "public",
+   "title": "One public investment pipeline, at scale",
+   "summary": "Join up, scale up and ideally consolidate Innovate UK, the British Business Bank and the National Wealth Fund, so that companies do not fall through the gaps between them."
+  },
+  {
+   "id": "people",
+   "title": "Talent, networks and regulation",
+   "summary": "Cut visa costs to attract global talent, teach scientists entrepreneurship, ease moves between academia, business and government, give high-potential firms a concierge, and give innovators a regulatory front door."
+  },
+  {
+   "id": "research",
+   "title": "Protect the research base",
+   "summary": "Set out a long-term plan for university finances, which the committee says an international student levy would make worse, and keep encouraging patents and spin-outs."
+  },
+  {
+   "id": "council",
+   "title": "Leadership from the top",
+   "summary": "A National Council for Science, Technology and Growth, modelled on the National Security Council, to drive reform across government; a Treasury that backs long-term growth and sensible risk; progress measured and published."
+  },
+  {
+   "id": "other",
+   "title": "The diagnosis",
+   "summary": "The conclusions that frame the report: a doom loop of shallow capital, risk-averse investors and undervalued companies, and the case for urgent, radical, cross-government action."
+  }
+ ],
+ "actors": [
+  {
+   "id": "gov",
+   "name": "The Government",
+   "full": "The Government"
+  },
+  {
+   "id": "council",
+   "name": "National Council",
+   "full": "National Council for Science, Technology and Growth (proposed)"
+  },
+  {
+   "id": "hmt",
+   "name": "The Treasury",
+   "full": "HM Treasury"
+  },
+  {
+   "id": "departments",
+   "name": "Ministers and departments",
+   "full": "Ministers and government departments"
+  },
+  {
+   "id": "cabinetoffice",
+   "name": "Cabinet Office",
+   "full": "Cabinet Office"
+  },
+  {
+   "id": "dsit",
+   "name": "DSIT",
+   "full": "Department for Science, Innovation and Technology"
+  },
+  {
+   "id": "dbt",
+   "name": "DBT",
+   "full": "Department for Business and Trade"
+  },
+  {
+   "id": "ofi",
+   "name": "Office for Investment",
+   "full": "Office for Investment"
+  },
+  {
+   "id": "ons",
+   "name": "ONS",
+   "full": "Office for National Statistics"
+  },
+  {
+   "id": "homeoffice",
+   "name": "Home Office",
+   "full": "Home Office"
+  },
+  {
+   "id": "gtt",
+   "name": "Global Talent Taskforce",
+   "full": "Global Talent Taskforce"
+  },
+  {
+   "id": "gcsa",
+   "name": "Chief Scientific Adviser",
+   "full": "Government Chief Scientific Adviser and Head of the Government Economic Service"
+  },
+  {
+   "id": "pensionsmin",
+   "name": "Minister for Pensions",
+   "full": "Minister for Pensions"
+  },
+  {
+   "id": "pensionfunds",
+   "name": "Pension funds",
+   "full": "Pension funds"
+  },
+  {
+   "id": "bbb",
+   "name": "British Business Bank",
+   "full": "British Business Bank"
+  },
+  {
+   "id": "nwf",
+   "name": "National Wealth Fund",
+   "full": "National Wealth Fund"
+  },
+  {
+   "id": "iuk",
+   "name": "Innovate UK",
+   "full": "Innovate UK"
+  },
+  {
+   "id": "spif",
+   "name": "Strategic Public Investment Forum",
+   "full": "Strategic Public Investment Forum"
+  },
+  {
+   "id": "rio",
+   "name": "Regulatory Innovation Office",
+   "full": "Regulatory Innovation Office"
+  },
+  {
+   "id": "universities",
+   "name": "Universities",
+   "full": "Universities"
+  },
+  {
+   "id": "funders",
+   "name": "Research funders",
+   "full": "Research funders, including UKRI"
+  },
+  {
+   "id": "civilservice",
+   "name": "The civil service",
+   "full": "The civil service"
+  }
+ ],
+ "topics": [
+  {
+   "id": "pensions",
+   "name": "Pensions",
+   "re": "pension|Mansion House",
+   "flags": "i",
+   "words": "pensions, Mansion House"
+  },
+  {
+   "id": "markets",
+   "name": "Stock markets",
+   "re": "stock (market|exchange)|\\blist(ed|ing)\\b|\\bIPOs?\\b|initial public offering|\\bISAs?\\b|capital markets?|\\bfloat",
+   "flags": "i",
+   "words": "stock markets, listing, IPOs, ISAs"
+  },
+  {
+   "id": "procurement",
+   "name": "Procurement",
+   "re": "procure|SBIR|Contracts for Innovation|buying British",
+   "flags": "i",
+   "words": "procurement, SBIR, Contracts for Innovation"
+  },
+  {
+   "id": "talent",
+   "name": "Visas and talent",
+   "re": "visa|talent|immigration|migration",
+   "flags": "i",
+   "words": "visas, talent, immigration"
+  },
+  {
+   "id": "skills",
+   "name": "Skills and careers",
+   "re": "skill|training|career|secondment|fellowship|pay offer",
+   "flags": "i",
+   "words": "skills, training, careers, secondments, fellowships"
+  },
+  {
+   "id": "risk",
+   "name": "Risk",
+   "re": "\\brisk",
+   "flags": "i",
+   "words": "risk, risk-taking, risk appetite"
+  },
+  {
+   "id": "sovereignty",
+   "name": "Ownership and sovereignty",
+   "re": "sovereign|acqui|foreign|overseas|national interest|national security(?! council)|domestic ownership",
+   "flags": "i",
+   "words": "sovereignty, acquisitions, foreign investment, overseas"
+  },
+  {
+   "id": "universities",
+   "name": "Universities and spin-outs",
+   "re": "universit|spin-?out|patent|intellectual property",
+   "flags": "i",
+   "words": "universities, spin-outs, patents"
+  },
+  {
+   "id": "regulation",
+   "name": "Regulation and standards",
+   "re": "regulat|\\bstandards\\b|standard-setting|\\bRIO\\b",
+   "flags": "i",
+   "words": "regulation, regulators, standards"
+  },
+  {
+   "id": "metrics",
+   "name": "Measuring progress",
+   "re": "\\btrack|metric|monitor|key performance indicator|annual report|transparen|\\btargets?\\b",
+   "flags": "i",
+   "words": "tracking, metrics, monitoring, targets, transparency"
+  },
+  {
+   "id": "treasury",
+   "name": "The Treasury",
+   "re": "Treasury|Green Book|value for money|Chancellor",
+   "flags": "",
+   "words": "Treasury, Green Book, value for money, Chancellor"
+  },
+  {
+   "id": "tax",
+   "name": "Tax",
+   "re": "\\btax",
+   "flags": "i",
+   "words": "tax, tax relief, tax credits"
+  }
+ ],
+ "recs": [
+  {
+   "n": 1,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "con",
+   "text": "The UK’s pure research base remains globally competitive. But long-term factors in its R&D ecosystem and economy have hindered companies’ growth. Outside professional services and the life sciences, it lacks large-scale companies.",
+   "para": 27,
+   "page": 16,
+   "to": [],
+   "words": 32
+  },
+  {
+   "n": 2,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "con",
+   "text": "The UK is in a ‘doom loop’: its capital pools are shallow, its institutional investors risk-averse, and its technology companies undervalued. Policies to encourage start-ups and spin-outs have fostered more early-stage companies, but these then struggle for domestic scale-up finance. Without this finance, the UK’s strong R&D base risks supporting an ‘incubator economy’ of venture-backed start-ups that eventually move overseas in search of funding. The UK needs a clear plan to retain more companies.",
+   "para": 28,
+   "page": 16,
+   "to": [],
+   "words": 74
+  },
+  {
+   "n": 3,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "con",
+   "text": "The Government’s Industrial Strategy seeks to address this problem, but the gap between rhetoric and reality is stark and several significant companies have moved overseas as we took evidence for this inquiry. Historically, UK industrial strategies have been small in scale and have not lasted, particularly due to a lack of cross-party consensus. This undermines attempts at a sustained partnership with the private sector.",
+   "para": 29,
+   "page": 17,
+   "to": [],
+   "words": 64
+  },
+  {
+   "n": 4,
+   "ch": 2,
+   "sec": 1,
+   "pri": "other",
+   "kind": "con",
+   "text": "The ‘failure to scale’ for UK science and technology companies is not new. Its causes have deep roots, both domestic and international. However, it has also been well studied and many policy proposals suggested. Solving this problem will require serious, cross-government, co-ordinated, long-term, and radical efforts. The Government will need to use every lever it has to support UK-based science and technology companies and encourage private investors to do the same. It is essential that there is clear and decisive leadership, especially from the Prime Minister and the Chancellor. Coordinating the urgently needed action across Government will require a forum for this leadership, as existing structures have not stopped the bleeding.",
+   "para": 30,
+   "page": 17,
+   "to": [],
+   "words": 111
+  },
+  {
+   "n": 5,
+   "ch": 2,
+   "sec": 1,
+   "pri": "council",
+   "kind": "rec",
+   "text": "We recommend that a National Council for Science, Technology and Growth, modelled on the National Security Council, should be empowered to tackle the growth mandate, with a particular focus on science and technology and the scale-up issue. It should include the Prime Minister, Chancellor, DSIT, DBT, the Home Office, MoD, DHSC, DESNZ, DWP, and Department for Education, and the public investment institutions. It should meet frequently to drive through reforms that will support technology for growth and the scale-up of UK companies. We return to this further in Chapter 6 and set out reforms it should implement in the remainder of this report.",
+   "para": 31,
+   "page": 17,
+   "to": [
+    "gov",
+    "council"
+   ],
+   "words": 103
+  },
+  {
+   "n": 6,
+   "ch": 2,
+   "sec": 2,
+   "pri": "council",
+   "kind": "con",
+   "text": "UK science and technology is held back by low risk appetite across institutions, from the Government in procurement, through institutional investors such as pension funds, and even in career choices. There is little incentive to take calculated risks, and often significant disincentives.",
+   "para": 39,
+   "page": 19,
+   "to": [],
+   "words": 42
+  },
+  {
+   "n": 7,
+   "ch": 2,
+   "sec": 2,
+   "pri": "council",
+   "kind": "rec",
+   "text": "The incentive structures holding back innovation must change. The Government should explore ways to incentivise and reward experimentation with technology, particularly that which supports the growth of UK science and technology companies. It should celebrate successes and provide more direct incentives for risk-taking. Ministers should explicitly encourage innovation within their departments, giving time, space and political cover for officials who innovate and setting up structures in which fear of criticism does not hinder considered risk-taking.",
+   "para": 40,
+   "page": 19,
+   "to": [
+    "gov",
+    "departments"
+   ],
+   "words": 75
+  },
+  {
+   "n": 8,
+   "ch": 2,
+   "sec": 2,
+   "pri": "council",
+   "kind": "rec",
+   "text": "We heard concerns about how the Treasury assesses the return on investment for R&D projects. The cost-benefit analysis approach of “value for money” does not always capture the wider benefits of R&D investment or innovative government expenditure. This could be exacerbated by a lack of analytical or policy capacity to pursue economic growth alongside its traditional finance role. The Government Chief Scientific Adviser and Head of the Government Economic Service should collaborate on revising this approach.",
+   "para": 41,
+   "page": 19,
+   "to": [
+    "gcsa"
+   ],
+   "words": 76
+  },
+  {
+   "n": 9,
+   "ch": 2,
+   "sec": 2,
+   "pri": "council",
+   "kind": "rec",
+   "text": "Behaviour in the Treasury must change if it is to deliver long-term economic growth. The Treasury must take responsibility for driving growth across the economy, supporting the aims of our proposed National Council. As an example, the review of the Green Book provides an opportunity, which should be seized, for the Treasury to expand its work on understanding R&D and its impact on growth, particularly for investments where the long-term benefits are not captured by standard analysis of project-level value for money.",
+   "para": 42,
+   "page": 20,
+   "to": [
+    "hmt"
+   ],
+   "words": 82
+  },
+  {
+   "n": 10,
+   "ch": 2,
+   "sec": 3,
+   "pri": "stay",
+   "kind": "con",
+   "text": "The UK has seen many promising companies listing overseas or being acquired by overseas buyers. This results in a reduced UK ‘home bias’ for these companies, cutting UK employment, investment, and tax revenue. Geopolitical factors such as the rise of global conflicts and rapid technological development have meant that critical technologies and companies are increasingly seen through the lens of national interest, if not national security. This requires a shift in policy.",
+   "para": 54,
+   "page": 22,
+   "to": [],
+   "words": 72
+  },
+  {
+   "n": 11,
+   "ch": 2,
+   "sec": 3,
+   "pri": "stay",
+   "kind": "con",
+   "text": "The Government has taken a notably laissez-faire approach to the acquisition of UK technology companies, as well as foreign direct investment more broadly. Ministers were reluctant to support any sort of intervention to prevent companies from being acquired by overseas buyers, instead hoping to make the UK the most attractive place for companies to retain high-value jobs.",
+   "para": 55,
+   "page": 23,
+   "to": [],
+   "words": 57
+  },
+  {
+   "n": 12,
+   "ch": 2,
+   "sec": 3,
+   "pri": "stay",
+   "kind": "rec",
+   "text": "Too often, in recent years, a laissez-faire approach by the Government and reliance on foreign investment to plug gaps in domestic investment has hurt the UK’s long-term interest. This must change if we are, in the Minister’s words, to ‘cherish’ our companies. The new fiscal rules introduced in 2024 provide an opportunity to revitalise domestic investment and correct chronic underinvestment. As part of this:\n• The Office for Investment, when seeking foreign investment, should make a clear distinction, between foreign direct investment that supports the creation of new infrastructure and that which involves a transfer of ownership, control, and management to overseas owners. ONS reporting should more clearly distinguish between these two types of foreign direct investment.\n• When science and technology companies are listed on an overseas stock market or acquired by foreign investors, the Department for Business and Trade should conduct an ‘exit survey’ of those companies and ‘exit interviews’ of the founders, to establish the reasons why this was done and whether any interventions could have prevented it.\n• Our proposed National Council for Science, Technology, and Growth should have a view about which technologies the UK needs sovereign control over and intervene to ensure that this is the case. The Government should examine other countries’ policies to retain domestic ownership of strategically important science and technology companies. For example, it should use public investment bodies, like a scaled-up National Wealth Fund, to take meaningful equity stakes in companies, as overseas sovereign wealth funds have done.",
+   "para": 56,
+   "page": 23,
+   "to": [
+    "ofi",
+    "ons",
+    "dbt",
+    "council",
+    "gov"
+   ],
+   "words": 249
+  },
+  {
+   "n": 13,
+   "ch": 3,
+   "sec": 4,
+   "pri": "capital",
+   "kind": "con",
+   "text": "UK pension funds and other institutional investors have substantially underinvested in UK equities and venture capital compared to international equivalents to a quite shocking degree. Their investment in the UK has severely declined over decades, in part due to successive governments’ policy. They are no longer playing the vital role they should in investing in the UK economy. The result is a dearth of long-term, patient UK scale-up capital and the resulting scale-up crisis. We believe this is not in the interests of UK pension-holders or the UK economy more broadly, but it can and should be reversed.",
+   "para": 88,
+   "page": 32,
+   "to": [],
+   "words": 98
+  },
+  {
+   "n": 14,
+   "ch": 3,
+   "sec": 4,
+   "pri": "capital",
+   "kind": "con",
+   "text": "Fragmentation, especially of defined contribution (DC) pension funds, means that they do not have the scale to allocate significant assets to high-risk, high-reward investments in science and technology companies. Comparators in Australia and Canada show what is possible with consolidation. UK pension funds have focused on minimising fees rather than maximising return for a variety of regulatory, institutional and cultural reasons.",
+   "para": 89,
+   "page": 33,
+   "to": [],
+   "words": 61
+  },
+  {
+   "n": 15,
+   "ch": 3,
+   "sec": 4,
+   "pri": "capital",
+   "kind": "con",
+   "text": "Witnesses agreed that the Mansion House reforms were critical. If successful, they will help provide the domestic scale-up capital that UK science and technology companies need. However, there are concerns about the speed of reform, the need to upskill investors, and the risk that institutional investors focus on infrastructure rather than scale-up capital. There is an ongoing debate about whether pension funds should be mandated to invest if they do not fulfil their voluntary commitments.",
+   "para": 90,
+   "page": 33,
+   "to": [],
+   "words": 75
+  },
+  {
+   "n": 16,
+   "ch": 3,
+   "sec": 4,
+   "pri": "capital",
+   "kind": "rec",
+   "text": "We welcome the Mansion House reforms as essential measures to accelerate growth. It is critical that they result in capital flows to the next generation of growing UK science and technology companies. If not, those companies will be forced to seek funding and likely relocate abroad. The Government should:\n• Insist on the consolidation of DC pension schemes, and lead by example with the consolidated Local Government Pension Scheme pools, making significant allocations to domestic science and technology funds, including the British Business Bank’s vehicles and approved private funds to crowd-in institutional investor money;\n• Use its convening power with the major institutional investors to encourage them to invest in UK technology companies. Support transparency and disclosures as part of the Mansion House Accord, and track the amount invested in UK science and technology companies as one of its key progress metrics;\n• Encourage transparency between providers and pension-holders, setting out the returns of different DC pension schemes and what proportion of their assets are in UK companies or infrastructure. Following the provision of this information, pension funds should survey their members, asking what percentage of assets they would like to be invested in the UK, and incentivised to act on any desire to see increased investment in the UK. The Government should set out that pension fund investment in the UK benefits everyone’s quality of life;\n• Maintain the reserve power to mandate pension funds to follow their Mansion House commitments in the Pension Schemes Bill. The Government should set targets for the percentage of assets allocated under the Mansion House reforms overall by the end of 2027, as well as for the scale-up capital allocated to UK technology companies, and reconsider mandation if these targets are not met;\n• Explore possibilities short of mandation—for example, a clawback on tax relief for pension schemes that do not invest enough capital in the UK, or additional incentives for leading pension schemes;\n• Support and expand training schemes like the Venture Capital Fellowships scheme that bring science and technology experts together with VCs to enable the creation and sharing of investment expertise.",
+   "para": 91,
+   "page": 33,
+   "to": [
+    "gov",
+    "pensionfunds"
+   ],
+   "words": 351
+  },
+  {
+   "n": 17,
+   "ch": 3,
+   "sec": 4,
+   "pri": "capital",
+   "kind": "rec",
+   "text": "The Minister for Pensions, CEO of the British Business Bank, and Minister for Science and their teams should co-ordinate to identify ways to ensure that the Mansion House reforms benefit innovative UK science and technology companies in addition to other asset classes.",
+   "para": 92,
+   "page": 34,
+   "to": [
+    "pensionsmin",
+    "bbb",
+    "dsit"
+   ],
+   "words": 42
+  },
+  {
+   "n": 18,
+   "ch": 3,
+   "sec": 5,
+   "pri": "capital",
+   "kind": "con",
+   "text": "The declining attractiveness of the UK as a place to list public companies is extremely worrying. Many promising UK science and technology companies have floated in the US rather than on the London stock exchanges. They are attracted by deeper capital pools, greater analyst coverage, and a perception that they will attract a greater valuation overseas. Reforms to address this problem will have to counter long-term trends towards passive and globally diversified investment.",
+   "para": 104,
+   "page": 37,
+   "to": [],
+   "words": 73
+  },
+  {
+   "n": 19,
+   "ch": 3,
+   "sec": 5,
+   "pri": "capital",
+   "kind": "con",
+   "text": "We have heard that capital availability is the main problem, followed by a lack of investment research into smaller companies. The Government has considered proposals to increase investment, but none has yet been implemented. The ISA is fundamentally a tax break, designed to encourage saving, but there is merit in coupling that tax advantage with a responsibility to invest in ways that benefit the UK economy.",
+   "para": 105,
+   "page": 37,
+   "to": [],
+   "words": 66
+  },
+  {
+   "n": 20,
+   "ch": 3,
+   "sec": 5,
+   "pri": "capital",
+   "kind": "rec",
+   "text": "The Government should therefore undertake reforms to encourage capital flows into the UK markets. This could include changes to the ISA limits, such as reducing the cash limit in favour of stocks and shares, taxation such as the proposed stamp duty holiday for IPOs, or creating additional savings vehicles and incentives for UK savers to invest in domestic science and technology companies. The Government should encourage financial literacy campaigns to encourage investors and pension-holders to shift their allocation away from cash where this makes sense for them.",
+   "para": 106,
+   "page": 37,
+   "to": [
+    "gov"
+   ],
+   "words": 87
+  },
+  {
+   "n": 21,
+   "ch": 3,
+   "sec": 6,
+   "pri": "capital",
+   "kind": "con",
+   "text": "Witnesses, including entrepreneurs, told us that R&D tax credits were highly valuable to R&D intensive businesses, and the Treasury has committed to maintain their levels throughout this Parliament, but there are also significant reforms underway due to concerns about fraud.",
+   "para": 115,
+   "page": 39,
+   "to": [],
+   "words": 40
+  },
+  {
+   "n": 22,
+   "ch": 3,
+   "sec": 6,
+   "pri": "capital",
+   "kind": "rec",
+   "text": "Companies are best placed to decide how R&D money should be spent and tax credits efficiently allocate this funding. They must be maintained at current levels. While fraud remains a concern, the answer is to tackle that fraud rather than to recast the scheme. Money recovered by the elimination of error or fraud could be reused for other schemes for instance grants and initiatives to support scale-up funding. This would diversify government support while maintaining the amount of funding used productively through the tax credits scheme.",
+   "para": 116,
+   "page": 39,
+   "to": [
+    "gov"
+   ],
+   "words": 86
+  },
+  {
+   "n": 23,
+   "ch": 4,
+   "sec": 7,
+   "pri": "procure",
+   "kind": "con",
+   "text": "Public procurement is a crucial lever for supporting innovative science and technology companies. It is not functioning as it should due to a combination of risk aversion, lack of expertise, and a tendency to favour large and often overseas incumbents. Contracts provide domestic revenue that can encourage further private investment and reduce reliance on overseas money. Despite this, innovative SMEs find public procurement very difficult to access. Procurement authorities need to develop their relationships with innovative SMEs, and their ability to run innovative procurement processes—stage-gated, outcome-based, rapid—that they can take part in.",
+   "para": 130,
+   "page": 43,
+   "to": [],
+   "words": 92
+  },
+  {
+   "n": 24,
+   "ch": 4,
+   "sec": 7,
+   "pri": "procure",
+   "kind": "con",
+   "text": "The US Small Business Innovation Research scheme has been very successful, but the UK equivalent—Contracts for Innovation—is far smaller. The MoD’s procurement reforms and decision to allocate a percentage of its equipment budget for SMEs to drive innovation are examples other departments can follow. It is positive that the Government has committed to review procurement for innovation as part of its industrial strategy.",
+   "para": 131,
+   "page": 43,
+   "to": [],
+   "words": 63
+  },
+  {
+   "n": 25,
+   "ch": 4,
+   "sec": 7,
+   "pri": "procure",
+   "kind": "rec",
+   "text": "Public sector procurement practices need to change; this needs explicit political commitment from the top of government and action across departments. We recommend that:\n• The Government should set a target for each department and local authority for a mandatory percentage of procurement budgets to be spent on innovative, UK-based SMEs. This should rise over time to 3%, around the US SBIR level. A cross-government committee that brings together the Minister for Procurement in the Cabinet Office with the Minister for Science, the Department for Business and Trade, and delivery departments should oversee the development of this innovative procurement function. The Government must monitor and publish annually progress towards these targets.\n• The UK should increase the amounts allocated through Contracts for Innovation (formerly the Small Business Research Initiative, SBRI), and create a central database for these contracts that is easier to navigate for SMEs.\n• Departments should signal further in advance and in more detail precisely the kinds of outcomes they need.\n• Outcome-based procurement, where departments specify what their end goals are, rather than setting onerous requirements on the product, should be used to provide flexibility with SMEs. Stage-gated procurement can support smaller companies with funding in stages to develop and scale up their processes. An expanded Contracts for Innovation scheme could be used to support these more innovative and less bureaucratic processes.\n• Ministers should celebrate and reward public procurement that has supported innovative companies. The Government should back ministers and officials who procure innovative domestic solutions even if not all of the goals are delivered: failure is a necessary part of innovation. There is no reward without some risk: ministers need to specify appropriate risk profiles for their projects and take clear accountability for doing so. Civil servants will not be empowered to take risks without explicit political cover from ministers from excessive auditing. There should be cross-party consensus on this issue and on the importance of a healthy appetite to risk.\n• The UK should consider a presumption in favour of buying British, especially when it concerns new and emerging technologies, even if narrow value-for-money considerations would not allow this. It must take the wider benefits to the economy of domestic procurement into account.\n• For critical frontier technologies, particularly where there is a desire for UK sovereignty and control over the technology, the Government should consider using Vaccine Taskforce-style procurement to ensure they can be developed in the UK.",
+   "para": 132,
+   "page": 43,
+   "to": [
+    "gov",
+    "departments",
+    "cabinetoffice"
+   ],
+   "words": 405
+  },
+  {
+   "n": 26,
+   "ch": 4,
+   "sec": 8,
+   "pri": "public",
+   "kind": "con",
+   "text": "The UK economy has suffered from chronic underinvestment in recent decades, which has impacted science and technology. The Government sees public sector investment bodies such as Innovate UK, the British Business Bank and the National Wealth Fund supporting scale-up for science and technology companies and crowding in private sector finance. But the public investment landscape remains fragmented, overly complicated, and small in scale. Businesses want a ‘single front door’ to understand the support available at each stage, but it is unclear which of these organisations is responsible for that, or whether the business growth service in the Department for Business and Trade will do this. At the moment there is too often a ‘leaky pipeline’ where companies fall between the cracks.",
+   "para": 146,
+   "page": 49,
+   "to": [],
+   "words": 121
+  },
+  {
+   "n": 27,
+   "ch": 4,
+   "sec": 8,
+   "pri": "public",
+   "kind": "rec",
+   "text": "To provide a clear pipeline of support, Innovate UK, the British Business Bank and the National Wealth Fund must at the very least work together much more closely, aligning on priority sectors and companies with direction set by the Industrial Strategy. The Strategic Public Investment Forum provides an opportunity to deepen this coordination. The demarcation of responsibility between these bodies must be made clear to industry to avoid a ‘leaky pipeline’ where co-investment stops at a certain funding size or technology readiness level. Each of the organisations should track successful referrals (for example, from a successful Innovate grant to scale-up funding via the British Business Bank) as a key performance indicator. They should each continue to work on simplifying and scaling up the offers they have and providing clear guidance.",
+   "para": 147,
+   "page": 49,
+   "to": [
+    "iuk",
+    "bbb",
+    "nwf",
+    "spif"
+   ],
+   "words": 130
+  },
+  {
+   "n": 28,
+   "ch": 4,
+   "sec": 8,
+   "pri": "public",
+   "kind": "con",
+   "text": "More investment is needed and the 2024 change to the fiscal rules provides some latitude to provide this. We welcome the increases in capital for the British Business Bank and National Wealth Fund, but both combined are still tiny compared to overseas equivalents such as Bpifrance of France, KfW of Germany, or Temasek of Singapore, let alone the larger sovereign wealth funds; in particular, the NWF is far smaller than overseas public investment bodies. As relatively new bodies, there are also concerns around their longevity.",
+   "para": 148,
+   "page": 50,
+   "to": [],
+   "words": 85
+  },
+  {
+   "n": 29,
+   "ch": 4,
+   "sec": 8,
+   "pri": "public",
+   "kind": "rec",
+   "text": "At a minimum, the British Business Bank should be put on a statutory footing alongside the National Wealth Fund to help ensure permanence and both operations should be significantly scaled up. But to achieve a properly integrated, diversified and well-resourced public investment landscape, the various government lending and investing bodies such as the NWF and BBB should be consolidated. There is a strong case for including Innovate UK in this structure. This would allow them to act more strategically, benefit from diversification and risk aggregation, and provide pooled expertise and continuity of support, reducing the overall complexity of the system.",
+   "para": 149,
+   "page": 50,
+   "to": [
+    "gov"
+   ],
+   "words": 100
+  },
+  {
+   "n": 30,
+   "ch": 4,
+   "sec": 8,
+   "pri": "public",
+   "kind": "rec",
+   "text": "Public sector investment bodies can make more use of debt and guarantees to unlock private capital. The UK should recognise that other countries, such as France, Germany, and Singapore, have more established public development financing and the Strategic Public Investment Forum should study in detail what lessons can be learned from international comparators.",
+   "para": 150,
+   "page": 50,
+   "to": [
+    "spif",
+    "bbb",
+    "nwf"
+   ],
+   "words": 53
+  },
+  {
+   "n": 31,
+   "ch": 4,
+   "sec": 9,
+   "pri": "public",
+   "kind": "con",
+   "text": "Innovate UK and its grants have a difficult but vital role to play in supporting companies in the early stages: many successful companies have benefitted from them. However, the grants are substantially oversubscribed and Innovate UK has historically been slow and bureaucratic in providing awards, leading to frustration. If Innovate is to remain within UKRI, it must move at the speed of business—as one of the Government’s main interfaces with SMEs.",
+   "para": 158,
+   "page": 52,
+   "to": [],
+   "words": 71
+  },
+  {
+   "n": 32,
+   "ch": 4,
+   "sec": 9,
+   "pri": "public",
+   "kind": "con",
+   "text": "In addition, Innovate UK allocates many schemes and pots of money with specific, often well-intentioned criteria, adding to complexity, bureaucracy, and difficulty for SMEs in determining which schemes they should apply for. This contributes to time wasted in applications that are unlikely to succeed. AI will require a rebuild of the grant allocation process, which provides an opportunity to address these issues.",
+   "para": 159,
+   "page": 52,
+   "to": [],
+   "words": 62
+  },
+  {
+   "n": 33,
+   "ch": 4,
+   "sec": 9,
+   "pri": "public",
+   "kind": "rec",
+   "text": "The rebuilding of Innovate UK’s grant allocations provides an important opportunity to streamline, simplify, consolidate, and speed up the delivery of grants. Fewer but faster programmes would benefit everyone and the Government should resist the temptation to task Innovate UK’s funding with too many subsidiary goals. Innovate UK must work to make eligibility for different grants clearer—for example, through a simplified online portal with a questionnaire. It must continue to work on reducing the turnaround time for its grants.",
+   "para": 160,
+   "page": 52,
+   "to": [
+    "iuk",
+    "gov"
+   ],
+   "words": 79
+  },
+  {
+   "n": 34,
+   "ch": 4,
+   "sec": 9,
+   "pri": "public",
+   "kind": "con",
+   "text": "Whether it remains part of UKRI or not, Innovate UK should become a ‘due diligence’ body that crowds investment into science and technology companies. Its grants should give confidence to follow-on investors in the private and public sector that a technology has potential, and confidence to businesses that there is a real likelihood of follow-on investment. To achieve this will require much more transparency to build trust in its processes. Innovate UK does not publish an annual report and, while it collects a lot of data on the companies and projects it backs, this is hard to access and could benefit from deeper analysis.",
+   "para": 163,
+   "page": 53,
+   "to": [],
+   "words": 104
+  },
+  {
+   "n": 35,
+   "ch": 4,
+   "sec": 9,
+   "pri": "public",
+   "kind": "rec",
+   "text": "Innovate UK should aim to become a ‘due diligence’ body with grants that are widely respected. It must play a more active role in identifying the highest-potential technologies and companies. It should increase its referrals to the British Business Bank and other sources of scale-up finance. The number of referrals, as well as the long-term private scale-up funding raised by the companies supported by Innovate UK, should be tracked as key performance indicators as part of a shift to outcome-based reporting. It should publish an annual report which sets out more details around the sectors and businesses it supports in line with the Industrial Strategy.",
+   "para": 164,
+   "page": 53,
+   "to": [
+    "iuk"
+   ],
+   "words": 105
+  },
+  {
+   "n": 36,
+   "ch": 4,
+   "sec": 10,
+   "pri": "public",
+   "kind": "con",
+   "text": "We welcome the announced increase in funding for the British Business Bank, although it is still too small. The Bank’s efforts to create vehicles for private sector capital, such as the British Growth Partnership and LIFTS, are commendable, but small in scale relative to the problem.",
+   "para": 171,
+   "page": 55,
+   "to": [],
+   "words": 46
+  },
+  {
+   "n": 37,
+   "ch": 4,
+   "sec": 10,
+   "pri": "public",
+   "kind": "rec",
+   "text": "The Government should use its convening power to encourage more institutional investors to take part in funds that provide scale-up capital into UK science and technology companies. The Bank should publicise the success of these funds as they become established. Its additional funding could be used in part to increase the scale of the Bank’s investment in these funds. The Bank should also have targets to create follow-on funds for LIFTS and the British Growth Partnership to expand their size over time.",
+   "para": 172,
+   "page": 55,
+   "to": [
+    "gov",
+    "bbb"
+   ],
+   "words": 82
+  },
+  {
+   "n": 38,
+   "ch": 4,
+   "sec": 11,
+   "pri": "public",
+   "kind": "con",
+   "text": "The National Wealth Fund has a very wide remit and has historically concentrated on infrastructure and net zero investments. Providing late-stage capital for growth companies is a new area for the NWF, and it is unclear how much funding it will allocate to this area compared to its primary responsibilities, yet it is precisely the late-stage capital that the NWF is supposed to deploy where the UK has the biggest gaps. Its role is to invest amounts in excess of £25m at a time and to coinvest alongside the private sector.",
+   "para": 178,
+   "page": 56,
+   "to": [],
+   "words": 91
+  },
+  {
+   "n": 39,
+   "ch": 4,
+   "sec": 11,
+   "pri": "public",
+   "kind": "rec",
+   "text": "The National Wealth Fund should have a specific target for the number of late-stage (Series C+) scale-up funding rounds for UK science and technology companies it will support during each Parliament. It should consider ring-fencing some of its annual fund commitment target to this goal. Innovate UK, the British Business Bank, DSIT, and private sector venture capital should help the National Wealth Fund identify companies that are suitable for scale-up financing in sectors identified by the Industrial Strategy. Secondments between these organisations should be established to bring scientific and technological expertise into the National Wealth Fund. The NWF should also deepen its relationship with private sector venture funds.",
+   "para": 179,
+   "page": 56,
+   "to": [
+    "nwf",
+    "iuk",
+    "bbb",
+    "dsit"
+   ],
+   "words": 108
+  },
+  {
+   "n": 40,
+   "ch": 4,
+   "sec": 11,
+   "pri": "public",
+   "kind": "con",
+   "text": "The National Wealth Fund has made financing contingent on companies maintaining capital expansion, jobs, or head offices in the UK. This is an important tool. The National Wealth Fund has a significant risk budget, but it also has a mandate to ensure a positive return to the Treasury. It may be difficult to assess that return for long-term science and technology equity investments.",
+   "para": 182,
+   "page": 57,
+   "to": [],
+   "words": 63
+  },
+  {
+   "n": 41,
+   "ch": 4,
+   "sec": 11,
+   "pri": "public",
+   "kind": "rec",
+   "text": "The National Wealth Fund should assess its return on investment in science and technology venture equity on a sufficient time horizon to avoid risk aversion. It should continue to explore ways to ensure that its late-stage scale-up finance supports companies with a serious commitment to scaling up in the UK. It should have an important role in assisting with the sharing and reducing of risk, for example through guarantees and loans as well as equity investments.",
+   "para": 183,
+   "page": 57,
+   "to": [
+    "nwf"
+   ],
+   "words": 76
+  },
+  {
+   "n": 42,
+   "ch": 5,
+   "sec": 12,
+   "pri": "people",
+   "kind": "con",
+   "text": "Visas for scientists remains a critical area where policy must change urgently if the Government is serious about growth. This Committee has repeatedly set out to the Home Office the need for a pro-active policy to attract global scientific and technological talent, in particular by addressing the high up-front costs for even those visas reserved for Global Talent.",
+   "para": 195,
+   "page": 60,
+   "to": [],
+   "words": 58
+  },
+  {
+   "n": 43,
+   "ch": 5,
+   "sec": 12,
+   "pri": "people",
+   "kind": "con",
+   "text": "The UK has a unique opportunity to attract global talent, particularly from the US, yet the Home Office’s historic unwillingness to review the barriers for high-potential talent is an absurd act of national self-harm. The UK Government is lagging behind other countries in this respect. It should be rolling out the red carpet instead of red tape. The Committee welcomes the establishment of the Global Talent Fund, commitments to increase numbers for highly-skilled visa routes, and recent news that fees may be reconsidered, but the scale of resources allocated to the Fund are tiny compared with the scale of the opportunity.",
+   "para": 196,
+   "page": 61,
+   "to": [],
+   "words": 101
+  },
+  {
+   "n": 44,
+   "ch": 5,
+   "sec": 12,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government should urgently use its new Global Talent Taskforce and significantly increased funding for the Global Talent Fund to seize this unique opportunity to attract the scientists and entrepreneurs of the future to the UK. It is critically important that the recently hinted abolition of fees for certain global talent is not blocked by Home Office intransigence.",
+   "para": 197,
+   "page": 61,
+   "to": [
+    "gov",
+    "homeoffice"
+   ],
+   "words": 58
+  },
+  {
+   "n": 45,
+   "ch": 5,
+   "sec": 12,
+   "pri": "people",
+   "kind": "rec",
+   "text": "In addition, the Global Talent Taskforce must find creative and flexible ways to address the high up-front visa costs more generally for those it attracts. Independently of other measures, the Government must change its policy on the Immigration Health Surcharge, allowing it to be repaid over time. The Home Office should embed the mission to attract more global talent as a primary goal alongside reducing net migration. The Scale-up Worker Visa is in need of review as uptake has been very limited.",
+   "para": 198,
+   "page": 61,
+   "to": [
+    "gtt",
+    "gov",
+    "homeoffice"
+   ],
+   "words": 82
+  },
+  {
+   "n": 46,
+   "ch": 5,
+   "sec": 13,
+   "pri": "people",
+   "kind": "con",
+   "text": "Skills England has made sector-specific assessments of skills needs as part of the Industrial Strategy. Despite this, and the widely stressed importance of skills policy, it remains an underfunded area regularly shuffled between departments. Developments in AI will require substantial and expanding retraining programmes, both in using the technology and if it results in workforce reduction across sectors.",
+   "para": 207,
+   "page": 63,
+   "to": [],
+   "words": 58
+  },
+  {
+   "n": 47,
+   "ch": 5,
+   "sec": 13,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government should ensure that the training it funds as part of the Industrial Strategy is commensurate with the skills needs identified by Skills England. It should accept that investment in the UK workforce will be an ongoing and growing requirement in this decade and is key to any technological productivity gains.",
+   "para": 208,
+   "page": 63,
+   "to": [
+    "gov"
+   ],
+   "words": 52
+  },
+  {
+   "n": 48,
+   "ch": 5,
+   "sec": 13,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government should also consider whether there are sufficient entrepreneurial skills in the science and technology research community. Undergraduate courses and PhD training should include entrepreneurial training, and particularly placements with business, wherever possible in order to ensure every student is exposed to industry. Universities must make better use of links with their business schools.",
+   "para": 209,
+   "page": 63,
+   "to": [
+    "gov",
+    "universities"
+   ],
+   "words": 55
+  },
+  {
+   "n": 49,
+   "ch": 5,
+   "sec": 14,
+   "pri": "people",
+   "kind": "con",
+   "text": "Witnesses emphasised the importance of career permeability between academia, entrepreneurship, industry, and government, yet the incentive structures in each of these sectors makes building portfolio careers difficult. All sectors need to value cross-cutting experience more for the new ideas, networks, and experience it can give. Pay structures in the civil service inhibit its ability to attract and retain top talent, particularly in STEM.",
+   "para": 216,
+   "page": 64,
+   "to": [],
+   "words": 63
+  },
+  {
+   "n": 50,
+   "ch": 5,
+   "sec": 14,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government, universities and research funders should encourage and incentivise careers that involve moving in and out of the civil service, academia, and industry, work to align incentives and improve the availability of temporary secondments. The Government and research funders should create more secondments, fellowships, and placements with business, and set targets to increase the number of these opportunities substantially. Initiatives like the Venture Capital Fellowships should be expanded.",
+   "para": 217,
+   "page": 64,
+   "to": [
+    "gov",
+    "universities",
+    "funders"
+   ],
+   "words": 69
+  },
+  {
+   "n": 51,
+   "ch": 5,
+   "sec": 14,
+   "pri": "people",
+   "kind": "rec",
+   "text": "To attract young professionals, the civil service should consider whether its pay offer delivers the highest calibre officials and benefits to the wider economy. This could include rebalancing the total compensation away from pensions, providing more performance-based pay and flexibility in pay scales and developing incentives to retain specialist talent and expertise. A greater approach to flexibility in careers that allows greater movement between academia, industry and government will also help in recruitment and retention for top talent. This could result in fewer but better-paid civil servants.",
+   "para": 218,
+   "page": 65,
+   "to": [
+    "civilservice"
+   ],
+   "words": 87
+  },
+  {
+   "n": 52,
+   "ch": 5,
+   "sec": 15,
+   "pri": "people",
+   "kind": "con",
+   "text": "Witnesses pointed to the power, efficiency, and speed of the science and technology network in Silicon Valley. Strong connections exist there between financiers, entrepreneurs, and universities, reducing the time taken to make the connections needed to scale up. Similar connectivity has been achieved at MIT which provides a highly effective model for UK universities. The issue brings together most of the problems we have been considering in this report: availability of capital where it is needed, expertise for investors, entrepreneurial skills for researchers, permeability between different fields. Improving each of them will create networks; fostering networks will in turn improve those elements.",
+   "para": 224,
+   "page": 66,
+   "to": [],
+   "words": 102
+  },
+  {
+   "n": 53,
+   "ch": 5,
+   "sec": 15,
+   "pri": "people",
+   "kind": "con",
+   "text": "Several witnesses have suggested the idea of a ‘concierge service’ for high-potential technology companies to help them navigate the complexities of government support and regulation, and unblock issues preventing them from scaling. The concierge service proposed in the Government’s Life Sciences Sector Plan is a promising initiative, but it is restricted to life sciences.",
+   "para": 229,
+   "page": 67,
+   "to": [],
+   "words": 54
+  },
+  {
+   "n": 54,
+   "ch": 5,
+   "sec": 15,
+   "pri": "people",
+   "kind": "rec",
+   "text": "There is a clear role for a ‘concierge service’ to identify high-potential science and technology companies and refer companies on a fast-track basis to decision-makers in bodies, such as regulators, the Regulatory Innovation Office, public sector investment bodies and the Office for Global Talent, and to guide them through the scaling up process. The concierge service must not only provide advice but also be empowered to intervene swiftly to clear blockages. The Government could choose to deliver this through DBT’s business growth service or its proposed Life Sciences concierge service. The key is that the concierge service must be authoritative and have the power to intervene and speed up processes and decision-making.",
+   "para": 230,
+   "page": 68,
+   "to": [
+    "gov"
+   ],
+   "words": 112
+  },
+  {
+   "n": 55,
+   "ch": 5,
+   "sec": 15,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government must strengthen the density and connectivity of the UK science and technology network, particularly in specific clusters. These networks need a concentration to reach critical mass; it is better to focus on a smaller number of them. This could include creating start-up campuses like France’s Station F, fostering its own network of ‘scale-up champions’, which could be venture capital investors or technologists, or hosting regular convening events.",
+   "para": 231,
+   "page": 68,
+   "to": [
+    "gov"
+   ],
+   "words": 69
+  },
+  {
+   "n": 56,
+   "ch": 5,
+   "sec": 16,
+   "pri": "people",
+   "kind": "con",
+   "text": "Standards can be potential enablers for start-up companies with new technologies to gain a significant competitive advantage if they are involved with the process of international standard-setting. The UK has significant standards bodies (especially the British Standards Institution) and public sector laboratories (such as the National Physical Laboratory) that can help in the underlying measurements and would benefit from greater participation in international standards-setting meetings.",
+   "para": 238,
+   "page": 69,
+   "to": [],
+   "words": 65
+  },
+  {
+   "n": 57,
+   "ch": 5,
+   "sec": 16,
+   "pri": "people",
+   "kind": "con",
+   "text": "The Regulatory Innovation Office should be important in promoting pro-innovation regulation in key sectors, but it is significantly underpowered. Start-ups and other companies want a single ‘front door’ to understand the regulatory implications of any new products, but the Regulatory Innovation Office is not empowered or resourced to provide this. Regulators regularly ask for more resources to be able to engage with SMEs and innovation, which the RIO is not resourced to provide. As it sits within DSIT, it does not have authority over regulators in other departments.",
+   "para": 246,
+   "page": 71,
+   "to": [],
+   "words": 88
+  },
+  {
+   "n": 58,
+   "ch": 5,
+   "sec": 16,
+   "pri": "people",
+   "kind": "rec",
+   "text": "We welcome the establishment of the RIO, but its role, intentions, and powers need to be set out and clarified. There is a clear demand in the system for additional resources for regulators to engage with innovative technologies. The Government should investigate the best way to provide this, perhaps through an expanded Regulators’ Pioneer Fund available to the RIO. The efforts of the RIO need backing from the centre of Government if it does not have powers over other regulators; it should be aligned with the pro-growth regulatory reform agenda led by the Treasury.",
+   "para": 247,
+   "page": 71,
+   "to": [
+    "gov",
+    "rio"
+   ],
+   "words": 94
+  },
+  {
+   "n": 59,
+   "ch": 5,
+   "sec": 16,
+   "pri": "people",
+   "kind": "rec",
+   "text": "The Government should establish a ‘front door’ for innovative companies to contact to understand the regulatory implications of products and services they might develop. This could be a function of the RIO but it will be unable to perform these functions with its current resources. The task could alternatively sit with the Business Growth Service, or another body such as a concierge service as described above.",
+   "para": 248,
+   "page": 71,
+   "to": [
+    "gov"
+   ],
+   "words": 66
+  },
+  {
+   "n": 60,
+   "ch": 5,
+   "sec": 17,
+   "pri": "research",
+   "kind": "con",
+   "text": "Universities have a key role to play in basic research, the talent and spin-out pipeline, and at various stages of commercialisation. The university funding crisis, caused by inflation-eroded tuition fees and a clampdown on international students, is still unresolved, despite the move to index tuition fees in line with inflation. This has serious implications for the future of UK scientific research and STEM education which rely on university finances. Rather than addressing this issue, the Government will introduce an international student levy which will make the situation worse. The Government cannot afford to take the UK’s strong research base for granted; nor can UK R&D afford a disorderly shrinking of the university sector.",
+   "para": 254,
+   "page": 73,
+   "to": [],
+   "words": 113
+  },
+  {
+   "n": 61,
+   "ch": 5,
+   "sec": 17,
+   "pri": "research",
+   "kind": "rec",
+   "text": "The Government urgently needs to set out a long-term plan to restore financial sustainability to the university sector, particularly when it comes to research. Introducing an international student levy is likely to be self-defeating, robbing universities of both talent and funds, even when coupled with the reintroduction of grants.",
+   "para": 255,
+   "page": 73,
+   "to": [
+    "gov"
+   ],
+   "words": 49
+  },
+  {
+   "n": 62,
+   "ch": 5,
+   "sec": 18,
+   "pri": "research",
+   "kind": "con",
+   "text": "Universities have succeeded in recent years in producing a promising group of spin-out companies. Universities and UKRI must continue to prioritise and incentivise the production of intellectual property and patents, as well as pure research, to allow academics to have time and space for spinning out and commercialisation. There is a continued need to standardise the terms of university spin-out companies in handling intellectual property and for them to keep their equity stakes in spin-out companies reasonable, as suggested by the Independent Review of University Spin-out Companies. Patents are a crucial step on the road to innovation and should be encouraged and incentivised.",
+   "para": 260,
+   "page": 74,
+   "to": [],
+   "words": 103
+  },
+  {
+   "n": 63,
+   "ch": 5,
+   "sec": 18,
+   "pri": "research",
+   "kind": "rec",
+   "text": "Government funders of research such as UKRI should incentivise and track the number of patents that their funding has supported as a key performance indicator, as well as using their register of spin-out companies to monitor progress in this area. The Government and universities should continue to work on implementing the recommendations of the Independent Review of University Spin-out Companies.",
+   "para": 261,
+   "page": 74,
+   "to": [
+    "funders",
+    "gov",
+    "universities"
+   ],
+   "words": 60
+  },
+  {
+   "n": 64,
+   "ch": 6,
+   "sec": 19,
+   "pri": "council",
+   "kind": "con",
+   "text": "The Industrial Strategy sets out overarching targets for the UK to become the third-best place in the world to scale up a technology business, and to achieve the first $1-trillion tech company in the UK by 2035. Getting this right requires coordinated action across Government departments and public bodies, including No 10, the Treasury, DSIT, DBT, DfE, the Home Office, delivery departments, UKRI, Innovate UK, the British Business Bank, the National Wealth Fund, procurement authorities in government and regulators. This coordination has proved difficult to achieve in the past, particularly when departments pull in contradictory directions, despite the existence of bodies such as the Growth Mission Board and National Science and Technology Council.",
+   "para": 267,
+   "page": 76,
+   "to": [],
+   "words": 113
+  },
+  {
+   "n": 65,
+   "ch": 6,
+   "sec": 19,
+   "pri": "council",
+   "kind": "con",
+   "text": "DSIT has a ‘horizontal role’ to play across government, both to achieve the broader mission of commercialising and scaling up science and technology, and to act as a centre of scientific and technological expertise for Government.",
+   "para": 268,
+   "page": 76,
+   "to": [],
+   "words": 36
+  },
+  {
+   "n": 66,
+   "ch": 6,
+   "sec": 19,
+   "pri": "council",
+   "kind": "rec",
+   "text": "The Industrial Strategy commits DSIT to establishing a “monitoring and evaluation framework” for its ambitions around the technology sector. This should track metrics including:\n• the amount of scale-up funding at different rounds that UK science and technology companies are receiving, quarterly, including investments by the British Business Bank and National Wealth Fund and from institutional investors via the Mansion House process;\n• the ratio of foreign to domestic capital in late-stage funding rounds and valuations of technology companies (for example, the number of unicorn companies);\n• the number of spin-out companies, patents, and research publications supported by UK Government funding;\n• the total value and speed of Innovate UK grants awarded;\n• business R&D expenditure, foreign direct investment in R&D and greenfield infrastructure;\n• the value of innovative procurement contracts or procurement contracts with UK-based SMEs, broken down by Government department and measured relative to SBIR targets;\n• the numbers of people enrolled in STEM skills training and the number of STEM and digital visas issued; and\n• the number of domestic initial public offerings of companies or acquisitions versus the number of technology companies sold or floated overseas.",
+   "para": 269,
+   "page": 76,
+   "to": [
+    "dsit"
+   ],
+   "words": 190
+  },
+  {
+   "n": 67,
+   "ch": 6,
+   "sec": 19,
+   "pri": "council",
+   "kind": "rec",
+   "text": "The Government should commit to regular public reporting of these metrics, every six months, illustrating the progress of its overarching mission to improve scaling up for technology companies. Critically, this must spur action: the metrics should feed into the cross-government committees (including the Industrial Strategy Advisory Council and the Strategic Public Investment Forum) to spur further policy actions when one or more indicators is lagging behind.",
+   "para": 270,
+   "page": 77,
+   "to": [
+    "gov"
+   ],
+   "words": 66
+  },
+  {
+   "n": 68,
+   "ch": 6,
+   "sec": 19,
+   "pri": "council",
+   "kind": "rec",
+   "text": "But this is not sufficient. A continued lack of coordination demands a new and more robust structure to provide leadership, which is needed from the top or there will be no progress. It should be coordinated by the National Council for Science, Technology and Growth, a newly-established body that includes the Prime Minister, Chancellor, and Minister for Science, Research, and Innovation as well as principals from the Department for Education, Ministry of Defence, Home Office, DHSC, DESNZ and Department for Business and Trade. While we welcome the Department’s suggestion that the Science and Technology Cabinet sub-committee could perform this role, such a body needs to meet frequently. It must be used as a proper forum for driving growth, resolving conflicts between departments and coordinating on strategic decisions, for example around technological sovereignty, rather than as a rubber-stamping forum. It would also benefit from the ad-hoc inclusion of key non-ministerial figures, such as the heads of the British Business Bank and National Wealth Fund, and the ability to meet responsively in a crisis situation.",
+   "para": 271,
+   "page": 77,
+   "to": [
+    "gov",
+    "council"
+   ],
+   "words": 173
+  },
+  {
+   "n": 69,
+   "ch": 6,
+   "sec": 19,
+   "pri": "council",
+   "kind": "rec",
+   "text": "We therefore recommend that the Council be given similar prominence, resources and working practices to the National Security Council. Leadership and a sense of urgency at the highest levels is needed to stop the bleeding and drive growth.",
+   "para": 272,
+   "page": 77,
+   "to": [
+    "gov"
+   ],
+   "words": 38
+  },
+  {
+   "n": 70,
+   "ch": 6,
+   "sec": 19,
+   "pri": "other",
+   "kind": "con",
+   "text": "The issues facing the UK economy are grave, but not insurmountable. There is enormous potential to seize this moment of technological and geopolitical opportunity, and catalyse the growth that the UK badly needs. But it will require much more focus and a concerted effort to lead the UK out of stagnation. If the Government helps the entrepreneurs, unlocks investment, changes the culture around innovation, and organises its efforts, it can still reap enormous rewards for the nation.",
+   "para": 273,
+   "page": 77,
+   "to": [],
+   "words": 77
+  }
+ ],
+ "para_pages": {
+  "1": 9,
+  "2": 9,
+  "3": 9,
+  "4": 10,
+  "5": 10,
+  "6": 10,
+  "7": 11,
+  "8": 11,
+  "9": 11,
+  "10": 11,
+  "11": 12,
+  "12": 12,
+  "13": 12,
+  "14": 12,
+  "15": 12,
+  "16": 12,
+  "17": 13,
+  "18": 13,
+  "19": 13,
+  "20": 14,
+  "21": 14,
+  "22": 14,
+  "23": 15,
+  "24": 15,
+  "25": 16,
+  "26": 16,
+  "27": 16,
+  "28": 16,
+  "29": 17,
+  "30": 17,
+  "31": 17,
+  "32": 17,
+  "33": 17,
+  "34": 18,
+  "35": 18,
+  "36": 18,
+  "37": 18,
+  "38": 19,
+  "39": 19,
+  "40": 19,
+  "41": 19,
+  "42": 20,
+  "43": 20,
+  "44": 20,
+  "45": 20,
+  "46": 21,
+  "47": 21,
+  "48": 21,
+  "49": 21,
+  "50": 21,
+  "51": 22,
+  "52": 22,
+  "53": 22,
+  "54": 22,
+  "55": 23,
+  "56": 23,
+  "57": 24,
+  "58": 24,
+  "59": 24,
+  "60": 24,
+  "61": 24,
+  "62": 25,
+  "63": 25,
+  "64": 26,
+  "65": 26,
+  "66": 27,
+  "67": 27,
+  "68": 28,
+  "69": 28,
+  "70": 28,
+  "71": 28,
+  "72": 29,
+  "73": 29,
+  "74": 30,
+  "75": 30,
+  "76": 30,
+  "77": 30,
+  "78": 30,
+  "79": 31,
+  "80": 31,
+  "81": 31,
+  "82": 31,
+  "83": 31,
+  "84": 31,
+  "85": 32,
+  "86": 32,
+  "87": 32,
+  "88": 32,
+  "89": 33,
+  "90": 33,
+  "91": 33,
+  "92": 34,
+  "93": 34,
+  "94": 34,
+  "95": 35,
+  "96": 35,
+  "97": 35,
+  "98": 35,
+  "99": 36,
+  "100": 36,
+  "101": 36,
+  "102": 36,
+  "103": 37,
+  "104": 37,
+  "105": 37,
+  "106": 37,
+  "107": 37,
+  "108": 38,
+  "109": 38,
+  "110": 38,
+  "111": 38,
+  "112": 39,
+  "113": 39,
+  "114": 39,
+  "115": 39,
+  "116": 39,
+  "117": 40,
+  "118": 40,
+  "119": 40,
+  "120": 41,
+  "121": 41,
+  "122": 41,
+  "123": 41,
+  "124": 41,
+  "125": 42,
+  "126": 42,
+  "127": 42,
+  "128": 42,
+  "129": 43,
+  "130": 43,
+  "131": 43,
+  "132": 43,
+  "133": 44,
+  "134": 45,
+  "135": 45,
+  "136": 45,
+  "137": 45,
+  "138": 45,
+  "139": 46,
+  "140": 46,
+  "141": 48,
+  "142": 48,
+  "143": 48,
+  "144": 49,
+  "145": 49,
+  "146": 49,
+  "147": 49,
+  "148": 50,
+  "149": 50,
+  "150": 50,
+  "151": 50,
+  "152": 50,
+  "153": 51,
+  "154": 51,
+  "155": 51,
+  "156": 51,
+  "157": 51,
+  "158": 52,
+  "159": 52,
+  "160": 52,
+  "161": 52,
+  "162": 53,
+  "163": 53,
+  "164": 53,
+  "165": 53,
+  "166": 54,
+  "167": 54,
+  "168": 54,
+  "169": 54,
+  "170": 54,
+  "171": 55,
+  "172": 55,
+  "173": 55,
+  "174": 55,
+  "175": 56,
+  "176": 56,
+  "177": 56,
+  "178": 56,
+  "179": 56,
+  "180": 56,
+  "181": 57,
+  "182": 57,
+  "183": 57,
+  "184": 58,
+  "185": 58,
+  "186": 58,
+  "187": 58,
+  "188": 59,
+  "189": 59,
+  "190": 59,
+  "191": 59,
+  "192": 59,
+  "193": 60,
+  "194": 60,
+  "195": 60,
+  "196": 61,
+  "197": 61,
+  "198": 61,
+  "199": 61,
+  "200": 61,
+  "201": 61,
+  "202": 62,
+  "203": 62,
+  "204": 62,
+  "205": 62,
+  "206": 62,
+  "207": 63,
+  "208": 63,
+  "209": 63,
+  "210": 63,
+  "211": 63,
+  "212": 64,
+  "213": 64,
+  "214": 64,
+  "215": 64,
+  "216": 64,
+  "217": 64,
+  "218": 65,
+  "219": 65,
+  "220": 65,
+  "221": 65,
+  "222": 65,
+  "223": 66,
+  "224": 66,
+  "225": 66,
+  "226": 67,
+  "227": 67,
+  "228": 67,
+  "229": 67,
+  "230": 68,
+  "231": 68,
+  "232": 68,
+  "233": 68,
+  "234": 68,
+  "235": 69,
+  "236": 69,
+  "237": 69,
+  "238": 69,
+  "239": 69,
+  "240": 70,
+  "241": 70,
+  "242": 70,
+  "243": 70,
+  "244": 71,
+  "245": 71,
+  "246": 71,
+  "247": 71,
+  "248": 71,
+  "249": 71,
+  "250": 72,
+  "251": 72,
+  "252": 72,
+  "253": 72,
+  "254": 73,
+  "255": 73,
+  "256": 73,
+  "257": 73,
+  "258": 74,
+  "259": 74,
+  "260": 74,
+  "261": 74,
+  "262": 75,
+  "263": 75,
+  "264": 75,
+  "265": 75,
+  "266": 76,
+  "267": 76,
+  "268": 76,
+  "269": 76,
+  "270": 77,
+  "271": 77,
+  "272": 77,
+  "273": 77
+ }
+}
