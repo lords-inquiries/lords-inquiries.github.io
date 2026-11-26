@@ -146,9 +146,11 @@ def paper(p):
     v = pick(p, "hlPaper")
     if isinstance(v, dict):
         n = pick(v, "number", "paperNumber")
-        sess = pick(v, "session", "sessionName")
+        sess = pick(v, "sessionDescription", "session", "sessionName")
         if n:
-            return f"HL Paper {n}" + (f" ({sess})" if isinstance(sess, str) else "")
+            n = str(n)
+            label = n if n.lower().startswith("hl") else f"HL Paper {n}"
+            return label + (f" ({sess})" if isinstance(sess, str) else "")
         return None
     if v:
         return f"HL Paper {v}"
@@ -205,6 +207,28 @@ def hansard_link(r):
     return f"https://hansard.parliament.uk/Lords/{date}/debates/{ext}/{slug}"
 
 
+def check_links(reports):
+    """Debug only: confirm the link patterns resolve."""
+    urls = []
+    for r in reports:
+        if r.get("bid") and r.get("we"):
+            urls.append(f"https://committees.parliament.uk/work/{r['bid']}/default/publications/written-evidence/")
+            urls.append(f"https://committees.parliament.uk/work/{r['bid']}/default/publications/oral-evidence/")
+            break
+    urls += [r["deb"]["url"] for r in reports if r.get("deb")][:2]
+    urls += [g["url"] for r in reports for g in r["gr"]][:2]
+    urls += [r["url"] for r in reports][:2]
+    for u in urls:
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 lords-inquiries link check"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                body = resp.read(200000).decode("utf-8", "replace")
+                t = re.search(r"<title>(.*?)</title>", body, re.S)
+                log(f"LINK {resp.status} {u} -> {resp.geturl()} | {(t.group(1).strip() if t else '')[:120]}")
+        except Exception as e:
+            log(f"LINK FAIL {u}: {e}")
+
+
 # ---------- build ----------
 
 def build(src, now):
@@ -240,10 +264,16 @@ def build(src, now):
             uniq.append(d)
     debates = uniq
 
-    reports = []
-    for p in raw_reports:
+    reports, seen_titles = [], set()
+    for p in sorted(raw_reports, key=lambda x: pick(x, "publicationStartDate", default="")):
         pid = p["id"]
         title = clean_title(pick(p, "description", default=""))
+        if re.search(r"\bevidence\s*\(|\s[-–]\s*evidence\b", title, re.I):
+            continue  # published evidence volumes, not reports
+        key = re.sub(r"[^a-z0-9]", "", title.lower())
+        if key in seen_titles:
+            continue  # same report listed twice (e.g. HTML and PDF entries)
+        seen_titles.add(key)
         date = day(pick(p, "publicationStartDate"))
         bus = [b for b in (pick(p, "businesses", default=[]) or []) if isinstance(b, dict)]
         inquiry = bus[0] if bus else {}
@@ -263,7 +293,11 @@ def build(src, now):
                 except Exception as e:
                     log(f"{kind} count failed for business {bid}: {e}")
 
-        gids = list(dict.fromkeys(ref_ids(pick(p, "governmentResponses")) + responses_for.get(pid, [])))
+        grs = pick(p, "governmentResponses")
+        if isinstance(grs, dict):
+            rec["due"] = day(pick(grs, "responseDeadline"))
+            grs = pick(grs, "publication", "publications", default=[])
+        gids = list(dict.fromkeys(ref_ids(grs) + responses_for.get(pid, [])))
         gr = []
         for gid in gids:
             g = gov_by_id.get(gid)
@@ -273,23 +307,28 @@ def build(src, now):
                 gr.append({"t": "Government response", "d": None, "url": f"https://committees.parliament.uk/publications/{gid}/"})
         rec["gr"] = sorted(gr, key=lambda x: x["d"] or "9999")
 
-        # match a Lords debate: title-word overlap with report or inquiry title, held after publication
-        best, score = None, 0.0
-        target = words(title) | words(rec["inq"] or "")
-        for d in debates:
-            if date and d["date"] and d["date"] < date:
-                continue
-            w = words(d["core"])
-            if not w:
-                continue
-            s = len(w & target) / len(w)
-            if s > score:
-                best, score = d, s
-        if best and score >= 0.5:
-            rec["deb"] = {"d": best["date"], "url": best["url"], "t": best["title"]}
         reports.append(rec)
 
+    # Each debate goes to the single best-matching report published before it;
+    # ties go to the most recent such report.
+    for d in debates:
+        w = words(d["core"])
+        if not w:
+            continue
+        best, best_key = None, None
+        for r in reports:
+            if r["d"] and d["date"] and d["date"] < r["d"]:
+                continue
+            score = len(w & (words(r["t"]) | words(r["inq"] or ""))) / len(w)
+            k = (score, r["d"] or "")
+            if score >= 0.5 and (best_key is None or k > best_key):
+                best, best_key = r, k
+        if best and (not best.get("deb") or d["date"] > best["deb"]["d"]):
+            best["deb"] = {"d": d["date"], "url": d["url"], "t": d["title"]}
+
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
+    if DEBUG:
+        check_links(reports)
     return {"generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "committee": COMMITTEE_NAME, "committeeId": COMMITTEE_ID, "reports": reports}
 
 

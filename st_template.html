@@ -134,7 +134,7 @@ function ev(r,key,label,path){
 function row(r){
   const g=firstGr(r);
   const grS=r.gr.length?stage('Government response',g.d?fmt(g.d):'Published',g.d&&r.d?days(r.d,g.d)+' days after report'+(r.gr.length>1?' · '+r.gr.length+' responses':''):'',g.url,true)
-    :stage('Government response',r.kind==='Report'?'Awaiting':'Not expected',r.kind==='Report'&&r.d?days(r.d,today)+' days since report':'','',false);
+    :stage('Government response',r.kind==='Report'?'Awaiting':'Not expected',r.kind==='Report'?(r.due&&r.due>=today?'Due by '+fmt(r.due):r.d?days(r.d,today)+' days since report':''):'','',false);
   const dS=r.deb?stage('Lords debate',fmt(r.deb.d),'Read in Hansard',r.deb.url,true):stage('Lords debate','Not found','','',false);
   return `<article class="rep"><div><div class="when">${fmt(r.d)}${r.paper?' · '+esc(r.paper):''}${r.kind!=='Report'?' · '+esc(r.kind):''}</div>
   <h3><a href="${esc(r.url)}">${esc(r.t)}</a></h3>

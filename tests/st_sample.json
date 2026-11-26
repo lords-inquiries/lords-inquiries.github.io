@@ -6,8 +6,9 @@
     "description": "3rd Report - Rebuilding forensic science for criminal justice: an urgent need",
     "publicationStartDate": "2026-02-17T00:01:00",
     "hlPaper": {
-     "number": 256,
-     "session": "2024-26"
+     "number": "HL Paper 256",
+     "sessionId": 39,
+     "sessionDescription": "2024-26"
     },
     "type": {
      "id": 1,
@@ -50,10 +51,17 @@
      "id": 1,
      "name": "Department for Science, Innovation and Technology"
     },
-    "governmentResponses": [
-     51379,
-     51380
-    ],
+    "governmentResponses": {
+     "publication": [
+      {
+       "id": 51379
+      },
+      {
+       "id": 51380
+      }
+     ],
+     "responseDeadline": "2026-01-05T00:00:00"
+    },
     "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/50053/50053.htm",
     "documents": []
    },
@@ -101,8 +109,60 @@
      "id": 1,
      "name": "Department for Science, Innovation and Technology"
     },
-    "governmentResponses": [],
+    "governmentResponses": {
+     "publication": [],
+     "responseDeadline": "2027-01-26T00:00:00",
+     "responseExcepted": true
+    },
     "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/46241/46241.htm",
+    "documents": []
+   },
+   {
+    "id": 99,
+    "description": "1st Report - Long-duration energy storage: get on with it - Evidence (Corrected oral and written evidence)",
+    "publicationStartDate": "2024-03-13T00:01:00",
+    "hlPaper": 68,
+    "type": {
+     "id": 1,
+     "name": "Report"
+    },
+    "businesses": [
+     {
+      "id": 7872,
+      "title": "Long-duration energy storage"
+     }
+    ],
+    "respondingDepartment": {
+     "id": 1,
+     "name": "Department for Energy Security and Net Zero"
+    },
+    "governmentResponses": [
+     44802
+    ],
+    "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/43779/43779.htm",
+    "documents": []
+   },
+   {
+    "id": 43778,
+    "description": "1st Report - Energy storage: an older look",
+    "publicationStartDate": "2019-01-01T00:00:00",
+    "hlPaper": 68,
+    "type": {
+     "id": 1,
+     "name": "Report"
+    },
+    "businesses": [
+     {
+      "id": 1,
+      "title": "Energy storage"
+     }
+    ],
+    "respondingDepartment": {
+     "id": 1,
+     "name": "Department for Energy Security and Net Zero"
+    },
+    "governmentResponses": [],
+    "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/43779/43779.htm",
     "documents": []
    }
   ],
