@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lords Science and Technology reports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: a committee clerk's progress board: exact, quiet, every fact one tap away.
+IDEA: the report's life in the House: published, evidence, Government reply, debated.
+PICTURE: each report as a row with a four-stage track; headline figures above.
+COLOUR and TYPE: white, ink, Lords red band, gold rule; red for done stages, grey for waiting; Source Serif 4 titles, Libre Franklin text.
+LAYOUT: red band, four figures, filter bar, stacked report rows; stages stack on phones.
+*/
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#141113);--ink:light-dark(#1b1517,#f1ecee);--mute:light-dark(#5e5458,#b3a8ac);--line:light-dark(#e6dfe1,#3a3034);--red:light-dark(#a3172b,#d4485b);--band:#8e1325;--gold:#c9a227;--card:light-dark(#fbf7f8,#1d181a);--wait:light-dark(#f1eeef,#272123)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Libre Franklin",system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(24px,4vw,56px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+header{background:var(--band);color:#fff;border-bottom:3px solid var(--gold)}
+header a{color:#fff}
+.crumb{font-size:14px;margin:0 0 12px;color:#f0c9d0}
+h1{font:600 clamp(32px,5vw,50px)/1.05 "Source Serif 4",Georgia,serif;margin:0 0 10px;text-wrap:balance}
+header p{margin:0;max-width:68ch;color:#f6dfe3}
+.meta{margin-top:14px;font-size:14px;color:#f0c9d0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+.kpi{border-top:4px solid var(--red);background:var(--card);border-radius:6px;padding:16px 18px}
+.kpi b{display:block;font:600 clamp(34px,4vw,44px)/1 "Source Serif 4",Georgia,serif;color:var(--red)}
+.kpi span{display:block;margin-top:6px;font-size:15px}
+.kpi small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
+h2{font:600 26px/1.15 "Source Serif 4",Georgia,serif;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 18px;font-size:15px}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:0 0 12px}
+.toolbar label{display:flex;flex-direction:column;font-size:13px;color:var(--mute);gap:4px;flex:1 1 200px}
+.toolbar label.q{flex:2 1 280px}
+input,select{font:16px "Libre Franklin",sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;min-height:44px;padding:8px 10px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.count{font-size:14px;color:var(--mute);margin:0 0 8px}
+.rep{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.6fr);gap:18px 28px;padding:20px 0;border-top:1px solid var(--line)}
+.rep:last-child{border-bottom:1px solid var(--line)}
+.rep .when{font-size:14px;color:var(--mute);white-space:nowrap}
+.rep h3{font-size:19px;line-height:1.3;margin:4px 0 6px}
+.rep h3 a{color:var(--ink);text-decoration-color:var(--red);text-underline-offset:3px}
+.rep .about{font-size:14px;color:var(--mute)}
+.track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-self:start}
+.st{border-radius:5px;padding:10px 12px;background:var(--wait);font-size:14px;line-height:1.35;min-height:72px;display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid transparent}
+.st .k{font-size:12px;font-weight:600;color:var(--mute)}
+.st .v{font-weight:600}
+.st .n{font-size:13px;color:var(--mute)}
+a.st.done{background:light-dark(#f7e4e7,#3a2228);border-color:light-dark(#ecc7cd,#5a2d36)}
+a.st.done .k{color:var(--red)}
+a.st:hover{border-color:var(--red)}
+.st.waiting .v{color:var(--mute);font-weight:500}
+.empty{padding:28px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:6px}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer p{max-width:84ch;margin:0 0 8px}footer a{color:var(--ink)}
+@media(max-width:900px){.rep{grid-template-columns:1fr}}
+@media(max-width:520px){.track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head>
+<body>
+<header class="band"><div class="wrap">
+<p class="crumb"><a href="../">← Open Lords inquiries</a></p>
+<h1>House of Lords Science and Technology Committee: reports tracker</h1>
+<p>Every report the committee has published since 2016, with links to the evidence behind it, the Government's response and any debate on it in the House of Lords.</p>
+<p class="meta" id="meta"></p>
+</div></header>
+
+<section class="band"><div class="wrap">
+<div class="kpis" id="kpis"></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+<h2>Reports</h2>
+<p class="sub">Tap a stage to open it. Grey stages haven't happened yet, or couldn't be found automatically.</p>
+<div class="toolbar">
+<label class="q">Search<input id="q" type="search" placeholder="e.g. forensic, energy, AI" autocomplete="off"></label>
+<label>Show<select id="f"><option value="">All reports</option><option value="nogr">Awaiting Government response</option><option value="nodeb">Not yet debated</option><option value="deb">Debated in the Lords</option></select></label>
+<label>Year<select id="y"><option value="">Any year</option></select></label>
+</div>
+<p class="count" id="count" aria-live="polite"></p>
+<div id="list"></div>
+</div></section>
+
+<footer class="band"><div class="wrap">
+<p>Sources: UK Parliament Committees API (reports, Government responses, evidence) and the Hansard API (Lords debates). Refreshed every morning. Debates are matched to reports automatically by title, so a debate that was held under a different title may be missing.</p>
+<p>An unofficial tool, not a Parliament service. <a href="data.json">Download the data (JSON)</a> · <a href="https://committees.parliament.uk/committee/193/science-and-technology-committee/">Committee website</a></p>
+</div></footer>
+
+<script>
+{
+const DATA=/*__DATA__*/null;
+const R=DATA.reports;
+const $=s=>document.querySelector(s);
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const fmt=s=>s?new Date(s+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'';
+const days=(a,b)=>Math.round((Date.parse(b+'T12:00:00Z')-Date.parse(a+'T12:00:00Z'))/864e5);
+const today=new Date().toISOString().slice(0,10);
+const firstGr=r=>r.gr.find(g=>g.d)||r.gr[0];
+const median=a=>{if(!a.length)return null;const s=[...a].sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:Math.round((s[m-1]+s[m])/2)};
+
+$('#meta').textContent='Updated '+fmt(DATA.generated.slice(0,10))+' · '+R.length+' reports';
+
+{
+  const withGr=R.filter(r=>r.gr.length);
+  const lag=withGr.map(r=>{const g=firstGr(r);return g&&g.d&&r.d?days(r.d,g.d):null}).filter(x=>x!==null&&x>=0);
+  const waiting=R.filter(r=>!r.gr.length&&r.kind==='Report');
+  const deb=R.filter(r=>r.deb);
+  const tiles=[
+    [R.length,'reports published','since '+fmt(R.map(r=>r.d).filter(Boolean).sort()[0])],
+    [withGr.length,'Government responses received',median(lag)!==null?'typically '+median(lag)+' days after the report':''],
+    [waiting.length,'awaiting a Government response',waiting.length?'oldest: '+esc(waiting[waiting.length-1].t.slice(0,48))+(waiting[waiting.length-1].t.length>48?'…':''):'none outstanding'],
+    [deb.length,'debated in the Lords chamber',deb.length?'latest '+fmt(deb.map(r=>r.deb.d).sort().pop()):'']
+  ];
+  $('#kpis').innerHTML=tiles.map(t=>`<div class="kpi"><b>${t[0]}</b><span>${t[1]}</span><small>${t[2]}</small></div>`).join('');
+}
+
+const ysel=$('#y');
+[...new Set(R.map(r=>(r.d||'').slice(0,4)).filter(Boolean))].sort().reverse().forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;ysel.appendChild(o)});
+
+function stage(k,v,n,url,done){
+  const inner=`<span class="k">${k}</span><span class="v">${v}</span>${n?`<span class="n">${n}</span>`:''}`;
+  return url?`<a class="st${done?' done':''}" href="${esc(url)}">${inner}</a>`:`<div class="st waiting">${inner}</div>`;
+}
+function ev(r,key,label,path){
+  const n=r[key];
+  if(!r.bid)return stage(label,'Not linked','','',false);
+  const url='https://committees.parliament.uk/work/'+r.bid+'/default/publications/'+path+'/';
+  if(n===0)return stage(label,'None published','',url,false);
+  return stage(label,(n??'View')+(n!=null?(key==='we'?' submissions':' sessions'):''),'',url,true);
+}
+function row(r){
+  const g=firstGr(r);
+  const grS=r.gr.length?stage('Government response',g.d?fmt(g.d):'Published',g.d&&r.d?days(r.d,g.d)+' days after report'+(r.gr.length>1?' · '+r.gr.length+' responses':''):'',g.url,true)
+    :stage('Government response',r.kind==='Report'?'Awaiting':'Not expected',r.kind==='Report'&&r.d?days(r.d,today)+' days since report':'','',false);
+  const dS=r.deb?stage('Lords debate',fmt(r.deb.d),'Read in Hansard',r.deb.url,true):stage('Lords debate','Not found','','',false);
+  return `<article class="rep"><div><div class="when">${fmt(r.d)}${r.paper?' · '+esc(r.paper):''}${r.kind!=='Report'?' · '+esc(r.kind):''}</div>
+  <h3><a href="${esc(r.url)}">${esc(r.t)}</a></h3>
+  <div class="about">${r.inq&&r.inq!==r.t?'Inquiry: '+(r.work?`<a href="${esc(r.work)}" style="color:inherit">${esc(r.inq)}</a>`:esc(r.inq)):''}${r.dept?(r.inq&&r.inq!==r.t?'<br>':'')+'Lead department: '+esc(r.dept):''}</div></div>
+  <div class="track">${ev(r,'we','Written evidence','written-evidence')}${ev(r,'oe','Oral evidence','oral-evidence')}${grS}${dS}</div></article>`;
+}
+function render(){
+  const q=$('#q').value.trim().toLowerCase(),f=$('#f').value,y=ysel.value;
+  const rows=R.filter(r=>(!y||(r.d||'').startsWith(y))&&(!q||(r.t+' '+(r.inq||'')+' '+(r.dept||'')).toLowerCase().includes(q))&&
+    (!f||(f==='nogr'&&!r.gr.length&&r.kind==='Report')||(f==='nodeb'&&!r.deb)||(f==='deb'&&r.deb)));
+  $('#count').textContent=rows.length+' of '+R.length+' reports';
+  $('#list').innerHTML=rows.length?rows.map(row).join(''):'<div class="empty">No reports match. Try clearing the search or filters.</div>';
+}
+['#q','#f','#y'].forEach(s=>$(s).addEventListener('input',render));
+render();
+}
+</script>
+</body>
+</html>

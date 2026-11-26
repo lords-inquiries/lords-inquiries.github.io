@@ -1,0 +1,175 @@
+{
+ "publications": {
+  "1": [
+   {
+    "id": 51712,
+    "description": "3rd Report - Rebuilding forensic science for criminal justice: an urgent need",
+    "publicationStartDate": "2026-02-17T00:01:00",
+    "hlPaper": {
+     "number": 256,
+     "session": "2024-26"
+    },
+    "type": {
+     "id": 1,
+     "name": "Report"
+    },
+    "businesses": [
+     {
+      "id": 9424,
+      "title": "Forensic science: follow-up"
+     }
+    ],
+    "respondingDepartment": {
+     "id": 1,
+     "name": "Department for Science, Innovation and Technology"
+    },
+    "governmentResponses": [
+     {
+      "id": 52720
+     }
+    ],
+    "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/51712/51712.htm",
+    "documents": []
+   },
+   {
+    "id": 50053,
+    "description": "2nd Report - Bleeding to death: the science and technology growth emergency",
+    "publicationStartDate": "2025-11-05T00:01:00",
+    "hlPaper": 192,
+    "type": {
+     "id": 1,
+     "name": "Report"
+    },
+    "businesses": [
+     {
+      "id": 9014,
+      "title": "Financing and Scaling UK Science and Technology: Innovation, Investment, Industry"
+     }
+    ],
+    "respondingDepartment": {
+     "id": 1,
+     "name": "Department for Science, Innovation and Technology"
+    },
+    "governmentResponses": [
+     51379,
+     51380
+    ],
+    "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/50053/50053.htm",
+    "documents": []
+   },
+   {
+    "id": 43779,
+    "description": "1st Report - Long-duration energy storage: get on with it",
+    "publicationStartDate": "2024-03-13T00:01:00",
+    "hlPaper": 68,
+    "type": {
+     "id": 1,
+     "name": "Report"
+    },
+    "businesses": [
+     {
+      "id": 7872,
+      "title": "Long-duration energy storage"
+     }
+    ],
+    "respondingDepartment": {
+     "id": 1,
+     "name": "Department for Energy Security and Net Zero"
+    },
+    "governmentResponses": [
+     44802
+    ],
+    "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/43779/43779.htm",
+    "documents": []
+   },
+   {
+    "id": 46241,
+    "description": "1st Report - Don't fail to scale: seizing the opportunity of engineering biology",
+    "publicationStartDate": "2025-01-14T00:01:00",
+    "hlPaper": 55,
+    "type": {
+     "id": 1,
+     "name": "Report"
+    },
+    "businesses": [
+     {
+      "id": 8377,
+      "title": "Engineering biology"
+     }
+    ],
+    "respondingDepartment": {
+     "id": 1,
+     "name": "Department for Science, Innovation and Technology"
+    },
+    "governmentResponses": [],
+    "additionalContentUrl": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/46241/46241.htm",
+    "documents": []
+   }
+  ],
+  "2": [
+   {
+    "id": 52720,
+    "description": "Government response to Rebuilding forensic science",
+    "publicationStartDate": "2026-04-20T00:00:00",
+    "responseToPublicationId": 51712,
+    "documents": [
+     {
+      "documentId": 9001
+     }
+    ]
+   },
+   {
+    "id": 51379,
+    "description": "Government Response",
+    "publicationStartDate": "2026-01-10T00:00:00",
+    "responseToPublicationId": 50053,
+    "documents": []
+   },
+   {
+    "id": 51380,
+    "description": "Letter",
+    "publicationStartDate": "2026-01-12T00:00:00",
+    "responseToPublicationId": 50053,
+    "documents": []
+   },
+   {
+    "id": 44802,
+    "description": "Government response",
+    "publicationStartDate": "2024-05-20T00:00:00",
+    "responseToPublicationId": 43779
+   }
+  ]
+ },
+ "evidence": {
+  "WrittenEvidence": {
+   "9424": 40,
+   "9014": 120,
+   "7872": 75
+  },
+  "OralEvidence": {
+   "9424": 10,
+   "9014": 18,
+   "7872": 0
+  }
+ },
+ "hansard": [
+  {
+   "Title": "Long-duration Energy Storage (Science and Technology Committee Report)",
+   "SittingDate": "2024-07-12T00:00:00",
+   "DebateSectionExtId": "ABC-123",
+   "House": "Lords"
+  },
+  {
+   "Title": "Engineering Biology (Science and Technology Committee Report)",
+   "SittingDate": "2024-01-01T00:00:00",
+   "DebateSectionExtId": "OLD-1",
+   "House": "Lords"
+  },
+  {
+   "Title": "Science and Technology Superpower",
+   "SittingDate": "2023-01-01T00:00:00",
+   "DebateSectionExtId": "X",
+   "House": "Lords"
+  }
+ ]
+}
