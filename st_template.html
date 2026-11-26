@@ -54,6 +54,19 @@ a.st.done{background:light-dark(#f7e4e7,#3a2228);border-color:light-dark(#ecc7cd
 a.st.done .k{color:var(--red)}
 a.st:hover{border-color:var(--red)}
 .st.waiting .v{color:var(--mute);font-weight:500}
+.subs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:4px;font:600 15px "Libre Franklin",sans-serif;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--bg);cursor:pointer}
+.btn.pri{background:var(--red);border-color:var(--red);color:#fff}
+.sess{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:8px 24px;padding:18px 0;border-top:1px solid var(--line)}
+.sess .day{font:600 24px/1.1 "Source Serif 4",Georgia,serif;color:var(--red)}
+.sess .day small{display:block;font:500 14px "Libre Franklin",sans-serif;color:var(--mute);margin-top:4px}
+.sess h3{font-size:18px;margin:0 0 6px;line-height:1.3}
+.sess .x{color:var(--red);font-weight:700}
+.panel{margin:8px 0 0;padding:0;list-style:none;font-size:15px}
+.panel li{margin:0 0 4px}.panel .t{color:var(--mute);font-size:13px;font-weight:600;white-space:nowrap;margin-inline-end:6px}
+.links{margin-top:8px;font-size:14px;display:flex;gap:16px;flex-wrap:wrap}.links a{color:var(--ink);font-weight:600}
+details.past{margin-top:12px}details.past summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}
+@media(max-width:600px){.sess{grid-template-columns:1fr}}
 .empty{padding:28px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:6px}
 footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 footer p{max-width:84ch;margin:0 0 8px}footer a{color:var(--ink)}
@@ -72,6 +85,14 @@ footer p{max-width:84ch;margin:0 0 8px}footer a{color:var(--ink)}
 <div class="kpis" id="kpis"></div>
 </div></section>
 
+<section class="band" style="padding-top:0" id="sessions"><div class="wrap">
+<h2>Evidence sessions</h2>
+<p class="sub">Public meetings where the committee questions witnesses. Subscribe and they appear in your calendar automatically, including any changes.</p>
+<div class="subs" id="subs"></div>
+<div id="upcoming"></div>
+<details class="past" id="pastwrap"><summary id="pastsum">Recent sessions</summary><div id="past"></div></details>
+</div></section>
+
 <section class="band" style="padding-top:0"><div class="wrap">
 <h2>Reports</h2>
 <p class="sub">Tap a stage to open it. Grey stages haven't happened yet, or couldn't be found automatically.</p>
@@ -86,7 +107,7 @@ footer p{max-width:84ch;margin:0 0 8px}footer a{color:var(--ink)}
 
 <footer class="band"><div class="wrap">
 <p>Sources: UK Parliament Committees API (reports, Government responses, evidence) and the Hansard API (Lords debates). Refreshed every morning. Debates are matched to reports automatically by title, so a debate that was held under a different title may be missing.</p>
-<p>An unofficial tool, not a Parliament service. <a href="data.json">Download the data (JSON)</a> · <a href="https://committees.parliament.uk/committee/193/science-and-technology-committee/">Committee website</a></p>
+<p>An unofficial tool, not a Parliament service. <a href="sessions.ics">Evidence sessions calendar (.ics)</a> · <a href="data.json">Download the data (JSON)</a> · <a href="https://committees.parliament.uk/committee/193/science-and-technology-committee/">Committee website</a></p>
 </div></footer>
 
 <script>
@@ -151,6 +172,34 @@ function render(){
 }
 ['#q','#f','#y'].forEach(s=>$(s).addEventListener('input',render));
 render();
+
+// ----- evidence sessions -----
+const EV=DATA.events||[];
+const feed=new URL('sessions.ics',location.href.split('#')[0].replace(/index\.html$/,'')).href;
+const webcal=feed.replace(/^https?:/,'webcal:');
+const calName='Lords Science and Technology Committee evidence sessions';
+$('#subs').innerHTML=`<a class="btn pri" href="${esc(webcal)}">Apple / iPhone</a>
+<a class="btn" href="https://calendar.google.com/calendar/render?cid=${encodeURIComponent(webcal)}">Google Calendar</a>
+<a class="btn" href="https://outlook.office.com/calendar/0/addfromweb?url=${encodeURIComponent(feed)}&name=${encodeURIComponent(calName)}">Outlook (work)</a>
+<a class="btn" href="https://outlook.live.com/calendar/0/addfromweb?url=${encodeURIComponent(feed)}&name=${encodeURIComponent(calName)}">Outlook.com</a>
+<button class="btn" id="copyfeed" type="button">Copy calendar link</button>`;
+$('#copyfeed').addEventListener('click',async e=>{try{await navigator.clipboard.writeText(feed);e.target.textContent='Copied'}catch(_){e.target.textContent=feed}});
+const tz={timeZone:'Europe/London'};
+const dLong=s=>new Date(s).toLocaleDateString('en-GB',{...tz,weekday:'short',day:'numeric',month:'short'});
+const hm=s=>s?new Date(s).toLocaleTimeString('en-GB',{...tz,hour:'2-digit',minute:'2-digit'}):'';
+function sess(e,past){
+  const acts=e.a.map(a=>`<li><span class="t">${esc(hm(a.s))}${a.e?'–'+esc(hm(a.e)):''}</span>${a.w.length?a.w.map(w=>esc([w.n,w.o].filter(Boolean).join(', '))).join('; '):esc(a.k||'Session')}</li>`).join('');
+  const watch=e.tv?`<a href="${esc(e.tv)}">${past?'Watch the recording':'Watch live'}</a>`:(past?'':`<a href="https://parliamentlive.tv/Lords/Committees">Watch on Parliament TV</a>`);
+  return `<article class="sess"><div class="day">${esc(dLong(e.s))}<small>${esc(hm(e.s))}${e.e?'–'+esc(hm(e.e)):''}${e.loc?' · '+esc(e.loc):''}</small></div>
+  <div><h3>${e.x?'<span class="x">Cancelled: </span>':''}${esc(e.inq.join(' / ')||'Evidence session')}</h3><ul class="panel">${acts}</ul>
+  <div class="links"><a href="${esc(e.url)}">Session details</a>${watch}</div></div></article>`;
+}
+{
+  const nowIso=new Date().toISOString();
+  const up=EV.filter(e=>(e.e||e.s)>=nowIso), past=EV.filter(e=>(e.e||e.s)<nowIso).reverse();
+  $('#upcoming').innerHTML=up.length?up.map(e=>sess(e,false)).join(''):'<div class="empty">No public evidence sessions are scheduled yet. Subscribe to get new ones as soon as they are announced.</div>';
+  if(past.length){$('#pastsum').textContent='Recent sessions ('+past.length+')';$('#past').innerHTML=past.map(e=>sess(e,true)).join('')}else $('#pastwrap').hidden=true;
+}
 }
 </script>
 </body>

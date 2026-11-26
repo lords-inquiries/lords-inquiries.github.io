@@ -27,7 +27,8 @@ COMMITTEES_API = "https://committees-api.parliament.uk/api"
 HANSARD_API = "https://hansard-api.parliament.uk"
 COMMITTEE_ID = int(os.environ.get("ST_COMMITTEE_ID", "193"))
 COMMITTEE_NAME = "Science and Technology Committee"
-SINCE = "2016-01-01"  # reports published on or after this date
+SINCE = "2016-01-01"
+SITE_URL = os.environ.get("ST_SITE_URL", "https://lords-inquiries.github.io/science-and-technology/")  # reports published on or after this date
 HERE = os.path.dirname(os.path.abspath(__file__))
 UTC = dt.timezone.utc
 DEBUG = False
@@ -95,6 +96,24 @@ class Live:
             if not items or skip >= data.get("totalResults", 0):
                 return out
 
+    def events(self, since):
+        out, skip = [], 0
+        while True:
+            data = capi("Events", CommitteeId=COMMITTEE_ID, StartDateFrom=since, Take=100, Skip=skip)
+            items = data.get("items") or []
+            out += items
+            skip += 100
+            if not items or skip >= data.get("totalResults", 0):
+                break
+        details = []
+        for e in out:
+            if "oral evidence" in (pick(pick(e, "eventType", default={}), "name", default="") or "").lower():
+                det = get_json(f"{COMMITTEES_API}/Events/{e['id']}")
+                if DEBUG and not details:
+                    sample("Event detail activities", pick(det, "activities"))
+                details.append(det)
+        return details
+
     def evidence_count(self, kind, business_id):
         data = capi(kind, CommitteeBusinessId=business_id, Take=1)
         return data.get("totalResults")
@@ -133,6 +152,9 @@ class Sample:
 
     def inquiries(self):
         return self.d.get("business", [])
+
+    def events(self, since):
+        return self.d.get("events", [])
 
     def evidence_count(self, kind, business_id):
         return self.d["evidence"].get(kind, {}).get(str(business_id))
@@ -262,6 +284,124 @@ def match_inquiry(title, date, inquiries):
         if score >= 0.6 and (best_key is None or k > best_key):
             best, best_key = b, k
     return best
+
+
+# ---------- evidence sessions ----------
+
+LONDON = None
+try:
+    from zoneinfo import ZoneInfo
+    LONDON = ZoneInfo("Europe/London")
+except Exception:
+    pass
+
+
+def uk_to_utc(s):
+    """API times are UK local without an offset."""
+    if not s:
+        return None
+    d = dt.datetime.fromisoformat(s[:19])
+    return d.replace(tzinfo=LONDON).astimezone(UTC) if LONDON else d.replace(tzinfo=UTC)
+
+
+def iso(d):
+    return d.strftime("%Y-%m-%dT%H:%M:%SZ") if d else None
+
+
+def witness(a):
+    name = pick(a, "name", "displayName")
+    if not name and isinstance(pick(a, "person"), dict):
+        name = pick(a["person"], "name", "displayName")
+    orgs = []
+    for o in pick(a, "organisations", default=[]) or []:
+        org = pick(o, "name")
+        role = pick(o, "role")
+        if org or role:
+            orgs.append(", ".join(x for x in (role, org) if x))
+    ctx = pick(a, "additionalContext")
+    return {"n": (name or "").strip() or None, "o": "; ".join(orgs) or (ctx or None)}
+
+
+def shape_event(e):
+    acts = []
+    for a in pick(e, "activities", default=[]) or []:
+        if pick(a, "isPrivate"):
+            continue
+        kind = pick(a, "activityType", default="") or ""
+        ws = [witness(x) for x in sorted(pick(a, "attendees", default=[]) or [], key=lambda x: pick(x, "displayOrder", default=0) or 0)]
+        ws = [w for w in ws if w["n"] or w["o"]]
+        acts.append({"s": iso(uk_to_utc(pick(a, "startDate"))), "e": iso(uk_to_utc(pick(a, "endDate"))), "k": kind, "w": ws})
+    if not acts:
+        return None  # nothing public at this meeting
+    bus = [pick(b, "title") for b in pick(e, "committeeBusinesses", default=[]) or [] if pick(b, "title")]
+    starts = [a["s"] for a in acts if a["s"]]
+    ends = [a["e"] for a in acts if a["e"]]
+    return {
+        "id": e["id"],
+        "s": min(starts) if starts else iso(uk_to_utc(pick(e, "startDate"))),
+        "e": max(ends) if ends else iso(uk_to_utc(pick(e, "endDate"))),
+        "loc": pick(e, "location"),
+        "x": bool(pick(e, "cancelledDate")),
+        "tv": pick(e, "parliamentTvUrl"),
+        "inq": list(dict.fromkeys(bus)),
+        "a": acts,
+        "url": f"https://committees.parliament.uk/event/{e['id']}/formal-meeting-oral-evidence-session/",
+    }
+
+
+def ics_text(s):
+    return (s or "").replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
+
+
+def ics_fold(line):
+    out, b = [], line.encode("utf-8")
+    while len(b) > 74:
+        cut = 74
+        while (b[cut] & 0xC0) == 0x80:  # don't split a UTF-8 character
+            cut -= 1
+        out.append(b[:cut].decode("utf-8"))
+        b = b" " + b[cut:]
+    out.append(b.decode("utf-8"))
+    return "\r\n".join(out)
+
+
+def make_ics(events, now, page_url):
+    def stamp(s):
+        return s.replace("-", "").replace(":", "")
+    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//lords-inquiries//S&T evidence sessions//EN",
+             "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+             "X-WR-CALNAME:Lords Science and Technology Committee: evidence sessions",
+             "X-WR-CALDESC:Public evidence sessions of the House of Lords Science and Technology Committee. Unofficial.",
+             "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H"]
+    for ev in events:
+        topic = " / ".join(ev["inq"]) or "Evidence session"
+        desc = []
+        for a in ev["a"]:
+            t = uk_to_local_hm(a["s"])
+            desc.append((t + " " if t else "") + (a["k"] or "Session") + ":")
+            for w in a["w"]:
+                desc.append("- " + ", ".join(x for x in (w["n"], w["o"]) if x))
+        if ev.get("tv"):
+            desc.append("Watch: " + ev["tv"])
+        desc.append("Details: " + ev["url"])
+        desc.append("Unofficial calendar: " + page_url)
+        lines += ["BEGIN:VEVENT", f"UID:st-event-{ev['id']}@lords-inquiries.github.io", f"DTSTAMP:{stamp(iso(now))}",
+                  f"DTSTART:{stamp(ev['s'])}", f"DTEND:{stamp(ev['e'] or ev['s'])}",
+                  "SUMMARY:" + ics_text(("CANCELLED: " if ev["x"] else "") + "Lords S&T Committee: " + topic),
+                  "LOCATION:" + ics_text(ev.get("loc") or "House of Lords"),
+                  "DESCRIPTION:" + ics_text("\n".join(desc)), "URL:" + ev["url"],
+                  "STATUS:" + ("CANCELLED" if ev["x"] else "CONFIRMED"), "TRANSP:TRANSPARENT", "END:VEVENT"]
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(ics_fold(l) for l in lines) + "\r\n"
+
+
+def uk_to_local_hm(s):
+    if not s:
+        return ""
+    d = dt.datetime.fromisoformat(s.rstrip("Z")).replace(tzinfo=UTC)
+    if LONDON:
+        d = d.astimezone(LONDON)
+    return d.strftime("%H:%M")
 
 
 # ---------- build ----------
@@ -407,7 +547,23 @@ def build(src, now):
             r["deb"] = {"d": date, "url": link, "t": title}
 
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
-    return {"generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "committee": COMMITTEE_NAME, "committeeId": COMMITTEE_ID, "reports": reports}
+
+    events = []
+    try:
+        since = (now - dt.timedelta(days=120)).strftime("%Y-%m-%d")
+        for e in src.events(since):
+            se = shape_event(e)
+            if se:
+                events.append(se)
+        events.sort(key=lambda e: e["s"] or "")
+        log(f"Events: {len(events)} public evidence sessions since {since}")
+        for ev in events[-4:]:
+            log(f"  {ev['s']} | {' / '.join(ev['inq'])[:50]} | tv={bool(ev['tv'])} | " + "; ".join(", ".join(x for x in (w['n'], w['o']) if x) for a in ev['a'] for w in a['w'])[:300])
+    except Exception as ex:
+        log(f"Events failed, continuing without them: {ex}")
+
+    return {"generated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "committee": COMMITTEE_NAME, "committeeId": COMMITTEE_ID,
+            "reports": reports, "events": events}
 
 
 def main():
@@ -441,6 +597,8 @@ def main():
         f.write(tpl.replace("/*__DATA__*/null", blob))
     with open(os.path.join(a.out, "data.json"), "w") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(a.out, "sessions.ics"), "w", newline="") as f:
+        f.write(make_ics(data["events"], now, SITE_URL))
     print(f"Wrote {a.out}/index.html and data.json")
 
 

@@ -275,5 +275,103 @@
    },
    "openDate": "2025-03-20T00:00:00"
   }
+ ],
+ "events": [
+  {
+   "id": 28891,
+   "startDate": "2026-12-01T10:00:00",
+   "endDate": "2026-12-01T13:00:00",
+   "cancelledDate": null,
+   "location": "Room 3, Palace of Westminster",
+   "parliamentTvUrl": null,
+   "eventType": {
+    "name": "Formal meeting (oral evidence session)"
+   },
+   "committeeBusinesses": [
+    {
+     "id": 10109,
+     "title": "Future of UK compute in the age of AI"
+    }
+   ],
+   "activities": [
+    {
+     "startDate": "2026-12-01T10:15:00",
+     "endDate": "2026-12-01T11:15:00",
+     "isPrivate": false,
+     "activityType": "Oral evidence",
+     "attendees": [
+      {
+       "displayOrder": 2,
+       "name": "Dr Jane Example",
+       "organisations": [
+        {
+         "name": "University of Oxford",
+         "role": "Professor of Computing"
+        }
+       ]
+      },
+      {
+       "displayOrder": 1,
+       "name": "John Sample",
+       "organisations": [
+        {
+         "name": "Example Compute Ltd",
+         "role": "Chief Executive"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "startDate": "2026-12-01T11:15:00",
+     "endDate": "2026-12-01T12:15:00",
+     "isPrivate": true,
+     "activityType": "Private discussion",
+     "attendees": []
+    }
+   ]
+  },
+  {
+   "id": 28863,
+   "startDate": "2026-11-24T10:00:00",
+   "endDate": "2026-11-24T12:00:00",
+   "cancelledDate": null,
+   "location": "Committee Room 4A",
+   "parliamentTvUrl": "https://parliamentlive.tv/event/index/abc",
+   "eventType": {
+    "name": "Formal meeting (oral evidence session)"
+   },
+   "committeeBusinesses": [
+    {
+     "title": "Future of UK compute in the age of AI"
+    }
+   ],
+   "activities": [
+    {
+     "startDate": "2026-11-24T10:15:00",
+     "endDate": "2026-11-24T11:30:00",
+     "isPrivate": false,
+     "activityType": "Oral evidence",
+     "attendees": [
+      {
+       "name": "Sample, Witness; with comma",
+       "organisations": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "startDate": "2026-11-17T10:00:00",
+   "eventType": {
+    "name": "Formal meeting (private meeting)"
+   },
+   "activities": [
+    {
+     "isPrivate": true
+    }
+   ]
+  }
  ]
 }
