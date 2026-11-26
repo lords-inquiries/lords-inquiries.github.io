@@ -194,7 +194,7 @@ def words(s):
 
 
 def debate_title_core(t):
-    return re.sub(r"\(\s*science and technology committee report\s*\)", "", t or "", flags=re.I).strip(" -:")
+    return re.sub(r"\(\s*science\s+and\s+technology\s+committee\s+report\s*\)", "", t or "", flags=re.I).strip(" -:")
 
 
 def hansard_link(r):
@@ -250,11 +250,11 @@ def build(src, now):
         for term in ("Science and Technology Committee Report", "Science and Technology Committee"):
             raw += src.hansard_debates(term, SINCE)
         for r in raw:
-            title = pick(r, "title", default="")
+            title = re.sub(r"\s+", " ", pick(r, "title", default="")).strip()
             if DEBUG:
                 log(f"  hansard: {day(pick(r, 'sittingDate'))} | {pick(r, 'debateSection')} | {title}")
-            if "science and technology committee" not in title.lower():
-                continue
+            if not re.search(r"science and technology committee report", title, re.I):
+                continue  # skip e.g. motions to appoint the committee
             link = hansard_link(r)
             if link:
                 debates.append({"title": title, "core": debate_title_core(title), "date": day(pick(r, "sittingDate", "date")), "url": link})
@@ -353,6 +353,8 @@ def main():
     if DEBUG:
         for r in data["reports"][:40]:
             log(f"  {r['d']} | {r['t'][:60]} | we={r.get('we')} oe={r.get('oe')} | gr={[g['d'] for g in r['gr']]} | deb={r.get('deb', {}).get('t')}")
+    if DEBUG:
+        log("DATAJSON " + json.dumps(data, ensure_ascii=False, separators=(",", ":")))
     if n < 3:
         sys.exit("Too few reports found: refusing to publish.")
 
