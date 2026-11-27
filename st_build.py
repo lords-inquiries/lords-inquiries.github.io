@@ -804,7 +804,7 @@ def briefs_html():
     count = NUMBER_WORDS[k] if k < len(NUMBER_WORDS) else str(k)
     return f'''<section class="band briefs" aria-labelledby="h-briefs"><div class="wrap">
 <h2 id="h-briefs">The reports in brief</h2>
-<p class="sub">Interactive guides to {count} reports: the evidence, the committee’s conclusions and what it wants done. Each card draws the report’s numbered paragraphs as its presentation does.</p>
+<p class="sub">Interactive guides to Science and Technology Committee reports: the evidence, the committee’s conclusions and what it wants done. </p>
 <ul class="shelf">{"".join(c for _, _, c in cards)}</ul>
 </div></section>'''
 
