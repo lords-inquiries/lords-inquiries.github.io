@@ -169,7 +169,9 @@ const today=new Date().toISOString().slice(0,10);
 const firstGr=r=>r.gr.find(g=>g.d)||r.gr[0];
 const awaiting=r=>!r.gr.length&&r.kind==='Report'&&!!r.due;
 
-$('#meta').textContent='Updated '+fmt(DATA.generated.slice(0,10))+' · '+R.length+' reports';
+// the time of the build, in UK time, as on the main page ("Updated Fri 27 Nov, 8:11am")
+const fmtT=s=>{const p=new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'Europe/London'}).formatToParts(new Date(s));const g=t=>(p.find(x=>x.type===t)||{}).value||'';const m=g('minute');return g('weekday')+' '+g('day')+' '+g('month')+' '+g('year')+', '+g('hour')+(m==='00'?'':':'+m)+g('dayPeriod').toLowerCase().replace(/[\s.]/g,'')};
+$('#meta').textContent='Updated '+fmtT(DATA.generated)+' · '+R.length+' reports';
 
 const ysel=$('#y');
 [...new Set(R.map(r=>(r.d||'').slice(0,4)).filter(Boolean))].sort().reverse().forEach(y=>{const o=document.createElement('option');o.value=y;o.textContent=y;ysel.appendChild(o)});
