@@ -439,7 +439,7 @@ function layout(animate){
     g.items.forEach((r,i)=>{const w=Math.max(4,r.words*k);geo[r.n]={x,y:y0,w,h:bandH,first:i===0,last:i===g.items.length-1,gi};x+=w+gap});
     const lab=document.createElement('div');lab.className='rowlab'+(st.by==='pri'?' pri':'');
     const nr=g.items.filter(isRec).length;
-    lab.innerHTML=(g.num!==''?`<span class="num" aria-hidden="true">${g.num}</span>`:'')+`<span class="t">${esc(g.title)}</span><span class="s">${g.items.length} paragraphs, ${nr} ${nr===1?'recommendation':'recommendations'}</span>`;
+    lab.innerHTML=(g.num!==''?`<span class="num" aria-hidden="true">${g.num}</span>`:'')+`<span class="t">${esc(g.title)}</span><span class="s">${g.items.length} ${g.items.length===1?'paragraph':'paragraphs'}, ${nr} ${nr===1?'recommendation':'recommendations'}</span>`;
     lab.style.width=(narrow?W:labW-24)+'px';
     lab.style.transform=`translate(0px,${narrow?y0-56:y0-6}px)`;
     if(narrow)lab.querySelector('.t').style.whiteSpace='nowrap',lab.querySelector('.t').style.textOverflow='ellipsis';

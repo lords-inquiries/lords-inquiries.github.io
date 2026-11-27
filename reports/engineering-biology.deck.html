@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Links made for the explorer go to its home */
+if(/(^#|&)(to|topic|q|r|by|pri)=/.test(location.hash))location.replace('explore/'+location.hash);</script>
+<title>Don’t fail to scale: the Lords engineering biology report in brief</title>
+<meta name="description" content="The House of Lords Science and Technology Committee’s report on engineering biology in 16 slides: what it is, why the UK’s early lead is slipping, why companies fail to scale here, and what the committee wants done.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Don’t fail to scale: seizing the opportunity of engineering biology">
+<meta property="og:description" content="The House of Lords Science and Technology Committee’s report in 16 slides: the evidence, what it concluded, and what it wants done.">
+<meta property="og:url" content="__URL__">
+<meta property="og:image" content="__OG__">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="preload" href="__FONTS__archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="__FONTS__newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/*
+BRIEF: a splash presentation for the Lords report "Don't fail to scale: seizing the opportunity of engineering biology" (HL Paper 55).
+  It takes readers through the evidence, the committee's conclusions and its recommendations in its seven key areas, then into the explorer.
+IDEA: the report is drawn as a genetic construct, the way synthetic biologists draw a design: a strand of DNA with standard part glyphs.
+  Each of the five chapters is a transcription unit, opened by a promoter (a bent arrow) and closed by a terminator (a T). Each of the
+  75 numbered conclusions and recommendations is a coding part along the strand, longer for longer paragraphs; recommendations are
+  filled, conclusions outlined. On the opening slide the strand is assembled part by part and the recommendations light up, as if
+  expressed. On every other slide it runs along the foot of the screen, where the parts for that slide light up.
+PALETTE: a biofoundry under the microscope. Deep violet (crystal violet, nitrile gloves) for the dark slides, a pale lavender-grey for
+  the light ones, and a fluorescent-protein mint for anything the slide is about. Charts use a validated three-step set: green, violet
+  and apricot. TYPE: shared with the other report pages: Archivo and Newsreader.
+MOTION: one orchestrated moment: the strand is drawn, the parts are assembled and the recommendations are expressed. Diagrams play once
+  when their slide opens; everything else answers the reader.
+*/
+@font-face{font-family:"Archivo";src:url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(__FONTS__archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2-variations"),url(__FONTS__newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+:root{--sans:"Archivo",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif;--padX:max(5vw,24px)}
+[data-tone=light]{--bg:#EFECF5;--fg:#1C1430;--mute:#5A5172;--line:#D3CCE1;--glass:#E2DCEE;--soft:#A69DBB;--hi:#00784C;--onhi:#fff;--wash:#CFEBDD;--s1:#00784C;--s2:#6B47CB;--s3:#A65A00;color-scheme:light}
+[data-tone=dark]{--bg:#1C1430;--fg:#EFEAF7;--mute:#A79DBF;--line:#30264A;--glass:#271D41;--soft:#5D5279;--hi:#6EE6B4;--onhi:#1C1430;--wash:#1E3A37;--s1:#2AAF7C;--s2:#9277E6;--s3:#D08A3A;color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%}
+@media (min-width:821px) and (min-height:640px){html{scroll-snap-type:y mandatory}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);font-stretch:100%;overflow-x:clip;transition:background-color .5s}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skiplink{position:absolute;left:12px;top:-60px;z-index:60;background:var(--bg);padding:8px 12px;border:2px solid var(--hi)}
+.skiplink:focus{top:12px}
+
+/* fixed chrome */
+.chrome{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--padX);font-size:14px;color:var(--fg);pointer-events:none;transition:color .4s}
+.chrome a{pointer-events:auto}
+.chrome .pill{border:1.5px solid currentColor;border-radius:999px;padding:7px 15px;text-decoration:none;font-weight:600;white-space:nowrap}
+.chrome .pill:hover{background:var(--fg);color:var(--bg)}
+.pager{position:fixed;left:var(--padX);bottom:16px;z-index:40;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--fg);transition:color .4s}
+.pager button{width:38px;height:38px;border-radius:50%;border:1.5px solid currentColor;background:var(--bg);color:inherit;cursor:pointer;font:400 18px/1 var(--sans);transition:background-color .4s}
+.pager button:hover:not(:disabled){background:var(--fg);color:var(--bg)}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager #count{font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pager #slidename{color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(37vw - var(--padX) - 177px)}
+
+/* the construct */
+#construct{position:fixed;left:0;top:0;z-index:20;pointer-events:none;overflow:visible}
+#construct .hit{pointer-events:auto;cursor:pointer;fill:transparent}
+#construct .bb{stroke:var(--fg);stroke-linecap:round;transition:stroke .5s}
+#construct .glyph{fill:none;stroke:var(--fg);stroke-linecap:round;stroke-linejoin:round;transition:stroke .5s}
+#construct .head{fill:var(--fg);transition:fill .5s}
+#construct .pt .o{fill:var(--bg);stroke:var(--hi);transition:fill .5s,stroke .5s}
+#construct .pt .f{fill:var(--hi);transition:fill .5s}
+#construct .pt{transition:opacity .35s}
+#construct .pt.off{opacity:.42}
+#construct .pt.off .o{stroke:var(--soft)}
+#construct .pt.off .f{fill:var(--soft)}
+#construct .labs text{font:500 12px var(--sans);fill:var(--mute)}
+.bed{display:none}
+#tip{position:fixed;z-index:50;pointer-events:none;width:min(340px,calc(100vw - 16px));background:var(--bg);color:var(--fg);border:1px solid var(--fg);padding:10px 12px 11px;font-size:13px;line-height:1.4;opacity:0;transition:opacity .1s;box-shadow:4px 4px 0 var(--line)}
+#tip b{display:block;font-size:14px}
+#tip .x{font:15px/1.4 var(--serif);margin-top:4px}
+#tip .go{color:var(--mute);margin-top:6px}
+
+/* slides */
+.slide{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;padding:84px var(--padX) 84px;background:var(--bg);color:var(--fg);scroll-snap-align:start}
+.frame{width:100%;max-width:1240px;margin:0 auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:32px clamp(32px,5vw,84px);align-items:center}
+h1{margin:0;text-wrap:balance}
+h1 .t1{display:block;font:820 clamp(76px,10.4vw,172px)/.84 var(--sans);font-stretch:62%;letter-spacing:-.012em;color:var(--hi)}
+h1 .t2{display:block;font:560 clamp(26px,2.7vw,44px)/1.04 var(--sans);font-stretch:84%;letter-spacing:-.01em;margin-top:.34em;max-width:17em}
+h2{font:700 clamp(32px,3.5vw,54px)/1 var(--sans);font-stretch:82%;letter-spacing:-.012em;margin:0 0 18px;text-wrap:balance;max-width:21ch}
+h2.quote{font:400 clamp(32px,3.7vw,58px)/1.08 var(--serif);font-style:italic;letter-spacing:-.01em;max-width:21ch;margin-bottom:24px}
+h3{font:600 14px var(--sans);color:var(--mute);margin:22px 0 6px}
+.kicker{font:650 14.5px var(--sans);color:var(--hi);margin:0 0 10px}
+.sub{font:400 clamp(19px,1.5vw,23px)/1.4 var(--serif);margin:0 0 12px;max-width:36ch}
+.meta{font-size:14.5px;color:var(--mute);margin:0;max-width:52ch}
+.lede{font:400 clamp(18px,1.32vw,21px)/1.46 var(--serif);margin:0;max-width:44ch}
+.lede+.lede{margin-top:12px}
+.hint{font-size:13.5px;line-height:1.45;color:var(--mute);max-width:50ch;margin:24px 0 0}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:10px 20px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;color:var(--fg);font:600 15.5px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.primary{background:var(--hi);border-color:var(--hi);color:var(--onhi)}
+.btn.primary:hover{background:var(--hi);color:var(--onhi);filter:brightness(1.1)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+@media (min-width:821px){
+  .s-band{align-items:start;padding-top:max(96px,12vh);padding-bottom:calc(min(170px,21vh) + 128px)}
+  .s-title .frame{max-width:none;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px clamp(32px,5vw,90px);align-items:start}
+  .s-band.s-close .frame{max-width:none}
+}
+.s-title h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.s-title .side{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* quotes, recommendations, links */
+.pull{position:relative;margin:0 0 18px;font:400 clamp(18px,1.4vw,22px)/1.36 var(--serif);font-style:italic;max-width:40ch}
+.pull::before{content:"\201C";position:absolute;left:-.52em;top:-.06em;color:var(--hi);font-size:1.7em;line-height:1}
+.lede+.pull{margin-top:20px}
+.pull cite{display:block;font:400 13.5px/1.4 var(--sans);font-style:normal;color:var(--mute);margin-top:6px;max-width:52ch}
+.recs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.recs a{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:14px;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.recs .n{font:800 28px/1 var(--sans);font-stretch:62%;padding-top:2px;transition:color .2s}
+.recs .t{font-size:15px;line-height:1.42}
+.recs a:hover .n,.recs a:focus-visible .n{color:var(--hi)}
+.recs a:hover .t{text-decoration:underline;text-decoration-color:var(--hi)}
+.more{display:inline-block;margin-top:14px;font-weight:650;color:var(--hi);text-decoration:none;border-bottom:1.5px solid var(--hi);padding-bottom:1px}
+.more:hover{border-bottom-width:3px}
+.note{font-size:13px;color:var(--mute);margin:8px 0 0;max-width:50ch}
+.src{font-size:13px;color:var(--mute);margin:12px 0 0}
+.theme .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:24px clamp(32px,4.5vw,72px);align-items:start;margin-top:4px}
+.theme h2{max-width:34ch}
+.theme .lede{margin-bottom:16px}
+
+/* illustrations */
+.ill{margin:0}
+.ill svg{display:block;width:100%;height:auto;overflow:visible;max-width:100%}
+.ill text{font-family:var(--sans);font-size:12.5px;fill:var(--fg)}
+.ill text.m{fill:var(--mute)}
+.ill text.b{font-weight:700}
+.ill text.r{fill:var(--hi);font-weight:700}
+.ill text.w{fill:var(--bg);font-weight:650}
+.ill text.big{font:800 26px var(--sans);font-stretch:62%}
+.ill text.halo,.ill .halo text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+.ill .grid line,.ill line.gl{stroke:var(--line);stroke-width:1}
+.ill .axis{stroke:var(--mute);stroke-width:1.2;fill:none}
+.ill .lead{stroke:var(--mute);stroke-width:1;fill:none}
+.ill figcaption{font-size:13.5px;line-height:1.45;color:var(--mute);margin-top:10px;max-width:64ch;min-height:2.9em}
+.ill figcaption b{color:var(--fg)}
+.ill .ctitle{font-size:13.5px;font-weight:600;color:var(--fg);margin:0 0 10px;max-width:58ch}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0 0}
+.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--fg);border-radius:20px;padding:2px}
+.seg button{border:0;background:none;color:var(--fg);border-radius:999px;padding:5px 13px;font:500 13.5px var(--sans);cursor:pointer;min-height:32px}
+.seg button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.seg button:hover:not([aria-pressed=true]){background:var(--glass)}
+.sa,.sb{transition:opacity .6s}
+[data-state=a] .sb,[data-state=b] .sa{opacity:0;pointer-events:none}
+[data-state=a] .sa,[data-state=b] .sb{transition-delay:.25s}
+.range{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mute);flex:1 1 280px}
+.range input{flex:1;accent-color:var(--hi);min-height:28px}
+.range output{font-weight:650;color:var(--fg);min-width:6em}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--mute);margin:0 0 8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend i.s1{background:var(--s1)}.legend i.s2{background:var(--s2)}.legend i.s3{background:var(--s3)}
+.swap{position:relative}
+.swap>svg+svg{position:absolute;left:0;top:0}
+
+/* 2. the verdict: UKRI spend */
+#ill-spend .bw{transform-box:fill-box;transform-origin:center bottom;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+#ill-spend.pre .bw{transform:scaleY(0)}
+#ill-spend .bar{fill:var(--s2);transition:fill .25s}
+#ill-spend .bar.k{fill:var(--hi)}
+#ill-spend .bar.on{fill:var(--fg)}
+#ill-spend .base{stroke:var(--fg);stroke-width:1.2}
+#ill-spend .pin{fill:var(--hi);stroke:var(--bg);stroke-width:1.5}
+
+/* 3. what it is */
+#ill-make .cell{fill:var(--glass);stroke:var(--fg);stroke-width:1.8}
+#ill-make .ring{fill:none;stroke:var(--hi);stroke-width:2.2}
+#ill-make .gene{fill:var(--hi)}
+#ill-make .tray{fill:none;stroke:var(--mute);stroke-width:1.4;stroke-dasharray:3 3}
+#ill-make .pin{fill:var(--s2)}
+#ill-make .pout{fill:var(--hi)}
+#ill-make .arw{fill:none;stroke:var(--mute);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+#ill-make .col{font-weight:700;text-anchor:middle}
+#ill-make .lab{text-anchor:middle}
+.seg.many button{padding:5px 11px}
+
+/* 4. why now: the Carlson curves */
+#ill-cost .ln{fill:none;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+#ill-cost .l1{stroke:var(--s1)}#ill-cost .l2{stroke:var(--s2)}#ill-cost .l3{stroke:var(--s3)}
+#ill-cost .d1{fill:var(--s1)}#ill-cost .d2{fill:var(--s2)}#ill-cost .d3{fill:var(--s3)}
+#ill-cost .dot{stroke:var(--bg);stroke-width:2}
+#ill-cost .cur{stroke:var(--fg);stroke-width:1.2}
+#ill-cost .crispr{stroke:var(--mute);stroke-width:1.2;stroke-dasharray:3 3}
+#ill-cost .clip{transition:none}
+
+/* 5. scale: venture capital by stage */
+#ill-vc .eu{fill:var(--s1)}#ill-vc .us{fill:var(--s2)}
+#ill-vc .bw{transition:transform .8s cubic-bezier(.65,0,.35,1)}
+#ill-vc .base{stroke:var(--fg);stroke-width:1.2}
+
+/* 6. key areas */
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 28px;margin-top:26px}
+.card{display:grid;grid-template-rows:auto auto 1fr auto;gap:6px;text-align:left;border:0;border-top:2px solid var(--fg);background:none;color:inherit;padding:14px 0 18px;cursor:pointer;font:inherit}
+.card .ct{font:650 18px/1.18 var(--sans);font-stretch:90%}
+.card .cs{font-size:13.5px;line-height:1.42;color:var(--mute)}
+.card .strip{display:flex;align-items:center;gap:1px;height:16px;margin-top:6px;position:relative}
+.card .strip::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1.5px solid var(--fg)}
+.card .strip i{display:block;position:relative;height:9px;border:1px solid var(--soft);border-radius:1px 4px 4px 1px;opacity:.65}
+.card .strip i.on{background:var(--hi);border-color:var(--hi);opacity:1}
+.card .cc{font-size:13px;color:var(--mute)}
+.card:hover .ct,.card:focus-visible .ct{text-decoration:underline;text-decoration-color:var(--hi);text-underline-offset:4px}
+.cards .lead{border-top:2px solid var(--fg);padding-top:14px;font:400 17px/1.45 var(--serif);color:var(--fg);margin:0}
+
+/* 7. strategy: firms by category */
+#ill-firms .bar{transition:width .8s cubic-bezier(.2,.7,.2,1)}
+#ill-firms .app{fill:var(--s1)}#ill-firms .sup{fill:var(--s2)}#ill-firms .both{fill:var(--s3)}
+#ill-firms .base{stroke:var(--fg);stroke-width:1.2}
+
+/* 8. skills */
+#ill-skills .cdt{fill:var(--s2);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1);transform-box:fill-box;transform-origin:center}
+#ill-skills .cdt.eb{fill:var(--hi)}
+#ill-skills.pre .cdt{opacity:0;transform:scale(.4)}
+#ill-skills .scale{stroke:var(--fg);stroke-width:1.2}
+#ill-skills .tick{stroke:var(--mute);stroke-width:1}
+#ill-skills .old{fill:var(--soft)}
+#ill-skills .new{fill:var(--hi)}
+#ill-skills .jump{fill:none;stroke:var(--hi);stroke-width:1.6;stroke-dasharray:4 3}
+#ill-skills .gtv{fill:var(--s2)}
+
+/* 9. regulation: standards */
+#ill-std .d{fill:var(--hi);transition:opacity .3s}
+#ill-std .e{fill:var(--soft)}
+#ill-std.pre .d,#ill-std.pre .e{opacity:0}
+
+/* 10. infrastructure */
+#ill-infra .node rect{fill:var(--glass);stroke:var(--fg);stroke-width:1.5}
+#ill-infra .node.k rect{fill:var(--wash);stroke:var(--hi)}
+#ill-infra .node text{text-anchor:middle;font-weight:650}
+#ill-infra .loop{fill:none;stroke:var(--fg);stroke-width:1.8;stroke-linecap:round}
+#ill-infra .ah{fill:var(--fg)}
+#ill-infra .in{fill:none;stroke:var(--hi);stroke-width:2.2;stroke-linecap:round}
+#ill-infra .inh{fill:var(--hi)}
+#ill-infra .tok{fill:var(--hi);stroke:var(--bg);stroke-width:2}
+#ill-infra .sq{fill:var(--s2)}
+#ill-infra .sq.uk{fill:var(--hi)}
+
+/* 11. investment: pensions */
+#ill-pension .c{fill:none;stroke:var(--soft);stroke-width:1}
+#ill-pension .c.on{fill:var(--hi);stroke:var(--hi)}
+#ill-pension .c.on2{fill:var(--s2);stroke:var(--s2)}
+
+/* 12. adoption: procurement */
+#ill-proc .bar{fill:var(--hi)}
+#ill-proc .nv{fill:var(--s2)}
+#ill-proc .base{stroke:var(--fg);stroke-width:1.2}
+#ill-proc .ref{stroke:var(--s2);stroke-width:1.2;stroke-dasharray:4 3}
+
+/* 13. governance: DNA screening */
+#ill-screen .prov rect{fill:var(--glass);stroke:var(--fg);stroke-width:1.4;transition:stroke .4s,fill .4s}
+#ill-screen .prov.scr rect{stroke:var(--hi);fill:var(--wash)}
+#ill-screen .shield{fill:var(--hi);transition:opacity .4s}
+#ill-screen .prov:not(.scr) .shield{opacity:0}
+#ill-screen .ok{fill:var(--soft)}
+#ill-screen .bad{fill:var(--s3)}
+#ill-screen .x{stroke:var(--s3);stroke-width:2.2;stroke-linecap:round}
+#ill-screen .lane{stroke:var(--line);stroke-width:1}
+
+/* 14. who */
+.wbars{border-top:2px solid var(--fg)}
+.wb{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 2.4em;gap:14px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;font-size:15px}
+.wb .wt{height:12px;position:relative}
+.wb .wt i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--fg);border-radius:0 6px 6px 0;transition:width .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),background-color .2s}
+#who.on .wb .wt i{width:var(--w)}
+.wb .wc{font:800 24px/1 var(--sans);font-stretch:62%;text-align:right}
+.wb:hover .wt i,.wb:focus-visible .wt i{background:var(--hi)}
+.wb:hover .wn{text-decoration:underline;text-decoration-color:var(--hi)}
+.wmore{font-size:14px;line-height:1.5;color:var(--mute);margin:14px 0 0;max-width:64ch}
+.wmore a{color:var(--fg)}
+
+/* 15 and 16. close */
+.s-close h2.quote{max-width:24ch;font-size:clamp(34px,4.6vw,74px)}
+@media (min-width:821px) and (max-height:900px){.s-close h2.quote{font-size:min(4.6vw,7.6vh)}}
+.tl{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative;max-width:1240px;row-gap:22px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line)}
+.tl li{position:relative;padding:30px 22px 0 0}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.tl li.done::before{background:var(--hi);border-color:var(--hi)}
+.tl .when{display:block;font:700 15px var(--sans)}
+.tl .what{display:block;font-size:14px;line-height:1.42;color:var(--mute);margin-top:4px}
+.tl .what a{color:var(--fg)}
+.small{font-size:12.5px;line-height:1.5;color:var(--mute);margin:22px 0 0;max-width:84ch}
+
+@media (max-width:1100px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* shorter laptop screens: fit each slide to the screen */
+@media (min-width:821px) and (max-height:900px){
+  .slide{padding-top:max(62px,8.6vh);padding-bottom:max(66px,9vh)}
+  .s-band{padding-top:max(76px,10.4vh);padding-bottom:calc(min(170px,21vh) + 94px)}
+  h1 .t1{font-size:min(10.4vw,16vh)}
+  h1 .t2{font-size:min(2.7vw,4.5vh)}
+  h2{font-size:min(3.5vw,5.6vh);margin-bottom:min(16px,1.8vh)}
+  h2.quote{font-size:min(3.7vw,6.2vh)}
+  .sub{font-size:min(1.5vw,2.6vh)}
+  .lede{font-size:min(1.32vw,2.3vh)}
+  .theme .lede{margin-bottom:min(16px,1.8vh)}
+  .pull{font-size:min(1.4vw,2.5vh);margin-bottom:min(18px,2vh)}
+  .acts{margin-top:min(28px,3vh)}
+  .hint{margin-top:min(24px,2.6vh)}
+  .ill svg{max-height:44vh}
+  .ill figcaption{margin-top:6px}
+  .ctl{margin-top:8px}
+  .recs a{padding:min(10px,1.05vh) 0}
+  .recs .t{font-size:min(15px,1.95vh)}
+  .recs .n{font-size:min(28px,3.6vh)}
+  .more{margin-top:min(14px,1.6vh)}
+  .theme .kicker{margin-bottom:4px}
+  .cards{margin-top:min(26px,2.4vh)}
+  .card{padding:min(14px,1.4vh) 0 min(18px,1.8vh)}
+  .card .cs{font-size:min(13.5px,1.9vh)}
+  .tl{margin-top:min(26px,2.6vh);row-gap:min(22px,2.2vh)}
+  .tl li{padding-top:min(30px,3.2vh)}
+  .tl .what{font-size:min(14px,1.85vh)}
+  .small{margin-top:min(22px,2.2vh)}
+}
+@media (max-width:820px){
+  .chrome{position:absolute}
+  .chrome .home{display:none}
+  .pager{display:none}
+  .bed{display:block;position:fixed;left:0;right:0;bottom:0;height:66px;background:var(--bg);border-top:1px solid var(--line);z-index:19;transition:background-color .4s}
+  .slide{padding:76px 20px 104px;min-height:auto}
+  .slide.s-title,.slide.s-close{min-height:100svh}
+  .two,.theme .cols{grid-template-columns:1fr}
+  .s-title .side{margin-top:20px}
+  .cards{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:22px;padding-left:30px}
+  .tl::before{left:8px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl li{padding:0}
+  .tl li::before{left:-30px}
+  .pull{margin-left:.6em}
+  .wb{grid-template-columns:minmax(0,1fr) 60px 2em}
+  .range{flex-wrap:wrap;gap:4px 12px}
+  .range input{flex:1 1 100%;order:3}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:0s!important}}
+@media print{.chrome,.pager,#construct,.bed,#tip{display:none}.slide{min-height:auto;break-after:page}}
+</style>
+</head>
+<body data-tone="dark">
+<a class="skiplink" href="explore/">Skip to all 75 conclusions and recommendations</a>
+<header class="chrome"><a class="home" href="__ROOT__science-and-technology/">Lords Science and Technology Committee reports</a><a class="pill" href="explore/">All 75 conclusions and recommendations</a></header>
+
+<main id="deck">
+
+<section class="slide s-title s-band" id="start" data-tone="dark" data-cut="hero" data-name="Start" aria-labelledby="h-start">
+<div class="frame">
+<h1 id="h-start"><span class="t1">Don’t fail to scale<span class="vh">:</span></span> <span class="t2">seizing the opportunity of engineering biology</span></h1>
+<div class="side">
+<p class="sub">The House of Lords Science and Technology Committee’s report in 16 slides: what engineering biology is, why the UK’s early lead is slipping, why its companies struggle to grow here, and what the committee wants done.</p>
+<p class="meta">1st Report of Session 2024–26 (HL Paper 55), published 14 January 2025.</p>
+<div class="acts"><button type="button" class="btn primary" data-next>Start</button><a class="btn" href="explore/">See all 75 conclusions and recommendations</a></div>
+<p class="hint">Scroll, swipe or use the arrow keys. The strand below is the report drawn as a genetic design: each chapter opens with a promoter, and each of the 75 numbered conclusions and recommendations is a part, longer for longer paragraphs. Filled parts are recommendations. Point at one to read it.</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="verdict" data-tone="dark" data-lit="1 3 7" data-name="The verdict" aria-labelledby="h-verdict">
+<div class="frame two">
+<div>
+<h2 class="quote" id="h-verdict">“Unless we act quickly, the UK is at a severe risk, once again, of seeing the economic and industrial benefits … exploited overseas.”</h2>
+<p class="lede">The UK led the world in engineering biology after far-sighted investments over a decade ago, but its position has slipped as other countries invest more and plan more strategically (summary).</p>
+<blockquote class="pull">We were ahead of the game, but we have lost that leadership.”<cite>Professor Susan Rosser, Edinburgh Genome Foundry. At the end of the last funding round for six centres of excellence, “the funding dropped off a cliff”, and people they had trained left for jobs overseas (<a data-para="25">paragraph 25</a>).</cite></blockquote>
+</div>
+<figure class="ill" id="ill-spend" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="a" aria-pressed="true">Annual spend</button><button type="button" data-state="b" aria-pressed="false">What it funded</button></div></div>
+<svg viewBox="0 0 540 292" class="pre" role="img" aria-label="Bar chart of UKRI’s annual spend on engineering biology from 2004–05 to 2023–24. It rises from about £1 million to a peak of about £78 million in 2014–15, then falls to about £46 million in 2023–24."></svg>
+<figcaption id="spend-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="what" data-tone="light" data-lit="1" data-name="What engineering biology is" aria-labelledby="h-what">
+<div class="frame two">
+<div>
+<h2 id="h-what">Moving atoms as well as bits</h2>
+<p class="lede">Engineering biology is the design and construction of new or modified organisms or molecules, based on those found in nature (summary). Researchers design a biological system, build it with synthetic biology, test it and learn from the results (<a data-para="15">paragraph 15</a>). AI can rewrite the “software” of our world; engineering biology can provide the “hardware” too (summary).</p>
+<blockquote class="pull">A platform technology … that sits underneath all sorts of different applications.”<cite>Professor Dame Angela McLean, Government Chief Scientific Adviser (<a data-para="19">paragraph 19</a>).</cite></blockquote>
+</div>
+<figure class="ill" id="ill-make" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg many" role="group" aria-label="Example"><button type="button" data-ex="0" aria-pressed="true">Dyes</button><button type="button" data-ex="1" aria-pressed="false">Fuel</button><button type="button" data-ex="2" aria-pressed="false">Meat</button><button type="button" data-ex="3" aria-pressed="false">Metals</button><button type="button" data-ex="4" aria-pressed="false">Crops</button></div></div>
+<svg viewBox="0 0 540 250" role="img" aria-label="Diagram: what goes in, the engineered organism, and what comes out, for five examples from box 1 of the report."></svg>
+<figcaption id="make-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="now" data-tone="dark" data-name="Why now" aria-labelledby="h-now">
+<div class="frame two">
+<div>
+<h2 id="h-now">Reading and writing DNA got cheap</h2>
+<p class="lede">The first human genome sequenced cost around $100 million in 2005; it can now be done for less than $1,000. Making DNA has fallen from $1 a base pair in 1993 to a few cents (<a data-para="11">paragraph 11</a>). Since 2012, CRISPR has made gene editing simpler and cheaper (<a data-para="12">paragraph 12</a>).</p>
+<p class="lede">With machine learning to analyse the data, “new frontiers are now opening” (<a data-para="11">paragraph 11</a>). Other countries have noticed: “It is a race. It is very competitive” (Professor Paul Freemont, <a data-para="36">paragraph 36</a>).</p>
+</div>
+<figure class="ill" id="ill-cost"><p class="ctitle">Price per base of DNA, US dollars, log scale</p>
+<div class="legend" aria-hidden="true"><span><i class="s1"></i>Reading DNA (sequencing)</span><span><i class="s2"></i>Writing genes (gene synthesis)</span><span><i class="s3"></i>Writing short strands (oligo synthesis)</span></div>
+<svg viewBox="0 0 540 282" role="img" aria-label="Line chart on a log scale, redrawn from Figure 1 of the report. The price of sequencing a base of DNA falls from about 30 dollars in 1990 to about a ten-millionth of a dollar by 2017. Gene synthesis falls from about 40 dollars in 1998 to about 2 cents. Oligo synthesis falls from about 90 cents in 1992 to about 5 cents."></svg>
+<div class="ctl"><label class="range"><span>Year</span><input type="range" id="cost-year" min="1990" max="2017" value="2005" step="1" aria-describedby="cost-cap"><output id="cost-out">2005</output></label></div>
+<figcaption id="cost-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="scale" data-tone="light" data-lit="46 47" data-name="Started here, scaled elsewhere" aria-labelledby="h-scale">
+<div class="frame two">
+<div>
+<h2 id="h-scale">Started here, scaled elsewhere</h2>
+<p class="lede">The UK is good at starting companies, but they struggle to grow and often move abroad, especially to the US, to raise money or to list (conclusion 46). “Typically, we have quite good seed money but very poor scale-up money” (Dr Charles Hall, <a data-para="173">paragraph 173</a>). This failure to scale is a long-standing problem across many technologies; engineering biology is a case study (summary).</p>
+<blockquote class="pull">Corporate veal: the Americans turn it into beef.”<cite>Lord Willetts, on what the UK provides when US investors buy its companies. He wants them rooted deeply enough in the UK that much of the work stays here (<a data-para="174">paragraph 174</a>).</cite></blockquote>
+</div>
+<figure class="ill" id="ill-vc" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Measure"><button type="button" data-state="a" aria-pressed="true">Billions of dollars</button><button type="button" data-state="b" aria-pressed="false">Per US dollar</button></div></div>
+<div class="legend" aria-hidden="true"><span><i class="s1"></i>European Union</span><span><i class="s2"></i>United States</span></div>
+<svg viewBox="0 0 540 270" role="img" aria-label="Bar chart, redrawn from Figure 4 of the report: venture capital investment by stage. Seed: EU about 2.5 billion dollars, US about 14. Early stage: EU about 9, US about 35. Later stage: EU about 18, US about 104."></svg>
+<figcaption id="vc-cap" aria-live="polite"></figcaption></figure>
+</div>
+</section>
+
+<section class="slide" id="themes" data-tone="light" data-name="Seven key areas" aria-labelledby="h-themes">
+<div class="frame">
+<h2 id="h-themes">Seven key areas</h2>
+<p class="lede" style="max-width:74ch">The committee groups what the UK must get right into seven areas: strategy, skills, regulation, infrastructure, investment, adoption and governance (summary). Choose one to go to it.</p>
+<div class="cards" id="cards"></div>
+</div>
+</section>
+
+<section class="slide theme" id="strategy" data-tone="dark" data-pri="strategy" data-name="Area 1: strategy" aria-labelledby="h-strategy">
+<div class="frame">
+<p class="kicker">Key area 1 of 7</p>
+<h2 id="h-strategy">A plan, £2 billion and a champion</h2>
+<div class="cols">
+<div>
+<p class="lede">The National Vision (December 2023) promised £2 billion over ten years. Witnesses asked whether it was new money: “If it is rebadged money … we are back to square one” (Professor Susan Rosser, <a data-para="39">paragraph 39</a>). The Vision also lacks specific outcomes (conclusion 3).</p>
+<blockquote class="pull">We need to decide what the UK wants to be.”<cite>Dr Peter Williams, INEOS (<a data-para="27">paragraph 27</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=8"><span class="n"><span class="vh">Recommendation </span>8</span><span class="t">Recommit urgently to at least £2 billion over the next decade, and say how it will be split between research, skills and infrastructure, and what it should achieve.</span></a></li>
+<li><a href="explore/#r=6"><span class="n"><span class="vh">Recommendation </span>6</span><span class="t">In the industrial strategy, pick the areas where the UK can excel, with specific metrics and outcomes, and report progress regularly.</span></a></li>
+<li><a href="explore/#r=13"><span class="n"><span class="vh">Recommendation </span>13</span><span class="t">Appoint a national sector champion: a high-profile figure from industry or academia who can bring government together and lead the strategy.</span></a></li>
+</ul>
+<a class="more" data-more="strategy" href="explore/#pri=strategy"></a>
+</div>
+<figure class="ill" id="ill-firms" data-state="a"><p class="ctitle">Engineering biology firms in the UK, by what they do</p>
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Firms"><button type="button" data-state="a" aria-pressed="true">Applications</button><button type="button" data-state="b" aria-pressed="false">Supply chain</button></div></div>
+<svg viewBox="0 0 540 300" role="img" aria-label="Bar chart, redrawn from Figure 5 of the report: engineering biology firms in the UK by category. Among applications, health and life sciences has 576 firms; the next largest, high value compounds, has 37. In the supply chain, small-scale manufacturing has 261 and pilot or mass manufacturing 28."></svg>
+<figcaption id="firms-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="skills" data-tone="light" data-pri="skills" data-name="Area 2: skills" aria-labelledby="h-skills">
+<div class="frame">
+<p class="kicker">Key area 2 of 7</p>
+<h2 id="h-skills">Skills and talent</h2>
+<div class="cols">
+<div>
+<p class="lede">Industry is short of people who can “write DNA, read DNA and understand what DNA does” (<a data-para="77">paragraph 77</a>), and of technicians: of the more than 260 people one centre has trained in fermentation, “they all get hoovered up” (Mark Bustard, <a data-para="87">paragraph 87</a>). High visa costs put talent off (conclusion 22).</p>
+<blockquote class="pull">From Kentucky Fried Chicken to a really highly skilled automation biologist. We want more of that.”<cite>Professor Susan Rosser, on an apprentice at the Edinburgh Genome Foundry (<a data-para="89">paragraph 89</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=19"><span class="n"><span class="vh">Recommendation </span>19</span><span class="t">Through UKRI, urgently fund more doctoral training centres, with most places including a funded year in industry.</span></a></li>
+<li><a href="explore/#r=21"><span class="n"><span class="vh">Recommendation </span>21</span><span class="t">Skills England should fund flexible apprenticeships, including degree apprenticeships; UKRI should back a master’s conversion course.</span></a></li>
+<li><a href="explore/#r=23"><span class="n"><span class="vh">Recommendation </span>23</span><span class="t">Expand the Global Talent visa beyond a few thousand a year, with more sponsors and room for entrepreneurial, manufacturing and industrial skills.</span></a></li>
+</ul>
+<a class="more" data-more="skills" href="explore/#pri=skills"></a>
+</div>
+<figure class="ill" id="ill-skills" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="a" aria-pressed="true">Doctoral training</button><button type="button" data-state="b" aria-pressed="false">Visas</button></div></div>
+<div class="swap"><svg viewBox="0 0 540 280" class="sa pre" role="img" aria-label="Twelve new Centres for Doctoral Training for AI, announced in 2023, against two for engineering biology and biotechnology."></svg>
+<svg viewBox="0 0 540 280" class="sb" role="img" aria-label="The salary threshold for a Skilled Worker visa rose from 26,200 pounds to 38,700 pounds in March 2024. Global Talent visas rose from 7,000 in 2023 to 8,000 in 2024."></svg></div>
+<figcaption id="skills-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="regulation" data-tone="dark" data-pri="regulation" data-name="Area 3: regulation" aria-labelledby="h-regulation">
+<div class="frame">
+<p class="kicker">Key area 3 of 7</p>
+<h2 id="h-regulation">A clear route to market</h2>
+<div class="cols">
+<div>
+<p class="lede">Companies find it too hard to know which regulators will oversee them and what the route to market is (summary). Industry did not know who was in the regulators’ network set up in 2023; asked, the Government Chief Scientific Adviser said “even I do not know” (<a data-para="112">paragraph 112</a>).</p>
+<blockquote class="pull">The recommended timelines are about half what they are in the UK.”<cite>Will Milligan of Extracellular, on approvals in Singapore (<a data-para="106">paragraph 106</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=26"><span class="n"><span class="vh">Recommendation </span>26</span><span class="t">Publish a map of which regulator covers which products and a streamlined route to approval, with a single point of contact; make the network’s members public (recommendation 27).</span></a></li>
+<li><a href="explore/#r=29"><span class="n"><span class="vh">Recommendation </span>29</span><span class="t">Resource regulators to assess new technologies early and swiftly, with timelines that compete with other countries.</span></a></li>
+<li><a href="explore/#r=33"><span class="n"><span class="vh">Recommendation </span>33</span><span class="t">Work with the National Physical Laboratory, the British Standards Institution, industry and ISO to develop standards, and encourage data-sharing.</span></a></li>
+</ul>
+<a class="more" data-more="regulation" href="explore/#pri=regulation"></a>
+</div>
+<figure class="ill" id="ill-std"><p class="ctitle">International (ISO) standards, one dot each</p>
+<svg viewBox="0 0 540 300" class="pre" role="img" aria-label="Thirty-six dots for the 36 ISO standards in biotechnology, beside a field of a thousand dots for aviation, which has thousands."></svg>
+<figcaption id="std-cap"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="infrastructure" data-tone="light" data-pri="infrastructure" data-name="Area 4: infrastructure" aria-labelledby="h-infrastructure">
+<div class="frame">
+<p class="kicker">Key area 4 of 7</p>
+<h2 id="h-infrastructure">From lab bench to fermenter</h2>
+<div class="cols">
+<div>
+<p class="lede">Useful labs are under-used because start-ups do not know about them or cannot afford them (summary). Biofoundries were funded for equipment but not for staff, so they must charge more (<a data-para="144">paragraph 144</a>). Companies that outgrow UK pilot plants go to European ones, “and they tend not to come back for manufacturing” (Mark Bustard, <a data-para="164">paragraph 164</a>).</p>
+<blockquote class="pull">Batteries not included.”<cite>Professor Nick Talbot, on a model that funds equipment but not the people to run it (<a data-para="146">paragraph 146</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=38"><span class="n"><span class="vh">Recommendation </span>38</span><span class="t">Open national and university labs to start-ups that need data for patents, with Innovate UK funding to help them do it.</span></a></li>
+<li><a href="explore/#r=41"><span class="n"><span class="vh">Recommendation </span>41</span><span class="t">Fund greater use of the biofoundries and the Centre for Process Innovation, through block grants or grants for users, as the EU does for Bio Base Europe.</span></a></li>
+<li><a href="explore/#r=43"><span class="n"><span class="vh">Recommendation </span>43</span><span class="t">DSIT should map the facilities that exist and their terms of use, and remove barriers to using them.</span></a></li>
+</ul>
+<a class="more" data-more="infrastructure" href="explore/#pri=infrastructure"></a>
+</div>
+<figure class="ill" id="ill-infra" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="a" aria-pressed="true">The patent loop</button><button type="button" data-state="b" aria-pressed="false">Open the labs</button><button type="button" data-state="c" aria-pressed="false">Biofoundries compared</button></div></div>
+<div class="swap"><svg viewBox="0 0 540 300" class="sloop" role="img" aria-label="Diagram of a loop: a start-up needs data to file a patent, a patent to raise money, and money to pay for the labs that produce the data."></svg>
+<svg viewBox="0 0 540 300" class="sfound" role="img" aria-label="Squares sized by investment: about 750 million dollars for a biofoundry building in Shenzhen, 100 million dollars for Korea’s K-Biofoundry, and 7 million pounds, about 9 million dollars, for the London Biofoundry’s infrastructure."></svg></div>
+<figcaption id="infra-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="investment" data-tone="dark" data-pri="investment" data-name="Area 5: investment" aria-labelledby="h-investment">
+<div class="frame">
+<p class="kicker">Key area 5 of 7</p>
+<h2 id="h-investment">Capital to scale</h2>
+<div class="cols">
+<div>
+<p class="lede">There are “not many investors in the UK with those deep pockets” for scale-up (Dr Martin Turner, <a data-para="191">paragraph 191</a>), and it is unclear whether the National Wealth Fund can invest in engineering biology (conclusion 48). Pensions investing less at home risk a ‘doom loop’ (conclusion 52).</p>
+<blockquote class="pull">If you are going to raise money for a tech company in the UK you take your CFO and if you are going to raise money in the US you take your CTO.”<cite>Lord Willetts: US investors want the technology story (<a data-para="192">paragraph 192</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=49"><span class="n"><span class="vh">Recommendation </span>49</span><span class="t">Widen the scope and scale of the National Wealth Fund to cover engineering biology, with a specialist investment team.</span></a></li>
+<li><a href="explore/#r=51"><span class="n"><span class="vh">Recommendation </span>51</span><span class="t">Join up funding across the ‘valley of death’, from research councils and Innovate UK to the National Wealth Fund and British Patient Capital; consider capital grants outside medicine.</span></a></li>
+<li><a href="explore/#r=53"><span class="n"><span class="vh">Recommendation </span>53</span><span class="t">Make the Mansion House pension reforms more ambitious and faster, and help consolidated funds back small UK tech companies.</span></a></li>
+</ul>
+<a class="more" data-more="investment" href="explore/#pri=investment"></a>
+</div>
+<figure class="ill" id="ill-pension" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Show"><button type="button" data-state="a" aria-pressed="true">Pensions in UK shares</button><button type="button" data-state="b" aria-pressed="false">Investing at home</button></div></div>
+<svg viewBox="0 0 540 290" role="img" aria-label="Two grids of 100 squares. Pension funds owned more than 40 per cent of the UK stock market about 25 years ago and 4 per cent now. The Australian Superfund invests 23 per cent in Australia; similar UK funds about 5 per cent in the UK."></svg>
+<figcaption id="pension-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="adoption" data-tone="light" data-pri="adoption" data-name="Area 6: adoption" aria-labelledby="h-adoption">
+<div class="frame">
+<p class="kicker">Key area 6 of 7</p>
+<h2 id="h-adoption">Buy it, and make a market</h2>
+<div class="cols">
+<div>
+<p class="lede">Public procurement is a third of public spending, £292 billion a year (<a data-para="58">paragraph 58</a>). The US BioPreferred programme buys bio-based products, giving companies the confidence to invest at scale (<a data-para="59">paragraph 59</a>). Without incentives, large companies will not leave cheaper fossil-based processes (summary).</p>
+<blockquote class="pull">A purchase is worth 10 times a grant.”<cite>Professor Dame Angela McLean, recalling the Ministry of Defence’s purchase of a UK-made quantum computer (<a data-para="65">paragraph 65</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=16"><span class="n"><span class="vh">Recommendation </span>16</span><span class="t">Use public procurement, learning from BioPreferred; consider reserving a mandatory share of procurement budgets for innovative UK SMEs and new technologies.</span></a></li>
+<li><a href="explore/#r=57"><span class="n"><span class="vh">Recommendation </span>57</span><span class="t">Give manufacturers, such as chemical and fossil fuel companies, reasons to switch: taxes on carbon, pollutants or waste, and mandates where a bio-based alternative could scale.</span></a></li>
+<li><a href="explore/#r=58"><span class="n"><span class="vh">Recommendation </span>58</span><span class="t">Start by mandating that a small share of production uses bio-based processes, and raise it over time.</span></a></li>
+</ul>
+<a class="more" data-more="adoption" href="explore/#pri=adoption"></a>
+</div>
+<figure class="ill" id="ill-proc"><p class="ctitle">What a share of public procurement would be worth each year</p>
+<svg viewBox="0 0 540 280" role="img" aria-label="Bar chart comparing a chosen share of the 292 billion pounds of yearly public procurement with 200 million pounds a year, the average of the National Vision’s 2 billion pounds over ten years."></svg>
+<div class="ctl"><label class="range"><span>Share of procurement</span><input type="range" id="proc-pct" min="0" max="20" value="10" step="1" aria-describedby="proc-cap"><output id="proc-out">1.0%</output></label></div>
+<figcaption id="proc-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide theme" id="governance" data-tone="dark" data-pri="governance" data-name="Area 7: governance" aria-labelledby="h-governance">
+<div class="frame">
+<p class="kicker">Key area 7 of 7</p>
+<h2 id="h-governance">Trust and biosecurity</h2>
+<div class="cols">
+<div>
+<p class="lede">Engineering biology is dual-use: bad actors could use it to make or enhance pathogens, more so as it gets cheaper (conclusion 64). Public awareness is limited, and past controversies over genetically modified organisms show what is at stake (conclusion 62).</p>
+<blockquote class="pull">If we do not know what normal is, we do not know what unusual is.”<cite>Piers Millett, International Biosecurity and Biosafety Initiative for Science, on why monitoring matters (<a data-para="255">paragraph 255</a>).</cite></blockquote>
+<ul class="recs">
+<li><a href="explore/#r=63"><span class="n"><span class="vh">Recommendation </span>63</span><span class="t">Support public engagement on products coming to market; regulators should explain what they regulate and why.</span></a></li>
+<li><a href="explore/#r=65"><span class="n"><span class="vh">Recommendation </span>65</span><span class="t">Commit to the Biological Security Strategy’s biosurveillance and population testing, and report on its progress by June 2025.</span></a></li>
+<li><a href="explore/#r=71"><span class="n"><span class="vh">Recommendation </span>71</span><span class="t">With international partners, make screening of DNA synthesis orders mandatory in the UK, backed by export controls and treaties.</span></a></li>
+</ul>
+<a class="more" data-more="governance" href="explore/#pri=governance"></a>
+</div>
+<figure class="ill" id="ill-screen" data-state="a">
+<div class="ctl" style="margin:0 0 10px"><div class="seg" role="group" aria-label="Screening"><button type="button" data-state="a" aria-pressed="true">Voluntary today</button><button type="button" data-state="b" aria-pressed="false">Mandatory</button></div></div>
+<svg viewBox="0 0 540 300" role="img" aria-label="Illustration: orders for synthetic DNA pass through five providers. When screening is voluntary, some providers do not screen and an order for a sequence of concern can get through. When it is mandatory, every provider screens and such orders are stopped."></svg>
+<figcaption id="screen-cap" aria-live="polite"></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="slide" id="who" data-tone="light" data-name="Who is asked to act" aria-labelledby="h-who">
+<div class="frame two">
+<div>
+<h2 id="h-who">Who is asked to act</h2>
+<p class="lede" id="who-lede"></p>
+<p class="note">Point at a body to light up its recommendations along the strand. Choose one to read them in the explorer.</p>
+</div>
+<div>
+<div class="wbars" id="wbars"></div>
+<p class="wmore" id="wmore"></p>
+</div>
+</div>
+</section>
+
+<section class="slide s-band s-close" id="catalyst" data-tone="dark" data-cut="hero" data-lit="all" data-charge="1" data-name="The catalyst" aria-labelledby="h-catalyst">
+<div class="frame">
+<h2 class="quote" id="h-catalyst">“We have many of the ingredients to make this a success. But this reaction requires a catalyst.”</h2>
+<p class="lede" style="max-width:60ch">Engineering biology could help the UK with health, sustainability and climate change, and grow the economy. But Lord Vallance indicated that the window of opportunity is small and closing. “We cannot afford to miss it” (summary).</p>
+</div>
+</section>
+
+<section class="slide s-close" id="next" data-tone="dark" data-lit="all" data-charge="1" data-name="What has happened since" aria-labelledby="h-next">
+<div class="frame">
+<h2 id="h-next">What has happened since</h2>
+<ol class="tl">
+<li class="done"><span class="when">17 March 2025</span><span class="what">The Government responds. It sets out work under way but leaves much of the detail to the Spending Review and the industrial strategy, the committee’s chair said in the debate. <a href="https://committees.parliament.uk/publications/47093/documents/243806/default/">Read the response</a></span></li>
+<li class="done"><span class="when">28 April 2025</span><span class="what">Peers debate the report in Grand Committee; Lord Vallance replies for the Government.</span></li>
+<li class="done"><span class="when">13 May 2025</span><span class="what">Seventeen pension providers sign the Mansion House Accord: at least 10% of default funds in private markets by 2030, at least 5% in the UK. <a href="https://www.theglobalcity.uk/insights/mansion-house-accord">City of London</a></span></li>
+<li class="done"><span class="when">23 June 2025</span><span class="what">The industrial strategy names engineering biology one of six frontier technologies, with £380 million, including £184 million to help firms scale up. <a href="https://www.gov.uk/government/news/tech-innovators-backed-to-set-up-and-scale-up-in-britain-through-industrial-strategy">GOV.UK</a></span></li>
+<li class="done"><span class="when">8 July 2025</span><span class="what">The first report on the Biological Security Strategy’s implementation is published; a second follows on 14 July 2026. <a href="https://www.gov.uk/government/publications/uk-biological-security-strategy-implementation-report-june-2023-june-2025">GOV.UK</a></span></li>
+<li class="done"><span class="when">13 November 2025</span><span class="what">Rules for precision-bred plants come into force in England, under the Precision Breeding Act 2023. <a href="https://www.gov.uk/government/collections/precision-breeding-register-notices-and-decisions">GOV.UK</a></span></li>
+<li class="done"><span class="when">February 2026</span><span class="what">A UK-wide public dialogue on engineering biology begins, run with Sciencewise.</span></li>
+<li class="done"><span class="when">10 June 2026</span><span class="what">A one-year update puts UKRI’s investment in engineering biology at £643 million, with over £12 million more for doctoral training. <a href="https://www.gov.uk/government/publications/digital-and-technologies-sector-plan-year-one-update">GOV.UK</a></span></li>
+</ol>
+<div class="acts"><a class="btn primary" href="explore/">Explore all 75 conclusions and recommendations</a><a class="btn" data-pdf href="#">Read the full report (PDF)</a><button type="button" class="btn" data-go="0">Back to the start</button></div>
+<p class="small">An unofficial guide, not a Parliament service. Quotes and figures come from the report, with paragraph numbers; charts marked as redrawn are read from the report’s figures, so values are approximate, and diagrams marked as illustrations are not data. The summaries of recommendations are ours, so check the report for the exact wording. Contains Parliamentary information licensed under the <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>. Typefaces: Archivo and Newsreader (SIL Open Font License).</p>
+</div>
+</section>
+
+</main>
+
+<nav class="pager" aria-label="Slides"><button type="button" id="prev" aria-label="Previous slide">‹</button><span id="count">1 of 16</span><button type="button" id="next-btn" aria-label="Next slide">›</button><span id="slidename"></span></nav>
+<div class="bed" aria-hidden="true"></div>
+<svg id="construct" aria-hidden="true"></svg>
+<div id="tip" aria-hidden="true"></div>
+
+<script>
+(()=>{
+const D=/*__DATA__*/null;
+const R=D.recs,N=R.length;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isRec=r=>r.kind==='rec';
+const nRec=R.filter(isRec).length;
+const plain=t=>t.replace(/\n• /g,' ');
+const clip=(s,n)=>s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s;
+const actorCount=Object.fromEntries(D.actors.map(a=>[a.id,R.filter(r=>r.to.includes(a.id)).length]));
+const priSet=id=>new Set(R.filter(r=>r.pri===id).map(r=>r.n));
+const slides=$$('.slide');
+const NS='http://www.w3.org/2000/svg';
+const svgEl=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e};
+const txt=(parent,x,y,s,attrs={})=>{const a={x,y,...attrs};if(a['font-size']){a.style=`font-size:${a['font-size']}px;${a.style||''}`;delete a['font-size']}const t=svgEl('text',a,parent);t.textContent=s;return t};
+const paraHref=n=>D.pdf+'#page='+(D.para_pages[n]||1);
+const linkParas=el=>el.querySelectorAll('[data-para]').forEach(a=>{a.href=paraHref(a.dataset.para)});
+const ease=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+const back=k=>{const c1=1.5,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,k)=>a+(b-a)*k;
+const r0=v=>Math.round(v);
+const fmt=n=>n.toLocaleString('en-GB');
+function animate(ms,fn,done){if(reduce){fn(1);done&&done();return()=>{}}let id,t0=performance.now();const step=now=>{const k=clamp((now-t0)/ms);fn(k);if(k<1)id=requestAnimationFrame(step);else done&&done()};id=requestAnimationFrame(step);return()=>cancelAnimationFrame(id)}
+function rng(seed){let s=(seed>>>0)||1;return()=>{s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;return s/4294967296}}
+const hatch=(svg,id,stroke,gap=5,w=1.3)=>{const defs=svg.querySelector('defs')||svgEl('defs',{},svg);const p=svgEl('pattern',{id,width:gap,height:gap,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},defs);svgEl('line',{x1:0,y1:0,x2:0,y2:gap,style:`stroke:${stroke};stroke-width:${w}px`},p);return p};
+/* a run of particles along a polyline: one loop for every animated diagram */
+function polyline(pts){const seg=[];let L=0;for(let i=1;i<pts.length;i++){const[a,b]=[pts[i-1],pts[i]],l=Math.hypot(b[0]-a[0],b[1]-a[1]);seg.push([a,b,L,l]);L+=l}
+  return{L,at(d){d=clamp(d,0,L);for(const[a,b,s,l]of seg)if(d<=s+l){const k=l?(d-s)/l:0;return[a[0]+(b[0]-a[0])*k,a[1]+(b[1]-a[1])*k]}const z=pts[pts.length-1];return[z[0],z[1]]}}}
+
+linkParas(document);
+$$('[data-pdf]').forEach(a=>{a.href=D.pdf});
+$$('[data-more]').forEach(a=>{const n=priSet(a.dataset.more).size;a.textContent=`See all ${n} paragraphs in this area in the explorer`});
+
+/* ================= the construct: the report as a genetic design of 75 parts ================= */
+/* Units along the strand: each chapter is a transcription unit (promoter, parts, terminator); a part's length
+   is a base width plus its paragraph's word count, so longer paragraphs make longer parts. */
+const cons=$('#construct');
+const PU=40,TU=40,GU=120,AU=18;
+let u=0;const pos=[],units=[];
+D.chapters.forEach(c=>{const its=R.filter(r=>r.ch===c.n);if(!its.length)return;if(units.length)u+=GU;
+  const t={n:c.n,p:u};u+=PU;its.forEach(r=>{pos[r.n-1]={u0:u,w:AU+r.words};u+=AU+r.words});t.t=u;u+=TU;units.push(t)});
+const S=u;
+const bb=svgEl('line',{class:'bb'},cons),gGly=svgEl('g',{},cons),gPart=svgEl('g',{},cons),gLab=svgEl('g',{class:'labs'},cons),gHit=svgEl('g',{},cons);
+const gly=units.map(t=>({prom:svgEl('path',{class:'glyph'},gGly),head:svgEl('path',{class:'head'},gGly),term:svgEl('path',{class:'glyph'},gGly),lab:txt(gLab,0,0,'Chapter '+t.n)}));
+const part=R.map(r=>{const g=svgEl('g',{class:'pt '+(isRec(r)?'r':'c')},gPart);return{g,o:svgEl('path',{class:'o'},g),f:svgEl('path',{class:'f'},g)}});
+const hits=R.map(r=>{const h=svgEl('rect',{class:'hit'},gHit);h.dataset.n=r.n;return h});
+let P=null,lit=null,lineK=1,level=1,charge=0,beat=0,mode='hero',raf=0;
+const grow=R.map(()=>1),fillK=R.map(()=>1),gk=units.map(()=>1);
+const q=v=>v.toFixed(2);
+function cds(x1,len,y,h){const x2=x1+len,tip=Math.min(h*.45,len*.45);return `M${q(x1)},${q(y-h/2)}H${q(x2-tip)}L${q(x2)},${q(y)}L${q(x2-tip)},${q(y+h/2)}H${q(x1)}Z`}
+function cdsFill(x1,len,y,h,f){
+  if(f<=.004)return '';
+  if(f>=.996)return cds(x1,len,y,h);
+  const x2=x1+len,tip=Math.min(h*.45,len*.45),xf=x1+len*f;
+  if(xf<=x2-tip)return `M${q(x1)},${q(y-h/2)}H${q(xf)}V${q(y+h/2)}H${q(x1)}Z`;
+  const dy=(h/2)*(x2-xf)/tip;
+  return `M${q(x1)},${q(y-h/2)}H${q(x2-tip)}L${q(xf)},${q(y-dy)}V${q(y+dy)}L${q(x2-tip)},${q(y+h/2)}H${q(x1)}Z`;
+}
+function lay(m){
+  const W=innerWidth,H=innerHeight;
+  if(W<=820)return{x0:14,y0:H-56,L:W-28,Hs:42,lo:0};
+  const pad=Math.max(W*.05,24);
+  if(m==='hero'){const Hs=Math.min(170,H*.21);return{x0:pad,y0:H-64-Hs,L:W-2*pad,Hs,lo:1}}
+  const x0=Math.round(W*.37);return{x0,y0:H-58,L:W-pad-x0,Hs:44,lo:0};
+}
+function draw(){
+  if(!P)return;
+  const{x0,y0,L,Hs,lo}=P,k=L/S,y=y0+Hs*.6,h=clamp(Hs*.22,7,38),sw=clamp(Hs*.012,1,2);
+  const x1=x0-10,x2=x1+(L+20)*lineK;
+  bb.setAttribute('x1',q(x1));bb.setAttribute('x2',q(x2));bb.setAttribute('y1',q(y));bb.setAttribute('y2',q(y));bb.style.strokeWidth=sw+.4;
+  units.forEach((t,j)=>{const g=gly[j],s=gk[j],xp=x0+(t.p+PU*.3)*k,xt=x0+(t.t+TU*.5)*k;
+    const ph=h*1.7*s,pa=Math.min(Math.max(h*.9,PU*.55*k),(t.t-t.p)*k*.8),ah=Math.min(h*.3,pa*.45)*s;
+    if(s<.02){g.prom.setAttribute('d','');g.head.setAttribute('d','');g.term.setAttribute('d','')}
+    else{g.prom.setAttribute('d',`M${q(xp)},${q(y)}V${q(y-ph)}H${q(xp+pa-ah)}`);
+      g.head.setAttribute('d',`M${q(xp+pa-ah*1.4)},${q(y-ph-ah)}L${q(xp+pa)},${q(y-ph)}L${q(xp+pa-ah*1.4)},${q(y-ph+ah)}Z`);
+      const th=h*1.15*s,tw=h*.42;g.term.setAttribute('d',`M${q(xt)},${q(y)}V${q(y-th)}M${q(xt-tw)},${q(y-th)}H${q(xt+tw)}`)}
+    g.prom.style.strokeWidth=g.term.style.strokeWidth=sw;
+    const nx=j+1<units.length?x0+(units[j+1].p+PU*.3)*k:1e9,up=nx-xp<66?15:0;
+    g.lab.setAttribute('x',q(xp));g.lab.setAttribute('y',q(y-h*1.7-10-up));g.lab.setAttribute('opacity',(lo*lineK*s).toFixed(2))});
+  R.forEach((rec,i)=>{
+    const p=pos[i],on=!!lit&&lit.has(rec.n),c=part[i],gap=Math.min(2,p.w*k*.2);
+    const xa=x0+p.u0*k+gap/2,len=Math.max(.6,p.w*k-gap),hh=h*grow[i]*(on?1+.35*beat:1);
+    if(hh<.5){c.o.setAttribute('d','');c.f.setAttribute('d','')}
+    else{c.o.setAttribute('d',cds(xa,len,y,hh));c.f.setAttribute('d',cdsFill(xa,len,y,hh,fillK[i]*(isRec(rec)?level:charge)))}
+    c.o.style.strokeWidth=Math.min(1.3,Math.max(.6,len*.18));
+    c.g.classList.toggle('off',!!lit&&!on);
+    const hb=hits[i];hb.setAttribute('x',q(x0+p.u0*k));hb.setAttribute('y',q(y-h/2-10));hb.setAttribute('width',q(p.w*k));hb.setAttribute('height',q(h+20));
+  });
+}
+function size(){cons.setAttribute('width',innerWidth);cons.setAttribute('height',innerHeight);cons.setAttribute('viewBox',`0 0 ${innerWidth} ${innerHeight}`)}
+function tween(target,ms=950){
+  cancelAnimationFrame(raf);const from={...P};
+  if(reduce||!P){P={...target};draw();return}
+  const t0=performance.now();
+  const step=now=>{const k=Math.min(1,(now-t0)/ms),e=ease(k);for(const key of['x0','y0','L','Hs','lo'])P[key]=from[key]+(target[key]-from[key])*e;draw();if(k<1)raf=requestAnimationFrame(step)};
+  raf=requestAnimationFrame(step);
+}
+let stopCharge=()=>{},stopBeat=()=>{},stopLevel=()=>{};
+function setCharge(to){stopCharge();const c0=charge;stopCharge=animate(to?1600:500,k=>{charge=c0+(to-c0)*ease(k);draw()})}
+function setLevel(v,ms=0){stopLevel();if(!ms){level=v;draw();return}const l0=level;stopLevel=animate(ms,k=>{level=l0+(v-l0)*ease(k);draw()})}
+function pulse(){stopBeat();stopBeat=animate(560,k=>{beat=Math.sin(Math.PI*k);draw()},()=>{beat=0;draw()})}
+function setLit(s){lit=s;draw()}
+const tip=$('#tip');
+cons.addEventListener('pointerover',e=>{const h=e.target.closest('.hit');if(!h||e.pointerType==='touch')return;const r=R[h.dataset.n-1];
+  tip.innerHTML=`<b>${isRec(r)?'Recommendation':'Conclusion'} ${r.n}</b><div class="x">${esc(clip(plain(r.text),170))}</div><div class="go">Select to read it in the explorer</div>`;
+  const bx=h.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
+  tip.style.left=Math.max(8,Math.min(innerWidth-tw-8,bx.left+bx.width/2-tw/2))+'px';tip.style.top=Math.max(8,bx.top-th-10)+'px';tip.style.opacity=1});
+cons.addEventListener('pointerout',e=>{if(e.target.closest('.hit'))tip.style.opacity=0});
+cons.addEventListener('click',e=>{const h=e.target.closest('.hit');if(h)location.href='explore/#r='+h.dataset.n});
+
+/* ================= slides ================= */
+let active=-1;const hooks={};
+function litFor(s){
+  if(s.dataset.lit==='all')return new Set(R.map(r=>r.n));
+  if(s.dataset.lit)return new Set(s.dataset.lit.split(' ').map(Number));
+  if(s.dataset.pri)return priSet(s.dataset.pri);
+  return null;
+}
+function activate(i){
+  if(i===active)return;const prev=active;active=i;const s=slides[i];
+  document.body.dataset.tone=s.dataset.tone;
+  $('#count').textContent=`${i+1} of ${slides.length}`;$('#slidename').textContent=s.dataset.name;
+  $('#prev').disabled=i===0;$('#next-btn').disabled=i===slides.length-1;
+  const was=mode;mode=s.dataset.cut||'strip';
+  lit=litFor(s);
+  const target=lay(mode);if(!P)P={...target};
+  tween(target);
+  if(!!s.dataset.charge!==charge>.5)setCharge(s.dataset.charge?1:0);
+  if(prev>=0&&lit&&mode==='strip'&&lit.size<N)setTimeout(pulse,was===mode?120:900);
+  slides.forEach((x,j)=>{const h=hooks[x.id];if(!h)return;if(j===i){h.start&&h.start()}else if(h.on){h.stop&&h.stop()}h.on=j===i});
+  history.replaceState(null,'',i?'#'+s.id:location.pathname+location.search);
+}
+const snapOn=()=>matchMedia('(min-width:821px) and (min-height:640px)').matches;
+function goTo(i){
+  i=Math.max(0,Math.min(slides.length-1,i));const s=slides[i];
+  s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  const h=s.querySelector('h1,h2');if(h){h.setAttribute('tabindex','-1');setTimeout(()=>h.focus({preventScroll:true}),reduce?0:650)}
+}
+$('#prev').addEventListener('click',()=>goTo(active-1));
+$('#next-btn').addEventListener('click',()=>goTo(active+1));
+document.addEventListener('click',e=>{const n=e.target.closest('[data-next]');if(n){goTo(active+1);return}const g=e.target.closest('[data-go]');if(g&&/^\d+$/.test(g.dataset.go))goTo(+g.dataset.go)});
+addEventListener('keydown',e=>{
+  if(!snapOn()||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(e.target.closest('input,select,textarea,[contenteditable]'))return;
+  const k=e.key;let d=0;
+  if(k==='ArrowDown'||k==='ArrowRight'||k==='PageDown'||(k===' '&&!e.shiftKey))d=1;
+  else if(k==='ArrowUp'||k==='ArrowLeft'||k==='PageUp'||(k===' '&&e.shiftKey))d=-1;
+  else if(k==='Home'){e.preventDefault();goTo(0);return}else if(k==='End'){e.preventDefault();goTo(slides.length-1);return}
+  if(d){if(e.target.closest('.seg,.node')&&(k==='ArrowLeft'||k==='ArrowRight'))return;e.preventDefault();
+    const b=slides[active].getBoundingClientRect(),beh=reduce?'auto':'smooth';
+    if(d>0&&b.bottom>innerHeight+4){scrollBy({top:Math.min(b.bottom-innerHeight,innerHeight*.8),behavior:beh});return}
+    if(d<0&&b.top<-4){scrollBy({top:Math.max(b.top,-innerHeight*.8),behavior:beh});return}
+    goTo(active+d)}
+});
+
+/* two (or three) views in one figure */
+function twoState(id,captions,onSet){
+  const fig=$('#'+id),btns=[...fig.querySelectorAll('.seg button[data-state]')],cap=fig.querySelector('figcaption');let st='a';
+  const set=s=>{st=s;fig.dataset.state=s;btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===s)));if(cap&&captions){cap.innerHTML=captions[s];linkParas(cap)}onSet&&onSet(s)};
+  btns.forEach(b=>b.addEventListener('click',()=>set(b.dataset.state)));
+  set('a');return{set,get:()=>st,fig};
+}
+
+/* ================= 2. the verdict: UKRI's spend (redrawn from Figure 2) ================= */
+hooks.verdict=(()=>{
+  const fig=$('#ill-spend'),svg=fig.querySelector('svg'),g=svgEl('g',{},svg);
+  const SP=[['2004–05',0.9],['2005–06',2.1],['2006–07',2.3],['2007–08',3.5],['2008–09',4.8],['2009–10',8.3],['2010–11',11.9],['2011–12',15.9],['2012–13',24.9],['2013–14',32.9],
+    ['2014–15',77.9],['2015–16',67.5],['2016–17',64.6],['2017–18',62.5],['2018–19',63.7],['2019–20',57.8],['2020–21',59.4],['2021–22',51.0],['2022–23',53.9],['2023–24',45.8]];
+  const X0=46,X1=532,Y0=250,K=2.75,ST=(X1-X0)/SP.length,BW=17,xc=i=>X0+i*ST+ST/2,yv=v=>Y0-v*K;
+  const vbar=(x,y,w,h,r=4)=>{r=Math.min(r,w/2,h);return `M${x},${Y0}V${y+r}A${r},${r} 0 0,1 ${x+r},${y}H${x+w-r}A${r},${r} 0 0,1 ${x+w},${y+r}V${Y0}Z`};
+  const gg=svgEl('g',{class:'grid'},g);
+  [20,40,60,80].forEach(v=>{svgEl('line',{x1:X0,x2:X1,y1:yv(v),y2:yv(v)},gg);txt(g,X0-6,yv(v)+4,`£${v}m`,{'text-anchor':'end',class:'m'})});
+  const bars=SP.map(([n,v],i)=>{const w=svgEl('g',{class:'bw'},g);w.style.transitionDelay=(i*.03)+'s';
+    return svgEl('path',{class:'bar'+(i===10||i===19?' k':''),d:vbar(xc(i)-BW/2,yv(v),BW,v*K)},w)});
+  svgEl('line',{class:'base',x1:X0,x2:X1,y1:Y0,y2:Y0},g);
+  [0,5,10,15,19].forEach(i=>txt(g,i===19?X1:xc(i),Y0+18,SP[i][0],{'text-anchor':i===19?'end':'middle',class:'m'}));
+  txt(g,xc(10),yv(77.9)-7,'£78m',{'text-anchor':'middle',class:'r halo'});txt(g,xc(19),yv(53.9)-7,'£46m',{'text-anchor':'middle',class:'r halo'});
+  // what it funded: programmes as the report's figure places them
+  const gb=svgEl('g',{class:'sb'},g),pin=i=>svgEl('circle',{class:'pin',cx:xc(i),cy:yv(SP[i][1])-2,r:4},gb);
+  ['Synthetic Biology for Growth, £103.5m','Frontier Engineering, £15.9m','Innovation and Knowledge Centre, £10m'].forEach((s,k)=>txt(gb,xc(9)-8,62+k*17,s,{'text-anchor':'end',class:'halo'}));
+  svgEl('path',{class:'lead',d:`M${xc(9)-4},${99}L${xc(9)},${yv(32.9)-8}`},gb);pin(9);
+  txt(gb,X0+4,146,'Networks in Synthetic Biology, £0.9m',{class:'halo'});svgEl('path',{class:'lead',d:`M${xc(4)},${151}V${yv(4.8)-8}`},gb);pin(4);
+  txt(gb,X1,18,'Mission Hubs and Awards, £100m',{'text-anchor':'end',class:'halo'});svgEl('path',{class:'lead',d:`M${xc(19)},${23}V${yv(45.8)-8}`},gb);pin(19);
+  txt(gb,xc(19)-12,38,'Transition awards, £14.5m',{'text-anchor':'end',class:'halo'});svgEl('path',{class:'lead',d:`M${xc(17)},${43}V${yv(51)-8}`},gb);pin(17);
+  // hover: read a year
+  const rd=txt(g,X0+4,22,'',{class:'b halo'});
+  SP.forEach(([n,v],i)=>{const h=svgEl('rect',{x:xc(i)-ST/2,y:20,width:ST,height:Y0-20,fill:'transparent'},g);
+    h.addEventListener('pointerenter',()=>{bars.forEach((b,j)=>b.classList.toggle('on',j===i));rd.textContent=`${n}: about £${r0(v)}m`});
+    h.addEventListener('pointerleave',()=>{bars[i].classList.remove('on');rd.textContent=''})});
+  const caps={a:'<b>UKRI’s spend on engineering biology</b> rose to about £78 million in 2014–15 and has fallen since, to about £46 million in 2023–24. Redrawn from Figure 2 of the report; values are read from the chart, so approximate. It leaves out the £170 million announced with the National Vision, to be spent over the following years. Point at a year to read it.',
+    b:'<b>What it funded.</b> The marks show where the report’s Figure 2 places each programme. The Synthetic Biology for Growth programme ran from 2014 to 2022 and funded two centres for doctoral training (<a data-para="76">paragraph 76</a>).'};
+  twoState('ill-spend',caps);
+  let played=false;
+  return{start(){if(played)return;played=true;requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 3. what engineering biology is (box 1) ================= */
+hooks.what=(()=>{
+  const fig=$('#ill-make'),svg=fig.querySelector('svg'),cap=$('#make-cap'),btns=[...fig.querySelectorAll('[data-ex]')];
+  const EX=[
+    {in:['Genes for a','natural pigment'],mid:['Microbe'],out:['Dye, made and','fixed on fabric'],cap:'<b>Sustainable dyes.</b> Colorifix, in Norwich, finds the genes that make a pigment in nature and puts them into a microbe that makes the dye and fixes it onto fabric, with less environmental impact than synthetic dyes (box 1).'},
+    {in:['Waste biomass','and captured CO₂'],mid:['Bacteria'],out:['Building blocks','for fuels'],cap:'<b>Fuel from waste.</b> C3 Biotechnologies, a University of Manchester spin-out, uses engineered bacteria to combine waste biomass with captured carbon dioxide into precursors that can be turned into propane and butane (box 1).'},
+    {in:['Animal cells'],mid:['Cells in a','bioreactor'],out:['Cultivated','meat'],cap:'<b>Cultivated meat.</b> Meat grown from cells rather than raised as animals. Extracellular, in Bristol, supplies bioreactors and cell lines to companies making it; the UK was the first European country to approve cultivated meat in pet food (box 1).'},
+    {in:['Waste that','contains metals'],mid:['Microbes'],out:['Recovered','rare earths'],cap:'<b>Recovering metals.</b> A Mission Hub led by Professor Martin Warren, of the Quadram Institute and the University of Kent, aims to use biology to recover and recycle rare earths; engineered microbes could extract metals from waste (box 1).'},
+    {in:['Edited genes'],mid:['Plant'],out:['Crops that','resist disease'],cap:'<b>Crops.</b> Plants can be altered to resist disease, so they need fewer pesticides and fungicides, or to carry more vitamins. The Sainsbury Laboratory in Norwich designs tools to engineer plant genomes (box 1).'}];
+  const g=svgEl('g',{},svg),CY=112;
+  txt(g,90,22,'What goes in',{class:'col m'});txt(g,270,22,'Engineered organism',{class:'col m'});txt(g,450,22,'What comes out',{class:'col m'});
+  svgEl('rect',{class:'tray',x:30,y:52,width:120,height:120,rx:14},g);svgEl('rect',{class:'tray',x:390,y:52,width:120,height:120,rx:14},g);
+  svgEl('rect',{class:'cell',x:192,y:CY-50,width:156,height:100,rx:50},g);
+  const ring=svgEl('g',{},g);svgEl('circle',{class:'ring',cx:0,cy:0,r:24},ring);
+  [[0,.9],[1.6,.7],[3.4,1.1],[5,.5]].forEach(([a,l])=>{const p=(t)=>[24*Math.cos(t),24*Math.sin(t)];const[x1,y1]=p(a),[x2,y2]=p(a+l);svgEl('path',{class:'gene',d:`M${x1.toFixed(1)},${y1.toFixed(1)}A24,24 0 0,1 ${x2.toFixed(1)},${y2.toFixed(1)}`,style:'fill:none;stroke:var(--hi);stroke-width:7;stroke-linecap:butt'},ring)});
+  svgEl('path',{class:'arw',d:`M156,${CY}H184m-6,-5l6,5l-6,5`},g);svgEl('path',{class:'arw',d:`M354,${CY}H382m-6,-5l6,5l-6,5`},g);
+  const L=(x,lines)=>{const t=svgEl('text',{class:'lab',x,y:196},g);lines.forEach((s,k)=>{const sp=svgEl('tspan',{x,dy:k?16:0},t);sp.textContent=s});return t};
+  let labs=[];
+  const gp=svgEl('g',{},g),rnd=rng(55);
+  let ex=0,run=0,last=0,sp=0,ang=0,ins=[],outs=[],nOut=0;
+  const slot=k=>[402+(k%8)*13.5,160-Math.floor(k/8)*13.5];
+  function seed(){gp.textContent='';ins=[];outs=[];nOut=0;for(let k=0;k<14;k++){const c=svgEl('circle',{class:'pin',r:4.2,cx:44+rnd()*92,cy:66+rnd()*92},gp);ins.push({el:c,x:+c.getAttribute('cx'),y:+c.getAttribute('cy'),vx:(rnd()-.5)*14,vy:(rnd()-.5)*14})}}
+  function setEx(i){ex=i;btns.forEach((b,k)=>b.setAttribute('aria-pressed',String(k===i)));labs.forEach(t=>t.remove());const e=EX[i];labs=[L(90,e.in),L(270,e.mid),L(450,e.out)];cap.innerHTML=e.cap;seed();for(let k=0;k<(reduce?12:8);k++){const[x,y]=slot(k);outs.push({el:svgEl('rect',{class:'pout',x:x-4.5,y:y-4.5,width:9,height:9,rx:2},gp),p:{L:0},d:0})}nOut=reduce?12:8}
+  btns.forEach((b,k)=>b.addEventListener('click',()=>setEx(k)));
+  function frame(now){const dt=Math.min(.05,(now-(last||now))/1000);last=now;sp-=dt;ang+=dt*.6;ring.setAttribute('transform',`translate(270,${CY}) rotate(${(ang*57.3).toFixed(1)})`);
+    ins.forEach(o=>{if(o.go)return;o.x+=o.vx*dt;o.y+=o.vy*dt;if(o.x<40||o.x>140)o.vx*=-1;if(o.y<62||o.y>162)o.vy*=-1;o.el.setAttribute('cx',o.x.toFixed(1));o.el.setAttribute('cy',o.y.toFixed(1))});
+    if(sp<=0){sp=.55;const o=ins.find(o=>!o.go);if(o){o.go=polyline([[o.x,o.y],[150,CY],[196,CY],[248,CY]]);o.d=0}}
+    ins=ins.filter(o=>{if(!o.go)return true;o.d+=70*dt;const[x,y]=o.go.at(o.d);o.el.setAttribute('cx',x.toFixed(1));o.el.setAttribute('cy',y.toFixed(1));
+      if(o.d>=o.go.L){o.el.remove();const k=nOut++%24;if(k===0)outs.forEach(p=>p.el.remove()),outs=[];const[tx,ty]=slot(k);const el=svgEl('rect',{class:'pout',width:9,height:9,rx:2},gp);outs.push({el,p:polyline([[292,CY],[344,CY],[388,CY],[tx,ty]]),d:0});
+        const c=svgEl('circle',{class:'pin',r:4.2,cx:44+rnd()*92,cy:66+rnd()*92},gp);ins.push({el:c,x:+c.getAttribute('cx'),y:+c.getAttribute('cy'),vx:(rnd()-.5)*14,vy:(rnd()-.5)*14});return false}return true});
+    outs.forEach(o=>{if(o.d>=o.p.L)return;o.d=Math.min(o.p.L,o.d+80*dt);const[x,y]=o.p.at(o.d);o.el.setAttribute('x',(x-4.5).toFixed(1));o.el.setAttribute('y',(y-4.5).toFixed(1))});
+    run=requestAnimationFrame(frame)}
+  ring.setAttribute('transform',`translate(270,${CY})`);
+  setEx(0);
+  return{start(){if(reduce)return;last=0;cancelAnimationFrame(run);run=requestAnimationFrame(frame)},stop(){cancelAnimationFrame(run)}};
+})();
+
+/* ================= 4. why now: reading and writing DNA got cheap (redrawn from Figure 1) ================= */
+hooks.now=(()=>{
+  const fig=$('#ill-cost'),svg=fig.querySelector('svg'),inp=$('#cost-year'),out=$('#cost-out'),cap=$('#cost-cap');
+  const S1=[[1990.13,1.499],[1995.09,0.019],[2000.01,-0.515],[2002.95,-1.246],[2004.09,-1.615],[2006.03,-3.173],[2009.01,-5.152],[2009.99,-5.633],[2011.06,-5.799],[2011.96,-5.9],[2012.91,-5.9],[2013.9,-5.9],[2014.96,-6.96],[2015.97,-6.96],[2016.97,-6.96]];
+  const S2=[[1998.25,1.594],[2000.26,1.313],[2001.27,1.065],[2002.2,0.786],[2005.46,0.107],[2006.46,-0.183],[2008.6,-0.322],[2009.61,-0.356],[2010.64,-0.412],[2011.72,-0.645],[2012.75,-0.648],[2013.75,-0.741],[2014.77,-1.079],[2015.83,-1.548],[2016.9,-1.745]];
+  const S3=[[1992.07,-0.034],[1995.13,-0.064],[2000.01,-0.439],[2003.11,-0.814],[2006.09,-1.0],[2008.97,-1.14],[2009.96,-1.209],[2011.06,-1.178],[2012.01,-1.225],[2012.94,-1.257],[2013.95,-1.225],[2015.93,-1.328],[2016.97,-1.328]];
+  const X0=62,X1=524,YT=14,YB=246,X=y=>X0+(X1-X0)*(y-1990)/30,Y=l=>YT+(YB-YT)*(2-l)/9;
+  const g=svgEl('g',{},svg),gg=svgEl('g',{class:'grid'},g);
+  const SUP={'-':'⁻','0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷'};
+  for(let l=2;l>=-7;l--){svgEl('line',{x1:X0,x2:X1,y1:Y(l),y2:Y(l)},gg);txt(g,X0-8,Y(l)+4,l>=0?'$'+Math.pow(10,l):'$10'+String(l).split('').map(c=>SUP[c]).join(''),{'text-anchor':'end',class:'m'})}
+  for(let y=1990;y<=2020;y+=5)txt(g,X(y),YB+18,y,{'text-anchor':'middle',class:'m'});
+  svgEl('line',{class:'crispr',x1:X(2012),x2:X(2012),y1:YT+4,y2:YB},g);txt(g,X(2012)+5,YT+12,'CRISPR, 2012',{class:'m halo'});
+  const pth=s=>'M'+s.map(([y,l])=>`${X(y).toFixed(1)},${Y(l).toFixed(1)}`).join('L');
+  const lines=[S1,S2,S3].map((s,j)=>svgEl('path',{class:'ln l'+(j+1),d:pth(s),pathLength:1,style:'stroke-dasharray:1;stroke-dashoffset:1'},g));
+  txt(g,X(1990.13)+6,Y(1.499)-8,'Reading DNA',{class:'b halo'});txt(g,X(1998.25)+6,Y(1.594)-8,'Writing genes',{class:'b halo'});txt(g,X(2005.4),Y(-1.0)+20,'Writing short strands',{class:'b halo'});
+  const cur=svgEl('line',{class:'cur',y1:YT,y2:YB},g);
+  const dots=[1,2,3].map(j=>svgEl('circle',{class:'dot d'+j,r:5},g));
+  const at=(s,y)=>{if(y<s[0][0]-.2||y>s[s.length-1][0]+.2)return null;y=clamp(y,s[0][0],s[s.length-1][0]);for(let i=1;i<s.length;i++)if(y<=s[i][0]){const[a,b]=[s[i-1],s[i]],k=(y-a[0])/(b[0]-a[0]||1);return a[1]+(b[1]-a[1])*k}return s[s.length-1][1]};
+  const nice=n=>n<10?n.toFixed(1):n<1000?String(r0(n)):n<1e6?fmt(+n.toPrecision(2)):`${+(n/1e6).toPrecision(2)} million`;
+  const say=l=>{if(l==null)return 'no figure yet';const p=Math.pow(10,l);return p>=1?`$${p<10?p.toFixed(1):r0(p)} a base`:`${nice(1/p)} bases for $1`};
+  function set(y){out.textContent=y;cur.setAttribute('x1',X(y));cur.setAttribute('x2',X(y));
+    const ls=[S1,S2,S3].map(s=>at(s,y));dots.forEach((d,j)=>{d.style.display=ls[j]==null?'none':'';if(ls[j]!=null){d.setAttribute('cx',X(y));d.setAttribute('cy',Y(ls[j]))}});
+    cap.innerHTML=`<b>${y}.</b> Reading DNA: ${say(ls[0])}. Writing genes: ${say(ls[1])}. Writing short strands: ${say(ls[2])}. Redrawn from Figure 1 of the report (Bioeconomy Capital’s “Carlson curves”); values are read from the chart, so approximate. Each gridline is ten times cheaper than the one above.`}
+  inp.addEventListener('input',()=>set(+inp.value));
+  set(+inp.value);
+  let played=false;
+  return{start(){if(played)return;played=true;lines.forEach((l,j)=>{l.style.transition=reduce?'none':`stroke-dashoffset 1.6s ${j*.25}s cubic-bezier(.4,0,.2,1)`;requestAnimationFrame(()=>requestAnimationFrame(()=>{l.style.strokeDashoffset=0}))})}};
+})();
+
+/* ================= 5. started here, scaled elsewhere (redrawn from Figure 4) ================= */
+hooks.scale=(()=>{
+  const fig=$('#ill-vc'),svg=fig.querySelector('svg'),g=svgEl('g',{},svg);
+  const ST=[['Seed',2.5,13.7,'20¢','−80%'],['Early stage',9,34.9,'27¢','−73%'],['Later stage',17.9,103.9,'18¢','−82%']];
+  const X0=52,X1=532,Y0=228,YT=24,BW=50,GW=(X1-X0)/3;
+  const vbar=(x,y,w,h,r=4)=>{r=Math.min(r,w/2,Math.max(0,h));return `M${x},${Y0}V${Y0-h+r}A${r},${r} 0 0,1 ${x+r},${Y0-h}H${x+w-r}A${r},${r} 0 0,1 ${x+w},${Y0-h+r}V${Y0}Z`};
+  const gg=svgEl('g',{class:'grid sa'},g);
+  [20,40,60,80,100].forEach(v=>{const y=Y0-(Y0-YT)*v/110;svgEl('line',{x1:X0,x2:X1,y1:y,y2:y},gg);txt(gg,X0-6,y+4,`$${v}bn`,{'text-anchor':'end',class:'m'})});
+  const gb2=svgEl('g',{class:'grid sb'},g);[[.5,'50¢'],[1,'$1']].forEach(([v,s])=>{const y=Y0-(Y0-YT)*v/1.1;svgEl('line',{x1:X0,x2:X1,y1:y,y2:y},gb2);txt(gb2,X0-6,y+4,s,{'text-anchor':'end',class:'m'})});
+  const B=ST.map((s,i)=>{const cx=X0+GW*i+GW/2;txt(g,cx,Y0+20,s[0],{'text-anchor':'middle',class:'b'});
+    return{s,eu:svgEl('path',{class:'eu'},g),us:svgEl('path',{class:'us'},g),te:txt(g,cx-BW/2-3,0,'',{'text-anchor':'middle',class:'b halo'}),tu:txt(g,cx+BW/2+3,0,'',{'text-anchor':'middle',class:'b halo'}),cx}});
+  svgEl('line',{class:'base',x1:X0,x2:X1,y1:Y0,y2:Y0},g);
+  let k=0,stop=()=>{},st='a';
+  function paint(m){B.forEach(({s,eu,us,te,tu,cx})=>{const sc=v=>(Y0-YT)*v/110,nb=v=>(Y0-YT)*v/1.1;
+    const he=lerp(sc(s[1]),nb(1-Math.abs(parseFloat(s[4].replace('−','-')))/100),m)*k,hu=lerp(sc(s[2]),nb(1),m)*k;
+    eu.setAttribute('d',vbar(cx-BW-3,Y0-he,BW,he));us.setAttribute('d',vbar(cx+3,Y0-hu,BW,hu));
+    te.setAttribute('y',Y0-he-7);tu.setAttribute('y',Y0-hu-7);te.textContent=m<.5?`$${s[1]%1?s[1].toFixed(1):s[1]}bn`:s[3];tu.textContent=m<.5?`$${r0(s[2])}bn`:'$1';te.style.opacity=tu.style.opacity=k})}
+  let m=0;
+  const caps={a:'<b>Venture capital invested by stage</b>, redrawn from Figure 4 of the report, which takes it from the European Commission’s 2024 report on European competitiveness; values are read from the chart. In money, the gap is widest at the later stages, when companies scale up. The UK is not shown.',
+    b:'<b>For every dollar of US venture capital</b>, Europe raises about 20 cents at seed stage, 27 cents early on and 18 cents later, from the gaps marked on the report’s figure (−80%, −73% and −82%).'};
+  twoState('ill-vc',caps,s=>{if(s===st)return;st=s;const m0=m,m1=s==='b'?1:0;stop();stop=animate(800,e=>{m=lerp(m0,m1,ease(e));paint(m)})});
+  paint(0);
+  let played=false;
+  return{start(){if(played)return;played=true;animate(900,e=>{k=back(e);paint(m)})}};
+})();
+
+/* ================= 6. seven key areas ================= */
+const ORDER=['strategy','skills','regulation','infrastructure','investment','adoption','governance'];
+{
+  const PR=Object.fromEntries(D.priorities.map(p=>[p.id,p]));
+  $('#cards').innerHTML=ORDER.map(id=>{const p=PR[id],its=R.filter(r=>r.pri===id),nr=its.filter(isRec).length;
+    return `<button type="button" class="card" data-card="${id}"><span class="ct">${esc(p.title)}</span><span class="cs">${esc(p.summary)}</span><span class="strip" aria-hidden="true">${R.map(r=>`<i class="${r.pri===id?'on':''}" style="flex:${AU+r.words} 1 0"></i>`).join('')}</span><span class="cc">${its.length} paragraphs, ${nr} recommendation${nr===1?'':'s'}</span></button>`}).join('')
+    +`<p class="lead">Every one of the ${N} paragraphs sits under one area. The areas are the committee’s; which paragraph sits where is our reading.</p>`;
+  const cards=$('#cards');
+  cards.addEventListener('click',e=>{const c=e.target.closest('[data-card]');if(c)goTo(slides.findIndex(s=>s.id===c.dataset.card))});
+  const peek=e=>{const c=e.target.closest('[data-card]');if(slides[active]&&slides[active].id==='themes')setLit(c?priSet(c.dataset.card):null)};
+  cards.addEventListener('pointerover',peek);cards.addEventListener('focusin',peek);
+  cards.addEventListener('pointerleave',()=>{if(slides[active].id==='themes')setLit(null)});
+  cards.addEventListener('focusout',e=>{if(!cards.contains(e.relatedTarget)&&slides[active].id==='themes')setLit(null)});
+}
+
+/* ================= 7. area 1: strategy: where the UK's firms are (redrawn from Figure 5) ================= */
+hooks.strategy=(()=>{
+  const fig=$('#ill-firms'),svg=fig.querySelector('svg');
+  const A=[['Health and life sciences',576],['High-value compounds',37],['Agriculture and agrochemicals',25],['Alternative meat, protein and fat',21],['Bio-based and degradable products',10],['Biofuels and hydrogen',5],['Bioenergy and carbon capture',5],['Biosensing',4]];
+  const B=[['Small-scale manufacturing',261],['Biological materials and reagents',160],['Diagnostics',98],['AI, bioinformatics and software',73],['Robotics',67],['Pilot and mass manufacturing',28],['Supercomputing',15],['DNA synthesis and sequencing',24,1]];
+  const LX=206,X0=214,K=(486-X0)/600,RH=31,Y0=14;
+  const hbar=(x,y,w,h,r=4)=>{r=Math.min(r,w,h/2);return w<=0?'':`M${x},${y}H${x+w-r}A${r},${r} 0 0,1 ${x+w},${y+r}V${y+h-r}A${r},${r} 0 0,1 ${x+w-r},${y+h}H${x}Z`};
+  const mk=(rows,cls,klass)=>{const g=svgEl('g',{class:klass},svg);
+    const its=rows.map(([n,v,both],i)=>{const y=Y0+i*RH+(both?8:0);txt(g,LX,y+15,n,{'text-anchor':'end'});
+      const b=svgEl('path',{class:both?'both':cls},g),t=txt(g,X0+8,y+15,both?fmt(v)+', counted in both groups':fmt(v),{class:'b'});return{v,y,b,t}});
+    svgEl('line',{class:'base',x1:X0,x2:X0,y1:Y0-6,y2:Y0+rows.length*RH+10},g);
+    if(rows[rows.length-1][2])svgEl('line',{class:'gl',x1:12,x2:530,y1:Y0+(rows.length-1)*RH+2,y2:Y0+(rows.length-1)*RH+2},g);
+    return{g,its}};
+  const ga=mk(A,'app','sa'),gb=mk(B,'sup','sb');
+  const paint=(grp,k)=>grp.its.forEach(({v,y,b,t})=>{const w=v*K*k;b.setAttribute('d',hbar(X0,y+3,w,17));t.setAttribute('x',X0+w+7)});
+  paint(ga,0);paint(gb,0);
+  const shown={a:0,b:0};
+  const grow=s=>{if(shown[s])return;shown[s]=1;animate(900,e=>paint(s==='a'?ga:gb,ease(e)))};
+  const caps={a:'<b>Applications.</b> Of 707 firms making products, 576 are in health and life sciences; outside health the groups are small, from 37 in high-value compounds down to 4 in biosensing. Redrawn from Figure 5 of the report, from DSIT’s analysis for the National Vision (December 2023).',
+    b:'<b>Supply chain.</b> 726 firms supply the sector, 261 of them in small-scale manufacturing; 28 do pilot or mass manufacturing. The groups add up to more than the 1,162 firms counted, so some firms are in more than one (Figure 5 and footnote 15, at <a data-para="16">paragraph 16</a>).'};
+  let on=false;
+  const ui=twoState('ill-firms',caps,s=>{if(on)grow(s)});
+  return{start(){on=true;grow(ui.get())}};
+})();
+
+/* ================= 8. area 2: skills: doctoral training and visas ================= */
+hooks.skills=(()=>{
+  const fig=$('#ill-skills'),[sa,sb]=fig.querySelectorAll('svg');
+  // doctoral training: one square per centre
+  const ga=svgEl('g',{},sa);
+  txt(ga,0,30,'Artificial intelligence',{class:'b'});txt(ga,0,48,'12 new centres announced in 2023, to train 900 students over eight years',{class:'m'});
+  for(let i=0;i<12;i++){const r=svgEl('rect',{class:'cdt',x:i*44,y:62,width:36,height:36,rx:5},ga);r.style.transitionDelay=(i*.06)+'s'}
+  txt(ga,0,150,'Engineering biology and biotechnology',{class:'b'});txt(ga,0,168,'2 centres',{class:'m'});
+  for(let i=0;i<2;i++){const r=svgEl('rect',{class:'cdt eb',x:i*44,y:182,width:36,height:36,rx:5},ga);r.style.transitionDelay=(.8+i*.06)+'s'}
+  txt(ga,0,256,'One square for each Centre for Doctoral Training',{class:'m'});
+  // visas: the salary threshold and Global Talent visas
+  const gb=svgEl('g',{},sb),SX0=14,SX1=526,SX=v=>SX0+(SX1-SX0)*v/45000,LY=92;
+  txt(gb,0,18,'Skilled Worker visa: minimum salary',{class:'b'});
+  svgEl('line',{class:'scale',x1:SX0,x2:SX1,y1:LY,y2:LY},gb);
+  for(let v=0;v<=40000;v+=10000){svgEl('line',{class:'tick',x1:SX(v),x2:SX(v),y1:LY,y2:LY+6},gb);txt(gb,SX(v),LY+22,v?`£${v/1000},000`:'£0',{'text-anchor':'middle',class:'m'})}
+  svgEl('path',{class:'old',d:`M${SX(26200)},${LY-2}l-7,-12h14z`},gb);svgEl('path',{class:'new',d:`M${SX(38700)},${LY-2}l-8,-14h16z`},gb);
+  txt(gb,SX(26200),LY-20,'£26,200',{'text-anchor':'middle',class:'m b'});txt(gb,SX(38700),LY-22,'£38,700',{'text-anchor':'middle',class:'r'});
+  svgEl('path',{class:'jump',d:`M${SX(26200)+6},${LY-38}Q${(SX(26200)+SX(38700))/2},${LY-62} ${SX(38700)-8},${LY-40}`},gb);
+  svgEl('path',{d:`M${SX(38700)-8},${LY-40}l-9,-2m9,2l-4,-8`,style:'fill:none;stroke:var(--hi);stroke-width:1.6;stroke-linecap:round'},gb);
+  txt(gb,(SX(26200)+SX(38700))/2,LY-66,'March 2024',{'text-anchor':'middle',class:'m'});
+  txt(gb,0,LY+50,'Above the 76th percentile of UK salaries in 2021/22,',{class:'m'});txt(gb,0,LY+66,'and more than many postdoctoral researchers earn',{class:'m'});
+  const GY=214,GK=(SX1-130)/10000;
+  txt(gb,0,GY-18,'Global Talent visas',{class:'b'});
+  [['2023',7000,0],['2024',8000,1]].forEach(([y,v,j])=>{const yy=GY+j*28;txt(gb,0,yy+15,y,{class:'m'});svgEl('rect',{class:'gtv',x:44,y:yy+2,width:v*GK,height:18,rx:3},gb);txt(gb,44+v*GK+8,yy+16,fmt(v),{class:'b'})});
+  const caps={a:'<b>Doctoral training.</b> UKRI lists two Centres for Doctoral Training for engineering biology and biotechnology, against 12 new ones for AI announced in 2023 (<a data-para="76">paragraph 76</a>). The earlier Synthetic Biology for Growth programme funded two, which trained around 140 postgraduates.',
+    b:'<b>Visas.</b> The salary threshold for a Skilled Worker visa rose from £26,200 to £38,700 in March 2024 (<a data-para="100">paragraph 100</a>). Global Talent visas rose from 7,000 in 2023 to 8,000 in 2024, Lord Vallance said (<a data-para="102">paragraph 102</a>); the committee wants the route widened.'};
+  twoState('ill-skills',caps);
+  let played=false;
+  return{start(){if(played)return;played=true;requestAnimationFrame(()=>sa.classList.remove('pre'))}};
+})();
+
+/* ================= 9. area 3: regulation: 36 standards ================= */
+hooks.regulation=(()=>{
+  const fig=$('#ill-std'),svg=fig.querySelector('svg'),g=svgEl('g',{},svg);
+  txt(g,0,22,'Biotechnology',{class:'b'});txt(g,0,40,'36 standards',{class:'r'});
+  for(let i=0;i<36;i++){const c=svgEl('circle',{class:'d',cx:9+(i%6)*20,cy:62+Math.floor(i/6)*20,r:7},g);c.style.transitionDelay=(i*.018)+'s'}
+  const FX=196;txt(g,FX,22,'Aviation and other industries',{class:'b'});txt(g,FX,40,'“Thousands”',{class:'m b'});
+  for(let i=0;i<1000;i++){const c=svgEl('circle',{class:'e',cx:FX+4+(i%40)*8.4,cy:58+Math.floor(i/40)*8.4,r:2.4},g);c.style.transitionDelay=(.7+(i%40)*.012+Math.floor(i/40)*.02)+'s'}
+  txt(g,FX,290,'1,000 dots drawn; the report gives no exact number',{class:'m'});
+  $('#std-cap').innerHTML='Professor Paul Freemont: “in biotechnology, a multibillion-dollar industry, we have 36 ISO standards”, where aviation has thousands (<a data-para="127">paragraph 127</a>). Biology varies, so processes are hard to reproduce at scale, which makes standards particularly important (conclusion 32).';
+  linkParas($('#std-cap'));
+  let played=false;
+  return{start(){if(played)return;played=true;requestAnimationFrame(()=>svg.classList.remove('pre'))}};
+})();
+
+/* ================= 10. area 4: infrastructure: the patent loop, and biofoundries compared ================= */
+hooks.infrastructure=(()=>{
+  const fig=$('#ill-infra'),[sl,sf]=fig.querySelectorAll('svg');
+  const g=svgEl('g',{},sl),CX=270,CY=150,RX=150,RY=96;
+  const NODES=[['Get data',CX,CY-RY],['File a patent',CX+RX,CY],['Raise money',CX,CY+RY],['Pay for lab time',CX-RX,CY]];
+  const defs=svgEl('defs',{},sl);
+  // arcs between nodes, clockwise, with arrowheads
+  const arc=(a0,a1)=>{const p=a=>[CX+RX*Math.cos(a),CY+RY*Math.sin(a)];const[x0,y0]=p(a0),[x1,y1]=p(a1);return{d:`M${x0.toFixed(1)},${y0.toFixed(1)}A${RX},${RY} 0 0,1 ${x1.toFixed(1)},${y1.toFixed(1)}`,end:[x1,y1],a:a1}};
+  const ang=[-Math.PI/2,0,Math.PI/2,Math.PI];
+  const off=i=>i%2?.3:.52,arcs=ang.map((a,i)=>arc(a+off(i),ang[(i+1)%4]-off((i+1)%4)+(i===3?2*Math.PI:0)));
+  const gl=svgEl('g',{},g),tok=svgEl('circle',{class:'tok',r:7},g);
+  const arcEls=[];
+  arcs.forEach(({d,end,a})=>{const ag=svgEl('g',{},gl);arcEls.push(ag);svgEl('path',{class:'loop',d},ag);const tx=-Math.sin(a)*RX,ty=Math.cos(a)*RY,l=Math.hypot(tx,ty),ux=tx/l,uy=ty/l;const[x,y]=end;
+    svgEl('path',{class:'ah',d:`M${(x+ux*2).toFixed(1)},${(y+uy*2).toFixed(1)}L${(x-ux*9-uy*5).toFixed(1)},${(y-uy*9+ux*5).toFixed(1)}L${(x-ux*9+uy*5).toFixed(1)},${(y-uy*9-ux*5).toFixed(1)}Z`},ag)});
+  const nodes=NODES.map(([n,x,y],i)=>{const e=svgEl('g',{class:'node'+(i===0?' k':'')},g);svgEl('rect',{x:x-62,y:y-17,width:124,height:34,rx:17},e);txt(e,x,y+4.5,n);return e});
+  const mid=txt(g,CX,CY-4,'Each step needs',{'text-anchor':'middle',class:'m sa2'}),mid2=txt(g,CX,CY+14,'the one before',{'text-anchor':'middle',class:'m sa2'});
+  // the way out: open labs feed the data; money carries the company on to scale
+  const gout=svgEl('g',{},g);
+  const lab=svgEl('g',{class:'node k'},gout);svgEl('rect',{x:8,y:14,width:150,height:50,rx:10},lab);txt(lab,83,35,'National and',{});txt(lab,83,52,'university labs',{});
+  svgEl('path',{class:'in',d:`M158,39H${CX-70}`},gout);svgEl('path',{class:'inh',d:`M${CX-64},39l-10,-6v12z`},gout);
+  const up=svgEl('g',{class:'node k'},gout);svgEl('rect',{x:388,y:228,width:144,height:50,rx:10},up);txt(up,460,249,'Scale up',{});txt(up,460,266,'in the UK',{});
+  svgEl('path',{class:'in',d:`M${CX+64},${CY+RY+2}C${CX+86},${CY+RY+3} 360,253 378,253`},gout);svgEl('path',{class:'inh',d:`M388,253l-11,-6v12z`},gout);
+  const loopPath=polyline(Array.from({length:121},(_,i)=>{const a=-Math.PI/2+2*Math.PI*i/120;return[CX+RX*Math.cos(a),CY+RY*Math.sin(a)]}));
+  const half=Array.from({length:91},(_,i)=>{const a=-Math.PI/2+Math.PI*i/90;return[CX+RX*Math.cos(a),CY+RY*Math.sin(a)]});
+  const way=polyline([[80,39],[CX-70,39],[CX-20,CY-RY+2]].concat(half.slice(8)).concat([[CX+40,CY+RY+2],[CX+64,CY+RY+2],[360,CY+RY+6],[386,253]]));
+  // biofoundries compared: squares sized by money (in dollars)
+  const h=svgEl('g',{},sf),BY=268,F=Math.sqrt(40000/750);
+  [['Shenzhen','about $750m',750,16],['Korea’s K-Biofoundry','$100m',100,252],['London Biofoundry','£7m (about $9m),',9,380,'with no funding for staff']].forEach(([n,v,m,x,x3],i)=>{const s=Math.sqrt(m)*F;
+    svgEl('rect',{class:'sq'+(i===2?' uk':''),x,y:BY-s,width:s,height:s,rx:i===2?2:4},h);
+    const tx=x,ty=i===2?BY-s-52:BY-s-(i?44:28);txt(h,tx,ty,n,{class:'b'});txt(h,tx,ty+17,v,{class:i===2?'r':'m'});if(x3)txt(h,tx,ty+33,x3,{class:'m'})});
+  let st='a',run=0,last=0,d=0;
+  const show=s=>{sl.style.opacity=s==='c'?0:1;sf.style.opacity=s==='c'?1:0;sl.style.pointerEvents=s==='c'?'none':'';gout.style.opacity=s==='b'?1:0;mid.style.opacity=mid2.style.opacity=s==='a'?1:0;arcEls.forEach((e,i)=>{e.style.opacity=s==='b'&&i>1?.3:1});sl.setAttribute('aria-hidden',String(s==='c'));sf.setAttribute('aria-hidden',String(s!=='c'));d=0};
+  [sl,sf,gout,mid,mid2,...arcEls].forEach(e=>e.style.transition='opacity .5s');
+  function frame(now){const dt=Math.min(.05,(now-(last||now))/1000);last=now;
+    if(st==='a'){d=(d+90*dt)%loopPath.L;const[x,y]=loopPath.at(d);tok.setAttribute('cx',x.toFixed(1));tok.setAttribute('cy',y.toFixed(1));tok.style.opacity=1}
+    else if(st==='b'){d+=110*dt;if(d>way.L+80)d=0;const[x,y]=way.at(d);tok.setAttribute('cx',x.toFixed(1));tok.setAttribute('cy',y.toFixed(1));tok.style.opacity=d>way.L?0:1}
+    run=requestAnimationFrame(frame)}
+  const caps={a:'<b>The patent loop.</b> “You need the data to get a patent, but you need the money to get the data, and you cannot get the money because investors are increasingly pushing to get a patent” (Dr Sara Holland, patent attorney, <a data-para="138">paragraph 138</a>). Illustration.',
+    b:'<b>Open the labs.</b> The committee wants national and university labs opened to start-ups that need data for patents, with Innovate UK funding to help, and labs to count the patents they support (recommendation 38). Illustration.',
+    c:'<b>Biofoundries compared</b>, as Professor Paul Freemont described them: about $750 million for a building in Shenzhen, $100 million for Korea’s K-Biofoundry, and £7 million of public investment in the London Biofoundry’s infrastructure, with “no funding for staff” (<a data-para="146">paragraph 146</a>). Squares are sized by money, taking £7 million as about $9 million.'};
+  twoState('ill-infra',caps,s=>{st=s;show(s);if(reduce){const[x,y]=s==='b'?way.at(way.L*.55):loopPath.at(0);tok.setAttribute('cx',x);tok.setAttribute('cy',y)}});
+  const[x0,y0]=loopPath.at(0);tok.setAttribute('cx',x0);tok.setAttribute('cy',y0);
+  return{start(){if(reduce)return;last=0;cancelAnimationFrame(run);run=requestAnimationFrame(frame)},stop(){cancelAnimationFrame(run)}};
+})();
+
+/* ================= 11. area 5: investment: pensions ================= */
+hooks.investment=(()=>{
+  const fig=$('#ill-pension'),svg=fig.querySelector('svg'),g=svgEl('g',{},svg);
+  const C=18,GAP=3,ST=C+GAP,XS=[24,300],YT=78;
+  const SETS={a:[[40,'More than 40%','about 25 years ago'],[4,'4%','now']],b:[[23,'23%','Australian Superfund, in Australia'],[5,'About 5%','similar UK funds, in the UK']]};
+  const grids=XS.map(x=>{const cells=[];for(let i=0;i<100;i++){const r=Math.floor(i/10),c=i%10;cells.push(svgEl('rect',{class:'c',x:x+c*ST,y:YT+(9-r)*ST,width:C,height:C,rx:3},g))}
+    return{cells,big:txt(g,x,34,'',{class:'big r'}),sub:txt(g,x,56,'',{class:'m'})}});
+  let st='a';
+  function set(s,anim){st=s;SETS[s].forEach(([n,b,sub],j)=>{const gr=grids[j];gr.big.textContent=b;gr.sub.textContent=sub;
+    gr.cells.forEach((c,i)=>{c.style.transitionDelay=anim&&!reduce?(i*.008)+'s':'0s';c.classList.toggle('on',i<n)})})}
+  grids.forEach(gr=>gr.cells.forEach(c=>{c.style.transition='fill .3s,stroke .3s'}));
+  const caps={a:'<b>Share of the UK stock market owned by pension funds:</b> more than 40% about 25 years ago, 4% now, said Dr Charles Hall of Peel Hunt (<a data-para="196">paragraph 196</a>). He links the fall to global, passive investing: it is active fund managers who back technology. Each grid is 100 squares.',
+    b:'<b>Investing at home.</b> The Australian Superfund invests 23% of Australians’ contributions in Australia; for similar UK funds it is “more like 5%”, Dr Hall said (<a data-para="199">paragraph 199</a>). Each grid is 100 squares.'};
+  let played=false;
+  twoState('ill-pension',caps,s=>{if(played)set(s,true)});
+  return{start(){if(played)return;played=true;set(st,true)}};
+})();
+
+/* ================= 12. area 6: adoption: what a share of procurement is worth ================= */
+hooks.adoption=(()=>{
+  const fig=$('#ill-proc'),svg=fig.querySelector('svg'),inp=$('#proc-pct'),out=$('#proc-out'),cap=$('#proc-cap');
+  const PROC=292,NV=.2,Y0=226,YT=18,K=(Y0-YT)/6,X0=56;
+  const g=svgEl('g',{},svg),gg=svgEl('g',{class:'grid'},g);
+  for(let v=1;v<=6;v++){svgEl('line',{x1:X0,x2:532,y1:Y0-v*K,y2:Y0-v*K},gg);txt(g,X0-6,Y0-v*K+4,`£${v}bn`,{'text-anchor':'end',class:'m'})}
+  const vbar=(x,w,h,r=4)=>{r=Math.min(r,w/2,Math.max(0,h));return h<=0?'':`M${x},${Y0}V${Y0-h+r}A${r},${r} 0 0,1 ${x+r},${Y0-h}H${x+w-r}A${r},${r} 0 0,1 ${x+w},${Y0-h+r}V${Y0}Z`};
+  const b1=svgEl('path',{class:'bar'},g),b2=svgEl('path',{class:'nv',d:vbar(330,130,NV*K)},g);
+  svgEl('line',{class:'ref',x1:X0,x2:532,y1:Y0-NV*K,y2:Y0-NV*K},g);
+  svgEl('line',{class:'base',x1:X0,x2:532,y1:Y0,y2:Y0},g);
+  const t1=txt(g,155,0,'',{'text-anchor':'middle',class:'b halo'});txt(g,395,Y0-NV*K-8,'£200m',{'text-anchor':'middle',class:'b halo'});
+  const l1=txt(g,155,Y0+20,'',{'text-anchor':'middle',class:'b'});txt(g,155,Y0+37,'of £292bn of procurement a year',{'text-anchor':'middle',class:'m'});
+  txt(g,395,Y0+20,'National Vision, a year',{'text-anchor':'middle',class:'b'});txt(g,395,Y0+37,'£2bn over ten years, on average',{'text-anchor':'middle',class:'m'});
+  const money=v=>v>=1?`£${v.toFixed(1).replace(/\.0$/,'')} billion`:`£${r0(v*1000)} million`;
+  function set(t){const p=t/10,v=PROC*p/100,h=v*K;out.textContent=`${p.toFixed(1)}%`;b1.setAttribute('d',vbar(90,130,h));t1.setAttribute('y',Y0-h-8);t1.textContent=v?money(v).replace(' billion','bn').replace(' million','m'):'';l1.textContent=`${p.toFixed(1)}% set aside`;
+    const ratio=v/NV;
+    cap.innerHTML=(v?`<b>${p.toFixed(1)}% of £292 billion is about ${money(v)} a year</b>, ${ratio<1.05&&ratio>.95?'about the same as':ratio>1?`${ratio<10?ratio.toFixed(1).replace(/\.0$/,''):r0(ratio)} times`:`${r0(ratio*100)}% of`} the £200 million a year that the National Vision’s £2 billion over ten years works out at. `:'<b>Move the slider</b> to set aside a share of public procurement. ')+
+      'Our arithmetic on the report’s figures (<a data-para="58">paragraph 58</a>), not a committee estimate; the committee suggests a share for innovative UK SMEs and new technologies in general (recommendation 16).';linkParas(cap)}
+  inp.addEventListener('input',()=>set(+inp.value));
+  set(+inp.value);
+  return{};
+})();
+
+/* ================= 13. area 7: governance: screening DNA orders (illustration) ================= */
+hooks.governance=(()=>{
+  const fig=$('#ill-screen'),svg=fig.querySelector('svg'),g=svgEl('g',{},svg);
+  const PX=226,PW=118,PH=34,PY=[54,100,146,192,238],SKIP=[1,3];
+  txt(g,40,24,'Orders',{'text-anchor':'middle',class:'m b'});txt(g,PX+PW/2,24,'DNA synthesis providers',{'text-anchor':'middle',class:'m b'});txt(g,500,24,'Delivered',{'text-anchor':'middle',class:'m b'});
+  PY.forEach(y=>{svgEl('line',{class:'lane',x1:60,x2:PX,y1:y+PH/2,y2:y+PH/2},g);svgEl('line',{class:'lane',x1:PX+PW,x2:480,y1:y+PH/2,y2:y+PH/2},g)});
+  const gp=svgEl('g',{},g);
+  const prov=PY.map((y,i)=>{const e=svgEl('g',{class:'prov scr'},g);svgEl('rect',{x:PX,y,width:PW,height:PH,rx:6},e);
+    svgEl('path',{class:'shield',d:`M${PX+16},${y+8}l8,3v6c0,6 -4,9 -8,10c-4,-1 -8,-4 -8,-10v-6z`},e);txt(e,PX+32,y+22,'Provider '+(i+1),{});return e});
+  const cnt=txt(g,536,288,'',{'text-anchor':'end',class:'m'});
+  const gx=svgEl('g',{},g),rnd=rng(7);
+  let st='a',run=0,last=0,sp=0,parts=[],through=0;
+  const screens=i=>st==='b'||!SKIP.includes(i);
+  function frame(now){const dt=Math.min(.05,(now-(last||now))/1000);last=now;sp-=dt;
+    if(sp<=0){sp=.32;const i=Math.floor(rnd()*5),bad=rnd()<.22,y=PY[i]+PH/2,y0=40+rnd()*220;
+      const el=svgEl('circle',{class:bad?'bad':'ok',r:bad?5.5:4},gp);parts.push({el,bad,i,p:polyline([[24,y0],[60,y],[PX,y],[PX+PW,y],[500,y]]),d:0})}
+    parts=parts.filter(o=>{const stopAt=o.p.L-(500-PX+4);
+      if(o.bad&&screens(o.i)&&o.d>=stopAt){if(!o.x){o.x=svgEl('path',{class:'x',d:`M${PX-14},${PY[o.i]+PH/2-6}l12,12m0,-12l-12,12`},gx);o.t=0}o.t+=dt;o.el.style.opacity=Math.max(0,1-o.t*2);o.x.style.opacity=Math.max(0,1-o.t*.8);if(o.t>1.3){o.el.remove();o.x.remove();return false}return true}
+      o.d+=120*dt;if(o.d>=o.p.L){if(o.bad){through++;cnt.textContent=`Orders of concern delivered: ${through}`}o.el.remove();return false}
+      const[x,y]=o.p.at(o.d);o.el.setAttribute('cx',x.toFixed(1));o.el.setAttribute('cy',y.toFixed(1));return true});
+    run=requestAnimationFrame(frame)}
+  const lg=svgEl('g',{},g);svgEl('circle',{class:'ok',cx:20,cy:284,r:4},lg);txt(lg,30,288,'Order',{class:'m'});svgEl('circle',{class:'bad',cx:84,cy:284,r:5.5},lg);txt(lg,95,288,'Sequence of concern',{class:'m'});
+  const caps={a:'<b>Voluntary today.</b> UK guidance from October 2024 sets out how providers should screen orders for sequences of concern and check customers, but it is voluntary (conclusion 70). Some companies sign up to international principles, but “not all companies have to be part of that” (Sophie Rose, <a data-para="264">paragraph 264</a>). Illustration, not data.',
+    b:'<b>Mandatory, as the committee recommends.</b> Every provider screens. Companies told the Centre for Long-Term Resilience that this would level the playing field, so that not screening is no competitive advantage (<a data-para="265">paragraph 265</a>). Illustration, not data.'};
+  twoState('ill-screen',caps,s=>{st=s;through=0;cnt.textContent=s==='a'?'Orders of concern delivered: 0':'';prov.forEach((e,i)=>e.classList.toggle('scr',screens(i)))});
+  return{start(){if(reduce)return;last=0;cancelAnimationFrame(run);run=requestAnimationFrame(frame)},stop(){cancelAnimationFrame(run);parts.forEach(o=>{o.el.remove();o.x&&o.x.remove()});parts=[]}};
+})();
+
+/* ================= 14. who is asked to act ================= */
+hooks.who=(()=>{
+  const acts=D.actors.slice().sort((a,b)=>actorCount[b.id]-actorCount[a.id]||a.full.localeCompare(b.full));
+  const big=acts.filter(a=>actorCount[a.id]>=2),small=acts.filter(a=>actorCount[a.id]<2),max=actorCount[acts[0].id];
+  $('#wbars').innerHTML=big.map((a,i)=>`<a class="wb" href="explore/#to=${a.id}" data-to="${a.id}" title="${esc(a.full)}"><span class="wn">${esc(a.name)}</span><span class="wt"><i style="--w:${(actorCount[a.id]/max*100).toFixed(1)}%;--d:${(i*.07).toFixed(2)}s"></i></span><span class="wc">${actorCount[a.id]}</span></a>`).join('');
+  const the=a=>({gov:'the Government',regs:'regulators',ukri:'UK Research and Innovation',dsit:'the Department for Science, Innovation and Technology',iuk:'Innovate UK',depts:'other government departments',nwf:'the National Wealth Fund',ukhsa:'the UK Health Security Agency',aria:'the Advanced Research and Invention Agency',skills:'Skills England',npl:'the National Physical Laboratory and the British Standards Institution',labs:'national laboratories and universities',bbb:'British Patient Capital',hse:'the Health and Safety Executive',ne:'Natural England'}[a.id]||a.full);
+  $('#wmore').innerHTML=small.length?`${small.length} more bodies are each named in one recommendation: `+small.map(a=>`<a href="explore/#to=${a.id}" data-to="${a.id}">${esc(the(a))}</a>`).join(', ')+'.':'';
+  const multi=R.filter(r=>isRec(r)&&r.to.length>1).length,[a1,a2,a3]=acts;
+  const T=s=>s.charAt(0).toUpperCase()+s.slice(1);
+  $('#who-lede').textContent=`${T(the(a1))} is asked to act in ${actorCount[a1.id]} of the ${nRec} recommendations, followed by ${the(a2)} (${actorCount[a2.id]}) and ${the(a3)} (${actorCount[a3.id]}). In ${multi} recommendations, more than one body is asked to act.`;
+  const sec=$('#who');
+  const peek=e=>{const a=e.target.closest('[data-to]');if(slides[active]&&slides[active].id==='who')setLit(a?new Set(R.filter(r=>r.to.includes(a.dataset.to)).map(r=>r.n)):null)};
+  sec.addEventListener('pointerover',peek);sec.addEventListener('focusin',peek);
+  sec.addEventListener('pointerleave',()=>{if(slides[active].id==='who')setLit(null)});
+  return{start(){sec.classList.add('on')}};
+})();
+
+/* ================= start: the strand is drawn, the parts assembled and the recommendations expressed ================= */
+size();
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)activate(slides.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px'});
+const startAt=slides.findIndex(s=>'#'+s.id===location.hash);
+if(startAt>0)slides[startAt].scrollIntoView({behavior:'auto'});
+const s0=slides[Math.max(0,startAt)];
+P={...lay(s0.dataset.cut||'strip')};
+if(s0.dataset.charge)charge=1;
+if(startAt<=0&&!reduce){lineK=0;grow.fill(0);fillK.fill(0);gk.fill(0);
+  animate(3200,k=>{const t=k*3200;lineK=clamp(t/850);
+    units.forEach((un,j)=>{gk[j]=ease(clamp((t-150-1000*un.p/S)/420))});
+    R.forEach((r,i)=>{const o=1000*pos[i].u0/S;grow[i]=back(clamp((t-380-o)/520));fillK[i]=ease(clamp((t-1600-o)/650))});draw()},
+    ()=>{lineK=1;grow.fill(1);fillK.fill(1);gk.fill(1);draw()})}
+slides.forEach(s=>io.observe(s));
+draw();
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{size();cancelAnimationFrame(raf);P={...P,...lay(mode)};draw()},120)});
+})();
+</script>
+</body>
+</html>

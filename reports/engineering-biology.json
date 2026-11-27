@@ -1,0 +1,1710 @@
+{
+ "title": "Don’t fail to scale: seizing the opportunity of engineering biology",
+ "committee": "House of Lords Science and Technology Committee",
+ "number": "1st Report of Session 2024–26",
+ "paper": "HL Paper 55",
+ "session": "2024-26",
+ "published": "2025-01-14",
+ "gr_due": "2025-03-14",
+ "gr": {
+  "label": "on 17 March 2025",
+  "url": "https://committees.parliament.uk/publications/47093/documents/243806/default/"
+ },
+ "pdf": "https://publications.parliament.uk/pa/ld5901/ldselect/ldsctech/55/55.pdf",
+ "page_offset": 2,
+ "work": "https://committees.parliament.uk/work/8377/engineering-biology/",
+ "card": false,
+ "finding": "unless we act quickly, the UK is at a severe risk, once again, of seeing the economic and industrial benefits of science and technology developed here exploited overseas.",
+ "finding_note": "From the committee’s summary. It found that the UK’s early lead in engineering biology has slipped as other countries invest more and plan more strategically.",
+ "priorities_label": "Seven key areas",
+ "priorities_short": "the seven key areas",
+ "priority_phrase": "one of the seven key areas in the committee’s summary",
+ "priorities_note": "The seven areas are the committee’s own, from its summary (report pages 4 to 5); its call for a national sector champion sits under strategy, as do the paragraphs on feedstocks, which the summary also places there. Which paragraph sits under which area is our reading.",
+ "chapters": [
+  {
+   "n": 2,
+   "title": "Engineering biology: what and why?"
+  },
+  {
+   "n": 3,
+   "title": "Government strategy for engineering biology"
+  },
+  {
+   "n": 4,
+   "title": "Policy to support engineering biology"
+  },
+  {
+   "n": 5,
+   "title": "Engineering biology for growth"
+  },
+  {
+   "n": 6,
+   "title": "Operational challenges for engineering biology"
+  }
+ ],
+ "sections": [
+  {
+   "id": 1,
+   "ch": 2,
+   "h1": "Engineering biology: what and why?",
+   "h2": ""
+  },
+  {
+   "id": 2,
+   "ch": 3,
+   "h1": "Industrial strategy and DSIT’s National Vision for Engineering Biology",
+   "h2": "Industrial Strategy"
+  },
+  {
+   "id": 3,
+   "ch": 3,
+   "h1": "Industrial strategy and DSIT’s National Vision for Engineering Biology",
+   "h2": "National Vision for Engineering Biology: research funding"
+  },
+  {
+   "id": 4,
+   "ch": 3,
+   "h1": "Industrial strategy and DSIT’s National Vision for Engineering Biology",
+   "h2": "Skilled staffing for Government and DSIT"
+  },
+  {
+   "id": 5,
+   "ch": 3,
+   "h1": "Industrial strategy and DSIT’s National Vision for Engineering Biology",
+   "h2": "Coordinating role of DSIT"
+  },
+  {
+   "id": 6,
+   "ch": 3,
+   "h1": "Public procurement policy",
+   "h2": ""
+  },
+  {
+   "id": 7,
+   "ch": 4,
+   "h1": "Skills for engineering biology",
+   "h2": "Training the next generation of researchers"
+  },
+  {
+   "id": 8,
+   "ch": 4,
+   "h1": "Skills for engineering biology",
+   "h2": "Training for technicians and technical skills"
+  },
+  {
+   "id": 9,
+   "ch": 4,
+   "h1": "Skills for engineering biology",
+   "h2": "Visa policy issues"
+  },
+  {
+   "id": 10,
+   "ch": 4,
+   "h1": "Regulation and standards",
+   "h2": "Engineering Biology Regulators’ Network and Regulatory Innovation Office"
+  },
+  {
+   "id": 11,
+   "ch": 4,
+   "h1": "Regulation and standards",
+   "h2": "Resourcing and expertise for regulators"
+  },
+  {
+   "id": 12,
+   "ch": 4,
+   "h1": "Regulation and standards",
+   "h2": "Genetic Technology (Precision Breeding) Act 2023"
+  },
+  {
+   "id": 13,
+   "ch": 4,
+   "h1": "Regulation and standards",
+   "h2": "Standards for engineering biology"
+  },
+  {
+   "id": 14,
+   "ch": 4,
+   "h1": "Pilot-scale infrastructure",
+   "h2": "Access to facilities for generating data; intellectual property"
+  },
+  {
+   "id": 15,
+   "ch": 4,
+   "h1": "Pilot-scale infrastructure",
+   "h2": "Funding and mapping existing infrastructure"
+  },
+  {
+   "id": 16,
+   "ch": 4,
+   "h1": "Pilot-scale infrastructure",
+   "h2": "New lab space and scale-up infrastructure"
+  },
+  {
+   "id": 17,
+   "ch": 5,
+   "h1": "Scaling up companies: economic issues",
+   "h2": ""
+  },
+  {
+   "id": 18,
+   "ch": 5,
+   "h1": "Public investment",
+   "h2": ""
+  },
+  {
+   "id": 19,
+   "ch": 5,
+   "h1": "Private investment",
+   "h2": ""
+  },
+  {
+   "id": 20,
+   "ch": 5,
+   "h1": "Driving adoption across the economy",
+   "h2": "Adoption by larger companies"
+  },
+  {
+   "id": 21,
+   "ch": 5,
+   "h1": "Driving adoption across the economy",
+   "h2": "Incentives and mandates to create a market for engineering biology"
+  },
+  {
+   "id": 22,
+   "ch": 5,
+   "h1": "Feedstocks and supply chain implications",
+   "h2": ""
+  },
+  {
+   "id": 23,
+   "ch": 6,
+   "h1": "Public acceptability",
+   "h2": ""
+  },
+  {
+   "id": 24,
+   "ch": 6,
+   "h1": "Biosecurity and risk management",
+   "h2": ""
+  },
+  {
+   "id": 25,
+   "ch": 6,
+   "h1": "Biosecurity and risk management",
+   "h2": "Biosurveillance, testing, vaccine, and therapeutics infrastructure"
+  },
+  {
+   "id": 26,
+   "ch": 6,
+   "h1": "Biosecurity and risk management",
+   "h2": "DNA sequence screening"
+  },
+  {
+   "id": 27,
+   "ch": 6,
+   "h1": "Biosecurity and risk management",
+   "h2": "Managing risks of bio-error or accidental release"
+  },
+  {
+   "id": 28,
+   "ch": 6,
+   "h1": "Biosecurity and risk management",
+   "h2": "Managing risks to biodiversity"
+  }
+ ],
+ "priorities": [
+  {
+   "id": "strategy",
+   "title": "Strategy and a champion",
+   "summary": "Put engineering biology in the industrial strategy with outcomes and metrics, recommit to at least £2 billion over ten years, bring technical experts into government, join up departments under a national sector champion, and map the feedstocks the UK can use."
+  },
+  {
+   "id": "skills",
+   "title": "Skills and talent",
+   "summary": "Fund more doctoral training centres with a year in industry, open routes through apprenticeships and a master’s conversion course, widen the Global Talent visa and stop charging visa costs up front."
+  },
+  {
+   "id": "regulation",
+   "title": "Regulation and standards",
+   "summary": "Publish who sits on the regulators’ network and which regulator covers which product, resource regulators to approve products swiftly, pass the precision-breeding regulations, and lead on international standards."
+  },
+  {
+   "id": "infrastructure",
+   "title": "Infrastructure",
+   "summary": "Open national and university labs to start-ups that need data for patents, end stop-start funding, cut the cost of using biofoundries and the CPI, map what exists, and answer Europe’s scale-up plants."
+  },
+  {
+   "id": "investment",
+   "title": "Investment to scale",
+   "summary": "Give the National Wealth Fund the scope and a specialist team to invest in engineering biology, join up a funding pipeline across the valley of death, and push pension reforms further and faster."
+  },
+  {
+   "id": "adoption",
+   "title": "Adoption: procurement and incentives",
+   "summary": "Use public procurement to buy from UK innovators, as the US BioPreferred programme does, and create a market with incentives and a small, rising mandate for bio-based production."
+  },
+  {
+   "id": "governance",
+   "title": "Governance: trust and biosecurity",
+   "summary": "Engage the public on products near market, deliver the Biological Security Strategy, make DNA synthesis screening mandatory, and guard against lab accidents and harm to biodiversity."
+  }
+ ],
+ "actors": [
+  {
+   "id": "gov",
+   "name": "The Government",
+   "full": "The Government"
+  },
+  {
+   "id": "dsit",
+   "name": "DSIT",
+   "full": "Department for Science, Innovation and Technology"
+  },
+  {
+   "id": "depts",
+   "name": "Other departments",
+   "full": "Other government departments, including those with large procurement budgets and the Treasury"
+  },
+  {
+   "id": "ukri",
+   "name": "UKRI",
+   "full": "UK Research and Innovation, including its research councils"
+  },
+  {
+   "id": "iuk",
+   "name": "Innovate UK",
+   "full": "Innovate UK"
+  },
+  {
+   "id": "aria",
+   "name": "ARIA",
+   "full": "The Advanced Research and Invention Agency"
+  },
+  {
+   "id": "skills",
+   "name": "Skills England",
+   "full": "Skills England"
+  },
+  {
+   "id": "regs",
+   "name": "Regulators",
+   "full": "Regulators, including the Engineering Biology Regulators’ Network and the Regulatory Innovation Office"
+  },
+  {
+   "id": "npl",
+   "name": "NPL and BSI",
+   "full": "The National Physical Laboratory and the British Standards Institution, with industry and national laboratories"
+  },
+  {
+   "id": "labs",
+   "name": "National labs",
+   "full": "National laboratories, public sector research establishments and universities"
+  },
+  {
+   "id": "nwf",
+   "name": "National Wealth Fund",
+   "full": "The National Wealth Fund"
+  },
+  {
+   "id": "bbb",
+   "name": "British Patient Capital",
+   "full": "British Patient Capital, the equity arm of the British Business Bank"
+  },
+  {
+   "id": "ukhsa",
+   "name": "UKHSA",
+   "full": "UK Health Security Agency"
+  },
+  {
+   "id": "hse",
+   "name": "HSE",
+   "full": "Health and Safety Executive"
+  },
+  {
+   "id": "ne",
+   "name": "Natural England",
+   "full": "Natural England"
+  }
+ ],
+ "topics": [
+  {
+   "id": "money",
+   "name": "Money",
+   "re": "£|\\bfund|invest|capital|grant",
+   "flags": "i",
+   "words": "funding, investment, capital, grants, £"
+  },
+  {
+   "id": "scale",
+   "name": "Scale-up",
+   "re": "scal(e|ed|ing)[- ]?up|to scale\\b|valley of death|(large|pilot|industrial)-scale",
+   "flags": "i",
+   "words": "scale-up, failure to scale, valley of death, pilot and industrial scale"
+  },
+  {
+   "id": "talent",
+   "name": "People and visas",
+   "re": "visa|talent|immigra|salar|doctoral|apprentice|skill|train|expertise|experts",
+   "flags": "i",
+   "words": "visas, talent, salaries, doctoral training, apprenticeships, skills, expertise"
+  },
+  {
+   "id": "regulators",
+   "name": "Regulators",
+   "re": "regulat|EBRN|\\bRIO\\b|approval",
+   "flags": "i",
+   "words": "regulators, regulation, approvals"
+  },
+  {
+   "id": "standards",
+   "name": "Standards",
+   "re": "standard|\\bISO\\b",
+   "flags": "i",
+   "words": "standards, ISO"
+  },
+  {
+   "id": "labs",
+   "name": "Labs and facilities",
+   "re": "biofoundr|facilit|laborator|\\blabs?\\b|infrastructure|\\bCPI\\b|fermentation",
+   "flags": "i",
+   "words": "biofoundries, facilities, laboratories, infrastructure, fermentation"
+  },
+  {
+   "id": "procurement",
+   "name": "Procurement",
+   "re": "procure",
+   "flags": "i",
+   "words": "public procurement"
+  },
+  {
+   "id": "market",
+   "name": "Incentives and mandates",
+   "re": "incentiv|\\bmandates?\\b|mandatory percentage|\\btax(es|ation)?\\b",
+   "flags": "i",
+   "words": "incentives, mandates, carbon taxes"
+  },
+  {
+   "id": "feedstock",
+   "name": "Feedstocks and waste",
+   "re": "feedstock|waste|fossil|petrochemical",
+   "flags": "i",
+   "words": "feedstocks, waste, fossil fuels"
+  },
+  {
+   "id": "abroad",
+   "name": "Other countries",
+   "re": "[Oo]ther countries|[Oo]verseas|[Aa]broad|[Ii]nternational|\\bUS\\b|\\bEU\\b|Europe|[Gg]lobal|rival nations",
+   "flags": "",
+   "words": "other countries, overseas, international, the US and Europe"
+  },
+  {
+   "id": "patents",
+   "name": "Patents",
+   "re": "patent|intellectual property",
+   "flags": "i",
+   "words": "patents, intellectual property"
+  },
+  {
+   "id": "public",
+   "name": "The public",
+   "re": "public engagement|public attitudes|public awareness|public acceptab|consumer|ethical|genetically modified",
+   "flags": "i",
+   "words": "public engagement and attitudes, consumers, ethics, GM"
+  },
+  {
+   "id": "security",
+   "name": "Biosecurity",
+   "re": "biosecur|pathogen|biosurveillance|Biological Security|sequences of concern|screening|dual-use|accidental release|bio-error",
+   "flags": "i",
+   "words": "biosecurity, pathogens, biosurveillance, DNA screening, accidental release"
+  },
+  {
+   "id": "urgency",
+   "name": "Urgency",
+   "re": "urgen|without delay|swift|at pace|as a matter of",
+   "flags": "i",
+   "words": "urgency, without delay, swiftly, at pace"
+  }
+ ],
+ "recs": [
+  {
+   "n": 1,
+   "ch": 2,
+   "sec": 1,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "Government witnesses told us that engineering biology has historically been an area of strength in UK research and development, and it is a potential driver of growth. The new Government has indicated that it still views it as a priority sector. However, as our report explores, other countries are beginning to overtake the UK and we are at severe risk of losing the prospective benefits of a world-leading engineering biology sector.",
+   "para": 20,
+   "page": 15,
+   "to": [],
+   "words": 71
+  },
+  {
+   "n": 2,
+   "ch": 3,
+   "sec": 2,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "We welcome the idea of an industrial strategy to provide long-term certainty and a plan for investment and policy instruments to achieve specific goals. Such a strategy needs to support innovative, emerging and cross-cutting sectors like engineering biology, not just established industries. Clear decisions must be made about the areas where the UK has significant strengths and potential for industrial and economic development and where it can realistically secure global advantage. Short-term policies, particularly fiscal decisions relating to investment, but also on priorities, have created uncertainty that makes it difficult for businesses to invest.",
+   "para": 31,
+   "page": 19,
+   "to": [],
+   "words": 94
+  },
+  {
+   "n": 3,
+   "ch": 3,
+   "sec": 2,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "There is a perception in the sector that the UK was a leader in engineering biology ten years ago, but that inconsistent Government investment has allowed other countries to overtake the UK. A long-term strategy with clear commitment to engineering biology is key. The National Vision for Engineering Biology was broadly welcomed by the sector and covers many of the key areas that our inquiry identified as requiring policy action. However, the Vision is lacking in terms of specific outcomes.",
+   "para": 32,
+   "page": 19,
+   "to": [],
+   "words": 80
+  },
+  {
+   "n": 4,
+   "ch": 3,
+   "sec": 2,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "The Government’s industrial strategy should set out a clear plan for developing engineering biology and other key technologies that can underpin industrial development across sectors. It should recommit to, and build on, the work from the Science and Technology Framework and National Vision for Engineering Biology, and set out how foundational technologies like engineering biology will be supported and pulled through into application across sectors.",
+   "para": 33,
+   "page": 19,
+   "to": [
+    "gov"
+   ],
+   "words": 65
+  },
+  {
+   "n": 5,
+   "ch": 3,
+   "sec": 2,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "This will require coordinated action across a range of policy areas covered in this report, including:\n• public investment, including R&D, the roles of UKRI and the National Wealth Fund\n• public policy, including procurement\n• private investment to support scale-up\n• skills and visas\n• regulation and standards\n• infrastructure\n• incentives and mandates.",
+   "para": 34,
+   "page": 19,
+   "to": [
+    "gov"
+   ],
+   "words": 55
+  },
+  {
+   "n": 6,
+   "ch": 3,
+   "sec": 2,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "The strategy should set out a clear direction of travel in these policy areas, identifying areas where the UK has a potential to excel, with more specific metrics and outcomes, and the Government should provide regular updates on progress towards these targets.",
+   "para": 35,
+   "page": 19,
+   "to": [
+    "gov"
+   ],
+   "words": 42
+  },
+  {
+   "n": 7,
+   "ch": 3,
+   "sec": 3,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "The National Vision for Engineering Biology, issued under the previous Government, committed to £2 billion in public funding over the next ten years. At least this level of investment will be needed to compete with the scale of funding set out by rival nations and to maintain the UK’s engineering biology R&D sector. However, it is uncertain whether the new Government is committed to this level of spending. There is also some uncertainty over whether this represents new money, or just a continuation of historic levels of investment from UKRI in engineering biology, and few concrete funding announcements have been made since the initial £2 billion commitment was made. The five-year funding cycle has proved detrimental for long-term research in this area.",
+   "para": 43,
+   "page": 22,
+   "to": [],
+   "words": 122
+  },
+  {
+   "n": 8,
+   "ch": 3,
+   "sec": 3,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "The Government should, as a matter of urgency, recommit to the target set out in the National Vision for at least £2 billion of funding over the next decade. It should set out more details of how it intends to allocate this funding between R&D, skills, and infrastructure, as well as which areas of engineering biology the UK has potential to excel at and desirable outcomes it wishes to achieve from the funding. Longer-term certainty around funding could form part of the new Government’s commitment to provide ten-year R&D budgets to key research institutions.",
+   "para": 44,
+   "page": 22,
+   "to": [
+    "gov"
+   ],
+   "words": 94
+  },
+  {
+   "n": 9,
+   "ch": 3,
+   "sec": 4,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "There is a need to embed individuals who understand the potential of this technology throughout the system—including regulators and procurement officials. The Department for Science, Innovation and Technology has a unique and important role to play in coordinating the development of key technological sectors such as AI and engineering biology. This will require specific scientific and industry expertise in the department and other relevant government bodies.",
+   "para": 49,
+   "page": 23,
+   "to": [],
+   "words": 66
+  },
+  {
+   "n": 10,
+   "ch": 3,
+   "sec": 4,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "DSIT, and the Government more widely, must be able to hire individuals with appropriate technical and industrial expertise, being flexible about pay scales and seconding from industry where necessary.",
+   "para": 50,
+   "page": 23,
+   "to": [
+    "dsit",
+    "gov"
+   ],
+   "words": 29
+  },
+  {
+   "n": 11,
+   "ch": 3,
+   "sec": 5,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "DSIT cannot act alone to support engineering biology and must be supported by other departments with significant operational and procurement budgets in the areas that stand to be affected by engineering biology, or those that sponsor regulators. A renewed commitment and shared sense of ownership is needed across the whole of Government to implement the UK’s science and technology policy, in line with the Growth Mission. We were pleased that the Minister acknowledged this and that the Government appears to be taking steps to embed a joined-up approach. This should be led by a national sector champion.",
+   "para": 55,
+   "page": 24,
+   "to": [],
+   "words": 97
+  },
+  {
+   "n": 12,
+   "ch": 3,
+   "sec": 5,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "The other departments implicated in the Science and Technology Framework, including departments with significant procurement budgets and the Treasury, should support engineering biology and the objectives of the Science and Technology Framework. Formal coordinating mechanisms, such as regular meetings at ministerial and senior staff level should be put in place.",
+   "para": 56,
+   "page": 24,
+   "to": [
+    "depts"
+   ],
+   "words": 50
+  },
+  {
+   "n": 13,
+   "ch": 3,
+   "sec": 5,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "Cross-governmental working efforts should include the appointment of a national sector champion for engineering biology. This should be a recognised, high-profile figure from industry or academia who can exercise convening power and lead on delivering the sectoral strategy for engineering biology.",
+   "para": 57,
+   "page": 24,
+   "to": [
+    "gov"
+   ],
+   "words": 41
+  },
+  {
+   "n": 14,
+   "ch": 3,
+   "sec": 6,
+   "pri": "adoption",
+   "kind": "con",
+   "text": "The Government’s Science and Technology Framework set out ambitions to use public procurement to ‘pull through’ key technologies. This can be a very powerful tool—the example of the Department of Defense and DARPA in the US illustrates this. Public procurement could help bridge the scale-up funding gap by providing companies with contracts to produce novel or innovative products or services which then attract private investment. It can also help address the problems faced by departments in innovative ways and achieve the Government’s wider aims in the public sector.",
+   "para": 69,
+   "page": 27,
+   "to": [],
+   "words": 88
+  },
+  {
+   "n": 15,
+   "ch": 3,
+   "sec": 6,
+   "pri": "adoption",
+   "kind": "con",
+   "text": "There are a range of different procurement opportunities involving engineering biology across Government. This could include supplying sustainable fuels, supporting waste valorisation, or novel methods for DNA synthesis. However, this is hindered by a culture of risk aversion, as well as procurement rules that prevent advanced purchase of technologies. Using public procurement to support innovative technologies will not succeed if departments do not view this as part of their remit. Ministers must provide the clear political support needed for a higher risk tolerance to empower officials to make these decisions.",
+   "para": 70,
+   "page": 27,
+   "to": [],
+   "words": 90
+  },
+  {
+   "n": 16,
+   "ch": 3,
+   "sec": 6,
+   "pri": "adoption",
+   "kind": "rec",
+   "text": "The Government should seek to support engineering biology in the UK through its public procurement. It should learn from the example of the US’s BioPreferred programme. The Government should consider setting aside a mandatory percentage of procurement budgets which will be used to support innovative, UK-based SMEs and new technologies. These budgets could be subject to broader considerations for value-for-money than are currently used and subjected to alternative targets for auditing. This will encourage the development of a healthier risk appetite: civil servants who work on procurement who are well-versed in the technologies that the Government wants to support and are empowered to authorise a range of potentially riskier but more rewarding contracts.",
+   "para": 71,
+   "page": 27,
+   "to": [
+    "gov"
+   ],
+   "words": 113
+  },
+  {
+   "n": 17,
+   "ch": 3,
+   "sec": 6,
+   "pri": "adoption",
+   "kind": "rec",
+   "text": "Departments should work with UK agencies like the Advanced Research and Invention Agency and Innovate UK to identify opportunities for procurement to support novel technologies and achieve the Government’s wider policy aims, such as on sustainability. This should be done in line with the UK’s broader industrial strategy. The Government should set out how the Cabinet Office’s cross-government plan mentioned in the Science and Technology Framework will support innovative procurement practice across departments.",
+   "para": 72,
+   "page": 28,
+   "to": [
+    "depts",
+    "aria",
+    "iuk",
+    "gov"
+   ],
+   "words": 73
+  },
+  {
+   "n": 18,
+   "ch": 4,
+   "sec": 7,
+   "pri": "skills",
+   "kind": "con",
+   "text": "Maintaining the UK’s academic and industrial position in engineering biology will require training the next generation of doctoral students. So far, only two Centres for Doctoral Training have been announced for engineering biology compared to many more for AI. The UK risks falling behind the training offered by other countries. There is also a need to encourage more research in interdisciplinary areas of science and technology, as well as at the interface between academia and industry. Doctoral training that includes a component of working in industry is crucial to strengthening the links between universities, start-up companies and larger companies as well as preparing researchers to commercialise UK engineering biology applications.",
+   "para": 83,
+   "page": 31,
+   "to": [],
+   "words": 110
+  },
+  {
+   "n": 19,
+   "ch": 4,
+   "sec": 7,
+   "pri": "skills",
+   "kind": "rec",
+   "text": "The Government, through UKRI, should urgently commit to fund more doctoral training centres for engineering biology. Links between these programmes and industry must be strengthened: the majority of these places should provide a funded year in industry as part of the programme to give students either experience of working at cutting-edge engineering biology start-up companies or SMEs, or the opportunity to transfer their skills, knowledge, and ways of working into larger companies.",
+   "para": 84,
+   "page": 31,
+   "to": [
+    "gov",
+    "ukri"
+   ],
+   "words": 72
+  },
+  {
+   "n": 20,
+   "ch": 4,
+   "sec": 8,
+   "pri": "skills",
+   "kind": "con",
+   "text": "There are significant gaps in training for gaining practical, industrial engineering biology skills that do not require a full PhD—for example, fermentation techniques in industrial biotechnology. Technical and technician skills are in short supply and industry witnesses told us that skilled individuals who acquire them are hard to retain. There is also a relative lack of individuals with industrial-scale fermentation skills and many of those that do have these skills are attracted into medical engineering biology fields where the profit margins can be greater and the industry is more mature.",
+   "para": 93,
+   "page": 33,
+   "to": [],
+   "words": 90
+  },
+  {
+   "n": 21,
+   "ch": 4,
+   "sec": 8,
+   "pri": "skills",
+   "kind": "rec",
+   "text": "There is a need to expand the number of routes into the engineering biology sector, especially when it comes to developing technical and industrial experience. Skills England should work with industry, PSREs and universities to provide flexible funding for apprenticeships, including degree apprenticeships. This would provide more routes into the engineering biology sector and enable the training of the next generation of technicians. UKRI should support a Masters’ level conversion course suitable for undergraduates to learn some of the practical, lab-based and industrial skills required for engineering biology and related techniques.",
+   "para": 94,
+   "page": 33,
+   "to": [
+    "skills",
+    "ukri"
+   ],
+   "words": 91
+  },
+  {
+   "n": 22,
+   "ch": 4,
+   "sec": 9,
+   "pri": "skills",
+   "kind": "con",
+   "text": "In engineering biology, as in many other areas of science, the UK is in a global competition for talent. However, restrictive visa policies, high visa fees, upfront Immigration Health Surcharge costs, and a perceived hostile attitude to immigration, are jeopardising the UK’s ability to attract and retain the best talent. The UK already suffers due to lower salaries and higher cost of living than many competitor nations, such as the US and in Europe. The UK still has universities with world-leading research that attract skilled individuals, but it must do more to retain them. There are deep concerns that recent immigration reforms will deter talent and harm growing industries such as engineering biology.",
+   "para": 103,
+   "page": 35,
+   "to": [],
+   "words": 113
+  },
+  {
+   "n": 23,
+   "ch": 4,
+   "sec": 9,
+   "pri": "skills",
+   "kind": "rec",
+   "text": "The UK must rethink its attitude to immigration for skilled workers in scientific and technical sectors, as we are falling behind in the global race for talent. The Global Talent Visa should be expanded from a few thousand issued a year, with more routes for organisations to sponsor this visa beyond the relatively small number of primarily academic organisations who are currently listed as sponsors. Specifically, it should support applicants with entrepreneurial, manufacturing and industrial skills as well as scientific ones. Additional visa routes that allow for flexible hybrid working should be considered, as other countries have put in place.",
+   "para": 104,
+   "page": 35,
+   "to": [
+    "gov"
+   ],
+   "words": 100
+  },
+  {
+   "n": 24,
+   "ch": 4,
+   "sec": 9,
+   "pri": "skills",
+   "kind": "rec",
+   "text": "More must be done to reduce up front visa costs and resettlement costs for top talent in competitive scientific and technical fields. If the Immigration Health Surcharge is retained, the burden of payment must be reduced by allowing individuals to pay on an annual basis or a monthly basis by deduction from salary, rather than paying the full cost up-front. The Government should benchmark postdoctoral salaries against comparative salaries in Europe. Action must be taken urgently to ensure the UK remains an attractive destination for increasingly mobile global talent.",
+   "para": 105,
+   "page": 35,
+   "to": [
+    "gov"
+   ],
+   "words": 89
+  },
+  {
+   "n": 25,
+   "ch": 4,
+   "sec": 10,
+   "pri": "regulation",
+   "kind": "con",
+   "text": "We welcome the establishment of the Engineering Biology Regulators’ Network (EBRN) and the Regulatory Innovation Office (RIO), which are good first steps in creating a coherent, pragmatic, pro-innovation regulatory regime for engineering biology. However, regulatory pathways for new engineering biology products and technologies remain unclear. In such a fast-moving sector, early coordination between industry and regulators is crucial, but those we spoke to in the industry did not know which regulators were included in the EBRN initiative. The EBRN has not yet fulfilled the goals that were set in Dame Angela McLean’s recommendations and has no public-facing offer to companies yet. With the creation of the RIO, the ongoing status of the EBRN is now unclear.",
+   "para": 113,
+   "page": 38,
+   "to": [],
+   "words": 116
+  },
+  {
+   "n": 26,
+   "ch": 4,
+   "sec": 10,
+   "pri": "regulation",
+   "kind": "rec",
+   "text": "The EBRN and RIO should be sufficiently resourced to have a public-facing offer that maps out which categories of engineering biology products map onto which regulators and sets out a streamlined regulatory pathway. The “coherent taxonomy” and roadmap to regulatory approval recommended by Dame Angela McLean should be published, and the Government should set out a clear timeline for this in its response. There should be a single resource or point of contact published by these bodies for companies in the sector seeking to understand the regulatory implications of any products or services they might develop. The “regulatory support service” for small science and technology companies mentioned in DSIT’s Science and Technology Framework should be pursued and could provide this interface.",
+   "para": 114,
+   "page": 38,
+   "to": [
+    "regs",
+    "gov"
+   ],
+   "words": 121
+  },
+  {
+   "n": 27,
+   "ch": 4,
+   "sec": 10,
+   "pri": "regulation",
+   "kind": "rec",
+   "text": "The membership and activity of the Engineering Biology Regulators’ Network should be made public as a necessary first step. There should be clear individuals or teams responsible for coordinating with the network within each regulator.",
+   "para": 115,
+   "page": 38,
+   "to": [
+    "regs"
+   ],
+   "words": 35
+  },
+  {
+   "n": 28,
+   "ch": 4,
+   "sec": 11,
+   "pri": "regulation",
+   "kind": "con",
+   "text": "If the UK is to become a leading nation in engineering biology, it needs world-leading regulators that can anticipate areas where regulatory clarity is needed, and set out a very clear regulatory path to market for new technologies with swift timelines for assessment and approval. Engineering biology is a rapidly moving scientific field with implications for a range of different regulators, which will need to be capable of understanding and managing emerging risks. They will require the necessary scientific skills and industrial experience to craft regulatory frameworks that achieve the goals in the National Vision for Engineering Biology and enable the field to move forward at pace in the UK.",
+   "para": 122,
+   "page": 39,
+   "to": [],
+   "words": 110
+  },
+  {
+   "n": 29,
+   "ch": 4,
+   "sec": 11,
+   "pri": "regulation",
+   "kind": "rec",
+   "text": "The UK needs to develop a world-class regulatory approach for engineering biology, characterised by being swift, effective, and involving leading experts. Regulators need to be appropriately resourced to work with businesses to assess new technologies early and mitigate any unintended consequences from their use. They must be able to bring in the relevant expertise to regulate the sector appropriately, proactively, and swiftly, with timelines that are competitive with other nations.",
+   "para": 123,
+   "page": 40,
+   "to": [
+    "gov",
+    "regs"
+   ],
+   "words": 70
+  },
+  {
+   "n": 30,
+   "ch": 4,
+   "sec": 12,
+   "pri": "regulation",
+   "kind": "con",
+   "text": "Some of the secondary legislation which was expected to be made under the Genetic Technology (Precision Breeding) Act 2023 was not made in the last Parliament but was seen as necessary to help create regulations that would allow for experimentation in plant breeding to take place in the UK.",
+   "para": 125,
+   "page": 40,
+   "to": [],
+   "words": 49
+  },
+  {
+   "n": 31,
+   "ch": 4,
+   "sec": 12,
+   "pri": "regulation",
+   "kind": "rec",
+   "text": "The secondary legislation for the Genetic Technology (Precision Breeding) Act 2023 should be passed urgently to establish a regulatory framework that provides certainty, in accordance with the Act’s provisions.",
+   "para": 126,
+   "page": 40,
+   "to": [
+    "gov"
+   ],
+   "words": 29
+  },
+  {
+   "n": 32,
+   "ch": 4,
+   "sec": 13,
+   "pri": "regulation",
+   "kind": "con",
+   "text": "A set of coherent standards are necessary for any industry to scale-up. They can allow for more interoperable and less disjointed processes between companies, as well as to promote consumer and industrial confidence. A lack of a coherent set of standards in engineering biology is holding back the emerging sector, where the inherent variability of biological processes makes standards particularly important. There is an opportunity for the UK to be a leader in standard-setting and ensure that the standards are compatible with the UK’s strengths.",
+   "para": 132,
+   "page": 41,
+   "to": [],
+   "words": 85
+  },
+  {
+   "n": 33,
+   "ch": 4,
+   "sec": 13,
+   "pri": "regulation",
+   "kind": "rec",
+   "text": "The Government should work with the National Physical Laboratory, the British Standards Institution, industry partners, national laboratories like the Centre for Process Innovation and ISO organisations to assist in the development of standards across the engineering biology industry. Data-sharing should be encouraged between different companies to enable standardisation of processes and products. Schemes that encourage and support start-up companies and SMEs to access national laboratories could assist in this data-sharing.",
+   "para": 133,
+   "page": 42,
+   "to": [
+    "gov",
+    "npl"
+   ],
+   "words": 70
+  },
+  {
+   "n": 34,
+   "ch": 4,
+   "sec": 13,
+   "pri": "regulation",
+   "kind": "con",
+   "text": "Many countries are currently seeking to regulate engineering biology and international standards and regulations will be important for trade. Sending high-level delegations to ISO meetings is important to maintain the UK’s influence.",
+   "para": 134,
+   "page": 42,
+   "to": [],
+   "words": 32
+  },
+  {
+   "n": 35,
+   "ch": 4,
+   "sec": 13,
+   "pri": "regulation",
+   "kind": "rec",
+   "text": "The UK should engage at the most senior, expert level with EU and international standards—through organisations like the International Organization for Standardization (ISO)—to ensure that the UK can influence these and are not disadvantaged by international standards and regulations.",
+   "para": 135,
+   "page": 42,
+   "to": [
+    "gov"
+   ],
+   "words": 39
+  },
+  {
+   "n": 36,
+   "ch": 4,
+   "sec": 14,
+   "pri": "infrastructure",
+   "kind": "con",
+   "text": "Biological processes are inherently more variable than chemical or industrial processes. It is therefore crucial to be able to test these processes and demonstrate that they can be replicated reliably at scale. This need to obtain large amounts of data on a process is a key barrier to defining and protecting intellectual property, and hence to securing investment. Start-up companies face a ‘chicken and egg’ problem whereby they need data to obtain patents to get access to funding, but they need the funding to access the labs in order to generate the data. A few companies have been able to invest and build laboratories and infrastructure themselves, but this type of development is difficult to fund from venture capital and other private sector investors. There is a clear need to ensure existing facilities are easier to access.",
+   "para": 139,
+   "page": 44,
+   "to": [],
+   "words": 137
+  },
+  {
+   "n": 37,
+   "ch": 4,
+   "sec": 14,
+   "pri": "infrastructure",
+   "kind": "con",
+   "text": "We heard no evidence that suggested UK intellectual property law was not fit for purpose, but that barriers to obtaining patents in practice needed to be addressed.",
+   "para": 140,
+   "page": 44,
+   "to": [],
+   "words": 27
+  },
+  {
+   "n": 38,
+   "ch": 4,
+   "sec": 14,
+   "pri": "infrastructure",
+   "kind": "rec",
+   "text": "The Government should work with public sector research establishments and universities to make national and university laboratories accessible for the purpose of assembling the data required for start-up and spin-out companies to file patents. Innovate UK should consider providing additional funding to help small and early stage companies obtain the data needed for patents which can unlock additional private sector funding. National laboratories, public sector research establishments and related research infrastructure should add the number of patent applications they have supported to their key performance indicators.",
+   "para": 141,
+   "page": 44,
+   "to": [
+    "gov",
+    "labs",
+    "iuk"
+   ],
+   "words": 86
+  },
+  {
+   "n": 39,
+   "ch": 4,
+   "sec": 15,
+   "pri": "infrastructure",
+   "kind": "con",
+   "text": "The UK already has some significant infrastructure that supports the growth of the engineering biology sector, such as the biofoundries and the Centre for Process Innovation. However, they are not always used to their maximum potential, in part because they are expensive for start-up companies and researchers to use owing to their cost recovery models. The UK risks losing valuable research infrastructure because too often funding is allocated to setting up new research institutes and laboratories without considering a sustainable, long-term funding model for existing labs. Funding for research infrastructure in the UK is falling behind comparable countries. There is a need for start-ups and spin-outs to use these scale-up facilities to engage with the practical problems of scaling up their products and processes at an earlier stage.",
+   "para": 156,
+   "page": 47,
+   "to": [],
+   "words": 128
+  },
+  {
+   "n": 40,
+   "ch": 4,
+   "sec": 15,
+   "pri": "infrastructure",
+   "kind": "rec",
+   "text": "The stop-start funding of research infrastructure must end. The Government should set a timeline for producing its long-term national plan for research infrastructure. In the Spending Review, it should use some of the new flexibility for infrastructure spending to fund R&D infrastructure.",
+   "para": 157,
+   "page": 48,
+   "to": [
+    "gov"
+   ],
+   "words": 42
+  },
+  {
+   "n": 41,
+   "ch": 4,
+   "sec": 15,
+   "pri": "infrastructure",
+   "kind": "rec",
+   "text": "The Government should provide more funding to enable greater use of existing engineering biology research infrastructure, such as the biofoundries and the CPI. This could be in the form of block grants for those institutions to maintain their operations and reduce the cost recovery that they must charge users, or grants for using these facilities, as the EU offers for the Bio Base Europe Pilot Plant. The scale-up facilities should have an enhanced educational role to play with preparing researchers and start-ups to engage with the practicalities of scaling up their processes at an earlier stage.",
+   "para": 158,
+   "page": 48,
+   "to": [
+    "gov"
+   ],
+   "words": 96
+  },
+  {
+   "n": 42,
+   "ch": 4,
+   "sec": 15,
+   "pri": "infrastructure",
+   "kind": "con",
+   "text": "One reason that facilities are under-utilised is that researchers and SMEs have a lack of awareness of the equipment, specialisms and capabilities that are available in universities and public sector research establishments, and the terms of use of different facilities are not always transparent.",
+   "para": 159,
+   "page": 48,
+   "to": [],
+   "words": 44
+  },
+  {
+   "n": 43,
+   "ch": 4,
+   "sec": 15,
+   "pri": "infrastructure",
+   "kind": "rec",
+   "text": "As part of its long-term national plan for research infrastructure, DSIT should map out the existing capabilities of innovation infrastructure in its key technology areas (including engineering biology) and the terms for using them. It should identify and address any barriers to accessing existing facilities in this area, such as the biofoundries, and Catapults, including the CPI. Interconnectivity of existing infrastructure should be encouraged to ensure that there are clearer pathways for scaling-up processes and production. AI and compute infrastructure should be made accessible for applications of machine learning, such as those in engineering biology.",
+   "para": 160,
+   "page": 48,
+   "to": [
+    "dsit"
+   ],
+   "words": 95
+  },
+  {
+   "n": 44,
+   "ch": 4,
+   "sec": 16,
+   "pri": "infrastructure",
+   "kind": "con",
+   "text": "There is a need for more scale-up infrastructure, in particular large-scale fermentation facilities, which would allow for the scale-up of processes that have been demonstrated in the lab. As the sector develops, there will be an increasing need for more specialist facilities that relate to specific applications. Much of this will be developed by the private sector, but the Government still has a role in supporting private and public-private investment for manufacturing infrastructure.",
+   "para": 169,
+   "page": 50,
+   "to": [],
+   "words": 73
+  },
+  {
+   "n": 45,
+   "ch": 4,
+   "sec": 16,
+   "pri": "infrastructure",
+   "kind": "rec",
+   "text": "The Government should ensure that the UK has a competitive answer to the scale-up infrastructure provided by facilities like the Bio Base Europe Pilot Plant, responding to the work done by GO-Science and DSIT in this area. In particular, existing fermentation facilities and facilities like the CPI which focus on non-life sciences applications of engineering biology should be supported. The Government’s proposed reforms to the planning system should encourage the development of laboratory space around existing clusters for the life sciences.",
+   "para": 170,
+   "page": 50,
+   "to": [
+    "gov"
+   ],
+   "words": 81
+  },
+  {
+   "n": 46,
+   "ch": 5,
+   "sec": 17,
+   "pri": "investment",
+   "kind": "con",
+   "text": "There is a long-standing and severe problem in the UK with the ability of science and technology companies to scale up. We heard many times that the UK is quite competitive when it comes to start-up and spin-out companies, but that such companies struggle to grow and often move abroad, especially to the US, for funding or to float on stock exchanges when they reach a certain size. This limits the economic benefits captured by the UK. A lack of sovereign large companies in the UK also limits opportunities for investment and acquisition of new companies and processes here. What we heard from engineering biology companies provides an example of a much more general, and long-standing problem.",
+   "para": 176,
+   "page": 52,
+   "to": [],
+   "words": 117
+  },
+  {
+   "n": 47,
+   "ch": 5,
+   "sec": 17,
+   "pri": "investment",
+   "kind": "rec",
+   "text": "There are many factors behind this failure to scale and the Government needs to initiate coordinated policy initiatives on multiple fronts to turn it around, including the areas of public and private investment (such as the Mansion House reforms), infrastructure, skills, regulation, adoption by larger companies, and public procurement we address in this report.",
+   "para": 177,
+   "page": 52,
+   "to": [
+    "gov"
+   ],
+   "words": 54
+  },
+  {
+   "n": 48,
+   "ch": 5,
+   "sec": 18,
+   "pri": "investment",
+   "kind": "con",
+   "text": "We have heard that there is a significant role for public investment, especially to support research infrastructure and also to de-risk larger investments on the scale of tens of millions of pounds which are lacking in the UK. The UK must fill the gap at this level of investment, through a combination of public and private efforts, to prevent promising companies from going overseas. We have also heard that a sovereign wealth fund could support the goals of an industrial strategy. However, as currently constituted, it is not clear that the new National Wealth Fund has a remit that would allow it to invest in engineering biology in this way.",
+   "para": 187,
+   "page": 54,
+   "to": [],
+   "words": 110
+  },
+  {
+   "n": 49,
+   "ch": 5,
+   "sec": 18,
+   "pri": "investment",
+   "kind": "rec",
+   "text": "The Government should urgently expand the scope and scale of its National Wealth Fund to ensure it can include investments in technologies such as engineering biology that support the aims of its industrial strategy. A specialist investment team for engineering biology as a part of the National Wealth Fund should be established to enable it to identify and make these investments.",
+   "para": 188,
+   "page": 54,
+   "to": [
+    "gov",
+    "nwf"
+   ],
+   "words": 61
+  },
+  {
+   "n": 50,
+   "ch": 5,
+   "sec": 18,
+   "pri": "investment",
+   "kind": "con",
+   "text": "It is not always clear that the Government has a consistent sense of the role it wants to play as an investor, or that businesses know who to approach for large-scale investment. The respective roles that Innovate UK, the National Wealth Fund and the British Business Bank should play in supporting scale-up companies and the deal sizes that they seek to undertake have not been fully set out. There is also a relative lack of capital grants in engineering biology compared to other areas of the life sciences, although engineering biology offers the UK an opportunity to translate its success in the life sciences into other sectors of the economy.",
+   "para": 189,
+   "page": 54,
+   "to": [],
+   "words": 110
+  },
+  {
+   "n": 51,
+   "ch": 5,
+   "sec": 18,
+   "pri": "investment",
+   "kind": "rec",
+   "text": "There is a need for a clear, joined-up pipeline of funding to support companies to make the transition over the ‘valley of death’ from research, through pilot-scale and scale-up, to funding for larger companies with a commercial product. This will require coordination between bodies like the National Wealth Fund and British Patient Capital, which could focus on de-risking larger-scale infrastructure investments and providing late-stage equity funding, and agencies like Innovate UK and research councils, which should focus on expanding existing programmes to support research and pilot-scale investments. It will also require coordination with the Government’s public procurement policy to pull through innovative technologies, discussed earlier. The Government should also consider a capital grant scheme to support non-medical engineering biology in the same way as the Life Sciences Innovative Manufacturing Fund currently supports the medical applications.",
+   "para": 190,
+   "page": 54,
+   "to": [
+    "gov",
+    "nwf",
+    "bbb",
+    "iuk",
+    "ukri"
+   ],
+   "words": 135
+  },
+  {
+   "n": 52,
+   "ch": 5,
+   "sec": 19,
+   "pri": "investment",
+   "kind": "con",
+   "text": "Witnesses raised concerns about the ability and willingness of private investors to invest in UK engineering biology companies. Some told us that institutional investors are reluctant to invest in UK companies due to a lack of sophisticated research or excessive focus on the financials of companies, rather than the technology’s potential. In some cases the economics of these firms can be marginal, especially to begin with as they develop their products. In addition, equity capital markets in the UK are shrinking on a relative basis, and the rise of passive investment has resulted in globalised, diversified pension funds which invest to a lesser degree in UK companies. This can result in a ‘doom loop’ whereby pension funds invest less in UK equities, which in turn makes them less profitable. We welcome that the Government has acknowledged this and committed to pension reform. However, new, consolidated pension funds will still need expertise and incentives to identify and invest in innovative UK companies. The UK needs more capital, but also more focus on the specific areas that it can excel in.",
+   "para": 202,
+   "page": 58,
+   "to": [],
+   "words": 179
+  },
+  {
+   "n": 53,
+   "ch": 5,
+   "sec": 19,
+   "pri": "investment",
+   "kind": "rec",
+   "text": "The UK should pursue reforms to the financial sector that encourage investment in UK companies, including the Mansion House reforms in the pension sector, which need to be more ambitious and faster. Maintaining a sophisticated investment ecosystem requires some large UK investors in the sector, and reform is needed to slow the decline of active investment. Pension reforms should consider ways of supporting consolidated pension funds to invest in small, innovative UK tech companies and provide scale-up capital for them, as part of their diversified portfolios, including by supporting the development of tech expertise among investors.",
+   "para": 203,
+   "page": 58,
+   "to": [
+    "gov"
+   ],
+   "words": 96
+  },
+  {
+   "n": 54,
+   "ch": 5,
+   "sec": 20,
+   "pri": "adoption",
+   "kind": "con",
+   "text": "One of the major barriers for engineering biology in the UK is the lack of large Tier 1 manufacturers at the ‘top of the ecosystem’ outside the life sciences. These large companies can play a crucial role in successful innovation ecosystems by buying out smaller companies, co-funding additional research, and converting science into products and services.",
+   "para": 211,
+   "page": 60,
+   "to": [],
+   "words": 56
+  },
+  {
+   "n": 55,
+   "ch": 5,
+   "sec": 20,
+   "pri": "adoption",
+   "kind": "rec",
+   "text": "The UK needs a clearer direction of travel when it comes to which parts of the biomanufacturing supply chain it intends to have domestically. Any sectoral strategy must carefully consider which existing companies might ultimately invest in biomanufacturing in the UK. These should be linked to the priority areas and outcomes for engineering biology that the Government should identify and support. Broader infrastructure issues, such as ready access to cheap electricity, are holding the manufacturing sector back and should be addressed by the industrial strategy.",
+   "para": 212,
+   "page": 60,
+   "to": [
+    "gov"
+   ],
+   "words": 85
+  },
+  {
+   "n": 56,
+   "ch": 5,
+   "sec": 21,
+   "pri": "adoption",
+   "kind": "con",
+   "text": "Among the larger manufacturing companies that do exist, there is a reluctance to adopt engineering biology solutions. We were concerned that we had limited engagement from larger companies during this inquiry. While bio-based technologies can be more sustainable, they are also more expensive to adopt initially. Without significant incentives or mandates to act as a ‘pull factor’ for supporting these technologies, these companies are unlikely to move away from current practice on their own. There is an urgent need to create a market for engineering biology products and technologies that can displace fossil fuels in order to incentivise pull-through of technologies such as engineering biology. As with the example of the sustainable aviation fuel mandate, there is a need for the Government to create the market to incentivise switching production.",
+   "para": 218,
+   "page": 61,
+   "to": [],
+   "words": 130
+  },
+  {
+   "n": 57,
+   "ch": 5,
+   "sec": 21,
+   "pri": "adoption",
+   "kind": "rec",
+   "text": "The Government should introduce incentives which encourage manufacturing companies, for example in the chemicals and fossil fuel industries, to fund research, development and production in biomanufacturing and engineering biology. For example:\n• carbon taxes or other taxes on pollutants or raw material waste,\n• mandates for processes that currently use fossil-fuel feedstocks, but where a viable alternative could be scaled-up.",
+   "para": 219,
+   "page": 61,
+   "to": [
+    "gov"
+   ],
+   "words": 60
+  },
+  {
+   "n": 58,
+   "ch": 5,
+   "sec": 21,
+   "pri": "adoption",
+   "kind": "rec",
+   "text": "The Government should initially mandate that a certain small percentage of the production was done using bio-based processes, with a view to increasing this percentage over time.",
+   "para": 220,
+   "page": 62,
+   "to": [
+    "gov"
+   ],
+   "words": 27
+  },
+  {
+   "n": 59,
+   "ch": 5,
+   "sec": 22,
+   "pri": "strategy",
+   "kind": "con",
+   "text": "A major motivation behind the development of engineering biology is to move production away from petrochemical-based initial feedstocks towards more sustainable alternatives, such as bio-based alternatives or valorised (recycled) waste, including waste carbon dioxide. Engineering biology offers a means of waste valorisation for some complex waste resources that are unsuitable for chemical processes. However, as with petrochemicals, each of these feedstocks has a global supply chain that must be considered, and some may not be suitable for the UK. We have seen with earlier biofuels efforts that there can be unintended consequences for the environment, land use, and sustainability if the feedstocks are not carefully considered.",
+   "para": 233,
+   "page": 65,
+   "to": [],
+   "words": 106
+  },
+  {
+   "n": 60,
+   "ch": 5,
+   "sec": 22,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "Any engineering biology strategy for the UK must consider carefully which feedstocks are available domestically and which might have to be imported, as well as the supply chain implications. DSIT should categorise, map and quantify relevant feedstocks, in particular for waste resources, and make this information publicly available. This could be used by industry, and should inform the technologies that are prioritised and supported through interventions such as public procurement.",
+   "para": 234,
+   "page": 65,
+   "to": [
+    "dsit"
+   ],
+   "words": 70
+  },
+  {
+   "n": 61,
+   "ch": 5,
+   "sec": 22,
+   "pri": "strategy",
+   "kind": "rec",
+   "text": "The UK needs a coherent strategy for waste valorisation, with clear financial incentives in place for companies that can find ways to turn waste back into useful products. Projects that have multiple benefits—for example, converting captured carbon dioxide and domestically-produced hydrogen into sustainable aviation fuels, which supports three industries and makes use of waste—should be prioritised.",
+   "para": 235,
+   "page": 65,
+   "to": [
+    "gov"
+   ],
+   "words": 56
+  },
+  {
+   "n": 62,
+   "ch": 6,
+   "sec": 23,
+   "pri": "governance",
+   "kind": "con",
+   "text": "Public acceptability of engineering biology is an important consideration and the approach will need to vary according to the application. Failure to understand and engage with the public could jeopardise some applications of engineering biology, as exemplified by historical controversies over genetically modified organisms, but at present public awareness is limited. There is a renewed need to build on early public engagement exercises, and to explain clearly what the new technologies are, what they can do, and how they are used, as products come to market. There is equally a need to understand what specific objections and concerns the public may have and how they can be addressed: this should build on existing work such as the initial opinion survey. The public also need to be able to make informed decisions about products and services they use.",
+   "para": 243,
+   "page": 67,
+   "to": [],
+   "words": 137
+  },
+  {
+   "n": 63,
+   "ch": 6,
+   "sec": 23,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "The Government should support a public engagement programme for engineering biology, focusing on consumer-facing products that have the potential to be available in the medium term. As part of their remit, regulators in these areas should explain the new technologies they are regulating and why, and they should be fully resourced to do this engagement work. UKRI should continue to fund research into public attitudes and dialogues around the ethical implications of engineering biology technologies as they come to market.",
+   "para": 244,
+   "page": 67,
+   "to": [
+    "gov",
+    "regs",
+    "ukri"
+   ],
+   "words": 80
+  },
+  {
+   "n": 64,
+   "ch": 6,
+   "sec": 24,
+   "pri": "governance",
+   "kind": "con",
+   "text": "Engineering biology is a dual-use technology—it poses risks to society as well as providing potential benefits. It is plausible that bad actors could utilise these technologies to produce or enhance novel pathogens, especially if the technology becomes more widely available and inexpensive.",
+   "para": 253,
+   "page": 69,
+   "to": [],
+   "words": 42
+  },
+  {
+   "n": 65,
+   "ch": 6,
+   "sec": 24,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "The new Government should explicitly commit to the key measures in the UK Biological Security Strategy around biosurveillance and population-level testing, empowering public health authorities such as UK Health Security Agency to learn and implement the lessons from the pandemic. The Government should publish an update on the implementation of the Biological Security Strategy by its second anniversary in June 2025 and set out actions that have been taken towards each of the outcomes.",
+   "para": 254,
+   "page": 70,
+   "to": [
+    "gov",
+    "ukhsa"
+   ],
+   "words": 74
+  },
+  {
+   "n": 66,
+   "ch": 6,
+   "sec": 25,
+   "pri": "governance",
+   "kind": "con",
+   "text": "Many of the biosecurity measures the UK needs to take to protect against engineered pathogens are similar to those that should be taken against naturally occurring pathogens. There are many lessons to be learned from the pandemic which have not yet been reflected in changes to public policy. The recently announced ‘early warning system’ for pandemics is welcome and should be given long-term support.",
+   "para": 257,
+   "page": 70,
+   "to": [],
+   "words": 64
+  },
+  {
+   "n": 67,
+   "ch": 6,
+   "sec": 25,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "Key measures in the UK Biological Security Strategy, such as creating a robust system for biosurveillance and population-level testing to identify any new concerning pathogens, must be implemented without delay. The UK should have testing, vaccine and therapeutics infrastructure capable of being scaled up if a new pathogen emerges. Public health authorities such as UKHSA must be sufficiently resourced to undertake their responsibilities under the Biological Security Strategy, including more comprehensive biosurveillance and population testing measures.",
+   "para": 258,
+   "page": 70,
+   "to": [
+    "gov",
+    "ukhsa"
+   ],
+   "words": 76
+  },
+  {
+   "n": 68,
+   "ch": 6,
+   "sec": 25,
+   "pri": "governance",
+   "kind": "con",
+   "text": "Ensuring any risks from engineering biology are well-managed will require a co-ordinated international approach.",
+   "para": 259,
+   "page": 71,
+   "to": [],
+   "words": 14
+  },
+  {
+   "n": 69,
+   "ch": 6,
+   "sec": 25,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "The UK must engage with, and where appropriate lead, global efforts to ensure that any risks from engineering biology are well-regulated internationally.",
+   "para": 260,
+   "page": 71,
+   "to": [
+    "gov"
+   ],
+   "words": 22
+  },
+  {
+   "n": 70,
+   "ch": 6,
+   "sec": 26,
+   "pri": "governance",
+   "kind": "con",
+   "text": "One of the major points of intervention is in genetic sequencing and screening for ‘sequences of concern’ when DNA is synthesised, which can help to ensure that the creation of potentially harmful DNA sequences is carefully controlled. The recently announced Government guidance on screening synthetic nucleic acids was a good first step towards this. However, such screening currently takes place on a voluntary basis.",
+   "para": 268,
+   "page": 72,
+   "to": [],
+   "words": 64
+  },
+  {
+   "n": 71,
+   "ch": 6,
+   "sec": 26,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "The UK should work with international partners towards standardising the screening of sequences of concern, with a view to making DNA synthesis screening a mandatory requirement for anyone synthesising or ordering synthesised DNA in the UK. It should pursue export controls and international treaties to ensure that this takes place on a global basis.",
+   "para": 269,
+   "page": 72,
+   "to": [
+    "gov"
+   ],
+   "words": 54
+  },
+  {
+   "n": 72,
+   "ch": 6,
+   "sec": 27,
+   "pri": "governance",
+   "kind": "con",
+   "text": "Bio-error or accidental release is also a clear risk, which should be mitigated as much as possible.",
+   "para": 271,
+   "page": 73,
+   "to": [],
+   "words": 17
+  },
+  {
+   "n": 73,
+   "ch": 6,
+   "sec": 27,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "The Health and Safety Executive needs to demonstrate that it has sufficient expertise and powers to monitor and prevent accidental release from the most secure facilities. It should be transparent about lab accidents that do occur so that lessons can be learned.",
+   "para": 272,
+   "page": 73,
+   "to": [
+    "hse"
+   ],
+   "words": 42
+  },
+  {
+   "n": 74,
+   "ch": 6,
+   "sec": 28,
+   "pri": "governance",
+   "kind": "con",
+   "text": "There is a potential for negative impacts on biodiversity if genetically engineered plants or animals outcompete native organisms.",
+   "para": 275,
+   "page": 73,
+   "to": [],
+   "words": 18
+  },
+  {
+   "n": 75,
+   "ch": 6,
+   "sec": 28,
+   "pri": "governance",
+   "kind": "rec",
+   "text": "Regulators such as Natural England should be part of the regulatory framework for engineered plants and animals. This should include impact assessments on any possible risks to biodiversity from releasing engineered organisms into ecosystems or using them in agriculture.",
+   "para": 276,
+   "page": 73,
+   "to": [
+    "regs",
+    "ne"
+   ],
+   "words": 39
+  }
+ ],
+ "para_pages": {
+  "1": 9,
+  "2": 9,
+  "3": 9,
+  "4": 9,
+  "5": 10,
+  "6": 10,
+  "7": 10,
+  "8": 11,
+  "9": 11,
+  "10": 12,
+  "11": 12,
+  "12": 13,
+  "13": 13,
+  "14": 14,
+  "15": 14,
+  "16": 14,
+  "17": 14,
+  "18": 15,
+  "19": 15,
+  "20": 15,
+  "21": 16,
+  "22": 16,
+  "23": 16,
+  "24": 16,
+  "25": 17,
+  "26": 17,
+  "27": 17,
+  "28": 18,
+  "29": 18,
+  "30": 18,
+  "31": 19,
+  "32": 19,
+  "33": 19,
+  "34": 19,
+  "35": 19,
+  "36": 19,
+  "37": 20,
+  "38": 20,
+  "39": 20,
+  "40": 21,
+  "41": 21,
+  "42": 21,
+  "43": 22,
+  "44": 22,
+  "45": 22,
+  "46": 22,
+  "47": 22,
+  "48": 23,
+  "49": 23,
+  "50": 23,
+  "51": 23,
+  "52": 23,
+  "53": 24,
+  "54": 24,
+  "55": 24,
+  "56": 24,
+  "57": 24,
+  "58": 25,
+  "59": 25,
+  "60": 25,
+  "61": 25,
+  "62": 25,
+  "63": 26,
+  "64": 26,
+  "65": 26,
+  "66": 26,
+  "67": 27,
+  "68": 27,
+  "69": 27,
+  "70": 27,
+  "71": 27,
+  "72": 28,
+  "73": 29,
+  "74": 29,
+  "75": 29,
+  "76": 29,
+  "77": 29,
+  "78": 30,
+  "79": 30,
+  "80": 30,
+  "81": 30,
+  "82": 30,
+  "83": 31,
+  "84": 31,
+  "85": 31,
+  "86": 31,
+  "87": 31,
+  "88": 32,
+  "89": 32,
+  "90": 32,
+  "91": 32,
+  "92": 32,
+  "93": 33,
+  "94": 33,
+  "95": 33,
+  "96": 33,
+  "97": 33,
+  "98": 34,
+  "99": 34,
+  "100": 34,
+  "101": 34,
+  "102": 35,
+  "103": 35,
+  "104": 35,
+  "105": 35,
+  "106": 36,
+  "107": 36,
+  "108": 36,
+  "109": 37,
+  "110": 37,
+  "111": 37,
+  "112": 37,
+  "113": 38,
+  "114": 38,
+  "115": 38,
+  "116": 38,
+  "117": 39,
+  "118": 39,
+  "119": 39,
+  "120": 39,
+  "121": 39,
+  "122": 39,
+  "123": 40,
+  "124": 40,
+  "125": 40,
+  "126": 40,
+  "127": 40,
+  "128": 40,
+  "129": 41,
+  "130": 41,
+  "131": 41,
+  "132": 41,
+  "133": 42,
+  "134": 42,
+  "135": 42,
+  "136": 42,
+  "137": 42,
+  "138": 43,
+  "139": 44,
+  "140": 44,
+  "141": 44,
+  "142": 44,
+  "143": 44,
+  "144": 45,
+  "145": 45,
+  "146": 45,
+  "147": 45,
+  "148": 46,
+  "149": 46,
+  "150": 46,
+  "151": 46,
+  "152": 46,
+  "153": 47,
+  "154": 47,
+  "155": 47,
+  "156": 47,
+  "157": 48,
+  "158": 48,
+  "159": 48,
+  "160": 48,
+  "161": 48,
+  "162": 48,
+  "163": 49,
+  "164": 49,
+  "165": 49,
+  "166": 49,
+  "167": 49,
+  "168": 50,
+  "169": 50,
+  "170": 50,
+  "171": 51,
+  "172": 51,
+  "173": 51,
+  "174": 51,
+  "175": 51,
+  "176": 52,
+  "177": 52,
+  "178": 52,
+  "179": 52,
+  "180": 52,
+  "181": 53,
+  "182": 53,
+  "183": 53,
+  "184": 53,
+  "185": 54,
+  "186": 54,
+  "187": 54,
+  "188": 54,
+  "189": 54,
+  "190": 54,
+  "191": 55,
+  "192": 55,
+  "193": 55,
+  "194": 56,
+  "195": 56,
+  "196": 56,
+  "197": 56,
+  "198": 56,
+  "199": 57,
+  "200": 57,
+  "201": 57,
+  "202": 58,
+  "203": 58,
+  "204": 58,
+  "205": 58,
+  "206": 58,
+  "207": 59,
+  "208": 59,
+  "209": 59,
+  "210": 60,
+  "211": 60,
+  "212": 60,
+  "213": 60,
+  "214": 60,
+  "215": 61,
+  "216": 61,
+  "217": 61,
+  "218": 61,
+  "219": 61,
+  "220": 62,
+  "221": 62,
+  "222": 62,
+  "223": 62,
+  "224": 62,
+  "225": 62,
+  "226": 63,
+  "227": 63,
+  "228": 64,
+  "229": 64,
+  "230": 64,
+  "231": 64,
+  "232": 64,
+  "233": 65,
+  "234": 65,
+  "235": 65,
+  "236": 66,
+  "237": 66,
+  "238": 66,
+  "239": 66,
+  "240": 67,
+  "241": 67,
+  "242": 67,
+  "243": 67,
+  "244": 67,
+  "245": 68,
+  "246": 68,
+  "247": 68,
+  "248": 68,
+  "249": 69,
+  "250": 69,
+  "251": 69,
+  "252": 69,
+  "253": 69,
+  "254": 70,
+  "255": 70,
+  "256": 70,
+  "257": 70,
+  "258": 70,
+  "259": 71,
+  "260": 71,
+  "261": 71,
+  "262": 71,
+  "263": 71,
+  "264": 71,
+  "265": 72,
+  "266": 72,
+  "267": 72,
+  "268": 72,
+  "269": 72,
+  "270": 73,
+  "271": 73,
+  "272": 73,
+  "273": 73,
+  "274": 73,
+  "275": 73,
+  "276": 73
+ }
+}

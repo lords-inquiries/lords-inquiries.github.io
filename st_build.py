@@ -771,7 +771,9 @@ NUMBER_WORDS = "zero one two three four five six seven eight nine ten eleven twe
 
 
 def briefs_html():
-    """The 'reports in brief' section: a card for every report with a presentation, newest first."""
+    """The 'reports in brief' section: a card for every report with a presentation, newest first.
+    A report whose JSON sets "card": false keeps its presentation and its link in the tracker's table,
+    but gets no card here."""
     cards = []
     for path in sorted(glob.glob(os.path.join(HERE, "reports", "*.json"))):
         slug = os.path.splitext(os.path.basename(path))[0]
@@ -781,6 +783,8 @@ def briefs_html():
         try:
             with open(path, encoding="utf-8") as f:
                 d = json.load(f)
+            if d.get("card") is False:
+                continue
             with open(deck, encoding="utf-8") as f:
                 slides = len(re.findall(r'<section class="slide[ "]', f.read()))
             c = {**CARD_DEFAULT, **(d.get("card") or {})}
