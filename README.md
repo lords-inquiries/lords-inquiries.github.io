@@ -49,4 +49,6 @@ To refresh the site straight away, open the **Actions** tab, choose **Update sit
 
 `st_build.py` builds `/science-and-technology/`: the committee's reports with links to evidence, Government responses and Lords debates (found in Hansard), plus upcoming evidence sessions and a subscribable calendar (`sessions.ics`). At the top, "The reports in brief" has a card for every report with a presentation in `reports/` whose JSON doesn't set `"card": false`, newest first, each in that presentation's colours and motif.
 
+`st_overrides.json` holds manual corrections for the tracker, for things the APIs don't have yet. At the moment that is a Lords debate that has been scheduled: add the report's title and the debate date, and its Lords debate box shows the date in light green, marked "Scheduled", until Hansard has a debate on the report on or after that date. The file explains its format; the build log says when an entry no longer matches a report or is no longer needed.
+
 `evidence_build.py` (**beta**) builds a full-text search of the committee's oral and written evidence since 2016. Document text is cached between runs with the Actions cache, and [Pagefind](https://pagefind.app) builds a static search index; only the index is published, and results link to the official documents.

@@ -77,6 +77,8 @@ input,select{font:16px "Libre Franklin",sans-serif;color:var(--ink);background:v
 .st .n{font-size:13px;color:var(--mute)}
 a.st.done{background:light-dark(#f7e4e7,#3a2228);border-color:light-dark(#ecc7cd,#5a2d36)}
 a.st.done .k{color:var(--red)}
+.st.sched{background:light-dark(#e3f3e6,#1d3324);border-color:light-dark(#b9e0c2,#2f5a3b)}
+.st.sched .k{color:light-dark(#1d6b35,#8fd6a2)}
 a.st:hover{border-color:var(--red)}
 .st.waiting .v{color:var(--mute);font-weight:500}
 .subs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
@@ -135,7 +137,7 @@ footer p{max-width:84ch;margin:0 0 8px}footer a{color:var(--ink)}
 <p class="sub">Tap a stage to open it. Grey stages haven't happened yet, or couldn't be found automatically.</p>
 <div class="toolbar">
 <label class="q">Search<input id="q" type="search" placeholder="e.g. forensic, energy, AI" autocomplete="off"></label>
-<label>Show<select id="f"><option value="">All reports</option><option value="nogr">Awaiting Government response</option><option value="nodeb">Not yet debated</option><option value="deb">Debated in the Lords</option></select></label>
+<label>Show<select id="f"><option value="">All reports</option><option value="nogr">Awaiting Government response</option><option value="nodeb">Not yet debated</option><option value="sched">Lords debate scheduled</option><option value="deb">Debated in the Lords</option></select></label>
 <label>Year<select id="y"><option value="">Any year</option></select></label>
 </div>
 <p class="count" id="count" aria-live="polite"></p>
@@ -193,7 +195,9 @@ function row(r){
   const g=firstGr(r);
   const grS=r.gr.length?stage('Government response',g.d?fmt(g.d):'Published',g.d&&r.d?days(r.d,g.d)+' days after report'+(r.gr.length>1?' · '+r.gr.length+' responses':''):'',g.url,true)
     :awaiting(r)?stage('Government response','Awaiting',r.due>=today?'Due by '+fmt(r.due):'Was due '+fmt(r.due),'',false):stage('Government response','Not found','','',false);
-  const dS=r.deb?stage('Lords debate',fmt(r.deb.d),'Read in Hansard',r.deb.url,true):stage('Lords debate','Not found','','',false);
+  // a debate known to be scheduled (st_overrides.json) wins until Hansard has it
+  const dS=r.debsched?`<div class="st sched"><span class="k">Lords debate</span><span class="v">${fmt(r.debsched.d)}</span><span class="n">${esc(r.debsched.note||(r.debsched.d>=today?'Scheduled':'Scheduled; not yet in Hansard'))}</span></div>`
+    :r.deb?stage('Lords debate',fmt(r.deb.d),'Read in Hansard',r.deb.url,true):stage('Lords debate','Not found','','',false);
   return `<article class="rep"><div><div class="when">${fmt(r.d)}${r.paper?' · '+esc(r.paper):''}${r.kind!=='Report'?' · '+esc(r.kind):''}</div>
   <h3><a href="${esc(r.url)}">${esc(r.t)}</a></h3>
   <div class="about">${r.inq&&r.inq!==r.t?'Inquiry: '+(r.work?`<a href="${esc(r.work)}" style="color:inherit">${esc(r.inq)}</a>`:esc(r.inq)):''}${r.dept?(r.inq&&r.inq!==r.t?'<br>':'')+'Lead department: '+esc(r.dept):''}</div>${r.viz?`<a class="viz" href="${esc(r.viz)}">Explore its conclusions and recommendations</a>`:''}</div>
@@ -202,7 +206,7 @@ function row(r){
 function render(){
   const q=$('#q').value.trim().toLowerCase(),f=$('#f').value,y=ysel.value;
   const rows=R.filter(r=>(!y||(r.d||'').startsWith(y))&&(!q||(r.t+' '+(r.inq||'')+' '+(r.dept||'')).toLowerCase().includes(q))&&
-    (!f||(f==='nogr'&&awaiting(r))||(f==='nodeb'&&!r.deb)||(f==='deb'&&r.deb)));
+    (!f||(f==='nogr'&&awaiting(r))||(f==='nodeb'&&(!r.deb||r.debsched))||(f==='sched'&&r.debsched)||(f==='deb'&&r.deb&&!r.debsched)));
   $('#count').textContent=rows.length+' of '+R.length+' reports';
   $('#list').innerHTML=rows.length?rows.map(row).join(''):'<div class="empty">No reports match. Try clearing the search or filters.</div>';
 }

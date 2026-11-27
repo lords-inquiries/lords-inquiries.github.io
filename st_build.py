@@ -571,6 +571,7 @@ def build(src, now):
                     log(f"Lead department for {r['t'][:50]!r}: {r.get('dept')!r} -> {x['lead']!r}")
                 r["dept"] = x["lead"]
 
+    apply_overrides(reports)
     reports.sort(key=lambda r: r["d"] or "", reverse=True)
 
     events = []
@@ -593,6 +594,36 @@ def build(src, now):
 
 def squash(s):
     return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+def apply_overrides(reports):
+    """Manual corrections from st_overrides.json. For now, a Lords debate that is scheduled but not yet held:
+    it is stored as "debsched" and shown in light green, until Hansard has a debate on or after that date."""
+    path = os.path.join(HERE, "st_overrides.json")
+    if not os.path.exists(path):
+        return
+    try:
+        with open(path, encoding="utf-8") as f:
+            entries = json.load(f).get("reports", [])
+    except Exception as e:
+        log(f"st_overrides.json could not be read, ignoring it: {e}")
+        return
+    by_title = {squash(r.get("t")): r for r in reports}
+    for o in entries:
+        r = by_title.get(squash(o.get("title")))
+        if not r:
+            log(f"st_overrides.json: no report titled {o.get('title')!r}")
+            continue
+        deb = o.get("debate") or {}
+        date = str(deb.get("date") or "")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+            log(f"st_overrides.json: debate date for {r['t'][:50]!r} should be YYYY-MM-DD, not {date!r}")
+            continue
+        if r.get("deb") and r["deb"]["d"] >= date:
+            log(f"Scheduled debate on {date} for {r['t'][:50]!r} is in Hansard now; the override can be deleted")
+            continue
+        r["debsched"] = {"d": date, "note": str(deb.get("note") or "")}
+        log(f"Scheduled Lords debate for {r['t'][:50]!r}: {date}")
 
 
 def explorers():

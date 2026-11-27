@@ -1,0 +1,9 @@
+{
+  "_about": "Manual corrections for the Science and Technology reports tracker, for things the Parliament APIs do not have yet. Each entry finds a report by its title (capitals and punctuation are ignored). 'debate' is a Lords debate on the report that has been scheduled: give its date as YYYY-MM-DD and, optionally, a short 'note'. The tracker shows it in a light green box until Hansard has a debate on the report on or after that date; then this entry is ignored and can be deleted.",
+  "reports": [
+    {
+      "title": "Bleeding to death: the science and technology growth emergency",
+      "debate": {"date": "2027-01-29"}
+    }
+  ]
+}
